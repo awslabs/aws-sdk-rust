@@ -3554,6 +3554,390 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`SendApiAssetInput`](crate::input::SendApiAssetInput)
+pub mod send_api_asset_input {
+    /// A builder for [`SendApiAssetInput`](crate::input::SendApiAssetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) body: std::option::Option<std::string::String>,
+        pub(crate) query_string_parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+        pub(crate) request_headers: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) method: std::option::Option<std::string::String>,
+        pub(crate) path: std::option::Option<std::string::String>,
+        pub(crate) revision_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The request body.</p>
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
+            self
+        }
+        /// <p>The request body.</p>
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
+            self
+        }
+        /// Adds a key-value pair to `query_string_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_query_string_parameters`](Self::set_query_string_parameters).
+        ///
+        /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
+        pub fn query_string_parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.query_string_parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.query_string_parameters = Some(hash_map);
+            self
+        }
+        /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
+        pub fn set_query_string_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.query_string_parameters = input;
+            self
+        }
+        /// <p>Asset ID value for the API request.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>Asset ID value for the API request.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>Data set ID value for the API request.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        /// <p>Data set ID value for the API request.</p>
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// Adds a key-value pair to `request_headers`.
+        ///
+        /// To override the contents of this collection use [`set_request_headers`](Self::set_request_headers).
+        ///
+        /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
+        pub fn request_headers(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.request_headers.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.request_headers = Some(hash_map);
+            self
+        }
+        /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
+        pub fn set_request_headers(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.request_headers = input;
+            self
+        }
+        /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
+        pub fn method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.method = Some(input.into());
+            self
+        }
+        /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
+        pub fn set_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.method = input;
+            self
+        }
+        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// <p>Revision ID value for the API request.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.revision_id = Some(input.into());
+            self
+        }
+        /// <p>Revision ID value for the API request.</p>
+        pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendApiAssetInput`](crate::input::SendApiAssetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SendApiAssetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SendApiAssetInput {
+                body: self.body,
+                query_string_parameters: self.query_string_parameters,
+                asset_id: self.asset_id,
+                data_set_id: self.data_set_id,
+                request_headers: self.request_headers,
+                method: self.method,
+                path: self.path,
+                revision_id: self.revision_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SendApiAssetInputOperationOutputAlias = crate::operation::SendApiAsset;
+#[doc(hidden)]
+pub type SendApiAssetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl SendApiAssetInput {
+    /// Consumes the builder and constructs an Operation<[`SendApiAsset`](crate::operation::SendApiAsset)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SendApiAsset,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::SendApiAssetInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/v1").expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::SendApiAssetInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            if let Some(inner_31) = &_input.asset_id {
+                let formatted_32 = AsRef::<str>::as_ref(inner_31);
+                if !formatted_32.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_32;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "asset_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("x-amzn-dataexchange-asset-id", header_value);
+                }
+            }
+            if let Some(inner_33) = &_input.data_set_id {
+                let formatted_34 = AsRef::<str>::as_ref(inner_33);
+                if !formatted_34.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_34;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "data_set_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("x-amzn-dataexchange-data-set-id", header_value);
+                }
+            }
+            if let Some(inner_35) = &_input.method {
+                let formatted_36 = AsRef::<str>::as_ref(inner_35);
+                if !formatted_36.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_36;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "method",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("x-amzn-dataexchange-http-method", header_value);
+                }
+            }
+            if let Some(inner_37) = &_input.path {
+                let formatted_38 = AsRef::<str>::as_ref(inner_37);
+                if !formatted_38.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_38;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "path",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("x-amzn-dataexchange-path", header_value);
+                }
+            }
+            if let Some(inner_39) = &_input.revision_id {
+                let formatted_40 = AsRef::<str>::as_ref(inner_39);
+                if !formatted_40.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_40;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "revision_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("x-amzn-dataexchange-revision-id", header_value);
+                }
+            }
+            if let Some(inner_41) = &_input.request_headers {
+                for (k, v) in inner_41 {
+                    use std::str::FromStr;
+                    let header_name = http::header::HeaderName::from_str(&format!(
+                        "{}{}",
+                        "x-amzn-dataexchange-header-", &k
+                    ))
+                    .map_err(|err| {
+                        aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "request_headers",
+                            details: format!("`{}` cannot be used as a header name: {}", k, err),
+                        }
+                    })?;
+                    use std::convert::TryFrom;
+                    let header_value = AsRef::<str>::as_ref(v);
+                    let header_value =
+                        http::header::HeaderValue::try_from(header_value).map_err(|err| {
+                            aws_smithy_http::operation::BuildError::InvalidField {
+                                field: "request_headers",
+                                details: format!(
+                                    "`{}` cannot be used as a header value: {}",
+                                    v, err
+                                ),
+                            }
+                        })?;
+                    builder = builder.header(header_name, header_value);
+                }
+            }
+            Ok(builder)
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SendApiAssetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SendApiAssetInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "text/plain",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::ser_payload_send_api_asset_input(&self.body)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("api-fulfill.")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendApiAsset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendApiAsset",
+            "dataexchange",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`SendApiAssetInput`](crate::input::SendApiAssetInput)
+    pub fn builder() -> crate::input::send_api_asset_input::Builder {
+        crate::input::send_api_asset_input::Builder::default()
+    }
+}
+
 /// See [`StartJobInput`](crate::input::StartJobInput)
 pub mod start_job_input {
     /// A builder for [`StartJobInput`](crate::input::StartJobInput)
@@ -3606,15 +3990,15 @@ impl StartJobInput {
             _input: &crate::input::StartJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_31 = &_input.job_id;
-            let input_31 =
-                input_31
+            let input_42 = &_input.job_id;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = aws_smithy_http::label::fmt_string(input_31, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_42, false);
             if job_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
@@ -3783,15 +4167,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_32 = &_input.resource_arn;
-            let input_32 =
-                input_32
+            let input_43 = &_input.resource_arn;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_32, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_43, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -3968,15 +4352,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_33 = &_input.resource_arn;
-            let input_33 =
-                input_33
+            let input_44 = &_input.resource_arn;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_33, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -3992,9 +4376,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_34) = &_input.tag_keys {
-                for inner_35 in inner_34 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_35));
+            if let Some(inner_45) = &_input.tag_keys {
+                for inner_46 in inner_45 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
                 }
             }
             Ok(())
@@ -4110,12 +4494,12 @@ pub mod update_asset_input {
             self.data_set_id = input;
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+        /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4168,45 +4552,45 @@ impl UpdateAssetInput {
             _input: &crate::input::UpdateAssetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_36 = &_input.data_set_id;
-            let input_36 =
-                input_36
+            let input_47 = &_input.data_set_id;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let data_set_id = aws_smithy_http::label::fmt_string(input_36, false);
+            let data_set_id = aws_smithy_http::label::fmt_string(input_47, false);
             if data_set_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_37 = &_input.revision_id;
-            let input_37 =
-                input_37
+            let input_48 = &_input.revision_id;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "revision_id",
                         details: "cannot be empty or unset",
                     })?;
-            let revision_id = aws_smithy_http::label::fmt_string(input_37, false);
+            let revision_id = aws_smithy_http::label::fmt_string(input_48, false);
             if revision_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "revision_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_38 = &_input.asset_id;
-            let input_38 =
-                input_38
+            let input_49 = &_input.asset_id;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_38, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_49, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
@@ -4392,15 +4776,15 @@ impl UpdateDataSetInput {
             _input: &crate::input::UpdateDataSetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_39 = &_input.data_set_id;
-            let input_39 =
-                input_39
+            let input_50 = &_input.data_set_id;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let data_set_id = aws_smithy_http::label::fmt_string(input_39, false);
+            let data_set_id = aws_smithy_http::label::fmt_string(input_50, false);
             if data_set_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
@@ -4572,15 +4956,15 @@ impl UpdateEventActionInput {
             _input: &crate::input::UpdateEventActionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.event_action_id;
-            let input_40 =
-                input_40
+            let input_51 = &_input.event_action_id;
+            let input_51 =
+                input_51
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "event_action_id",
                         details: "cannot be empty or unset",
                     })?;
-            let event_action_id = aws_smithy_http::label::fmt_string(input_40, false);
+            let event_action_id = aws_smithy_http::label::fmt_string(input_51, false);
             if event_action_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "event_action_id",
@@ -4777,30 +5161,30 @@ impl UpdateRevisionInput {
             _input: &crate::input::UpdateRevisionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_41 = &_input.data_set_id;
-            let input_41 =
-                input_41
+            let input_52 = &_input.data_set_id;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let data_set_id = aws_smithy_http::label::fmt_string(input_41, false);
+            let data_set_id = aws_smithy_http::label::fmt_string(input_52, false);
             if data_set_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_42 = &_input.revision_id;
-            let input_42 =
-                input_42
+            let input_53 = &_input.revision_id;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "revision_id",
                         details: "cannot be empty or unset",
                     })?;
-            let revision_id = aws_smithy_http::label::fmt_string(input_42, false);
+            let revision_id = aws_smithy_http::label::fmt_string(input_53, false);
             if revision_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "revision_id",
@@ -5021,7 +5405,7 @@ pub struct UpdateAssetInput {
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a data set.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -5035,7 +5419,7 @@ impl UpdateAssetInput {
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key.</p>
+    /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -5132,6 +5516,84 @@ impl std::fmt::Debug for StartJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartJobInput");
         formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+
+/// <p>The request body for SendApiAsset.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendApiAssetInput {
+    /// <p>The request body.</p>
+    pub body: std::option::Option<std::string::String>,
+    /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
+    pub query_string_parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Asset ID value for the API request.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>Data set ID value for the API request.</p>
+    pub data_set_id: std::option::Option<std::string::String>,
+    /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
+    pub request_headers:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
+    pub method: std::option::Option<std::string::String>,
+    /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+    pub path: std::option::Option<std::string::String>,
+    /// <p>Revision ID value for the API request.</p>
+    pub revision_id: std::option::Option<std::string::String>,
+}
+impl SendApiAssetInput {
+    /// <p>The request body.</p>
+    pub fn body(&self) -> std::option::Option<&str> {
+        self.body.as_deref()
+    }
+    /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
+    pub fn query_string_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.query_string_parameters.as_ref()
+    }
+    /// <p>Asset ID value for the API request.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>Data set ID value for the API request.</p>
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
+        self.data_set_id.as_deref()
+    }
+    /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
+    pub fn request_headers(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.request_headers.as_ref()
+    }
+    /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
+    pub fn method(&self) -> std::option::Option<&str> {
+        self.method.as_deref()
+    }
+    /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>Revision ID value for the API request.</p>
+    pub fn revision_id(&self) -> std::option::Option<&str> {
+        self.revision_id.as_deref()
+    }
+}
+impl std::fmt::Debug for SendApiAssetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendApiAssetInput");
+        formatter.field("body", &self.body);
+        formatter.field("query_string_parameters", &self.query_string_parameters);
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("data_set_id", &self.data_set_id);
+        formatter.field("request_headers", &self.request_headers);
+        formatter.field("method", &self.method);
+        formatter.field("path", &self.path);
+        formatter.field("revision_id", &self.revision_id);
         formatter.finish()
     }
 }

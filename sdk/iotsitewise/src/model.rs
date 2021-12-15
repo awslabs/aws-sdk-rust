@@ -1910,77 +1910,82 @@ impl MetricWindow {
 }
 
 /// <p>Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and
-/// contiguous time window. You use this window in metrics to aggregate data from properties and other assets.</p>
-/// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code>
-/// when you specify an interval or offset. Note that <code>m</code> represents minutes,
-/// and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds
-/// in <code>offset</code>.</p>
-/// <p>The <code>interval</code> and <code>offset</code> parameters support the
-/// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>.
-/// For example, <code>PT5S</code> represents five seconds, <code>PT5M</code> represents five minutes,
-/// and <code>PT5H</code> represents five hours.</p>
+/// contiguous time window. You can use this window in metrics to aggregate data from properties
+/// and other assets.</p>
+/// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you
+/// specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code>
+/// represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can
+/// also use <code>s</code> to represent seconds in <code>offset</code>.</p>
+/// <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example,
+/// <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and
+/// <code>PT5H</code> represents 5 hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TumblingWindow {
-    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
-    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
-    /// each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the
-    /// <code>1h</code> interval at the end of each hour, and so on. </p>
+    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and
+    /// 1 week.</p>
+    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC),
+    /// the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code>
+    /// interval at the end of each hour, and so on. </p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
     /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
     /// the end of the interval.</p>
     pub interval: std::option::Option<std::string::String>,
-    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
+    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the
+    /// following:</p>
     /// <ul>
     /// <li>
     /// <p>The offset time.</p>
-    /// <p>For example, if you specify <code>18h</code> for <code>offset</code>
-    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <p>For example, if you specify <code>18h</code> for <code>offset</code> and
+    /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
+    /// ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 PM (UTC),
-    /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
+    /// result at 6 PM (UTC) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 PM (UTC),
-    /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+    /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
+    /// 6 PM (UTC) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>The ISO 8601 format.</p>
-    /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code>
-    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and
+    /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
+    /// ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 PM (UTC),
-    /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
+    /// result at 6 PM (UTC) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 PM (UTC),
-    /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+    /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
+    /// 6 PM (UTC) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>The 24-hour clock.</p>
-    /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
-    /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC),
-    /// you get the first aggregation result at 2:03 PM (UTC).
-    /// You get the second aggregation result at 2:08 PM (UTC). </p>
+    /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>,
+    /// <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you
+    /// get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result
+    /// at 2:08 PM (UTC). </p>
     /// </li>
     /// <li>
     /// <p>The offset time zone.</p>
     /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the
+    /// following ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 PM (PST),
-    /// you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6 PM (PST), you get the first aggregation
+    /// result at 6 PM (PST) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 PM (PST),
-    /// you get the first aggregation result at 6 PM (PST) the next day.</p>
+    /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at
+    /// 6 PM (PST) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
@@ -1988,67 +1993,72 @@ pub struct TumblingWindow {
     pub offset: std::option::Option<std::string::String>,
 }
 impl TumblingWindow {
-    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
-    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
-    /// each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the
-    /// <code>1h</code> interval at the end of each hour, and so on. </p>
+    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and
+    /// 1 week.</p>
+    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC),
+    /// the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code>
+    /// interval at the end of each hour, and so on. </p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
     /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
     /// the end of the interval.</p>
     pub fn interval(&self) -> std::option::Option<&str> {
         self.interval.as_deref()
     }
-    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
+    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the
+    /// following:</p>
     /// <ul>
     /// <li>
     /// <p>The offset time.</p>
-    /// <p>For example, if you specify <code>18h</code> for <code>offset</code>
-    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <p>For example, if you specify <code>18h</code> for <code>offset</code> and
+    /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
+    /// ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 PM (UTC),
-    /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
+    /// result at 6 PM (UTC) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 PM (UTC),
-    /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+    /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
+    /// 6 PM (UTC) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>The ISO 8601 format.</p>
-    /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code>
-    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and
+    /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
+    /// ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 PM (UTC),
-    /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
+    /// result at 6 PM (UTC) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 PM (UTC),
-    /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+    /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
+    /// 6 PM (UTC) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>The 24-hour clock.</p>
-    /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
-    /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC),
-    /// you get the first aggregation result at 2:03 PM (UTC).
-    /// You get the second aggregation result at 2:08 PM (UTC). </p>
+    /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>,
+    /// <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you
+    /// get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result
+    /// at 2:08 PM (UTC). </p>
     /// </li>
     /// <li>
     /// <p>The offset time zone.</p>
     /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the
+    /// following ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 PM (PST),
-    /// you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6 PM (PST), you get the first aggregation
+    /// result at 6 PM (PST) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 PM (PST),
-    /// you get the first aggregation result at 6 PM (PST) the next day.</p>
+    /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at
+    /// 6 PM (PST) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
@@ -2075,10 +2085,11 @@ pub mod tumbling_window {
         pub(crate) offset: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
-        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
-        /// each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the
-        /// <code>1h</code> interval at the end of each hour, and so on. </p>
+        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and
+        /// 1 week.</p>
+        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC),
+        /// the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code>
+        /// interval at the end of each hour, and so on. </p>
         /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
         /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
         /// the end of the interval.</p>
@@ -2086,10 +2097,11 @@ pub mod tumbling_window {
             self.interval = Some(input.into());
             self
         }
-        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
-        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight
-        /// each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the
-        /// <code>1h</code> interval at the end of each hour, and so on. </p>
+        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and
+        /// 1 week.</p>
+        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC),
+        /// the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code>
+        /// interval at the end of each hour, and so on. </p>
         /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
         /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
         /// the end of the interval.</p>
@@ -2097,57 +2109,61 @@ pub mod tumbling_window {
             self.interval = input;
             self
         }
-        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
+        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the
+        /// following:</p>
         /// <ul>
         /// <li>
         /// <p>The offset time.</p>
-        /// <p>For example, if you specify <code>18h</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// <p>For example, if you specify <code>18h</code> for <code>offset</code> and
+        /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
+        /// ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 PM (UTC),
-        /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
+        /// result at 6 PM (UTC) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 PM (UTC),
-        /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+        /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
+        /// 6 PM (UTC) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>The ISO 8601 format.</p>
-        /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and
+        /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
+        /// ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 PM (UTC),
-        /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
+        /// result at 6 PM (UTC) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 PM (UTC),
-        /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+        /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
+        /// 6 PM (UTC) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>The 24-hour clock.</p>
-        /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
-        /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC),
-        /// you get the first aggregation result at 2:03 PM (UTC).
-        /// You get the second aggregation result at 2:08 PM (UTC). </p>
+        /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>,
+        /// <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you
+        /// get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result
+        /// at 2:08 PM (UTC). </p>
         /// </li>
         /// <li>
         /// <p>The offset time zone.</p>
         /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the
+        /// following ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 PM (PST),
-        /// you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6 PM (PST), you get the first aggregation
+        /// result at 6 PM (PST) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 PM (PST),
-        /// you get the first aggregation result at 6 PM (PST) the next day.</p>
+        /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at
+        /// 6 PM (PST) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>
@@ -2156,57 +2172,61 @@ pub mod tumbling_window {
             self.offset = Some(input.into());
             self
         }
-        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
+        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the
+        /// following:</p>
         /// <ul>
         /// <li>
         /// <p>The offset time.</p>
-        /// <p>For example, if you specify <code>18h</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// <p>For example, if you specify <code>18h</code> for <code>offset</code> and
+        /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
+        /// ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 PM (UTC),
-        /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
+        /// result at 6 PM (UTC) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 PM (UTC),
-        /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+        /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
+        /// 6 PM (UTC) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>The ISO 8601 format.</p>
-        /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and
+        /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
+        /// ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 PM (UTC),
-        /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
+        /// result at 6 PM (UTC) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 PM (UTC),
-        /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
+        /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
+        /// 6 PM (UTC) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>The 24-hour clock.</p>
-        /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
-        /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC),
-        /// you get the first aggregation result at 2:03 PM (UTC).
-        /// You get the second aggregation result at 2:08 PM (UTC). </p>
+        /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>,
+        /// <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you
+        /// get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result
+        /// at 2:08 PM (UTC). </p>
         /// </li>
         /// <li>
         /// <p>The offset time zone.</p>
         /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
+        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the
+        /// following ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 PM (PST),
-        /// you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6 PM (PST), you get the first aggregation
+        /// result at 6 PM (PST) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 PM (PST),
-        /// you get the first aggregation result at 6 PM (PST) the next day.</p>
+        /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at
+        /// 6 PM (PST) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>
@@ -4050,6 +4070,166 @@ impl AsRef<str> for ConfigurationState {
     }
 }
 
+/// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RetentionPeriod {
+    /// <p>The number of days that your data is kept.</p>
+    /// <note>
+    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must
+    /// be <code>false</code>.</p>
+    /// </note>
+    pub number_of_days: std::option::Option<i32>,
+    /// <p>If true, your data is kept indefinitely.</p>
+    /// <note>
+    /// <p>If configured to <code>true</code>, you must not specify a value for the
+    /// <code>numberOfDays</code> parameter.</p>
+    /// </note>
+    pub unlimited: std::option::Option<bool>,
+}
+impl RetentionPeriod {
+    /// <p>The number of days that your data is kept.</p>
+    /// <note>
+    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must
+    /// be <code>false</code>.</p>
+    /// </note>
+    pub fn number_of_days(&self) -> std::option::Option<i32> {
+        self.number_of_days
+    }
+    /// <p>If true, your data is kept indefinitely.</p>
+    /// <note>
+    /// <p>If configured to <code>true</code>, you must not specify a value for the
+    /// <code>numberOfDays</code> parameter.</p>
+    /// </note>
+    pub fn unlimited(&self) -> std::option::Option<bool> {
+        self.unlimited
+    }
+}
+impl std::fmt::Debug for RetentionPeriod {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RetentionPeriod");
+        formatter.field("number_of_days", &self.number_of_days);
+        formatter.field("unlimited", &self.unlimited);
+        formatter.finish()
+    }
+}
+/// See [`RetentionPeriod`](crate::model::RetentionPeriod)
+pub mod retention_period {
+    /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) number_of_days: std::option::Option<i32>,
+        pub(crate) unlimited: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The number of days that your data is kept.</p>
+        /// <note>
+        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must
+        /// be <code>false</code>.</p>
+        /// </note>
+        pub fn number_of_days(mut self, input: i32) -> Self {
+            self.number_of_days = Some(input);
+            self
+        }
+        /// <p>The number of days that your data is kept.</p>
+        /// <note>
+        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must
+        /// be <code>false</code>.</p>
+        /// </note>
+        pub fn set_number_of_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_days = input;
+            self
+        }
+        /// <p>If true, your data is kept indefinitely.</p>
+        /// <note>
+        /// <p>If configured to <code>true</code>, you must not specify a value for the
+        /// <code>numberOfDays</code> parameter.</p>
+        /// </note>
+        pub fn unlimited(mut self, input: bool) -> Self {
+            self.unlimited = Some(input);
+            self
+        }
+        /// <p>If true, your data is kept indefinitely.</p>
+        /// <note>
+        /// <p>If configured to <code>true</code>, you must not specify a value for the
+        /// <code>numberOfDays</code> parameter.</p>
+        /// </note>
+        pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
+            self.unlimited = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RetentionPeriod`](crate::model::RetentionPeriod)
+        pub fn build(self) -> crate::model::RetentionPeriod {
+            crate::model::RetentionPeriod {
+                number_of_days: self.number_of_days,
+                unlimited: self.unlimited,
+            }
+        }
+    }
+}
+impl RetentionPeriod {
+    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod)
+    pub fn builder() -> crate::model::retention_period::Builder {
+        crate::model::retention_period::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DisassociatedDataStorageState {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DisassociatedDataStorageState {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => DisassociatedDataStorageState::Disabled,
+            "ENABLED" => DisassociatedDataStorageState::Enabled,
+            other => DisassociatedDataStorageState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DisassociatedDataStorageState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DisassociatedDataStorageState::from(s))
+    }
+}
+impl DisassociatedDataStorageState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DisassociatedDataStorageState::Disabled => "DISABLED",
+            DisassociatedDataStorageState::Enabled => "ENABLED",
+            DisassociatedDataStorageState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for DisassociatedDataStorageState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains information about the storage destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4416,6 +4596,286 @@ impl EncryptionType {
     }
 }
 impl AsRef<str> for EncryptionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains a summary of a time series (data stream).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TimeSeriesSummary {
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub asset_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the asset property.</p>
+    pub property_id: std::option::Option<std::string::String>,
+    /// <p>The alias that identifies the time series.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The ID of the time series.</p>
+    pub time_series_id: std::option::Option<std::string::String>,
+    /// <p>The data type of the time series.</p>
+    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+    pub data_type: std::option::Option<crate::model::PropertyDataType>,
+    /// <p>The data type of the structure for this time series. This parameter is required for time series
+    /// that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model
+    /// in which you created the asset property that is associated with your time series.
+    /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    pub data_type_spec: std::option::Option<std::string::String>,
+    /// <p>The date that the time series was created, in Unix epoch time.</p>
+    pub time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+    pub time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl TimeSeriesSummary {
+    /// <p>The ID of the asset in which the asset property was created.</p>
+    pub fn asset_id(&self) -> std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn property_id(&self) -> std::option::Option<&str> {
+        self.property_id.as_deref()
+    }
+    /// <p>The alias that identifies the time series.</p>
+    pub fn alias(&self) -> std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The ID of the time series.</p>
+    pub fn time_series_id(&self) -> std::option::Option<&str> {
+        self.time_series_id.as_deref()
+    }
+    /// <p>The data type of the time series.</p>
+    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+    pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
+        self.data_type.as_ref()
+    }
+    /// <p>The data type of the structure for this time series. This parameter is required for time series
+    /// that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model
+    /// in which you created the asset property that is associated with your time series.
+    /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+        self.data_type_spec.as_deref()
+    }
+    /// <p>The date that the time series was created, in Unix epoch time.</p>
+    pub fn time_series_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.time_series_creation_date.as_ref()
+    }
+    /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+    pub fn time_series_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.time_series_last_update_date.as_ref()
+    }
+}
+impl std::fmt::Debug for TimeSeriesSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TimeSeriesSummary");
+        formatter.field("asset_id", &self.asset_id);
+        formatter.field("property_id", &self.property_id);
+        formatter.field("alias", &self.alias);
+        formatter.field("time_series_id", &self.time_series_id);
+        formatter.field("data_type", &self.data_type);
+        formatter.field("data_type_spec", &self.data_type_spec);
+        formatter.field("time_series_creation_date", &self.time_series_creation_date);
+        formatter.field(
+            "time_series_last_update_date",
+            &self.time_series_last_update_date,
+        );
+        formatter.finish()
+    }
+}
+/// See [`TimeSeriesSummary`](crate::model::TimeSeriesSummary)
+pub mod time_series_summary {
+    /// A builder for [`TimeSeriesSummary`](crate::model::TimeSeriesSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asset_id: std::option::Option<std::string::String>,
+        pub(crate) property_id: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) time_series_id: std::option::Option<std::string::String>,
+        pub(crate) data_type: std::option::Option<crate::model::PropertyDataType>,
+        pub(crate) data_type_spec: std::option::Option<std::string::String>,
+        pub(crate) time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) time_series_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.asset_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.asset_id = input;
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.property_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.property_id = input;
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The ID of the time series.</p>
+        pub fn time_series_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.time_series_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the time series.</p>
+        pub fn set_time_series_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.time_series_id = input;
+            self
+        }
+        /// <p>The data type of the time series.</p>
+        /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+        pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
+            self.data_type = Some(input);
+            self
+        }
+        /// <p>The data type of the time series.</p>
+        /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
+        pub fn set_data_type(
+            mut self,
+            input: std::option::Option<crate::model::PropertyDataType>,
+        ) -> Self {
+            self.data_type = input;
+            self
+        }
+        /// <p>The data type of the structure for this time series. This parameter is required for time series
+        /// that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model
+        /// in which you created the asset property that is associated with your time series.
+        /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type_spec = Some(input.into());
+            self
+        }
+        /// <p>The data type of the structure for this time series. This parameter is required for time series
+        /// that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model
+        /// in which you created the asset property that is associated with your time series.
+        /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        pub fn set_data_type_spec(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_type_spec = input;
+            self
+        }
+        /// <p>The date that the time series was created, in Unix epoch time.</p>
+        pub fn time_series_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.time_series_creation_date = Some(input);
+            self
+        }
+        /// <p>The date that the time series was created, in Unix epoch time.</p>
+        pub fn set_time_series_creation_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.time_series_creation_date = input;
+            self
+        }
+        /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+        pub fn time_series_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.time_series_last_update_date = Some(input);
+            self
+        }
+        /// <p>The date that the time series was last updated, in Unix epoch time.</p>
+        pub fn set_time_series_last_update_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.time_series_last_update_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TimeSeriesSummary`](crate::model::TimeSeriesSummary)
+        pub fn build(self) -> crate::model::TimeSeriesSummary {
+            crate::model::TimeSeriesSummary {
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                alias: self.alias,
+                time_series_id: self.time_series_id,
+                data_type: self.data_type,
+                data_type_spec: self.data_type_spec,
+                time_series_creation_date: self.time_series_creation_date,
+                time_series_last_update_date: self.time_series_last_update_date,
+            }
+        }
+    }
+}
+impl TimeSeriesSummary {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesSummary`](crate::model::TimeSeriesSummary)
+    pub fn builder() -> crate::model::time_series_summary::Builder {
+        crate::model::time_series_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListTimeSeriesType {
+    #[allow(missing_docs)] // documentation missing in model
+    Associated,
+    #[allow(missing_docs)] // documentation missing in model
+    Disassociated,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ListTimeSeriesType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASSOCIATED" => ListTimeSeriesType::Associated,
+            "DISASSOCIATED" => ListTimeSeriesType::Disassociated,
+            other => ListTimeSeriesType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ListTimeSeriesType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListTimeSeriesType::from(s))
+    }
+}
+impl ListTimeSeriesType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListTimeSeriesType::Associated => "ASSOCIATED",
+            ListTimeSeriesType::Disassociated => "DISASSOCIATED",
+            ListTimeSeriesType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ASSOCIATED", "DISASSOCIATED"]
+    }
+}
+impl AsRef<str> for ListTimeSeriesType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -5186,12 +5646,11 @@ impl GatewayPlatform {
     }
 }
 
-/// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2,
-/// you must deploy the IoT SiteWise Edge component to your gateway device.
-/// Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a>
-/// must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information,
-/// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a>
-/// in the <i>IoT SiteWise User Guide</i>.</p>
+/// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass
+/// V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass
+/// device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more
+/// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the
+/// <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GreengrassV2 {

@@ -2331,6 +2331,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePartners {
     }
 }
 
+/// Operation shape for `DescribeReservedNodeExchangeStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_reserved_node_exchange_status`](crate::client::Client::describe_reserved_node_exchange_status).
+///
+/// See [`crate::client::fluent_builders::DescribeReservedNodeExchangeStatus`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeReservedNodeExchangeStatus {
+    _private: (),
+}
+impl DescribeReservedNodeExchangeStatus {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedNodeExchangeStatusInput`](crate::input::DescribeReservedNodeExchangeStatusInput)
+    pub fn builder() -> crate::input::describe_reserved_node_exchange_status_input::Builder {
+        crate::input::describe_reserved_node_exchange_status_input::Builder::default()
+    }
+    /// Creates a new `DescribeReservedNodeExchangeStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedNodeExchangeStatus {
+    type Output = std::result::Result<
+        crate::output::DescribeReservedNodeExchangeStatusOutput,
+        crate::error::DescribeReservedNodeExchangeStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_reserved_node_exchange_status_error(response)
+        } else {
+            crate::operation_deser::parse_describe_reserved_node_exchange_status_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeReservedNodeOfferings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2863,6 +2897,47 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClusterCredentials {
             crate::operation_deser::parse_get_cluster_credentials_error(response)
         } else {
             crate::operation_deser::parse_get_cluster_credentials_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetReservedNodeExchangeConfigurationOptions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_reserved_node_exchange_configuration_options`](crate::client::Client::get_reserved_node_exchange_configuration_options).
+///
+/// See [`crate::client::fluent_builders::GetReservedNodeExchangeConfigurationOptions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetReservedNodeExchangeConfigurationOptions {
+    _private: (),
+}
+impl GetReservedNodeExchangeConfigurationOptions {
+    /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput)
+    pub fn builder() -> crate::input::get_reserved_node_exchange_configuration_options_input::Builder
+    {
+        crate::input::get_reserved_node_exchange_configuration_options_input::Builder::default()
+    }
+    /// Creates a new `GetReservedNodeExchangeConfigurationOptions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for GetReservedNodeExchangeConfigurationOptions
+{
+    type Output = std::result::Result<
+        crate::output::GetReservedNodeExchangeConfigurationOptionsOutput,
+        crate::error::GetReservedNodeExchangeConfigurationOptionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_reserved_node_exchange_configuration_options_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_reserved_node_exchange_configuration_options_response(
+                response,
+            )
         }
     }
 }

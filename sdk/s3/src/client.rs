@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_s3::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -834,7 +834,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AbortMultipartUpload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -973,6 +973,10 @@ pub mod fluent_builders {
     /// to determine whether the request succeeded.</p>
     /// <p>Note that if <code>CompleteMultipartUpload</code> fails, applications should be prepared
     /// to retry the failed requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon S3 Error Best Practices</a>.</p>
+    /// <important>
+    /// <p>You cannot use <code>Content-Type: application/x-www-form-urlencoded</code> with Complete
+    /// Multipart Upload requests. Also, if you do not provide a <code>Content-Type</code> header, <code>CompleteMultipartUpload</code> returns a 200 OK response.</p>
+    /// </important>
     /// <p>For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading Objects Using Multipart
     /// Upload</a>.</p>
     /// <p>For information about permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart Upload and
@@ -1069,7 +1073,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CompleteMultipartUpload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1336,7 +1340,17 @@ pub mod fluent_builders {
     /// defined by Amazon S3. These permissions are then added to the ACL on the object. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing ACLs Using the REST
     /// API</a>. </p>
-    ///
+    /// <p>If the bucket that you're copying objects to uses the bucket owner enforced setting for
+    /// S3 Object Ownership, ACLs are disabled and no longer affect permissions. Buckets that
+    /// use this setting only accept PUT requests that don't specify an ACL or PUT requests that
+    /// specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned
+    /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html"> Controlling ownership of
+    /// objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <note>
+    /// <p>If your bucket uses the bucket owner enforced setting for Object Ownership,
+    /// all objects written to the bucket by any account will be owned by the bucket owner.</p>
+    /// </note>
     /// <p>
     /// <b>Storage Class Options</b>
     /// </p>
@@ -1377,7 +1391,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CopyObject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2105,9 +2119,20 @@ pub mod fluent_builders {
     /// bucket in a Region other than US East (N. Virginia), your application must be able to
     /// handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual hosting of buckets</a>.</p>
     /// </note>
-    /// <p>When creating a bucket using this operation, you can optionally specify the accounts or
-    /// groups that should be granted specific permissions on the bucket. There are two ways to
-    /// grant the appropriate permissions using the request headers.</p>
+    /// <p>
+    /// <b>Access control lists (ACLs)</b>
+    /// </p>
+    /// <p>When creating a bucket using this operation, you can optionally configure the bucket ACL to specify the accounts or
+    /// groups that should be granted specific permissions on the bucket.</p>
+    /// <important>
+    /// <p>If your CreateBucket request includes the <code>BucketOwnerEnforced</code> value for
+    /// the <code>x-amz-object-ownership</code> header, your request can either not specify
+    /// an ACL or specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
+    /// canned ACL or an equivalent ACL expressed in the XML format. For
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling object
+    /// ownership</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </important>
+    /// <p>There are two ways to grant the appropriate permissions using the request headers.</p>
     /// <ul>
     /// <li>
     /// <p>Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3
@@ -2120,7 +2145,7 @@ pub mod fluent_builders {
     /// <code>x-amz-grant-write</code>, <code>x-amz-grant-read-acp</code>,
     /// <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
     /// headers. These headers map to the set of permissions Amazon S3 supports in an ACL. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access control list
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html">Access control list
     /// (ACL) overview</a>.</p>
     /// <p>You specify each grantee as a type=value pair, where the type is one of the
     /// following:</p>
@@ -2184,13 +2209,30 @@ pub mod fluent_builders {
     /// <p>
     /// <b>Permissions</b>
     /// </p>
-    /// <p>If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is public-read, public-read-write,
+    /// <p>In addition to <code>s3:CreateBucket</code>, the following permissions are required when your CreateBucket includes specific headers:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>ACLs</b> - If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is public-read, public-read-write,
     /// authenticated-read, or if you specify access permissions explicitly through any other ACL, both
     /// <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code> permissions are needed. If the ACL the
-    /// <code>CreateBucket</code> request is private, only <code>s3:CreateBucket</code> permission is needed. </p>
-    /// <p>If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code> request,
-    /// <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code> permissions are required.</p>
-    ///
+    /// <code>CreateBucket</code> request is private or doesn't specify any ACLs, only <code>s3:CreateBucket</code> permission is needed. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Object Lock</b> - If
+    /// <code>ObjectLockEnabledForBucket</code> is set to true in your
+    /// <code>CreateBucket</code> request,
+    /// <code>s3:PutBucketObjectLockConfiguration</code> and
+    /// <code>s3:PutBucketVersioning</code> permissions are required.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>S3 Object Ownership</b> - If your CreateBucket
+    /// request includes the the <code>x-amz-object-ownership</code> header,
+    /// <code>s3:PutBucketOwnershipControls</code> permission is required.</p>
+    /// </li>
+    /// </ul>
     /// <p>The following operations are related to <code>CreateBucket</code>:</p>
     /// <ul>
     /// <li>
@@ -2207,7 +2249,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBucket<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2373,6 +2415,39 @@ pub mod fluent_builders {
             input: std::option::Option<bool>,
         ) -> Self {
             self.inner = self.inner.set_object_lock_enabled_for_bucket(input);
+            self
+        }
+        /// <p>The container element for object ownership for a bucket's ownership controls.</p>
+        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
+        /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
+        /// ACL.</p>
+        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
+        /// the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
+        /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
+        /// accepts PUT requests that don't specify an ACL or bucket owner full control
+        /// ACLs, such as the <code>bucket-owner-full-control</code> canned
+        /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+        pub fn object_ownership(mut self, inp: crate::model::ObjectOwnership) -> Self {
+            self.inner = self.inner.object_ownership(inp);
+            self
+        }
+        /// <p>The container element for object ownership for a bucket's ownership controls.</p>
+        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
+        /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
+        /// ACL.</p>
+        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
+        /// the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
+        /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
+        /// accepts PUT requests that don't specify an ACL or bucket owner full control
+        /// ACLs, such as the <code>bucket-owner-full-control</code> canned
+        /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+        pub fn set_object_ownership(
+            mut self,
+            input: std::option::Option<crate::model::ObjectOwnership>,
+        ) -> Self {
+            self.inner = self.inner.set_object_ownership(input);
             self
         }
     }
@@ -2639,7 +2714,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateMultipartUpload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3158,7 +3233,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucket<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3270,7 +3345,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketAnalyticsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3386,7 +3461,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketCors<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3492,7 +3567,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketEncryption<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3574,8 +3649,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBucketIntelligentTieringConfiguration`.
     ///
     /// <p>Deletes the S3 Intelligent-Tiering configuration from the specified bucket.</p>
-    /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in two low latency and high throughput access tiers. For data that can be accessed asynchronously, you can choose to activate automatic archiving capabilities within the S3 Intelligent-Tiering storage class.</p>
-    /// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
+    /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in three low latency and high throughput access tiers. To get the lowest storage cost on data that can be accessed in minutes to hours, you can choose to activate additional archiving capabilities.</p>
+    /// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not monitored and not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
     /// <p>Operations related to
     /// <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p>
@@ -3599,7 +3674,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketIntelligentTieringConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3706,7 +3781,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketInventoryConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3826,7 +3901,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketLifecycle<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3944,7 +4019,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketMetricsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4055,7 +4130,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketOwnershipControls<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4170,7 +4245,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4278,7 +4353,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketReplication<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4378,7 +4453,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketTagging<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4487,7 +4562,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBucketWebsite<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4600,7 +4675,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteObject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4810,7 +4885,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteObjects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4978,7 +5053,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteObjectTagging<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5113,7 +5188,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeletePublicAccessBlock<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5224,7 +5299,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketAccelerateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5308,6 +5383,13 @@ pub mod fluent_builders {
     /// return the ACL of the bucket, you must have <code>READ_ACP</code> access to the bucket. If
     /// <code>READ_ACP</code> permission is granted to the anonymous user, you can return the
     /// ACL of the bucket without using an authorization header.</p>
+    /// <note>
+    /// <p>If your bucket uses the bucket owner enforced setting for S3 Object Ownership,
+    /// requests to read ACLs are still supported and return the <code>bucket-owner-full-control</code>
+    /// ACL with the owner being the account that created the bucket. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
+    /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     ///
     /// <p class="title">
     /// <b>Related Resources</b>
@@ -5322,7 +5404,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketAcl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5434,7 +5516,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketAnalyticsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5547,7 +5629,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketCors<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5651,7 +5733,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketEncryption<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5733,8 +5815,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBucketIntelligentTieringConfiguration`.
     ///
     /// <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
-    /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in two low latency and high throughput access tiers. For data that can be accessed asynchronously, you can choose to activate automatic archiving capabilities within the S3 Intelligent-Tiering storage class.</p>
-    /// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
+    /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in three low latency and high throughput access tiers. To get the lowest storage cost on data that can be accessed in minutes to hours, you can choose to activate additional archiving capabilities.</p>
+    /// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not monitored and not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
     /// <p>Operations related to
     /// <code>GetBucketIntelligentTieringConfiguration</code> include: </p>
@@ -5758,7 +5840,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketIntelligentTieringConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5869,7 +5951,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketInventoryConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6017,7 +6099,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketLifecycleConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6120,7 +6202,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketLocation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6218,7 +6300,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketLogging<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6337,7 +6419,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketMetricsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6450,7 +6532,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6533,9 +6615,9 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you
     /// must have the <code>s3:GetBucketOwnershipControls</code> permission. For more information
-    /// about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
-    /// Permissions in a Policy</a>. </p>
-    /// <p>For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using Object Ownership</a>. </p>
+    /// about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html">Specifying
+    /// permissions in a policy</a>. </p>
+    /// <p>For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Using Object Ownership</a>. </p>
     /// <p>The following operations are related to <code>GetBucketOwnershipControls</code>:</p>
     /// <ul>
     /// <li>
@@ -6552,7 +6634,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketOwnershipControls<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6663,7 +6745,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6776,7 +6858,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketPolicyStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6893,7 +6975,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketReplication<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6986,7 +7068,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketRequestPayment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7100,7 +7182,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketTagging<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7207,7 +7289,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketVersioning<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7310,7 +7392,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBucketWebsite<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7473,7 +7555,10 @@ pub mod fluent_builders {
     /// <note>
     /// <ul>
     /// <li>
-    /// <p>You need the <code>s3:GetObjectVersion</code> permission to access a specific version of an object.
+    /// <p>
+    /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code> permission to
+    /// access a specific version of an object. If you request a specific version, you do not need to have
+    /// the <code>s3:GetObject</code> permission.
     /// </p>
     /// </li>
     /// <li>
@@ -7573,7 +7658,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetObject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7946,7 +8031,13 @@ pub mod fluent_builders {
     /// </p>
     /// <p>By default, GET returns ACL information about the current version of an object. To
     /// return ACL information about a different version, use the versionId subresource.</p>
-    ///
+    /// <note>
+    /// <p>If your bucket uses the bucket owner enforced setting for S3 Object Ownership,
+    /// requests to read ACLs are still supported and return the <code>bucket-owner-full-control</code>
+    /// ACL with the owner being the account that created the bucket. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
+    /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </note>
     /// <p>The following operations are related to <code>GetObjectAcl</code>:</p>
     /// <ul>
     /// <li>
@@ -7968,7 +8059,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetObjectAcl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8093,7 +8184,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetObjectLegalHold<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8220,7 +8311,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetObjectLockConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8306,7 +8397,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetObjectRetention<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8457,7 +8548,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetObjectTagging<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8599,7 +8690,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetObjectTorrent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8750,7 +8841,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPublicAccessBlock<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8850,7 +8941,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct HeadBucket<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9048,7 +9139,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct HeadObject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9355,7 +9446,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBucketAnalyticsConfigurations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9450,8 +9541,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBucketIntelligentTieringConfigurations`.
     ///
     /// <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>
-    /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in two low latency and high throughput access tiers. For data that can be accessed asynchronously, you can choose to activate automatic archiving capabilities within the S3 Intelligent-Tiering storage class.</p>
-    /// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
+    /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in three low latency and high throughput access tiers. To get the lowest storage cost on data that can be accessed in minutes to hours, you can choose to activate additional archiving capabilities.</p>
+    /// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not monitored and not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
     /// <p>Operations related to
     /// <code>ListBucketIntelligentTieringConfigurations</code> include: </p>
@@ -9475,7 +9566,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBucketIntelligentTieringConfigurations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9600,7 +9691,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBucketInventoryConfigurations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9740,7 +9831,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBucketMetricsConfigurations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9842,7 +9933,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBuckets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9952,7 +10043,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListMultipartUploads<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10192,7 +10283,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListObjects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10402,7 +10493,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListObjectsV2<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10630,7 +10721,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListObjectVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10855,7 +10946,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListParts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11051,7 +11142,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketAccelerateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11170,7 +11261,13 @@ pub mod fluent_builders {
     /// that updates a bucket ACL using the request body, then you can continue to use that
     /// approach.</p>
     ///
-    ///
+    /// <important>
+    /// <p>If your bucket uses the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and no longer affect permissions.
+    /// You must use policies to grant access to your bucket and the objects in it. Requests to set ACLs or update ACLs fail and
+    /// return the <code>AccessControlListNotSupported</code> error code. Requests to read ACLs are still supported.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling object ownership</a>
+    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// </important>
     /// <p>
     /// <b>Access Permissions</b>
     /// </p>
@@ -11339,7 +11436,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketAcl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11646,7 +11743,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketAnalyticsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11811,7 +11908,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketCors<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11963,7 +12060,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketEncryption<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12078,8 +12175,8 @@ pub mod fluent_builders {
     ///
     /// <p>Puts a S3 Intelligent-Tiering configuration to the specified bucket.
     /// You can have up to 1,000 S3 Intelligent-Tiering configurations per bucket.</p>
-    /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in two low latency and high throughput access tiers. For data that can be accessed asynchronously, you can choose to activate automatic archiving capabilities within the S3 Intelligent-Tiering storage class.</p>
-    /// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
+    /// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in three low latency and high throughput access tiers. To get the lowest storage cost on data that can be accessed in minutes to hours, you can choose to activate additional archiving capabilities.</p>
+    /// <p>The S3 Intelligent-Tiering storage class is  the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not monitored and not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
     /// <p>Operations related to
     /// <code>PutBucketIntelligentTieringConfiguration</code> include: </p>
@@ -12162,7 +12259,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketIntelligentTieringConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12360,7 +12457,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketInventoryConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12562,7 +12659,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketLifecycleConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12661,10 +12758,15 @@ pub mod fluent_builders {
     /// modify the logging parameters. All logs are saved to buckets in the same Amazon Web Services Region as the
     /// source bucket. To set the logging status of a bucket, you must be the bucket owner.</p>
     ///
-    /// <p>The bucket owner is automatically granted FULL_CONTROL to all logs. You use the
-    /// <code>Grantee</code> request element to grant access to other people. The
+    /// <p>The bucket owner is automatically granted FULL_CONTROL to all logs. You use the <code>Grantee</code> request element to grant access to other people. The
     /// <code>Permissions</code> request element specifies the kind of access the grantee has to
     /// the logs.</p>
+    /// <important>
+    /// <p>If the target bucket for log delivery uses the bucket owner enforced
+    /// setting for S3 Object Ownership, you can't use the <code>Grantee</code> request element
+    /// to grant access to others. Permissions can only be granted using policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
+    /// <i>Amazon S3 User Guide</i>.</p>
+    /// </important>
     ///
     /// <p>
     /// <b>Grantee Values</b>
@@ -12709,7 +12811,7 @@ pub mod fluent_builders {
     /// /></code>
     /// </p>
     ///
-    /// <p>For more information about server access logging, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html">Server Access Logging</a>. </p>
+    /// <p>For more information about server access logging, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html">Server Access Logging</a> in the <i>Amazon S3 User Guide</i>. </p>
     ///
     /// <p>For more information about creating a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>. For more
     /// information about returning the logging status of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>.</p>
@@ -12740,7 +12842,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketLogging<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12898,7 +13000,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketMetricsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13065,7 +13167,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13161,13 +13263,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
+        /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
+        pub fn skip_destination_validation(mut self, inp: bool) -> Self {
+            self.inner = self.inner.skip_destination_validation(inp);
+            self
+        }
+        /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
+        pub fn set_skip_destination_validation(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_skip_destination_validation(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutBucketOwnershipControls`.
     ///
     /// <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket. To use this
     /// operation, you must have the <code>s3:PutBucketOwnershipControls</code> permission. For
-    /// more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a Policy</a>. </p>
-    /// <p>For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using Object Ownership</a>. </p>
+    /// more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-with-s3-actions.html">Specifying permissions in a policy</a>. </p>
+    /// <p>For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/about-object-ownership.html">Using object ownership</a>. </p>
     /// <p>The following operations are related to <code>PutBucketOwnershipControls</code>:</p>
     /// <ul>
     /// <li>
@@ -13184,7 +13296,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketOwnershipControls<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13272,13 +13384,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expected_bucket_owner(input);
             self
         }
-        /// <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter) that you want
+        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want
         /// to apply to this Amazon S3 bucket.</p>
         pub fn ownership_controls(mut self, inp: crate::model::OwnershipControls) -> Self {
             self.inner = self.inner.ownership_controls(inp);
             self
         }
-        /// <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter) that you want
+        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want
         /// to apply to this Amazon S3 bucket.</p>
         pub fn set_ownership_controls(
             mut self,
@@ -13323,7 +13435,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13512,7 +13624,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketReplication<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13657,7 +13769,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketRequestPayment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13852,7 +13964,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketTagging<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14009,7 +14121,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketVersioning<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14263,7 +14375,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBucketWebsite<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14406,7 +14518,6 @@ pub mod fluent_builders {
     /// </li>
     /// </ul>
     /// </note>
-    ///
     /// <p>
     /// <b>Server-side Encryption</b>
     /// </p>
@@ -14428,7 +14539,20 @@ pub mod fluent_builders {
     /// permissions are then added to the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List
     /// (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing ACLs Using the REST
     /// API</a>. </p>
-    ///
+    /// <p>If the bucket that you're uploading objects to uses the bucket owner enforced setting
+    /// for S3 Object Ownership, ACLs are disabled and no longer affect permissions. Buckets that
+    /// use this setting only accept PUT requests that don't specify an ACL or PUT requests that
+    /// specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned
+    /// ACL or an equivalent form of this ACL expressed in the XML format. PUT requests that contain other
+    /// ACLs (for example, custom grants to certain Amazon Web Services accounts) fail and return a
+    /// <code>400</code> error with the error code
+    /// <code>AccessControlListNotSupported</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html"> Controlling ownership of
+    /// objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <note>
+    /// <p>If your bucket uses the bucket owner enforced setting for Object Ownership,
+    /// all objects written to the bucket by any account will be owned by the bucket owner.</p>
+    /// </note>
     /// <p>
     /// <b>Storage Class Options</b>
     /// </p>
@@ -14469,7 +14593,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutObject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15098,8 +15222,13 @@ pub mod fluent_builders {
     /// the ACL on an object using either the request body or the headers. For example, if you have
     /// an existing application that updates a bucket ACL using the request body, you can continue
     /// to use that approach. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
-    ///
-    ///
+    /// <important>
+    /// <p>If your bucket uses the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and no longer affect permissions.
+    /// You must use policies to grant access to your bucket and the objects in it. Requests to set ACLs or update ACLs fail and
+    /// return the <code>AccessControlListNotSupported</code> error code. Requests to read ACLs are still supported.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling object ownership</a>
+    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// </important>
     ///
     /// <p>
     /// <b>Access Permissions</b>
@@ -15269,7 +15398,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutObjectAcl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15521,7 +15650,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutObjectLegalHold<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15692,7 +15821,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutObjectLockConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15844,7 +15973,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutObjectRetention<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16112,7 +16241,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutObjectTagging<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16304,7 +16433,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutPublicAccessBlock<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16712,7 +16841,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RestoreObject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16967,7 +17096,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SelectObjectContent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17361,7 +17490,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UploadPart<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17769,7 +17898,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UploadPartCopy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18177,7 +18306,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct WriteGetObjectResponse<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18870,17 +18999,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -18889,7 +19022,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -18905,11 +19038,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

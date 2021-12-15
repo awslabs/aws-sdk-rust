@@ -10,13 +10,19 @@
 //! <p>Amazon Web Services Systems Manager is a collection of capabilities that helps you automate management tasks such as
 //! collecting system inventory, applying operating system (OS) patches, automating the creation of
 //! Amazon Machine Images (AMIs), and configuring operating systems (OSs) and applications at scale.
-//! Systems Manager lets you remotely and securely manage the configuration of your managed instances. A
-//! <i>managed instance</i> is any Amazon Elastic Compute Cloud instance (EC2 instance), or any
-//! on-premises server or virtual machine (VM) in your hybrid environment that has been configured
-//! for Systems Manager.</p>
+//! Systems Manager lets you remotely and securely manage the configuration of your managed nodes. A
+//! <i>managed node</i> is any Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+//! device, or on-premises server or virtual machine (VM) that has been configured for
+//! Systems Manager. </p>
+//! <note>
+//! <p>With support for IoT Greengrass Version 2 devices, the phrase <i>managed
+//! instance</i> has been changed to <i>managed node</i> in most of the Systems Manager
+//! documentation. The Systems Manager console, API
+//! calls, error messages, and SSM documents still use the term instance.</p>
+//! </note>
 //! <p>This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web Services Systems Manager User Guide</a>.</p>
-//! <p>To get started, verify prerequisites and configure managed instances. For more information,
-//! see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up
+//! <p>To get started, verify prerequisites and configure managed nodes. For more information, see
+//! <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up
 //! Amazon Web Services Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 //! <p class="title">
 //! <b>Related resources</b>
@@ -50,7 +56,7 @@
 //! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
 //! error encompassing all possible errors that can be returned by the service.
 //!
-//! The other modules within this crate and not required for normal usage.
+//! The other modules within this crate are not required for normal usage.
 //!
 //! # Examples
 //! Examples can be found [here](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/ssm).
@@ -62,7 +68,6 @@ pub use config::Config;
 
 mod aws_endpoint;
 /// Client and fluent builders for calling the service.
-#[cfg(feature = "client")]
 pub mod client;
 /// Configuration for the service.
 pub mod config;
@@ -75,6 +80,7 @@ pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+pub mod middleware;
 /// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
@@ -97,5 +103,4 @@ pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::app_name::AppName;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
-#[cfg(feature = "client")]
 pub use client::Client;

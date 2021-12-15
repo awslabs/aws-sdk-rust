@@ -271,6 +271,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEnvironmentTemplat
     }
 }
 
+/// Operation shape for `CreateRepository`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_repository`](crate::client::Client::create_repository).
+///
+/// See [`crate::client::fluent_builders::CreateRepository`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateRepository {
+    _private: (),
+}
+impl CreateRepository {
+    /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::input::CreateRepositoryInput)
+    pub fn builder() -> crate::input::create_repository_input::Builder {
+        crate::input::create_repository_input::Builder::default()
+    }
+    /// Creates a new `CreateRepository` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
+    type Output = std::result::Result<
+        crate::output::CreateRepositoryOutput,
+        crate::error::CreateRepositoryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_repository_error(response)
+        } else {
+            crate::operation_deser::parse_create_repository_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -367,6 +401,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServiceTemplateVer
             crate::operation_deser::parse_create_service_template_version_error(response)
         } else {
             crate::operation_deser::parse_create_service_template_version_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateTemplateSyncConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_template_sync_config`](crate::client::Client::create_template_sync_config).
+///
+/// See [`crate::client::fluent_builders::CreateTemplateSyncConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateTemplateSyncConfig {
+    _private: (),
+}
+impl CreateTemplateSyncConfig {
+    /// Creates a new builder-style object to manufacture [`CreateTemplateSyncConfigInput`](crate::input::CreateTemplateSyncConfigInput)
+    pub fn builder() -> crate::input::create_template_sync_config_input::Builder {
+        crate::input::create_template_sync_config_input::Builder::default()
+    }
+    /// Creates a new `CreateTemplateSyncConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateTemplateSyncConfig {
+    type Output = std::result::Result<
+        crate::output::CreateTemplateSyncConfigOutput,
+        crate::error::CreateTemplateSyncConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_template_sync_config_error(response)
+        } else {
+            crate::operation_deser::parse_create_template_sync_config_response(response)
         }
     }
 }
@@ -507,6 +575,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironmentTemplat
     }
 }
 
+/// Operation shape for `DeleteRepository`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_repository`](crate::client::Client::delete_repository).
+///
+/// See [`crate::client::fluent_builders::DeleteRepository`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteRepository {
+    _private: (),
+}
+impl DeleteRepository {
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput)
+    pub fn builder() -> crate::input::delete_repository_input::Builder {
+        crate::input::delete_repository_input::Builder::default()
+    }
+    /// Creates a new `DeleteRepository` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
+    type Output = std::result::Result<
+        crate::output::DeleteRepositoryOutput,
+        crate::error::DeleteRepositoryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_repository_error(response)
+        } else {
+            crate::operation_deser::parse_delete_repository_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -603,6 +705,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteServiceTemplateVer
             crate::operation_deser::parse_delete_service_template_version_error(response)
         } else {
             crate::operation_deser::parse_delete_service_template_version_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteTemplateSyncConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_template_sync_config`](crate::client::Client::delete_template_sync_config).
+///
+/// See [`crate::client::fluent_builders::DeleteTemplateSyncConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteTemplateSyncConfig {
+    _private: (),
+}
+impl DeleteTemplateSyncConfig {
+    /// Creates a new builder-style object to manufacture [`DeleteTemplateSyncConfigInput`](crate::input::DeleteTemplateSyncConfigInput)
+    pub fn builder() -> crate::input::delete_template_sync_config_input::Builder {
+        crate::input::delete_template_sync_config_input::Builder::default()
+    }
+    /// Creates a new `DeleteTemplateSyncConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteTemplateSyncConfig {
+    type Output = std::result::Result<
+        crate::output::DeleteTemplateSyncConfigOutput,
+        crate::error::DeleteTemplateSyncConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_template_sync_config_error(response)
+        } else {
+            crate::operation_deser::parse_delete_template_sync_config_response(response)
         }
     }
 }
@@ -775,6 +911,72 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnvironmentTemplateVe
     }
 }
 
+/// Operation shape for `GetRepository`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_repository`](crate::client::Client::get_repository).
+///
+/// See [`crate::client::fluent_builders::GetRepository`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetRepository {
+    _private: (),
+}
+impl GetRepository {
+    /// Creates a new builder-style object to manufacture [`GetRepositoryInput`](crate::input::GetRepositoryInput)
+    pub fn builder() -> crate::input::get_repository_input::Builder {
+        crate::input::get_repository_input::Builder::default()
+    }
+    /// Creates a new `GetRepository` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetRepository {
+    type Output =
+        std::result::Result<crate::output::GetRepositoryOutput, crate::error::GetRepositoryError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_repository_error(response)
+        } else {
+            crate::operation_deser::parse_get_repository_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetRepositorySyncStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_repository_sync_status`](crate::client::Client::get_repository_sync_status).
+///
+/// See [`crate::client::fluent_builders::GetRepositorySyncStatus`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetRepositorySyncStatus {
+    _private: (),
+}
+impl GetRepositorySyncStatus {
+    /// Creates a new builder-style object to manufacture [`GetRepositorySyncStatusInput`](crate::input::GetRepositorySyncStatusInput)
+    pub fn builder() -> crate::input::get_repository_sync_status_input::Builder {
+        crate::input::get_repository_sync_status_input::Builder::default()
+    }
+    /// Creates a new `GetRepositorySyncStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetRepositorySyncStatus {
+    type Output = std::result::Result<
+        crate::output::GetRepositorySyncStatusOutput,
+        crate::error::GetRepositorySyncStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_repository_sync_status_error(response)
+        } else {
+            crate::operation_deser::parse_get_repository_sync_status_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -909,6 +1111,74 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceTemplateVersio
     }
 }
 
+/// Operation shape for `GetTemplateSyncConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_template_sync_config`](crate::client::Client::get_template_sync_config).
+///
+/// See [`crate::client::fluent_builders::GetTemplateSyncConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTemplateSyncConfig {
+    _private: (),
+}
+impl GetTemplateSyncConfig {
+    /// Creates a new builder-style object to manufacture [`GetTemplateSyncConfigInput`](crate::input::GetTemplateSyncConfigInput)
+    pub fn builder() -> crate::input::get_template_sync_config_input::Builder {
+        crate::input::get_template_sync_config_input::Builder::default()
+    }
+    /// Creates a new `GetTemplateSyncConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTemplateSyncConfig {
+    type Output = std::result::Result<
+        crate::output::GetTemplateSyncConfigOutput,
+        crate::error::GetTemplateSyncConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_template_sync_config_error(response)
+        } else {
+            crate::operation_deser::parse_get_template_sync_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetTemplateSyncStatus`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_template_sync_status`](crate::client::Client::get_template_sync_status).
+///
+/// See [`crate::client::fluent_builders::GetTemplateSyncStatus`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTemplateSyncStatus {
+    _private: (),
+}
+impl GetTemplateSyncStatus {
+    /// Creates a new builder-style object to manufacture [`GetTemplateSyncStatusInput`](crate::input::GetTemplateSyncStatusInput)
+    pub fn builder() -> crate::input::get_template_sync_status_input::Builder {
+        crate::input::get_template_sync_status_input::Builder::default()
+    }
+    /// Creates a new `GetTemplateSyncStatus` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTemplateSyncStatus {
+    type Output = std::result::Result<
+        crate::output::GetTemplateSyncStatusOutput,
+        crate::error::GetTemplateSyncStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_template_sync_status_error(response)
+        } else {
+            crate::operation_deser::parse_get_template_sync_status_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListEnvironmentAccountConnections`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -939,6 +1209,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironmentAccountCo
             crate::operation_deser::parse_list_environment_account_connections_error(response)
         } else {
             crate::operation_deser::parse_list_environment_account_connections_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListEnvironmentOutputs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_environment_outputs`](crate::client::Client::list_environment_outputs).
+///
+/// See [`crate::client::fluent_builders::ListEnvironmentOutputs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEnvironmentOutputs {
+    _private: (),
+}
+impl ListEnvironmentOutputs {
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentOutputsInput`](crate::input::ListEnvironmentOutputsInput)
+    pub fn builder() -> crate::input::list_environment_outputs_input::Builder {
+        crate::input::list_environment_outputs_input::Builder::default()
+    }
+    /// Creates a new `ListEnvironmentOutputs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEnvironmentOutputs {
+    type Output = std::result::Result<
+        crate::output::ListEnvironmentOutputsOutput,
+        crate::error::ListEnvironmentOutputsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_environment_outputs_error(response)
+        } else {
+            crate::operation_deser::parse_list_environment_outputs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListEnvironmentProvisionedResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_environment_provisioned_resources`](crate::client::Client::list_environment_provisioned_resources).
+///
+/// See [`crate::client::fluent_builders::ListEnvironmentProvisionedResources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEnvironmentProvisionedResources {
+    _private: (),
+}
+impl ListEnvironmentProvisionedResources {
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentProvisionedResourcesInput`](crate::input::ListEnvironmentProvisionedResourcesInput)
+    pub fn builder() -> crate::input::list_environment_provisioned_resources_input::Builder {
+        crate::input::list_environment_provisioned_resources_input::Builder::default()
+    }
+    /// Creates a new `ListEnvironmentProvisionedResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEnvironmentProvisionedResources {
+    type Output = std::result::Result<
+        crate::output::ListEnvironmentProvisionedResourcesOutput,
+        crate::error::ListEnvironmentProvisionedResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_environment_provisioned_resources_error(response)
+        } else {
+            crate::operation_deser::parse_list_environment_provisioned_resources_response(response)
         }
     }
 }
@@ -1045,6 +1383,146 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironmentTemplateV
     }
 }
 
+/// Operation shape for `ListRepositories`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_repositories`](crate::client::Client::list_repositories).
+///
+/// See [`crate::client::fluent_builders::ListRepositories`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListRepositories {
+    _private: (),
+}
+impl ListRepositories {
+    /// Creates a new builder-style object to manufacture [`ListRepositoriesInput`](crate::input::ListRepositoriesInput)
+    pub fn builder() -> crate::input::list_repositories_input::Builder {
+        crate::input::list_repositories_input::Builder::default()
+    }
+    /// Creates a new `ListRepositories` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListRepositories {
+    type Output = std::result::Result<
+        crate::output::ListRepositoriesOutput,
+        crate::error::ListRepositoriesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_repositories_error(response)
+        } else {
+            crate::operation_deser::parse_list_repositories_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListRepositorySyncDefinitions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_repository_sync_definitions`](crate::client::Client::list_repository_sync_definitions).
+///
+/// See [`crate::client::fluent_builders::ListRepositorySyncDefinitions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListRepositorySyncDefinitions {
+    _private: (),
+}
+impl ListRepositorySyncDefinitions {
+    /// Creates a new builder-style object to manufacture [`ListRepositorySyncDefinitionsInput`](crate::input::ListRepositorySyncDefinitionsInput)
+    pub fn builder() -> crate::input::list_repository_sync_definitions_input::Builder {
+        crate::input::list_repository_sync_definitions_input::Builder::default()
+    }
+    /// Creates a new `ListRepositorySyncDefinitions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListRepositorySyncDefinitions {
+    type Output = std::result::Result<
+        crate::output::ListRepositorySyncDefinitionsOutput,
+        crate::error::ListRepositorySyncDefinitionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_repository_sync_definitions_error(response)
+        } else {
+            crate::operation_deser::parse_list_repository_sync_definitions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListServiceInstanceOutputs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_service_instance_outputs`](crate::client::Client::list_service_instance_outputs).
+///
+/// See [`crate::client::fluent_builders::ListServiceInstanceOutputs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListServiceInstanceOutputs {
+    _private: (),
+}
+impl ListServiceInstanceOutputs {
+    /// Creates a new builder-style object to manufacture [`ListServiceInstanceOutputsInput`](crate::input::ListServiceInstanceOutputsInput)
+    pub fn builder() -> crate::input::list_service_instance_outputs_input::Builder {
+        crate::input::list_service_instance_outputs_input::Builder::default()
+    }
+    /// Creates a new `ListServiceInstanceOutputs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListServiceInstanceOutputs {
+    type Output = std::result::Result<
+        crate::output::ListServiceInstanceOutputsOutput,
+        crate::error::ListServiceInstanceOutputsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_service_instance_outputs_error(response)
+        } else {
+            crate::operation_deser::parse_list_service_instance_outputs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListServiceInstanceProvisionedResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_service_instance_provisioned_resources`](crate::client::Client::list_service_instance_provisioned_resources).
+///
+/// See [`crate::client::fluent_builders::ListServiceInstanceProvisionedResources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListServiceInstanceProvisionedResources {
+    _private: (),
+}
+impl ListServiceInstanceProvisionedResources {
+    /// Creates a new builder-style object to manufacture [`ListServiceInstanceProvisionedResourcesInput`](crate::input::ListServiceInstanceProvisionedResourcesInput)
+    pub fn builder() -> crate::input::list_service_instance_provisioned_resources_input::Builder {
+        crate::input::list_service_instance_provisioned_resources_input::Builder::default()
+    }
+    /// Creates a new `ListServiceInstanceProvisionedResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListServiceInstanceProvisionedResources {
+    type Output = std::result::Result<
+        crate::output::ListServiceInstanceProvisionedResourcesOutput,
+        crate::error::ListServiceInstanceProvisionedResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_service_instance_provisioned_resources_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_list_service_instance_provisioned_resources_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `ListServiceInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1075,6 +1553,78 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceInstances {
             crate::operation_deser::parse_list_service_instances_error(response)
         } else {
             crate::operation_deser::parse_list_service_instances_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListServicePipelineOutputs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_service_pipeline_outputs`](crate::client::Client::list_service_pipeline_outputs).
+///
+/// See [`crate::client::fluent_builders::ListServicePipelineOutputs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListServicePipelineOutputs {
+    _private: (),
+}
+impl ListServicePipelineOutputs {
+    /// Creates a new builder-style object to manufacture [`ListServicePipelineOutputsInput`](crate::input::ListServicePipelineOutputsInput)
+    pub fn builder() -> crate::input::list_service_pipeline_outputs_input::Builder {
+        crate::input::list_service_pipeline_outputs_input::Builder::default()
+    }
+    /// Creates a new `ListServicePipelineOutputs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListServicePipelineOutputs {
+    type Output = std::result::Result<
+        crate::output::ListServicePipelineOutputsOutput,
+        crate::error::ListServicePipelineOutputsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_service_pipeline_outputs_error(response)
+        } else {
+            crate::operation_deser::parse_list_service_pipeline_outputs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListServicePipelineProvisionedResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_service_pipeline_provisioned_resources`](crate::client::Client::list_service_pipeline_provisioned_resources).
+///
+/// See [`crate::client::fluent_builders::ListServicePipelineProvisionedResources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListServicePipelineProvisionedResources {
+    _private: (),
+}
+impl ListServicePipelineProvisionedResources {
+    /// Creates a new builder-style object to manufacture [`ListServicePipelineProvisionedResourcesInput`](crate::input::ListServicePipelineProvisionedResourcesInput)
+    pub fn builder() -> crate::input::list_service_pipeline_provisioned_resources_input::Builder {
+        crate::input::list_service_pipeline_provisioned_resources_input::Builder::default()
+    }
+    /// Creates a new `ListServicePipelineProvisionedResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListServicePipelineProvisionedResources {
+    type Output = std::result::Result<
+        crate::output::ListServicePipelineProvisionedResourcesOutput,
+        crate::error::ListServicePipelineProvisionedResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_service_pipeline_provisioned_resources_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_list_service_pipeline_provisioned_resources_response(
+                response,
+            )
         }
     }
 }
@@ -1209,6 +1759,42 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `NotifyResourceDeploymentStatusChange`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`notify_resource_deployment_status_change`](crate::client::Client::notify_resource_deployment_status_change).
+///
+/// See [`crate::client::fluent_builders::NotifyResourceDeploymentStatusChange`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct NotifyResourceDeploymentStatusChange {
+    _private: (),
+}
+impl NotifyResourceDeploymentStatusChange {
+    /// Creates a new builder-style object to manufacture [`NotifyResourceDeploymentStatusChangeInput`](crate::input::NotifyResourceDeploymentStatusChangeInput)
+    pub fn builder() -> crate::input::notify_resource_deployment_status_change_input::Builder {
+        crate::input::notify_resource_deployment_status_change_input::Builder::default()
+    }
+    /// Creates a new `NotifyResourceDeploymentStatusChange` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for NotifyResourceDeploymentStatusChange {
+    type Output = std::result::Result<
+        crate::output::NotifyResourceDeploymentStatusChangeOutput,
+        crate::error::NotifyResourceDeploymentStatusChangeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_notify_resource_deployment_status_change_error(response)
+        } else {
+            crate::operation_deser::parse_notify_resource_deployment_status_change_response(
+                response,
+            )
         }
     }
 }
@@ -1645,6 +2231,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceTemplateVer
             crate::operation_deser::parse_update_service_template_version_error(response)
         } else {
             crate::operation_deser::parse_update_service_template_version_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateTemplateSyncConfig`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_template_sync_config`](crate::client::Client::update_template_sync_config).
+///
+/// See [`crate::client::fluent_builders::UpdateTemplateSyncConfig`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateTemplateSyncConfig {
+    _private: (),
+}
+impl UpdateTemplateSyncConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateTemplateSyncConfigInput`](crate::input::UpdateTemplateSyncConfigInput)
+    pub fn builder() -> crate::input::update_template_sync_config_input::Builder {
+        crate::input::update_template_sync_config_input::Builder::default()
+    }
+    /// Creates a new `UpdateTemplateSyncConfig` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateTemplateSyncConfig {
+    type Output = std::result::Result<
+        crate::output::UpdateTemplateSyncConfigOutput,
+        crate::error::UpdateTemplateSyncConfigError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_template_sync_config_error(response)
+        } else {
+            crate::operation_deser::parse_update_template_sync_config_response(response)
         }
     }
 }

@@ -4,16 +4,18 @@
  */
 
 use aws_http::user_agent::AwsUserAgent;
-use aws_hyper::Client;
 use aws_sdk_qldbsession as qldbsession;
 use aws_smithy_client::test_connection::TestConnection;
+use aws_smithy_client::Client as CoreClient;
 use aws_smithy_http::body::SdkBody;
 use http::Uri;
+use qldbsession::middleware::DefaultMiddleware;
 use qldbsession::model::StartSessionRequest;
 use qldbsession::operation::SendCommand;
 use qldbsession::Credentials;
 use qldbsession::{Config, Region};
 use std::time::{Duration, UNIX_EPOCH};
+pub type Client<C> = CoreClient<C, DefaultMiddleware>;
 
 // TODO: having the full HTTP requests right in the code is a bit gross, consider something
 // like https://github.com/davidbarsky/sigv4/blob/master/aws-sigv4/src/lib.rs#L283-L315 to store

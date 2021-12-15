@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_kinesis::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -278,6 +278,13 @@ where
     pub fn update_shard_count(&self) -> fluent_builders::UpdateShardCount<C, M, R> {
         fluent_builders::UpdateShardCount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateStreamMode` operation.
+    ///
+    /// See [`UpdateStreamMode`](crate::client::fluent_builders::UpdateStreamMode) for more information about the
+    /// operation and its arguments.
+    pub fn update_stream_mode(&self) -> fluent_builders::UpdateStreamMode<C, M, R> {
+        fluent_builders::UpdateStreamMode::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     //!
@@ -289,10 +296,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddTagsToStream`.
     ///
-    /// <p>Adds or updates tags for the specified Kinesis data stream. Each time you invoke
-    /// this operation, you can specify up to 10 tags. If you want to add more than 10 tags to
-    /// your stream, you can invoke this operation multiple times. In total, each stream can
-    /// have up to 50 tags.</p>
+    /// <p>Adds or updates tags for the specified Kinesis data stream. You can assign up to 50
+    /// tags to a data stream.</p>
     /// <p>If tags have already been assigned to the stream, <code>AddTagsToStream</code>
     /// overwrites any existing tags that correspond to the specified tag keys.</p>
     /// <p>
@@ -301,7 +306,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AddTagsToStream<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -390,19 +395,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStream`.
     ///
-    /// <p>Creates a Kinesis data stream. A stream captures and transports data records that
-    /// are continuously emitted from different data sources or <i>producers</i>.
+    /// <p>Creates a Kinesis data stream. A stream captures and transports data records that are
+    /// continuously emitted from different data sources or <i>producers</i>.
     /// Scale-out within a stream is explicitly supported by means of shards, which are uniquely
     /// identified groups of data records in a stream.</p>
-    /// <p>You specify and control the number of shards that a stream is composed of. Each
-    /// shard can support reads up to five transactions per second, up to a maximum data read
-    /// total of 2 MiB per second. Each shard can support writes up to 1,000 records per second,
-    /// up to a maximum data write total of 1 MiB per second. If the amount of data input
-    /// increases or decreases, you can add or remove shards.</p>
-    /// <p>The stream name identifies the stream. The name is scoped to the AWS account used
-    /// by the application. It is also scoped by AWS Region. That is, two streams in two
-    /// different accounts can have the same name, and two streams in the same account, but in
-    /// two different Regions, can have the same name.</p>
+    /// <p>You specify and control the number of shards that a stream is composed of. Each shard
+    /// can support reads up to five transactions per second, up to a maximum data read total of
+    /// 2 MiB per second. Each shard can support writes up to 1,000 records per second, up to a
+    /// maximum data write total of 1 MiB per second. If the amount of data input increases or
+    /// decreases, you can add or remove shards.</p>
+    /// <p>The stream name identifies the stream. The name is scoped to the Amazon Web Services
+    /// account used by the application. It is also scoped by Amazon Web Services Region. That
+    /// is, two streams in two different accounts can have the same name, and two streams in the
+    /// same account, but in two different Regions, can have the same name.</p>
     /// <p>
     /// <code>CreateStream</code> is an asynchronous operation. Upon receiving a
     /// <code>CreateStream</code> request, Kinesis Data Streams immediately returns and sets
@@ -414,27 +419,27 @@ pub mod fluent_builders {
     /// <ul>
     /// <li>
     ///
-    /// <p>Have more than five streams in the <code>CREATING</code> state at any point
-    /// in time.</p>
+    /// <p>Have more than five streams in the <code>CREATING</code> state at any point in
+    /// time.</p>
     /// </li>
     /// <li>
     ///
     /// <p>Create more shards than are authorized for your account.</p>
     /// </li>
     /// </ul>
-    /// <p>For the default shard limit for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon Kinesis Data Streams
-    /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer
-    /// Guide</i>. To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact AWS
+    /// <p>For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+    /// Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams
+    /// Developer Guide</i>. To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact Amazon Web Services
     /// Support</a>.</p>
-    /// <p>You can use <code>DescribeStream</code> to check the stream status, which is
-    /// returned in <code>StreamStatus</code>.</p>
+    /// <p>You can use <a>DescribeStreamSummary</a> to check the stream status, which
+    /// is returned in <code>StreamStatus</code>.</p>
     /// <p>
     /// <a>CreateStream</a> has a limit of five transactions per second per
     /// account.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateStream<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -487,18 +492,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name to identify the stream. The stream name is scoped to the AWS account used by
-        /// the application that creates the stream. It is also scoped by AWS Region. That is, two
-        /// streams in two different AWS accounts can have the same name. Two streams in the same
-        /// AWS account but in two different Regions can also have the same name.</p>
+        /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services
+        /// account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts
+        /// can have the same name. Two streams in the same Amazon Web Services account but in two
+        /// different Regions can also have the same name.</p>
         pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stream_name(inp);
             self
         }
-        /// <p>A name to identify the stream. The stream name is scoped to the AWS account used by
-        /// the application that creates the stream. It is also scoped by AWS Region. That is, two
-        /// streams in two different AWS accounts can have the same name. Two streams in the same
-        /// AWS account but in two different Regions can also have the same name.</p>
+        /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services
+        /// account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts
+        /// can have the same name. Two streams in the same Amazon Web Services account but in two
+        /// different Regions can also have the same name.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_name(input);
             self
@@ -517,19 +522,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shard_count(input);
             self
         }
+        /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
+        /// you can choose between an <b>on-demand</b> capacity mode and a
+        /// <b>provisioned</b> capacity mode for your data
+        /// streams.</p>
+        pub fn stream_mode_details(mut self, inp: crate::model::StreamModeDetails) -> Self {
+            self.inner = self.inner.stream_mode_details(inp);
+            self
+        }
+        /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
+        /// you can choose between an <b>on-demand</b> capacity mode and a
+        /// <b>provisioned</b> capacity mode for your data
+        /// streams.</p>
+        pub fn set_stream_mode_details(
+            mut self,
+            input: std::option::Option<crate::model::StreamModeDetails>,
+        ) -> Self {
+            self.inner = self.inner.set_stream_mode_details(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DecreaseStreamRetentionPeriod`.
     ///
-    /// <p>Decreases the Kinesis data stream's retention period, which is the length of time
-    /// data records are accessible after they are added to the stream. The minimum value of a
+    /// <p>Decreases the Kinesis data stream's retention period, which is the length of time data
+    /// records are accessible after they are added to the stream. The minimum value of a
     /// stream's retention period is 24 hours.</p>
-    /// <p>This operation may result in lost data. For example, if the stream's retention
-    /// period is 48 hours and is decreased to 24 hours, any data already in the stream that is
-    /// older than 24 hours is inaccessible.</p>
+    /// <p>This operation may result in lost data. For example, if the stream's retention period
+    /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
+    /// than 24 hours is inaccessible.</p>
     #[derive(std::fmt::Debug)]
     pub struct DecreaseStreamRetentionPeriod<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -619,17 +643,18 @@ pub mod fluent_builders {
     /// <b>Note:</b> Kinesis Data Streams might continue to accept
     /// data read and write operations, such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in the
     /// <code>DELETING</code> state until the stream deletion is complete.</p>
-    /// <p>When you delete a stream, any shards in that stream are also deleted, and any tags
-    /// are dissociated from the stream.</p>
-    /// <p>You can use the <a>DescribeStream</a> operation to check the state of
-    /// the stream, which is returned in <code>StreamStatus</code>.</p>
+    /// <p>When you delete a stream, any shards in that stream are also deleted, and any tags are
+    /// dissociated from the stream.</p>
+    /// <p>You can use the <a>DescribeStreamSummary</a> operation to check the state
+    /// of the stream, which is returned in <code>StreamStatus</code>.</p>
+    ///
     /// <p>
     /// <a>DeleteStream</a> has a limit of five transactions per second per
     /// account.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteStream<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -720,7 +745,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterStreamConsumer<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -774,13 +799,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stream_arn(inp);
             self
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
@@ -826,7 +853,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLimits<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -883,7 +910,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStream`.
     ///
     /// <p>Describes the specified Kinesis data stream.</p>
-    ///
+    /// <note>
+    /// <p>This API has been revised. It's highly recommended that you use the <a>DescribeStreamSummary</a> API to get a summarized description of the
+    /// specified Kinesis data stream and the <a>ListShards</a> API to list the
+    /// shards in a specified data stream and obtain information about each shard. </p>
+    /// </note>
     /// <p>The information returned includes the stream name, Amazon Resource Name (ARN),
     /// creation time, enhanced metric configuration, and shard map. The shard map is an array
     /// of shard objects. For each shard object, there is the hash key and sequence number
@@ -902,7 +933,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeStream<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -965,24 +996,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_name(input);
             self
         }
-        /// <p>The maximum number of shards to return in a single call. The default value is 100.
-        /// If you specify a value greater than 100, at most 100 shards are returned.</p>
+        /// <p>The maximum number of shards to return in a single call. The default value is 100. If
+        /// you specify a value greater than 100, at most 100 results are returned.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
         }
-        /// <p>The maximum number of shards to return in a single call. The default value is 100.
-        /// If you specify a value greater than 100, at most 100 shards are returned.</p>
+        /// <p>The maximum number of shards to return in a single call. The default value is 100. If
+        /// you specify a value greater than 100, at most 100 results are returned.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The shard ID of the shard to start with.</p>
+        /// <p>Specify this parameter to indicate that you want to describe the stream starting with
+        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>If you don't specify this parameter, the default behavior for
+        /// <code>DescribeStream</code> is to describe the stream starting with the first shard
+        /// in the stream.</p>
         pub fn exclusive_start_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.exclusive_start_shard_id(inp);
             self
         }
         /// <p>The shard ID of the shard to start with.</p>
+        /// <p>Specify this parameter to indicate that you want to describe the stream starting with
+        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>If you don't specify this parameter, the default behavior for
+        /// <code>DescribeStream</code> is to describe the stream starting with the first shard
+        /// in the stream.</p>
         pub fn set_exclusive_start_shard_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1004,7 +1045,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeStreamConsumer<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1058,13 +1099,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stream_arn(inp);
             self
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
@@ -1097,16 +1140,16 @@ pub mod fluent_builders {
     ///
     /// <p>Provides a summarized description of the specified Kinesis data stream without the
     /// shard list.</p>
-    /// <p>The information returned includes the stream name, Amazon Resource Name (ARN),
-    /// status, record retention period, approximate creation time, monitoring, encryption
-    /// details, and open shard count. </p>
+    /// <p>The information returned includes the stream name, Amazon Resource Name (ARN), status,
+    /// record retention period, approximate creation time, monitoring, encryption details, and
+    /// open shard count. </p>
     /// <p>
-    /// <a>DescribeStreamSummary</a> has a limit of 20 transactions per second
-    /// per account.</p>
+    /// <a>DescribeStreamSummary</a> has a limit of 20 transactions per second per
+    /// account.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeStreamSummary<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1176,7 +1219,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableEnhancedMonitoring<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1229,14 +1272,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Kinesis data stream for which to disable enhanced
-        /// monitoring.</p>
+        /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
         pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stream_name(inp);
             self
         }
-        /// <p>The name of the Kinesis data stream for which to disable enhanced
-        /// monitoring.</p>
+        /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_name(input);
             self
@@ -1246,8 +1287,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
         ///
         /// <p>List of shard-level metrics to disable.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-        /// disables every metric.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables
+        /// every metric.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1298,8 +1339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>List of shard-level metrics to disable.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-        /// disables every metric.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables
+        /// every metric.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1359,7 +1400,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableEnhancedMonitoring<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1427,8 +1468,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
         ///
         /// <p>List of shard-level metrics to enable.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-        /// enables every metric.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables
+        /// every metric.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1479,8 +1520,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>List of shard-level metrics to enable.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-        /// enables every metric.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables
+        /// every metric.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1554,39 +1595,49 @@ pub mod fluent_builders {
     /// You can terminate the loop when the shard is closed, or when the shard iterator reaches
     /// the record with the sequence number or other attribute that marks it as the last record
     /// to process.</p>
-    /// <p>Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB
-    /// per second. You can ensure that your calls don't exceed the maximum supported size or
+    /// <p>Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB per
+    /// second. You can ensure that your calls don't exceed the maximum supported size or
     /// throughput by using the <code>Limit</code> parameter to specify the maximum number of
     /// records that <a>GetRecords</a> can return. Consider your average record size
     /// when determining this limit. The maximum number of records that can be returned per call
     /// is 10,000.</p>
     ///
-    /// <p>The size of the data returned by <a>GetRecords</a> varies depending on
-    /// the utilization of the shard. The maximum size of data that <a>GetRecords</a>
-    /// can return is 10 MiB. If a call returns this amount of data, subsequent calls made
-    /// within the next 5 seconds throw <code>ProvisionedThroughputExceededException</code>. If
-    /// there is insufficient provisioned throughput on the stream, subsequent calls made within
-    /// the next 1 second throw <code>ProvisionedThroughputExceededException</code>. <a>GetRecords</a> doesn't return any data when it throws an exception. For this
-    /// reason, we recommend that you wait 1 second between calls to <a>GetRecords</a>. However, it's possible that the application will get exceptions for longer than 1
-    /// second.</p>
+    /// <p>The size of the data returned by <a>GetRecords</a> varies depending on the
+    /// utilization of the shard. It is recommended that consumer applications retrieve records
+    /// via the <code>GetRecords</code> command using the 5 TPS limit to remain caught up.
+    /// Retrieving records less frequently can lead to consumer applications falling behind. The
+    /// maximum size of data that <a>GetRecords</a> can return is 10 MiB. If a call
+    /// returns this amount of data, subsequent calls made within the next 5 seconds throw
+    /// <code>ProvisionedThroughputExceededException</code>. If there is insufficient
+    /// provisioned throughput on the stream, subsequent calls made within the next 1 second
+    /// throw <code>ProvisionedThroughputExceededException</code>. <a>GetRecords</a>
+    /// doesn't return any data when it throws an exception. For this reason, we recommend that
+    /// you wait 1 second between calls to <a>GetRecords</a>. However, it's possible
+    /// that the application will get exceptions for longer than 1 second.</p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// <p>To detect whether the application is falling behind in processing, you can use the
     /// <code>MillisBehindLatest</code> response attribute. You can also monitor the stream
     /// using CloudWatch metrics and other mechanisms (see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a> in the <i>Amazon
     /// Kinesis Data Streams Developer Guide</i>).</p>
-    /// <p>Each Amazon Kinesis record includes a value,
-    /// <code>ApproximateArrivalTimestamp</code>, that is set when a stream successfully
-    /// receives and stores a record. This is commonly referred to as a server-side time stamp,
-    /// whereas a client-side time stamp is set when a data producer creates or sends the record
-    /// to a stream (a data producer is any data source putting data records into a stream, for
-    /// example with <a>PutRecords</a>). The time stamp has millisecond precision.
-    /// There are no guarantees about the time stamp accuracy, or that the time stamp is always
-    /// increasing. For example, records in a shard or across a stream might have time stamps
-    /// that are out of order.</p>
+    /// <p>Each Amazon Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>,
+    /// that is set when a stream successfully receives and stores a record. This is commonly
+    /// referred to as a server-side time stamp, whereas a client-side time stamp is set when a
+    /// data producer creates or sends the record to a stream (a data producer is any data
+    /// source putting data records into a stream, for example with <a>PutRecords</a>). The time stamp has millisecond precision. There are no guarantees about the time
+    /// stamp accuracy, or that the time stamp is always increasing. For example, records in a
+    /// shard or across a stream might have time stamps that are out of order.</p>
     /// <p>This operation has a limit of five transactions per second per shard.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetRecords<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1673,13 +1724,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetShardIterator`.
     ///
-    /// <p>Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it
-    /// is returned to the requester.</p>
-    /// <p>A shard iterator specifies the shard position from which to start reading data
-    /// records sequentially. The position is specified using the sequence number of a data
-    /// record in a shard. A sequence number is the identifier associated with every record
-    /// ingested in the stream, and is assigned when a record is put into the stream. Each
-    /// stream has one or more shards.</p>
+    /// <p>Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it is
+    /// returned to the requester.</p>
+    /// <p>A shard iterator specifies the shard position from which to start reading data records
+    /// sequentially. The position is specified using the sequence number of a data record in a
+    /// shard. A sequence number is the identifier associated with every record ingested in the
+    /// stream, and is assigned when a record is put into the stream. Each stream has one or
+    /// more shards.</p>
     /// <p>You must specify the shard iterator type. For example, you can set the
     /// <code>ShardIteratorType</code> parameter to read exactly from the position denoted
     /// by a specific sequence number by using the <code>AT_SEQUENCE_NUMBER</code> shard
@@ -1710,7 +1761,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetShardIterator<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1806,13 +1857,13 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         ///
-        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
-        /// the system, which is the oldest data record in the shard.</p>
+        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the
+        /// system, which is the oldest data record in the shard.</p>
         /// </li>
         /// <li>
         ///
-        /// <p>LATEST - Start reading just after the most recent record in the shard, so
-        /// that you always read the most recent data in the shard.</p>
+        /// <p>LATEST - Start reading just after the most recent record in the shard, so that
+        /// you always read the most recent data in the shard.</p>
         /// </li>
         /// </ul>
         pub fn shard_iterator_type(mut self, inp: crate::model::ShardIteratorType) -> Self {
@@ -1842,13 +1893,13 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         ///
-        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
-        /// the system, which is the oldest data record in the shard.</p>
+        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the
+        /// system, which is the oldest data record in the shard.</p>
         /// </li>
         /// <li>
         ///
-        /// <p>LATEST - Start reading just after the most recent record in the shard, so
-        /// that you always read the most recent data in the shard.</p>
+        /// <p>LATEST - Start reading just after the most recent record in the shard, so that
+        /// you always read the most recent data in the shard.</p>
         /// </li>
         /// </ul>
         pub fn set_shard_iterator_type(
@@ -1858,14 +1909,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shard_iterator_type(input);
             self
         }
-        /// <p>The sequence number of the data record in the shard from which to start reading.
-        /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
+        /// <p>The sequence number of the data record in the shard from which to start reading. Used
+        /// with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
         pub fn starting_sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.starting_sequence_number(inp);
             self
         }
-        /// <p>The sequence number of the data record in the shard from which to start reading.
-        /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
+        /// <p>The sequence number of the data record in the shard from which to start reading. Used
+        /// with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
         pub fn set_starting_sequence_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1901,9 +1952,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `IncreaseStreamRetentionPeriod`.
     ///
-    /// <p>Increases the Kinesis data stream's retention period, which is the length of time
-    /// data records are accessible after they are added to the stream. The maximum value of a
-    /// stream's retention period is 168 hours (7 days).</p>
+    /// <p>Increases the Kinesis data stream's retention period, which is the length of time data
+    /// records are accessible after they are added to the stream. The maximum value of a
+    /// stream's retention period is 8760 hours (365 days).</p>
     /// <p>If you choose a longer stream retention period, this operation increases the time
     /// period during which records that have not yet expired are accessible. However, it does
     /// not make previous, expired data (older than the stream's previous retention period)
@@ -1913,7 +1964,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct IncreaseStreamRetentionPeriod<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1991,8 +2042,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListShards`.
     ///
-    /// <p>Lists the shards in a stream and provides information about each shard. This
-    /// operation has a limit of 100 transactions per second per data stream.</p>
+    /// <p>Lists the shards in a stream and provides information about each shard. This operation
+    /// has a limit of 1000 transactions per second per data stream.</p>
+    /// <p>This action does not list expired shards. For information about expired shards, see
+    /// <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data Routing, Data Persistence, and Shard State after a Reshard</a>. </p>
     /// <important>
     /// <p>This API is a new operation that is used by the Amazon Kinesis Client Library
     /// (KCL). If you have a fine-grained IAM policy that only allows specific operations,
@@ -2003,7 +2056,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListShards<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2070,18 +2123,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_name(input);
             self
         }
-        /// <p>When the number of shards in the data stream is greater than the default value for
-        /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+        /// <p>When the number of shards in the data stream is greater than the default value for the
+        /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
         /// <code>MaxResults</code> that is less than the number of shards in the data stream,
         /// the response includes a pagination token named <code>NextToken</code>. You can specify
         /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
         /// list the next set of shards.</p>
-        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if
-        /// you specify <code>NextToken</code> because the latter unambiguously identifies the
+        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if you
+        /// specify <code>NextToken</code> because the latter unambiguously identifies the
         /// stream.</p>
-        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when
-        /// you specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that
-        /// is less than the number of shards that the operation returns if you don't specify
+        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when you
+        /// specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that is
+        /// less than the number of shards that the operation returns if you don't specify
         /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code>
         /// value. You can use the new <code>NextToken</code> value in a subsequent call to the
         /// <code>ListShards</code> operation.</p>
@@ -2089,25 +2142,24 @@ pub mod fluent_builders {
         /// <p>Tokens expire after 300 seconds. When you obtain a value for
         /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
         /// have 300 seconds to use that value. If you specify an expired token in a call to
-        /// <code>ListShards</code>, you get
-        /// <code>ExpiredNextTokenException</code>.</p>
+        /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
         /// </important>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>When the number of shards in the data stream is greater than the default value for
-        /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+        /// <p>When the number of shards in the data stream is greater than the default value for the
+        /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
         /// <code>MaxResults</code> that is less than the number of shards in the data stream,
         /// the response includes a pagination token named <code>NextToken</code>. You can specify
         /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
         /// list the next set of shards.</p>
-        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if
-        /// you specify <code>NextToken</code> because the latter unambiguously identifies the
+        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if you
+        /// specify <code>NextToken</code> because the latter unambiguously identifies the
         /// stream.</p>
-        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when
-        /// you specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that
-        /// is less than the number of shards that the operation returns if you don't specify
+        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when you
+        /// specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that is
+        /// less than the number of shards that the operation returns if you don't specify
         /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code>
         /// value. You can use the new <code>NextToken</code> value in a subsequent call to the
         /// <code>ListShards</code> operation.</p>
@@ -2115,15 +2167,14 @@ pub mod fluent_builders {
         /// <p>Tokens expire after 300 seconds. When you obtain a value for
         /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
         /// have 300 seconds to use that value. If you specify an expired token in a call to
-        /// <code>ListShards</code>, you get
-        /// <code>ExpiredNextTokenException</code>.</p>
+        /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
         /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specify this parameter to indicate that you want to list the shards starting with
-        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>Specify this parameter to indicate that you want to list the shards starting with the
+        /// shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
         /// <p>If you don't specify this parameter, the default behavior is for
         /// <code>ListShards</code> to list the shards starting with the first one in the
         /// stream.</p>
@@ -2132,8 +2183,8 @@ pub mod fluent_builders {
             self.inner = self.inner.exclusive_start_shard_id(inp);
             self
         }
-        /// <p>Specify this parameter to indicate that you want to list the shards starting with
-        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>Specify this parameter to indicate that you want to list the shards starting with the
+        /// shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
         /// <p>If you don't specify this parameter, the default behavior is for
         /// <code>ListShards</code> to list the shards starting with the first one in the
         /// stream.</p>
@@ -2146,8 +2197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-        /// which is also the default.</p>
+        /// The maximum number of shards to return in a single call. The default value is 1000. If
+        /// you specify a value greater than 1000, at most 1000 results are returned. </p>
         /// <p>When the number of shards to be listed is greater than the value of
         /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
         /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
@@ -2157,8 +2208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-        /// which is also the default.</p>
+        /// The maximum number of shards to return in a single call. The default value is 1000. If
+        /// you specify a value greater than 1000, at most 1000 results are returned. </p>
         /// <p>When the number of shards to be listed is greater than the value of
         /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
         /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
@@ -2167,20 +2218,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Specify this input parameter to distinguish data streams that have the same name.
-        /// For example, if you create a data stream and then delete it, and you later create
-        /// another data stream with the same name, you can use this input parameter to specify
-        /// which of the two streams you want to list the shards for.</p>
+        /// <p>Specify this input parameter to distinguish data streams that have the same name. For
+        /// example, if you create a data stream and then delete it, and you later create another
+        /// data stream with the same name, you can use this input parameter to specify which of the
+        /// two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
         pub fn stream_creation_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.stream_creation_timestamp(inp);
             self
         }
-        /// <p>Specify this input parameter to distinguish data streams that have the same name.
-        /// For example, if you create a data stream and then delete it, and you later create
-        /// another data stream with the same name, you can use this input parameter to specify
-        /// which of the two streams you want to list the shards for.</p>
+        /// <p>Specify this input parameter to distinguish data streams that have the same name. For
+        /// example, if you create a data stream and then delete it, and you later create another
+        /// data stream with the same name, you can use this input parameter to specify which of the
+        /// two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
         pub fn set_stream_creation_timestamp(
@@ -2190,12 +2241,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_creation_timestamp(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can
+        /// only specify one filter at a time. </p>
+        /// <p>If you use the <code>ShardFilter</code> parameter when invoking the ListShards API,
+        /// the <code>Type</code> is the required property and must be specified. If you specify the
+        /// <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+        /// <code>AT_LATEST</code> types, you do not need to specify either the
+        /// <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+        /// <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value
+        /// for the optional <code>ShardId</code> property. The <code>ShardId</code> property is
+        /// identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of the
+        /// <code>ListShards</code> API. When <code>ShardId</code> property is specified, the
+        /// response includes the shards starting with the shard whose ID immediately follows the
+        /// <code>ShardId</code> that you provided. </p>
+        /// <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type,
+        /// you must also provide the value for the optional <code>Timestamp</code> property. If you
+        /// specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp
+        /// are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the
+        /// provided timestamp to TIP are returned. </p>
         pub fn shard_filter(mut self, inp: crate::model::ShardFilter) -> Self {
             self.inner = self.inner.shard_filter(inp);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can
+        /// only specify one filter at a time. </p>
+        /// <p>If you use the <code>ShardFilter</code> parameter when invoking the ListShards API,
+        /// the <code>Type</code> is the required property and must be specified. If you specify the
+        /// <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+        /// <code>AT_LATEST</code> types, you do not need to specify either the
+        /// <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+        /// <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value
+        /// for the optional <code>ShardId</code> property. The <code>ShardId</code> property is
+        /// identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of the
+        /// <code>ListShards</code> API. When <code>ShardId</code> property is specified, the
+        /// response includes the shards starting with the shard whose ID immediately follows the
+        /// <code>ShardId</code> that you provided. </p>
+        /// <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type,
+        /// you must also provide the value for the optional <code>Timestamp</code> property. If you
+        /// specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp
+        /// are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the
+        /// provided timestamp to TIP are returned. </p>
         pub fn set_shard_filter(
             mut self,
             input: std::option::Option<crate::model::ShardFilter>,
@@ -2212,7 +2297,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListStreamConsumers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2266,13 +2351,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stream_arn(inp);
             self
         }
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
@@ -2332,13 +2419,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of consumers that you want a single call of
-        /// <code>ListStreamConsumers</code> to return.</p>
+        /// <code>ListStreamConsumers</code> to return. The default value is 100. If you specify
+        /// a value greater than 100, at most 100 results are returned. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
         /// <p>The maximum number of consumers that you want a single call of
-        /// <code>ListStreamConsumers</code> to return.</p>
+        /// <code>ListStreamConsumers</code> to return. The default value is 100. If you specify
+        /// a value greater than 100, at most 100 results are returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2372,7 +2461,7 @@ pub mod fluent_builders {
     /// <code>ListStreams</code>. You can limit the number of returned streams using the
     /// <code>Limit</code> parameter. If you do not specify a value for the
     /// <code>Limit</code> parameter, Kinesis Data Streams uses the default limit, which is
-    /// currently 10.</p>
+    /// currently 100.</p>
     /// <p>You can detect if there are more streams available to list by using the
     /// <code>HasMoreStreams</code> flag from the returned output. If there are more streams
     /// available, you can request more streams by using the name of the last stream returned by
@@ -2386,7 +2475,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2439,12 +2528,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of streams to list.</p>
+        /// <p>The maximum number of streams to list. The default value is 100. If you specify a
+        /// value greater than 100, at most 100 results are returned.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
         }
-        /// <p>The maximum number of streams to list.</p>
+        /// <p>The maximum number of streams to list. The default value is 100. If you specify a
+        /// value greater than 100, at most 100 results are returned.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -2470,7 +2561,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForStream<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2533,15 +2624,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_name(input);
             self
         }
-        /// <p>The key to use as the starting point for the list of tags. If this parameter is
-        /// set, <code>ListTagsForStream</code> gets all tags that occur after
+        /// <p>The key to use as the starting point for the list of tags. If this parameter is set,
+        /// <code>ListTagsForStream</code> gets all tags that occur after
         /// <code>ExclusiveStartTagKey</code>. </p>
         pub fn exclusive_start_tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.exclusive_start_tag_key(inp);
             self
         }
-        /// <p>The key to use as the starting point for the list of tags. If this parameter is
-        /// set, <code>ListTagsForStream</code> gets all tags that occur after
+        /// <p>The key to use as the starting point for the list of tags. If this parameter is set,
+        /// <code>ListTagsForStream</code> gets all tags that occur after
         /// <code>ExclusiveStartTagKey</code>. </p>
         pub fn set_exclusive_start_tag_key(
             mut self,
@@ -2589,7 +2680,7 @@ pub mod fluent_builders {
     /// <code>UPDATING</code>, or <code>DELETING</code> state, <code>MergeShards</code>
     /// returns a <code>ResourceInUseException</code>. If the specified stream does not exist,
     /// <code>MergeShards</code> returns a <code>ResourceNotFoundException</code>. </p>
-    /// <p>You can use <a>DescribeStream</a> to check the state of the stream,
+    /// <p>You can use <a>DescribeStreamSummary</a> to check the state of the stream,
     /// which is returned in <code>StreamStatus</code>.</p>
     /// <p>
     /// <code>MergeShards</code> is an asynchronous operation. Upon receiving a
@@ -2598,17 +2689,17 @@ pub mod fluent_builders {
     /// operation is completed, Kinesis Data Streams sets the <code>StreamStatus</code> to
     /// <code>ACTIVE</code>. Read and write operations continue to work while the stream is
     /// in the <code>UPDATING</code> state. </p>
-    /// <p>You use <a>DescribeStream</a> to determine the shard IDs that are
-    /// specified in the <code>MergeShards</code> request. </p>
+    /// <p>You use <a>DescribeStreamSummary</a> and the <a>ListShards</a>
+    /// APIs to determine the shard IDs that are specified in the <code>MergeShards</code>
+    /// request. </p>
     /// <p>If you try to operate on too many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>, <code>MergeShards</code>,
     /// or <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p>
     /// <p>
-    /// <code>MergeShards</code> has a limit of five transactions per second per
-    /// account.</p>
+    /// <code>MergeShards</code> has a limit of five transactions per second per account.</p>
     #[derive(std::fmt::Debug)]
     pub struct MergeShards<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2671,14 +2762,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_name(input);
             self
         }
-        /// <p>The shard ID of the shard to combine with the adjacent shard for the
-        /// merge.</p>
+        /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
         pub fn shard_to_merge(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shard_to_merge(inp);
             self
         }
-        /// <p>The shard ID of the shard to combine with the adjacent shard for the
-        /// merge.</p>
+        /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
         pub fn set_shard_to_merge(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2714,18 +2803,18 @@ pub mod fluent_builders {
     /// Kinesis Data Streams segregates the data records that belong to a stream into multiple
     /// shards, using the partition key associated with each data record to determine the shard
     /// to which a given data record belongs.</p>
-    /// <p>Partition keys are Unicode strings, with a maximum length limit of 256 characters
-    /// for each key. An MD5 hash function is used to map partition keys to 128-bit integer
-    /// values and to map associated data records to shards using the hash key ranges of the
-    /// shards. You can override hashing the partition key to determine the shard by explicitly
+    /// <p>Partition keys are Unicode strings, with a maximum length limit of 256 characters for
+    /// each key. An MD5 hash function is used to map partition keys to 128-bit integer values
+    /// and to map associated data records to shards using the hash key ranges of the shards.
+    /// You can override hashing the partition key to determine the shard by explicitly
     /// specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
     /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding Data to a Stream</a> in the <i>Amazon Kinesis Data Streams
     /// Developer Guide</i>.</p>
     /// <p>
     /// <code>PutRecord</code> returns the shard ID of where the data record was placed and the
     /// sequence number that was assigned to the data record.</p>
-    /// <p>Sequence numbers increase over time and are specific to a shard within a stream,
-    /// not across all shards within a stream. To guarantee strictly increasing ordering, write
+    /// <p>Sequence numbers increase over time and are specific to a shard within a stream, not
+    /// across all shards within a stream. To guarantee strictly increasing ordering, write
     /// serially to a shard and use the <code>SequenceNumberForOrdering</code> parameter. For
     /// more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding Data to a Stream</a> in the <i>Amazon Kinesis Data Streams
     /// Developer Guide</i>.</p>
@@ -2736,12 +2825,12 @@ pub mod fluent_builders {
     /// <p>If a <code>PutRecord</code> request cannot be processed because of insufficient
     /// provisioned throughput on the shard involved in the request, <code>PutRecord</code>
     /// throws <code>ProvisionedThroughputExceededException</code>. </p>
-    /// <p>By default, data records are accessible for 24 hours from the time that they are
-    /// added to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.</p>
+    /// <p>By default, data records are accessible for 24 hours from the time that they are added
+    /// to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.</p>
     #[derive(std::fmt::Debug)]
     pub struct PutRecord<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2845,14 +2934,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_partition_key(input);
             self
         }
-        /// <p>The hash value used to explicitly determine the shard the data record is assigned
-        /// to by overriding the partition key hash.</p>
+        /// <p>The hash value used to explicitly determine the shard the data record is assigned to
+        /// by overriding the partition key hash.</p>
         pub fn explicit_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.explicit_hash_key(inp);
             self
         }
-        /// <p>The hash value used to explicitly determine the shard the data record is assigned
-        /// to by overriding the partition key hash.</p>
+        /// <p>The hash value used to explicitly determine the shard the data record is assigned to
+        /// by overriding the partition key hash.</p>
         pub fn set_explicit_hash_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2860,20 +2949,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_explicit_hash_key(input);
             self
         }
-        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
-        /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
-        /// record <i>n</i> to the sequence number of record <i>n-1</i>
-        /// (as returned in the result when putting record <i>n-1</i>). If this
-        /// parameter is not set, records are coarsely ordered based on arrival time.</p>
+        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to
+        /// the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record
+        /// <i>n</i> to the sequence number of record <i>n-1</i> (as
+        /// returned in the result when putting record <i>n-1</i>). If this parameter
+        /// is not set, records are coarsely ordered based on arrival time.</p>
         pub fn sequence_number_for_ordering(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sequence_number_for_ordering(inp);
             self
         }
-        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
-        /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
-        /// record <i>n</i> to the sequence number of record <i>n-1</i>
-        /// (as returned in the result when putting record <i>n-1</i>). If this
-        /// parameter is not set, records are coarsely ordered based on arrival time.</p>
+        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to
+        /// the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record
+        /// <i>n</i> to the sequence number of record <i>n-1</i> (as
+        /// returned in the result when putting record <i>n-1</i>). If this parameter
+        /// is not set, records are coarsely ordered based on arrival time.</p>
         pub fn set_sequence_number_for_ordering(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2887,8 +2976,8 @@ pub mod fluent_builders {
     /// <p>Writes multiple data records into a Kinesis data stream in a single call (also
     /// referred to as a <code>PutRecords</code> request). Use this operation to send data into
     /// the stream for data ingestion and processing. </p>
-    /// <p>Each <code>PutRecords</code> request can support up to 500 records. Each record in
-    /// the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request,
+    /// <p>Each <code>PutRecords</code> request can support up to 500 records. Each record in the
+    /// request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request,
     /// including partition keys. Each shard can support writes up to 1,000 records per second,
     /// up to a maximum data write total of 1 MiB per second.</p>
     /// <p>You must specify the name of the stream that captures, stores, and transports the
@@ -2913,9 +3002,9 @@ pub mod fluent_builders {
     /// record in the request array using natural ordering, from the top to the bottom of the
     /// request and response. The response <code>Records</code> array always includes the same
     /// number of records as the request array.</p>
-    /// <p>The response <code>Records</code> array includes both successfully and
-    /// unsuccessfully processed records. Kinesis Data Streams attempts to process all records
-    /// in each <code>PutRecords</code> request. A single record failure does not stop the
+    /// <p>The response <code>Records</code> array includes both successfully and unsuccessfully
+    /// processed records. Kinesis Data Streams attempts to process all records in each
+    /// <code>PutRecords</code> request. A single record failure does not stop the
     /// processing of subsequent records. As a result, PutRecords doesn't guarantee the ordering
     /// of records. If you need to read records in the same order they are written to the
     /// stream, use <a>PutRecord</a> instead of <code>PutRecords</code>, and write to
@@ -2938,12 +3027,12 @@ pub mod fluent_builders {
     /// <p>After you write a record to a stream, you cannot modify that record or its order
     /// within the stream.</p>
     /// </important>
-    /// <p>By default, data records are accessible for 24 hours from the time that they are
-    /// added to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.</p>
+    /// <p>By default, data records are accessible for 24 hours from the time that they are added
+    /// to a stream. You can use <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.</p>
     #[derive(std::fmt::Debug)]
     pub struct PutRecords<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3043,7 +3132,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterStreamConsumer<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3097,13 +3186,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
-        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stream_arn(inp);
             self
         }
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
-        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
@@ -3135,7 +3226,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RemoveTagsFromStream<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3228,42 +3319,40 @@ pub mod fluent_builders {
     /// <code>SplitShard</code> to increase stream capacity, so that more Kinesis Data
     /// Streams applications can simultaneously read data from the stream for real-time
     /// processing. </p>
-    /// <p>You must specify the shard to be split and the new hash key, which is the position
-    /// in the shard where the shard gets split in two. In many cases, the new hash key might be
+    /// <p>You must specify the shard to be split and the new hash key, which is the position in
+    /// the shard where the shard gets split in two. In many cases, the new hash key might be
     /// the average of the beginning and ending hash key, but it can be any hash key value in
     /// the range being mapped into the shard. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split a
     /// Shard</a> in the <i>Amazon Kinesis Data Streams Developer
     /// Guide</i>.</p>
-    /// <p>You can use <a>DescribeStream</a> to determine the shard ID and hash key
-    /// values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code> parameters
-    /// that are specified in the <code>SplitShard</code> request.</p>
+    /// <p>You can use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to determine the shard ID and hash key values for the <code>ShardToSplit</code>
+    /// and <code>NewStartingHashKey</code> parameters that are specified in the
+    /// <code>SplitShard</code> request.</p>
     /// <p>
     /// <code>SplitShard</code> is an asynchronous operation. Upon receiving a
     /// <code>SplitShard</code> request, Kinesis Data Streams immediately returns a response
     /// and sets the stream status to <code>UPDATING</code>. After the operation is completed,
     /// Kinesis Data Streams sets the stream status to <code>ACTIVE</code>. Read and write
     /// operations continue to work while the stream is in the <code>UPDATING</code> state. </p>
-    /// <p>You can use <code>DescribeStream</code> to check the status of the stream, which is
-    /// returned in <code>StreamStatus</code>. If the stream is in the <code>ACTIVE</code>
-    /// state, you can call <code>SplitShard</code>. If a stream is in <code>CREATING</code> or
-    /// <code>UPDATING</code> or <code>DELETING</code> states, <code>DescribeStream</code>
-    /// returns a <code>ResourceInUseException</code>.</p>
-    /// <p>If the specified stream does not exist, <code>DescribeStream</code> returns a
-    /// <code>ResourceNotFoundException</code>. If you try to create more shards than are
-    /// authorized for your account, you receive a <code>LimitExceededException</code>. </p>
-    /// <p>For the default shard limit for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis Data Streams
-    /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer
-    /// Guide</i>. To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact AWS
+    /// <p>You can use <a>DescribeStreamSummary</a> to check the status of the stream,
+    /// which is returned in <code>StreamStatus</code>. If the stream is in the
+    /// <code>ACTIVE</code> state, you can call <code>SplitShard</code>.
+    /// </p>
+    /// <p>If the specified stream does not exist, <a>DescribeStreamSummary</a>
+    /// returns a <code>ResourceNotFoundException</code>. If you try to create more shards than
+    /// are authorized for your account, you receive a <code>LimitExceededException</code>. </p>
+    /// <p>For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+    /// Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
+    /// Guide</i>. To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact Amazon Web Services
     /// Support</a>.</p>
     /// <p>If you try to operate on too many streams simultaneously using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a>, and/or <a>SplitShard</a>, you receive a
     /// <code>LimitExceededException</code>. </p>
     /// <p>
-    /// <code>SplitShard</code> has a limit of five transactions per second per
-    /// account.</p>
+    /// <code>SplitShard</code> has a limit of five transactions per second per account.</p>
     #[derive(std::fmt::Debug)]
     pub struct SplitShard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3339,8 +3428,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shard_to_split(input);
             self
         }
-        /// <p>A hash key value for the starting hash key of one of the child shards created by
-        /// the split. The hash key range for a given shard constitutes a set of ordered contiguous
+        /// <p>A hash key value for the starting hash key of one of the child shards created by the
+        /// split. The hash key range for a given shard constitutes a set of ordered contiguous
         /// positive integers. The value for <code>NewStartingHashKey</code> must be in the range of
         /// hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key
         /// value and all higher hash key values in hash key range are distributed to one of the
@@ -3350,8 +3439,8 @@ pub mod fluent_builders {
             self.inner = self.inner.new_starting_hash_key(inp);
             self
         }
-        /// <p>A hash key value for the starting hash key of one of the child shards created by
-        /// the split. The hash key range for a given shard constitutes a set of ordered contiguous
+        /// <p>A hash key value for the starting hash key of one of the child shards created by the
+        /// split. The hash key range for a given shard constitutes a set of ordered contiguous
         /// positive integers. The value for <code>NewStartingHashKey</code> must be in the range of
         /// hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key
         /// value and all higher hash key values in hash key range are distributed to one of the
@@ -3367,26 +3456,26 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartStreamEncryption`.
     ///
-    /// <p>Enables or updates server-side encryption using an AWS KMS key for a specified
-    /// stream. </p>
-    /// <p>Starting encryption is an asynchronous operation. Upon receiving the request,
-    /// Kinesis Data Streams returns immediately and sets the status of the stream to
+    /// <p>Enables or updates server-side encryption using an Amazon Web Services KMS key for a
+    /// specified stream. </p>
+    /// <p>Starting encryption is an asynchronous operation. Upon receiving the request, Kinesis
+    /// Data Streams returns immediately and sets the status of the stream to
     /// <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the
     /// status of the stream back to <code>ACTIVE</code>. Updating or applying encryption
     /// normally takes a few seconds to complete, but it can take minutes. You can continue to
     /// read and write data to your stream while its status is <code>UPDATING</code>. Once the
     /// status of the stream is <code>ACTIVE</code>, encryption begins for records written to
     /// the stream. </p>
-    /// <p>API Limits: You can successfully apply a new AWS KMS key for server-side encryption
-    /// 25 times in a rolling 24-hour period.</p>
-    /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code>
-    /// status before all records written to the stream are encrypted. After you enable
-    /// encryption, you can verify that encryption is applied by inspecting the API response
-    /// from <code>PutRecord</code> or <code>PutRecords</code>.</p>
+    /// <p>API Limits: You can successfully apply a new Amazon Web Services KMS key for
+    /// server-side encryption 25 times in a rolling 24-hour period.</p>
+    /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
+    /// before all records written to the stream are encrypted. After you enable encryption, you
+    /// can verify that encryption is applied by inspecting the API response from
+    /// <code>PutRecord</code> or <code>PutRecords</code>.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartStreamEncryption<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3462,10 +3551,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_type(input);
             self
         }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+        /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+        /// use a master key owned by Kinesis Data Streams by specifying the alias
         /// <code>aws/kinesis</code>.</p>
         /// <ul>
         /// <li>
@@ -3497,10 +3586,10 @@ pub mod fluent_builders {
             self.inner = self.inner.key_id(inp);
             self
         }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+        /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+        /// use a master key owned by Kinesis Data Streams by specifying the alias
         /// <code>aws/kinesis</code>.</p>
         /// <ul>
         /// <li>
@@ -3536,25 +3625,24 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopStreamEncryption`.
     ///
     /// <p>Disables server-side encryption for a specified stream. </p>
-    /// <p>Stopping encryption is an asynchronous operation. Upon receiving the request,
-    /// Kinesis Data Streams returns immediately and sets the status of the stream to
+    /// <p>Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis
+    /// Data Streams returns immediately and sets the status of the stream to
     /// <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the
     /// status of the stream back to <code>ACTIVE</code>. Stopping encryption normally takes a
     /// few seconds to complete, but it can take minutes. You can continue to read and write
     /// data to your stream while its status is <code>UPDATING</code>. Once the status of the
     /// stream is <code>ACTIVE</code>, records written to the stream are no longer encrypted by
     /// Kinesis Data Streams. </p>
-    /// <p>API Limits: You can successfully disable server-side encryption 25 times in a
-    /// rolling 24-hour period. </p>
-    /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code>
-    /// status before all records written to the stream are no longer subject to encryption.
-    /// After you disabled encryption, you can verify that encryption is not applied by
-    /// inspecting the API response from <code>PutRecord</code> or
-    /// <code>PutRecords</code>.</p>
+    /// <p>API Limits: You can successfully disable server-side encryption 25 times in a rolling
+    /// 24-hour period. </p>
+    /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
+    /// before all records written to the stream are no longer subject to encryption. After you
+    /// disabled encryption, you can verify that encryption is not applied by inspecting the API
+    /// response from <code>PutRecord</code> or <code>PutRecords</code>.</p>
     #[derive(std::fmt::Debug)]
     pub struct StopStreamEncryption<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3630,10 +3718,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_type(input);
             self
         }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+        /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+        /// use a master key owned by Kinesis Data Streams by specifying the alias
         /// <code>aws/kinesis</code>.</p>
         /// <ul>
         /// <li>
@@ -3665,10 +3753,10 @@ pub mod fluent_builders {
             self.inner = self.inner.key_id(inp);
             self
         }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+        /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+        /// use a master key owned by Kinesis Data Streams by specifying the alias
         /// <code>aws/kinesis</code>.</p>
         /// <ul>
         /// <li>
@@ -3715,8 +3803,8 @@ pub mod fluent_builders {
     /// individual shards. This can cause short-lived shards to be created, in addition to the
     /// final shards. These short-lived shards count towards your total shard limit for your
     /// account in the Region.</p>
-    /// <p>When using this operation, we recommend that you specify a target shard count that
-    /// is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any target value within your
+    /// <p>When using this operation, we recommend that you specify a target shard count that is
+    /// a multiple of 25% (25%, 50%, 75%, 100%). You can specify any target value within your
     /// shard limit. However, if you specify a target that isn't a multiple of 25%, the scaling
     /// action might take longer to complete. </p>
     /// <p>This operation has the following default limits. By default, you cannot do the
@@ -3726,31 +3814,30 @@ pub mod fluent_builders {
     /// <p>Scale more than ten times per rolling 24-hour period per stream</p>
     /// </li>
     /// <li>
-    /// <p>Scale up to more than double your current shard count for a
-    /// stream</p>
+    /// <p>Scale up to more than double your current shard count for a stream</p>
     /// </li>
     /// <li>
     /// <p>Scale down below half your current shard count for a stream</p>
     /// </li>
     /// <li>
-    /// <p>Scale up to more than 500 shards in a stream</p>
+    /// <p>Scale up to more than 10000 shards in a stream</p>
     /// </li>
     /// <li>
-    /// <p>Scale a stream with more than 500 shards down unless the result is less
-    /// than 500 shards</p>
+    /// <p>Scale a stream with more than 10000 shards down unless the result is less than
+    /// 10000 shards</p>
     /// </li>
     /// <li>
     /// <p>Scale up to more than the shard limit for your account</p>
     /// </li>
     /// </ul>
-    /// <p>For the default limits for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
-    /// <i>Amazon Kinesis Data Streams Developer Guide</i>. To request an
-    /// increase in the call rate limit, the shard limit for this API, or your overall shard
-    /// limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&limitType=service-code-kinesis">limits form</a>.</p>
+    /// <p>For the default limits for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+    /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer
+    /// Guide</i>. To request an increase in the call rate limit, the shard limit for
+    /// this API, or your overall shard limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&limitType=service-code-kinesis">limits form</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateShardCount<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3813,8 +3900,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_name(input);
             self
         }
-        /// <p>The new number of shards. This value has the following default limits. By default,
-        /// you cannot do the following: </p>
+        /// <p>The new number of shards. This value has the following default limits. By default, you
+        /// cannot do the following: </p>
         /// <ul>
         /// <li>
         /// <p>Set this value to more than double your current shard count for a
@@ -3824,21 +3911,21 @@ pub mod fluent_builders {
         /// <p>Set this value below half your current shard count for a stream.</p>
         /// </li>
         /// <li>
-        /// <p>Set this value to more than 500 shards in a stream (the default limit for
-        /// shard count per stream is 500 per account per region), unless you request a
+        /// <p>Set this value to more than 10000 shards in a stream (the default limit for
+        /// shard count per stream is 10000 per account per region), unless you request a
         /// limit increase.</p>
         /// </li>
         /// <li>
-        /// <p>Scale a stream with more than 500 shards down unless you set this value to
-        /// less than 500 shards.</p>
+        /// <p>Scale a stream with more than 10000 shards down unless you set this value to
+        /// less than 10000 shards.</p>
         /// </li>
         /// </ul>
         pub fn target_shard_count(mut self, inp: i32) -> Self {
             self.inner = self.inner.target_shard_count(inp);
             self
         }
-        /// <p>The new number of shards. This value has the following default limits. By default,
-        /// you cannot do the following: </p>
+        /// <p>The new number of shards. This value has the following default limits. By default, you
+        /// cannot do the following: </p>
         /// <ul>
         /// <li>
         /// <p>Set this value to more than double your current shard count for a
@@ -3848,13 +3935,13 @@ pub mod fluent_builders {
         /// <p>Set this value below half your current shard count for a stream.</p>
         /// </li>
         /// <li>
-        /// <p>Set this value to more than 500 shards in a stream (the default limit for
-        /// shard count per stream is 500 per account per region), unless you request a
+        /// <p>Set this value to more than 10000 shards in a stream (the default limit for
+        /// shard count per stream is 10000 per account per region), unless you request a
         /// limit increase.</p>
         /// </li>
         /// <li>
-        /// <p>Scale a stream with more than 500 shards down unless you set this value to
-        /// less than 500 shards.</p>
+        /// <p>Scale a stream with more than 10000 shards down unless you set this value to
+        /// less than 10000 shards.</p>
         /// </li>
         /// </ul>
         pub fn set_target_shard_count(mut self, input: std::option::Option<i32>) -> Self {
@@ -3875,18 +3962,110 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateStreamMode`.
+    ///
+    /// <p> Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you
+    /// can choose between an <b>on-demand</b> capacity mode and a
+    /// <b>provisioned</b> capacity mode for your data stream.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateStreamMode<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_stream_mode_input::Builder,
+    }
+    impl<C, M, R> UpdateStreamMode<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateStreamMode`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateStreamModeOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateStreamModeError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateStreamModeInputOperationOutputAlias,
+                crate::output::UpdateStreamModeOutput,
+                crate::error::UpdateStreamModeError,
+                crate::input::UpdateStreamModeInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
+        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(inp);
+            self
+        }
+        /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
+            self
+        }
+        /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in
+        /// Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+        pub fn stream_mode_details(mut self, inp: crate::model::StreamModeDetails) -> Self {
+            self.inner = self.inner.stream_mode_details(inp);
+            self
+        }
+        /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in
+        /// Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+        pub fn set_stream_mode_details(
+            mut self,
+            input: std::option::Option<crate::model::StreamModeDetails>,
+        ) -> Self {
+            self.inner = self.inner.set_stream_mode_details(input);
+            self
+        }
+    }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3895,7 +4074,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -3911,11 +4090,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

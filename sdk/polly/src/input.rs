@@ -1953,7 +1953,6 @@ impl SynthesizeSpeechInput {
     /// Presigned requests can be given to other users or applications to access a resource or perform
     /// an operation without having access to the AWS security credentials.
     ///
-    #[cfg(feature = "client")]
     pub async fn presigned(
         self,
         config: &crate::config::Config,
@@ -1978,7 +1977,7 @@ impl SynthesizeSpeechInput {
             config.signature_type = aws_sig_auth::signer::HttpSignatureType::HttpRequestQueryParams;
             config.expires_in = Some(presigning_config.expires());
         }
-        let middleware = aws_hyper::AwsMiddleware::default();
+        let middleware = crate::middleware::DefaultMiddleware::default();
         let mut svc = tower::builder::ServiceBuilder::new()
             .layer(&middleware)
             .service(crate::presigning::service::PresignedRequestService::new());

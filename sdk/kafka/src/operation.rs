@@ -99,6 +99,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
     }
 }
 
+/// Operation shape for `CreateClusterV2`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_cluster_v2`](crate::client::Client::create_cluster_v2).
+///
+/// See [`crate::client::fluent_builders::CreateClusterV2`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateClusterV2 {
+    _private: (),
+}
+impl CreateClusterV2 {
+    /// Creates a new builder-style object to manufacture [`CreateClusterV2Input`](crate::input::CreateClusterV2Input)
+    pub fn builder() -> crate::input::create_cluster_v2_input::Builder {
+        crate::input::create_cluster_v2_input::Builder::default()
+    }
+    /// Creates a new `CreateClusterV2` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateClusterV2 {
+    type Output = std::result::Result<
+        crate::output::CreateClusterV2Output,
+        crate::error::CreateClusterV2Error,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_cluster_v2_error(response)
+        } else {
+            crate::operation_deser::parse_create_cluster_v2_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -263,6 +297,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClusterOperation
             crate::operation_deser::parse_describe_cluster_operation_error(response)
         } else {
             crate::operation_deser::parse_describe_cluster_operation_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeClusterV2`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_cluster_v2`](crate::client::Client::describe_cluster_v2).
+///
+/// See [`crate::client::fluent_builders::DescribeClusterV2`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeClusterV2 {
+    _private: (),
+}
+impl DescribeClusterV2 {
+    /// Creates a new builder-style object to manufacture [`DescribeClusterV2Input`](crate::input::DescribeClusterV2Input)
+    pub fn builder() -> crate::input::describe_cluster_v2_input::Builder {
+        crate::input::describe_cluster_v2_input::Builder::default()
+    }
+    /// Creates a new `DescribeClusterV2` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeClusterV2 {
+    type Output = std::result::Result<
+        crate::output::DescribeClusterV2Output,
+        crate::error::DescribeClusterV2Error,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_cluster_v2_error(response)
+        } else {
+            crate::operation_deser::parse_describe_cluster_v2_response(response)
         }
     }
 }
@@ -465,6 +533,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusters {
             crate::operation_deser::parse_list_clusters_error(response)
         } else {
             crate::operation_deser::parse_list_clusters_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListClustersV2`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_clusters_v2`](crate::client::Client::list_clusters_v2).
+///
+/// See [`crate::client::fluent_builders::ListClustersV2`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListClustersV2 {
+    _private: (),
+}
+impl ListClustersV2 {
+    /// Creates a new builder-style object to manufacture [`ListClustersV2Input`](crate::input::ListClustersV2Input)
+    pub fn builder() -> crate::input::list_clusters_v2_input::Builder {
+        crate::input::list_clusters_v2_input::Builder::default()
+    }
+    /// Creates a new `ListClustersV2` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListClustersV2 {
+    type Output =
+        std::result::Result<crate::output::ListClustersV2Output, crate::error::ListClustersV2Error>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_clusters_v2_error(response)
+        } else {
+            crate::operation_deser::parse_list_clusters_v2_response(response)
         }
     }
 }

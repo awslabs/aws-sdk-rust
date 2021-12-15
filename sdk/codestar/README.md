@@ -1,6 +1,6 @@
 # aws-sdk-codestar
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 This is the API reference for AWS CodeStar. This reference provides descriptions of the operations and data types for the AWS CodeStar API along with usage examples.
@@ -41,8 +41,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-codestar = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-codestar = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

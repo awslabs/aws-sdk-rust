@@ -550,6 +550,34 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateInferenceRecommendationsJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateInferenceRecommendationsJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateInferenceRecommendationsJobErrorKind::ResourceInUse(inner) => {
+                    Error::ResourceInUse(inner)
+                }
+                crate::error::CreateInferenceRecommendationsJobErrorKind::ResourceLimitExceeded(
+                    inner,
+                ) => Error::ResourceLimitExceeded(inner),
+                crate::error::CreateInferenceRecommendationsJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLabelingJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2243,6 +2271,35 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeInferenceRecommendationsJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeInferenceRecommendationsJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeInferenceRecommendationsJobErrorKind::ResourceNotFound(
+                    inner,
+                ) => Error::ResourceNotFound(inner),
+                crate::error::DescribeInferenceRecommendationsJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLabelingJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2256,6 +2313,27 @@ where
                     Error::ResourceNotFound(inner)
                 }
                 crate::error::DescribeLabelingJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLineageGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeLineageGroupError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeLineageGroupErrorKind::ResourceNotFound(inner) => {
+                    Error::ResourceNotFound(inner)
+                }
+                crate::error::DescribeLineageGroupErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -2818,6 +2896,27 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLineageGroupPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetLineageGroupPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetLineageGroupPolicyErrorKind::ResourceNotFound(inner) => {
+                    Error::ResourceNotFound(inner)
+                }
+                crate::error::GetLineageGroupPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetModelPackageGroupPolicyError, R>>
     for Error
 where
@@ -3284,6 +3383,28 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListInferenceRecommendationsJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListInferenceRecommendationsJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListInferenceRecommendationsJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLabelingJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3315,6 +3436,23 @@ where
                     Error::ResourceNotFound(inner)
                 }
                 crate::error::ListLabelingJobsForWorkteamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLineageGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListLineageGroupsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListLineageGroupsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -3359,6 +3497,23 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListModelExplainabilityJobDefinitionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListModelMetadataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListModelMetadataError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListModelMetadataErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -3835,6 +3990,22 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::QueryLineageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::QueryLineageError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::QueryLineageErrorKind::ResourceNotFound(inner) => {
+                    Error::ResourceNotFound(inner)
+                }
+                crate::error::QueryLineageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterDevicesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4101,6 +4272,31 @@ where
                     Error::ResourceNotFound(inner)
                 }
                 crate::error::StopHyperParameterTuningJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::StopInferenceRecommendationsJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::StopInferenceRecommendationsJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StopInferenceRecommendationsJobErrorKind::ResourceNotFound(inner) => {
+                    Error::ResourceNotFound(inner)
+                }
+                crate::error::StopInferenceRecommendationsJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

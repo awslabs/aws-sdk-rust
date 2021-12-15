@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 aws-config = { path = "../../sdk/aws-config" }
-medialive = { package = "aws-sdk-medialive", path = "../../sdk/medialive" }
+aws-sdk-medialive = { path = "../../sdk/medialive" }
 aws-types = { path = "../../sdk/aws-types" }
 tokio = { version = "1", features = ["full"] }
 structopt = { version = "0.3", default-features = false }

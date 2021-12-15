@@ -1398,6 +1398,294 @@ impl UpdateExportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateBotRecommendationOutput {
+    /// <p>The unique identifier of the bot containing the bot recommendation
+    /// that has been updated.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot containing the bot recommendation that has
+    /// been updated.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to update. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The status of the bot recommendation.</p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed
+    /// in the failureReasons field. </p>
+    pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
+    /// <p>The unique identifier of the bot recommendation to be
+    /// updated.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// created.</p>
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// last updated.</p>
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The object representing the Amazon S3 bucket containing the transcript,
+    /// as well as the associated metadata.</p>
+    pub transcript_source_setting: std::option::Option<crate::model::TranscriptSourceSetting>,
+    /// <p>The object representing the passwords that were used to encrypt the
+    /// data related to the bot recommendation results, as well as the KMS key
+    /// ARN used to encrypt the associated metadata.</p>
+    pub encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+}
+impl UpdateBotRecommendationOutput {
+    /// <p>The unique identifier of the bot containing the bot recommendation
+    /// that has been updated.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot containing the bot recommendation that has
+    /// been updated.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to update. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The status of the bot recommendation.</p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed
+    /// in the failureReasons field. </p>
+    pub fn bot_recommendation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+        self.bot_recommendation_status.as_ref()
+    }
+    /// <p>The unique identifier of the bot recommendation to be
+    /// updated.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The object representing the Amazon S3 bucket containing the transcript,
+    /// as well as the associated metadata.</p>
+    pub fn transcript_source_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptSourceSetting> {
+        self.transcript_source_setting.as_ref()
+    }
+    /// <p>The object representing the passwords that were used to encrypt the
+    /// data related to the bot recommendation results, as well as the KMS key
+    /// ARN used to encrypt the associated metadata.</p>
+    pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
+        self.encryption_setting.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateBotRecommendationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateBotRecommendationOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_status", &self.bot_recommendation_status);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("last_updated_date_time", &self.last_updated_date_time);
+        formatter.field("transcript_source_setting", &self.transcript_source_setting);
+        formatter.field("encryption_setting", &self.encryption_setting);
+        formatter.finish()
+    }
+}
+/// See [`UpdateBotRecommendationOutput`](crate::output::UpdateBotRecommendationOutput)
+pub mod update_bot_recommendation_output {
+    /// A builder for [`UpdateBotRecommendationOutput`](crate::output::UpdateBotRecommendationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_status:
+            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) transcript_source_setting:
+            std::option::Option<crate::model::TranscriptSourceSetting>,
+        pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot containing the bot recommendation
+        /// that has been updated.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot containing the bot recommendation
+        /// that has been updated.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation that has
+        /// been updated.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation that has
+        /// been updated.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to update. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to update. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The status of the bot recommendation.</p>
+        /// <p>If the status is Failed, then the reasons for the failure are listed
+        /// in the failureReasons field. </p>
+        pub fn bot_recommendation_status(
+            mut self,
+            input: crate::model::BotRecommendationStatus,
+        ) -> Self {
+            self.bot_recommendation_status = Some(input);
+            self
+        }
+        /// <p>The status of the bot recommendation.</p>
+        /// <p>If the status is Failed, then the reasons for the failure are listed
+        /// in the failureReasons field. </p>
+        pub fn set_bot_recommendation_status(
+            mut self,
+            input: std::option::Option<crate::model::BotRecommendationStatus>,
+        ) -> Self {
+            self.bot_recommendation_status = input;
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be
+        /// updated.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be
+        /// updated.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// created.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// created.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// last updated.</p>
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date_time = Some(input);
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// last updated.</p>
+        pub fn set_last_updated_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date_time = input;
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn transcript_source_setting(
+            mut self,
+            input: crate::model::TranscriptSourceSetting,
+        ) -> Self {
+            self.transcript_source_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn set_transcript_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptSourceSetting>,
+        ) -> Self {
+            self.transcript_source_setting = input;
+            self
+        }
+        /// <p>The object representing the passwords that were used to encrypt the
+        /// data related to the bot recommendation results, as well as the KMS key
+        /// ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
+            self.encryption_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the passwords that were used to encrypt the
+        /// data related to the bot recommendation results, as well as the KMS key
+        /// ARN used to encrypt the associated metadata.</p>
+        pub fn set_encryption_setting(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionSetting>,
+        ) -> Self {
+            self.encryption_setting = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateBotRecommendationOutput`](crate::output::UpdateBotRecommendationOutput)
+        pub fn build(self) -> crate::output::UpdateBotRecommendationOutput {
+            crate::output::UpdateBotRecommendationOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_status: self.bot_recommendation_status,
+                bot_recommendation_id: self.bot_recommendation_id,
+                creation_date_time: self.creation_date_time,
+                last_updated_date_time: self.last_updated_date_time,
+                transcript_source_setting: self.transcript_source_setting,
+                encryption_setting: self.encryption_setting,
+            }
+        }
+    }
+}
+impl UpdateBotRecommendationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBotRecommendationOutput`](crate::output::UpdateBotRecommendationOutput)
+    pub fn builder() -> crate::output::update_bot_recommendation_output::Builder {
+        crate::output::update_bot_recommendation_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotLocaleOutput {
     /// <p>The identifier of the bot that contains the updated locale.</p>
     pub bot_id: std::option::Option<std::string::String>,
@@ -2493,6 +2781,495 @@ impl StartImportOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartBotRecommendationOutput {
+    /// <p>The unique identifier of the bot containing the bot
+    /// recommendation.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot containing the bot recommendation.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to start. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The status of the bot recommendation.</p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed
+    /// in the failureReasons field. </p>
+    pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
+    /// <p>The identifier of the bot recommendation that you have
+    /// created.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// created.</p>
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The object representing the Amazon S3 bucket containing the transcript,
+    /// as well as the associated metadata.</p>
+    pub transcript_source_setting: std::option::Option<crate::model::TranscriptSourceSetting>,
+    /// <p>The object representing the passwords that were used to encrypt the
+    /// data related to the bot recommendation results, as well as the KMS key
+    /// ARN used to encrypt the associated metadata.</p>
+    pub encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+}
+impl StartBotRecommendationOutput {
+    /// <p>The unique identifier of the bot containing the bot
+    /// recommendation.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot containing the bot recommendation.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to start. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The status of the bot recommendation.</p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed
+    /// in the failureReasons field. </p>
+    pub fn bot_recommendation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+        self.bot_recommendation_status.as_ref()
+    }
+    /// <p>The identifier of the bot recommendation that you have
+    /// created.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The object representing the Amazon S3 bucket containing the transcript,
+    /// as well as the associated metadata.</p>
+    pub fn transcript_source_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptSourceSetting> {
+        self.transcript_source_setting.as_ref()
+    }
+    /// <p>The object representing the passwords that were used to encrypt the
+    /// data related to the bot recommendation results, as well as the KMS key
+    /// ARN used to encrypt the associated metadata.</p>
+    pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
+        self.encryption_setting.as_ref()
+    }
+}
+impl std::fmt::Debug for StartBotRecommendationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartBotRecommendationOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_status", &self.bot_recommendation_status);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("transcript_source_setting", &self.transcript_source_setting);
+        formatter.field("encryption_setting", &self.encryption_setting);
+        formatter.finish()
+    }
+}
+/// See [`StartBotRecommendationOutput`](crate::output::StartBotRecommendationOutput)
+pub mod start_bot_recommendation_output {
+    /// A builder for [`StartBotRecommendationOutput`](crate::output::StartBotRecommendationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_status:
+            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) transcript_source_setting:
+            std::option::Option<crate::model::TranscriptSourceSetting>,
+        pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot containing the bot
+        /// recommendation.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot containing the bot
+        /// recommendation.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to start. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to start. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The status of the bot recommendation.</p>
+        /// <p>If the status is Failed, then the reasons for the failure are listed
+        /// in the failureReasons field. </p>
+        pub fn bot_recommendation_status(
+            mut self,
+            input: crate::model::BotRecommendationStatus,
+        ) -> Self {
+            self.bot_recommendation_status = Some(input);
+            self
+        }
+        /// <p>The status of the bot recommendation.</p>
+        /// <p>If the status is Failed, then the reasons for the failure are listed
+        /// in the failureReasons field. </p>
+        pub fn set_bot_recommendation_status(
+            mut self,
+            input: std::option::Option<crate::model::BotRecommendationStatus>,
+        ) -> Self {
+            self.bot_recommendation_status = input;
+            self
+        }
+        /// <p>The identifier of the bot recommendation that you have
+        /// created.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot recommendation that you have
+        /// created.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// created.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// created.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn transcript_source_setting(
+            mut self,
+            input: crate::model::TranscriptSourceSetting,
+        ) -> Self {
+            self.transcript_source_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn set_transcript_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptSourceSetting>,
+        ) -> Self {
+            self.transcript_source_setting = input;
+            self
+        }
+        /// <p>The object representing the passwords that were used to encrypt the
+        /// data related to the bot recommendation results, as well as the KMS key
+        /// ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
+            self.encryption_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the passwords that were used to encrypt the
+        /// data related to the bot recommendation results, as well as the KMS key
+        /// ARN used to encrypt the associated metadata.</p>
+        pub fn set_encryption_setting(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionSetting>,
+        ) -> Self {
+            self.encryption_setting = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartBotRecommendationOutput`](crate::output::StartBotRecommendationOutput)
+        pub fn build(self) -> crate::output::StartBotRecommendationOutput {
+            crate::output::StartBotRecommendationOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_status: self.bot_recommendation_status,
+                bot_recommendation_id: self.bot_recommendation_id,
+                creation_date_time: self.creation_date_time,
+                transcript_source_setting: self.transcript_source_setting,
+                encryption_setting: self.encryption_setting,
+            }
+        }
+    }
+}
+impl StartBotRecommendationOutput {
+    /// Creates a new builder-style object to manufacture [`StartBotRecommendationOutput`](crate::output::StartBotRecommendationOutput)
+    pub fn builder() -> crate::output::start_bot_recommendation_output::Builder {
+        crate::output::start_bot_recommendation_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchAssociatedTranscriptsOutput {
+    /// <p>The unique identifier of the bot associated with the transcripts
+    /// that you are searching.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot containing the transcripts that you are
+    /// searching.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the transcripts to
+    /// search. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p> The unique identifier of the bot recommendation associated with the
+    /// transcripts to search.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>A index that indicates whether there are more results to return in a
+    /// response to the SearchAssociatedTranscripts operation. If the nextIndex
+    /// field is present, you send the contents as the nextIndex parameter of a
+    /// SearchAssociatedTranscriptsRequest operation to get the next page of
+    /// results.</p>
+    pub next_index: std::option::Option<i32>,
+    /// <p>The object that contains the associated transcript that meet the
+    /// criteria you specified.</p>
+    pub associated_transcripts:
+        std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
+    /// <p>The total number of transcripts returned by the search.</p>
+    pub total_results: std::option::Option<i32>,
+}
+impl SearchAssociatedTranscriptsOutput {
+    /// <p>The unique identifier of the bot associated with the transcripts
+    /// that you are searching.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot containing the transcripts that you are
+    /// searching.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the transcripts to
+    /// search. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p> The unique identifier of the bot recommendation associated with the
+    /// transcripts to search.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>A index that indicates whether there are more results to return in a
+    /// response to the SearchAssociatedTranscripts operation. If the nextIndex
+    /// field is present, you send the contents as the nextIndex parameter of a
+    /// SearchAssociatedTranscriptsRequest operation to get the next page of
+    /// results.</p>
+    pub fn next_index(&self) -> std::option::Option<i32> {
+        self.next_index
+    }
+    /// <p>The object that contains the associated transcript that meet the
+    /// criteria you specified.</p>
+    pub fn associated_transcripts(
+        &self,
+    ) -> std::option::Option<&[crate::model::AssociatedTranscript]> {
+        self.associated_transcripts.as_deref()
+    }
+    /// <p>The total number of transcripts returned by the search.</p>
+    pub fn total_results(&self) -> std::option::Option<i32> {
+        self.total_results
+    }
+}
+impl std::fmt::Debug for SearchAssociatedTranscriptsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchAssociatedTranscriptsOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("next_index", &self.next_index);
+        formatter.field("associated_transcripts", &self.associated_transcripts);
+        formatter.field("total_results", &self.total_results);
+        formatter.finish()
+    }
+}
+/// See [`SearchAssociatedTranscriptsOutput`](crate::output::SearchAssociatedTranscriptsOutput)
+pub mod search_associated_transcripts_output {
+    /// A builder for [`SearchAssociatedTranscriptsOutput`](crate::output::SearchAssociatedTranscriptsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) next_index: std::option::Option<i32>,
+        pub(crate) associated_transcripts:
+            std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
+        pub(crate) total_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot associated with the transcripts
+        /// that you are searching.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot associated with the transcripts
+        /// that you are searching.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot containing the transcripts that you are
+        /// searching.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot containing the transcripts that you are
+        /// searching.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the transcripts to
+        /// search. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the transcripts to
+        /// search. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p> The unique identifier of the bot recommendation associated with the
+        /// transcripts to search.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p> The unique identifier of the bot recommendation associated with the
+        /// transcripts to search.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// <p>A index that indicates whether there are more results to return in a
+        /// response to the SearchAssociatedTranscripts operation. If the nextIndex
+        /// field is present, you send the contents as the nextIndex parameter of a
+        /// SearchAssociatedTranscriptsRequest operation to get the next page of
+        /// results.</p>
+        pub fn next_index(mut self, input: i32) -> Self {
+            self.next_index = Some(input);
+            self
+        }
+        /// <p>A index that indicates whether there are more results to return in a
+        /// response to the SearchAssociatedTranscripts operation. If the nextIndex
+        /// field is present, you send the contents as the nextIndex parameter of a
+        /// SearchAssociatedTranscriptsRequest operation to get the next page of
+        /// results.</p>
+        pub fn set_next_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.next_index = input;
+            self
+        }
+        /// Appends an item to `associated_transcripts`.
+        ///
+        /// To override the contents of this collection use [`set_associated_transcripts`](Self::set_associated_transcripts).
+        ///
+        /// <p>The object that contains the associated transcript that meet the
+        /// criteria you specified.</p>
+        pub fn associated_transcripts(
+            mut self,
+            input: impl Into<crate::model::AssociatedTranscript>,
+        ) -> Self {
+            let mut v = self.associated_transcripts.unwrap_or_default();
+            v.push(input.into());
+            self.associated_transcripts = Some(v);
+            self
+        }
+        /// <p>The object that contains the associated transcript that meet the
+        /// criteria you specified.</p>
+        pub fn set_associated_transcripts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
+        ) -> Self {
+            self.associated_transcripts = input;
+            self
+        }
+        /// <p>The total number of transcripts returned by the search.</p>
+        pub fn total_results(mut self, input: i32) -> Self {
+            self.total_results = Some(input);
+            self
+        }
+        /// <p>The total number of transcripts returned by the search.</p>
+        pub fn set_total_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchAssociatedTranscriptsOutput`](crate::output::SearchAssociatedTranscriptsOutput)
+        pub fn build(self) -> crate::output::SearchAssociatedTranscriptsOutput {
+            crate::output::SearchAssociatedTranscriptsOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_id: self.bot_recommendation_id,
+                next_index: self.next_index,
+                associated_transcripts: self.associated_transcripts,
+                total_results: self.total_results,
+            }
+        }
+    }
+}
+impl SearchAssociatedTranscriptsOutput {
+    /// Creates a new builder-style object to manufacture [`SearchAssociatedTranscriptsOutput`](crate::output::SearchAssociatedTranscriptsOutput)
+    pub fn builder() -> crate::output::search_associated_transcripts_output::Builder {
+        crate::output::search_associated_transcripts_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags associated with a resource.</p>
     pub tags:
@@ -2925,6 +3702,219 @@ impl ListSlotsOutput {
     /// Creates a new builder-style object to manufacture [`ListSlotsOutput`](crate::output::ListSlotsOutput)
     pub fn builder() -> crate::output::list_slots_output::Builder {
         crate::output::list_slots_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRecommendedIntentsOutput {
+    /// <p>The unique identifier of the bot associated with the recommended
+    /// intent.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot that contains the intent.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the intents to list.
+    /// The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the bot recommendation that contains the
+    /// recommended intent.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>Summary information for the intents that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// maxResults parameter of the request. If there are more intents
+    /// available, the nextToken field contains a token to get the next page of
+    /// results.</p>
+    pub summary_list: std::option::Option<std::vec::Vec<crate::model::RecommendedIntentSummary>>,
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the ListRecommendedIntents operation. If the nextToken
+    /// field is present, you send the contents as the nextToken parameter of a
+    /// ListRecommendedIntents operation request to get the next page of
+    /// results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRecommendedIntentsOutput {
+    /// <p>The unique identifier of the bot associated with the recommended
+    /// intent.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the intent.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the intents to list.
+    /// The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The identifier of the bot recommendation that contains the
+    /// recommended intent.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>Summary information for the intents that meet the filter criteria
+    /// specified in the request. The length of the list is specified in the
+    /// maxResults parameter of the request. If there are more intents
+    /// available, the nextToken field contains a token to get the next page of
+    /// results.</p>
+    pub fn summary_list(&self) -> std::option::Option<&[crate::model::RecommendedIntentSummary]> {
+        self.summary_list.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the ListRecommendedIntents operation. If the nextToken
+    /// field is present, you send the contents as the nextToken parameter of a
+    /// ListRecommendedIntents operation request to get the next page of
+    /// results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListRecommendedIntentsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRecommendedIntentsOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("summary_list", &self.summary_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListRecommendedIntentsOutput`](crate::output::ListRecommendedIntentsOutput)
+pub mod list_recommended_intents_output {
+    /// A builder for [`ListRecommendedIntentsOutput`](crate::output::ListRecommendedIntentsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) summary_list:
+            std::option::Option<std::vec::Vec<crate::model::RecommendedIntentSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot associated with the recommended
+        /// intent.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot associated with the recommended
+        /// intent.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot that contains the intent.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot that contains the intent.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the intents to list.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the intents to list.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The identifier of the bot recommendation that contains the
+        /// recommended intent.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot recommendation that contains the
+        /// recommended intent.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// Appends an item to `summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_summary_list`](Self::set_summary_list).
+        ///
+        /// <p>Summary information for the intents that meet the filter criteria
+        /// specified in the request. The length of the list is specified in the
+        /// maxResults parameter of the request. If there are more intents
+        /// available, the nextToken field contains a token to get the next page of
+        /// results.</p>
+        pub fn summary_list(
+            mut self,
+            input: impl Into<crate::model::RecommendedIntentSummary>,
+        ) -> Self {
+            let mut v = self.summary_list.unwrap_or_default();
+            v.push(input.into());
+            self.summary_list = Some(v);
+            self
+        }
+        /// <p>Summary information for the intents that meet the filter criteria
+        /// specified in the request. The length of the list is specified in the
+        /// maxResults parameter of the request. If there are more intents
+        /// available, the nextToken field contains a token to get the next page of
+        /// results.</p>
+        pub fn set_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RecommendedIntentSummary>>,
+        ) -> Self {
+            self.summary_list = input;
+            self
+        }
+        /// <p>A token that indicates whether there are more results to return in a
+        /// response to the ListRecommendedIntents operation. If the nextToken
+        /// field is present, you send the contents as the nextToken parameter of a
+        /// ListRecommendedIntents operation request to get the next page of
+        /// results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates whether there are more results to return in a
+        /// response to the ListRecommendedIntents operation. If the nextToken
+        /// field is present, you send the contents as the nextToken parameter of a
+        /// ListRecommendedIntents operation request to get the next page of
+        /// results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRecommendedIntentsOutput`](crate::output::ListRecommendedIntentsOutput)
+        pub fn build(self) -> crate::output::ListRecommendedIntentsOutput {
+            crate::output::ListRecommendedIntentsOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_id: self.bot_recommendation_id,
+                summary_list: self.summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRecommendedIntentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecommendedIntentsOutput`](crate::output::ListRecommendedIntentsOutput)
+    pub fn builder() -> crate::output::list_recommended_intents_output::Builder {
+        crate::output::list_recommended_intents_output::Builder::default()
     }
 }
 
@@ -3945,6 +4935,199 @@ impl ListBotsOutput {
     /// Creates a new builder-style object to manufacture [`ListBotsOutput`](crate::output::ListBotsOutput)
     pub fn builder() -> crate::output::list_bots_output::Builder {
         crate::output::list_bots_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListBotRecommendationsOutput {
+    /// <p>The unique identifier of the bot that contains the bot
+    /// recommendation list.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot that contains the bot recommendation
+    /// list.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// list.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>Summary information for the bot recommendations that meet the filter
+    /// specified in this request. The length of the list is specified in the
+    /// maxResults parameter of the request. If there are more bot
+    /// recommendations available, the nextToken field contains a token to get
+    /// the next page of results.</p>
+    pub bot_recommendation_summaries:
+        std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>,
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the ListBotRecommendations operation. If the nextToken
+    /// field is present, you send the contents as the nextToken parameter of a
+    /// ListBotRecommendations operation request to get the next page of
+    /// results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBotRecommendationsOutput {
+    /// <p>The unique identifier of the bot that contains the bot
+    /// recommendation list.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the bot recommendation
+    /// list.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// list.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>Summary information for the bot recommendations that meet the filter
+    /// specified in this request. The length of the list is specified in the
+    /// maxResults parameter of the request. If there are more bot
+    /// recommendations available, the nextToken field contains a token to get
+    /// the next page of results.</p>
+    pub fn bot_recommendation_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::model::BotRecommendationSummary]> {
+        self.bot_recommendation_summaries.as_deref()
+    }
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the ListBotRecommendations operation. If the nextToken
+    /// field is present, you send the contents as the nextToken parameter of a
+    /// ListBotRecommendations operation request to get the next page of
+    /// results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListBotRecommendationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListBotRecommendationsOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field(
+            "bot_recommendation_summaries",
+            &self.bot_recommendation_summaries,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListBotRecommendationsOutput`](crate::output::ListBotRecommendationsOutput)
+pub mod list_bot_recommendations_output {
+    /// A builder for [`ListBotRecommendationsOutput`](crate::output::ListBotRecommendationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_summaries:
+            std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot that contains the bot
+        /// recommendation list.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot that contains the bot
+        /// recommendation list.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot that contains the bot recommendation
+        /// list.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot that contains the bot recommendation
+        /// list.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// list.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// list.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// Appends an item to `bot_recommendation_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_bot_recommendation_summaries`](Self::set_bot_recommendation_summaries).
+        ///
+        /// <p>Summary information for the bot recommendations that meet the filter
+        /// specified in this request. The length of the list is specified in the
+        /// maxResults parameter of the request. If there are more bot
+        /// recommendations available, the nextToken field contains a token to get
+        /// the next page of results.</p>
+        pub fn bot_recommendation_summaries(
+            mut self,
+            input: impl Into<crate::model::BotRecommendationSummary>,
+        ) -> Self {
+            let mut v = self.bot_recommendation_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.bot_recommendation_summaries = Some(v);
+            self
+        }
+        /// <p>Summary information for the bot recommendations that meet the filter
+        /// specified in this request. The length of the list is specified in the
+        /// maxResults parameter of the request. If there are more bot
+        /// recommendations available, the nextToken field contains a token to get
+        /// the next page of results.</p>
+        pub fn set_bot_recommendation_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BotRecommendationSummary>>,
+        ) -> Self {
+            self.bot_recommendation_summaries = input;
+            self
+        }
+        /// <p>A token that indicates whether there are more results to return in a
+        /// response to the ListBotRecommendations operation. If the nextToken
+        /// field is present, you send the contents as the nextToken parameter of a
+        /// ListBotRecommendations operation request to get the next page of
+        /// results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token that indicates whether there are more results to return in a
+        /// response to the ListBotRecommendations operation. If the nextToken
+        /// field is present, you send the contents as the nextToken parameter of a
+        /// ListBotRecommendations operation request to get the next page of
+        /// results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListBotRecommendationsOutput`](crate::output::ListBotRecommendationsOutput)
+        pub fn build(self) -> crate::output::ListBotRecommendationsOutput {
+            crate::output::ListBotRecommendationsOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_summaries: self.bot_recommendation_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListBotRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListBotRecommendationsOutput`](crate::output::ListBotRecommendationsOutput)
+    pub fn builder() -> crate::output::list_bot_recommendations_output::Builder {
+        crate::output::list_bot_recommendations_output::Builder::default()
     }
 }
 
@@ -6663,6 +7846,345 @@ impl DescribeBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotVersionOutput`](crate::output::DescribeBotVersionOutput)
     pub fn builder() -> crate::output::describe_bot_version_output::Builder {
         crate::output::describe_bot_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeBotRecommendationOutput {
+    /// <p>The identifier of the bot associated with the bot
+    /// recommendation.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot associated with the bot
+    /// recommendation.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to describe.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The status of the bot recommendation. If the status is Failed, then
+    /// the reasons for the failure are listed in the failureReasons field.
+    /// </p>
+    pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
+    /// <p>The identifier of the bot recommendation being described.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
+    pub failure_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The date and time that the bot recommendation was created.</p>
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the bot recommendation was last
+    /// updated.</p>
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The object representing the Amazon S3 bucket containing the transcript,
+    /// as well as the associated metadata.</p>
+    pub transcript_source_setting: std::option::Option<crate::model::TranscriptSourceSetting>,
+    /// <p>The object representing the passwords that were used to encrypt the
+    /// data related to the bot recommendation results, as well as the KMS key
+    /// ARN used to encrypt the associated metadata.</p>
+    pub encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+    /// <p>The object representing the URL of the bot definition, the URL of
+    /// the associated transcript and a statistical summary of the bot
+    /// recommendation results.</p>
+    pub bot_recommendation_results: std::option::Option<crate::model::BotRecommendationResults>,
+}
+impl DescribeBotRecommendationOutput {
+    /// <p>The identifier of the bot associated with the bot
+    /// recommendation.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot associated with the bot
+    /// recommendation.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to describe.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The status of the bot recommendation. If the status is Failed, then
+    /// the reasons for the failure are listed in the failureReasons field.
+    /// </p>
+    pub fn bot_recommendation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+        self.bot_recommendation_status.as_ref()
+    }
+    /// <p>The identifier of the bot recommendation being described.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
+    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
+        self.failure_reasons.as_deref()
+    }
+    /// <p>The date and time that the bot recommendation was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time that the bot recommendation was last
+    /// updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date_time.as_ref()
+    }
+    /// <p>The object representing the Amazon S3 bucket containing the transcript,
+    /// as well as the associated metadata.</p>
+    pub fn transcript_source_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptSourceSetting> {
+        self.transcript_source_setting.as_ref()
+    }
+    /// <p>The object representing the passwords that were used to encrypt the
+    /// data related to the bot recommendation results, as well as the KMS key
+    /// ARN used to encrypt the associated metadata.</p>
+    pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
+        self.encryption_setting.as_ref()
+    }
+    /// <p>The object representing the URL of the bot definition, the URL of
+    /// the associated transcript and a statistical summary of the bot
+    /// recommendation results.</p>
+    pub fn bot_recommendation_results(
+        &self,
+    ) -> std::option::Option<&crate::model::BotRecommendationResults> {
+        self.bot_recommendation_results.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeBotRecommendationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeBotRecommendationOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_status", &self.bot_recommendation_status);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("failure_reasons", &self.failure_reasons);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("last_updated_date_time", &self.last_updated_date_time);
+        formatter.field("transcript_source_setting", &self.transcript_source_setting);
+        formatter.field("encryption_setting", &self.encryption_setting);
+        formatter.field(
+            "bot_recommendation_results",
+            &self.bot_recommendation_results,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeBotRecommendationOutput`](crate::output::DescribeBotRecommendationOutput)
+pub mod describe_bot_recommendation_output {
+    /// A builder for [`DescribeBotRecommendationOutput`](crate::output::DescribeBotRecommendationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_status:
+            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) failure_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) transcript_source_setting:
+            std::option::Option<crate::model::TranscriptSourceSetting>,
+        pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+        pub(crate) bot_recommendation_results:
+            std::option::Option<crate::model::BotRecommendationResults>,
+    }
+    impl Builder {
+        /// <p>The identifier of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to describe.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to describe.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The status of the bot recommendation. If the status is Failed, then
+        /// the reasons for the failure are listed in the failureReasons field.
+        /// </p>
+        pub fn bot_recommendation_status(
+            mut self,
+            input: crate::model::BotRecommendationStatus,
+        ) -> Self {
+            self.bot_recommendation_status = Some(input);
+            self
+        }
+        /// <p>The status of the bot recommendation. If the status is Failed, then
+        /// the reasons for the failure are listed in the failureReasons field.
+        /// </p>
+        pub fn set_bot_recommendation_status(
+            mut self,
+            input: std::option::Option<crate::model::BotRecommendationStatus>,
+        ) -> Self {
+            self.bot_recommendation_status = input;
+            self
+        }
+        /// <p>The identifier of the bot recommendation being described.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot recommendation being described.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// Appends an item to `failure_reasons`.
+        ///
+        /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
+        ///
+        /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
+        pub fn failure_reasons(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.failure_reasons.unwrap_or_default();
+            v.push(input.into());
+            self.failure_reasons = Some(v);
+            self
+        }
+        /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
+        pub fn set_failure_reasons(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.failure_reasons = input;
+            self
+        }
+        /// <p>The date and time that the bot recommendation was created.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the bot recommendation was created.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>The date and time that the bot recommendation was last
+        /// updated.</p>
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the bot recommendation was last
+        /// updated.</p>
+        pub fn set_last_updated_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date_time = input;
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn transcript_source_setting(
+            mut self,
+            input: crate::model::TranscriptSourceSetting,
+        ) -> Self {
+            self.transcript_source_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn set_transcript_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptSourceSetting>,
+        ) -> Self {
+            self.transcript_source_setting = input;
+            self
+        }
+        /// <p>The object representing the passwords that were used to encrypt the
+        /// data related to the bot recommendation results, as well as the KMS key
+        /// ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
+            self.encryption_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the passwords that were used to encrypt the
+        /// data related to the bot recommendation results, as well as the KMS key
+        /// ARN used to encrypt the associated metadata.</p>
+        pub fn set_encryption_setting(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionSetting>,
+        ) -> Self {
+            self.encryption_setting = input;
+            self
+        }
+        /// <p>The object representing the URL of the bot definition, the URL of
+        /// the associated transcript and a statistical summary of the bot
+        /// recommendation results.</p>
+        pub fn bot_recommendation_results(
+            mut self,
+            input: crate::model::BotRecommendationResults,
+        ) -> Self {
+            self.bot_recommendation_results = Some(input);
+            self
+        }
+        /// <p>The object representing the URL of the bot definition, the URL of
+        /// the associated transcript and a statistical summary of the bot
+        /// recommendation results.</p>
+        pub fn set_bot_recommendation_results(
+            mut self,
+            input: std::option::Option<crate::model::BotRecommendationResults>,
+        ) -> Self {
+            self.bot_recommendation_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeBotRecommendationOutput`](crate::output::DescribeBotRecommendationOutput)
+        pub fn build(self) -> crate::output::DescribeBotRecommendationOutput {
+            crate::output::DescribeBotRecommendationOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_status: self.bot_recommendation_status,
+                bot_recommendation_id: self.bot_recommendation_id,
+                failure_reasons: self.failure_reasons,
+                creation_date_time: self.creation_date_time,
+                last_updated_date_time: self.last_updated_date_time,
+                transcript_source_setting: self.transcript_source_setting,
+                encryption_setting: self.encryption_setting,
+                bot_recommendation_results: self.bot_recommendation_results,
+            }
+        }
+    }
+}
+impl DescribeBotRecommendationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBotRecommendationOutput`](crate::output::DescribeBotRecommendationOutput)
+    pub fn builder() -> crate::output::describe_bot_recommendation_output::Builder {
+        crate::output::describe_bot_recommendation_output::Builder::default()
     }
 }
 

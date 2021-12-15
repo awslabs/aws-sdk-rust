@@ -1071,6 +1071,7 @@ pub mod create_event_source_mapping_input {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) batch_size: std::option::Option<i32>,
+        pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) starting_position: std::option::Option<crate::model::EventSourcePosition>,
@@ -1274,6 +1275,21 @@ pub mod create_event_source_mapping_input {
             self.batch_size = input;
             self
         }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.filter_criteria = Some(input);
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.filter_criteria = input;
+            self
+        }
         /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
         /// <p>Default: 0</p>
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -1470,7 +1486,7 @@ pub mod create_event_source_mapping_input {
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             input: impl Into<crate::model::FunctionResponseType>,
@@ -1480,7 +1496,7 @@ pub mod create_event_source_mapping_input {
             self.function_response_types = Some(v);
             self
         }
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn set_function_response_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
@@ -1500,6 +1516,7 @@ pub mod create_event_source_mapping_input {
                 function_name: self.function_name,
                 enabled: self.enabled,
                 batch_size: self.batch_size,
+                filter_criteria: self.filter_criteria,
                 maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
                 parallelization_factor: self.parallelization_factor,
                 starting_position: self.starting_position,
@@ -1721,12 +1738,14 @@ pub mod create_function_input {
             self.function_name = input;
             self
         }
-        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+        /// </p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
             self.runtime = Some(input);
             self
         }
-        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+        /// </p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
             self.runtime = input;
             self
@@ -1741,14 +1760,16 @@ pub mod create_function_input {
             self.role = input;
             self
         }
-        /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+        /// <p>The name of the method within your code that Lambda calls to execute your function.
+        /// Handler is required if the deployment package is a .zip file archive. The format includes the
         /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
         /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
             self.handler = Some(input.into());
             self
         }
-        /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+        /// <p>The name of the method within your code that Lambda calls to execute your function.
+        /// Handler is required if the deployment package is a .zip file archive. The format includes the
         /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
         /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -12565,6 +12586,7 @@ pub mod update_event_source_mapping_input {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) batch_size: std::option::Option<i32>,
+        pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
@@ -12723,6 +12745,21 @@ pub mod update_event_source_mapping_input {
             self.batch_size = input;
             self
         }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.filter_criteria = Some(input);
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.filter_criteria = input;
+            self
+        }
         /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
         /// <p>Default: 0</p>
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -12835,7 +12872,7 @@ pub mod update_event_source_mapping_input {
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             input: impl Into<crate::model::FunctionResponseType>,
@@ -12845,7 +12882,7 @@ pub mod update_event_source_mapping_input {
             self.function_response_types = Some(v);
             self
         }
-        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
         pub fn set_function_response_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
@@ -12865,6 +12902,7 @@ pub mod update_event_source_mapping_input {
                 function_name: self.function_name,
                 enabled: self.enabled,
                 batch_size: self.batch_size,
+                filter_criteria: self.filter_criteria,
                 maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
                 destination_config: self.destination_config,
                 maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
@@ -13444,14 +13482,16 @@ pub mod update_function_configuration_input {
             self.role = input;
             self
         }
-        /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+        /// <p>The name of the method within your code that Lambda calls to execute your function.
+        /// Handler is required if the deployment package is a .zip file archive. The format includes the
         /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
         /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
             self.handler = Some(input.into());
             self
         }
-        /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+        /// <p>The name of the method within your code that Lambda calls to execute your function.
+        /// Handler is required if the deployment package is a .zip file archive. The format includes the
         /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
         /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -13522,12 +13562,14 @@ pub mod update_function_configuration_input {
             self.environment = input;
             self
         }
-        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+        /// </p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
             self.runtime = Some(input);
             self
         }
-        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+        /// </p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
             self.runtime = input;
             self
@@ -14288,7 +14330,8 @@ pub struct UpdateFunctionConfigurationInput {
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+    /// <p>The name of the method within your code that Lambda calls to execute your function.
+    /// Handler is required if the deployment package is a .zip file archive. The format includes the
     /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
     /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
     pub handler: std::option::Option<std::string::String>,
@@ -14306,7 +14349,8 @@ pub struct UpdateFunctionConfigurationInput {
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Environment variables that are accessible from function code during execution.</p>
     pub environment: std::option::Option<crate::model::Environment>,
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+    /// </p>
     pub runtime: std::option::Option<crate::model::Runtime>,
     /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
     /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
@@ -14358,7 +14402,8 @@ impl UpdateFunctionConfigurationInput {
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+    /// <p>The name of the method within your code that Lambda calls to execute your function.
+    /// Handler is required if the deployment package is a .zip file archive. The format includes the
     /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
     /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
     pub fn handler(&self) -> std::option::Option<&str> {
@@ -14388,7 +14433,8 @@ impl UpdateFunctionConfigurationInput {
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+    /// </p>
     pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
         self.runtime.as_ref()
     }
@@ -14646,6 +14692,9 @@ pub struct UpdateEventSourceMappingInput {
     /// </li>
     /// </ul>
     pub batch_size: std::option::Option<i32>,
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
     /// <p>Default: 0</p>
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -14665,7 +14714,7 @@ pub struct UpdateEventSourceMappingInput {
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -14737,6 +14786,11 @@ impl UpdateEventSourceMappingInput {
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+        self.filter_criteria.as_ref()
+    }
     /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
     /// <p>Default: 0</p>
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -14773,7 +14827,7 @@ impl UpdateEventSourceMappingInput {
     pub fn tumbling_window_in_seconds(&self) -> std::option::Option<i32> {
         self.tumbling_window_in_seconds
     }
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
@@ -14787,6 +14841,7 @@ impl std::fmt::Debug for UpdateEventSourceMappingInput {
         formatter.field("function_name", &self.function_name);
         formatter.field("enabled", &self.enabled);
         formatter.field("batch_size", &self.batch_size);
+        formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field(
             "maximum_batching_window_in_seconds",
             &self.maximum_batching_window_in_seconds,
@@ -17636,11 +17691,13 @@ pub struct CreateFunctionInput {
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
     /// characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+    /// </p>
     pub runtime: std::option::Option<crate::model::Runtime>,
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+    /// <p>The name of the method within your code that Lambda calls to execute your function.
+    /// Handler is required if the deployment package is a .zip file archive. The format includes the
     /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
     /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
     pub handler: std::option::Option<std::string::String>,
@@ -17716,7 +17773,8 @@ impl CreateFunctionInput {
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+    /// </p>
     pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
         self.runtime.as_ref()
     }
@@ -17724,7 +17782,8 @@ impl CreateFunctionInput {
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>The name of the method within your code that Lambda calls to execute your function. The format includes the
+    /// <p>The name of the method within your code that Lambda calls to execute your function.
+    /// Handler is required if the deployment package is a .zip file archive. The format includes the
     /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
     /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
     pub fn handler(&self) -> std::option::Option<&str> {
@@ -17923,6 +17982,9 @@ pub struct CreateEventSourceMappingInput {
     /// </li>
     /// </ul>
     pub batch_size: std::option::Option<i32>,
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
     /// <p>Default: 0</p>
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -17954,7 +18016,7 @@ pub struct CreateEventSourceMappingInput {
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The Self-Managed Apache Kafka cluster to send records.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -18044,6 +18106,11 @@ impl CreateEventSourceMappingInput {
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+        self.filter_criteria.as_ref()
+    }
     /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
     /// <p>Default: 0</p>
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
@@ -18104,7 +18171,7 @@ impl CreateEventSourceMappingInput {
     ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
-    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn function_response_types(
         &self,
     ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
@@ -18118,6 +18185,7 @@ impl std::fmt::Debug for CreateEventSourceMappingInput {
         formatter.field("function_name", &self.function_name);
         formatter.field("enabled", &self.enabled);
         formatter.field("batch_size", &self.batch_size);
+        formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field(
             "maximum_batching_window_in_seconds",
             &self.maximum_batching_window_in_seconds,

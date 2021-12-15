@@ -99,6 +99,44 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetImage {
     }
 }
 
+/// Operation shape for `BatchGetRepositoryScanningConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_repository_scanning_configuration`](crate::client::Client::batch_get_repository_scanning_configuration).
+///
+/// See [`crate::client::fluent_builders::BatchGetRepositoryScanningConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetRepositoryScanningConfiguration {
+    _private: (),
+}
+impl BatchGetRepositoryScanningConfiguration {
+    /// Creates a new builder-style object to manufacture [`BatchGetRepositoryScanningConfigurationInput`](crate::input::BatchGetRepositoryScanningConfigurationInput)
+    pub fn builder() -> crate::input::batch_get_repository_scanning_configuration_input::Builder {
+        crate::input::batch_get_repository_scanning_configuration_input::Builder::default()
+    }
+    /// Creates a new `BatchGetRepositoryScanningConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetRepositoryScanningConfiguration {
+    type Output = std::result::Result<
+        crate::output::BatchGetRepositoryScanningConfigurationOutput,
+        crate::error::BatchGetRepositoryScanningConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_repository_scanning_configuration_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_batch_get_repository_scanning_configuration_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `CompleteLayerUpload`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -129,6 +167,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteLayerUpload {
             crate::operation_deser::parse_complete_layer_upload_error(response)
         } else {
             crate::operation_deser::parse_complete_layer_upload_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreatePullThroughCacheRule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_pull_through_cache_rule`](crate::client::Client::create_pull_through_cache_rule).
+///
+/// See [`crate::client::fluent_builders::CreatePullThroughCacheRule`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreatePullThroughCacheRule {
+    _private: (),
+}
+impl CreatePullThroughCacheRule {
+    /// Creates a new builder-style object to manufacture [`CreatePullThroughCacheRuleInput`](crate::input::CreatePullThroughCacheRuleInput)
+    pub fn builder() -> crate::input::create_pull_through_cache_rule_input::Builder {
+        crate::input::create_pull_through_cache_rule_input::Builder::default()
+    }
+    /// Creates a new `CreatePullThroughCacheRule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreatePullThroughCacheRule {
+    type Output = std::result::Result<
+        crate::output::CreatePullThroughCacheRuleOutput,
+        crate::error::CreatePullThroughCacheRuleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_pull_through_cache_rule_error(response)
+        } else {
+            crate::operation_deser::parse_create_pull_through_cache_rule_response(response)
         }
     }
 }
@@ -197,6 +269,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
             crate::operation_deser::parse_delete_lifecycle_policy_error(response)
         } else {
             crate::operation_deser::parse_delete_lifecycle_policy_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeletePullThroughCacheRule`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_pull_through_cache_rule`](crate::client::Client::delete_pull_through_cache_rule).
+///
+/// See [`crate::client::fluent_builders::DeletePullThroughCacheRule`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeletePullThroughCacheRule {
+    _private: (),
+}
+impl DeletePullThroughCacheRule {
+    /// Creates a new builder-style object to manufacture [`DeletePullThroughCacheRuleInput`](crate::input::DeletePullThroughCacheRuleInput)
+    pub fn builder() -> crate::input::delete_pull_through_cache_rule_input::Builder {
+        crate::input::delete_pull_through_cache_rule_input::Builder::default()
+    }
+    /// Creates a new `DeletePullThroughCacheRule` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeletePullThroughCacheRule {
+    type Output = std::result::Result<
+        crate::output::DeletePullThroughCacheRuleOutput,
+        crate::error::DeletePullThroughCacheRuleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_pull_through_cache_rule_error(response)
+        } else {
+            crate::operation_deser::parse_delete_pull_through_cache_rule_response(response)
         }
     }
 }
@@ -399,6 +505,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageScanFinding
             crate::operation_deser::parse_describe_image_scan_findings_error(response)
         } else {
             crate::operation_deser::parse_describe_image_scan_findings_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribePullThroughCacheRules`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_pull_through_cache_rules`](crate::client::Client::describe_pull_through_cache_rules).
+///
+/// See [`crate::client::fluent_builders::DescribePullThroughCacheRules`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribePullThroughCacheRules {
+    _private: (),
+}
+impl DescribePullThroughCacheRules {
+    /// Creates a new builder-style object to manufacture [`DescribePullThroughCacheRulesInput`](crate::input::DescribePullThroughCacheRulesInput)
+    pub fn builder() -> crate::input::describe_pull_through_cache_rules_input::Builder {
+        crate::input::describe_pull_through_cache_rules_input::Builder::default()
+    }
+    /// Creates a new `DescribePullThroughCacheRules` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribePullThroughCacheRules {
+    type Output = std::result::Result<
+        crate::output::DescribePullThroughCacheRulesOutput,
+        crate::error::DescribePullThroughCacheRulesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_pull_through_cache_rules_error(response)
+        } else {
+            crate::operation_deser::parse_describe_pull_through_cache_rules_response(response)
         }
     }
 }
@@ -637,6 +777,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegistryPolicy {
             crate::operation_deser::parse_get_registry_policy_error(response)
         } else {
             crate::operation_deser::parse_get_registry_policy_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetRegistryScanningConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_registry_scanning_configuration`](crate::client::Client::get_registry_scanning_configuration).
+///
+/// See [`crate::client::fluent_builders::GetRegistryScanningConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetRegistryScanningConfiguration {
+    _private: (),
+}
+impl GetRegistryScanningConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetRegistryScanningConfigurationInput`](crate::input::GetRegistryScanningConfigurationInput)
+    pub fn builder() -> crate::input::get_registry_scanning_configuration_input::Builder {
+        crate::input::get_registry_scanning_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetRegistryScanningConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetRegistryScanningConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetRegistryScanningConfigurationOutput,
+        crate::error::GetRegistryScanningConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_registry_scanning_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_registry_scanning_configuration_response(response)
         }
     }
 }
@@ -938,6 +1112,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRegistryPolicy {
             crate::operation_deser::parse_put_registry_policy_error(response)
         } else {
             crate::operation_deser::parse_put_registry_policy_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutRegistryScanningConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_registry_scanning_configuration`](crate::client::Client::put_registry_scanning_configuration).
+///
+/// See [`crate::client::fluent_builders::PutRegistryScanningConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutRegistryScanningConfiguration {
+    _private: (),
+}
+impl PutRegistryScanningConfiguration {
+    /// Creates a new builder-style object to manufacture [`PutRegistryScanningConfigurationInput`](crate::input::PutRegistryScanningConfigurationInput)
+    pub fn builder() -> crate::input::put_registry_scanning_configuration_input::Builder {
+        crate::input::put_registry_scanning_configuration_input::Builder::default()
+    }
+    /// Creates a new `PutRegistryScanningConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutRegistryScanningConfiguration {
+    type Output = std::result::Result<
+        crate::output::PutRegistryScanningConfigurationOutput,
+        crate::error::PutRegistryScanningConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_registry_scanning_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_put_registry_scanning_configuration_response(response)
         }
     }
 }

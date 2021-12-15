@@ -3905,6 +3905,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseReservedDBInstan
     }
 }
 
+/// Operation shape for `RebootDBCluster`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`reboot_db_cluster`](crate::client::Client::reboot_db_cluster).
+///
+/// See [`crate::client::fluent_builders::RebootDBCluster`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RebootDBCluster {
+    _private: (),
+}
+impl RebootDBCluster {
+    /// Creates a new builder-style object to manufacture [`RebootDbClusterInput`](crate::input::RebootDbClusterInput)
+    pub fn builder() -> crate::input::reboot_db_cluster_input::Builder {
+        crate::input::reboot_db_cluster_input::Builder::default()
+    }
+    /// Creates a new `RebootDBCluster` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RebootDBCluster {
+    type Output = std::result::Result<
+        crate::output::RebootDbClusterOutput,
+        crate::error::RebootDBClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_reboot_db_cluster_error(response)
+        } else {
+            crate::operation_deser::parse_reboot_db_cluster_response(response)
+        }
+    }
+}
+
 /// Operation shape for `RebootDBInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

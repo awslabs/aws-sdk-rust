@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_lexmodelsv2::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -276,6 +276,15 @@ where
     pub fn describe_bot_locale(&self) -> fluent_builders::DescribeBotLocale<C, M, R> {
         fluent_builders::DescribeBotLocale::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeBotRecommendation` operation.
+    ///
+    /// See [`DescribeBotRecommendation`](crate::client::fluent_builders::DescribeBotRecommendation) for more information about the
+    /// operation and its arguments.
+    pub fn describe_bot_recommendation(
+        &self,
+    ) -> fluent_builders::DescribeBotRecommendation<C, M, R> {
+        fluent_builders::DescribeBotRecommendation::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeBotVersion` operation.
     ///
     /// See [`DescribeBotVersion`](crate::client::fluent_builders::DescribeBotVersion) for more information about the
@@ -346,6 +355,13 @@ where
     pub fn list_bot_locales(&self) -> fluent_builders::ListBotLocales<C, M, R> {
         fluent_builders::ListBotLocales::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListBotRecommendations` operation.
+    ///
+    /// See [`ListBotRecommendations`](crate::client::fluent_builders::ListBotRecommendations) for more information about the
+    /// operation and its arguments.
+    pub fn list_bot_recommendations(&self) -> fluent_builders::ListBotRecommendations<C, M, R> {
+        fluent_builders::ListBotRecommendations::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListBots` operation.
     ///
     /// See [`ListBots`](crate::client::fluent_builders::ListBots) for more information about the
@@ -395,6 +411,13 @@ where
     pub fn list_intents(&self) -> fluent_builders::ListIntents<C, M, R> {
         fluent_builders::ListIntents::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListRecommendedIntents` operation.
+    ///
+    /// See [`ListRecommendedIntents`](crate::client::fluent_builders::ListRecommendedIntents) for more information about the
+    /// operation and its arguments.
+    pub fn list_recommended_intents(&self) -> fluent_builders::ListRecommendedIntents<C, M, R> {
+        fluent_builders::ListRecommendedIntents::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListSlots` operation.
     ///
     /// See [`ListSlots`](crate::client::fluent_builders::ListSlots) for more information about the
@@ -415,6 +438,22 @@ where
     /// operation and its arguments.
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `SearchAssociatedTranscripts` operation.
+    ///
+    /// See [`SearchAssociatedTranscripts`](crate::client::fluent_builders::SearchAssociatedTranscripts) for more information about the
+    /// operation and its arguments.
+    pub fn search_associated_transcripts(
+        &self,
+    ) -> fluent_builders::SearchAssociatedTranscripts<C, M, R> {
+        fluent_builders::SearchAssociatedTranscripts::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StartBotRecommendation` operation.
+    ///
+    /// See [`StartBotRecommendation`](crate::client::fluent_builders::StartBotRecommendation) for more information about the
+    /// operation and its arguments.
+    pub fn start_bot_recommendation(&self) -> fluent_builders::StartBotRecommendation<C, M, R> {
+        fluent_builders::StartBotRecommendation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `StartImport` operation.
     ///
@@ -457,6 +496,13 @@ where
     /// operation and its arguments.
     pub fn update_bot_locale(&self) -> fluent_builders::UpdateBotLocale<C, M, R> {
         fluent_builders::UpdateBotLocale::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateBotRecommendation` operation.
+    ///
+    /// See [`UpdateBotRecommendation`](crate::client::fluent_builders::UpdateBotRecommendation) for more information about the
+    /// operation and its arguments.
+    pub fn update_bot_recommendation(&self) -> fluent_builders::UpdateBotRecommendation<C, M, R> {
+        fluent_builders::UpdateBotRecommendation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateExport` operation.
     ///
@@ -510,7 +556,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BuildBotLocale<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -610,7 +656,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -805,7 +851,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBotAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1016,7 +1062,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBotLocale<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1207,7 +1253,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBotVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1330,7 +1376,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateExport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1475,7 +1521,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateIntent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1827,7 +1873,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1925,7 +1971,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateResourcePolicyStatement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2128,7 +2174,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSlot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2339,7 +2385,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSlotType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2557,7 +2603,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateUploadUrl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2626,7 +2672,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2710,7 +2756,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBotAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2806,7 +2852,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBotLocale<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2901,7 +2947,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBotVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3002,7 +3048,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteExport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3073,7 +3119,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteImport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3145,7 +3191,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteIntent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3250,7 +3296,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3345,7 +3391,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteResourcePolicyStatement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3448,7 +3494,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSlot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3566,7 +3612,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSlotType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3699,7 +3745,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteUtterances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3799,7 +3845,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeBot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3869,7 +3915,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeBotAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3951,7 +3997,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeBotLocale<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4039,13 +4085,128 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeBotRecommendation`.
+    ///
+    /// <p>Provides metadata information about a bot recommendation. This
+    /// information will enable you to get a description on the request inputs,
+    /// to download associated transcripts after processing is complete, and to
+    /// download intents and slot-types generated by the bot
+    /// recommendation.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeBotRecommendation<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_bot_recommendation_input::Builder,
+    }
+    impl<C, M, R> DescribeBotRecommendation<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeBotRecommendation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeBotRecommendationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeBotRecommendationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeBotRecommendationInputOperationOutputAlias,
+                crate::output::DescribeBotRecommendationOutput,
+                crate::error::DescribeBotRecommendationError,
+                crate::input::DescribeBotRecommendationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(inp);
+            self
+        }
+        /// <p>The version of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to describe. The string must match one of the supported locales. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(inp);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to describe. The string must match one of the supported locales. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The identifier of the bot recommendation to describe.</p>
+        pub fn bot_recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(inp);
+            self
+        }
+        /// <p>The identifier of the bot recommendation to describe.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_bot_recommendation_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeBotVersion`.
     ///
     /// <p>Provides metadata about a version of a bot.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeBotVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4127,7 +4288,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeExport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4197,7 +4358,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4267,7 +4428,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeIntent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4372,7 +4533,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4444,7 +4605,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSlot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4558,7 +4719,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSlotType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4686,7 +4847,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAggregatedUtterances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4888,7 +5049,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBotAliases<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4990,7 +5151,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBotLocales<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5132,13 +5293,140 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListBotRecommendations`.
+    ///
+    /// <p>Get a list of bot recommendations that meet the specified
+    /// criteria.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListBotRecommendations<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_bot_recommendations_input::Builder,
+    }
+    impl<C, M, R> ListBotRecommendations<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListBotRecommendations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListBotRecommendationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListBotRecommendationsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListBotRecommendationsInputOperationOutputAlias,
+                crate::output::ListBotRecommendationsOutput,
+                crate::error::ListBotRecommendationsError,
+                crate::input::ListBotRecommendationsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot that contains the bot
+        /// recommendation list.</p>
+        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the bot that contains the bot
+        /// recommendation list.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot that contains the bot recommendation
+        /// list.</p>
+        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(inp);
+            self
+        }
+        /// <p>The version of the bot that contains the bot recommendation
+        /// list.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// list.</p>
+        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(inp);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// list.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the response from the ListBotRecommendation operation contains
+        /// more results than specified in the maxResults parameter, a token is
+        /// returned in the response. Use that token in the nextToken parameter to
+        /// return the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the response from the ListBotRecommendation operation contains
+        /// more results than specified in the maxResults parameter, a token is
+        /// returned in the response. Use that token in the nextToken parameter to
+        /// return the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListBots`.
     ///
     /// <p>Gets a list of available bots.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListBots<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5272,7 +5560,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBotVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5396,7 +5684,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBuiltInIntents<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5520,7 +5808,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBuiltInSlotTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5646,7 +5934,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListExports<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5797,7 +6085,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListImports<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5947,7 +6235,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListIntents<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6107,13 +6395,153 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListRecommendedIntents`.
+    ///
+    /// <p>Gets a list of recommended intents provided by the bot
+    /// recommendation that you can use in your bot.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListRecommendedIntents<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_recommended_intents_input::Builder,
+    }
+    impl<C, M, R> ListRecommendedIntents<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListRecommendedIntents`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRecommendedIntentsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListRecommendedIntentsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListRecommendedIntentsInputOperationOutputAlias,
+                crate::output::ListRecommendedIntentsOutput,
+                crate::error::ListRecommendedIntentsError,
+                crate::input::ListRecommendedIntentsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot associated with the recommended
+        /// intents.</p>
+        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the bot associated with the recommended
+        /// intents.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot that contains the recommended intents.</p>
+        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(inp);
+            self
+        }
+        /// <p>The version of the bot that contains the recommended intents.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The identifier of the language and locale of the recommended
+        /// intents.</p>
+        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(inp);
+            self
+        }
+        /// <p>The identifier of the language and locale of the recommended
+        /// intents.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The identifier of the bot recommendation that contains the
+        /// recommended intents.</p>
+        pub fn bot_recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(inp);
+            self
+        }
+        /// <p>The identifier of the bot recommendation that contains the
+        /// recommended intents.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_bot_recommendation_id(input);
+            self
+        }
+        /// <p>If the response from the ListRecommendedIntents operation contains
+        /// more results than specified in the maxResults parameter, a token is
+        /// returned in the response. Use that token in the nextToken parameter to
+        /// return the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the response from the ListRecommendedIntents operation contains
+        /// more results than specified in the maxResults parameter, a token is
+        /// returned in the response. Use that token in the nextToken parameter to
+        /// return the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListSlots`.
     ///
     /// <p>Gets a list of slots that match the specified criteria.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListSlots<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6286,7 +6714,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListSlotTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6455,7 +6883,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6521,6 +6949,318 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `SearchAssociatedTranscripts`.
+    ///
+    /// <p>Search for associated transcripts that meet the specified
+    /// criteria.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct SearchAssociatedTranscripts<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::search_associated_transcripts_input::Builder,
+    }
+    impl<C, M, R> SearchAssociatedTranscripts<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `SearchAssociatedTranscripts`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchAssociatedTranscriptsOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchAssociatedTranscriptsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::SearchAssociatedTranscriptsInputOperationOutputAlias,
+                crate::output::SearchAssociatedTranscriptsOutput,
+                crate::error::SearchAssociatedTranscriptsError,
+                crate::input::SearchAssociatedTranscriptsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot associated with the transcripts
+        /// that you are searching.</p>
+        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the bot associated with the transcripts
+        /// that you are searching.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot containing the transcripts that you are
+        /// searching.</p>
+        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(inp);
+            self
+        }
+        /// <p>The version of the bot containing the transcripts that you are
+        /// searching.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The identifier of the language and locale of the transcripts to
+        /// search. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(inp);
+            self
+        }
+        /// <p>The identifier of the language and locale of the transcripts to
+        /// search. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation associated with the
+        /// transcripts to search.</p>
+        pub fn bot_recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation associated with the
+        /// transcripts to search.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_bot_recommendation_id(input);
+            self
+        }
+        /// <p>How SearchResults are ordered. Valid values are Ascending or
+        /// Descending. The default is Descending.</p>
+        pub fn search_order(mut self, inp: crate::model::SearchOrder) -> Self {
+            self.inner = self.inner.search_order(inp);
+            self
+        }
+        /// <p>How SearchResults are ordered. Valid values are Ascending or
+        /// Descending. The default is Descending.</p>
+        pub fn set_search_order(
+            mut self,
+            input: std::option::Option<crate::model::SearchOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_search_order(input);
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>A list of filter objects.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::AssociatedTranscriptFilter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>A list of filter objects.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscriptFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the response from the SearchAssociatedTranscriptsRequest
+        /// operation contains more results than specified in the maxResults
+        /// parameter, an index is returned in the response. Use that index in the
+        /// nextIndex parameter to return the next page of results.</p>
+        pub fn next_index(mut self, inp: i32) -> Self {
+            self.inner = self.inner.next_index(inp);
+            self
+        }
+        /// <p>If the response from the SearchAssociatedTranscriptsRequest
+        /// operation contains more results than specified in the maxResults
+        /// parameter, an index is returned in the response. Use that index in the
+        /// nextIndex parameter to return the next page of results.</p>
+        pub fn set_next_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_next_index(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartBotRecommendation`.
+    ///
+    /// <p>Use this to provide your transcript data, and to start the bot
+    /// recommendation process.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartBotRecommendation<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_bot_recommendation_input::Builder,
+    }
+    impl<C, M, R> StartBotRecommendation<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartBotRecommendation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartBotRecommendationOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartBotRecommendationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartBotRecommendationInputOperationOutputAlias,
+                crate::output::StartBotRecommendationOutput,
+                crate::error::StartBotRecommendationError,
+                crate::input::StartBotRecommendationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot containing the bot
+        /// recommendation.</p>
+        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the bot containing the bot
+        /// recommendation.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation.</p>
+        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(inp);
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to start. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(inp);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to start. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn transcript_source_setting(
+            mut self,
+            inp: crate::model::TranscriptSourceSetting,
+        ) -> Self {
+            self.inner = self.inner.transcript_source_setting(inp);
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn set_transcript_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptSourceSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_transcript_source_setting(input);
+            self
+        }
+        /// <p>The object representing the passwords that will be used to encrypt
+        /// the data related to the bot recommendation results, as well as the KMS
+        /// key ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, inp: crate::model::EncryptionSetting) -> Self {
+            self.inner = self.inner.encryption_setting(inp);
+            self
+        }
+        /// <p>The object representing the passwords that will be used to encrypt
+        /// the data related to the bot recommendation results, as well as the KMS
+        /// key ARN used to encrypt the associated metadata.</p>
+        pub fn set_encryption_setting(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_setting(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartImport`.
     ///
     /// <p>Starts importing a bot or bot locale from a zip archive that you
@@ -6528,7 +7268,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartImport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6654,7 +7394,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6751,7 +7491,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6842,7 +7582,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateBot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6985,7 +7725,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateBotAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7162,7 +7902,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateBotLocale<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7294,6 +8034,138 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateBotRecommendation`.
+    ///
+    /// <p>Updates an existing bot recommendation request.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateBotRecommendation<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_bot_recommendation_input::Builder,
+    }
+    impl<C, M, R> UpdateBotRecommendation<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateBotRecommendation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateBotRecommendationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateBotRecommendationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateBotRecommendationInputOperationOutputAlias,
+                crate::output::UpdateBotRecommendationOutput,
+                crate::error::UpdateBotRecommendationError,
+                crate::input::UpdateBotRecommendationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot containing the bot recommendation
+        /// to be updated.</p>
+        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the bot containing the bot recommendation
+        /// to be updated.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation to be
+        /// updated.</p>
+        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(inp);
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation to be
+        /// updated.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to update. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(inp);
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to update. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be
+        /// updated.</p>
+        pub fn bot_recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be
+        /// updated.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_bot_recommendation_id(input);
+            self
+        }
+        /// <p>The object representing the passwords that will be used to encrypt
+        /// the data related to the bot recommendation results, as well as the KMS
+        /// key ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, inp: crate::model::EncryptionSetting) -> Self {
+            self.inner = self.inner.encryption_setting(inp);
+            self
+        }
+        /// <p>The object representing the passwords that will be used to encrypt
+        /// the data related to the bot recommendation results, as well as the KMS
+        /// key ARN used to encrypt the associated metadata.</p>
+        pub fn set_encryption_setting(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_encryption_setting(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateExport`.
     ///
     /// <p>Updates the password used to protect an export zip archive.</p>
@@ -7304,7 +8176,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateExport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7387,7 +8259,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateIntent<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7683,7 +8555,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7798,7 +8670,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateSlot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8002,7 +8874,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateSlotType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8178,17 +9050,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -8197,7 +9073,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -8213,11 +9089,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

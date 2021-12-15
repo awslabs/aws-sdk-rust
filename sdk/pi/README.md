@@ -1,6 +1,6 @@
 # aws-sdk-pi
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon RDS Performance Insights enables you to monitor and explore different dimensions of database load based on data captured from a running DB instance. The guide provides detailed information about Performance Insights data types, parameters and errors.
@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-pi = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-pi = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -8461,6 +8461,9 @@ pub enum UpdateRecoveryPointLifecycleErrorKind {
     /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
     /// out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>Indicates that something is wrong with the input to the request. For example, a
+    /// parameter is of the wrong type.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
     /// <p>A resource that is required for the action doesn't exist.</p>
@@ -8476,6 +8479,7 @@ impl std::fmt::Display for UpdateRecoveryPointLifecycleError {
             UpdateRecoveryPointLifecycleErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
+            UpdateRecoveryPointLifecycleErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             UpdateRecoveryPointLifecycleErrorKind::MissingParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
@@ -8548,6 +8552,13 @@ impl UpdateRecoveryPointLifecycleError {
             UpdateRecoveryPointLifecycleErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateRecoveryPointLifecycleErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRecoveryPointLifecycleErrorKind::InvalidRequestException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateRecoveryPointLifecycleErrorKind::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(
@@ -8576,6 +8587,7 @@ impl std::error::Error for UpdateRecoveryPointLifecycleError {
             UpdateRecoveryPointLifecycleErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
+            UpdateRecoveryPointLifecycleErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UpdateRecoveryPointLifecycleErrorKind::MissingParameterValueException(_inner) => {
                 Some(_inner)
             }

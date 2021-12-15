@@ -5,9 +5,9 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_http::AwsErrorRetryPolicy;
-use aws_hyper::{SdkError, SdkSuccess};
 use aws_sdk_dynamodb::error::DescribeTableError;
 use aws_sdk_dynamodb::input::DescribeTableInput;
+use aws_sdk_dynamodb::middleware::DefaultMiddleware;
 use aws_sdk_dynamodb::model::{
     AttributeDefinition, AttributeValue, KeySchemaElement, KeyType, ProvisionedThroughput,
     ScalarAttributeType, Select, TableStatus,
@@ -15,6 +15,8 @@ use aws_sdk_dynamodb::model::{
 use aws_sdk_dynamodb::operation::DescribeTable;
 use aws_sdk_dynamodb::output::DescribeTableOutput;
 use aws_sdk_dynamodb::{Client, Config, Error, Region, PKG_VERSION};
+use aws_smithy_client::erase::DynConnector;
+use aws_smithy_http::result::{SdkError, SdkSuccess};
 
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::retry::ClassifyResponse;
@@ -56,7 +58,7 @@ async fn make_table(
     client: &Client,
     table: &str,
     key: &str,
-) -> Result<(), aws_hyper::SdkError<aws_sdk_dynamodb::error::CreateTableError>> {
+) -> Result<(), SdkError<aws_sdk_dynamodb::error::CreateTableError>> {
     let ad = AttributeDefinition::builder()
         .attribute_name(key)
         .attribute_type(ScalarAttributeType::S)
@@ -282,7 +284,7 @@ async fn main() -> Result<(), Error> {
 
     println!("Waiting for table to be ready.");
 
-    let raw_client = aws_hyper::Client::https();
+    let raw_client = aws_smithy_client::Client::<DynConnector, DefaultMiddleware>::dyn_https();
 
     raw_client
         .call(wait_for_ready_table(&table, client.conf()).await)

@@ -748,6 +748,74 @@ impl StartNetworkInsightsAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartNetworkInsightsAccessScopeAnalysisOutput {
+    /// <p>The Network Access Scope analysis.</p>
+    pub network_insights_access_scope_analysis:
+        std::option::Option<crate::model::NetworkInsightsAccessScopeAnalysis>,
+}
+impl StartNetworkInsightsAccessScopeAnalysisOutput {
+    /// <p>The Network Access Scope analysis.</p>
+    pub fn network_insights_access_scope_analysis(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkInsightsAccessScopeAnalysis> {
+        self.network_insights_access_scope_analysis.as_ref()
+    }
+}
+impl std::fmt::Debug for StartNetworkInsightsAccessScopeAnalysisOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartNetworkInsightsAccessScopeAnalysisOutput");
+        formatter.field(
+            "network_insights_access_scope_analysis",
+            &self.network_insights_access_scope_analysis,
+        );
+        formatter.finish()
+    }
+}
+/// See [`StartNetworkInsightsAccessScopeAnalysisOutput`](crate::output::StartNetworkInsightsAccessScopeAnalysisOutput)
+pub mod start_network_insights_access_scope_analysis_output {
+    /// A builder for [`StartNetworkInsightsAccessScopeAnalysisOutput`](crate::output::StartNetworkInsightsAccessScopeAnalysisOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_insights_access_scope_analysis:
+            std::option::Option<crate::model::NetworkInsightsAccessScopeAnalysis>,
+    }
+    impl Builder {
+        /// <p>The Network Access Scope analysis.</p>
+        pub fn network_insights_access_scope_analysis(
+            mut self,
+            input: crate::model::NetworkInsightsAccessScopeAnalysis,
+        ) -> Self {
+            self.network_insights_access_scope_analysis = Some(input);
+            self
+        }
+        /// <p>The Network Access Scope analysis.</p>
+        pub fn set_network_insights_access_scope_analysis(
+            mut self,
+            input: std::option::Option<crate::model::NetworkInsightsAccessScopeAnalysis>,
+        ) -> Self {
+            self.network_insights_access_scope_analysis = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartNetworkInsightsAccessScopeAnalysisOutput`](crate::output::StartNetworkInsightsAccessScopeAnalysisOutput)
+        pub fn build(self) -> crate::output::StartNetworkInsightsAccessScopeAnalysisOutput {
+            crate::output::StartNetworkInsightsAccessScopeAnalysisOutput {
+                network_insights_access_scope_analysis: self.network_insights_access_scope_analysis,
+            }
+        }
+    }
+}
+impl StartNetworkInsightsAccessScopeAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`StartNetworkInsightsAccessScopeAnalysisOutput`](crate::output::StartNetworkInsightsAccessScopeAnalysisOutput)
+    pub fn builder() -> crate::output::start_network_insights_access_scope_analysis_output::Builder
+    {
+        crate::output::start_network_insights_access_scope_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstancesOutput {
     /// <p>Information about the started instances.</p>
     pub starting_instances: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
@@ -1560,6 +1628,363 @@ impl RevokeClientVpnIngressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeClientVpnIngressOutput`](crate::output::RevokeClientVpnIngressOutput)
     pub fn builder() -> crate::output::revoke_client_vpn_ingress_output::Builder {
         crate::output::revoke_client_vpn_ingress_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestoreSnapshotTierOutput {
+    /// <p>The ID of the snapshot.</p>
+    pub snapshot_id: std::option::Option<std::string::String>,
+    /// <p>The date and time when the snapshot restore process started.</p>
+    pub restore_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>For temporary restores only. The number of days for which the archived snapshot
+    /// is temporarily restored.</p>
+    pub restore_duration: std::option::Option<i32>,
+    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
+    /// restore. <code>false</code> indicates a temporary restore.</p>
+    pub is_permanent_restore: std::option::Option<bool>,
+}
+impl RestoreSnapshotTierOutput {
+    /// <p>The ID of the snapshot.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The date and time when the snapshot restore process started.</p>
+    pub fn restore_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.restore_start_time.as_ref()
+    }
+    /// <p>For temporary restores only. The number of days for which the archived snapshot
+    /// is temporarily restored.</p>
+    pub fn restore_duration(&self) -> std::option::Option<i32> {
+        self.restore_duration
+    }
+    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
+    /// restore. <code>false</code> indicates a temporary restore.</p>
+    pub fn is_permanent_restore(&self) -> std::option::Option<bool> {
+        self.is_permanent_restore
+    }
+}
+impl std::fmt::Debug for RestoreSnapshotTierOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreSnapshotTierOutput");
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("restore_start_time", &self.restore_start_time);
+        formatter.field("restore_duration", &self.restore_duration);
+        formatter.field("is_permanent_restore", &self.is_permanent_restore);
+        formatter.finish()
+    }
+}
+/// See [`RestoreSnapshotTierOutput`](crate::output::RestoreSnapshotTierOutput)
+pub mod restore_snapshot_tier_output {
+    /// A builder for [`RestoreSnapshotTierOutput`](crate::output::RestoreSnapshotTierOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshot_id: std::option::Option<std::string::String>,
+        pub(crate) restore_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) restore_duration: std::option::Option<i32>,
+        pub(crate) is_permanent_restore: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The ID of the snapshot.</p>
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the snapshot.</p>
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
+            self
+        }
+        /// <p>The date and time when the snapshot restore process started.</p>
+        pub fn restore_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.restore_start_time = Some(input);
+            self
+        }
+        /// <p>The date and time when the snapshot restore process started.</p>
+        pub fn set_restore_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.restore_start_time = input;
+            self
+        }
+        /// <p>For temporary restores only. The number of days for which the archived snapshot
+        /// is temporarily restored.</p>
+        pub fn restore_duration(mut self, input: i32) -> Self {
+            self.restore_duration = Some(input);
+            self
+        }
+        /// <p>For temporary restores only. The number of days for which the archived snapshot
+        /// is temporarily restored.</p>
+        pub fn set_restore_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.restore_duration = input;
+            self
+        }
+        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
+        /// restore. <code>false</code> indicates a temporary restore.</p>
+        pub fn is_permanent_restore(mut self, input: bool) -> Self {
+            self.is_permanent_restore = Some(input);
+            self
+        }
+        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
+        /// restore. <code>false</code> indicates a temporary restore.</p>
+        pub fn set_is_permanent_restore(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_permanent_restore = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreSnapshotTierOutput`](crate::output::RestoreSnapshotTierOutput)
+        pub fn build(self) -> crate::output::RestoreSnapshotTierOutput {
+            crate::output::RestoreSnapshotTierOutput {
+                snapshot_id: self.snapshot_id,
+                restore_start_time: self.restore_start_time,
+                restore_duration: self.restore_duration,
+                is_permanent_restore: self.is_permanent_restore,
+            }
+        }
+    }
+}
+impl RestoreSnapshotTierOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreSnapshotTierOutput`](crate::output::RestoreSnapshotTierOutput)
+    pub fn builder() -> crate::output::restore_snapshot_tier_output::Builder {
+        crate::output::restore_snapshot_tier_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestoreSnapshotFromRecycleBinOutput {
+    /// <p>The ID of the snapshot.</p>
+    pub snapshot_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub outpost_arn: std::option::Option<std::string::String>,
+    /// <p>The description for the snapshot.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the snapshot is encrypted.</p>
+    pub encrypted: std::option::Option<bool>,
+    /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+    pub owner_id: std::option::Option<std::string::String>,
+    /// <p>The progress of the snapshot, as a percentage.</p>
+    pub progress: std::option::Option<std::string::String>,
+    /// <p>The time stamp when the snapshot was initiated.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The state of the snapshot.</p>
+    pub state: std::option::Option<crate::model::SnapshotState>,
+    /// <p>The ID of the volume that was used to create the snapshot.</p>
+    pub volume_id: std::option::Option<std::string::String>,
+    /// <p>The size of the volume, in GiB.</p>
+    pub volume_size: std::option::Option<i32>,
+}
+impl RestoreSnapshotFromRecycleBinOutput {
+    /// <p>The ID of the snapshot.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+        self.outpost_arn.as_deref()
+    }
+    /// <p>The description for the snapshot.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the snapshot is encrypted.</p>
+    pub fn encrypted(&self) -> std::option::Option<bool> {
+        self.encrypted
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The progress of the snapshot, as a percentage.</p>
+    pub fn progress(&self) -> std::option::Option<&str> {
+        self.progress.as_deref()
+    }
+    /// <p>The time stamp when the snapshot was initiated.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The state of the snapshot.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::SnapshotState> {
+        self.state.as_ref()
+    }
+    /// <p>The ID of the volume that was used to create the snapshot.</p>
+    pub fn volume_id(&self) -> std::option::Option<&str> {
+        self.volume_id.as_deref()
+    }
+    /// <p>The size of the volume, in GiB.</p>
+    pub fn volume_size(&self) -> std::option::Option<i32> {
+        self.volume_size
+    }
+}
+impl std::fmt::Debug for RestoreSnapshotFromRecycleBinOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreSnapshotFromRecycleBinOutput");
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("outpost_arn", &self.outpost_arn);
+        formatter.field("description", &self.description);
+        formatter.field("encrypted", &self.encrypted);
+        formatter.field("owner_id", &self.owner_id);
+        formatter.field("progress", &self.progress);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("state", &self.state);
+        formatter.field("volume_id", &self.volume_id);
+        formatter.field("volume_size", &self.volume_size);
+        formatter.finish()
+    }
+}
+/// See [`RestoreSnapshotFromRecycleBinOutput`](crate::output::RestoreSnapshotFromRecycleBinOutput)
+pub mod restore_snapshot_from_recycle_bin_output {
+    /// A builder for [`RestoreSnapshotFromRecycleBinOutput`](crate::output::RestoreSnapshotFromRecycleBinOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshot_id: std::option::Option<std::string::String>,
+        pub(crate) outpost_arn: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) encrypted: std::option::Option<bool>,
+        pub(crate) owner_id: std::option::Option<std::string::String>,
+        pub(crate) progress: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) state: std::option::Option<crate::model::SnapshotState>,
+        pub(crate) volume_id: std::option::Option<std::string::String>,
+        pub(crate) volume_size: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ID of the snapshot.</p>
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the snapshot.</p>
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
+            self
+        }
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outpost_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.outpost_arn = input;
+            self
+        }
+        /// <p>The description for the snapshot.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description for the snapshot.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Indicates whether the snapshot is encrypted.</p>
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.encrypted = Some(input);
+            self
+        }
+        /// <p>Indicates whether the snapshot is encrypted.</p>
+        pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.encrypted = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
+            self
+        }
+        /// <p>The progress of the snapshot, as a percentage.</p>
+        pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
+            self.progress = Some(input.into());
+            self
+        }
+        /// <p>The progress of the snapshot, as a percentage.</p>
+        pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.progress = input;
+            self
+        }
+        /// <p>The time stamp when the snapshot was initiated.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>The time stamp when the snapshot was initiated.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The state of the snapshot.</p>
+        pub fn state(mut self, input: crate::model::SnapshotState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the snapshot.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::SnapshotState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The ID of the volume that was used to create the snapshot.</p>
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the volume that was used to create the snapshot.</p>
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
+            self
+        }
+        /// <p>The size of the volume, in GiB.</p>
+        pub fn volume_size(mut self, input: i32) -> Self {
+            self.volume_size = Some(input);
+            self
+        }
+        /// <p>The size of the volume, in GiB.</p>
+        pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreSnapshotFromRecycleBinOutput`](crate::output::RestoreSnapshotFromRecycleBinOutput)
+        pub fn build(self) -> crate::output::RestoreSnapshotFromRecycleBinOutput {
+            crate::output::RestoreSnapshotFromRecycleBinOutput {
+                snapshot_id: self.snapshot_id,
+                outpost_arn: self.outpost_arn,
+                description: self.description,
+                encrypted: self.encrypted,
+                owner_id: self.owner_id,
+                progress: self.progress,
+                start_time: self.start_time,
+                state: self.state,
+                volume_id: self.volume_id,
+                volume_size: self.volume_size,
+            }
+        }
+    }
+}
+impl RestoreSnapshotFromRecycleBinOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreSnapshotFromRecycleBinOutput`](crate::output::RestoreSnapshotFromRecycleBinOutput)
+    pub fn builder() -> crate::output::restore_snapshot_from_recycle_bin_output::Builder {
+        crate::output::restore_snapshot_from_recycle_bin_output::Builder::default()
     }
 }
 
@@ -2455,6 +2880,60 @@ impl ReplaceIamInstanceProfileAssociationOutput {
     /// Creates a new builder-style object to manufacture [`ReplaceIamInstanceProfileAssociationOutput`](crate::output::ReplaceIamInstanceProfileAssociationOutput)
     pub fn builder() -> crate::output::replace_iam_instance_profile_association_output::Builder {
         crate::output::replace_iam_instance_profile_association_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReleaseIpamPoolAllocationOutput {
+    /// <p>Indicates if the release was successful.</p>
+    pub success: std::option::Option<bool>,
+}
+impl ReleaseIpamPoolAllocationOutput {
+    /// <p>Indicates if the release was successful.</p>
+    pub fn success(&self) -> std::option::Option<bool> {
+        self.success
+    }
+}
+impl std::fmt::Debug for ReleaseIpamPoolAllocationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReleaseIpamPoolAllocationOutput");
+        formatter.field("success", &self.success);
+        formatter.finish()
+    }
+}
+/// See [`ReleaseIpamPoolAllocationOutput`](crate::output::ReleaseIpamPoolAllocationOutput)
+pub mod release_ipam_pool_allocation_output {
+    /// A builder for [`ReleaseIpamPoolAllocationOutput`](crate::output::ReleaseIpamPoolAllocationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) success: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Indicates if the release was successful.</p>
+        pub fn success(mut self, input: bool) -> Self {
+            self.success = Some(input);
+            self
+        }
+        /// <p>Indicates if the release was successful.</p>
+        pub fn set_success(mut self, input: std::option::Option<bool>) -> Self {
+            self.success = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReleaseIpamPoolAllocationOutput`](crate::output::ReleaseIpamPoolAllocationOutput)
+        pub fn build(self) -> crate::output::ReleaseIpamPoolAllocationOutput {
+            crate::output::ReleaseIpamPoolAllocationOutput {
+                success: self.success,
+            }
+        }
+    }
+}
+impl ReleaseIpamPoolAllocationOutput {
+    /// Creates a new builder-style object to manufacture [`ReleaseIpamPoolAllocationOutput`](crate::output::ReleaseIpamPoolAllocationOutput)
+    pub fn builder() -> crate::output::release_ipam_pool_allocation_output::Builder {
+        crate::output::release_ipam_pool_allocation_output::Builder::default()
     }
 }
 
@@ -3476,6 +3955,139 @@ impl PurchaseHostReservationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProvisionPublicIpv4PoolCidrOutput {
+    /// <p>The ID of the pool that you want to provision the CIDR to.</p>
+    pub pool_id: std::option::Option<std::string::String>,
+    /// <p>Describes an address range of an IPv4 address pool.</p>
+    pub pool_address_range: std::option::Option<crate::model::PublicIpv4PoolRange>,
+}
+impl ProvisionPublicIpv4PoolCidrOutput {
+    /// <p>The ID of the pool that you want to provision the CIDR to.</p>
+    pub fn pool_id(&self) -> std::option::Option<&str> {
+        self.pool_id.as_deref()
+    }
+    /// <p>Describes an address range of an IPv4 address pool.</p>
+    pub fn pool_address_range(&self) -> std::option::Option<&crate::model::PublicIpv4PoolRange> {
+        self.pool_address_range.as_ref()
+    }
+}
+impl std::fmt::Debug for ProvisionPublicIpv4PoolCidrOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProvisionPublicIpv4PoolCidrOutput");
+        formatter.field("pool_id", &self.pool_id);
+        formatter.field("pool_address_range", &self.pool_address_range);
+        formatter.finish()
+    }
+}
+/// See [`ProvisionPublicIpv4PoolCidrOutput`](crate::output::ProvisionPublicIpv4PoolCidrOutput)
+pub mod provision_public_ipv4_pool_cidr_output {
+    /// A builder for [`ProvisionPublicIpv4PoolCidrOutput`](crate::output::ProvisionPublicIpv4PoolCidrOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pool_id: std::option::Option<std::string::String>,
+        pub(crate) pool_address_range: std::option::Option<crate::model::PublicIpv4PoolRange>,
+    }
+    impl Builder {
+        /// <p>The ID of the pool that you want to provision the CIDR to.</p>
+        pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pool_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the pool that you want to provision the CIDR to.</p>
+        pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pool_id = input;
+            self
+        }
+        /// <p>Describes an address range of an IPv4 address pool.</p>
+        pub fn pool_address_range(mut self, input: crate::model::PublicIpv4PoolRange) -> Self {
+            self.pool_address_range = Some(input);
+            self
+        }
+        /// <p>Describes an address range of an IPv4 address pool.</p>
+        pub fn set_pool_address_range(
+            mut self,
+            input: std::option::Option<crate::model::PublicIpv4PoolRange>,
+        ) -> Self {
+            self.pool_address_range = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProvisionPublicIpv4PoolCidrOutput`](crate::output::ProvisionPublicIpv4PoolCidrOutput)
+        pub fn build(self) -> crate::output::ProvisionPublicIpv4PoolCidrOutput {
+            crate::output::ProvisionPublicIpv4PoolCidrOutput {
+                pool_id: self.pool_id,
+                pool_address_range: self.pool_address_range,
+            }
+        }
+    }
+}
+impl ProvisionPublicIpv4PoolCidrOutput {
+    /// Creates a new builder-style object to manufacture [`ProvisionPublicIpv4PoolCidrOutput`](crate::output::ProvisionPublicIpv4PoolCidrOutput)
+    pub fn builder() -> crate::output::provision_public_ipv4_pool_cidr_output::Builder {
+        crate::output::provision_public_ipv4_pool_cidr_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProvisionIpamPoolCidrOutput {
+    /// <p>Information about the provisioned CIDR.</p>
+    pub ipam_pool_cidr: std::option::Option<crate::model::IpamPoolCidr>,
+}
+impl ProvisionIpamPoolCidrOutput {
+    /// <p>Information about the provisioned CIDR.</p>
+    pub fn ipam_pool_cidr(&self) -> std::option::Option<&crate::model::IpamPoolCidr> {
+        self.ipam_pool_cidr.as_ref()
+    }
+}
+impl std::fmt::Debug for ProvisionIpamPoolCidrOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProvisionIpamPoolCidrOutput");
+        formatter.field("ipam_pool_cidr", &self.ipam_pool_cidr);
+        formatter.finish()
+    }
+}
+/// See [`ProvisionIpamPoolCidrOutput`](crate::output::ProvisionIpamPoolCidrOutput)
+pub mod provision_ipam_pool_cidr_output {
+    /// A builder for [`ProvisionIpamPoolCidrOutput`](crate::output::ProvisionIpamPoolCidrOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_pool_cidr: std::option::Option<crate::model::IpamPoolCidr>,
+    }
+    impl Builder {
+        /// <p>Information about the provisioned CIDR.</p>
+        pub fn ipam_pool_cidr(mut self, input: crate::model::IpamPoolCidr) -> Self {
+            self.ipam_pool_cidr = Some(input);
+            self
+        }
+        /// <p>Information about the provisioned CIDR.</p>
+        pub fn set_ipam_pool_cidr(
+            mut self,
+            input: std::option::Option<crate::model::IpamPoolCidr>,
+        ) -> Self {
+            self.ipam_pool_cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProvisionIpamPoolCidrOutput`](crate::output::ProvisionIpamPoolCidrOutput)
+        pub fn build(self) -> crate::output::ProvisionIpamPoolCidrOutput {
+            crate::output::ProvisionIpamPoolCidrOutput {
+                ipam_pool_cidr: self.ipam_pool_cidr,
+            }
+        }
+    }
+}
+impl ProvisionIpamPoolCidrOutput {
+    /// Creates a new builder-style object to manufacture [`ProvisionIpamPoolCidrOutput`](crate::output::ProvisionIpamPoolCidrOutput)
+    pub fn builder() -> crate::output::provision_ipam_pool_cidr_output::Builder {
+        crate::output::provision_ipam_pool_cidr_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
@@ -3527,6 +4139,67 @@ impl ProvisionByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput)
     pub fn builder() -> crate::output::provision_byoip_cidr_output::Builder {
         crate::output::provision_byoip_cidr_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MoveByoipCidrToIpamOutput {
+    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
+    /// through bring your own IP addresses (BYOIP).</p>
+    pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+}
+impl MoveByoipCidrToIpamOutput {
+    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
+    /// through bring your own IP addresses (BYOIP).</p>
+    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+        self.byoip_cidr.as_ref()
+    }
+}
+impl std::fmt::Debug for MoveByoipCidrToIpamOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MoveByoipCidrToIpamOutput");
+        formatter.field("byoip_cidr", &self.byoip_cidr);
+        formatter.finish()
+    }
+}
+/// See [`MoveByoipCidrToIpamOutput`](crate::output::MoveByoipCidrToIpamOutput)
+pub mod move_byoip_cidr_to_ipam_output {
+    /// A builder for [`MoveByoipCidrToIpamOutput`](crate::output::MoveByoipCidrToIpamOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+    }
+    impl Builder {
+        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
+        /// through bring your own IP addresses (BYOIP).</p>
+        pub fn byoip_cidr(mut self, input: crate::model::ByoipCidr) -> Self {
+            self.byoip_cidr = Some(input);
+            self
+        }
+        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
+        /// through bring your own IP addresses (BYOIP).</p>
+        pub fn set_byoip_cidr(
+            mut self,
+            input: std::option::Option<crate::model::ByoipCidr>,
+        ) -> Self {
+            self.byoip_cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MoveByoipCidrToIpamOutput`](crate::output::MoveByoipCidrToIpamOutput)
+        pub fn build(self) -> crate::output::MoveByoipCidrToIpamOutput {
+            crate::output::MoveByoipCidrToIpamOutput {
+                byoip_cidr: self.byoip_cidr,
+            }
+        }
+    }
+}
+impl MoveByoipCidrToIpamOutput {
+    /// Creates a new builder-style object to manufacture [`MoveByoipCidrToIpamOutput`](crate::output::MoveByoipCidrToIpamOutput)
+    pub fn builder() -> crate::output::move_byoip_cidr_to_ipam_output::Builder {
+        crate::output::move_byoip_cidr_to_ipam_output::Builder::default()
     }
 }
 
@@ -4853,6 +5526,82 @@ impl ModifySpotFleetRequestOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifySnapshotTierOutput {
+    /// <p>The ID of the snapshot.</p>
+    pub snapshot_id: std::option::Option<std::string::String>,
+    /// <p>The date and time when the archive process was started.</p>
+    pub tiering_start_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ModifySnapshotTierOutput {
+    /// <p>The ID of the snapshot.</p>
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+        self.snapshot_id.as_deref()
+    }
+    /// <p>The date and time when the archive process was started.</p>
+    pub fn tiering_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.tiering_start_time.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifySnapshotTierOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifySnapshotTierOutput");
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("tiering_start_time", &self.tiering_start_time);
+        formatter.finish()
+    }
+}
+/// See [`ModifySnapshotTierOutput`](crate::output::ModifySnapshotTierOutput)
+pub mod modify_snapshot_tier_output {
+    /// A builder for [`ModifySnapshotTierOutput`](crate::output::ModifySnapshotTierOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshot_id: std::option::Option<std::string::String>,
+        pub(crate) tiering_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ID of the snapshot.</p>
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the snapshot.</p>
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
+            self
+        }
+        /// <p>The date and time when the archive process was started.</p>
+        pub fn tiering_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.tiering_start_time = Some(input);
+            self
+        }
+        /// <p>The date and time when the archive process was started.</p>
+        pub fn set_tiering_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.tiering_start_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifySnapshotTierOutput`](crate::output::ModifySnapshotTierOutput)
+        pub fn build(self) -> crate::output::ModifySnapshotTierOutput {
+            crate::output::ModifySnapshotTierOutput {
+                snapshot_id: self.snapshot_id,
+                tiering_start_time: self.tiering_start_time,
+            }
+        }
+    }
+}
+impl ModifySnapshotTierOutput {
+    /// Creates a new builder-style object to manufacture [`ModifySnapshotTierOutput`](crate::output::ModifySnapshotTierOutput)
+    pub fn builder() -> crate::output::modify_snapshot_tier_output::Builder {
+        crate::output::modify_snapshot_tier_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySnapshotAttributeOutput {}
 impl std::fmt::Debug for ModifySnapshotAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5000,6 +5749,60 @@ impl ModifyReservedInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyPrivateDnsNameOptionsOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+}
+impl ModifyPrivateDnsNameOptionsOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn r#return(&self) -> std::option::Option<bool> {
+        self.r#return
+    }
+}
+impl std::fmt::Debug for ModifyPrivateDnsNameOptionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyPrivateDnsNameOptionsOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.finish()
+    }
+}
+/// See [`ModifyPrivateDnsNameOptionsOutput`](crate::output::ModifyPrivateDnsNameOptionsOutput)
+pub mod modify_private_dns_name_options_output {
+    /// A builder for [`ModifyPrivateDnsNameOptionsOutput`](crate::output::ModifyPrivateDnsNameOptionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyPrivateDnsNameOptionsOutput`](crate::output::ModifyPrivateDnsNameOptionsOutput)
+        pub fn build(self) -> crate::output::ModifyPrivateDnsNameOptionsOutput {
+            crate::output::ModifyPrivateDnsNameOptionsOutput {
+                r#return: self.r#return,
+            }
+        }
+    }
+}
+impl ModifyPrivateDnsNameOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyPrivateDnsNameOptionsOutput`](crate::output::ModifyPrivateDnsNameOptionsOutput)
+    pub fn builder() -> crate::output::modify_private_dns_name_options_output::Builder {
+        crate::output::modify_private_dns_name_options_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyNetworkInterfaceAttributeOutput {}
 impl std::fmt::Debug for ModifyNetworkInterfaceAttributeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5138,6 +5941,226 @@ impl ModifyLaunchTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ModifyLaunchTemplateOutput`](crate::output::ModifyLaunchTemplateOutput)
     pub fn builder() -> crate::output::modify_launch_template_output::Builder {
         crate::output::modify_launch_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyIpamScopeOutput {
+    /// <p>The results of the modification.</p>
+    pub ipam_scope: std::option::Option<crate::model::IpamScope>,
+}
+impl ModifyIpamScopeOutput {
+    /// <p>The results of the modification.</p>
+    pub fn ipam_scope(&self) -> std::option::Option<&crate::model::IpamScope> {
+        self.ipam_scope.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifyIpamScopeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyIpamScopeOutput");
+        formatter.field("ipam_scope", &self.ipam_scope);
+        formatter.finish()
+    }
+}
+/// See [`ModifyIpamScopeOutput`](crate::output::ModifyIpamScopeOutput)
+pub mod modify_ipam_scope_output {
+    /// A builder for [`ModifyIpamScopeOutput`](crate::output::ModifyIpamScopeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_scope: std::option::Option<crate::model::IpamScope>,
+    }
+    impl Builder {
+        /// <p>The results of the modification.</p>
+        pub fn ipam_scope(mut self, input: crate::model::IpamScope) -> Self {
+            self.ipam_scope = Some(input);
+            self
+        }
+        /// <p>The results of the modification.</p>
+        pub fn set_ipam_scope(
+            mut self,
+            input: std::option::Option<crate::model::IpamScope>,
+        ) -> Self {
+            self.ipam_scope = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyIpamScopeOutput`](crate::output::ModifyIpamScopeOutput)
+        pub fn build(self) -> crate::output::ModifyIpamScopeOutput {
+            crate::output::ModifyIpamScopeOutput {
+                ipam_scope: self.ipam_scope,
+            }
+        }
+    }
+}
+impl ModifyIpamScopeOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyIpamScopeOutput`](crate::output::ModifyIpamScopeOutput)
+    pub fn builder() -> crate::output::modify_ipam_scope_output::Builder {
+        crate::output::modify_ipam_scope_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyIpamResourceCidrOutput {
+    /// <p>The CIDR for an IPAM resource.</p>
+    pub ipam_resource_cidr: std::option::Option<crate::model::IpamResourceCidr>,
+}
+impl ModifyIpamResourceCidrOutput {
+    /// <p>The CIDR for an IPAM resource.</p>
+    pub fn ipam_resource_cidr(&self) -> std::option::Option<&crate::model::IpamResourceCidr> {
+        self.ipam_resource_cidr.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifyIpamResourceCidrOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyIpamResourceCidrOutput");
+        formatter.field("ipam_resource_cidr", &self.ipam_resource_cidr);
+        formatter.finish()
+    }
+}
+/// See [`ModifyIpamResourceCidrOutput`](crate::output::ModifyIpamResourceCidrOutput)
+pub mod modify_ipam_resource_cidr_output {
+    /// A builder for [`ModifyIpamResourceCidrOutput`](crate::output::ModifyIpamResourceCidrOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_resource_cidr: std::option::Option<crate::model::IpamResourceCidr>,
+    }
+    impl Builder {
+        /// <p>The CIDR for an IPAM resource.</p>
+        pub fn ipam_resource_cidr(mut self, input: crate::model::IpamResourceCidr) -> Self {
+            self.ipam_resource_cidr = Some(input);
+            self
+        }
+        /// <p>The CIDR for an IPAM resource.</p>
+        pub fn set_ipam_resource_cidr(
+            mut self,
+            input: std::option::Option<crate::model::IpamResourceCidr>,
+        ) -> Self {
+            self.ipam_resource_cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyIpamResourceCidrOutput`](crate::output::ModifyIpamResourceCidrOutput)
+        pub fn build(self) -> crate::output::ModifyIpamResourceCidrOutput {
+            crate::output::ModifyIpamResourceCidrOutput {
+                ipam_resource_cidr: self.ipam_resource_cidr,
+            }
+        }
+    }
+}
+impl ModifyIpamResourceCidrOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyIpamResourceCidrOutput`](crate::output::ModifyIpamResourceCidrOutput)
+    pub fn builder() -> crate::output::modify_ipam_resource_cidr_output::Builder {
+        crate::output::modify_ipam_resource_cidr_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyIpamPoolOutput {
+    /// <p>The results of the modification.</p>
+    pub ipam_pool: std::option::Option<crate::model::IpamPool>,
+}
+impl ModifyIpamPoolOutput {
+    /// <p>The results of the modification.</p>
+    pub fn ipam_pool(&self) -> std::option::Option<&crate::model::IpamPool> {
+        self.ipam_pool.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifyIpamPoolOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyIpamPoolOutput");
+        formatter.field("ipam_pool", &self.ipam_pool);
+        formatter.finish()
+    }
+}
+/// See [`ModifyIpamPoolOutput`](crate::output::ModifyIpamPoolOutput)
+pub mod modify_ipam_pool_output {
+    /// A builder for [`ModifyIpamPoolOutput`](crate::output::ModifyIpamPoolOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_pool: std::option::Option<crate::model::IpamPool>,
+    }
+    impl Builder {
+        /// <p>The results of the modification.</p>
+        pub fn ipam_pool(mut self, input: crate::model::IpamPool) -> Self {
+            self.ipam_pool = Some(input);
+            self
+        }
+        /// <p>The results of the modification.</p>
+        pub fn set_ipam_pool(mut self, input: std::option::Option<crate::model::IpamPool>) -> Self {
+            self.ipam_pool = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyIpamPoolOutput`](crate::output::ModifyIpamPoolOutput)
+        pub fn build(self) -> crate::output::ModifyIpamPoolOutput {
+            crate::output::ModifyIpamPoolOutput {
+                ipam_pool: self.ipam_pool,
+            }
+        }
+    }
+}
+impl ModifyIpamPoolOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyIpamPoolOutput`](crate::output::ModifyIpamPoolOutput)
+    pub fn builder() -> crate::output::modify_ipam_pool_output::Builder {
+        crate::output::modify_ipam_pool_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyIpamOutput {
+    /// <p>The results of the modification.</p>
+    pub ipam: std::option::Option<crate::model::Ipam>,
+}
+impl ModifyIpamOutput {
+    /// <p>The results of the modification.</p>
+    pub fn ipam(&self) -> std::option::Option<&crate::model::Ipam> {
+        self.ipam.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifyIpamOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyIpamOutput");
+        formatter.field("ipam", &self.ipam);
+        formatter.finish()
+    }
+}
+/// See [`ModifyIpamOutput`](crate::output::ModifyIpamOutput)
+pub mod modify_ipam_output {
+    /// A builder for [`ModifyIpamOutput`](crate::output::ModifyIpamOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam: std::option::Option<crate::model::Ipam>,
+    }
+    impl Builder {
+        /// <p>The results of the modification.</p>
+        pub fn ipam(mut self, input: crate::model::Ipam) -> Self {
+            self.ipam = Some(input);
+            self
+        }
+        /// <p>The results of the modification.</p>
+        pub fn set_ipam(mut self, input: std::option::Option<crate::model::Ipam>) -> Self {
+            self.ipam = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyIpamOutput`](crate::output::ModifyIpamOutput)
+        pub fn build(self) -> crate::output::ModifyIpamOutput {
+            crate::output::ModifyIpamOutput { ipam: self.ipam }
+        }
+    }
+}
+impl ModifyIpamOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyIpamOutput`](crate::output::ModifyIpamOutput)
+    pub fn builder() -> crate::output::modify_ipam_output::Builder {
+        crate::output::modify_ipam_output::Builder::default()
     }
 }
 
@@ -6294,6 +7317,89 @@ impl ModifyAddressAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyAddressAttributeOutput`](crate::output::ModifyAddressAttributeOutput)
     pub fn builder() -> crate::output::modify_address_attribute_output::Builder {
         crate::output::modify_address_attribute_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSnapshotsInRecycleBinOutput {
+    /// <p>Information about the snapshots.</p>
+    pub snapshots: std::option::Option<std::vec::Vec<crate::model::SnapshotRecycleBinInfo>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListSnapshotsInRecycleBinOutput {
+    /// <p>Information about the snapshots.</p>
+    pub fn snapshots(&self) -> std::option::Option<&[crate::model::SnapshotRecycleBinInfo]> {
+        self.snapshots.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListSnapshotsInRecycleBinOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSnapshotsInRecycleBinOutput");
+        formatter.field("snapshots", &self.snapshots);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListSnapshotsInRecycleBinOutput`](crate::output::ListSnapshotsInRecycleBinOutput)
+pub mod list_snapshots_in_recycle_bin_output {
+    /// A builder for [`ListSnapshotsInRecycleBinOutput`](crate::output::ListSnapshotsInRecycleBinOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshots:
+            std::option::Option<std::vec::Vec<crate::model::SnapshotRecycleBinInfo>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `snapshots`.
+        ///
+        /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
+        ///
+        /// <p>Information about the snapshots.</p>
+        pub fn snapshots(mut self, input: impl Into<crate::model::SnapshotRecycleBinInfo>) -> Self {
+            let mut v = self.snapshots.unwrap_or_default();
+            v.push(input.into());
+            self.snapshots = Some(v);
+            self
+        }
+        /// <p>Information about the snapshots.</p>
+        pub fn set_snapshots(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SnapshotRecycleBinInfo>>,
+        ) -> Self {
+            self.snapshots = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSnapshotsInRecycleBinOutput`](crate::output::ListSnapshotsInRecycleBinOutput)
+        pub fn build(self) -> crate::output::ListSnapshotsInRecycleBinOutput {
+            crate::output::ListSnapshotsInRecycleBinOutput {
+                snapshots: self.snapshots,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListSnapshotsInRecycleBinOutput {
+    /// Creates a new builder-style object to manufacture [`ListSnapshotsInRecycleBinOutput`](crate::output::ListSnapshotsInRecycleBinOutput)
+    pub fn builder() -> crate::output::list_snapshots_in_recycle_bin_output::Builder {
+        crate::output::list_snapshots_in_recycle_bin_output::Builder::default()
     }
 }
 
@@ -8499,6 +9605,216 @@ impl GetPasswordDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkInsightsAccessScopeContentOutput {
+    /// <p>The Network Access Scope content.</p>
+    pub network_insights_access_scope_content:
+        std::option::Option<crate::model::NetworkInsightsAccessScopeContent>,
+}
+impl GetNetworkInsightsAccessScopeContentOutput {
+    /// <p>The Network Access Scope content.</p>
+    pub fn network_insights_access_scope_content(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkInsightsAccessScopeContent> {
+        self.network_insights_access_scope_content.as_ref()
+    }
+}
+impl std::fmt::Debug for GetNetworkInsightsAccessScopeContentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkInsightsAccessScopeContentOutput");
+        formatter.field(
+            "network_insights_access_scope_content",
+            &self.network_insights_access_scope_content,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetNetworkInsightsAccessScopeContentOutput`](crate::output::GetNetworkInsightsAccessScopeContentOutput)
+pub mod get_network_insights_access_scope_content_output {
+    /// A builder for [`GetNetworkInsightsAccessScopeContentOutput`](crate::output::GetNetworkInsightsAccessScopeContentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_insights_access_scope_content:
+            std::option::Option<crate::model::NetworkInsightsAccessScopeContent>,
+    }
+    impl Builder {
+        /// <p>The Network Access Scope content.</p>
+        pub fn network_insights_access_scope_content(
+            mut self,
+            input: crate::model::NetworkInsightsAccessScopeContent,
+        ) -> Self {
+            self.network_insights_access_scope_content = Some(input);
+            self
+        }
+        /// <p>The Network Access Scope content.</p>
+        pub fn set_network_insights_access_scope_content(
+            mut self,
+            input: std::option::Option<crate::model::NetworkInsightsAccessScopeContent>,
+        ) -> Self {
+            self.network_insights_access_scope_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkInsightsAccessScopeContentOutput`](crate::output::GetNetworkInsightsAccessScopeContentOutput)
+        pub fn build(self) -> crate::output::GetNetworkInsightsAccessScopeContentOutput {
+            crate::output::GetNetworkInsightsAccessScopeContentOutput {
+                network_insights_access_scope_content: self.network_insights_access_scope_content,
+            }
+        }
+    }
+}
+impl GetNetworkInsightsAccessScopeContentOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkInsightsAccessScopeContentOutput`](crate::output::GetNetworkInsightsAccessScopeContentOutput)
+    pub fn builder() -> crate::output::get_network_insights_access_scope_content_output::Builder {
+        crate::output::get_network_insights_access_scope_content_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
+    /// <p>The ID of the Network Access Scope analysis.</p>
+    pub network_insights_access_scope_analysis_id: std::option::Option<std::string::String>,
+    /// <p>The status of Network Access Scope Analysis.</p>
+    pub analysis_status: std::option::Option<crate::model::AnalysisStatus>,
+    /// <p>The findings associated with Network Access Scope Analysis.</p>
+    pub analysis_findings:
+        std::option::Option<std::vec::Vec<crate::model::AccessScopeAnalysisFinding>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
+    /// <p>The ID of the Network Access Scope analysis.</p>
+    pub fn network_insights_access_scope_analysis_id(&self) -> std::option::Option<&str> {
+        self.network_insights_access_scope_analysis_id.as_deref()
+    }
+    /// <p>The status of Network Access Scope Analysis.</p>
+    pub fn analysis_status(&self) -> std::option::Option<&crate::model::AnalysisStatus> {
+        self.analysis_status.as_ref()
+    }
+    /// <p>The findings associated with Network Access Scope Analysis.</p>
+    pub fn analysis_findings(
+        &self,
+    ) -> std::option::Option<&[crate::model::AccessScopeAnalysisFinding]> {
+        self.analysis_findings.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkInsightsAccessScopeAnalysisFindingsOutput");
+        formatter.field(
+            "network_insights_access_scope_analysis_id",
+            &self.network_insights_access_scope_analysis_id,
+        );
+        formatter.field("analysis_status", &self.analysis_status);
+        formatter.field("analysis_findings", &self.analysis_findings);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetNetworkInsightsAccessScopeAnalysisFindingsOutput`](crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput)
+pub mod get_network_insights_access_scope_analysis_findings_output {
+    /// A builder for [`GetNetworkInsightsAccessScopeAnalysisFindingsOutput`](crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_insights_access_scope_analysis_id:
+            std::option::Option<std::string::String>,
+        pub(crate) analysis_status: std::option::Option<crate::model::AnalysisStatus>,
+        pub(crate) analysis_findings:
+            std::option::Option<std::vec::Vec<crate::model::AccessScopeAnalysisFinding>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Network Access Scope analysis.</p>
+        pub fn network_insights_access_scope_analysis_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.network_insights_access_scope_analysis_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Network Access Scope analysis.</p>
+        pub fn set_network_insights_access_scope_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.network_insights_access_scope_analysis_id = input;
+            self
+        }
+        /// <p>The status of Network Access Scope Analysis.</p>
+        pub fn analysis_status(mut self, input: crate::model::AnalysisStatus) -> Self {
+            self.analysis_status = Some(input);
+            self
+        }
+        /// <p>The status of Network Access Scope Analysis.</p>
+        pub fn set_analysis_status(
+            mut self,
+            input: std::option::Option<crate::model::AnalysisStatus>,
+        ) -> Self {
+            self.analysis_status = input;
+            self
+        }
+        /// Appends an item to `analysis_findings`.
+        ///
+        /// To override the contents of this collection use [`set_analysis_findings`](Self::set_analysis_findings).
+        ///
+        /// <p>The findings associated with Network Access Scope Analysis.</p>
+        pub fn analysis_findings(
+            mut self,
+            input: impl Into<crate::model::AccessScopeAnalysisFinding>,
+        ) -> Self {
+            let mut v = self.analysis_findings.unwrap_or_default();
+            v.push(input.into());
+            self.analysis_findings = Some(v);
+            self
+        }
+        /// <p>The findings associated with Network Access Scope Analysis.</p>
+        pub fn set_analysis_findings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AccessScopeAnalysisFinding>>,
+        ) -> Self {
+            self.analysis_findings = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkInsightsAccessScopeAnalysisFindingsOutput`](crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput)
+        pub fn build(self) -> crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
+            crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
+                network_insights_access_scope_analysis_id: self
+                    .network_insights_access_scope_analysis_id,
+                analysis_status: self.analysis_status,
+                analysis_findings: self.analysis_findings,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkInsightsAccessScopeAnalysisFindingsOutput`](crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput)
+    pub fn builder(
+    ) -> crate::output::get_network_insights_access_scope_analysis_findings_output::Builder {
+        crate::output::get_network_insights_access_scope_analysis_findings_output::Builder::default(
+        )
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedPrefixListEntriesOutput {
     /// <p>Information about the prefix list entries.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PrefixListEntry>>,
@@ -8727,6 +10043,350 @@ impl GetLaunchTemplateDataOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchTemplateDataOutput`](crate::output::GetLaunchTemplateDataOutput)
     pub fn builder() -> crate::output::get_launch_template_data_output::Builder {
         crate::output::get_launch_template_data_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetIpamResourceCidrsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The resource CIDRs.</p>
+    pub ipam_resource_cidrs: std::option::Option<std::vec::Vec<crate::model::IpamResourceCidr>>,
+}
+impl GetIpamResourceCidrsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The resource CIDRs.</p>
+    pub fn ipam_resource_cidrs(&self) -> std::option::Option<&[crate::model::IpamResourceCidr]> {
+        self.ipam_resource_cidrs.as_deref()
+    }
+}
+impl std::fmt::Debug for GetIpamResourceCidrsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetIpamResourceCidrsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("ipam_resource_cidrs", &self.ipam_resource_cidrs);
+        formatter.finish()
+    }
+}
+/// See [`GetIpamResourceCidrsOutput`](crate::output::GetIpamResourceCidrsOutput)
+pub mod get_ipam_resource_cidrs_output {
+    /// A builder for [`GetIpamResourceCidrsOutput`](crate::output::GetIpamResourceCidrsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) ipam_resource_cidrs:
+            std::option::Option<std::vec::Vec<crate::model::IpamResourceCidr>>,
+    }
+    impl Builder {
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `ipam_resource_cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_ipam_resource_cidrs`](Self::set_ipam_resource_cidrs).
+        ///
+        /// <p>The resource CIDRs.</p>
+        pub fn ipam_resource_cidrs(
+            mut self,
+            input: impl Into<crate::model::IpamResourceCidr>,
+        ) -> Self {
+            let mut v = self.ipam_resource_cidrs.unwrap_or_default();
+            v.push(input.into());
+            self.ipam_resource_cidrs = Some(v);
+            self
+        }
+        /// <p>The resource CIDRs.</p>
+        pub fn set_ipam_resource_cidrs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IpamResourceCidr>>,
+        ) -> Self {
+            self.ipam_resource_cidrs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetIpamResourceCidrsOutput`](crate::output::GetIpamResourceCidrsOutput)
+        pub fn build(self) -> crate::output::GetIpamResourceCidrsOutput {
+            crate::output::GetIpamResourceCidrsOutput {
+                next_token: self.next_token,
+                ipam_resource_cidrs: self.ipam_resource_cidrs,
+            }
+        }
+    }
+}
+impl GetIpamResourceCidrsOutput {
+    /// Creates a new builder-style object to manufacture [`GetIpamResourceCidrsOutput`](crate::output::GetIpamResourceCidrsOutput)
+    pub fn builder() -> crate::output::get_ipam_resource_cidrs_output::Builder {
+        crate::output::get_ipam_resource_cidrs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetIpamPoolCidrsOutput {
+    /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
+    pub ipam_pool_cidrs: std::option::Option<std::vec::Vec<crate::model::IpamPoolCidr>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetIpamPoolCidrsOutput {
+    /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
+    pub fn ipam_pool_cidrs(&self) -> std::option::Option<&[crate::model::IpamPoolCidr]> {
+        self.ipam_pool_cidrs.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetIpamPoolCidrsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetIpamPoolCidrsOutput");
+        formatter.field("ipam_pool_cidrs", &self.ipam_pool_cidrs);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetIpamPoolCidrsOutput`](crate::output::GetIpamPoolCidrsOutput)
+pub mod get_ipam_pool_cidrs_output {
+    /// A builder for [`GetIpamPoolCidrsOutput`](crate::output::GetIpamPoolCidrsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_pool_cidrs: std::option::Option<std::vec::Vec<crate::model::IpamPoolCidr>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `ipam_pool_cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_ipam_pool_cidrs`](Self::set_ipam_pool_cidrs).
+        ///
+        /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
+        pub fn ipam_pool_cidrs(mut self, input: impl Into<crate::model::IpamPoolCidr>) -> Self {
+            let mut v = self.ipam_pool_cidrs.unwrap_or_default();
+            v.push(input.into());
+            self.ipam_pool_cidrs = Some(v);
+            self
+        }
+        /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
+        pub fn set_ipam_pool_cidrs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IpamPoolCidr>>,
+        ) -> Self {
+            self.ipam_pool_cidrs = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetIpamPoolCidrsOutput`](crate::output::GetIpamPoolCidrsOutput)
+        pub fn build(self) -> crate::output::GetIpamPoolCidrsOutput {
+            crate::output::GetIpamPoolCidrsOutput {
+                ipam_pool_cidrs: self.ipam_pool_cidrs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetIpamPoolCidrsOutput {
+    /// Creates a new builder-style object to manufacture [`GetIpamPoolCidrsOutput`](crate::output::GetIpamPoolCidrsOutput)
+    pub fn builder() -> crate::output::get_ipam_pool_cidrs_output::Builder {
+        crate::output::get_ipam_pool_cidrs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetIpamPoolAllocationsOutput {
+    /// <p>The IPAM pool allocations you want information on.</p>
+    pub ipam_pool_allocations: std::option::Option<std::vec::Vec<crate::model::IpamPoolAllocation>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetIpamPoolAllocationsOutput {
+    /// <p>The IPAM pool allocations you want information on.</p>
+    pub fn ipam_pool_allocations(
+        &self,
+    ) -> std::option::Option<&[crate::model::IpamPoolAllocation]> {
+        self.ipam_pool_allocations.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetIpamPoolAllocationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetIpamPoolAllocationsOutput");
+        formatter.field("ipam_pool_allocations", &self.ipam_pool_allocations);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetIpamPoolAllocationsOutput`](crate::output::GetIpamPoolAllocationsOutput)
+pub mod get_ipam_pool_allocations_output {
+    /// A builder for [`GetIpamPoolAllocationsOutput`](crate::output::GetIpamPoolAllocationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_pool_allocations:
+            std::option::Option<std::vec::Vec<crate::model::IpamPoolAllocation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `ipam_pool_allocations`.
+        ///
+        /// To override the contents of this collection use [`set_ipam_pool_allocations`](Self::set_ipam_pool_allocations).
+        ///
+        /// <p>The IPAM pool allocations you want information on.</p>
+        pub fn ipam_pool_allocations(
+            mut self,
+            input: impl Into<crate::model::IpamPoolAllocation>,
+        ) -> Self {
+            let mut v = self.ipam_pool_allocations.unwrap_or_default();
+            v.push(input.into());
+            self.ipam_pool_allocations = Some(v);
+            self
+        }
+        /// <p>The IPAM pool allocations you want information on.</p>
+        pub fn set_ipam_pool_allocations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IpamPoolAllocation>>,
+        ) -> Self {
+            self.ipam_pool_allocations = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetIpamPoolAllocationsOutput`](crate::output::GetIpamPoolAllocationsOutput)
+        pub fn build(self) -> crate::output::GetIpamPoolAllocationsOutput {
+            crate::output::GetIpamPoolAllocationsOutput {
+                ipam_pool_allocations: self.ipam_pool_allocations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetIpamPoolAllocationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetIpamPoolAllocationsOutput`](crate::output::GetIpamPoolAllocationsOutput)
+    pub fn builder() -> crate::output::get_ipam_pool_allocations_output::Builder {
+        crate::output::get_ipam_pool_allocations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetIpamAddressHistoryOutput {
+    /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
+    pub history_records: std::option::Option<std::vec::Vec<crate::model::IpamAddressHistoryRecord>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetIpamAddressHistoryOutput {
+    /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
+    pub fn history_records(
+        &self,
+    ) -> std::option::Option<&[crate::model::IpamAddressHistoryRecord]> {
+        self.history_records.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetIpamAddressHistoryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetIpamAddressHistoryOutput");
+        formatter.field("history_records", &self.history_records);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetIpamAddressHistoryOutput`](crate::output::GetIpamAddressHistoryOutput)
+pub mod get_ipam_address_history_output {
+    /// A builder for [`GetIpamAddressHistoryOutput`](crate::output::GetIpamAddressHistoryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) history_records:
+            std::option::Option<std::vec::Vec<crate::model::IpamAddressHistoryRecord>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `history_records`.
+        ///
+        /// To override the contents of this collection use [`set_history_records`](Self::set_history_records).
+        ///
+        /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
+        pub fn history_records(
+            mut self,
+            input: impl Into<crate::model::IpamAddressHistoryRecord>,
+        ) -> Self {
+            let mut v = self.history_records.unwrap_or_default();
+            v.push(input.into());
+            self.history_records = Some(v);
+            self
+        }
+        /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
+        pub fn set_history_records(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IpamAddressHistoryRecord>>,
+        ) -> Self {
+            self.history_records = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetIpamAddressHistoryOutput`](crate::output::GetIpamAddressHistoryOutput)
+        pub fn build(self) -> crate::output::GetIpamAddressHistoryOutput {
+            crate::output::GetIpamAddressHistoryOutput {
+                history_records: self.history_records,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetIpamAddressHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`GetIpamAddressHistoryOutput`](crate::output::GetIpamAddressHistoryOutput)
+    pub fn builder() -> crate::output::get_ipam_address_history_output::Builder {
+        crate::output::get_ipam_address_history_output::Builder::default()
     }
 }
 
@@ -10777,6 +12437,60 @@ impl EnableSerialConsoleAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnableIpamOrganizationAdminAccountOutput {
+    /// <p>The result of enabling the IPAM account.</p>
+    pub success: std::option::Option<bool>,
+}
+impl EnableIpamOrganizationAdminAccountOutput {
+    /// <p>The result of enabling the IPAM account.</p>
+    pub fn success(&self) -> std::option::Option<bool> {
+        self.success
+    }
+}
+impl std::fmt::Debug for EnableIpamOrganizationAdminAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnableIpamOrganizationAdminAccountOutput");
+        formatter.field("success", &self.success);
+        formatter.finish()
+    }
+}
+/// See [`EnableIpamOrganizationAdminAccountOutput`](crate::output::EnableIpamOrganizationAdminAccountOutput)
+pub mod enable_ipam_organization_admin_account_output {
+    /// A builder for [`EnableIpamOrganizationAdminAccountOutput`](crate::output::EnableIpamOrganizationAdminAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) success: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The result of enabling the IPAM account.</p>
+        pub fn success(mut self, input: bool) -> Self {
+            self.success = Some(input);
+            self
+        }
+        /// <p>The result of enabling the IPAM account.</p>
+        pub fn set_success(mut self, input: std::option::Option<bool>) -> Self {
+            self.success = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableIpamOrganizationAdminAccountOutput`](crate::output::EnableIpamOrganizationAdminAccountOutput)
+        pub fn build(self) -> crate::output::EnableIpamOrganizationAdminAccountOutput {
+            crate::output::EnableIpamOrganizationAdminAccountOutput {
+                success: self.success,
+            }
+        }
+    }
+}
+impl EnableIpamOrganizationAdminAccountOutput {
+    /// Creates a new builder-style object to manufacture [`EnableIpamOrganizationAdminAccountOutput`](crate::output::EnableIpamOrganizationAdminAccountOutput)
+    pub fn builder() -> crate::output::enable_ipam_organization_admin_account_output::Builder {
+        crate::output::enable_ipam_organization_admin_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableImageDeprecationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
@@ -11970,6 +13684,60 @@ impl DisableSerialConsoleAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableSerialConsoleAccessOutput`](crate::output::DisableSerialConsoleAccessOutput)
     pub fn builder() -> crate::output::disable_serial_console_access_output::Builder {
         crate::output::disable_serial_console_access_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisableIpamOrganizationAdminAccountOutput {
+    /// <p>The result of disabling the IPAM account.</p>
+    pub success: std::option::Option<bool>,
+}
+impl DisableIpamOrganizationAdminAccountOutput {
+    /// <p>The result of disabling the IPAM account.</p>
+    pub fn success(&self) -> std::option::Option<bool> {
+        self.success
+    }
+}
+impl std::fmt::Debug for DisableIpamOrganizationAdminAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisableIpamOrganizationAdminAccountOutput");
+        formatter.field("success", &self.success);
+        formatter.finish()
+    }
+}
+/// See [`DisableIpamOrganizationAdminAccountOutput`](crate::output::DisableIpamOrganizationAdminAccountOutput)
+pub mod disable_ipam_organization_admin_account_output {
+    /// A builder for [`DisableIpamOrganizationAdminAccountOutput`](crate::output::DisableIpamOrganizationAdminAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) success: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The result of disabling the IPAM account.</p>
+        pub fn success(mut self, input: bool) -> Self {
+            self.success = Some(input);
+            self
+        }
+        /// <p>The result of disabling the IPAM account.</p>
+        pub fn set_success(mut self, input: std::option::Option<bool>) -> Self {
+            self.success = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisableIpamOrganizationAdminAccountOutput`](crate::output::DisableIpamOrganizationAdminAccountOutput)
+        pub fn build(self) -> crate::output::DisableIpamOrganizationAdminAccountOutput {
+            crate::output::DisableIpamOrganizationAdminAccountOutput {
+                success: self.success,
+            }
+        }
+    }
+}
+impl DisableIpamOrganizationAdminAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DisableIpamOrganizationAdminAccountOutput`](crate::output::DisableIpamOrganizationAdminAccountOutput)
+    pub fn builder() -> crate::output::disable_ipam_organization_admin_account_output::Builder {
+        crate::output::disable_ipam_organization_admin_account_output::Builder::default()
     }
 }
 
@@ -16038,6 +17806,95 @@ impl DescribeSpotDatafeedSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSnapshotTierStatusOutput {
+    /// <p>Information about the snapshot's storage tier.</p>
+    pub snapshot_tier_statuses:
+        std::option::Option<std::vec::Vec<crate::model::SnapshotTierStatus>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeSnapshotTierStatusOutput {
+    /// <p>Information about the snapshot's storage tier.</p>
+    pub fn snapshot_tier_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::model::SnapshotTierStatus]> {
+        self.snapshot_tier_statuses.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeSnapshotTierStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSnapshotTierStatusOutput");
+        formatter.field("snapshot_tier_statuses", &self.snapshot_tier_statuses);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeSnapshotTierStatusOutput`](crate::output::DescribeSnapshotTierStatusOutput)
+pub mod describe_snapshot_tier_status_output {
+    /// A builder for [`DescribeSnapshotTierStatusOutput`](crate::output::DescribeSnapshotTierStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) snapshot_tier_statuses:
+            std::option::Option<std::vec::Vec<crate::model::SnapshotTierStatus>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `snapshot_tier_statuses`.
+        ///
+        /// To override the contents of this collection use [`set_snapshot_tier_statuses`](Self::set_snapshot_tier_statuses).
+        ///
+        /// <p>Information about the snapshot's storage tier.</p>
+        pub fn snapshot_tier_statuses(
+            mut self,
+            input: impl Into<crate::model::SnapshotTierStatus>,
+        ) -> Self {
+            let mut v = self.snapshot_tier_statuses.unwrap_or_default();
+            v.push(input.into());
+            self.snapshot_tier_statuses = Some(v);
+            self
+        }
+        /// <p>Information about the snapshot's storage tier.</p>
+        pub fn set_snapshot_tier_statuses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SnapshotTierStatus>>,
+        ) -> Self {
+            self.snapshot_tier_statuses = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSnapshotTierStatusOutput`](crate::output::DescribeSnapshotTierStatusOutput)
+        pub fn build(self) -> crate::output::DescribeSnapshotTierStatusOutput {
+            crate::output::DescribeSnapshotTierStatusOutput {
+                snapshot_tier_statuses: self.snapshot_tier_statuses,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeSnapshotTierStatusOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotTierStatusOutput`](crate::output::DescribeSnapshotTierStatusOutput)
+    pub fn builder() -> crate::output::describe_snapshot_tier_status_output::Builder {
+        crate::output::describe_snapshot_tier_status_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsOutput {
     /// <p>Information about the snapshots.</p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -18058,6 +19915,195 @@ impl DescribeNetworkInsightsAnalysesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeNetworkInsightsAccessScopesOutput {
+    /// <p>The Network Access Scopes.</p>
+    pub network_insights_access_scopes:
+        std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAccessScope>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeNetworkInsightsAccessScopesOutput {
+    /// <p>The Network Access Scopes.</p>
+    pub fn network_insights_access_scopes(
+        &self,
+    ) -> std::option::Option<&[crate::model::NetworkInsightsAccessScope]> {
+        self.network_insights_access_scopes.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeNetworkInsightsAccessScopesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeNetworkInsightsAccessScopesOutput");
+        formatter.field(
+            "network_insights_access_scopes",
+            &self.network_insights_access_scopes,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeNetworkInsightsAccessScopesOutput`](crate::output::DescribeNetworkInsightsAccessScopesOutput)
+pub mod describe_network_insights_access_scopes_output {
+    /// A builder for [`DescribeNetworkInsightsAccessScopesOutput`](crate::output::DescribeNetworkInsightsAccessScopesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_insights_access_scopes:
+            std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAccessScope>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `network_insights_access_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_network_insights_access_scopes`](Self::set_network_insights_access_scopes).
+        ///
+        /// <p>The Network Access Scopes.</p>
+        pub fn network_insights_access_scopes(
+            mut self,
+            input: impl Into<crate::model::NetworkInsightsAccessScope>,
+        ) -> Self {
+            let mut v = self.network_insights_access_scopes.unwrap_or_default();
+            v.push(input.into());
+            self.network_insights_access_scopes = Some(v);
+            self
+        }
+        /// <p>The Network Access Scopes.</p>
+        pub fn set_network_insights_access_scopes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAccessScope>>,
+        ) -> Self {
+            self.network_insights_access_scopes = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeNetworkInsightsAccessScopesOutput`](crate::output::DescribeNetworkInsightsAccessScopesOutput)
+        pub fn build(self) -> crate::output::DescribeNetworkInsightsAccessScopesOutput {
+            crate::output::DescribeNetworkInsightsAccessScopesOutput {
+                network_insights_access_scopes: self.network_insights_access_scopes,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeNetworkInsightsAccessScopesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopesOutput`](crate::output::DescribeNetworkInsightsAccessScopesOutput)
+    pub fn builder() -> crate::output::describe_network_insights_access_scopes_output::Builder {
+        crate::output::describe_network_insights_access_scopes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeNetworkInsightsAccessScopeAnalysesOutput {
+    /// <p>The Network Access Scope analyses.</p>
+    pub network_insights_access_scope_analyses:
+        std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAccessScopeAnalysis>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeNetworkInsightsAccessScopeAnalysesOutput {
+    /// <p>The Network Access Scope analyses.</p>
+    pub fn network_insights_access_scope_analyses(
+        &self,
+    ) -> std::option::Option<&[crate::model::NetworkInsightsAccessScopeAnalysis]> {
+        self.network_insights_access_scope_analyses.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeNetworkInsightsAccessScopeAnalysesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeNetworkInsightsAccessScopeAnalysesOutput");
+        formatter.field(
+            "network_insights_access_scope_analyses",
+            &self.network_insights_access_scope_analyses,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeNetworkInsightsAccessScopeAnalysesOutput`](crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput)
+pub mod describe_network_insights_access_scope_analyses_output {
+    /// A builder for [`DescribeNetworkInsightsAccessScopeAnalysesOutput`](crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_insights_access_scope_analyses:
+            std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAccessScopeAnalysis>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `network_insights_access_scope_analyses`.
+        ///
+        /// To override the contents of this collection use [`set_network_insights_access_scope_analyses`](Self::set_network_insights_access_scope_analyses).
+        ///
+        /// <p>The Network Access Scope analyses.</p>
+        pub fn network_insights_access_scope_analyses(
+            mut self,
+            input: impl Into<crate::model::NetworkInsightsAccessScopeAnalysis>,
+        ) -> Self {
+            let mut v = self
+                .network_insights_access_scope_analyses
+                .unwrap_or_default();
+            v.push(input.into());
+            self.network_insights_access_scope_analyses = Some(v);
+            self
+        }
+        /// <p>The Network Access Scope analyses.</p>
+        pub fn set_network_insights_access_scope_analyses(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::NetworkInsightsAccessScopeAnalysis>,
+            >,
+        ) -> Self {
+            self.network_insights_access_scope_analyses = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeNetworkInsightsAccessScopeAnalysesOutput`](crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput)
+        pub fn build(self) -> crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput {
+            crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput {
+                network_insights_access_scope_analyses: self.network_insights_access_scope_analyses,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeNetworkInsightsAccessScopeAnalysesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsAccessScopeAnalysesOutput`](crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput)
+    pub fn builder(
+    ) -> crate::output::describe_network_insights_access_scope_analyses_output::Builder {
+        crate::output::describe_network_insights_access_scope_analyses_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNetworkAclsOutput {
     /// <p>Information about one or more network ACLs.</p>
     pub network_acls: std::option::Option<std::vec::Vec<crate::model::NetworkAcl>>,
@@ -19281,6 +21327,252 @@ impl DescribeIpv6PoolsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpv6PoolsOutput`](crate::output::DescribeIpv6PoolsOutput)
     pub fn builder() -> crate::output::describe_ipv6_pools_output::Builder {
         crate::output::describe_ipv6_pools_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeIpamScopesOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The scopes you want information on.</p>
+    pub ipam_scopes: std::option::Option<std::vec::Vec<crate::model::IpamScope>>,
+}
+impl DescribeIpamScopesOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The scopes you want information on.</p>
+    pub fn ipam_scopes(&self) -> std::option::Option<&[crate::model::IpamScope]> {
+        self.ipam_scopes.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeIpamScopesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeIpamScopesOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("ipam_scopes", &self.ipam_scopes);
+        formatter.finish()
+    }
+}
+/// See [`DescribeIpamScopesOutput`](crate::output::DescribeIpamScopesOutput)
+pub mod describe_ipam_scopes_output {
+    /// A builder for [`DescribeIpamScopesOutput`](crate::output::DescribeIpamScopesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) ipam_scopes: std::option::Option<std::vec::Vec<crate::model::IpamScope>>,
+    }
+    impl Builder {
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `ipam_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_ipam_scopes`](Self::set_ipam_scopes).
+        ///
+        /// <p>The scopes you want information on.</p>
+        pub fn ipam_scopes(mut self, input: impl Into<crate::model::IpamScope>) -> Self {
+            let mut v = self.ipam_scopes.unwrap_or_default();
+            v.push(input.into());
+            self.ipam_scopes = Some(v);
+            self
+        }
+        /// <p>The scopes you want information on.</p>
+        pub fn set_ipam_scopes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IpamScope>>,
+        ) -> Self {
+            self.ipam_scopes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeIpamScopesOutput`](crate::output::DescribeIpamScopesOutput)
+        pub fn build(self) -> crate::output::DescribeIpamScopesOutput {
+            crate::output::DescribeIpamScopesOutput {
+                next_token: self.next_token,
+                ipam_scopes: self.ipam_scopes,
+            }
+        }
+    }
+}
+impl DescribeIpamScopesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeIpamScopesOutput`](crate::output::DescribeIpamScopesOutput)
+    pub fn builder() -> crate::output::describe_ipam_scopes_output::Builder {
+        crate::output::describe_ipam_scopes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeIpamsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Information about the IPAMs.</p>
+    pub ipams: std::option::Option<std::vec::Vec<crate::model::Ipam>>,
+}
+impl DescribeIpamsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the IPAMs.</p>
+    pub fn ipams(&self) -> std::option::Option<&[crate::model::Ipam]> {
+        self.ipams.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeIpamsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeIpamsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("ipams", &self.ipams);
+        formatter.finish()
+    }
+}
+/// See [`DescribeIpamsOutput`](crate::output::DescribeIpamsOutput)
+pub mod describe_ipams_output {
+    /// A builder for [`DescribeIpamsOutput`](crate::output::DescribeIpamsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) ipams: std::option::Option<std::vec::Vec<crate::model::Ipam>>,
+    }
+    impl Builder {
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `ipams`.
+        ///
+        /// To override the contents of this collection use [`set_ipams`](Self::set_ipams).
+        ///
+        /// <p>Information about the IPAMs.</p>
+        pub fn ipams(mut self, input: impl Into<crate::model::Ipam>) -> Self {
+            let mut v = self.ipams.unwrap_or_default();
+            v.push(input.into());
+            self.ipams = Some(v);
+            self
+        }
+        /// <p>Information about the IPAMs.</p>
+        pub fn set_ipams(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipam>>,
+        ) -> Self {
+            self.ipams = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeIpamsOutput`](crate::output::DescribeIpamsOutput)
+        pub fn build(self) -> crate::output::DescribeIpamsOutput {
+            crate::output::DescribeIpamsOutput {
+                next_token: self.next_token,
+                ipams: self.ipams,
+            }
+        }
+    }
+}
+impl DescribeIpamsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeIpamsOutput`](crate::output::DescribeIpamsOutput)
+    pub fn builder() -> crate::output::describe_ipams_output::Builder {
+        crate::output::describe_ipams_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeIpamPoolsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Information about the IPAM pools.</p>
+    pub ipam_pools: std::option::Option<std::vec::Vec<crate::model::IpamPool>>,
+}
+impl DescribeIpamPoolsOutput {
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Information about the IPAM pools.</p>
+    pub fn ipam_pools(&self) -> std::option::Option<&[crate::model::IpamPool]> {
+        self.ipam_pools.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeIpamPoolsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeIpamPoolsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("ipam_pools", &self.ipam_pools);
+        formatter.finish()
+    }
+}
+/// See [`DescribeIpamPoolsOutput`](crate::output::DescribeIpamPoolsOutput)
+pub mod describe_ipam_pools_output {
+    /// A builder for [`DescribeIpamPoolsOutput`](crate::output::DescribeIpamPoolsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) ipam_pools: std::option::Option<std::vec::Vec<crate::model::IpamPool>>,
+    }
+    impl Builder {
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `ipam_pools`.
+        ///
+        /// To override the contents of this collection use [`set_ipam_pools`](Self::set_ipam_pools).
+        ///
+        /// <p>Information about the IPAM pools.</p>
+        pub fn ipam_pools(mut self, input: impl Into<crate::model::IpamPool>) -> Self {
+            let mut v = self.ipam_pools.unwrap_or_default();
+            v.push(input.into());
+            self.ipam_pools = Some(v);
+            self
+        }
+        /// <p>Information about the IPAM pools.</p>
+        pub fn set_ipam_pools(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IpamPool>>,
+        ) -> Self {
+            self.ipam_pools = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeIpamPoolsOutput`](crate::output::DescribeIpamPoolsOutput)
+        pub fn build(self) -> crate::output::DescribeIpamPoolsOutput {
+            crate::output::DescribeIpamPoolsOutput {
+                next_token: self.next_token,
+                ipam_pools: self.ipam_pools,
+            }
+        }
+    }
+}
+impl DescribeIpamPoolsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeIpamPoolsOutput`](crate::output::DescribeIpamPoolsOutput)
+    pub fn builder() -> crate::output::describe_ipam_pools_output::Builder {
+        crate::output::describe_ipam_pools_output::Builder::default()
     }
 }
 
@@ -24263,6 +26555,145 @@ impl DeregisterImageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeprovisionPublicIpv4PoolCidrOutput {
+    /// <p>The ID of the pool that you deprovisioned the CIDR from.</p>
+    pub pool_id: std::option::Option<std::string::String>,
+    /// <p>The deprovisioned CIDRs.</p>
+    pub deprovisioned_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeprovisionPublicIpv4PoolCidrOutput {
+    /// <p>The ID of the pool that you deprovisioned the CIDR from.</p>
+    pub fn pool_id(&self) -> std::option::Option<&str> {
+        self.pool_id.as_deref()
+    }
+    /// <p>The deprovisioned CIDRs.</p>
+    pub fn deprovisioned_addresses(&self) -> std::option::Option<&[std::string::String]> {
+        self.deprovisioned_addresses.as_deref()
+    }
+}
+impl std::fmt::Debug for DeprovisionPublicIpv4PoolCidrOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeprovisionPublicIpv4PoolCidrOutput");
+        formatter.field("pool_id", &self.pool_id);
+        formatter.field("deprovisioned_addresses", &self.deprovisioned_addresses);
+        formatter.finish()
+    }
+}
+/// See [`DeprovisionPublicIpv4PoolCidrOutput`](crate::output::DeprovisionPublicIpv4PoolCidrOutput)
+pub mod deprovision_public_ipv4_pool_cidr_output {
+    /// A builder for [`DeprovisionPublicIpv4PoolCidrOutput`](crate::output::DeprovisionPublicIpv4PoolCidrOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pool_id: std::option::Option<std::string::String>,
+        pub(crate) deprovisioned_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ID of the pool that you deprovisioned the CIDR from.</p>
+        pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pool_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the pool that you deprovisioned the CIDR from.</p>
+        pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pool_id = input;
+            self
+        }
+        /// Appends an item to `deprovisioned_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_deprovisioned_addresses`](Self::set_deprovisioned_addresses).
+        ///
+        /// <p>The deprovisioned CIDRs.</p>
+        pub fn deprovisioned_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.deprovisioned_addresses.unwrap_or_default();
+            v.push(input.into());
+            self.deprovisioned_addresses = Some(v);
+            self
+        }
+        /// <p>The deprovisioned CIDRs.</p>
+        pub fn set_deprovisioned_addresses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.deprovisioned_addresses = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeprovisionPublicIpv4PoolCidrOutput`](crate::output::DeprovisionPublicIpv4PoolCidrOutput)
+        pub fn build(self) -> crate::output::DeprovisionPublicIpv4PoolCidrOutput {
+            crate::output::DeprovisionPublicIpv4PoolCidrOutput {
+                pool_id: self.pool_id,
+                deprovisioned_addresses: self.deprovisioned_addresses,
+            }
+        }
+    }
+}
+impl DeprovisionPublicIpv4PoolCidrOutput {
+    /// Creates a new builder-style object to manufacture [`DeprovisionPublicIpv4PoolCidrOutput`](crate::output::DeprovisionPublicIpv4PoolCidrOutput)
+    pub fn builder() -> crate::output::deprovision_public_ipv4_pool_cidr_output::Builder {
+        crate::output::deprovision_public_ipv4_pool_cidr_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeprovisionIpamPoolCidrOutput {
+    /// <p>The deprovisioned pool CIDR.</p>
+    pub ipam_pool_cidr: std::option::Option<crate::model::IpamPoolCidr>,
+}
+impl DeprovisionIpamPoolCidrOutput {
+    /// <p>The deprovisioned pool CIDR.</p>
+    pub fn ipam_pool_cidr(&self) -> std::option::Option<&crate::model::IpamPoolCidr> {
+        self.ipam_pool_cidr.as_ref()
+    }
+}
+impl std::fmt::Debug for DeprovisionIpamPoolCidrOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeprovisionIpamPoolCidrOutput");
+        formatter.field("ipam_pool_cidr", &self.ipam_pool_cidr);
+        formatter.finish()
+    }
+}
+/// See [`DeprovisionIpamPoolCidrOutput`](crate::output::DeprovisionIpamPoolCidrOutput)
+pub mod deprovision_ipam_pool_cidr_output {
+    /// A builder for [`DeprovisionIpamPoolCidrOutput`](crate::output::DeprovisionIpamPoolCidrOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_pool_cidr: std::option::Option<crate::model::IpamPoolCidr>,
+    }
+    impl Builder {
+        /// <p>The deprovisioned pool CIDR.</p>
+        pub fn ipam_pool_cidr(mut self, input: crate::model::IpamPoolCidr) -> Self {
+            self.ipam_pool_cidr = Some(input);
+            self
+        }
+        /// <p>The deprovisioned pool CIDR.</p>
+        pub fn set_ipam_pool_cidr(
+            mut self,
+            input: std::option::Option<crate::model::IpamPoolCidr>,
+        ) -> Self {
+            self.ipam_pool_cidr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeprovisionIpamPoolCidrOutput`](crate::output::DeprovisionIpamPoolCidrOutput)
+        pub fn build(self) -> crate::output::DeprovisionIpamPoolCidrOutput {
+            crate::output::DeprovisionIpamPoolCidrOutput {
+                ipam_pool_cidr: self.ipam_pool_cidr,
+            }
+        }
+    }
+}
+impl DeprovisionIpamPoolCidrOutput {
+    /// Creates a new builder-style object to manufacture [`DeprovisionIpamPoolCidrOutput`](crate::output::DeprovisionIpamPoolCidrOutput)
+    pub fn builder() -> crate::output::deprovision_ipam_pool_cidr_output::Builder {
+        crate::output::deprovision_ipam_pool_cidr_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprovisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
@@ -25923,6 +28354,60 @@ impl DeleteQueuedReservedInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePublicIpv4PoolOutput {
+    /// <p>Information about the result of deleting the public IPv4 pool.</p>
+    pub return_value: std::option::Option<bool>,
+}
+impl DeletePublicIpv4PoolOutput {
+    /// <p>Information about the result of deleting the public IPv4 pool.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+}
+impl std::fmt::Debug for DeletePublicIpv4PoolOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePublicIpv4PoolOutput");
+        formatter.field("return_value", &self.return_value);
+        formatter.finish()
+    }
+}
+/// See [`DeletePublicIpv4PoolOutput`](crate::output::DeletePublicIpv4PoolOutput)
+pub mod delete_public_ipv4_pool_output {
+    /// A builder for [`DeletePublicIpv4PoolOutput`](crate::output::DeletePublicIpv4PoolOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) return_value: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Information about the result of deleting the public IPv4 pool.</p>
+        pub fn return_value(mut self, input: bool) -> Self {
+            self.return_value = Some(input);
+            self
+        }
+        /// <p>Information about the result of deleting the public IPv4 pool.</p>
+        pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeletePublicIpv4PoolOutput`](crate::output::DeletePublicIpv4PoolOutput)
+        pub fn build(self) -> crate::output::DeletePublicIpv4PoolOutput {
+            crate::output::DeletePublicIpv4PoolOutput {
+                return_value: self.return_value,
+            }
+        }
+    }
+}
+impl DeletePublicIpv4PoolOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePublicIpv4PoolOutput`](crate::output::DeletePublicIpv4PoolOutput)
+    pub fn builder() -> crate::output::delete_public_ipv4_pool_output::Builder {
+        crate::output::delete_public_ipv4_pool_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlacementGroupOutput {}
 impl std::fmt::Debug for DeletePlacementGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26151,6 +28636,135 @@ impl DeleteNetworkInsightsAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAnalysisOutput`](crate::output::DeleteNetworkInsightsAnalysisOutput)
     pub fn builder() -> crate::output::delete_network_insights_analysis_output::Builder {
         crate::output::delete_network_insights_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteNetworkInsightsAccessScopeAnalysisOutput {
+    /// <p>The ID of the Network Access Scope analysis.</p>
+    pub network_insights_access_scope_analysis_id: std::option::Option<std::string::String>,
+}
+impl DeleteNetworkInsightsAccessScopeAnalysisOutput {
+    /// <p>The ID of the Network Access Scope analysis.</p>
+    pub fn network_insights_access_scope_analysis_id(&self) -> std::option::Option<&str> {
+        self.network_insights_access_scope_analysis_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteNetworkInsightsAccessScopeAnalysisOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteNetworkInsightsAccessScopeAnalysisOutput");
+        formatter.field(
+            "network_insights_access_scope_analysis_id",
+            &self.network_insights_access_scope_analysis_id,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteNetworkInsightsAccessScopeAnalysisOutput`](crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput)
+pub mod delete_network_insights_access_scope_analysis_output {
+    /// A builder for [`DeleteNetworkInsightsAccessScopeAnalysisOutput`](crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_insights_access_scope_analysis_id:
+            std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Network Access Scope analysis.</p>
+        pub fn network_insights_access_scope_analysis_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.network_insights_access_scope_analysis_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Network Access Scope analysis.</p>
+        pub fn set_network_insights_access_scope_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.network_insights_access_scope_analysis_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteNetworkInsightsAccessScopeAnalysisOutput`](crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput)
+        pub fn build(self) -> crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput {
+            crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput {
+                network_insights_access_scope_analysis_id: self
+                    .network_insights_access_scope_analysis_id,
+            }
+        }
+    }
+}
+impl DeleteNetworkInsightsAccessScopeAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAccessScopeAnalysisOutput`](crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput)
+    pub fn builder() -> crate::output::delete_network_insights_access_scope_analysis_output::Builder
+    {
+        crate::output::delete_network_insights_access_scope_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteNetworkInsightsAccessScopeOutput {
+    /// <p>The ID of the Network Access Scope.</p>
+    pub network_insights_access_scope_id: std::option::Option<std::string::String>,
+}
+impl DeleteNetworkInsightsAccessScopeOutput {
+    /// <p>The ID of the Network Access Scope.</p>
+    pub fn network_insights_access_scope_id(&self) -> std::option::Option<&str> {
+        self.network_insights_access_scope_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteNetworkInsightsAccessScopeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteNetworkInsightsAccessScopeOutput");
+        formatter.field(
+            "network_insights_access_scope_id",
+            &self.network_insights_access_scope_id,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteNetworkInsightsAccessScopeOutput`](crate::output::DeleteNetworkInsightsAccessScopeOutput)
+pub mod delete_network_insights_access_scope_output {
+    /// A builder for [`DeleteNetworkInsightsAccessScopeOutput`](crate::output::DeleteNetworkInsightsAccessScopeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_insights_access_scope_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn network_insights_access_scope_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.network_insights_access_scope_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn set_network_insights_access_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.network_insights_access_scope_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteNetworkInsightsAccessScopeOutput`](crate::output::DeleteNetworkInsightsAccessScopeOutput)
+        pub fn build(self) -> crate::output::DeleteNetworkInsightsAccessScopeOutput {
+            crate::output::DeleteNetworkInsightsAccessScopeOutput {
+                network_insights_access_scope_id: self.network_insights_access_scope_id,
+            }
+        }
+    }
+}
+impl DeleteNetworkInsightsAccessScopeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAccessScopeOutput`](crate::output::DeleteNetworkInsightsAccessScopeOutput)
+    pub fn builder() -> crate::output::delete_network_insights_access_scope_output::Builder {
+        crate::output::delete_network_insights_access_scope_output::Builder::default()
     }
 }
 
@@ -26667,6 +29281,169 @@ impl DeleteKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput)
     pub fn builder() -> crate::output::delete_key_pair_output::Builder {
         crate::output::delete_key_pair_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteIpamScopeOutput {
+    /// <p>Information about the results of the deletion.</p>
+    pub ipam_scope: std::option::Option<crate::model::IpamScope>,
+}
+impl DeleteIpamScopeOutput {
+    /// <p>Information about the results of the deletion.</p>
+    pub fn ipam_scope(&self) -> std::option::Option<&crate::model::IpamScope> {
+        self.ipam_scope.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteIpamScopeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteIpamScopeOutput");
+        formatter.field("ipam_scope", &self.ipam_scope);
+        formatter.finish()
+    }
+}
+/// See [`DeleteIpamScopeOutput`](crate::output::DeleteIpamScopeOutput)
+pub mod delete_ipam_scope_output {
+    /// A builder for [`DeleteIpamScopeOutput`](crate::output::DeleteIpamScopeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_scope: std::option::Option<crate::model::IpamScope>,
+    }
+    impl Builder {
+        /// <p>Information about the results of the deletion.</p>
+        pub fn ipam_scope(mut self, input: crate::model::IpamScope) -> Self {
+            self.ipam_scope = Some(input);
+            self
+        }
+        /// <p>Information about the results of the deletion.</p>
+        pub fn set_ipam_scope(
+            mut self,
+            input: std::option::Option<crate::model::IpamScope>,
+        ) -> Self {
+            self.ipam_scope = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteIpamScopeOutput`](crate::output::DeleteIpamScopeOutput)
+        pub fn build(self) -> crate::output::DeleteIpamScopeOutput {
+            crate::output::DeleteIpamScopeOutput {
+                ipam_scope: self.ipam_scope,
+            }
+        }
+    }
+}
+impl DeleteIpamScopeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIpamScopeOutput`](crate::output::DeleteIpamScopeOutput)
+    pub fn builder() -> crate::output::delete_ipam_scope_output::Builder {
+        crate::output::delete_ipam_scope_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteIpamPoolOutput {
+    /// <p>Information about the results of the deletion.</p>
+    pub ipam_pool: std::option::Option<crate::model::IpamPool>,
+}
+impl DeleteIpamPoolOutput {
+    /// <p>Information about the results of the deletion.</p>
+    pub fn ipam_pool(&self) -> std::option::Option<&crate::model::IpamPool> {
+        self.ipam_pool.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteIpamPoolOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteIpamPoolOutput");
+        formatter.field("ipam_pool", &self.ipam_pool);
+        formatter.finish()
+    }
+}
+/// See [`DeleteIpamPoolOutput`](crate::output::DeleteIpamPoolOutput)
+pub mod delete_ipam_pool_output {
+    /// A builder for [`DeleteIpamPoolOutput`](crate::output::DeleteIpamPoolOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_pool: std::option::Option<crate::model::IpamPool>,
+    }
+    impl Builder {
+        /// <p>Information about the results of the deletion.</p>
+        pub fn ipam_pool(mut self, input: crate::model::IpamPool) -> Self {
+            self.ipam_pool = Some(input);
+            self
+        }
+        /// <p>Information about the results of the deletion.</p>
+        pub fn set_ipam_pool(mut self, input: std::option::Option<crate::model::IpamPool>) -> Self {
+            self.ipam_pool = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteIpamPoolOutput`](crate::output::DeleteIpamPoolOutput)
+        pub fn build(self) -> crate::output::DeleteIpamPoolOutput {
+            crate::output::DeleteIpamPoolOutput {
+                ipam_pool: self.ipam_pool,
+            }
+        }
+    }
+}
+impl DeleteIpamPoolOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIpamPoolOutput`](crate::output::DeleteIpamPoolOutput)
+    pub fn builder() -> crate::output::delete_ipam_pool_output::Builder {
+        crate::output::delete_ipam_pool_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteIpamOutput {
+    /// <p>Information about the results of the deletion.</p>
+    pub ipam: std::option::Option<crate::model::Ipam>,
+}
+impl DeleteIpamOutput {
+    /// <p>Information about the results of the deletion.</p>
+    pub fn ipam(&self) -> std::option::Option<&crate::model::Ipam> {
+        self.ipam.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteIpamOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteIpamOutput");
+        formatter.field("ipam", &self.ipam);
+        formatter.finish()
+    }
+}
+/// See [`DeleteIpamOutput`](crate::output::DeleteIpamOutput)
+pub mod delete_ipam_output {
+    /// A builder for [`DeleteIpamOutput`](crate::output::DeleteIpamOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam: std::option::Option<crate::model::Ipam>,
+    }
+    impl Builder {
+        /// <p>Information about the results of the deletion.</p>
+        pub fn ipam(mut self, input: crate::model::Ipam) -> Self {
+            self.ipam = Some(input);
+            self
+        }
+        /// <p>Information about the results of the deletion.</p>
+        pub fn set_ipam(mut self, input: std::option::Option<crate::model::Ipam>) -> Self {
+            self.ipam = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteIpamOutput`](crate::output::DeleteIpamOutput)
+        pub fn build(self) -> crate::output::DeleteIpamOutput {
+            crate::output::DeleteIpamOutput { ipam: self.ipam }
+        }
+    }
+}
+impl DeleteIpamOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIpamOutput`](crate::output::DeleteIpamOutput)
+    pub fn builder() -> crate::output::delete_ipam_output::Builder {
+        crate::output::delete_ipam_output::Builder::default()
     }
 }
 
@@ -29428,6 +32205,14 @@ pub struct CreateSnapshotOutput {
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the snapshot.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
+    /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
+    /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
+    /// it must be restored before it can be used.</p>
+    pub storage_tier: std::option::Option<crate::model::StorageTier>,
+    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
+    /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+    pub restore_expiry_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSnapshotOutput {
     /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
@@ -29502,6 +32287,18 @@ impl CreateSnapshotOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
+    /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
+    /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
+    /// it must be restored before it can be used.</p>
+    pub fn storage_tier(&self) -> std::option::Option<&crate::model::StorageTier> {
+        self.storage_tier.as_ref()
+    }
+    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
+    /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+    pub fn restore_expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.restore_expiry_time.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateSnapshotOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -29521,6 +32318,8 @@ impl std::fmt::Debug for CreateSnapshotOutput {
         formatter.field("owner_alias", &self.owner_alias);
         formatter.field("outpost_arn", &self.outpost_arn);
         formatter.field("tags", &self.tags);
+        formatter.field("storage_tier", &self.storage_tier);
+        formatter.field("restore_expiry_time", &self.restore_expiry_time);
         formatter.finish()
     }
 }
@@ -29545,6 +32344,8 @@ pub mod create_snapshot_output {
         pub(crate) owner_alias: std::option::Option<std::string::String>,
         pub(crate) outpost_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) storage_tier: std::option::Option<crate::model::StorageTier>,
+        pub(crate) restore_expiry_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
@@ -29742,6 +32543,40 @@ pub mod create_snapshot_output {
             self.tags = input;
             self
         }
+        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
+        /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
+        /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
+        /// it must be restored before it can be used.</p>
+        pub fn storage_tier(mut self, input: crate::model::StorageTier) -> Self {
+            self.storage_tier = Some(input);
+            self
+        }
+        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
+        /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
+        /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
+        /// it must be restored before it can be used.</p>
+        pub fn set_storage_tier(
+            mut self,
+            input: std::option::Option<crate::model::StorageTier>,
+        ) -> Self {
+            self.storage_tier = input;
+            self
+        }
+        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
+        /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+        pub fn restore_expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.restore_expiry_time = Some(input);
+            self
+        }
+        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
+        /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+        pub fn set_restore_expiry_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.restore_expiry_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput)
         pub fn build(self) -> crate::output::CreateSnapshotOutput {
             crate::output::CreateSnapshotOutput {
@@ -29760,6 +32595,8 @@ pub mod create_snapshot_output {
                 owner_alias: self.owner_alias,
                 outpost_arn: self.outpost_arn,
                 tags: self.tags,
+                storage_tier: self.storage_tier,
+                restore_expiry_time: self.restore_expiry_time,
             }
         }
     }
@@ -30157,6 +32994,60 @@ impl CreateReplaceRootVolumeTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreatePublicIpv4PoolOutput {
+    /// <p>The ID of the public IPv4 pool.</p>
+    pub pool_id: std::option::Option<std::string::String>,
+}
+impl CreatePublicIpv4PoolOutput {
+    /// <p>The ID of the public IPv4 pool.</p>
+    pub fn pool_id(&self) -> std::option::Option<&str> {
+        self.pool_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreatePublicIpv4PoolOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreatePublicIpv4PoolOutput");
+        formatter.field("pool_id", &self.pool_id);
+        formatter.finish()
+    }
+}
+/// See [`CreatePublicIpv4PoolOutput`](crate::output::CreatePublicIpv4PoolOutput)
+pub mod create_public_ipv4_pool_output {
+    /// A builder for [`CreatePublicIpv4PoolOutput`](crate::output::CreatePublicIpv4PoolOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pool_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the public IPv4 pool.</p>
+        pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pool_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the public IPv4 pool.</p>
+        pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pool_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreatePublicIpv4PoolOutput`](crate::output::CreatePublicIpv4PoolOutput)
+        pub fn build(self) -> crate::output::CreatePublicIpv4PoolOutput {
+            crate::output::CreatePublicIpv4PoolOutput {
+                pool_id: self.pool_id,
+            }
+        }
+    }
+}
+impl CreatePublicIpv4PoolOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePublicIpv4PoolOutput`](crate::output::CreatePublicIpv4PoolOutput)
+    pub fn builder() -> crate::output::create_public_ipv4_pool_output::Builder {
+        crate::output::create_public_ipv4_pool_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlacementGroupOutput {
     /// <p>Describes a placement group.</p>
     pub placement_group: std::option::Option<crate::model::PlacementGroup>,
@@ -30404,6 +33295,105 @@ impl CreateNetworkInsightsPathOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInsightsPathOutput`](crate::output::CreateNetworkInsightsPathOutput)
     pub fn builder() -> crate::output::create_network_insights_path_output::Builder {
         crate::output::create_network_insights_path_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateNetworkInsightsAccessScopeOutput {
+    /// <p>The Network Access Scope.</p>
+    pub network_insights_access_scope:
+        std::option::Option<crate::model::NetworkInsightsAccessScope>,
+    /// <p>The Network Access Scope content.</p>
+    pub network_insights_access_scope_content:
+        std::option::Option<crate::model::NetworkInsightsAccessScopeContent>,
+}
+impl CreateNetworkInsightsAccessScopeOutput {
+    /// <p>The Network Access Scope.</p>
+    pub fn network_insights_access_scope(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkInsightsAccessScope> {
+        self.network_insights_access_scope.as_ref()
+    }
+    /// <p>The Network Access Scope content.</p>
+    pub fn network_insights_access_scope_content(
+        &self,
+    ) -> std::option::Option<&crate::model::NetworkInsightsAccessScopeContent> {
+        self.network_insights_access_scope_content.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateNetworkInsightsAccessScopeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateNetworkInsightsAccessScopeOutput");
+        formatter.field(
+            "network_insights_access_scope",
+            &self.network_insights_access_scope,
+        );
+        formatter.field(
+            "network_insights_access_scope_content",
+            &self.network_insights_access_scope_content,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateNetworkInsightsAccessScopeOutput`](crate::output::CreateNetworkInsightsAccessScopeOutput)
+pub mod create_network_insights_access_scope_output {
+    /// A builder for [`CreateNetworkInsightsAccessScopeOutput`](crate::output::CreateNetworkInsightsAccessScopeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_insights_access_scope:
+            std::option::Option<crate::model::NetworkInsightsAccessScope>,
+        pub(crate) network_insights_access_scope_content:
+            std::option::Option<crate::model::NetworkInsightsAccessScopeContent>,
+    }
+    impl Builder {
+        /// <p>The Network Access Scope.</p>
+        pub fn network_insights_access_scope(
+            mut self,
+            input: crate::model::NetworkInsightsAccessScope,
+        ) -> Self {
+            self.network_insights_access_scope = Some(input);
+            self
+        }
+        /// <p>The Network Access Scope.</p>
+        pub fn set_network_insights_access_scope(
+            mut self,
+            input: std::option::Option<crate::model::NetworkInsightsAccessScope>,
+        ) -> Self {
+            self.network_insights_access_scope = input;
+            self
+        }
+        /// <p>The Network Access Scope content.</p>
+        pub fn network_insights_access_scope_content(
+            mut self,
+            input: crate::model::NetworkInsightsAccessScopeContent,
+        ) -> Self {
+            self.network_insights_access_scope_content = Some(input);
+            self
+        }
+        /// <p>The Network Access Scope content.</p>
+        pub fn set_network_insights_access_scope_content(
+            mut self,
+            input: std::option::Option<crate::model::NetworkInsightsAccessScopeContent>,
+        ) -> Self {
+            self.network_insights_access_scope_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateNetworkInsightsAccessScopeOutput`](crate::output::CreateNetworkInsightsAccessScopeOutput)
+        pub fn build(self) -> crate::output::CreateNetworkInsightsAccessScopeOutput {
+            crate::output::CreateNetworkInsightsAccessScopeOutput {
+                network_insights_access_scope: self.network_insights_access_scope,
+                network_insights_access_scope_content: self.network_insights_access_scope_content,
+            }
+        }
+    }
+}
+impl CreateNetworkInsightsAccessScopeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNetworkInsightsAccessScopeOutput`](crate::output::CreateNetworkInsightsAccessScopeOutput)
+    pub fn builder() -> crate::output::create_network_insights_access_scope_output::Builder {
+        crate::output::create_network_insights_access_scope_output::Builder::default()
     }
 }
 
@@ -31054,6 +34044,169 @@ impl CreateKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput)
     pub fn builder() -> crate::output::create_key_pair_output::Builder {
         crate::output::create_key_pair_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateIpamScopeOutput {
+    /// <p>Information about the created scope.</p>
+    pub ipam_scope: std::option::Option<crate::model::IpamScope>,
+}
+impl CreateIpamScopeOutput {
+    /// <p>Information about the created scope.</p>
+    pub fn ipam_scope(&self) -> std::option::Option<&crate::model::IpamScope> {
+        self.ipam_scope.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateIpamScopeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateIpamScopeOutput");
+        formatter.field("ipam_scope", &self.ipam_scope);
+        formatter.finish()
+    }
+}
+/// See [`CreateIpamScopeOutput`](crate::output::CreateIpamScopeOutput)
+pub mod create_ipam_scope_output {
+    /// A builder for [`CreateIpamScopeOutput`](crate::output::CreateIpamScopeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_scope: std::option::Option<crate::model::IpamScope>,
+    }
+    impl Builder {
+        /// <p>Information about the created scope.</p>
+        pub fn ipam_scope(mut self, input: crate::model::IpamScope) -> Self {
+            self.ipam_scope = Some(input);
+            self
+        }
+        /// <p>Information about the created scope.</p>
+        pub fn set_ipam_scope(
+            mut self,
+            input: std::option::Option<crate::model::IpamScope>,
+        ) -> Self {
+            self.ipam_scope = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateIpamScopeOutput`](crate::output::CreateIpamScopeOutput)
+        pub fn build(self) -> crate::output::CreateIpamScopeOutput {
+            crate::output::CreateIpamScopeOutput {
+                ipam_scope: self.ipam_scope,
+            }
+        }
+    }
+}
+impl CreateIpamScopeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateIpamScopeOutput`](crate::output::CreateIpamScopeOutput)
+    pub fn builder() -> crate::output::create_ipam_scope_output::Builder {
+        crate::output::create_ipam_scope_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateIpamPoolOutput {
+    /// <p>Information about the IPAM pool created.</p>
+    pub ipam_pool: std::option::Option<crate::model::IpamPool>,
+}
+impl CreateIpamPoolOutput {
+    /// <p>Information about the IPAM pool created.</p>
+    pub fn ipam_pool(&self) -> std::option::Option<&crate::model::IpamPool> {
+        self.ipam_pool.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateIpamPoolOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateIpamPoolOutput");
+        formatter.field("ipam_pool", &self.ipam_pool);
+        formatter.finish()
+    }
+}
+/// See [`CreateIpamPoolOutput`](crate::output::CreateIpamPoolOutput)
+pub mod create_ipam_pool_output {
+    /// A builder for [`CreateIpamPoolOutput`](crate::output::CreateIpamPoolOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_pool: std::option::Option<crate::model::IpamPool>,
+    }
+    impl Builder {
+        /// <p>Information about the IPAM pool created.</p>
+        pub fn ipam_pool(mut self, input: crate::model::IpamPool) -> Self {
+            self.ipam_pool = Some(input);
+            self
+        }
+        /// <p>Information about the IPAM pool created.</p>
+        pub fn set_ipam_pool(mut self, input: std::option::Option<crate::model::IpamPool>) -> Self {
+            self.ipam_pool = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateIpamPoolOutput`](crate::output::CreateIpamPoolOutput)
+        pub fn build(self) -> crate::output::CreateIpamPoolOutput {
+            crate::output::CreateIpamPoolOutput {
+                ipam_pool: self.ipam_pool,
+            }
+        }
+    }
+}
+impl CreateIpamPoolOutput {
+    /// Creates a new builder-style object to manufacture [`CreateIpamPoolOutput`](crate::output::CreateIpamPoolOutput)
+    pub fn builder() -> crate::output::create_ipam_pool_output::Builder {
+        crate::output::create_ipam_pool_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateIpamOutput {
+    /// <p>Information about the IPAM created.</p>
+    pub ipam: std::option::Option<crate::model::Ipam>,
+}
+impl CreateIpamOutput {
+    /// <p>Information about the IPAM created.</p>
+    pub fn ipam(&self) -> std::option::Option<&crate::model::Ipam> {
+        self.ipam.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateIpamOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateIpamOutput");
+        formatter.field("ipam", &self.ipam);
+        formatter.finish()
+    }
+}
+/// See [`CreateIpamOutput`](crate::output::CreateIpamOutput)
+pub mod create_ipam_output {
+    /// A builder for [`CreateIpamOutput`](crate::output::CreateIpamOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam: std::option::Option<crate::model::Ipam>,
+    }
+    impl Builder {
+        /// <p>Information about the IPAM created.</p>
+        pub fn ipam(mut self, input: crate::model::Ipam) -> Self {
+            self.ipam = Some(input);
+            self
+        }
+        /// <p>Information about the IPAM created.</p>
+        pub fn set_ipam(mut self, input: std::option::Option<crate::model::Ipam>) -> Self {
+            self.ipam = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateIpamOutput`](crate::output::CreateIpamOutput)
+        pub fn build(self) -> crate::output::CreateIpamOutput {
+            crate::output::CreateIpamOutput { ipam: self.ipam }
+        }
+    }
+}
+impl CreateIpamOutput {
+    /// Creates a new builder-style object to manufacture [`CreateIpamOutput`](crate::output::CreateIpamOutput)
+    pub fn builder() -> crate::output::create_ipam_output::Builder {
+        crate::output::create_ipam_output::Builder::default()
     }
 }
 
@@ -34381,14 +37534,14 @@ impl AssociateTransitGatewayMulticastDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSubnetCidrBlockOutput {
-    /// <p>Information about the IPv6 CIDR block association.</p>
+    /// <p>Information about the IPv6 association.</p>
     pub ipv6_cidr_block_association:
         std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
     /// <p>The ID of the subnet.</p>
     pub subnet_id: std::option::Option<std::string::String>,
 }
 impl AssociateSubnetCidrBlockOutput {
-    /// <p>Information about the IPv6 CIDR block association.</p>
+    /// <p>Information about the IPv6 association.</p>
     pub fn ipv6_cidr_block_association(
         &self,
     ) -> std::option::Option<&crate::model::SubnetIpv6CidrBlockAssociation> {
@@ -34421,7 +37574,7 @@ pub mod associate_subnet_cidr_block_output {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the IPv6 CIDR block association.</p>
+        /// <p>Information about the IPv6 association.</p>
         pub fn ipv6_cidr_block_association(
             mut self,
             input: crate::model::SubnetIpv6CidrBlockAssociation,
@@ -34429,7 +37582,7 @@ pub mod associate_subnet_cidr_block_output {
             self.ipv6_cidr_block_association = Some(input);
             self
         }
-        /// <p>Information about the IPv6 CIDR block association.</p>
+        /// <p>Information about the IPv6 association.</p>
         pub fn set_ipv6_cidr_block_association(
             mut self,
             input: std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
@@ -35257,6 +38410,63 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkOutput {
     pub fn builder(
     ) -> crate::output::apply_security_groups_to_client_vpn_target_network_output::Builder {
         crate::output::apply_security_groups_to_client_vpn_target_network_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AllocateIpamPoolCidrOutput {
+    /// <p>Information about the allocation created.</p>
+    pub ipam_pool_allocation: std::option::Option<crate::model::IpamPoolAllocation>,
+}
+impl AllocateIpamPoolCidrOutput {
+    /// <p>Information about the allocation created.</p>
+    pub fn ipam_pool_allocation(&self) -> std::option::Option<&crate::model::IpamPoolAllocation> {
+        self.ipam_pool_allocation.as_ref()
+    }
+}
+impl std::fmt::Debug for AllocateIpamPoolCidrOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AllocateIpamPoolCidrOutput");
+        formatter.field("ipam_pool_allocation", &self.ipam_pool_allocation);
+        formatter.finish()
+    }
+}
+/// See [`AllocateIpamPoolCidrOutput`](crate::output::AllocateIpamPoolCidrOutput)
+pub mod allocate_ipam_pool_cidr_output {
+    /// A builder for [`AllocateIpamPoolCidrOutput`](crate::output::AllocateIpamPoolCidrOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipam_pool_allocation: std::option::Option<crate::model::IpamPoolAllocation>,
+    }
+    impl Builder {
+        /// <p>Information about the allocation created.</p>
+        pub fn ipam_pool_allocation(mut self, input: crate::model::IpamPoolAllocation) -> Self {
+            self.ipam_pool_allocation = Some(input);
+            self
+        }
+        /// <p>Information about the allocation created.</p>
+        pub fn set_ipam_pool_allocation(
+            mut self,
+            input: std::option::Option<crate::model::IpamPoolAllocation>,
+        ) -> Self {
+            self.ipam_pool_allocation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AllocateIpamPoolCidrOutput`](crate::output::AllocateIpamPoolCidrOutput)
+        pub fn build(self) -> crate::output::AllocateIpamPoolCidrOutput {
+            crate::output::AllocateIpamPoolCidrOutput {
+                ipam_pool_allocation: self.ipam_pool_allocation,
+            }
+        }
+    }
+}
+impl AllocateIpamPoolCidrOutput {
+    /// Creates a new builder-style object to manufacture [`AllocateIpamPoolCidrOutput`](crate::output::AllocateIpamPoolCidrOutput)
+    pub fn builder() -> crate::output::allocate_ipam_pool_cidr_output::Builder {
+        crate::output::allocate_ipam_pool_cidr_output::Builder::default()
     }
 }
 

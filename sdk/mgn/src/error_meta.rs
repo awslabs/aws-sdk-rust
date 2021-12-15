@@ -11,6 +11,8 @@ pub enum Error {
     InternalServerException(crate::error::InternalServerException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request could not be completed because its exceeded the service quota.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Reached throttling quota exception.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>Unitialized account exception.</p>
@@ -27,6 +29,7 @@ impl std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UninitializedAccountException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -156,6 +159,32 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVcenterClientError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteVcenterClientError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteVcenterClientErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteVcenterClientErrorKind::UninitializedAccountException(
+                    inner,
+                ) => Error::UninitializedAccountException(inner),
+                crate::error::DeleteVcenterClientErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DeleteVcenterClientErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobLogItemsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -242,6 +271,33 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DescribeSourceServersErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVcenterClientsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeVcenterClientsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeVcenterClientsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeVcenterClientsErrorKind::UninitializedAccountException(
+                    inner,
+                ) => Error::UninitializedAccountException(inner),
+                crate::error::DescribeVcenterClientsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::DescribeVcenterClientsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -469,6 +525,38 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StartReplicationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StartReplicationErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::StartReplicationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::StartReplicationErrorKind::ServiceQuotaExceededException(inner) => {
+                    Error::ServiceQuotaExceededException(inner)
+                }
+                crate::error::StartReplicationErrorKind::UninitializedAccountException(inner) => {
+                    Error::UninitializedAccountException(inner)
+                }
+                crate::error::StartReplicationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::StartReplicationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartTestError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -652,6 +740,30 @@ where
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateSourceServerReplicationTypeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateSourceServerReplicationTypeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateSourceServerReplicationTypeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::UpdateSourceServerReplicationTypeErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateSourceServerReplicationTypeErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+                crate::error::UpdateSourceServerReplicationTypeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::UpdateSourceServerReplicationTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

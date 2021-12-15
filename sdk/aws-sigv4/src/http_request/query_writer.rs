@@ -125,6 +125,36 @@ mod test {
     }
 
     #[test]
+    // This test ensures that the percent encoding applied to queries always produces a valid URI if
+    // the starting URI is valid
+    fn doesnt_panic_when_adding_query_to_valid_uri() {
+        let uri = Uri::from_static("http://www.example.com");
+
+        let mut problematic_chars = Vec::new();
+
+        for byte in u8::MIN..=u8::MAX {
+            match std::str::from_utf8(&[byte]) {
+                // If we can't make a str from the byte then we certainly can't make a URL from it
+                Err(_) => {
+                    continue;
+                }
+                Ok(value) => {
+                    let mut query_writer = QueryWriter::new(&uri);
+                    query_writer.insert("key", value);
+
+                    if let Err(_) = std::panic::catch_unwind(|| query_writer.build_uri()) {
+                        problematic_chars.push(char::from(byte));
+                    };
+                }
+            }
+        }
+
+        if !problematic_chars.is_empty() {
+            panic!("we got some bad bytes here: {:#?}", problematic_chars)
+        }
+    }
+
+    #[test]
     fn clear_params() {
         let uri = Uri::from_static("http://www.example.com/path?original=here&foo=1");
         let mut query_writer = QueryWriter::new(&uri);

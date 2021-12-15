@@ -16,29 +16,29 @@ pub enum Error {
     /// <p>The request was rejected because the specified customer master key (CMK) isn't
     /// enabled.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid
-    /// for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for
+    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+    /// Customer Master Key</a> in the <i>Amazon Web Services Key Management
+    /// Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource can't be
     /// found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
-    /// <p>The AWS access key ID needs a subscription for the service.</p>
+    /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::error::KmsOptInRequired),
     /// <p>The request was denied due to request throttling. For more information about
     /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// the <i>Amazon Web Services Key Management Service Developer
+    /// Guide</i>.</p>
     KmsThrottlingException(crate::error::KmsThrottlingException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request rate for the stream is too high, or the requested data is too large for
     /// the available throughput. Reduce the frequency or size of your requests. For more
     /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
     /// <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and
-    /// Exponential Backoff in AWS</a> in the <i>AWS General
-    /// Reference</i>.</p>
+    /// Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
@@ -46,6 +46,10 @@ pub enum Error {
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>
+    ///
+    /// </p>
+    ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -65,6 +69,7 @@ impl std::fmt::Display for Error {
             Error::ProvisionedThroughputExceededException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -549,6 +554,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::MergeShardsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::MergeShardsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::MergeShardsErrorKind::InvalidArgumentException(inner) => {
                     Error::InvalidArgumentException(inner)
                 }
@@ -714,6 +722,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SplitShardError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SplitShardErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::SplitShardErrorKind::InvalidArgumentException(inner) => {
                     Error::InvalidArgumentException(inner)
                 }
@@ -819,6 +830,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateShardCountErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::UpdateShardCountErrorKind::InvalidArgumentException(inner) => {
                     Error::InvalidArgumentException(inner)
                 }
@@ -832,6 +846,35 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateShardCountErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateStreamModeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateStreamModeError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateStreamModeErrorKind::InvalidArgumentException(inner) => {
+                    Error::InvalidArgumentException(inner)
+                }
+                crate::error::UpdateStreamModeErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::UpdateStreamModeErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::UpdateStreamModeErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateStreamModeErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

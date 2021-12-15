@@ -1,6 +1,6 @@
 # aws-sdk-route53resolver
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2 instances or Elastic Load Balancing load balancers. Resolver performs recursive lookups against public name servers for all other domain names.
@@ -28,8 +28,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-route53resolver = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-route53resolver = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

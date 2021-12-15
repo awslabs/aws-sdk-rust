@@ -7,6 +7,8 @@ pub enum Error {
     ActiveStatementsExceededException(crate::error::ActiveStatementsExceededException),
     /// <p>An SQL statement encountered an environmental error while running.</p>
     BatchExecuteStatementException(crate::error::BatchExecuteStatementException),
+    /// <p>Connection to a database failed.</p>
+    DatabaseConnectionException(crate::error::DatabaseConnectionException),
     /// <p>The SQL statement encountered an environmental error while running.</p>
     ExecuteStatementException(crate::error::ExecuteStatementException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
@@ -23,6 +25,7 @@ impl std::fmt::Display for Error {
         match self {
             Error::ActiveStatementsExceededException(inner) => inner.fmt(f),
             Error::BatchExecuteStatementException(inner) => inner.fmt(f),
+            Error::DatabaseConnectionException(inner) => inner.fmt(f),
             Error::ExecuteStatementException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -65,6 +68,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelStatementError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CancelStatementErrorKind::DatabaseConnectionException(inner) => {
+                    Error::DatabaseConnectionException(inner)
+                }
                 crate::error::CancelStatementErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -113,6 +119,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTableError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeTableErrorKind::DatabaseConnectionException(inner) => {
+                    Error::DatabaseConnectionException(inner)
+                }
                 crate::error::DescribeTableErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -184,6 +193,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDatabasesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListDatabasesErrorKind::DatabaseConnectionException(inner) => {
+                    Error::DatabaseConnectionException(inner)
+                }
                 crate::error::ListDatabasesErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -203,6 +215,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSchemasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListSchemasErrorKind::DatabaseConnectionException(inner) => {
+                    Error::DatabaseConnectionException(inner)
+                }
                 crate::error::ListSchemasErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
@@ -241,6 +256,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTablesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListTablesErrorKind::DatabaseConnectionException(inner) => {
+                    Error::DatabaseConnectionException(inner)
+                }
                 crate::error::ListTablesErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }

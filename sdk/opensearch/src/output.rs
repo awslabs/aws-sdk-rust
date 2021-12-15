@@ -318,17 +318,24 @@ impl UpdatePackageOutput {
 pub struct UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
     pub domain_config: std::option::Option<crate::model::DomainConfig>,
+    /// <p>Contains result of DryRun. </p>
+    pub dry_run_results: std::option::Option<crate::model::DryRunResults>,
 }
 impl UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
     pub fn domain_config(&self) -> std::option::Option<&crate::model::DomainConfig> {
         self.domain_config.as_ref()
     }
+    /// <p>Contains result of DryRun. </p>
+    pub fn dry_run_results(&self) -> std::option::Option<&crate::model::DryRunResults> {
+        self.dry_run_results.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDomainConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainConfigOutput");
         formatter.field("domain_config", &self.domain_config);
+        formatter.field("dry_run_results", &self.dry_run_results);
         formatter.finish()
     }
 }
@@ -339,6 +346,7 @@ pub mod update_domain_config_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::DomainConfig>,
+        pub(crate) dry_run_results: std::option::Option<crate::model::DryRunResults>,
     }
     impl Builder {
         /// <p>The status of the updated domain.</p>
@@ -354,10 +362,24 @@ pub mod update_domain_config_output {
             self.domain_config = input;
             self
         }
+        /// <p>Contains result of DryRun. </p>
+        pub fn dry_run_results(mut self, input: crate::model::DryRunResults) -> Self {
+            self.dry_run_results = Some(input);
+            self
+        }
+        /// <p>Contains result of DryRun. </p>
+        pub fn set_dry_run_results(
+            mut self,
+            input: std::option::Option<crate::model::DryRunResults>,
+        ) -> Self {
+            self.dry_run_results = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput)
         pub fn build(self) -> crate::output::UpdateDomainConfigOutput {
             crate::output::UpdateDomainConfigOutput {
                 domain_config: self.domain_config,
+                dry_run_results: self.dry_run_results,
             }
         }
     }

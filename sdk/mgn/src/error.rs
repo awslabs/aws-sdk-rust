@@ -627,6 +627,123 @@ impl std::error::Error for DeleteSourceServerError {
     }
 }
 
+/// Error type for the `DeleteVcenterClient` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteVcenterClientError {
+    /// Kind of error that occurred.
+    pub kind: DeleteVcenterClientErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteVcenterClient` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteVcenterClientErrorKind {
+    /// <p>Resource not found exception.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Unitialized account exception.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// <p>Validate exception.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteVcenterClientError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteVcenterClientErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteVcenterClientErrorKind::UninitializedAccountException(_inner) => _inner.fmt(f),
+            DeleteVcenterClientErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteVcenterClientErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteVcenterClientError {
+    fn code(&self) -> Option<&str> {
+        DeleteVcenterClientError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteVcenterClientError {
+    /// Creates a new `DeleteVcenterClientError`.
+    pub fn new(kind: DeleteVcenterClientErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteVcenterClientError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteVcenterClientErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteVcenterClientError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteVcenterClientErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteVcenterClientErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVcenterClientErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVcenterClientErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVcenterClientErrorKind::UninitializedAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVcenterClientErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVcenterClientErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteVcenterClientError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteVcenterClientErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteVcenterClientErrorKind::UninitializedAccountException(_inner) => Some(_inner),
+            DeleteVcenterClientErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteVcenterClientErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeJobLogItems` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1072,6 +1189,123 @@ impl std::error::Error for DescribeSourceServersError {
             DescribeSourceServersErrorKind::UninitializedAccountException(_inner) => Some(_inner),
             DescribeSourceServersErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeSourceServersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeVcenterClients` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeVcenterClientsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeVcenterClientsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeVcenterClients` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeVcenterClientsErrorKind {
+    /// <p>Resource not found exception.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Unitialized account exception.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// <p>Validate exception.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeVcenterClientsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeVcenterClientsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeVcenterClientsErrorKind::UninitializedAccountException(_inner) => _inner.fmt(f),
+            DescribeVcenterClientsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribeVcenterClientsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeVcenterClientsError {
+    fn code(&self) -> Option<&str> {
+        DescribeVcenterClientsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeVcenterClientsError {
+    /// Creates a new `DescribeVcenterClientsError`.
+    pub fn new(kind: DescribeVcenterClientsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeVcenterClientsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeVcenterClientsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeVcenterClientsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeVcenterClientsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeVcenterClientsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVcenterClientsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVcenterClientsErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVcenterClientsErrorKind::UninitializedAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVcenterClientsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVcenterClientsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeVcenterClientsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeVcenterClientsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeVcenterClientsErrorKind::UninitializedAccountException(_inner) => Some(_inner),
+            DescribeVcenterClientsErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeVcenterClientsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2120,6 +2354,142 @@ impl std::error::Error for StartCutoverError {
     }
 }
 
+/// Error type for the `StartReplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartReplicationError {
+    /// Kind of error that occurred.
+    pub kind: StartReplicationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartReplication` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartReplicationErrorKind {
+    /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Resource not found exception.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request could not be completed because its exceeded the service quota.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Unitialized account exception.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// <p>Validate exception.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartReplicationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartReplicationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::UninitializedAccountException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            StartReplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartReplicationError {
+    fn code(&self) -> Option<&str> {
+        StartReplicationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartReplicationError {
+    /// Creates a new `StartReplicationError`.
+    pub fn new(kind: StartReplicationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartReplicationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartReplicationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartReplicationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartReplicationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, StartReplicationErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReplicationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReplicationErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReplicationErrorKind::UninitializedAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartReplicationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartReplicationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StartReplicationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartReplicationErrorKind::ConflictException(_inner) => Some(_inner),
+            StartReplicationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartReplicationErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            StartReplicationErrorKind::UninitializedAccountException(_inner) => Some(_inner),
+            StartReplicationErrorKind::ValidationException(_inner) => Some(_inner),
+            StartReplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartTest` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3040,6 +3410,147 @@ impl std::error::Error for UpdateReplicationConfigurationTemplateError {
     }
 }
 
+/// Error type for the `UpdateSourceServerReplicationType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateSourceServerReplicationTypeError {
+    /// Kind of error that occurred.
+    pub kind: UpdateSourceServerReplicationTypeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateSourceServerReplicationType` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateSourceServerReplicationTypeErrorKind {
+    /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Resource not found exception.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Unitialized account exception.</p>
+    UninitializedAccountException(crate::error::UninitializedAccountException),
+    /// <p>Validate exception.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateSourceServerReplicationTypeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateSourceServerReplicationTypeErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateSourceServerReplicationTypeErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateSourceServerReplicationTypeErrorKind::UninitializedAccountException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateSourceServerReplicationTypeErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateSourceServerReplicationTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateSourceServerReplicationTypeError {
+    fn code(&self) -> Option<&str> {
+        UpdateSourceServerReplicationTypeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateSourceServerReplicationTypeError {
+    /// Creates a new `UpdateSourceServerReplicationTypeError`.
+    pub fn new(
+        kind: UpdateSourceServerReplicationTypeErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateSourceServerReplicationTypeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateSourceServerReplicationTypeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateSourceServerReplicationTypeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateSourceServerReplicationTypeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateSourceServerReplicationTypeErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceServerReplicationTypeErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceServerReplicationTypeErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceServerReplicationTypeErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceServerReplicationTypeErrorKind::UninitializedAccountException`.
+    pub fn is_uninitialized_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceServerReplicationTypeErrorKind::UninitializedAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateSourceServerReplicationTypeErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSourceServerReplicationTypeErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateSourceServerReplicationTypeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateSourceServerReplicationTypeErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateSourceServerReplicationTypeErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateSourceServerReplicationTypeErrorKind::UninitializedAccountException(_inner) => {
+                Some(_inner)
+            }
+            UpdateSourceServerReplicationTypeErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateSourceServerReplicationTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>Validate exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3601,6 +4112,170 @@ impl AccessDeniedException {
     }
 }
 
+/// <p>The request could not be completed because its exceeded the service quota.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    /// <p>Exceeded the service quota resource Id.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>Exceeded the service quota resource type.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>Exceeded the service quota service code.</p>
+    pub service_code: std::option::Option<std::string::String>,
+    /// <p>Exceeded the service quota code.</p>
+    pub quota_code: std::option::Option<std::string::String>,
+}
+impl ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>Exceeded the service quota resource Id.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>Exceeded the service quota resource type.</p>
+    pub fn resource_type(&self) -> std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>Exceeded the service quota service code.</p>
+    pub fn service_code(&self) -> std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>Exceeded the service quota code.</p>
+    pub fn quota_code(&self) -> std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
+}
+impl std::fmt::Debug for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("service_code", &self.service_code);
+        formatter.field("quota_code", &self.quota_code);
+        formatter.finish()
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+pub mod service_quota_exceeded_exception {
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) service_code: std::option::Option<std::string::String>,
+        pub(crate) quota_code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>Exceeded the service quota resource Id.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>Exceeded the service quota resource Id.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>Exceeded the service quota resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>Exceeded the service quota resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>Exceeded the service quota service code.</p>
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_code = Some(input.into());
+            self
+        }
+        /// <p>Exceeded the service quota service code.</p>
+        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_code = input;
+            self
+        }
+        /// <p>Exceeded the service quota code.</p>
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quota_code = Some(input.into());
+            self
+        }
+        /// <p>Exceeded the service quota code.</p>
+        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.quota_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+                code: self.code,
+                resource_id: self.resource_id,
+                resource_type: self.resource_type,
+                service_code: self.service_code,
+                quota_code: self.quota_code,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>Reached throttling quota exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3647,8 +4322,8 @@ impl ThrottlingException {
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -3759,8 +4434,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }

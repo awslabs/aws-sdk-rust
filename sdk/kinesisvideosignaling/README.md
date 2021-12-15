@@ -1,6 +1,6 @@
 # aws-sdk-kinesisvideosignaling
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Kinesis Video Streams Signaling Service is a intermediate service that establishes a communication channel for discovering peers, transmitting offers and answers in order to establish peer-to-peer connection in webRTC technology.
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-kinesisvideosignaling = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-kinesisvideosignaling = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

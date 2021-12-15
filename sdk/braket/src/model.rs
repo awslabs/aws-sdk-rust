@@ -557,6 +557,1768 @@ impl AsRef<str> for CancellationStatus {
     }
 }
 
+/// <p>Provides summary information about an Amazon Braket job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobSummary {
+    /// <p>The status of the Amazon Braket job.</p>
+    pub status: std::option::Option<crate::model::JobPrimaryStatus>,
+    /// <p>The ARN of the Amazon Braket job.</p>
+    pub job_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the Amazon Braket job.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
+    pub device: std::option::Option<std::string::String>,
+    /// <p>The date and time that the Amazon Braket job was created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the Amazon Braket job was started.</p>
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the Amazon Braket job ended.</p>
+    pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl JobSummary {
+    /// <p>The status of the Amazon Braket job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobPrimaryStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The ARN of the Amazon Braket job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The name of the Amazon Braket job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
+    pub fn device(&self) -> std::option::Option<&str> {
+        self.device.as_deref()
+    }
+    /// <p>The date and time that the Amazon Braket job was created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time that the Amazon Braket job was started.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_at.as_ref()
+    }
+    /// <p>The date and time that the Amazon Braket job ended.</p>
+    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.ended_at.as_ref()
+    }
+    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for JobSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobSummary");
+        formatter.field("status", &self.status);
+        formatter.field("job_arn", &self.job_arn);
+        formatter.field("job_name", &self.job_name);
+        formatter.field("device", &self.device);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("started_at", &self.started_at);
+        formatter.field("ended_at", &self.ended_at);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`JobSummary`](crate::model::JobSummary)
+pub mod job_summary {
+    /// A builder for [`JobSummary`](crate::model::JobSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::JobPrimaryStatus>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) device: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The status of the Amazon Braket job.</p>
+        pub fn status(mut self, input: crate::model::JobPrimaryStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the Amazon Braket job.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::JobPrimaryStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The ARN of the Amazon Braket job.</p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the Amazon Braket job.</p>
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
+            self
+        }
+        /// <p>The name of the Amazon Braket job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Amazon Braket job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
+        pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device = Some(input.into());
+            self
+        }
+        /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
+        pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device = input;
+            self
+        }
+        /// <p>The date and time that the Amazon Braket job was created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the Amazon Braket job was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The date and time that the Amazon Braket job was started.</p>
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the Amazon Braket job was started.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_at = input;
+            self
+        }
+        /// <p>The date and time that the Amazon Braket job ended.</p>
+        pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.ended_at = Some(input);
+            self
+        }
+        /// <p>The date and time that the Amazon Braket job ended.</p>
+        pub fn set_ended_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.ended_at = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobSummary`](crate::model::JobSummary)
+        pub fn build(self) -> crate::model::JobSummary {
+            crate::model::JobSummary {
+                status: self.status,
+                job_arn: self.job_arn,
+                job_name: self.job_name,
+                device: self.device,
+                created_at: self.created_at,
+                started_at: self.started_at,
+                ended_at: self.ended_at,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl JobSummary {
+    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary)
+    pub fn builder() -> crate::model::job_summary::Builder {
+        crate::model::job_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JobPrimaryStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Queued,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for JobPrimaryStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCELLED" => JobPrimaryStatus::Cancelled,
+            "CANCELLING" => JobPrimaryStatus::Cancelling,
+            "COMPLETED" => JobPrimaryStatus::Completed,
+            "FAILED" => JobPrimaryStatus::Failed,
+            "QUEUED" => JobPrimaryStatus::Queued,
+            "RUNNING" => JobPrimaryStatus::Running,
+            other => JobPrimaryStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for JobPrimaryStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JobPrimaryStatus::from(s))
+    }
+}
+impl JobPrimaryStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JobPrimaryStatus::Cancelled => "CANCELLED",
+            JobPrimaryStatus::Cancelling => "CANCELLING",
+            JobPrimaryStatus::Completed => "COMPLETED",
+            JobPrimaryStatus::Failed => "FAILED",
+            JobPrimaryStatus::Queued => "QUEUED",
+            JobPrimaryStatus::Running => "RUNNING",
+            JobPrimaryStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "CANCELLING",
+            "COMPLETED",
+            "FAILED",
+            "QUEUED",
+            "RUNNING",
+        ]
+    }
+}
+impl AsRef<str> for JobPrimaryStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A filter used to search for Amazon Braket jobs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchJobsFilter {
+    /// <p>The name to use for the jobs filter.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The values to use for the jobs filter.</p>
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An operator to use for the jobs filter.</p>
+    pub operator: std::option::Option<crate::model::SearchJobsFilterOperator>,
+}
+impl SearchJobsFilter {
+    /// <p>The name to use for the jobs filter.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The values to use for the jobs filter.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+    /// <p>An operator to use for the jobs filter.</p>
+    pub fn operator(&self) -> std::option::Option<&crate::model::SearchJobsFilterOperator> {
+        self.operator.as_ref()
+    }
+}
+impl std::fmt::Debug for SearchJobsFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchJobsFilter");
+        formatter.field("name", &self.name);
+        formatter.field("values", &self.values);
+        formatter.field("operator", &self.operator);
+        formatter.finish()
+    }
+}
+/// See [`SearchJobsFilter`](crate::model::SearchJobsFilter)
+pub mod search_jobs_filter {
+    /// A builder for [`SearchJobsFilter`](crate::model::SearchJobsFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) operator: std::option::Option<crate::model::SearchJobsFilterOperator>,
+    }
+    impl Builder {
+        /// <p>The name to use for the jobs filter.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name to use for the jobs filter.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values to use for the jobs filter.</p>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p>The values to use for the jobs filter.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// <p>An operator to use for the jobs filter.</p>
+        pub fn operator(mut self, input: crate::model::SearchJobsFilterOperator) -> Self {
+            self.operator = Some(input);
+            self
+        }
+        /// <p>An operator to use for the jobs filter.</p>
+        pub fn set_operator(
+            mut self,
+            input: std::option::Option<crate::model::SearchJobsFilterOperator>,
+        ) -> Self {
+            self.operator = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchJobsFilter`](crate::model::SearchJobsFilter)
+        pub fn build(self) -> crate::model::SearchJobsFilter {
+            crate::model::SearchJobsFilter {
+                name: self.name,
+                values: self.values,
+                operator: self.operator,
+            }
+        }
+    }
+}
+impl SearchJobsFilter {
+    /// Creates a new builder-style object to manufacture [`SearchJobsFilter`](crate::model::SearchJobsFilter)
+    pub fn builder() -> crate::model::search_jobs_filter::Builder {
+        crate::model::search_jobs_filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SearchJobsFilterOperator {
+    #[allow(missing_docs)] // documentation missing in model
+    Between,
+    #[allow(missing_docs)] // documentation missing in model
+    Contains,
+    #[allow(missing_docs)] // documentation missing in model
+    Equal,
+    #[allow(missing_docs)] // documentation missing in model
+    Gt,
+    #[allow(missing_docs)] // documentation missing in model
+    Gte,
+    #[allow(missing_docs)] // documentation missing in model
+    Lt,
+    #[allow(missing_docs)] // documentation missing in model
+    Lte,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SearchJobsFilterOperator {
+    fn from(s: &str) -> Self {
+        match s {
+            "BETWEEN" => SearchJobsFilterOperator::Between,
+            "CONTAINS" => SearchJobsFilterOperator::Contains,
+            "EQUAL" => SearchJobsFilterOperator::Equal,
+            "GT" => SearchJobsFilterOperator::Gt,
+            "GTE" => SearchJobsFilterOperator::Gte,
+            "LT" => SearchJobsFilterOperator::Lt,
+            "LTE" => SearchJobsFilterOperator::Lte,
+            other => SearchJobsFilterOperator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SearchJobsFilterOperator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SearchJobsFilterOperator::from(s))
+    }
+}
+impl SearchJobsFilterOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SearchJobsFilterOperator::Between => "BETWEEN",
+            SearchJobsFilterOperator::Contains => "CONTAINS",
+            SearchJobsFilterOperator::Equal => "EQUAL",
+            SearchJobsFilterOperator::Gt => "GT",
+            SearchJobsFilterOperator::Gte => "GTE",
+            SearchJobsFilterOperator::Lt => "LT",
+            SearchJobsFilterOperator::Lte => "LTE",
+            SearchJobsFilterOperator::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["BETWEEN", "CONTAINS", "EQUAL", "GT", "GTE", "LT", "LTE"]
+    }
+}
+impl AsRef<str> for SearchJobsFilterOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeviceConfig {
+    /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
+    pub device: std::option::Option<std::string::String>,
+}
+impl DeviceConfig {
+    /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
+    pub fn device(&self) -> std::option::Option<&str> {
+        self.device.as_deref()
+    }
+}
+impl std::fmt::Debug for DeviceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeviceConfig");
+        formatter.field("device", &self.device);
+        formatter.finish()
+    }
+}
+/// See [`DeviceConfig`](crate::model::DeviceConfig)
+pub mod device_config {
+    /// A builder for [`DeviceConfig`](crate::model::DeviceConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) device: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
+        pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device = Some(input.into());
+            self
+        }
+        /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
+        pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeviceConfig`](crate::model::DeviceConfig)
+        pub fn build(self) -> crate::model::DeviceConfig {
+            crate::model::DeviceConfig {
+                device: self.device,
+            }
+        }
+    }
+}
+impl DeviceConfig {
+    /// Creates a new builder-style object to manufacture [`DeviceConfig`](crate::model::DeviceConfig)
+    pub fn builder() -> crate::model::device_config::Builder {
+        crate::model::device_config::Builder::default()
+    }
+}
+
+/// <p>Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon
+/// Braket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceConfig {
+    /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
+    pub instance_type: std::option::Option<crate::model::InstanceType>,
+    /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
+    pub volume_size_in_gb: std::option::Option<i32>,
+}
+impl InstanceConfig {
+    /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
+    pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
+    pub fn volume_size_in_gb(&self) -> std::option::Option<i32> {
+        self.volume_size_in_gb
+    }
+}
+impl std::fmt::Debug for InstanceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceConfig");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.finish()
+    }
+}
+/// See [`InstanceConfig`](crate::model::InstanceConfig)
+pub mod instance_config {
+    /// A builder for [`InstanceConfig`](crate::model::InstanceConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::InstanceType>,
+        pub(crate) volume_size_in_gb: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
+        pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::InstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.volume_size_in_gb = Some(input);
+            self
+        }
+        /// <p>The size of the storage volume, in GB, that user wants to provision.</p>
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_in_gb = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceConfig`](crate::model::InstanceConfig)
+        pub fn build(self) -> crate::model::InstanceConfig {
+            crate::model::InstanceConfig {
+                instance_type: self.instance_type,
+                volume_size_in_gb: self.volume_size_in_gb,
+            }
+        }
+    }
+}
+impl InstanceConfig {
+    /// Creates a new builder-style object to manufacture [`InstanceConfig`](crate::model::InstanceConfig)
+    pub fn builder() -> crate::model::instance_config::Builder {
+        crate::model::instance_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InstanceType {
+    #[allow(missing_docs)] // documentation missing in model
+    MlC42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC518Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC59Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5N18Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5N2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5N4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5N9Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5NXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4DnXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM410Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM416Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP216Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP28Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP316Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP38Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP3Dn24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP4D24Xlarge,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InstanceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ml.c4.2xlarge" => InstanceType::MlC42Xlarge,
+            "ml.c4.4xlarge" => InstanceType::MlC44Xlarge,
+            "ml.c4.8xlarge" => InstanceType::MlC48Xlarge,
+            "ml.c4.xlarge" => InstanceType::MlC4Xlarge,
+            "ml.c5.18xlarge" => InstanceType::MlC518Xlarge,
+            "ml.c5.2xlarge" => InstanceType::MlC52Xlarge,
+            "ml.c5.4xlarge" => InstanceType::MlC54Xlarge,
+            "ml.c5.9xlarge" => InstanceType::MlC59Xlarge,
+            "ml.c5.xlarge" => InstanceType::MlC5Xlarge,
+            "ml.c5n.18xlarge" => InstanceType::MlC5N18Xlarge,
+            "ml.c5n.2xlarge" => InstanceType::MlC5N2Xlarge,
+            "ml.c5n.4xlarge" => InstanceType::MlC5N4Xlarge,
+            "ml.c5n.9xlarge" => InstanceType::MlC5N9Xlarge,
+            "ml.c5n.xlarge" => InstanceType::MlC5NXlarge,
+            "ml.g4dn.12xlarge" => InstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => InstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => InstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => InstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => InstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => InstanceType::MlG4DnXlarge,
+            "ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
+            "ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
+            "ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
+            "ml.m4.4xlarge" => InstanceType::MlM44Xlarge,
+            "ml.m4.xlarge" => InstanceType::MlM4Xlarge,
+            "ml.m5.12xlarge" => InstanceType::MlM512Xlarge,
+            "ml.m5.24xlarge" => InstanceType::MlM524Xlarge,
+            "ml.m5.2xlarge" => InstanceType::MlM52Xlarge,
+            "ml.m5.4xlarge" => InstanceType::MlM54Xlarge,
+            "ml.m5.large" => InstanceType::MlM5Large,
+            "ml.m5.xlarge" => InstanceType::MlM5Xlarge,
+            "ml.p2.16xlarge" => InstanceType::MlP216Xlarge,
+            "ml.p2.8xlarge" => InstanceType::MlP28Xlarge,
+            "ml.p2.xlarge" => InstanceType::MlP2Xlarge,
+            "ml.p3.16xlarge" => InstanceType::MlP316Xlarge,
+            "ml.p3.2xlarge" => InstanceType::MlP32Xlarge,
+            "ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
+            "ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
+            "ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
+            other => InstanceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InstanceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstanceType::from(s))
+    }
+}
+impl InstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstanceType::MlC42Xlarge => "ml.c4.2xlarge",
+            InstanceType::MlC44Xlarge => "ml.c4.4xlarge",
+            InstanceType::MlC48Xlarge => "ml.c4.8xlarge",
+            InstanceType::MlC4Xlarge => "ml.c4.xlarge",
+            InstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+            InstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+            InstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+            InstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+            InstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            InstanceType::MlC5N18Xlarge => "ml.c5n.18xlarge",
+            InstanceType::MlC5N2Xlarge => "ml.c5n.2xlarge",
+            InstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
+            InstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
+            InstanceType::MlC5NXlarge => "ml.c5n.xlarge",
+            InstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            InstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            InstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            InstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            InstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            InstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
+            InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
+            InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
+            InstanceType::MlM44Xlarge => "ml.m4.4xlarge",
+            InstanceType::MlM4Xlarge => "ml.m4.xlarge",
+            InstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+            InstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+            InstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+            InstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+            InstanceType::MlM5Large => "ml.m5.large",
+            InstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            InstanceType::MlP216Xlarge => "ml.p2.16xlarge",
+            InstanceType::MlP28Xlarge => "ml.p2.8xlarge",
+            InstanceType::MlP2Xlarge => "ml.p2.xlarge",
+            InstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+            InstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+            InstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            InstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+            InstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            InstanceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.c5n.18xlarge",
+            "ml.c5n.2xlarge",
+            "ml.c5n.4xlarge",
+            "ml.c5n.9xlarge",
+            "ml.c5n.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.p3dn.24xlarge",
+            "ml.p4d.24xlarge",
+        ]
+    }
+}
+impl AsRef<str> for InstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies limits for how long an Amazon Braket job can run. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobStoppingCondition {
+    /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
+    pub max_runtime_in_seconds: std::option::Option<i32>,
+}
+impl JobStoppingCondition {
+    /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
+    pub fn max_runtime_in_seconds(&self) -> std::option::Option<i32> {
+        self.max_runtime_in_seconds
+    }
+}
+impl std::fmt::Debug for JobStoppingCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobStoppingCondition");
+        formatter.field("max_runtime_in_seconds", &self.max_runtime_in_seconds);
+        formatter.finish()
+    }
+}
+/// See [`JobStoppingCondition`](crate::model::JobStoppingCondition)
+pub mod job_stopping_condition {
+    /// A builder for [`JobStoppingCondition`](crate::model::JobStoppingCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_runtime_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
+        pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
+            self.max_runtime_in_seconds = Some(input);
+            self
+        }
+        /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
+        pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_runtime_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobStoppingCondition`](crate::model::JobStoppingCondition)
+        pub fn build(self) -> crate::model::JobStoppingCondition {
+            crate::model::JobStoppingCondition {
+                max_runtime_in_seconds: self.max_runtime_in_seconds,
+            }
+        }
+    }
+}
+impl JobStoppingCondition {
+    /// Creates a new builder-style object to manufacture [`JobStoppingCondition`](crate::model::JobStoppingCondition)
+    pub fn builder() -> crate::model::job_stopping_condition::Builder {
+        crate::model::job_stopping_condition::Builder::default()
+    }
+}
+
+/// <p>Contains information about the output locations for job checkpoint data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobCheckpointConfig {
+    /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
+    pub local_path: std::option::Option<std::string::String>,
+    /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    pub s3_uri: std::option::Option<std::string::String>,
+}
+impl JobCheckpointConfig {
+    /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
+    pub fn local_path(&self) -> std::option::Option<&str> {
+        self.local_path.as_deref()
+    }
+    /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+}
+impl std::fmt::Debug for JobCheckpointConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobCheckpointConfig");
+        formatter.field("local_path", &self.local_path);
+        formatter.field("s3_uri", &self.s3_uri);
+        formatter.finish()
+    }
+}
+/// See [`JobCheckpointConfig`](crate::model::JobCheckpointConfig)
+pub mod job_checkpoint_config {
+    /// A builder for [`JobCheckpointConfig`](crate::model::JobCheckpointConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) local_path: std::option::Option<std::string::String>,
+        pub(crate) s3_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
+        pub fn local_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.local_path = Some(input.into());
+            self
+        }
+        /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
+        pub fn set_local_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.local_path = input;
+            self
+        }
+        /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_uri = Some(input.into());
+            self
+        }
+        /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobCheckpointConfig`](crate::model::JobCheckpointConfig)
+        pub fn build(self) -> crate::model::JobCheckpointConfig {
+            crate::model::JobCheckpointConfig {
+                local_path: self.local_path,
+                s3_uri: self.s3_uri,
+            }
+        }
+    }
+}
+impl JobCheckpointConfig {
+    /// Creates a new builder-style object to manufacture [`JobCheckpointConfig`](crate::model::JobCheckpointConfig)
+    pub fn builder() -> crate::model::job_checkpoint_config::Builder {
+        crate::model::job_checkpoint_config::Builder::default()
+    }
+}
+
+/// <p>Specifies the path to the S3 location where you want to store job artifacts and the
+/// encryption key used to store them.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobOutputDataConfig {
+    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
+    /// job training artifacts at rest using Amazon S3 server-side encryption.</p>
+    pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For
+    /// example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    pub s3_path: std::option::Option<std::string::String>,
+}
+impl JobOutputDataConfig {
+    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
+    /// job training artifacts at rest using Amazon S3 server-side encryption.</p>
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For
+    /// example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    pub fn s3_path(&self) -> std::option::Option<&str> {
+        self.s3_path.as_deref()
+    }
+}
+impl std::fmt::Debug for JobOutputDataConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobOutputDataConfig");
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("s3_path", &self.s3_path);
+        formatter.finish()
+    }
+}
+/// See [`JobOutputDataConfig`](crate::model::JobOutputDataConfig)
+pub mod job_output_data_config {
+    /// A builder for [`JobOutputDataConfig`](crate::model::JobOutputDataConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) s3_path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
+        /// job training artifacts at rest using Amazon S3 server-side encryption.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
+        /// job training artifacts at rest using Amazon S3 server-side encryption.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For
+        /// example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        pub fn s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_path = Some(input.into());
+            self
+        }
+        /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For
+        /// example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobOutputDataConfig`](crate::model::JobOutputDataConfig)
+        pub fn build(self) -> crate::model::JobOutputDataConfig {
+            crate::model::JobOutputDataConfig {
+                kms_key_id: self.kms_key_id,
+                s3_path: self.s3_path,
+            }
+        }
+    }
+}
+impl JobOutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`JobOutputDataConfig`](crate::model::JobOutputDataConfig)
+    pub fn builder() -> crate::model::job_output_data_config::Builder {
+        crate::model::job_output_data_config::Builder::default()
+    }
+}
+
+/// <p>A list of parameters that specify the input channels, type of input data, and where it
+/// is located.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InputFileConfig {
+    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    pub channel_name: std::option::Option<std::string::String>,
+    /// <p>The MIME type of the data.</p>
+    pub content_type: std::option::Option<std::string::String>,
+    /// <p>The location of the channel data.</p>
+    pub data_source: std::option::Option<crate::model::DataSource>,
+}
+impl InputFileConfig {
+    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    pub fn channel_name(&self) -> std::option::Option<&str> {
+        self.channel_name.as_deref()
+    }
+    /// <p>The MIME type of the data.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The location of the channel data.</p>
+    pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
+        self.data_source.as_ref()
+    }
+}
+impl std::fmt::Debug for InputFileConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InputFileConfig");
+        formatter.field("channel_name", &self.channel_name);
+        formatter.field("content_type", &self.content_type);
+        formatter.field("data_source", &self.data_source);
+        formatter.finish()
+    }
+}
+/// See [`InputFileConfig`](crate::model::InputFileConfig)
+pub mod input_file_config {
+    /// A builder for [`InputFileConfig`](crate::model::InputFileConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_name: std::option::Option<std::string::String>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) data_source: std::option::Option<crate::model::DataSource>,
+    }
+    impl Builder {
+        /// <p>A named input source that an Amazon Braket job can consume.</p>
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_name = Some(input.into());
+            self
+        }
+        /// <p>A named input source that an Amazon Braket job can consume.</p>
+        pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_name = input;
+            self
+        }
+        /// <p>The MIME type of the data.</p>
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
+            self
+        }
+        /// <p>The MIME type of the data.</p>
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
+            self
+        }
+        /// <p>The location of the channel data.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.data_source = Some(input);
+            self
+        }
+        /// <p>The location of the channel data.</p>
+        pub fn set_data_source(
+            mut self,
+            input: std::option::Option<crate::model::DataSource>,
+        ) -> Self {
+            self.data_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InputFileConfig`](crate::model::InputFileConfig)
+        pub fn build(self) -> crate::model::InputFileConfig {
+            crate::model::InputFileConfig {
+                channel_name: self.channel_name,
+                content_type: self.content_type,
+                data_source: self.data_source,
+            }
+        }
+    }
+}
+impl InputFileConfig {
+    /// Creates a new builder-style object to manufacture [`InputFileConfig`](crate::model::InputFileConfig)
+    pub fn builder() -> crate::model::input_file_config::Builder {
+        crate::model::input_file_config::Builder::default()
+    }
+}
+
+/// <p>Information about the source of the data used by the Amazon Braket job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSource {
+    /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
+    pub s3_data_source: std::option::Option<crate::model::S3DataSource>,
+}
+impl DataSource {
+    /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
+    pub fn s3_data_source(&self) -> std::option::Option<&crate::model::S3DataSource> {
+        self.s3_data_source.as_ref()
+    }
+}
+impl std::fmt::Debug for DataSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSource");
+        formatter.field("s3_data_source", &self.s3_data_source);
+        formatter.finish()
+    }
+}
+/// See [`DataSource`](crate::model::DataSource)
+pub mod data_source {
+    /// A builder for [`DataSource`](crate::model::DataSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_data_source: std::option::Option<crate::model::S3DataSource>,
+    }
+    impl Builder {
+        /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
+        pub fn s3_data_source(mut self, input: crate::model::S3DataSource) -> Self {
+            self.s3_data_source = Some(input);
+            self
+        }
+        /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
+        pub fn set_s3_data_source(
+            mut self,
+            input: std::option::Option<crate::model::S3DataSource>,
+        ) -> Self {
+            self.s3_data_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource)
+        pub fn build(self) -> crate::model::DataSource {
+            crate::model::DataSource {
+                s3_data_source: self.s3_data_source,
+            }
+        }
+    }
+}
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource)
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
+/// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3DataSource {
+    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a
+    /// key name prefix or a manifest that locates the S3 data source.</p>
+    pub s3_uri: std::option::Option<std::string::String>,
+}
+impl S3DataSource {
+    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a
+    /// key name prefix or a manifest that locates the S3 data source.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+}
+impl std::fmt::Debug for S3DataSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3DataSource");
+        formatter.field("s3_uri", &self.s3_uri);
+        formatter.finish()
+    }
+}
+/// See [`S3DataSource`](crate::model::S3DataSource)
+pub mod s3_data_source {
+    /// A builder for [`S3DataSource`](crate::model::S3DataSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a
+        /// key name prefix or a manifest that locates the S3 data source.</p>
+        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_uri = Some(input.into());
+            self
+        }
+        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a
+        /// key name prefix or a manifest that locates the S3 data source.</p>
+        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3DataSource`](crate::model::S3DataSource)
+        pub fn build(self) -> crate::model::S3DataSource {
+            crate::model::S3DataSource {
+                s3_uri: self.s3_uri,
+            }
+        }
+    }
+}
+impl S3DataSource {
+    /// Creates a new builder-style object to manufacture [`S3DataSource`](crate::model::S3DataSource)
+    pub fn builder() -> crate::model::s3_data_source::Builder {
+        crate::model::s3_data_source::Builder::default()
+    }
+}
+
+/// <p>Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to
+/// the Python scripts used for entry and training.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlgorithmSpecification {
+    /// <p>Configures the paths to the Python scripts used for entry and training.</p>
+    pub script_mode_config: std::option::Option<crate::model::ScriptModeConfig>,
+    /// <p>The container image used to create an Amazon Braket job.</p>
+    pub container_image: std::option::Option<crate::model::ContainerImage>,
+}
+impl AlgorithmSpecification {
+    /// <p>Configures the paths to the Python scripts used for entry and training.</p>
+    pub fn script_mode_config(&self) -> std::option::Option<&crate::model::ScriptModeConfig> {
+        self.script_mode_config.as_ref()
+    }
+    /// <p>The container image used to create an Amazon Braket job.</p>
+    pub fn container_image(&self) -> std::option::Option<&crate::model::ContainerImage> {
+        self.container_image.as_ref()
+    }
+}
+impl std::fmt::Debug for AlgorithmSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlgorithmSpecification");
+        formatter.field("script_mode_config", &self.script_mode_config);
+        formatter.field("container_image", &self.container_image);
+        formatter.finish()
+    }
+}
+/// See [`AlgorithmSpecification`](crate::model::AlgorithmSpecification)
+pub mod algorithm_specification {
+    /// A builder for [`AlgorithmSpecification`](crate::model::AlgorithmSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) script_mode_config: std::option::Option<crate::model::ScriptModeConfig>,
+        pub(crate) container_image: std::option::Option<crate::model::ContainerImage>,
+    }
+    impl Builder {
+        /// <p>Configures the paths to the Python scripts used for entry and training.</p>
+        pub fn script_mode_config(mut self, input: crate::model::ScriptModeConfig) -> Self {
+            self.script_mode_config = Some(input);
+            self
+        }
+        /// <p>Configures the paths to the Python scripts used for entry and training.</p>
+        pub fn set_script_mode_config(
+            mut self,
+            input: std::option::Option<crate::model::ScriptModeConfig>,
+        ) -> Self {
+            self.script_mode_config = input;
+            self
+        }
+        /// <p>The container image used to create an Amazon Braket job.</p>
+        pub fn container_image(mut self, input: crate::model::ContainerImage) -> Self {
+            self.container_image = Some(input);
+            self
+        }
+        /// <p>The container image used to create an Amazon Braket job.</p>
+        pub fn set_container_image(
+            mut self,
+            input: std::option::Option<crate::model::ContainerImage>,
+        ) -> Self {
+            self.container_image = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlgorithmSpecification`](crate::model::AlgorithmSpecification)
+        pub fn build(self) -> crate::model::AlgorithmSpecification {
+            crate::model::AlgorithmSpecification {
+                script_mode_config: self.script_mode_config,
+                container_image: self.container_image,
+            }
+        }
+    }
+}
+impl AlgorithmSpecification {
+    /// Creates a new builder-style object to manufacture [`AlgorithmSpecification`](crate::model::AlgorithmSpecification)
+    pub fn builder() -> crate::model::algorithm_specification::Builder {
+        crate::model::algorithm_specification::Builder::default()
+    }
+}
+
+/// <p>The container image used to create an Amazon Braket job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContainerImage {
+    /// <p>The URI locating the container image.</p>
+    pub uri: std::option::Option<std::string::String>,
+}
+impl ContainerImage {
+    /// <p>The URI locating the container image.</p>
+    pub fn uri(&self) -> std::option::Option<&str> {
+        self.uri.as_deref()
+    }
+}
+impl std::fmt::Debug for ContainerImage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContainerImage");
+        formatter.field("uri", &self.uri);
+        formatter.finish()
+    }
+}
+/// See [`ContainerImage`](crate::model::ContainerImage)
+pub mod container_image {
+    /// A builder for [`ContainerImage`](crate::model::ContainerImage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The URI locating the container image.</p>
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
+            self
+        }
+        /// <p>The URI locating the container image.</p>
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContainerImage`](crate::model::ContainerImage)
+        pub fn build(self) -> crate::model::ContainerImage {
+            crate::model::ContainerImage { uri: self.uri }
+        }
+    }
+}
+impl ContainerImage {
+    /// Creates a new builder-style object to manufacture [`ContainerImage`](crate::model::ContainerImage)
+    pub fn builder() -> crate::model::container_image::Builder {
+        crate::model::container_image::Builder::default()
+    }
+}
+
+/// <p>Contains information about the Python scripts used for entry and by an Amazon Braket job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScriptModeConfig {
+    /// <p>The path to the Python script that serves as the entry point for an Amazon Braket
+    /// job.</p>
+    pub entry_point: std::option::Option<std::string::String>,
+    /// <p>The URI that specifies the S3 path to the Python script module that contains the
+    /// training script used by an Amazon Braket job.</p>
+    pub s3_uri: std::option::Option<std::string::String>,
+    /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
+    pub compression_type: std::option::Option<crate::model::CompressionType>,
+}
+impl ScriptModeConfig {
+    /// <p>The path to the Python script that serves as the entry point for an Amazon Braket
+    /// job.</p>
+    pub fn entry_point(&self) -> std::option::Option<&str> {
+        self.entry_point.as_deref()
+    }
+    /// <p>The URI that specifies the S3 path to the Python script module that contains the
+    /// training script used by an Amazon Braket job.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+    /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
+    pub fn compression_type(&self) -> std::option::Option<&crate::model::CompressionType> {
+        self.compression_type.as_ref()
+    }
+}
+impl std::fmt::Debug for ScriptModeConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScriptModeConfig");
+        formatter.field("entry_point", &self.entry_point);
+        formatter.field("s3_uri", &self.s3_uri);
+        formatter.field("compression_type", &self.compression_type);
+        formatter.finish()
+    }
+}
+/// See [`ScriptModeConfig`](crate::model::ScriptModeConfig)
+pub mod script_mode_config {
+    /// A builder for [`ScriptModeConfig`](crate::model::ScriptModeConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entry_point: std::option::Option<std::string::String>,
+        pub(crate) s3_uri: std::option::Option<std::string::String>,
+        pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
+    }
+    impl Builder {
+        /// <p>The path to the Python script that serves as the entry point for an Amazon Braket
+        /// job.</p>
+        pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entry_point = Some(input.into());
+            self
+        }
+        /// <p>The path to the Python script that serves as the entry point for an Amazon Braket
+        /// job.</p>
+        pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entry_point = input;
+            self
+        }
+        /// <p>The URI that specifies the S3 path to the Python script module that contains the
+        /// training script used by an Amazon Braket job.</p>
+        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_uri = Some(input.into());
+            self
+        }
+        /// <p>The URI that specifies the S3 path to the Python script module that contains the
+        /// training script used by an Amazon Braket job.</p>
+        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_uri = input;
+            self
+        }
+        /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
+        pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
+            self.compression_type = Some(input);
+            self
+        }
+        /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
+        pub fn set_compression_type(
+            mut self,
+            input: std::option::Option<crate::model::CompressionType>,
+        ) -> Self {
+            self.compression_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScriptModeConfig`](crate::model::ScriptModeConfig)
+        pub fn build(self) -> crate::model::ScriptModeConfig {
+            crate::model::ScriptModeConfig {
+                entry_point: self.entry_point,
+                s3_uri: self.s3_uri,
+                compression_type: self.compression_type,
+            }
+        }
+    }
+}
+impl ScriptModeConfig {
+    /// Creates a new builder-style object to manufacture [`ScriptModeConfig`](crate::model::ScriptModeConfig)
+    pub fn builder() -> crate::model::script_mode_config::Builder {
+        crate::model::script_mode_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CompressionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Gzip,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CompressionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "GZIP" => CompressionType::Gzip,
+            "NONE" => CompressionType::None,
+            other => CompressionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CompressionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CompressionType::from(s))
+    }
+}
+impl CompressionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CompressionType::Gzip => "GZIP",
+            CompressionType::None => "NONE",
+            CompressionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["GZIP", "NONE"]
+    }
+}
+impl AsRef<str> for CompressionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobEventDetails {
+    /// <p>The type of event that occurred related to the Amazon Braket job.</p>
+    pub event_type: std::option::Option<crate::model::JobEventType>,
+    /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    pub time_of_event: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl JobEventDetails {
+    /// <p>The type of event that occurred related to the Amazon Braket job.</p>
+    pub fn event_type(&self) -> std::option::Option<&crate::model::JobEventType> {
+        self.event_type.as_ref()
+    }
+    /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    pub fn time_of_event(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.time_of_event.as_ref()
+    }
+    /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for JobEventDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobEventDetails");
+        formatter.field("event_type", &self.event_type);
+        formatter.field("time_of_event", &self.time_of_event);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`JobEventDetails`](crate::model::JobEventDetails)
+pub mod job_event_details {
+    /// A builder for [`JobEventDetails`](crate::model::JobEventDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_type: std::option::Option<crate::model::JobEventType>,
+        pub(crate) time_of_event: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of event that occurred related to the Amazon Braket job.</p>
+        pub fn event_type(mut self, input: crate::model::JobEventType) -> Self {
+            self.event_type = Some(input);
+            self
+        }
+        /// <p>The type of event that occurred related to the Amazon Braket job.</p>
+        pub fn set_event_type(
+            mut self,
+            input: std::option::Option<crate::model::JobEventType>,
+        ) -> Self {
+            self.event_type = input;
+            self
+        }
+        /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+        pub fn time_of_event(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.time_of_event = Some(input);
+            self
+        }
+        /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+        pub fn set_time_of_event(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.time_of_event = input;
+            self
+        }
+        /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobEventDetails`](crate::model::JobEventDetails)
+        pub fn build(self) -> crate::model::JobEventDetails {
+            crate::model::JobEventDetails {
+                event_type: self.event_type,
+                time_of_event: self.time_of_event,
+                message: self.message,
+            }
+        }
+    }
+}
+impl JobEventDetails {
+    /// Creates a new builder-style object to manufacture [`JobEventDetails`](crate::model::JobEventDetails)
+    pub fn builder() -> crate::model::job_event_details::Builder {
+        crate::model::job_event_details::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JobEventType {
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    DeprioritizedDueToInactivity,
+    #[allow(missing_docs)] // documentation missing in model
+    DownloadingData,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    MaxRuntimeExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    QueuedForExecution,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    StartingInstance,
+    #[allow(missing_docs)] // documentation missing in model
+    UploadingResults,
+    #[allow(missing_docs)] // documentation missing in model
+    WaitingForPriority,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for JobEventType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCELLED" => JobEventType::Cancelled,
+            "COMPLETED" => JobEventType::Completed,
+            "DEPRIORITIZED_DUE_TO_INACTIVITY" => JobEventType::DeprioritizedDueToInactivity,
+            "DOWNLOADING_DATA" => JobEventType::DownloadingData,
+            "FAILED" => JobEventType::Failed,
+            "MAX_RUNTIME_EXCEEDED" => JobEventType::MaxRuntimeExceeded,
+            "QUEUED_FOR_EXECUTION" => JobEventType::QueuedForExecution,
+            "RUNNING" => JobEventType::Running,
+            "STARTING_INSTANCE" => JobEventType::StartingInstance,
+            "UPLOADING_RESULTS" => JobEventType::UploadingResults,
+            "WAITING_FOR_PRIORITY" => JobEventType::WaitingForPriority,
+            other => JobEventType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for JobEventType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JobEventType::from(s))
+    }
+}
+impl JobEventType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JobEventType::Cancelled => "CANCELLED",
+            JobEventType::Completed => "COMPLETED",
+            JobEventType::DeprioritizedDueToInactivity => "DEPRIORITIZED_DUE_TO_INACTIVITY",
+            JobEventType::DownloadingData => "DOWNLOADING_DATA",
+            JobEventType::Failed => "FAILED",
+            JobEventType::MaxRuntimeExceeded => "MAX_RUNTIME_EXCEEDED",
+            JobEventType::QueuedForExecution => "QUEUED_FOR_EXECUTION",
+            JobEventType::Running => "RUNNING",
+            JobEventType::StartingInstance => "STARTING_INSTANCE",
+            JobEventType::UploadingResults => "UPLOADING_RESULTS",
+            JobEventType::WaitingForPriority => "WAITING_FOR_PRIORITY",
+            JobEventType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "COMPLETED",
+            "DEPRIORITIZED_DUE_TO_INACTIVITY",
+            "DOWNLOADING_DATA",
+            "FAILED",
+            "MAX_RUNTIME_EXCEEDED",
+            "QUEUED_FOR_EXECUTION",
+            "RUNNING",
+            "STARTING_INSTANCE",
+            "UPLOADING_RESULTS",
+            "WAITING_FOR_PRIORITY",
+        ]
+    }
+}
+impl AsRef<str> for JobEventType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Includes information about the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

@@ -12,6 +12,24 @@ pub fn parse_invoke_endpoint_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InternalDependencyException" => crate::error::InvokeEndpointError {
+            meta: generic,
+            kind: crate::error::InvokeEndpointErrorKind::InternalDependencyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_dependency_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalFailure" => {
             crate::error::InvokeEndpointError {
                 meta: generic,
@@ -44,6 +62,23 @@ pub fn parse_invoke_endpoint_error(
                         output,
                     )
                     .map_err(crate::error::InvokeEndpointError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ModelNotReadyException" => crate::error::InvokeEndpointError {
+            meta: generic,
+            kind: crate::error::InvokeEndpointErrorKind::ModelNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::model_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_model_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

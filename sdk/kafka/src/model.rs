@@ -2797,6 +2797,1420 @@ impl AsRef<str> for ConfigurationState {
 /// <p>Returns information about a cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Cluster {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
+    pub active_operation_arn: std::option::Option<std::string::String>,
+    /// <p>Cluster Type.</p>
+    pub cluster_type: std::option::Option<crate::model::ClusterType>,
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub cluster_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the cluster.</p>
+    pub cluster_name: std::option::Option<std::string::String>,
+    /// <p>The time when the cluster was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The current version of the MSK cluster.</p>
+    pub current_version: std::option::Option<std::string::String>,
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub state: std::option::Option<crate::model::ClusterState>,
+    /// <p>State Info for the Amazon MSK cluster.</p>
+    pub state_info: std::option::Option<crate::model::StateInfo>,
+    /// <p>Tags attached to the cluster.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Information about the provisioned cluster.</p>
+    pub provisioned: std::option::Option<crate::model::Provisioned>,
+    /// <p>Information about the serverless cluster.</p>
+    pub serverless: std::option::Option<crate::model::Serverless>,
+}
+impl Cluster {
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
+    pub fn active_operation_arn(&self) -> std::option::Option<&str> {
+        self.active_operation_arn.as_deref()
+    }
+    /// <p>Cluster Type.</p>
+    pub fn cluster_type(&self) -> std::option::Option<&crate::model::ClusterType> {
+        self.cluster_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The time when the cluster was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The current version of the MSK cluster.</p>
+    pub fn current_version(&self) -> std::option::Option<&str> {
+        self.current_version.as_deref()
+    }
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.state.as_ref()
+    }
+    /// <p>State Info for the Amazon MSK cluster.</p>
+    pub fn state_info(&self) -> std::option::Option<&crate::model::StateInfo> {
+        self.state_info.as_ref()
+    }
+    /// <p>Tags attached to the cluster.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Information about the provisioned cluster.</p>
+    pub fn provisioned(&self) -> std::option::Option<&crate::model::Provisioned> {
+        self.provisioned.as_ref()
+    }
+    /// <p>Information about the serverless cluster.</p>
+    pub fn serverless(&self) -> std::option::Option<&crate::model::Serverless> {
+        self.serverless.as_ref()
+    }
+}
+impl std::fmt::Debug for Cluster {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Cluster");
+        formatter.field("active_operation_arn", &self.active_operation_arn);
+        formatter.field("cluster_type", &self.cluster_type);
+        formatter.field("cluster_arn", &self.cluster_arn);
+        formatter.field("cluster_name", &self.cluster_name);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("current_version", &self.current_version);
+        formatter.field("state", &self.state);
+        formatter.field("state_info", &self.state_info);
+        formatter.field("tags", &self.tags);
+        formatter.field("provisioned", &self.provisioned);
+        formatter.field("serverless", &self.serverless);
+        formatter.finish()
+    }
+}
+/// See [`Cluster`](crate::model::Cluster)
+pub mod cluster {
+    /// A builder for [`Cluster`](crate::model::Cluster)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) active_operation_arn: std::option::Option<std::string::String>,
+        pub(crate) cluster_type: std::option::Option<crate::model::ClusterType>,
+        pub(crate) cluster_arn: std::option::Option<std::string::String>,
+        pub(crate) cluster_name: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) current_version: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::ClusterState>,
+        pub(crate) state_info: std::option::Option<crate::model::StateInfo>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) provisioned: std::option::Option<crate::model::Provisioned>,
+        pub(crate) serverless: std::option::Option<crate::model::Serverless>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
+        pub fn active_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.active_operation_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
+        pub fn set_active_operation_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.active_operation_arn = input;
+            self
+        }
+        /// <p>Cluster Type.</p>
+        pub fn cluster_type(mut self, input: crate::model::ClusterType) -> Self {
+            self.cluster_type = Some(input);
+            self
+        }
+        /// <p>Cluster Type.</p>
+        pub fn set_cluster_type(
+            mut self,
+            input: std::option::Option<crate::model::ClusterType>,
+        ) -> Self {
+            self.cluster_type = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
+            self
+        }
+        /// <p>The name of the cluster.</p>
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the cluster.</p>
+        pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_name = input;
+            self
+        }
+        /// <p>The time when the cluster was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The time when the cluster was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The current version of the MSK cluster.</p>
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_version = Some(input.into());
+            self
+        }
+        /// <p>The current version of the MSK cluster.</p>
+        pub fn set_current_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_version = input;
+            self
+        }
+        /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+        pub fn state(mut self, input: crate::model::ClusterState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>State Info for the Amazon MSK cluster.</p>
+        pub fn state_info(mut self, input: crate::model::StateInfo) -> Self {
+            self.state_info = Some(input);
+            self
+        }
+        /// <p>State Info for the Amazon MSK cluster.</p>
+        pub fn set_state_info(
+            mut self,
+            input: std::option::Option<crate::model::StateInfo>,
+        ) -> Self {
+            self.state_info = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags attached to the cluster.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags attached to the cluster.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>Information about the provisioned cluster.</p>
+        pub fn provisioned(mut self, input: crate::model::Provisioned) -> Self {
+            self.provisioned = Some(input);
+            self
+        }
+        /// <p>Information about the provisioned cluster.</p>
+        pub fn set_provisioned(
+            mut self,
+            input: std::option::Option<crate::model::Provisioned>,
+        ) -> Self {
+            self.provisioned = input;
+            self
+        }
+        /// <p>Information about the serverless cluster.</p>
+        pub fn serverless(mut self, input: crate::model::Serverless) -> Self {
+            self.serverless = Some(input);
+            self
+        }
+        /// <p>Information about the serverless cluster.</p>
+        pub fn set_serverless(
+            mut self,
+            input: std::option::Option<crate::model::Serverless>,
+        ) -> Self {
+            self.serverless = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster)
+        pub fn build(self) -> crate::model::Cluster {
+            crate::model::Cluster {
+                active_operation_arn: self.active_operation_arn,
+                cluster_type: self.cluster_type,
+                cluster_arn: self.cluster_arn,
+                cluster_name: self.cluster_name,
+                creation_time: self.creation_time,
+                current_version: self.current_version,
+                state: self.state,
+                state_info: self.state_info,
+                tags: self.tags,
+                provisioned: self.provisioned,
+                serverless: self.serverless,
+            }
+        }
+    }
+}
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster)
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
+/// <p>Serverless cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Serverless {
+    /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+    pub vpc_configs: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
+    /// <p>Includes all client authentication information.</p>
+    pub client_authentication: std::option::Option<crate::model::ServerlessClientAuthentication>,
+}
+impl Serverless {
+    /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+    pub fn vpc_configs(&self) -> std::option::Option<&[crate::model::VpcConfig]> {
+        self.vpc_configs.as_deref()
+    }
+    /// <p>Includes all client authentication information.</p>
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+}
+impl std::fmt::Debug for Serverless {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Serverless");
+        formatter.field("vpc_configs", &self.vpc_configs);
+        formatter.field("client_authentication", &self.client_authentication);
+        formatter.finish()
+    }
+}
+/// See [`Serverless`](crate::model::Serverless)
+pub mod serverless {
+    /// A builder for [`Serverless`](crate::model::Serverless)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_configs: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
+        pub(crate) client_authentication:
+            std::option::Option<crate::model::ServerlessClientAuthentication>,
+    }
+    impl Builder {
+        /// Appends an item to `vpc_configs`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_configs`](Self::set_vpc_configs).
+        ///
+        /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+        pub fn vpc_configs(mut self, input: impl Into<crate::model::VpcConfig>) -> Self {
+            let mut v = self.vpc_configs.unwrap_or_default();
+            v.push(input.into());
+            self.vpc_configs = Some(v);
+            self
+        }
+        /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+        pub fn set_vpc_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
+        ) -> Self {
+            self.vpc_configs = input;
+            self
+        }
+        /// <p>Includes all client authentication information.</p>
+        pub fn client_authentication(
+            mut self,
+            input: crate::model::ServerlessClientAuthentication,
+        ) -> Self {
+            self.client_authentication = Some(input);
+            self
+        }
+        /// <p>Includes all client authentication information.</p>
+        pub fn set_client_authentication(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessClientAuthentication>,
+        ) -> Self {
+            self.client_authentication = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Serverless`](crate::model::Serverless)
+        pub fn build(self) -> crate::model::Serverless {
+            crate::model::Serverless {
+                vpc_configs: self.vpc_configs,
+                client_authentication: self.client_authentication,
+            }
+        }
+    }
+}
+impl Serverless {
+    /// Creates a new builder-style object to manufacture [`Serverless`](crate::model::Serverless)
+    pub fn builder() -> crate::model::serverless::Builder {
+        crate::model::serverless::Builder::default()
+    }
+}
+
+/// <p>Includes all client authentication information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServerlessClientAuthentication {
+    /// <p>Details for ClientAuthentication using SASL.</p>
+    pub sasl: std::option::Option<crate::model::ServerlessSasl>,
+}
+impl ServerlessClientAuthentication {
+    /// <p>Details for ClientAuthentication using SASL.</p>
+    pub fn sasl(&self) -> std::option::Option<&crate::model::ServerlessSasl> {
+        self.sasl.as_ref()
+    }
+}
+impl std::fmt::Debug for ServerlessClientAuthentication {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServerlessClientAuthentication");
+        formatter.field("sasl", &self.sasl);
+        formatter.finish()
+    }
+}
+/// See [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication)
+pub mod serverless_client_authentication {
+    /// A builder for [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sasl: std::option::Option<crate::model::ServerlessSasl>,
+    }
+    impl Builder {
+        /// <p>Details for ClientAuthentication using SASL.</p>
+        pub fn sasl(mut self, input: crate::model::ServerlessSasl) -> Self {
+            self.sasl = Some(input);
+            self
+        }
+        /// <p>Details for ClientAuthentication using SASL.</p>
+        pub fn set_sasl(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessSasl>,
+        ) -> Self {
+            self.sasl = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication)
+        pub fn build(self) -> crate::model::ServerlessClientAuthentication {
+            crate::model::ServerlessClientAuthentication { sasl: self.sasl }
+        }
+    }
+}
+impl ServerlessClientAuthentication {
+    /// Creates a new builder-style object to manufacture [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication)
+    pub fn builder() -> crate::model::serverless_client_authentication::Builder {
+        crate::model::serverless_client_authentication::Builder::default()
+    }
+}
+
+/// <p>Details for client authentication using SASL.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServerlessSasl {
+    /// <p>Indicates whether IAM access control is enabled.</p>
+    pub iam: std::option::Option<crate::model::Iam>,
+}
+impl ServerlessSasl {
+    /// <p>Indicates whether IAM access control is enabled.</p>
+    pub fn iam(&self) -> std::option::Option<&crate::model::Iam> {
+        self.iam.as_ref()
+    }
+}
+impl std::fmt::Debug for ServerlessSasl {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServerlessSasl");
+        formatter.field("iam", &self.iam);
+        formatter.finish()
+    }
+}
+/// See [`ServerlessSasl`](crate::model::ServerlessSasl)
+pub mod serverless_sasl {
+    /// A builder for [`ServerlessSasl`](crate::model::ServerlessSasl)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) iam: std::option::Option<crate::model::Iam>,
+    }
+    impl Builder {
+        /// <p>Indicates whether IAM access control is enabled.</p>
+        pub fn iam(mut self, input: crate::model::Iam) -> Self {
+            self.iam = Some(input);
+            self
+        }
+        /// <p>Indicates whether IAM access control is enabled.</p>
+        pub fn set_iam(mut self, input: std::option::Option<crate::model::Iam>) -> Self {
+            self.iam = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerlessSasl`](crate::model::ServerlessSasl)
+        pub fn build(self) -> crate::model::ServerlessSasl {
+            crate::model::ServerlessSasl { iam: self.iam }
+        }
+    }
+}
+impl ServerlessSasl {
+    /// Creates a new builder-style object to manufacture [`ServerlessSasl`](crate::model::ServerlessSasl)
+    pub fn builder() -> crate::model::serverless_sasl::Builder {
+        crate::model::serverless_sasl::Builder::default()
+    }
+}
+
+/// <p>The configuration of the Amazon VPCs for the cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VpcConfig {
+    /// <p>The IDs of the subnets associated with the cluster.</p>
+    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The IDs of the security groups associated with the cluster.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl VpcConfig {
+    /// <p>The IDs of the subnets associated with the cluster.</p>
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.subnet_ids.as_deref()
+    }
+    /// <p>The IDs of the security groups associated with the cluster.</p>
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_group_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for VpcConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VpcConfig");
+        formatter.field("subnet_ids", &self.subnet_ids);
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.finish()
+    }
+}
+/// See [`VpcConfig`](crate::model::VpcConfig)
+pub mod vpc_config {
+    /// A builder for [`VpcConfig`](crate::model::VpcConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The IDs of the subnets associated with the cluster.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_ids.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_ids = Some(v);
+            self
+        }
+        /// <p>The IDs of the subnets associated with the cluster.</p>
+        pub fn set_subnet_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_ids = input;
+            self
+        }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The IDs of the security groups associated with the cluster.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>The IDs of the security groups associated with the cluster.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpcConfig`](crate::model::VpcConfig)
+        pub fn build(self) -> crate::model::VpcConfig {
+            crate::model::VpcConfig {
+                subnet_ids: self.subnet_ids,
+                security_group_ids: self.security_group_ids,
+            }
+        }
+    }
+}
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig)
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
+    }
+}
+
+/// <p>Provisioned cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Provisioned {
+    /// <p>Information about the brokers.</p>
+    pub broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
+    /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
+    pub current_broker_software_info: std::option::Option<crate::model::BrokerSoftwareInfo>,
+    /// <p>Includes all client authentication information.</p>
+    pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
+    /// <p>Includes all encryption-related information.</p>
+    pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
+    /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
+    /// <p>The settings for open monitoring.</p>
+    pub open_monitoring: std::option::Option<crate::model::OpenMonitoringInfo>,
+    /// <p>Log delivery information for the cluster.</p>
+    pub logging_info: std::option::Option<crate::model::LoggingInfo>,
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub number_of_broker_nodes: i32,
+    /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+    pub zookeeper_connect_string: std::option::Option<std::string::String>,
+    /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
+    pub zookeeper_connect_string_tls: std::option::Option<std::string::String>,
+}
+impl Provisioned {
+    /// <p>Information about the brokers.</p>
+    pub fn broker_node_group_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerNodeGroupInfo> {
+        self.broker_node_group_info.as_ref()
+    }
+    /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
+    pub fn current_broker_software_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerSoftwareInfo> {
+        self.current_broker_software_info.as_ref()
+    }
+    /// <p>Includes all client authentication information.</p>
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn encryption_info(&self) -> std::option::Option<&crate::model::EncryptionInfo> {
+        self.encryption_info.as_ref()
+    }
+    /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&crate::model::EnhancedMonitoring> {
+        self.enhanced_monitoring.as_ref()
+    }
+    /// <p>The settings for open monitoring.</p>
+    pub fn open_monitoring(&self) -> std::option::Option<&crate::model::OpenMonitoringInfo> {
+        self.open_monitoring.as_ref()
+    }
+    /// <p>Log delivery information for the cluster.</p>
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub fn number_of_broker_nodes(&self) -> i32 {
+        self.number_of_broker_nodes
+    }
+    /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+    pub fn zookeeper_connect_string(&self) -> std::option::Option<&str> {
+        self.zookeeper_connect_string.as_deref()
+    }
+    /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
+    pub fn zookeeper_connect_string_tls(&self) -> std::option::Option<&str> {
+        self.zookeeper_connect_string_tls.as_deref()
+    }
+}
+impl std::fmt::Debug for Provisioned {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Provisioned");
+        formatter.field("broker_node_group_info", &self.broker_node_group_info);
+        formatter.field(
+            "current_broker_software_info",
+            &self.current_broker_software_info,
+        );
+        formatter.field("client_authentication", &self.client_authentication);
+        formatter.field("encryption_info", &self.encryption_info);
+        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
+        formatter.field("open_monitoring", &self.open_monitoring);
+        formatter.field("logging_info", &self.logging_info);
+        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
+        formatter.field("zookeeper_connect_string", &self.zookeeper_connect_string);
+        formatter.field(
+            "zookeeper_connect_string_tls",
+            &self.zookeeper_connect_string_tls,
+        );
+        formatter.finish()
+    }
+}
+/// See [`Provisioned`](crate::model::Provisioned)
+pub mod provisioned {
+    /// A builder for [`Provisioned`](crate::model::Provisioned)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
+        pub(crate) current_broker_software_info:
+            std::option::Option<crate::model::BrokerSoftwareInfo>,
+        pub(crate) client_authentication: std::option::Option<crate::model::ClientAuthentication>,
+        pub(crate) encryption_info: std::option::Option<crate::model::EncryptionInfo>,
+        pub(crate) enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
+        pub(crate) open_monitoring: std::option::Option<crate::model::OpenMonitoringInfo>,
+        pub(crate) logging_info: std::option::Option<crate::model::LoggingInfo>,
+        pub(crate) number_of_broker_nodes: std::option::Option<i32>,
+        pub(crate) zookeeper_connect_string: std::option::Option<std::string::String>,
+        pub(crate) zookeeper_connect_string_tls: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Information about the brokers.</p>
+        pub fn broker_node_group_info(mut self, input: crate::model::BrokerNodeGroupInfo) -> Self {
+            self.broker_node_group_info = Some(input);
+            self
+        }
+        /// <p>Information about the brokers.</p>
+        pub fn set_broker_node_group_info(
+            mut self,
+            input: std::option::Option<crate::model::BrokerNodeGroupInfo>,
+        ) -> Self {
+            self.broker_node_group_info = input;
+            self
+        }
+        /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
+        pub fn current_broker_software_info(
+            mut self,
+            input: crate::model::BrokerSoftwareInfo,
+        ) -> Self {
+            self.current_broker_software_info = Some(input);
+            self
+        }
+        /// <p>Information about the Apache Kafka version deployed on the brokers.</p>
+        pub fn set_current_broker_software_info(
+            mut self,
+            input: std::option::Option<crate::model::BrokerSoftwareInfo>,
+        ) -> Self {
+            self.current_broker_software_info = input;
+            self
+        }
+        /// <p>Includes all client authentication information.</p>
+        pub fn client_authentication(mut self, input: crate::model::ClientAuthentication) -> Self {
+            self.client_authentication = Some(input);
+            self
+        }
+        /// <p>Includes all client authentication information.</p>
+        pub fn set_client_authentication(
+            mut self,
+            input: std::option::Option<crate::model::ClientAuthentication>,
+        ) -> Self {
+            self.client_authentication = input;
+            self
+        }
+        /// <p>Includes all encryption-related information.</p>
+        pub fn encryption_info(mut self, input: crate::model::EncryptionInfo) -> Self {
+            self.encryption_info = Some(input);
+            self
+        }
+        /// <p>Includes all encryption-related information.</p>
+        pub fn set_encryption_info(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionInfo>,
+        ) -> Self {
+            self.encryption_info = input;
+            self
+        }
+        /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+        pub fn enhanced_monitoring(mut self, input: crate::model::EnhancedMonitoring) -> Self {
+            self.enhanced_monitoring = Some(input);
+            self
+        }
+        /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+        pub fn set_enhanced_monitoring(
+            mut self,
+            input: std::option::Option<crate::model::EnhancedMonitoring>,
+        ) -> Self {
+            self.enhanced_monitoring = input;
+            self
+        }
+        /// <p>The settings for open monitoring.</p>
+        pub fn open_monitoring(mut self, input: crate::model::OpenMonitoringInfo) -> Self {
+            self.open_monitoring = Some(input);
+            self
+        }
+        /// <p>The settings for open monitoring.</p>
+        pub fn set_open_monitoring(
+            mut self,
+            input: std::option::Option<crate::model::OpenMonitoringInfo>,
+        ) -> Self {
+            self.open_monitoring = input;
+            self
+        }
+        /// <p>Log delivery information for the cluster.</p>
+        pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
+            self.logging_info = Some(input);
+            self
+        }
+        /// <p>Log delivery information for the cluster.</p>
+        pub fn set_logging_info(
+            mut self,
+            input: std::option::Option<crate::model::LoggingInfo>,
+        ) -> Self {
+            self.logging_info = input;
+            self
+        }
+        /// <p>The number of broker nodes in the cluster.</p>
+        pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
+            self.number_of_broker_nodes = Some(input);
+            self
+        }
+        /// <p>The number of broker nodes in the cluster.</p>
+        pub fn set_number_of_broker_nodes(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_broker_nodes = input;
+            self
+        }
+        /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+        pub fn zookeeper_connect_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.zookeeper_connect_string = Some(input.into());
+            self
+        }
+        /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+        pub fn set_zookeeper_connect_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.zookeeper_connect_string = input;
+            self
+        }
+        /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
+        pub fn zookeeper_connect_string_tls(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.zookeeper_connect_string_tls = Some(input.into());
+            self
+        }
+        /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
+        pub fn set_zookeeper_connect_string_tls(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.zookeeper_connect_string_tls = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Provisioned`](crate::model::Provisioned)
+        pub fn build(self) -> crate::model::Provisioned {
+            crate::model::Provisioned {
+                broker_node_group_info: self.broker_node_group_info,
+                current_broker_software_info: self.current_broker_software_info,
+                client_authentication: self.client_authentication,
+                encryption_info: self.encryption_info,
+                enhanced_monitoring: self.enhanced_monitoring,
+                open_monitoring: self.open_monitoring,
+                logging_info: self.logging_info,
+                number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
+                zookeeper_connect_string: self.zookeeper_connect_string,
+                zookeeper_connect_string_tls: self.zookeeper_connect_string_tls,
+            }
+        }
+    }
+}
+impl Provisioned {
+    /// Creates a new builder-style object to manufacture [`Provisioned`](crate::model::Provisioned)
+    pub fn builder() -> crate::model::provisioned::Builder {
+        crate::model::provisioned::Builder::default()
+    }
+}
+
+/// <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BrokerNodeGroupInfo {
+    /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+    /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+    pub broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
+    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+    pub client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+    /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+    pub instance_type: std::option::Option<std::string::String>,
+    /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
+    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+    pub storage_info: std::option::Option<crate::model::StorageInfo>,
+    /// <p>Information about the broker access configuration.</p>
+    pub connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
+}
+impl BrokerNodeGroupInfo {
+    /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+    /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+    pub fn broker_az_distribution(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerAzDistribution> {
+        self.broker_az_distribution.as_ref()
+    }
+    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+    pub fn client_subnets(&self) -> std::option::Option<&[std::string::String]> {
+        self.client_subnets.as_deref()
+    }
+    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+    /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
+    /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+        self.security_groups.as_deref()
+    }
+    /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+    pub fn storage_info(&self) -> std::option::Option<&crate::model::StorageInfo> {
+        self.storage_info.as_ref()
+    }
+    /// <p>Information about the broker access configuration.</p>
+    pub fn connectivity_info(&self) -> std::option::Option<&crate::model::ConnectivityInfo> {
+        self.connectivity_info.as_ref()
+    }
+}
+impl std::fmt::Debug for BrokerNodeGroupInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BrokerNodeGroupInfo");
+        formatter.field("broker_az_distribution", &self.broker_az_distribution);
+        formatter.field("client_subnets", &self.client_subnets);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("storage_info", &self.storage_info);
+        formatter.field("connectivity_info", &self.connectivity_info);
+        formatter.finish()
+    }
+}
+/// See [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
+pub mod broker_node_group_info {
+    /// A builder for [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
+        pub(crate) client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) instance_type: std::option::Option<std::string::String>,
+        pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) storage_info: std::option::Option<crate::model::StorageInfo>,
+        pub(crate) connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
+    }
+    impl Builder {
+        /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+        /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+        pub fn broker_az_distribution(mut self, input: crate::model::BrokerAzDistribution) -> Self {
+            self.broker_az_distribution = Some(input);
+            self
+        }
+        /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+        /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+        pub fn set_broker_az_distribution(
+            mut self,
+            input: std::option::Option<crate::model::BrokerAzDistribution>,
+        ) -> Self {
+            self.broker_az_distribution = input;
+            self
+        }
+        /// Appends an item to `client_subnets`.
+        ///
+        /// To override the contents of this collection use [`set_client_subnets`](Self::set_client_subnets).
+        ///
+        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+        pub fn client_subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.client_subnets.unwrap_or_default();
+            v.push(input.into());
+            self.client_subnets = Some(v);
+            self
+        }
+        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
+        pub fn set_client_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.client_subnets = input;
+            self
+        }
+        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+        /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_type = Some(input.into());
+            self
+        }
+        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+        /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_groups.unwrap_or_default();
+            v.push(input.into());
+            self.security_groups = Some(v);
+            self
+        }
+        /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
+        pub fn set_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_groups = input;
+            self
+        }
+        /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+        pub fn storage_info(mut self, input: crate::model::StorageInfo) -> Self {
+            self.storage_info = Some(input);
+            self
+        }
+        /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+        pub fn set_storage_info(
+            mut self,
+            input: std::option::Option<crate::model::StorageInfo>,
+        ) -> Self {
+            self.storage_info = input;
+            self
+        }
+        /// <p>Information about the broker access configuration.</p>
+        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
+            self.connectivity_info = Some(input);
+            self
+        }
+        /// <p>Information about the broker access configuration.</p>
+        pub fn set_connectivity_info(
+            mut self,
+            input: std::option::Option<crate::model::ConnectivityInfo>,
+        ) -> Self {
+            self.connectivity_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
+        pub fn build(self) -> crate::model::BrokerNodeGroupInfo {
+            crate::model::BrokerNodeGroupInfo {
+                broker_az_distribution: self.broker_az_distribution,
+                client_subnets: self.client_subnets,
+                instance_type: self.instance_type,
+                security_groups: self.security_groups,
+                storage_info: self.storage_info,
+                connectivity_info: self.connectivity_info,
+            }
+        }
+    }
+}
+impl BrokerNodeGroupInfo {
+    /// Creates a new builder-style object to manufacture [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
+    pub fn builder() -> crate::model::broker_node_group_info::Builder {
+        crate::model::broker_node_group_info::Builder::default()
+    }
+}
+
+/// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StorageInfo {
+    /// <p>EBS volume information.</p>
+    pub ebs_storage_info: std::option::Option<crate::model::EbsStorageInfo>,
+}
+impl StorageInfo {
+    /// <p>EBS volume information.</p>
+    pub fn ebs_storage_info(&self) -> std::option::Option<&crate::model::EbsStorageInfo> {
+        self.ebs_storage_info.as_ref()
+    }
+}
+impl std::fmt::Debug for StorageInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StorageInfo");
+        formatter.field("ebs_storage_info", &self.ebs_storage_info);
+        formatter.finish()
+    }
+}
+/// See [`StorageInfo`](crate::model::StorageInfo)
+pub mod storage_info {
+    /// A builder for [`StorageInfo`](crate::model::StorageInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ebs_storage_info: std::option::Option<crate::model::EbsStorageInfo>,
+    }
+    impl Builder {
+        /// <p>EBS volume information.</p>
+        pub fn ebs_storage_info(mut self, input: crate::model::EbsStorageInfo) -> Self {
+            self.ebs_storage_info = Some(input);
+            self
+        }
+        /// <p>EBS volume information.</p>
+        pub fn set_ebs_storage_info(
+            mut self,
+            input: std::option::Option<crate::model::EbsStorageInfo>,
+        ) -> Self {
+            self.ebs_storage_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StorageInfo`](crate::model::StorageInfo)
+        pub fn build(self) -> crate::model::StorageInfo {
+            crate::model::StorageInfo {
+                ebs_storage_info: self.ebs_storage_info,
+            }
+        }
+    }
+}
+impl StorageInfo {
+    /// Creates a new builder-style object to manufacture [`StorageInfo`](crate::model::StorageInfo)
+    pub fn builder() -> crate::model::storage_info::Builder {
+        crate::model::storage_info::Builder::default()
+    }
+}
+
+/// <p>Contains information about the EBS storage volumes attached to Apache Kafka broker nodes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EbsStorageInfo {
+    /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
+    pub volume_size: i32,
+}
+impl EbsStorageInfo {
+    /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
+    pub fn volume_size(&self) -> i32 {
+        self.volume_size
+    }
+}
+impl std::fmt::Debug for EbsStorageInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EbsStorageInfo");
+        formatter.field("volume_size", &self.volume_size);
+        formatter.finish()
+    }
+}
+/// See [`EbsStorageInfo`](crate::model::EbsStorageInfo)
+pub mod ebs_storage_info {
+    /// A builder for [`EbsStorageInfo`](crate::model::EbsStorageInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) volume_size: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
+        pub fn volume_size(mut self, input: i32) -> Self {
+            self.volume_size = Some(input);
+            self
+        }
+        /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
+        pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EbsStorageInfo`](crate::model::EbsStorageInfo)
+        pub fn build(self) -> crate::model::EbsStorageInfo {
+            crate::model::EbsStorageInfo {
+                volume_size: self.volume_size.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl EbsStorageInfo {
+    /// Creates a new builder-style object to manufacture [`EbsStorageInfo`](crate::model::EbsStorageInfo)
+    pub fn builder() -> crate::model::ebs_storage_info::Builder {
+        crate::model::ebs_storage_info::Builder::default()
+    }
+}
+
+/// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+/// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BrokerAzDistribution {
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BrokerAzDistribution {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT" => BrokerAzDistribution::Default,
+            other => BrokerAzDistribution::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BrokerAzDistribution {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BrokerAzDistribution::from(s))
+    }
+}
+impl BrokerAzDistribution {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BrokerAzDistribution::Default => "DEFAULT",
+            BrokerAzDistribution::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT"]
+    }
+}
+impl AsRef<str> for BrokerAzDistribution {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StateInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl StateInfo {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for StateInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StateInfo");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`StateInfo`](crate::model::StateInfo)
+pub mod state_info {
+    /// A builder for [`StateInfo`](crate::model::StateInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StateInfo`](crate::model::StateInfo)
+        pub fn build(self) -> crate::model::StateInfo {
+            crate::model::StateInfo {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl StateInfo {
+    /// Creates a new builder-style object to manufacture [`StateInfo`](crate::model::StateInfo)
+    pub fn builder() -> crate::model::state_info::Builder {
+        crate::model::state_info::Builder::default()
+    }
+}
+
+/// <p>The state of the Apache Kafka cluster.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClusterState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Healing,
+    #[allow(missing_docs)] // documentation missing in model
+    Maintenance,
+    #[allow(missing_docs)] // documentation missing in model
+    RebootingBroker,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClusterState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ClusterState::Active,
+            "CREATING" => ClusterState::Creating,
+            "DELETING" => ClusterState::Deleting,
+            "FAILED" => ClusterState::Failed,
+            "HEALING" => ClusterState::Healing,
+            "MAINTENANCE" => ClusterState::Maintenance,
+            "REBOOTING_BROKER" => ClusterState::RebootingBroker,
+            "UPDATING" => ClusterState::Updating,
+            other => ClusterState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClusterState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClusterState::from(s))
+    }
+}
+impl ClusterState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClusterState::Active => "ACTIVE",
+            ClusterState::Creating => "CREATING",
+            ClusterState::Deleting => "DELETING",
+            ClusterState::Failed => "FAILED",
+            ClusterState::Healing => "HEALING",
+            ClusterState::Maintenance => "MAINTENANCE",
+            ClusterState::RebootingBroker => "REBOOTING_BROKER",
+            ClusterState::Updating => "UPDATING",
+            ClusterState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "DELETING",
+            "FAILED",
+            "HEALING",
+            "MAINTENANCE",
+            "REBOOTING_BROKER",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for ClusterState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The type of cluster.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ClusterType {
+    #[allow(missing_docs)] // documentation missing in model
+    Provisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    Serverless,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ClusterType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PROVISIONED" => ClusterType::Provisioned,
+            "SERVERLESS" => ClusterType::Serverless,
+            other => ClusterType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ClusterType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ClusterType::from(s))
+    }
+}
+impl ClusterType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ClusterType::Provisioned => "PROVISIONED",
+            ClusterType::Serverless => "SERVERLESS",
+            ClusterType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PROVISIONED", "SERVERLESS"]
+    }
+}
+impl AsRef<str> for ClusterType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Returns information about a cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterInfo {
     /// <p>Arn of active cluster operation.</p>
     pub active_operation_arn: std::option::Option<std::string::String>,
@@ -3250,167 +4664,6 @@ impl ClusterInfo {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StateInfo {
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl StateInfo {
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
-        self.code.as_deref()
-    }
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for StateInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateInfo");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-/// See [`StateInfo`](crate::model::StateInfo)
-pub mod state_info {
-    /// A builder for [`StateInfo`](crate::model::StateInfo)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`StateInfo`](crate::model::StateInfo)
-        pub fn build(self) -> crate::model::StateInfo {
-            crate::model::StateInfo {
-                code: self.code,
-                message: self.message,
-            }
-        }
-    }
-}
-impl StateInfo {
-    /// Creates a new builder-style object to manufacture [`StateInfo`](crate::model::StateInfo)
-    pub fn builder() -> crate::model::state_info::Builder {
-        crate::model::state_info::Builder::default()
-    }
-}
-
-/// <p>The state of the Apache Kafka cluster.</p>
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ClusterState {
-    #[allow(missing_docs)] // documentation missing in model
-    Active,
-    #[allow(missing_docs)] // documentation missing in model
-    Creating,
-    #[allow(missing_docs)] // documentation missing in model
-    Deleting,
-    #[allow(missing_docs)] // documentation missing in model
-    Failed,
-    #[allow(missing_docs)] // documentation missing in model
-    Healing,
-    #[allow(missing_docs)] // documentation missing in model
-    Maintenance,
-    #[allow(missing_docs)] // documentation missing in model
-    RebootingBroker,
-    #[allow(missing_docs)] // documentation missing in model
-    Updating,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ClusterState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => ClusterState::Active,
-            "CREATING" => ClusterState::Creating,
-            "DELETING" => ClusterState::Deleting,
-            "FAILED" => ClusterState::Failed,
-            "HEALING" => ClusterState::Healing,
-            "MAINTENANCE" => ClusterState::Maintenance,
-            "REBOOTING_BROKER" => ClusterState::RebootingBroker,
-            "UPDATING" => ClusterState::Updating,
-            other => ClusterState::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ClusterState {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClusterState::from(s))
-    }
-}
-impl ClusterState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClusterState::Active => "ACTIVE",
-            ClusterState::Creating => "CREATING",
-            ClusterState::Deleting => "DELETING",
-            ClusterState::Failed => "FAILED",
-            ClusterState::Healing => "HEALING",
-            ClusterState::Maintenance => "MAINTENANCE",
-            ClusterState::RebootingBroker => "REBOOTING_BROKER",
-            ClusterState::Updating => "UPDATING",
-            ClusterState::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATING",
-            "DELETING",
-            "FAILED",
-            "HEALING",
-            "MAINTENANCE",
-            "REBOOTING_BROKER",
-            "UPDATING",
-        ]
-    }
-}
-impl AsRef<str> for ClusterState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>JMX and Node monitoring for the MSK cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3652,358 +4905,6 @@ impl JmxExporter {
     /// Creates a new builder-style object to manufacture [`JmxExporter`](crate::model::JmxExporter)
     pub fn builder() -> crate::model::jmx_exporter::Builder {
         crate::model::jmx_exporter::Builder::default()
-    }
-}
-
-/// <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BrokerNodeGroupInfo {
-    /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
-    /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
-    pub broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
-    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
-    pub client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
-    /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
-    pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
-    pub storage_info: std::option::Option<crate::model::StorageInfo>,
-    /// <p>Information about the broker access configuration.</p>
-    pub connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
-}
-impl BrokerNodeGroupInfo {
-    /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
-    /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
-    pub fn broker_az_distribution(
-        &self,
-    ) -> std::option::Option<&crate::model::BrokerAzDistribution> {
-        self.broker_az_distribution.as_ref()
-    }
-    /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
-    pub fn client_subnets(&self) -> std::option::Option<&[std::string::String]> {
-        self.client_subnets.as_deref()
-    }
-    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
-    /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
-        self.instance_type.as_deref()
-    }
-    /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
-        self.security_groups.as_deref()
-    }
-    /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
-    pub fn storage_info(&self) -> std::option::Option<&crate::model::StorageInfo> {
-        self.storage_info.as_ref()
-    }
-    /// <p>Information about the broker access configuration.</p>
-    pub fn connectivity_info(&self) -> std::option::Option<&crate::model::ConnectivityInfo> {
-        self.connectivity_info.as_ref()
-    }
-}
-impl std::fmt::Debug for BrokerNodeGroupInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerNodeGroupInfo");
-        formatter.field("broker_az_distribution", &self.broker_az_distribution);
-        formatter.field("client_subnets", &self.client_subnets);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("storage_info", &self.storage_info);
-        formatter.field("connectivity_info", &self.connectivity_info);
-        formatter.finish()
-    }
-}
-/// See [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
-pub mod broker_node_group_info {
-    /// A builder for [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
-        pub(crate) client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) instance_type: std::option::Option<std::string::String>,
-        pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) storage_info: std::option::Option<crate::model::StorageInfo>,
-        pub(crate) connectivity_info: std::option::Option<crate::model::ConnectivityInfo>,
-    }
-    impl Builder {
-        /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
-        /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
-        pub fn broker_az_distribution(mut self, input: crate::model::BrokerAzDistribution) -> Self {
-            self.broker_az_distribution = Some(input);
-            self
-        }
-        /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
-        /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
-        pub fn set_broker_az_distribution(
-            mut self,
-            input: std::option::Option<crate::model::BrokerAzDistribution>,
-        ) -> Self {
-            self.broker_az_distribution = input;
-            self
-        }
-        /// Appends an item to `client_subnets`.
-        ///
-        /// To override the contents of this collection use [`set_client_subnets`](Self::set_client_subnets).
-        ///
-        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
-        pub fn client_subnets(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.client_subnets.unwrap_or_default();
-            v.push(input.into());
-            self.client_subnets = Some(v);
-            self
-        }
-        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
-        pub fn set_client_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.client_subnets = input;
-            self
-        }
-        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
-        /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
-        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.instance_type = Some(input.into());
-            self
-        }
-        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
-        /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
-        }
-        /// Appends an item to `security_groups`.
-        ///
-        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
-        ///
-        /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
-        }
-        /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
-        }
-        /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
-        pub fn storage_info(mut self, input: crate::model::StorageInfo) -> Self {
-            self.storage_info = Some(input);
-            self
-        }
-        /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
-        pub fn set_storage_info(
-            mut self,
-            input: std::option::Option<crate::model::StorageInfo>,
-        ) -> Self {
-            self.storage_info = input;
-            self
-        }
-        /// <p>Information about the broker access configuration.</p>
-        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
-            self.connectivity_info = Some(input);
-            self
-        }
-        /// <p>Information about the broker access configuration.</p>
-        pub fn set_connectivity_info(
-            mut self,
-            input: std::option::Option<crate::model::ConnectivityInfo>,
-        ) -> Self {
-            self.connectivity_info = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
-        pub fn build(self) -> crate::model::BrokerNodeGroupInfo {
-            crate::model::BrokerNodeGroupInfo {
-                broker_az_distribution: self.broker_az_distribution,
-                client_subnets: self.client_subnets,
-                instance_type: self.instance_type,
-                security_groups: self.security_groups,
-                storage_info: self.storage_info,
-                connectivity_info: self.connectivity_info,
-            }
-        }
-    }
-}
-impl BrokerNodeGroupInfo {
-    /// Creates a new builder-style object to manufacture [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo)
-    pub fn builder() -> crate::model::broker_node_group_info::Builder {
-        crate::model::broker_node_group_info::Builder::default()
-    }
-}
-
-/// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StorageInfo {
-    /// <p>EBS volume information.</p>
-    pub ebs_storage_info: std::option::Option<crate::model::EbsStorageInfo>,
-}
-impl StorageInfo {
-    /// <p>EBS volume information.</p>
-    pub fn ebs_storage_info(&self) -> std::option::Option<&crate::model::EbsStorageInfo> {
-        self.ebs_storage_info.as_ref()
-    }
-}
-impl std::fmt::Debug for StorageInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageInfo");
-        formatter.field("ebs_storage_info", &self.ebs_storage_info);
-        formatter.finish()
-    }
-}
-/// See [`StorageInfo`](crate::model::StorageInfo)
-pub mod storage_info {
-    /// A builder for [`StorageInfo`](crate::model::StorageInfo)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) ebs_storage_info: std::option::Option<crate::model::EbsStorageInfo>,
-    }
-    impl Builder {
-        /// <p>EBS volume information.</p>
-        pub fn ebs_storage_info(mut self, input: crate::model::EbsStorageInfo) -> Self {
-            self.ebs_storage_info = Some(input);
-            self
-        }
-        /// <p>EBS volume information.</p>
-        pub fn set_ebs_storage_info(
-            mut self,
-            input: std::option::Option<crate::model::EbsStorageInfo>,
-        ) -> Self {
-            self.ebs_storage_info = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`StorageInfo`](crate::model::StorageInfo)
-        pub fn build(self) -> crate::model::StorageInfo {
-            crate::model::StorageInfo {
-                ebs_storage_info: self.ebs_storage_info,
-            }
-        }
-    }
-}
-impl StorageInfo {
-    /// Creates a new builder-style object to manufacture [`StorageInfo`](crate::model::StorageInfo)
-    pub fn builder() -> crate::model::storage_info::Builder {
-        crate::model::storage_info::Builder::default()
-    }
-}
-
-/// <p>Contains information about the EBS storage volumes attached to Apache Kafka broker nodes.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EbsStorageInfo {
-    /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
-    pub volume_size: i32,
-}
-impl EbsStorageInfo {
-    /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
-    pub fn volume_size(&self) -> i32 {
-        self.volume_size
-    }
-}
-impl std::fmt::Debug for EbsStorageInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsStorageInfo");
-        formatter.field("volume_size", &self.volume_size);
-        formatter.finish()
-    }
-}
-/// See [`EbsStorageInfo`](crate::model::EbsStorageInfo)
-pub mod ebs_storage_info {
-    /// A builder for [`EbsStorageInfo`](crate::model::EbsStorageInfo)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) volume_size: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
-        pub fn volume_size(mut self, input: i32) -> Self {
-            self.volume_size = Some(input);
-            self
-        }
-        /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
-        pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.volume_size = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`EbsStorageInfo`](crate::model::EbsStorageInfo)
-        pub fn build(self) -> crate::model::EbsStorageInfo {
-            crate::model::EbsStorageInfo {
-                volume_size: self.volume_size.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl EbsStorageInfo {
-    /// Creates a new builder-style object to manufacture [`EbsStorageInfo`](crate::model::EbsStorageInfo)
-    pub fn builder() -> crate::model::ebs_storage_info::Builder {
-        crate::model::ebs_storage_info::Builder::default()
-    }
-}
-
-/// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
-/// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum BrokerAzDistribution {
-    #[allow(missing_docs)] // documentation missing in model
-    Default,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for BrokerAzDistribution {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEFAULT" => BrokerAzDistribution::Default,
-            other => BrokerAzDistribution::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for BrokerAzDistribution {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BrokerAzDistribution::from(s))
-    }
-}
-impl BrokerAzDistribution {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BrokerAzDistribution::Default => "DEFAULT",
-            BrokerAzDistribution::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["DEFAULT"]
-    }
-}
-impl AsRef<str> for BrokerAzDistribution {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -4865,6 +5766,331 @@ impl CompatibleKafkaVersion {
     /// Creates a new builder-style object to manufacture [`CompatibleKafkaVersion`](crate::model::CompatibleKafkaVersion)
     pub fn builder() -> crate::model::compatible_kafka_version::Builder {
         crate::model::compatible_kafka_version::Builder::default()
+    }
+}
+
+/// <p>Serverless cluster request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServerlessRequest {
+    /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+    pub vpc_configs: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
+    /// <p>Includes all client authentication information.</p>
+    pub client_authentication: std::option::Option<crate::model::ServerlessClientAuthentication>,
+}
+impl ServerlessRequest {
+    /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+    pub fn vpc_configs(&self) -> std::option::Option<&[crate::model::VpcConfig]> {
+        self.vpc_configs.as_deref()
+    }
+    /// <p>Includes all client authentication information.</p>
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::ServerlessClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+}
+impl std::fmt::Debug for ServerlessRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServerlessRequest");
+        formatter.field("vpc_configs", &self.vpc_configs);
+        formatter.field("client_authentication", &self.client_authentication);
+        formatter.finish()
+    }
+}
+/// See [`ServerlessRequest`](crate::model::ServerlessRequest)
+pub mod serverless_request {
+    /// A builder for [`ServerlessRequest`](crate::model::ServerlessRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_configs: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
+        pub(crate) client_authentication:
+            std::option::Option<crate::model::ServerlessClientAuthentication>,
+    }
+    impl Builder {
+        /// Appends an item to `vpc_configs`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_configs`](Self::set_vpc_configs).
+        ///
+        /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+        pub fn vpc_configs(mut self, input: impl Into<crate::model::VpcConfig>) -> Self {
+            let mut v = self.vpc_configs.unwrap_or_default();
+            v.push(input.into());
+            self.vpc_configs = Some(v);
+            self
+        }
+        /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+        pub fn set_vpc_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcConfig>>,
+        ) -> Self {
+            self.vpc_configs = input;
+            self
+        }
+        /// <p>Includes all client authentication information.</p>
+        pub fn client_authentication(
+            mut self,
+            input: crate::model::ServerlessClientAuthentication,
+        ) -> Self {
+            self.client_authentication = Some(input);
+            self
+        }
+        /// <p>Includes all client authentication information.</p>
+        pub fn set_client_authentication(
+            mut self,
+            input: std::option::Option<crate::model::ServerlessClientAuthentication>,
+        ) -> Self {
+            self.client_authentication = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServerlessRequest`](crate::model::ServerlessRequest)
+        pub fn build(self) -> crate::model::ServerlessRequest {
+            crate::model::ServerlessRequest {
+                vpc_configs: self.vpc_configs,
+                client_authentication: self.client_authentication,
+            }
+        }
+    }
+}
+impl ServerlessRequest {
+    /// Creates a new builder-style object to manufacture [`ServerlessRequest`](crate::model::ServerlessRequest)
+    pub fn builder() -> crate::model::serverless_request::Builder {
+        crate::model::serverless_request::Builder::default()
+    }
+}
+
+/// <p>Provisioned cluster request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProvisionedRequest {
+    /// <p>Information about the brokers.</p>
+    pub broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
+    /// <p>Includes all client authentication information.</p>
+    pub client_authentication: std::option::Option<crate::model::ClientAuthentication>,
+    /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
+    pub configuration_info: std::option::Option<crate::model::ConfigurationInfo>,
+    /// <p>Includes all encryption-related information.</p>
+    pub encryption_info: std::option::Option<crate::model::EncryptionInfo>,
+    /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
+    /// <p>The settings for open monitoring.</p>
+    pub open_monitoring: std::option::Option<crate::model::OpenMonitoringInfo>,
+    /// <p>The Apache Kafka version that you want for the cluster.</p>
+    pub kafka_version: std::option::Option<std::string::String>,
+    /// <p>Log delivery information for the cluster.</p>
+    pub logging_info: std::option::Option<crate::model::LoggingInfo>,
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub number_of_broker_nodes: i32,
+}
+impl ProvisionedRequest {
+    /// <p>Information about the brokers.</p>
+    pub fn broker_node_group_info(
+        &self,
+    ) -> std::option::Option<&crate::model::BrokerNodeGroupInfo> {
+        self.broker_node_group_info.as_ref()
+    }
+    /// <p>Includes all client authentication information.</p>
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::model::ClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+    /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
+    pub fn configuration_info(&self) -> std::option::Option<&crate::model::ConfigurationInfo> {
+        self.configuration_info.as_ref()
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn encryption_info(&self) -> std::option::Option<&crate::model::EncryptionInfo> {
+        self.encryption_info.as_ref()
+    }
+    /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&crate::model::EnhancedMonitoring> {
+        self.enhanced_monitoring.as_ref()
+    }
+    /// <p>The settings for open monitoring.</p>
+    pub fn open_monitoring(&self) -> std::option::Option<&crate::model::OpenMonitoringInfo> {
+        self.open_monitoring.as_ref()
+    }
+    /// <p>The Apache Kafka version that you want for the cluster.</p>
+    pub fn kafka_version(&self) -> std::option::Option<&str> {
+        self.kafka_version.as_deref()
+    }
+    /// <p>Log delivery information for the cluster.</p>
+    pub fn logging_info(&self) -> std::option::Option<&crate::model::LoggingInfo> {
+        self.logging_info.as_ref()
+    }
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub fn number_of_broker_nodes(&self) -> i32 {
+        self.number_of_broker_nodes
+    }
+}
+impl std::fmt::Debug for ProvisionedRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProvisionedRequest");
+        formatter.field("broker_node_group_info", &self.broker_node_group_info);
+        formatter.field("client_authentication", &self.client_authentication);
+        formatter.field("configuration_info", &self.configuration_info);
+        formatter.field("encryption_info", &self.encryption_info);
+        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
+        formatter.field("open_monitoring", &self.open_monitoring);
+        formatter.field("kafka_version", &self.kafka_version);
+        formatter.field("logging_info", &self.logging_info);
+        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
+        formatter.finish()
+    }
+}
+/// See [`ProvisionedRequest`](crate::model::ProvisionedRequest)
+pub mod provisioned_request {
+    /// A builder for [`ProvisionedRequest`](crate::model::ProvisionedRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
+        pub(crate) client_authentication: std::option::Option<crate::model::ClientAuthentication>,
+        pub(crate) configuration_info: std::option::Option<crate::model::ConfigurationInfo>,
+        pub(crate) encryption_info: std::option::Option<crate::model::EncryptionInfo>,
+        pub(crate) enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
+        pub(crate) open_monitoring: std::option::Option<crate::model::OpenMonitoringInfo>,
+        pub(crate) kafka_version: std::option::Option<std::string::String>,
+        pub(crate) logging_info: std::option::Option<crate::model::LoggingInfo>,
+        pub(crate) number_of_broker_nodes: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Information about the brokers.</p>
+        pub fn broker_node_group_info(mut self, input: crate::model::BrokerNodeGroupInfo) -> Self {
+            self.broker_node_group_info = Some(input);
+            self
+        }
+        /// <p>Information about the brokers.</p>
+        pub fn set_broker_node_group_info(
+            mut self,
+            input: std::option::Option<crate::model::BrokerNodeGroupInfo>,
+        ) -> Self {
+            self.broker_node_group_info = input;
+            self
+        }
+        /// <p>Includes all client authentication information.</p>
+        pub fn client_authentication(mut self, input: crate::model::ClientAuthentication) -> Self {
+            self.client_authentication = Some(input);
+            self
+        }
+        /// <p>Includes all client authentication information.</p>
+        pub fn set_client_authentication(
+            mut self,
+            input: std::option::Option<crate::model::ClientAuthentication>,
+        ) -> Self {
+            self.client_authentication = input;
+            self
+        }
+        /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
+        pub fn configuration_info(mut self, input: crate::model::ConfigurationInfo) -> Self {
+            self.configuration_info = Some(input);
+            self
+        }
+        /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
+        pub fn set_configuration_info(
+            mut self,
+            input: std::option::Option<crate::model::ConfigurationInfo>,
+        ) -> Self {
+            self.configuration_info = input;
+            self
+        }
+        /// <p>Includes all encryption-related information.</p>
+        pub fn encryption_info(mut self, input: crate::model::EncryptionInfo) -> Self {
+            self.encryption_info = Some(input);
+            self
+        }
+        /// <p>Includes all encryption-related information.</p>
+        pub fn set_encryption_info(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionInfo>,
+        ) -> Self {
+            self.encryption_info = input;
+            self
+        }
+        /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+        pub fn enhanced_monitoring(mut self, input: crate::model::EnhancedMonitoring) -> Self {
+            self.enhanced_monitoring = Some(input);
+            self
+        }
+        /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+        pub fn set_enhanced_monitoring(
+            mut self,
+            input: std::option::Option<crate::model::EnhancedMonitoring>,
+        ) -> Self {
+            self.enhanced_monitoring = input;
+            self
+        }
+        /// <p>The settings for open monitoring.</p>
+        pub fn open_monitoring(mut self, input: crate::model::OpenMonitoringInfo) -> Self {
+            self.open_monitoring = Some(input);
+            self
+        }
+        /// <p>The settings for open monitoring.</p>
+        pub fn set_open_monitoring(
+            mut self,
+            input: std::option::Option<crate::model::OpenMonitoringInfo>,
+        ) -> Self {
+            self.open_monitoring = input;
+            self
+        }
+        /// <p>The Apache Kafka version that you want for the cluster.</p>
+        pub fn kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kafka_version = Some(input.into());
+            self
+        }
+        /// <p>The Apache Kafka version that you want for the cluster.</p>
+        pub fn set_kafka_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kafka_version = input;
+            self
+        }
+        /// <p>Log delivery information for the cluster.</p>
+        pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
+            self.logging_info = Some(input);
+            self
+        }
+        /// <p>Log delivery information for the cluster.</p>
+        pub fn set_logging_info(
+            mut self,
+            input: std::option::Option<crate::model::LoggingInfo>,
+        ) -> Self {
+            self.logging_info = input;
+            self
+        }
+        /// <p>The number of broker nodes in the cluster.</p>
+        pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
+            self.number_of_broker_nodes = Some(input);
+            self
+        }
+        /// <p>The number of broker nodes in the cluster.</p>
+        pub fn set_number_of_broker_nodes(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_broker_nodes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProvisionedRequest`](crate::model::ProvisionedRequest)
+        pub fn build(self) -> crate::model::ProvisionedRequest {
+            crate::model::ProvisionedRequest {
+                broker_node_group_info: self.broker_node_group_info,
+                client_authentication: self.client_authentication,
+                configuration_info: self.configuration_info,
+                encryption_info: self.encryption_info,
+                enhanced_monitoring: self.enhanced_monitoring,
+                open_monitoring: self.open_monitoring,
+                kafka_version: self.kafka_version,
+                logging_info: self.logging_info,
+                number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ProvisionedRequest {
+    /// Creates a new builder-style object to manufacture [`ProvisionedRequest`](crate::model::ProvisionedRequest)
+    pub fn builder() -> crate::model::provisioned_request::Builder {
+        crate::model::provisioned_request::Builder::default()
     }
 }
 

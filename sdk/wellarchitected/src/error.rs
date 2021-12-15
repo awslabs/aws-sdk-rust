@@ -16,7 +16,7 @@ pub enum AssociateLensesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -140,6 +140,316 @@ impl std::error::Error for AssociateLensesError {
     }
 }
 
+/// Error type for the `CreateLensShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLensShareError {
+    /// Kind of error that occurred.
+    pub kind: CreateLensShareErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLensShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLensShareErrorKind {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The resource already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The user has reached their resource quota.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user input is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLensShareError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLensShareErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateLensShareErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateLensShareErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateLensShareErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateLensShareErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateLensShareErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateLensShareErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateLensShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLensShareError {
+    fn code(&self) -> Option<&str> {
+        CreateLensShareError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLensShareError {
+    /// Creates a new `CreateLensShareError`.
+    pub fn new(kind: CreateLensShareErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLensShareError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLensShareErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLensShareError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLensShareErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLensShareErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensShareErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensShareErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateLensShareErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLensShareErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensShareErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensShareErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensShareErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensShareErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensShareErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensShareErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateLensShareErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLensShareErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, CreateLensShareErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for CreateLensShareError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLensShareErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateLensShareErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateLensShareErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateLensShareErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateLensShareErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateLensShareErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateLensShareErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateLensShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateLensVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateLensVersionError {
+    /// Kind of error that occurred.
+    pub kind: CreateLensVersionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateLensVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateLensVersionErrorKind {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The resource already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The user has reached their resource quota.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user input is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateLensVersionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateLensVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateLensVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateLensVersionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateLensVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateLensVersionErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateLensVersionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateLensVersionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateLensVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateLensVersionError {
+    fn code(&self) -> Option<&str> {
+        CreateLensVersionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateLensVersionError {
+    /// Creates a new `CreateLensVersionError`.
+    pub fn new(kind: CreateLensVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateLensVersionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateLensVersionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateLensVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateLensVersionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateLensVersionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensVersionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensVersionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateLensVersionErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateLensVersionErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensVersionErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensVersionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensVersionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensVersionErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensVersionErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensVersionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensVersionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateLensVersionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLensVersionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateLensVersionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateLensVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateLensVersionErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateLensVersionErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateLensVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateLensVersionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateLensVersionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateLensVersionErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateLensVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateMilestone` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -157,7 +467,7 @@ pub enum CreateMilestoneErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -309,7 +619,7 @@ pub enum CreateWorkloadErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The user has reached their resource quota.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
@@ -450,7 +760,7 @@ pub enum CreateWorkloadShareErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -594,6 +904,282 @@ impl std::error::Error for CreateWorkloadShareError {
     }
 }
 
+/// Error type for the `DeleteLens` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLensError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLensErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteLens` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLensErrorKind {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The resource already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user input is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteLensError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLensErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteLensErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteLensErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteLensErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteLensErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteLensErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteLensErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteLensError {
+    fn code(&self) -> Option<&str> {
+        DeleteLensError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLensError {
+    /// Creates a new `DeleteLensError`.
+    pub fn new(kind: DeleteLensErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLensError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLensErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLensError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLensErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteLensErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLensErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLensErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLensErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLensErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLensErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLensErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLensErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLensErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLensErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLensErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLensErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteLensError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLensErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteLensErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteLensErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteLensErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteLensErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteLensErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteLensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteLensShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteLensShareError {
+    /// Kind of error that occurred.
+    pub kind: DeleteLensShareErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteLensShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteLensShareErrorKind {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The resource already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user input is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteLensShareError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteLensShareErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteLensShareErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteLensShareErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteLensShareErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteLensShareErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteLensShareErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteLensShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteLensShareError {
+    fn code(&self) -> Option<&str> {
+        DeleteLensShareError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteLensShareError {
+    /// Creates a new `DeleteLensShareError`.
+    pub fn new(kind: DeleteLensShareErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteLensShareError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteLensShareErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteLensShareError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteLensShareErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteLensShareErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLensShareErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLensShareErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLensShareErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLensShareErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLensShareErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLensShareErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLensShareErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteLensShareErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLensShareErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteLensShareErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLensShareErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for DeleteLensShareError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteLensShareErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteLensShareErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteLensShareErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteLensShareErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteLensShareErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteLensShareErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteLensShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteWorkload` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -611,7 +1197,7 @@ pub enum DeleteWorkloadErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -752,7 +1338,7 @@ pub enum DeleteWorkloadShareErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -902,7 +1488,7 @@ pub enum DisassociateLensesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1035,6 +1621,133 @@ impl std::error::Error for DisassociateLensesError {
     }
 }
 
+/// Error type for the `ExportLens` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ExportLensError {
+    /// Kind of error that occurred.
+    pub kind: ExportLensErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ExportLens` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ExportLensErrorKind {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user input is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ExportLensError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ExportLensErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ExportLensErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ExportLensErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ExportLensErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ExportLensErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ExportLensErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ExportLensError {
+    fn code(&self) -> Option<&str> {
+        ExportLensError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ExportLensError {
+    /// Creates a new `ExportLensError`.
+    pub fn new(kind: ExportLensErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ExportLensError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ExportLensErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ExportLensError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ExportLensErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ExportLensErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ExportLensErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ExportLensErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, ExportLensErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ExportLensErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportLensErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExportLensErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ExportLensErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ExportLensErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ExportLensErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ExportLensError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ExportLensErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ExportLensErrorKind::InternalServerException(_inner) => Some(_inner),
+            ExportLensErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ExportLensErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ExportLensErrorKind::ValidationException(_inner) => Some(_inner),
+            ExportLensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetAnswer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1050,7 +1763,7 @@ pub struct GetAnswerError {
 pub enum GetAnswerErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1159,6 +1872,130 @@ impl std::error::Error for GetAnswerError {
     }
 }
 
+/// Error type for the `GetLens` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetLensError {
+    /// Kind of error that occurred.
+    pub kind: GetLensErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetLens` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLensErrorKind {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user input is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetLensError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLensErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetLensErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetLensErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetLensErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetLensErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetLensErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetLensError {
+    fn code(&self) -> Option<&str> {
+        GetLensError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLensError {
+    /// Creates a new `GetLensError`.
+    pub fn new(kind: GetLensErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetLensError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLensErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetLensError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLensErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetLensErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetLensErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetLensErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetLensErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetLensErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetLensErrorKind::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetLensErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetLensErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `GetLensErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetLensErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetLensError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLensErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetLensErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetLensErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetLensErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetLensErrorKind::ValidationException(_inner) => Some(_inner),
+            GetLensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetLensReview` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1174,7 +2011,7 @@ pub struct GetLensReviewError {
 pub enum GetLensReviewErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1304,7 +2141,7 @@ pub struct GetLensReviewReportError {
 pub enum GetLensReviewReportErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1443,7 +2280,7 @@ pub struct GetLensVersionDifferenceError {
 pub enum GetLensVersionDifferenceErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1582,7 +2419,7 @@ pub struct GetMilestoneError {
 pub enum GetMilestoneErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1712,7 +2549,7 @@ pub struct GetWorkloadError {
 pub enum GetWorkloadErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1824,6 +2661,152 @@ impl std::error::Error for GetWorkloadError {
     }
 }
 
+/// Error type for the `ImportLens` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportLensError {
+    /// Kind of error that occurred.
+    pub kind: ImportLensErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ImportLens` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportLensErrorKind {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The resource already exists.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The user has reached their resource quota.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user input is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportLensError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportLensErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ImportLensErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ImportLensErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ImportLensErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ImportLensErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            ImportLensErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ImportLensErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ImportLensErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportLensError {
+    fn code(&self) -> Option<&str> {
+        ImportLensError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportLensError {
+    /// Creates a new `ImportLensError`.
+    pub fn new(kind: ImportLensErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportLensError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportLensErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportLensError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportLensErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportLensErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ImportLensErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ImportLensErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, ImportLensErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `ImportLensErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, ImportLensErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ImportLensErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportLensErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportLensErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportLensErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportLensErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ImportLensErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ImportLensErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ImportLensErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ImportLensError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportLensErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ImportLensErrorKind::ConflictException(_inner) => Some(_inner),
+            ImportLensErrorKind::InternalServerException(_inner) => Some(_inner),
+            ImportLensErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ImportLensErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            ImportLensErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ImportLensErrorKind::ValidationException(_inner) => Some(_inner),
+            ImportLensErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListAnswers` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1839,7 +2822,7 @@ pub struct ListAnswersError {
 pub enum ListAnswersErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1966,7 +2949,7 @@ pub struct ListLensesError {
 pub enum ListLensesErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2082,7 +3065,7 @@ pub struct ListLensReviewImprovementsError {
 pub enum ListLensReviewImprovementsErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2221,7 +3204,7 @@ pub struct ListLensReviewsError {
 pub enum ListLensReviewsErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2339,6 +3322,139 @@ impl std::error::Error for ListLensReviewsError {
     }
 }
 
+/// Error type for the `ListLensShares` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLensSharesError {
+    /// Kind of error that occurred.
+    pub kind: ListLensSharesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListLensShares` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLensSharesErrorKind {
+    /// <p>User does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The user input is not valid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListLensSharesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLensSharesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListLensSharesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListLensSharesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListLensSharesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListLensSharesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListLensSharesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListLensSharesError {
+    fn code(&self) -> Option<&str> {
+        ListLensSharesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLensSharesError {
+    /// Creates a new `ListLensSharesError`.
+    pub fn new(kind: ListLensSharesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListLensSharesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLensSharesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListLensSharesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLensSharesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListLensSharesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLensSharesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLensSharesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLensSharesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLensSharesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLensSharesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListLensSharesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListLensSharesErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListLensSharesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, ListLensSharesErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for ListLensSharesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLensSharesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListLensSharesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListLensSharesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListLensSharesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListLensSharesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListLensSharesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListMilestones` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2354,7 +3470,7 @@ pub struct ListMilestonesError {
 pub enum ListMilestonesErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2487,7 +3603,7 @@ pub struct ListNotificationsError {
 pub enum ListNotificationsErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2615,7 +3731,7 @@ pub struct ListShareInvitationsError {
 pub enum ListShareInvitationsErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2741,7 +3857,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2849,7 +3965,7 @@ pub struct ListWorkloadsError {
 pub enum ListWorkloadsErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2968,7 +4084,7 @@ pub struct ListWorkloadSharesError {
 pub enum ListWorkloadSharesErrorKind {
     /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3105,7 +4221,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3208,7 +4324,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3318,7 +4434,7 @@ pub enum UpdateAnswerErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3456,7 +4572,7 @@ pub enum UpdateLensReviewErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3603,7 +4719,7 @@ pub enum UpdateShareInvitationErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3753,7 +4869,7 @@ pub enum UpdateWorkloadErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3894,7 +5010,7 @@ pub enum UpdateWorkloadShareErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4044,7 +5160,7 @@ pub enum UpgradeLensReviewErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource already exists.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+    /// <p>There is a problem with the Well-Architected Tool API service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4502,7 +5618,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>There is a problem with the AWS Well-Architected Tool API service.</p>
+/// <p>There is a problem with the Well-Architected Tool API service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {

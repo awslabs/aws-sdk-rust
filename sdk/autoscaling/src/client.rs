@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_autoscaling::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -582,7 +582,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AttachInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -677,12 +677,14 @@ pub mod fluent_builders {
     /// registers the running instances with these Classic Load Balancers.</p>
     /// <p>To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API. To detach the load balancer from the Auto Scaling
     /// group, call the <a>DetachLoadBalancers</a> API.</p>
+    /// <p>This operation is additive and does not detach existing Classic Load Balancers or
+    /// target groups from the Auto Scaling group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     #[derive(std::fmt::Debug)]
     pub struct AttachLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -785,12 +787,14 @@ pub mod fluent_builders {
     /// </ul>
     /// <p>To describe the target groups for an Auto Scaling group, call the <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from
     /// the Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
+    /// <p>This operation is additive and does not detach existing target groups or Classic Load
+    /// Balancers from the Auto Scaling group.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     #[derive(std::fmt::Debug)]
     pub struct AttachLoadBalancerTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -882,7 +886,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchDeleteScheduledAction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -974,7 +978,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchPutScheduledUpdateGroupAction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1076,7 +1080,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelInstanceRefresh<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1151,14 +1155,14 @@ pub mod fluent_builders {
     /// group:</p>
     /// <ol>
     /// <li>
-    /// <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to
+    /// <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to
     /// invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates
     /// instances.</p>
     /// </li>
     /// <li>
     /// <p>(Optional) Create a notification target and an IAM role. The target can be
-    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to
-    /// publish lifecycle notifications to the target.</p>
+    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish
+    /// lifecycle notifications to the target.</p>
     /// </li>
     /// <li>
     /// <p>Create the lifecycle hook. Specify whether the hook is used when the instances
@@ -1170,8 +1174,9 @@ pub mod fluent_builders {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>If you finish before the timeout period ends, complete the
-    /// lifecycle action.</b>
+    /// <b>If you finish before the timeout period ends, send a
+    /// callback by using the <a>CompleteLifecycleAction</a> API
+    /// call.</b>
     /// </p>
     /// </li>
     /// </ol>
@@ -1180,7 +1185,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CompleteLifecycleAction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1326,7 +1331,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1446,7 +1451,7 @@ pub mod fluent_builders {
         ///
         ///
         ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
         pub fn mixed_instances_policy(mut self, inp: crate::model::MixedInstancesPolicy) -> Self {
@@ -1457,7 +1462,7 @@ pub mod fluent_builders {
         ///
         ///
         ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
         pub fn set_mixed_instances_policy(
@@ -1644,9 +1649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service. During this time, any health check
-        /// failures for the instance are ignored. The default value is <code>0</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn health_check_grace_period(mut self, inp: i32) -> Self {
@@ -1654,9 +1658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service. During this time, any health check
-        /// failures for the instance are ignored. The default value is <code>0</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
@@ -1734,7 +1737,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn new_instances_protected_from_scale_in(mut self, inp: bool) -> Self {
             self.inner = self.inner.new_instances_protected_from_scale_in(inp);
@@ -1742,7 +1746,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
@@ -1755,8 +1760,8 @@ pub mod fluent_builders {
         /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
         /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
         /// interruption. After launching a new instance, it then terminates an old instance. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity
-        /// Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn capacity_rebalance(mut self, inp: bool) -> Self {
             self.inner = self.inner.capacity_rebalance(inp);
             self
@@ -1765,8 +1770,8 @@ pub mod fluent_builders {
         /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
         /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
         /// interruption. After launching a new instance, it then terminates an old instance. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity
-        /// Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_capacity_rebalance(input);
             self
@@ -1913,7 +1918,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2399,7 +2404,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateOrUpdateTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2485,7 +2490,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2574,7 +2579,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2650,7 +2655,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteLifecycleHook<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2736,7 +2741,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2802,14 +2807,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
         pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.topic_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_topic_arn(input);
             self
@@ -2826,7 +2829,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeletePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2909,7 +2912,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteScheduledAction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2995,7 +2998,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3074,7 +3077,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteWarmPool<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3167,7 +3170,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAccountLimits<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3246,7 +3249,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAdjustmentTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3312,7 +3315,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAutoScalingGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3436,7 +3439,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAutoScalingInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3541,7 +3544,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAutoScalingNotificationTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3641,7 +3644,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceRefreshes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3755,7 +3758,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLaunchConfigurations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3860,7 +3863,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLifecycleHooks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3965,7 +3968,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLifecycleHookTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4046,7 +4049,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4162,7 +4165,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLoadBalancerTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4261,7 +4264,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMetricCollectionTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4322,7 +4325,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNotificationConfigurations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4425,7 +4428,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePolicies<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4574,7 +4577,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeScalingActivities<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4707,7 +4710,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeScalingProcessTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4770,7 +4773,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeScheduledActions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4928,7 +4931,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5034,7 +5037,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTerminationPolicyTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5096,7 +5099,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeWarmPool<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5202,7 +5205,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetachInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5312,7 +5315,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetachLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5402,7 +5405,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetachLoadBalancerTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5494,7 +5497,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableMetricsCollection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5791,7 +5794,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableMetricsCollection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6122,7 +6125,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnterStandby<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6228,7 +6231,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExecutePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6374,7 +6377,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExitStandby<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6472,7 +6475,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPredictiveScalingForecast<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6588,21 +6591,21 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLifecycleHook`.
     ///
     /// <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
-    /// <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance when the instance
-    /// launches (before it is put into service) or as the instance terminates (before it is
-    /// fully terminated).</p>
+    /// <p>A lifecycle hook enables an Auto Scaling group to be aware of events in the Auto Scaling instance
+    /// lifecycle, and then perform a custom action when the corresponding lifecycle event
+    /// occurs.</p>
     /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
     /// group:</p>
     /// <ol>
     /// <li>
-    /// <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to
+    /// <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to
     /// invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates
     /// instances.</p>
     /// </li>
     /// <li>
     /// <p>(Optional) Create a notification target and an IAM role. The target can be
-    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to
-    /// publish lifecycle notifications to the target.</p>
+    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish
+    /// lifecycle notifications to the target.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -6615,8 +6618,8 @@ pub mod fluent_builders {
     /// instance in a pending state using the <a>RecordLifecycleActionHeartbeat</a> API call.</p>
     /// </li>
     /// <li>
-    /// <p>If you finish before the timeout period ends, complete the lifecycle action
-    /// using the <a>CompleteLifecycleAction</a> API call.</p>
+    /// <p>If you finish before the timeout period ends, send a callback by using the
+    /// <a>CompleteLifecycleAction</a> API call.</p>
     /// </li>
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle
@@ -6628,7 +6631,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutLifecycleHook<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6758,9 +6761,8 @@ pub mod fluent_builders {
         /// is in the transition state for the lifecycle hook. This target can be either an SQS
         /// queue or an SNS topic.</p>
         /// <p>If you specify an empty string, this overrides the current ARN.</p>
-        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,
-        /// and an email key-value pair format when sending notifications to an Amazon SNS
-        /// topic.</p>
+        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and
+        /// an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
         /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
         /// messages contain the following additional key-value pair: <code>"Event":
         /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
@@ -6772,9 +6774,8 @@ pub mod fluent_builders {
         /// is in the transition state for the lifecycle hook. This target can be either an SQS
         /// queue or an SNS topic.</p>
         /// <p>If you specify an empty string, this overrides the current ARN.</p>
-        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,
-        /// and an email key-value pair format when sending notifications to an Amazon SNS
-        /// topic.</p>
+        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and
+        /// an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
         /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
         /// messages contain the following additional key-value pair: <code>"Event":
         /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
@@ -6852,7 +6853,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6918,14 +6919,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
         pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.topic_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_topic_arn(input);
             self
@@ -6965,7 +6964,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7262,7 +7261,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_estimated_instance_warmup(input);
             self
         }
-        /// <p>A target tracking scaling policy. Provides support for predefined or customized
+        /// <p>A target tracking scaling policy. Provides support for predefined or custom
         /// metrics.</p>
         /// <p>The following predefined metrics are available:</p>
         /// <ul>
@@ -7300,7 +7299,7 @@ pub mod fluent_builders {
             self.inner = self.inner.target_tracking_configuration(inp);
             self
         }
-        /// <p>A target tracking scaling policy. Provides support for predefined or customized
+        /// <p>A target tracking scaling policy. Provides support for predefined or custom
         /// metrics.</p>
         /// <p>The following predefined metrics are available:</p>
         /// <ul>
@@ -7354,9 +7353,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enabled(input);
             self
         }
-        /// <p>A predictive scaling policy. Provides support for only predefined metrics.</p>
-        /// <p>Predictive scaling works with CPU utilization, network in/out, and the Application
-        /// Load Balancer request count.</p>
+        /// <p>A predictive scaling policy. Provides support for predefined and custom
+        /// metrics.</p>
+        /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load
+        /// Balancer request count.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
         /// Reference</i>.</p>
         /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
@@ -7367,9 +7367,10 @@ pub mod fluent_builders {
             self.inner = self.inner.predictive_scaling_configuration(inp);
             self
         }
-        /// <p>A predictive scaling policy. Provides support for only predefined metrics.</p>
-        /// <p>Predictive scaling works with CPU utilization, network in/out, and the Application
-        /// Load Balancer request count.</p>
+        /// <p>A predictive scaling policy. Provides support for predefined and custom
+        /// metrics.</p>
+        /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load
+        /// Balancer request count.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
         /// Reference</i>.</p>
         /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
@@ -7391,7 +7392,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutScheduledUpdateGroupAction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7610,7 +7611,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutWarmPool<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7754,19 +7755,18 @@ pub mod fluent_builders {
     ///
     /// <p>Records a heartbeat for the lifecycle action associated with the specified token or
     /// instance. This extends the timeout by the length of time defined using the <a>PutLifecycleHook</a> API call.</p>
-    ///
     /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
     /// group:</p>
     /// <ol>
     /// <li>
-    /// <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to
+    /// <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to
     /// invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates
     /// instances.</p>
     /// </li>
     /// <li>
     /// <p>(Optional) Create a notification target and an IAM role. The target can be
-    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to
-    /// publish lifecycle notifications to the target.</p>
+    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish
+    /// lifecycle notifications to the target.</p>
     /// </li>
     /// <li>
     /// <p>Create the lifecycle hook. Specify whether the hook is used when the instances
@@ -7779,8 +7779,8 @@ pub mod fluent_builders {
     /// </p>
     /// </li>
     /// <li>
-    /// <p>If you finish before the timeout period ends, complete the lifecycle
-    /// action.</p>
+    /// <p>If you finish before the timeout period ends, send a callback by using the
+    /// <a>CompleteLifecycleAction</a> API call.</p>
     /// </li>
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle
@@ -7788,7 +7788,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RecordLifecycleActionHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7904,7 +7904,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResumeProcesses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8095,7 +8095,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SetDesiredCapacity<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8196,7 +8196,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SetInstanceHealth<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8306,14 +8306,15 @@ pub mod fluent_builders {
     /// <p>Updates the instance protection settings of the specified instances. This operation
     /// cannot be called on instances in a warm pool.</p>
     /// <p>For more information about preventing instances that are part of an Auto Scaling group from
-    /// terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+    /// terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+    /// instance scale-in protection</a> in the
     /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group, the call
     /// fails.</p>
     #[derive(std::fmt::Debug)]
     pub struct SetInstanceProtection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8429,7 +8430,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartInstanceRefresh<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8581,7 +8582,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SuspendProcesses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8778,7 +8779,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TerminateInstanceInAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8909,7 +8910,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9010,7 +9011,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>An embedded object that specifies a mixed instances policy. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
         pub fn mixed_instances_policy(mut self, inp: crate::model::MixedInstancesPolicy) -> Self {
@@ -9018,7 +9019,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>An embedded object that specifies a mixed instances policy. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
         /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.</p>
         pub fn set_mixed_instances_policy(
@@ -9133,8 +9134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service. The default value is <code>0</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn health_check_grace_period(mut self, inp: i32) -> Self {
@@ -9142,8 +9143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service. The default value is <code>0</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
+        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
@@ -9211,7 +9212,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn new_instances_protected_from_scale_in(mut self, inp: bool) -> Self {
             self.inner = self.inner.new_instances_protected_from_scale_in(inp);
@@ -9219,7 +9221,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
         /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// instance scale-in protection</a> in the
         /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
@@ -9265,14 +9268,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_instance_lifetime(input);
             self
         }
-        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn capacity_rebalance(mut self, inp: bool) -> Self {
             self.inner = self.inner.capacity_rebalance(inp);
             self
         }
-        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
+        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_capacity_rebalance(input);
             self
@@ -9318,17 +9321,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -9337,7 +9344,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -9353,11 +9360,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

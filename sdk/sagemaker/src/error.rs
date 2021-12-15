@@ -2563,6 +2563,120 @@ impl std::error::Error for CreateImageVersionError {
     }
 }
 
+/// Error type for the `CreateInferenceRecommendationsJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateInferenceRecommendationsJobError {
+    /// Kind of error that occurred.
+    pub kind: CreateInferenceRecommendationsJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateInferenceRecommendationsJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateInferenceRecommendationsJobErrorKind {
+    /// <p>Resource being accessed is in use.</p>
+    ResourceInUse(crate::error::ResourceInUse),
+    /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
+    /// training jobs created. </p>
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateInferenceRecommendationsJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateInferenceRecommendationsJobErrorKind::ResourceInUse(_inner) => _inner.fmt(f),
+            CreateInferenceRecommendationsJobErrorKind::ResourceLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateInferenceRecommendationsJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateInferenceRecommendationsJobError {
+    fn code(&self) -> Option<&str> {
+        CreateInferenceRecommendationsJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateInferenceRecommendationsJobError {
+    /// Creates a new `CreateInferenceRecommendationsJobError`.
+    pub fn new(
+        kind: CreateInferenceRecommendationsJobErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateInferenceRecommendationsJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateInferenceRecommendationsJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateInferenceRecommendationsJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateInferenceRecommendationsJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateInferenceRecommendationsJobErrorKind::ResourceInUse`.
+    pub fn is_resource_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInferenceRecommendationsJobErrorKind::ResourceInUse(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateInferenceRecommendationsJobErrorKind::ResourceLimitExceeded`.
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInferenceRecommendationsJobErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+}
+impl std::error::Error for CreateInferenceRecommendationsJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateInferenceRecommendationsJobErrorKind::ResourceInUse(_inner) => Some(_inner),
+            CreateInferenceRecommendationsJobErrorKind::ResourceLimitExceeded(_inner) => {
+                Some(_inner)
+            }
+            CreateInferenceRecommendationsJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateLabelingJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10651,6 +10765,106 @@ impl std::error::Error for DescribeImageVersionError {
     }
 }
 
+/// Error type for the `DescribeInferenceRecommendationsJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeInferenceRecommendationsJobError {
+    /// Kind of error that occurred.
+    pub kind: DescribeInferenceRecommendationsJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeInferenceRecommendationsJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeInferenceRecommendationsJobErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeInferenceRecommendationsJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeInferenceRecommendationsJobErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeInferenceRecommendationsJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeInferenceRecommendationsJobError {
+    fn code(&self) -> Option<&str> {
+        DescribeInferenceRecommendationsJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeInferenceRecommendationsJobError {
+    /// Creates a new `DescribeInferenceRecommendationsJobError`.
+    pub fn new(
+        kind: DescribeInferenceRecommendationsJobErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeInferenceRecommendationsJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeInferenceRecommendationsJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeInferenceRecommendationsJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeInferenceRecommendationsJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeInferenceRecommendationsJobErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInferenceRecommendationsJobErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DescribeInferenceRecommendationsJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeInferenceRecommendationsJobErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeInferenceRecommendationsJobErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DescribeLabelingJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10742,6 +10956,101 @@ impl std::error::Error for DescribeLabelingJobError {
         match &self.kind {
             DescribeLabelingJobErrorKind::ResourceNotFound(_inner) => Some(_inner),
             DescribeLabelingJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeLineageGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeLineageGroupError {
+    /// Kind of error that occurred.
+    pub kind: DescribeLineageGroupErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeLineageGroup` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeLineageGroupErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeLineageGroupError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeLineageGroupErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            DescribeLineageGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeLineageGroupError {
+    fn code(&self) -> Option<&str> {
+        DescribeLineageGroupError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeLineageGroupError {
+    /// Creates a new `DescribeLineageGroupError`.
+    pub fn new(kind: DescribeLineageGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeLineageGroupError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeLineageGroupErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeLineageGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeLineageGroupErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeLineageGroupErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLineageGroupErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DescribeLineageGroupError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeLineageGroupErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            DescribeLineageGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -13215,6 +13524,101 @@ impl std::error::Error for GetDeviceFleetReportError {
     }
 }
 
+/// Error type for the `GetLineageGroupPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetLineageGroupPolicyError {
+    /// Kind of error that occurred.
+    pub kind: GetLineageGroupPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetLineageGroupPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetLineageGroupPolicyErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetLineageGroupPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetLineageGroupPolicyErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            GetLineageGroupPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetLineageGroupPolicyError {
+    fn code(&self) -> Option<&str> {
+        GetLineageGroupPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetLineageGroupPolicyError {
+    /// Creates a new `GetLineageGroupPolicyError`.
+    pub fn new(kind: GetLineageGroupPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetLineageGroupPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetLineageGroupPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetLineageGroupPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetLineageGroupPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetLineageGroupPolicyErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLineageGroupPolicyErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for GetLineageGroupPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetLineageGroupPolicyErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            GetLineageGroupPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetModelPackageGroupPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15626,6 +16030,93 @@ impl std::error::Error for ListImageVersionsError {
     }
 }
 
+/// Error type for the `ListInferenceRecommendationsJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListInferenceRecommendationsJobsError {
+    /// Kind of error that occurred.
+    pub kind: ListInferenceRecommendationsJobsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListInferenceRecommendationsJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListInferenceRecommendationsJobsErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListInferenceRecommendationsJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListInferenceRecommendationsJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListInferenceRecommendationsJobsError {
+    fn code(&self) -> Option<&str> {
+        ListInferenceRecommendationsJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListInferenceRecommendationsJobsError {
+    /// Creates a new `ListInferenceRecommendationsJobsError`.
+    pub fn new(
+        kind: ListInferenceRecommendationsJobsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListInferenceRecommendationsJobsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListInferenceRecommendationsJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListInferenceRecommendationsJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListInferenceRecommendationsJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListInferenceRecommendationsJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListInferenceRecommendationsJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListLabelingJobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15805,6 +16296,90 @@ impl std::error::Error for ListLabelingJobsForWorkteamError {
     }
 }
 
+/// Error type for the `ListLineageGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListLineageGroupsError {
+    /// Kind of error that occurred.
+    pub kind: ListLineageGroupsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListLineageGroups` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListLineageGroupsErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListLineageGroupsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListLineageGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListLineageGroupsError {
+    fn code(&self) -> Option<&str> {
+        ListLineageGroupsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListLineageGroupsError {
+    /// Creates a new `ListLineageGroupsError`.
+    pub fn new(kind: ListLineageGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListLineageGroupsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListLineageGroupsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListLineageGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListLineageGroupsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListLineageGroupsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListLineageGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListModelBiasJobDefinitions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15974,6 +16549,90 @@ impl std::error::Error for ListModelExplainabilityJobDefinitionsError {
             ListModelExplainabilityJobDefinitionsErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
+        }
+    }
+}
+
+/// Error type for the `ListModelMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListModelMetadataError {
+    /// Kind of error that occurred.
+    pub kind: ListModelMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListModelMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListModelMetadataErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListModelMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListModelMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListModelMetadataError {
+    fn code(&self) -> Option<&str> {
+        ListModelMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListModelMetadataError {
+    /// Creates a new `ListModelMetadataError`.
+    pub fn new(kind: ListModelMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListModelMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListModelMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListModelMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListModelMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for ListModelMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListModelMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -18256,6 +18915,98 @@ impl std::error::Error for PutModelPackageGroupPolicyError {
     }
 }
 
+/// Error type for the `QueryLineage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct QueryLineageError {
+    /// Kind of error that occurred.
+    pub kind: QueryLineageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `QueryLineage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum QueryLineageErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for QueryLineageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            QueryLineageErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            QueryLineageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for QueryLineageError {
+    fn code(&self) -> Option<&str> {
+        QueryLineageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl QueryLineageError {
+    /// Creates a new `QueryLineageError`.
+    pub fn new(kind: QueryLineageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `QueryLineageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: QueryLineageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `QueryLineageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: QueryLineageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `QueryLineageErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, QueryLineageErrorKind::ResourceNotFound(_))
+    }
+}
+impl std::error::Error for QueryLineageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            QueryLineageErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            QueryLineageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `RegisterDevices` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19532,6 +20283,104 @@ impl std::error::Error for StopHyperParameterTuningJobError {
         match &self.kind {
             StopHyperParameterTuningJobErrorKind::ResourceNotFound(_inner) => Some(_inner),
             StopHyperParameterTuningJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StopInferenceRecommendationsJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopInferenceRecommendationsJobError {
+    /// Kind of error that occurred.
+    pub kind: StopInferenceRecommendationsJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StopInferenceRecommendationsJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopInferenceRecommendationsJobErrorKind {
+    /// <p>Resource being access is not found.</p>
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopInferenceRecommendationsJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopInferenceRecommendationsJobErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            StopInferenceRecommendationsJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopInferenceRecommendationsJobError {
+    fn code(&self) -> Option<&str> {
+        StopInferenceRecommendationsJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopInferenceRecommendationsJobError {
+    /// Creates a new `StopInferenceRecommendationsJobError`.
+    pub fn new(
+        kind: StopInferenceRecommendationsJobErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopInferenceRecommendationsJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopInferenceRecommendationsJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopInferenceRecommendationsJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopInferenceRecommendationsJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopInferenceRecommendationsJobErrorKind::ResourceNotFound`.
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopInferenceRecommendationsJobErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for StopInferenceRecommendationsJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopInferenceRecommendationsJobErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            StopInferenceRecommendationsJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

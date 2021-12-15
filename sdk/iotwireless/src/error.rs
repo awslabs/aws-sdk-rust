@@ -6024,6 +6024,158 @@ impl std::error::Error for GetMulticastGroupSessionError {
     }
 }
 
+/// Error type for the `GetNetworkAnalyzerConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetNetworkAnalyzerConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: GetNetworkAnalyzerConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetNetworkAnalyzerConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetNetworkAnalyzerConfigurationErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetNetworkAnalyzerConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetNetworkAnalyzerConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetNetworkAnalyzerConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetNetworkAnalyzerConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetNetworkAnalyzerConfigurationError {
+    fn code(&self) -> Option<&str> {
+        GetNetworkAnalyzerConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetNetworkAnalyzerConfigurationError {
+    /// Creates a new `GetNetworkAnalyzerConfigurationError`.
+    pub fn new(
+        kind: GetNetworkAnalyzerConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetNetworkAnalyzerConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetNetworkAnalyzerConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetNetworkAnalyzerConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetNetworkAnalyzerConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetNetworkAnalyzerConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkAnalyzerConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkAnalyzerConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkAnalyzerConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetNetworkAnalyzerConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetNetworkAnalyzerConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetNetworkAnalyzerConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetNetworkAnalyzerConfigurationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            GetNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetNetworkAnalyzerConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            GetNetworkAnalyzerConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetPartnerAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11640,6 +11792,168 @@ impl std::error::Error for UpdateMulticastGroupError {
             UpdateMulticastGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateMulticastGroupErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateMulticastGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateNetworkAnalyzerConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateNetworkAnalyzerConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateNetworkAnalyzerConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateNetworkAnalyzerConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateNetworkAnalyzerConfigurationErrorKind {
+    /// <p>User does not have permission to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An unexpected error occurred while processing a request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because it exceeded the allowed API request rate.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input did not meet the specified constraints.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateNetworkAnalyzerConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateNetworkAnalyzerConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateNetworkAnalyzerConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateNetworkAnalyzerConfigurationError {
+    /// Creates a new `UpdateNetworkAnalyzerConfigurationError`.
+    pub fn new(
+        kind: UpdateNetworkAnalyzerConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateNetworkAnalyzerConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateNetworkAnalyzerConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateNetworkAnalyzerConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateNetworkAnalyzerConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkAnalyzerConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkAnalyzerConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkAnalyzerConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkAnalyzerConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateNetworkAnalyzerConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateNetworkAnalyzerConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            UpdateNetworkAnalyzerConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

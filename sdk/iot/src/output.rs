@@ -5851,6 +5851,95 @@ impl ListMitigationActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListManagedJobTemplatesOutput {
+    /// <p>A list of managed job templates that are returned.</p>
+    pub managed_job_templates:
+        std::option::Option<std::vec::Vec<crate::model::ManagedJobTemplateSummary>>,
+    /// <p>The token to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListManagedJobTemplatesOutput {
+    /// <p>A list of managed job templates that are returned.</p>
+    pub fn managed_job_templates(
+        &self,
+    ) -> std::option::Option<&[crate::model::ManagedJobTemplateSummary]> {
+        self.managed_job_templates.as_deref()
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListManagedJobTemplatesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListManagedJobTemplatesOutput");
+        formatter.field("managed_job_templates", &self.managed_job_templates);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListManagedJobTemplatesOutput`](crate::output::ListManagedJobTemplatesOutput)
+pub mod list_managed_job_templates_output {
+    /// A builder for [`ListManagedJobTemplatesOutput`](crate::output::ListManagedJobTemplatesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) managed_job_templates:
+            std::option::Option<std::vec::Vec<crate::model::ManagedJobTemplateSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `managed_job_templates`.
+        ///
+        /// To override the contents of this collection use [`set_managed_job_templates`](Self::set_managed_job_templates).
+        ///
+        /// <p>A list of managed job templates that are returned.</p>
+        pub fn managed_job_templates(
+            mut self,
+            input: impl Into<crate::model::ManagedJobTemplateSummary>,
+        ) -> Self {
+            let mut v = self.managed_job_templates.unwrap_or_default();
+            v.push(input.into());
+            self.managed_job_templates = Some(v);
+            self
+        }
+        /// <p>A list of managed job templates that are returned.</p>
+        pub fn set_managed_job_templates(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ManagedJobTemplateSummary>>,
+        ) -> Self {
+            self.managed_job_templates = input;
+            self
+        }
+        /// <p>The token to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListManagedJobTemplatesOutput`](crate::output::ListManagedJobTemplatesOutput)
+        pub fn build(self) -> crate::output::ListManagedJobTemplatesOutput {
+            crate::output::ListManagedJobTemplatesOutput {
+                managed_job_templates: self.managed_job_templates,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListManagedJobTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListManagedJobTemplatesOutput`](crate::output::ListManagedJobTemplatesOutput)
+    pub fn builder() -> crate::output::list_managed_job_templates_output::Builder {
+        crate::output::list_managed_job_templates_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobTemplatesOutput {
     /// <p>A list of objects that contain information about the job templates.</p>
     pub job_templates: std::option::Option<std::vec::Vec<crate::model::JobTemplateSummary>>,
@@ -9116,8 +9205,7 @@ impl GetCardinalityOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketsAggregationOutput {
-    /// <p>The total number of documents that fit the query string criteria and contain a value for
-    /// the Aggregation field targeted in the request.</p>
+    /// <p>The total number of things that fit the query string criteria.</p>
     pub total_count: i32,
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p>
@@ -9127,8 +9215,7 @@ pub struct GetBucketsAggregationOutput {
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
 }
 impl GetBucketsAggregationOutput {
-    /// <p>The total number of documents that fit the query string criteria and contain a value for
-    /// the Aggregation field targeted in the request.</p>
+    /// <p>The total number of things that fit the query string criteria.</p>
     pub fn total_count(&self) -> i32 {
         self.total_count
     }
@@ -9159,14 +9246,12 @@ pub mod get_buckets_aggregation_output {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
     }
     impl Builder {
-        /// <p>The total number of documents that fit the query string criteria and contain a value for
-        /// the Aggregation field targeted in the request.</p>
+        /// <p>The total number of things that fit the query string criteria.</p>
         pub fn total_count(mut self, input: i32) -> Self {
             self.total_count = Some(input);
             self
         }
-        /// <p>The total number of documents that fit the query string criteria and contain a value for
-        /// the Aggregation field targeted in the request.</p>
+        /// <p>The total number of things that fit the query string criteria.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_count = input;
             self
@@ -11713,6 +11798,206 @@ impl DescribeMitigationActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeManagedJobTemplateOutput {
+    /// <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
+    pub template_name: std::option::Option<std::string::String>,
+    /// <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
+    pub template_arn: std::option::Option<std::string::String>,
+    /// <p>The unique description of a managed template.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The version for a managed template.</p>
+    pub template_version: std::option::Option<std::string::String>,
+    /// <p>A list of environments that are supported with the managed job template.</p>
+    pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
+    /// a job from a managed template.</p>
+    pub document_parameters: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
+    /// <p>The document schema for a managed job template.</p>
+    pub document: std::option::Option<std::string::String>,
+}
+impl DescribeManagedJobTemplateOutput {
+    /// <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
+    pub fn template_arn(&self) -> std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
+    /// <p>The unique description of a managed template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The version for a managed template.</p>
+    pub fn template_version(&self) -> std::option::Option<&str> {
+        self.template_version.as_deref()
+    }
+    /// <p>A list of environments that are supported with the managed job template.</p>
+    pub fn environments(&self) -> std::option::Option<&[std::string::String]> {
+        self.environments.as_deref()
+    }
+    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
+    /// a job from a managed template.</p>
+    pub fn document_parameters(&self) -> std::option::Option<&[crate::model::DocumentParameter]> {
+        self.document_parameters.as_deref()
+    }
+    /// <p>The document schema for a managed job template.</p>
+    pub fn document(&self) -> std::option::Option<&str> {
+        self.document.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeManagedJobTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeManagedJobTemplateOutput");
+        formatter.field("template_name", &self.template_name);
+        formatter.field("template_arn", &self.template_arn);
+        formatter.field("description", &self.description);
+        formatter.field("template_version", &self.template_version);
+        formatter.field("environments", &self.environments);
+        formatter.field("document_parameters", &self.document_parameters);
+        formatter.field("document", &self.document);
+        formatter.finish()
+    }
+}
+/// See [`DescribeManagedJobTemplateOutput`](crate::output::DescribeManagedJobTemplateOutput)
+pub mod describe_managed_job_template_output {
+    /// A builder for [`DescribeManagedJobTemplateOutput`](crate::output::DescribeManagedJobTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) template_name: std::option::Option<std::string::String>,
+        pub(crate) template_arn: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) template_version: std::option::Option<std::string::String>,
+        pub(crate) environments: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) document_parameters:
+            std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
+        pub(crate) document: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
+            self
+        }
+        /// <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
+        pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_arn = Some(input.into());
+            self
+        }
+        /// <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
+        pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_arn = input;
+            self
+        }
+        /// <p>The unique description of a managed template.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The unique description of a managed template.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The version for a managed template.</p>
+        pub fn template_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_version = Some(input.into());
+            self
+        }
+        /// <p>The version for a managed template.</p>
+        pub fn set_template_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_version = input;
+            self
+        }
+        /// Appends an item to `environments`.
+        ///
+        /// To override the contents of this collection use [`set_environments`](Self::set_environments).
+        ///
+        /// <p>A list of environments that are supported with the managed job template.</p>
+        pub fn environments(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.environments.unwrap_or_default();
+            v.push(input.into());
+            self.environments = Some(v);
+            self
+        }
+        /// <p>A list of environments that are supported with the managed job template.</p>
+        pub fn set_environments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.environments = input;
+            self
+        }
+        /// Appends an item to `document_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
+        ///
+        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
+        /// a job from a managed template.</p>
+        pub fn document_parameters(
+            mut self,
+            input: impl Into<crate::model::DocumentParameter>,
+        ) -> Self {
+            let mut v = self.document_parameters.unwrap_or_default();
+            v.push(input.into());
+            self.document_parameters = Some(v);
+            self
+        }
+        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
+        /// a job from a managed template.</p>
+        pub fn set_document_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
+        ) -> Self {
+            self.document_parameters = input;
+            self
+        }
+        /// <p>The document schema for a managed job template.</p>
+        pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document = Some(input.into());
+            self
+        }
+        /// <p>The document schema for a managed job template.</p>
+        pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeManagedJobTemplateOutput`](crate::output::DescribeManagedJobTemplateOutput)
+        pub fn build(self) -> crate::output::DescribeManagedJobTemplateOutput {
+            crate::output::DescribeManagedJobTemplateOutput {
+                template_name: self.template_name,
+                template_arn: self.template_arn,
+                description: self.description,
+                template_version: self.template_version,
+                environments: self.environments,
+                document_parameters: self.document_parameters,
+                document: self.document,
+            }
+        }
+    }
+}
+impl DescribeManagedJobTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeManagedJobTemplateOutput`](crate::output::DescribeManagedJobTemplateOutput)
+    pub fn builder() -> crate::output::describe_managed_job_template_output::Builder {
+        crate::output::describe_managed_job_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobTemplateOutput {
     /// <p>The ARN of the job template.</p>
     pub job_template_arn: std::option::Option<std::string::String>,
@@ -12139,6 +12424,10 @@ pub struct DescribeIndexOutput {
     /// <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry
     /// data, shadow data, and thing connectivity status data.</p>
     /// </li>
+    /// <li>
+    /// <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+    /// </li>
     /// </ul>
     pub schema: std::option::Option<std::string::String>,
 }
@@ -12167,6 +12456,10 @@ impl DescribeIndexOutput {
     /// <li>
     /// <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry
     /// data, shadow data, and thing connectivity status data.</p>
+    /// </li>
+    /// <li>
+    /// <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see
+    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
     /// </li>
     /// </ul>
     pub fn schema(&self) -> std::option::Option<&str> {
@@ -12233,6 +12526,10 @@ pub mod describe_index_output {
         /// <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry
         /// data, shadow data, and thing connectivity status data.</p>
         /// </li>
+        /// <li>
+        /// <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+        /// </li>
         /// </ul>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema = Some(input.into());
@@ -12254,6 +12551,10 @@ pub mod describe_index_output {
         /// <li>
         /// <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry
         /// data, shadow data, and thing connectivity status data.</p>
+        /// </li>
+        /// <li>
+        /// <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
         /// </li>
         /// </ul>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {

@@ -54,6 +54,14 @@ pub enum Error {
     /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
     /// the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
+    /// <p>A pull through cache rule with these settings already exists for the private
+    /// registry.</p>
+    PullThroughCacheRuleAlreadyExistsException(
+        crate::error::PullThroughCacheRuleAlreadyExistsException,
+    ),
+    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and
+    /// try again.</p>
+    PullThroughCacheRuleNotFoundException(crate::error::PullThroughCacheRuleNotFoundException),
     /// <p>The manifest list is referencing an image that does not exist.</p>
     ReferencedImagesNotFoundException(crate::error::ReferencedImagesNotFoundException),
     /// <p>The registry doesn't have an associated registry policy.</p>
@@ -79,6 +87,8 @@ pub enum Error {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The image is of a type that cannot be scanned.</p>
     UnsupportedImageTypeException(crate::error::UnsupportedImageTypeException),
+    /// <p>The specified upstream registry isn't supported.</p>
+    UnsupportedUpstreamRegistryException(crate::error::UnsupportedUpstreamRegistryException),
     /// <p>The upload could not be found, or the specified upload ID is not valid for this
     /// repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
@@ -108,6 +118,8 @@ impl std::fmt::Display for Error {
             Error::LifecyclePolicyPreviewInProgressException(inner) => inner.fmt(f),
             Error::LifecyclePolicyPreviewNotFoundException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::PullThroughCacheRuleAlreadyExistsException(inner) => inner.fmt(f),
+            Error::PullThroughCacheRuleNotFoundException(inner) => inner.fmt(f),
             Error::ReferencedImagesNotFoundException(inner) => inner.fmt(f),
             Error::RegistryPolicyNotFoundException(inner) => inner.fmt(f),
             Error::RepositoryAlreadyExistsException(inner) => inner.fmt(f),
@@ -118,6 +130,7 @@ impl std::fmt::Display for Error {
             Error::ServerException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnsupportedImageTypeException(inner) => inner.fmt(f),
+            Error::UnsupportedUpstreamRegistryException(inner) => inner.fmt(f),
             Error::UploadNotFoundException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -199,6 +212,34 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::BatchGetRepositoryScanningConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::BatchGetRepositoryScanningConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::BatchGetRepositoryScanningConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::BatchGetRepositoryScanningConfigurationErrorKind::RepositoryNotFoundException(inner) => Error::RepositoryNotFoundException(inner),
+                crate::error::BatchGetRepositoryScanningConfigurationErrorKind::ServerException(inner) => Error::ServerException(inner),
+                crate::error::BatchGetRepositoryScanningConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::BatchGetRepositoryScanningConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompleteLayerUploadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -239,6 +280,28 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePullThroughCacheRuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreatePullThroughCacheRuleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreatePullThroughCacheRuleErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::CreatePullThroughCacheRuleErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::CreatePullThroughCacheRuleErrorKind::PullThroughCacheRuleAlreadyExistsException(inner) => Error::PullThroughCacheRuleAlreadyExistsException(inner),
+                crate::error::CreatePullThroughCacheRuleErrorKind::ServerException(inner) => Error::ServerException(inner),
+                crate::error::CreatePullThroughCacheRuleErrorKind::UnsupportedUpstreamRegistryException(inner) => Error::UnsupportedUpstreamRegistryException(inner),
+                crate::error::CreatePullThroughCacheRuleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::CreatePullThroughCacheRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -307,6 +370,26 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePullThroughCacheRuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeletePullThroughCacheRuleError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeletePullThroughCacheRuleErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DeletePullThroughCacheRuleErrorKind::PullThroughCacheRuleNotFoundException(inner) => Error::PullThroughCacheRuleNotFoundException(inner),
+                crate::error::DeletePullThroughCacheRuleErrorKind::ServerException(inner) => Error::ServerException(inner),
+                crate::error::DeletePullThroughCacheRuleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DeletePullThroughCacheRuleErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -468,10 +551,33 @@ where
                 crate::error::DescribeImageScanFindingsErrorKind::ServerException(inner) => {
                     Error::ServerException(inner)
                 }
+                crate::error::DescribeImageScanFindingsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DescribeImageScanFindingsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePullThroughCacheRulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribePullThroughCacheRulesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribePullThroughCacheRulesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DescribePullThroughCacheRulesErrorKind::PullThroughCacheRuleNotFoundException(inner) => Error::PullThroughCacheRuleNotFoundException(inner),
+                crate::error::DescribePullThroughCacheRulesErrorKind::ServerException(inner) => Error::ServerException(inner),
+                crate::error::DescribePullThroughCacheRulesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DescribePullThroughCacheRulesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -664,6 +770,29 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetRegistryScanningConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetRegistryScanningConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetRegistryScanningConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::GetRegistryScanningConfigurationErrorKind::ServerException(inner) => Error::ServerException(inner),
+                crate::error::GetRegistryScanningConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::GetRegistryScanningConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRepositoryPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -824,6 +953,7 @@ where
                 crate::error::PutImageScanningConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::PutImageScanningConfigurationErrorKind::RepositoryNotFoundException(inner) => Error::RepositoryNotFoundException(inner),
                 crate::error::PutImageScanningConfigurationErrorKind::ServerException(inner) => Error::ServerException(inner),
+                crate::error::PutImageScanningConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::PutImageScanningConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -909,6 +1039,29 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::PutRegistryScanningConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::PutRegistryScanningConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutRegistryScanningConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::PutRegistryScanningConfigurationErrorKind::ServerException(inner) => Error::ServerException(inner),
+                crate::error::PutRegistryScanningConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::PutRegistryScanningConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutReplicationConfigurationError, R>>
     for Error
 where
@@ -986,6 +1139,9 @@ where
                 }
                 crate::error::StartImageScanErrorKind::UnsupportedImageTypeException(inner) => {
                     Error::UnsupportedImageTypeException(inner)
+                }
+                crate::error::StartImageScanErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::StartImageScanErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

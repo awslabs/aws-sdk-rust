@@ -16,8 +16,8 @@ pub enum AddTagsToResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
-    /// instance must be a registered, managed instance.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
+    /// instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try
     /// the command again.</p>
@@ -299,7 +299,7 @@ pub struct CancelCommandError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelCommandErrorKind {
-    /// <p>You can't specify an instance ID in more than one association.</p>
+    /// <p>You can't specify a managed node ID in more than one association.</p>
     DuplicateInstanceId(crate::error::DuplicateInstanceId),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -308,7 +308,7 @@ pub enum CancelCommandErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -318,7 +318,7 @@ pub enum CancelCommandErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -550,6 +550,9 @@ pub struct CreateActivationError {
 pub enum CreateActivationErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
+    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
+    /// document). You can only supply values to parameters defined in the SSM document.</p>
+    InvalidParameters(crate::error::InvalidParameters),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -557,6 +560,7 @@ impl std::fmt::Display for CreateActivationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateActivationErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateActivationErrorKind::InvalidParameters(_inner) => _inner.fmt(f),
             CreateActivationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -620,11 +624,16 @@ impl CreateActivationError {
             CreateActivationErrorKind::InternalServerError(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateActivationErrorKind::InvalidParameters`.
+    pub fn is_invalid_parameters(&self) -> bool {
+        matches!(&self.kind, CreateActivationErrorKind::InvalidParameters(_))
+    }
 }
 impl std::error::Error for CreateActivationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateActivationErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateActivationErrorKind::InvalidParameters(_inner) => Some(_inner),
             CreateActivationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -656,7 +665,7 @@ pub enum CreateAssociationErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -666,7 +675,7 @@ pub enum CreateAssociationErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -682,8 +691,8 @@ pub enum CreateAssociationErrorKind {
     /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
     /// not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
-    /// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
-    /// sent an document for a Windows instance to a Linux instance.</p>
+    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
+    /// sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -855,7 +864,7 @@ pub struct CreateAssociationBatchError {
 pub enum CreateAssociationBatchErrorKind {
     /// <p>You can have at most 2,000 active associations.</p>
     AssociationLimitExceeded(crate::error::AssociationLimitExceeded),
-    /// <p>You can't specify an instance ID in more than one association.</p>
+    /// <p>You can't specify a managed node ID in more than one association.</p>
     DuplicateInstanceId(crate::error::DuplicateInstanceId),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -866,7 +875,7 @@ pub enum CreateAssociationBatchErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -876,7 +885,7 @@ pub enum CreateAssociationBatchErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -892,8 +901,8 @@ pub enum CreateAssociationBatchErrorKind {
     /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
     /// not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
-    /// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
-    /// sent an document for a Windows instance to a Linux instance.</p>
+    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
+    /// sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2016,7 +2025,7 @@ pub enum DeleteAssociationErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -2026,7 +2035,7 @@ pub enum DeleteAssociationErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -2154,7 +2163,7 @@ pub struct DeleteDocumentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDocumentErrorKind {
-    /// <p>You must disassociate a document from all instances before you can delete it.</p>
+    /// <p>You must disassociate a document from all managed nodes before you can delete it.</p>
     AssociatedInstances(crate::error::AssociatedInstances),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -3065,7 +3074,7 @@ pub enum DeregisterManagedInstanceErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -3075,7 +3084,7 @@ pub enum DeregisterManagedInstanceErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -3689,7 +3698,7 @@ pub enum DescribeAssociationErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -3699,7 +3708,7 @@ pub enum DescribeAssociationErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -4728,7 +4737,7 @@ pub enum DescribeEffectiveInstanceAssociationsErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -4738,7 +4747,7 @@ pub enum DescribeEffectiveInstanceAssociationsErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -5032,7 +5041,7 @@ pub enum DescribeInstanceAssociationsStatusErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -5042,7 +5051,7 @@ pub enum DescribeInstanceAssociationsStatusErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -5175,7 +5184,7 @@ pub enum DescribeInstanceInformationErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -5185,7 +5194,7 @@ pub enum DescribeInstanceInformationErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -5335,7 +5344,7 @@ pub enum DescribeInstancePatchesErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -5345,7 +5354,7 @@ pub enum DescribeInstancePatchesErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -7862,7 +7871,7 @@ pub enum GetCommandInvocationErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -7872,7 +7881,7 @@ pub enum GetCommandInvocationErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -7880,8 +7889,8 @@ pub enum GetCommandInvocationErrorKind {
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The plugin name isn't valid.</p>
     InvalidPluginName(crate::error::InvalidPluginName),
-    /// <p>The command ID and instance ID you specified didn't match any invocations. Verify the
-    /// command ID and the instance ID and try again. </p>
+    /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the
+    /// command ID and the managed node ID and try again. </p>
     InvocationDoesNotExist(crate::error::InvocationDoesNotExist),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10835,7 +10844,7 @@ pub enum ListCommandInvocationsErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -10845,7 +10854,7 @@ pub enum ListCommandInvocationsErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -10991,7 +11000,7 @@ pub enum ListCommandsErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -11001,7 +11010,7 @@ pub enum ListCommandsErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -11131,8 +11140,8 @@ pub enum ListComplianceItemsErrorKind {
     InvalidNextToken(crate::error::InvalidNextToken),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
-    /// instance must be a registered, managed instance.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
+    /// instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11737,7 +11746,7 @@ pub enum ListInventoryEntriesErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -11747,7 +11756,7 @@ pub enum ListInventoryEntriesErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -12474,8 +12483,8 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
-    /// instance must be a registered, managed instance.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
+    /// instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12741,8 +12750,8 @@ pub enum PutComplianceItemsErrorKind {
     InvalidItemContentException(crate::error::InvalidItemContentException),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
-    /// instance must be a registered, managed instance.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
+    /// instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// <p>The inventory item size has exceeded the size limit.</p>
     ItemSizeLimitExceededException(crate::error::ItemSizeLimitExceededException),
@@ -12907,7 +12916,7 @@ pub enum PutInventoryErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -12917,7 +12926,7 @@ pub enum PutInventoryErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -14010,8 +14019,8 @@ pub enum RemoveTagsFromResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
-    /// instance must be a registered, managed instance.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
+    /// instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -14489,7 +14498,7 @@ pub struct SendCommandError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendCommandErrorKind {
-    /// <p>You can't specify an instance ID in more than one association.</p>
+    /// <p>You can't specify a managed node ID in more than one association.</p>
     DuplicateInstanceId(crate::error::DuplicateInstanceId),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -14500,7 +14509,7 @@ pub enum SendCommandErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -14510,7 +14519,7 @@ pub enum SendCommandErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -14530,8 +14539,8 @@ pub enum SendCommandErrorKind {
     InvalidRole(crate::error::InvalidRole),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::error::MaxDocumentSizeExceeded),
-    /// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
-    /// sent an document for a Windows instance to a Linux instance.</p>
+    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
+    /// sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15182,10 +15191,10 @@ pub enum StartSessionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
-    /// <p>The specified target instance for the session isn't fully configured for use with Session Manager. For
+    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with
     /// Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you
-    /// attempt to start a session on an instance that is located in a different account or Region</p>
+    /// attempt to start a session on a managed node that is located in a different account or Region</p>
     TargetNotConnected(crate::error::TargetNotConnected),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15865,7 +15874,7 @@ pub enum UpdateAssociationStatusErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -15875,7 +15884,7 @@ pub enum UpdateAssociationStatusErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -16811,7 +16820,7 @@ pub enum UpdateManagedInstanceRoleErrorKind {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -16821,7 +16830,7 @@ pub enum UpdateManagedInstanceRoleErrorKind {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -18697,7 +18706,7 @@ impl OpsItemAlreadyExistsException {
 /// <p>The following problems can cause this exception:</p>
 /// <ul>
 /// <li>
-/// <p>You don't have permission to access the instance.</p>
+/// <p>You don't have permission to access the managed node.</p>
 /// </li>
 /// <li>
 /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -18707,7 +18716,7 @@ impl OpsItemAlreadyExistsException {
 /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
 /// </li>
 /// <li>
-/// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+/// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
 /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
 /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
 /// </li>
@@ -20197,10 +20206,10 @@ impl AutomationExecutionNotFoundException {
     }
 }
 
-/// <p>The specified target instance for the session isn't fully configured for use with Session Manager. For
+/// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For
 /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with
 /// Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you
-/// attempt to start a session on an instance that is located in a different account or Region</p>
+/// attempt to start a session on a managed node that is located in a different account or Region</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetNotConnected {
@@ -20717,8 +20726,8 @@ impl InvalidAssociation {
     }
 }
 
-/// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
-/// sent an document for a Windows instance to a Linux instance.</p>
+/// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
+/// sent an document for a Windows managed node to a Linux node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlatformType {
@@ -20977,7 +20986,7 @@ impl InvalidNotificationConfig {
     }
 }
 
-/// <p>You can't specify an instance ID in more than one association.</p>
+/// <p>You can't specify a managed node ID in more than one association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateInstanceId {
@@ -21170,8 +21179,8 @@ impl AutomationStepNotFoundException {
     }
 }
 
-/// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
-/// instance must be a registered, managed instance.</p>
+/// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
+/// instance must be a registered managed node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceType {
@@ -24126,8 +24135,8 @@ impl UnsupportedFeatureRequiredException {
     }
 }
 
-/// <p>The command ID and instance ID you specified didn't match any invocations. Verify the
-/// command ID and the instance ID and try again. </p>
+/// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the
+/// command ID and the managed node ID and try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvocationDoesNotExist {
@@ -24966,7 +24975,7 @@ impl InvalidDeleteInventoryParametersException {
     }
 }
 
-/// <p>You must disassociate a document from all instances before you can delete it.</p>
+/// <p>You must disassociate a document from all managed nodes before you can delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedInstances {

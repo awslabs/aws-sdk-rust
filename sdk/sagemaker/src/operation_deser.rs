@@ -1599,6 +1599,83 @@ pub fn parse_create_image_version_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_inference_recommendations_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateInferenceRecommendationsJobOutput,
+    crate::error::CreateInferenceRecommendationsJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateInferenceRecommendationsJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateInferenceRecommendationsJobError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceInUse" => {
+            crate::error::CreateInferenceRecommendationsJobError {
+                meta: generic,
+                kind: crate::error::CreateInferenceRecommendationsJobErrorKind::ResourceInUse({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_in_use::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_in_use_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInferenceRecommendationsJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::CreateInferenceRecommendationsJobError {
+            meta: generic,
+            kind: crate::error::CreateInferenceRecommendationsJobErrorKind::ResourceLimitExceeded(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInferenceRecommendationsJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::CreateInferenceRecommendationsJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_inference_recommendations_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateInferenceRecommendationsJobOutput,
+    crate::error::CreateInferenceRecommendationsJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_inference_recommendations_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_inference_recommendations_job(response.body().as_ref(), output).map_err(crate::error::CreateInferenceRecommendationsJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_labeling_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLabelingJobOutput, crate::error::CreateLabelingJobError>
@@ -6268,6 +6345,66 @@ pub fn parse_describe_image_version_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_inference_recommendations_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeInferenceRecommendationsJobOutput,
+    crate::error::DescribeInferenceRecommendationsJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeInferenceRecommendationsJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeInferenceRecommendationsJobError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeInferenceRecommendationsJobError {
+                meta: generic,
+                kind: crate::error::DescribeInferenceRecommendationsJobErrorKind::ResourceNotFound(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output = crate::error::resource_not_found::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInferenceRecommendationsJobError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        _ => crate::error::DescribeInferenceRecommendationsJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_inference_recommendations_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeInferenceRecommendationsJobOutput,
+    crate::error::DescribeInferenceRecommendationsJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_inference_recommendations_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_inference_recommendations_job(response.body().as_ref(), output).map_err(crate::error::DescribeInferenceRecommendationsJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_labeling_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -6322,6 +6459,65 @@ pub fn parse_describe_labeling_job_response(
             output,
         )
         .map_err(crate::error::DescribeLabelingJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_lineage_group_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLineageGroupOutput,
+    crate::error::DescribeLineageGroupError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeLineageGroupError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeLineageGroupError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::DescribeLineageGroupError {
+                meta: generic,
+                kind: crate::error::DescribeLineageGroupErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLineageGroupError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeLineageGroupError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_lineage_group_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLineageGroupOutput,
+    crate::error::DescribeLineageGroupError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_lineage_group_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_lineage_group(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeLineageGroupError::unhandled)?;
         output.build()
     })
 }
@@ -7585,6 +7781,65 @@ pub fn parse_get_device_fleet_report_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_lineage_group_policy_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetLineageGroupPolicyOutput,
+    crate::error::GetLineageGroupPolicyError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetLineageGroupPolicyError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetLineageGroupPolicyError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::GetLineageGroupPolicyError {
+                meta: generic,
+                kind: crate::error::GetLineageGroupPolicyErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetLineageGroupPolicyError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::GetLineageGroupPolicyError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_lineage_group_policy_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetLineageGroupPolicyOutput,
+    crate::error::GetLineageGroupPolicyError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_lineage_group_policy_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_lineage_group_policy(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetLineageGroupPolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_model_package_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -8568,6 +8823,40 @@ pub fn parse_list_image_versions_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_inference_recommendations_jobs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListInferenceRecommendationsJobsOutput,
+    crate::error::ListInferenceRecommendationsJobsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListInferenceRecommendationsJobsError::unhandled)?;
+    Err(crate::error::ListInferenceRecommendationsJobsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_inference_recommendations_jobs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListInferenceRecommendationsJobsOutput,
+    crate::error::ListInferenceRecommendationsJobsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_inference_recommendations_jobs_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_list_inference_recommendations_jobs(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListInferenceRecommendationsJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_labeling_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLabelingJobsOutput, crate::error::ListLabelingJobsError>
@@ -8660,6 +8949,34 @@ pub fn parse_list_labeling_jobs_for_workteam_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_lineage_groups_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListLineageGroupsOutput, crate::error::ListLineageGroupsError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListLineageGroupsError::unhandled)?;
+    Err(crate::error::ListLineageGroupsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_lineage_groups_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListLineageGroupsOutput, crate::error::ListLineageGroupsError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_lineage_groups_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_lineage_groups(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListLineageGroupsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_model_bias_job_definitions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -8719,6 +9036,34 @@ pub fn parse_list_model_explainability_job_definitions_response(
             crate::output::list_model_explainability_job_definitions_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_model_explainability_job_definitions(response.body().as_ref(), output).map_err(crate::error::ListModelExplainabilityJobDefinitionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_model_metadata_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListModelMetadataOutput, crate::error::ListModelMetadataError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListModelMetadataError::unhandled)?;
+    Err(crate::error::ListModelMetadataError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_model_metadata_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListModelMetadataOutput, crate::error::ListModelMetadataError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_model_metadata_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_model_metadata(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListModelMetadataError::unhandled)?;
         output.build()
     })
 }
@@ -9705,6 +10050,59 @@ pub fn parse_put_model_package_group_policy_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_query_lineage_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::QueryLineageOutput, crate::error::QueryLineageError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::QueryLineageError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::QueryLineageError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::QueryLineageError {
+                meta: generic,
+                kind: crate::error::QueryLineageErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::QueryLineageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::QueryLineageError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_query_lineage_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::QueryLineageOutput, crate::error::QueryLineageError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::query_lineage_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_query_lineage(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::QueryLineageError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_devices_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterDevicesOutput, crate::error::RegisterDevicesError> {
@@ -10452,6 +10850,61 @@ pub fn parse_stop_hyper_parameter_tuning_job_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stop_hyper_parameter_tuning_job_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_inference_recommendations_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopInferenceRecommendationsJobOutput,
+    crate::error::StopInferenceRecommendationsJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StopInferenceRecommendationsJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StopInferenceRecommendationsJobError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ResourceNotFound" => {
+            crate::error::StopInferenceRecommendationsJobError {
+                meta: generic,
+                kind: crate::error::StopInferenceRecommendationsJobErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::StopInferenceRecommendationsJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::StopInferenceRecommendationsJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_inference_recommendations_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopInferenceRecommendationsJobOutput,
+    crate::error::StopInferenceRecommendationsJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::stop_inference_recommendations_job_output::Builder::default();
         let _ = response;
         output.build()
     })

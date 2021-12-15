@@ -271,6 +271,22 @@ pub fn ser_payload_send_messages_input(
     ))
 }
 
+pub fn ser_payload_send_otp_message_input(
+    payload: &std::option::Option<crate::model::SendOtpMessageRequestParameters>,
+) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+    let payload = match payload.as_ref() {
+        Some(t) => t,
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
+    };
+    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_send_otp_message_input_send_otp_message_request_parameters(payload)?
+    ))
+}
+
 pub fn ser_payload_send_users_messages_input(
     payload: &std::option::Option<crate::model::SendUsersMessageRequest>,
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
@@ -687,6 +703,22 @@ pub fn ser_payload_update_voice_template_input(
     ))
 }
 
+pub fn ser_payload_verify_otp_message_input(
+    payload: &std::option::Option<crate::model::VerifyOtpMessageRequestParameters>,
+) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
+    let payload = match payload.as_ref() {
+        Some(t) => t,
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
+    };
+    #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_verify_otp_message_input_verify_otp_message_request_parameters(payload)?
+    ))
+}
+
 pub fn rest_json_unsetpayload() -> std::vec::Vec<u8> {
     b"{}"[..].into()
 }
@@ -866,6 +898,19 @@ pub fn serialize_member_com_amazonaws_pinpoint_synthetic_send_messages_input_mes
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_model_message_request(&mut object, input)?;
+    object.finish();
+    Ok(out.into_bytes())
+}
+
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_send_otp_message_input_send_otp_message_request_parameters(
+    input: &crate::model::SendOtpMessageRequestParameters,
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_model_send_otp_message_request_parameters(
+        &mut object,
+        input,
+    )?;
     object.finish();
     Ok(out.into_bytes())
 }
@@ -1147,6 +1192,19 @@ pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_voice_template_i
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_model_voice_template_request(&mut object, input)?;
+    object.finish();
+    Ok(out.into_bytes())
+}
+
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_verify_otp_message_input_verify_otp_message_request_parameters(
+    input: &crate::model::VerifyOtpMessageRequestParameters,
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_model_verify_otp_message_request_parameters(
+        &mut object,
+        input,
+    )?;
     object.finish();
     Ok(out.into_bytes())
 }

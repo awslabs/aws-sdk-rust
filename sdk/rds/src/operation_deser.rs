@@ -10603,6 +10603,93 @@ pub fn parse_purchase_reserved_db_instances_offering_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_reboot_db_cluster_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::RebootDbClusterOutput, crate::error::RebootDBClusterError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RebootDBClusterError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::RebootDBClusterError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DBClusterNotFoundFault" => crate::error::RebootDBClusterError {
+            meta: generic,
+            kind: crate::error::RebootDBClusterErrorKind::DbClusterNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootDBClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidDBClusterStateFault" => crate::error::RebootDBClusterError {
+            meta: generic,
+            kind: crate::error::RebootDBClusterErrorKind::InvalidDbClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootDBClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidDBInstanceState" => crate::error::RebootDBClusterError {
+            meta: generic,
+            kind: crate::error::RebootDBClusterErrorKind::InvalidDbInstanceStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootDBClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RebootDBClusterError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_reboot_db_cluster_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::RebootDbClusterOutput, crate::error::RebootDBClusterError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::reboot_db_cluster_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_reboot_db_cluster(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RebootDBClusterError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_reboot_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RebootDbInstanceOutput, crate::error::RebootDBInstanceError>

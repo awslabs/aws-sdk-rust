@@ -142,6 +142,145 @@ impl std::error::Error for CreateBatchInferenceJobError {
     }
 }
 
+/// Error type for the `CreateBatchSegmentJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateBatchSegmentJobError {
+    /// Kind of error that occurred.
+    pub kind: CreateBatchSegmentJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateBatchSegmentJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateBatchSegmentJobErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of requests per second has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateBatchSegmentJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateBatchSegmentJobErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateBatchSegmentJobErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateBatchSegmentJobErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateBatchSegmentJobErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            CreateBatchSegmentJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateBatchSegmentJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateBatchSegmentJobError {
+    fn code(&self) -> Option<&str> {
+        CreateBatchSegmentJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateBatchSegmentJobError {
+    /// Creates a new `CreateBatchSegmentJobError`.
+    pub fn new(kind: CreateBatchSegmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateBatchSegmentJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateBatchSegmentJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateBatchSegmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateBatchSegmentJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateBatchSegmentJobErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchSegmentJobErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBatchSegmentJobErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchSegmentJobErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBatchSegmentJobErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchSegmentJobErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBatchSegmentJobErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchSegmentJobErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBatchSegmentJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchSegmentJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateBatchSegmentJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateBatchSegmentJobErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateBatchSegmentJobErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateBatchSegmentJobErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateBatchSegmentJobErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            CreateBatchSegmentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateBatchSegmentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateCampaign` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1073,6 +1212,134 @@ impl std::error::Error for CreateFilterError {
             CreateFilterErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateFilterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateRecommenderError {
+    /// Kind of error that occurred.
+    pub kind: CreateRecommenderErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateRecommenderErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The limit on the number of requests per second has been exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateRecommenderError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateRecommenderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateRecommenderErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateRecommenderErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateRecommenderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateRecommenderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateRecommenderError {
+    fn code(&self) -> Option<&str> {
+        CreateRecommenderError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateRecommenderError {
+    /// Creates a new `CreateRecommenderError`.
+    pub fn new(kind: CreateRecommenderErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateRecommenderError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateRecommenderErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateRecommenderError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateRecommenderErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateRecommenderErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRecommenderErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateRecommenderErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRecommenderErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateRecommenderErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRecommenderErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateRecommenderErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRecommenderErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateRecommenderError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateRecommenderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateRecommenderErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateRecommenderErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateRecommenderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateRecommenderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2031,6 +2298,123 @@ impl std::error::Error for DeleteFilterError {
     }
 }
 
+/// Error type for the `DeleteRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteRecommenderError {
+    /// Kind of error that occurred.
+    pub kind: DeleteRecommenderErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteRecommenderErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteRecommenderError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteRecommenderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteRecommenderErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteRecommenderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteRecommenderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteRecommenderError {
+    fn code(&self) -> Option<&str> {
+        DeleteRecommenderError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteRecommenderError {
+    /// Creates a new `DeleteRecommenderError`.
+    pub fn new(kind: DeleteRecommenderErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteRecommenderError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteRecommenderErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteRecommenderError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteRecommenderErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteRecommenderErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRecommenderErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteRecommenderErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRecommenderErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteRecommenderErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRecommenderErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteRecommenderError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteRecommenderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteRecommenderErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteRecommenderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteRecommenderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteSchema` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2467,6 +2851,112 @@ impl std::error::Error for DescribeBatchInferenceJobError {
             DescribeBatchInferenceJobErrorKind::InvalidInputException(_inner) => Some(_inner),
             DescribeBatchInferenceJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeBatchInferenceJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeBatchSegmentJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeBatchSegmentJobError {
+    /// Kind of error that occurred.
+    pub kind: DescribeBatchSegmentJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeBatchSegmentJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeBatchSegmentJobErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeBatchSegmentJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeBatchSegmentJobErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DescribeBatchSegmentJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeBatchSegmentJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeBatchSegmentJobError {
+    fn code(&self) -> Option<&str> {
+        DescribeBatchSegmentJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeBatchSegmentJobError {
+    /// Creates a new `DescribeBatchSegmentJobError`.
+    pub fn new(kind: DescribeBatchSegmentJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeBatchSegmentJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeBatchSegmentJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeBatchSegmentJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeBatchSegmentJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeBatchSegmentJobErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBatchSegmentJobErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBatchSegmentJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBatchSegmentJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeBatchSegmentJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeBatchSegmentJobErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DescribeBatchSegmentJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeBatchSegmentJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3432,6 +3922,112 @@ impl std::error::Error for DescribeRecipeError {
     }
 }
 
+/// Error type for the `DescribeRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeRecommenderError {
+    /// Kind of error that occurred.
+    pub kind: DescribeRecommenderErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeRecommenderErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeRecommenderError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeRecommenderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DescribeRecommenderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeRecommenderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeRecommenderError {
+    fn code(&self) -> Option<&str> {
+        DescribeRecommenderError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeRecommenderError {
+    /// Creates a new `DescribeRecommenderError`.
+    pub fn new(kind: DescribeRecommenderErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeRecommenderError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeRecommenderErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeRecommenderError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeRecommenderErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeRecommenderErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRecommenderErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeRecommenderErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRecommenderErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeRecommenderError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeRecommenderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DescribeRecommenderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeRecommenderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeSchema` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3969,6 +4565,112 @@ impl std::error::Error for ListBatchInferenceJobsError {
             ListBatchInferenceJobsErrorKind::InvalidInputException(_inner) => Some(_inner),
             ListBatchInferenceJobsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListBatchInferenceJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListBatchSegmentJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListBatchSegmentJobsError {
+    /// Kind of error that occurred.
+    pub kind: ListBatchSegmentJobsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListBatchSegmentJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListBatchSegmentJobsErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListBatchSegmentJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListBatchSegmentJobsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListBatchSegmentJobsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListBatchSegmentJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListBatchSegmentJobsError {
+    fn code(&self) -> Option<&str> {
+        ListBatchSegmentJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListBatchSegmentJobsError {
+    /// Creates a new `ListBatchSegmentJobsError`.
+    pub fn new(kind: ListBatchSegmentJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListBatchSegmentJobsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListBatchSegmentJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListBatchSegmentJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListBatchSegmentJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListBatchSegmentJobsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBatchSegmentJobsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListBatchSegmentJobsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBatchSegmentJobsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+}
+impl std::error::Error for ListBatchSegmentJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListBatchSegmentJobsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListBatchSegmentJobsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListBatchSegmentJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4708,6 +5410,8 @@ pub struct ListRecipesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecipesErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4716,6 +5420,7 @@ pub enum ListRecipesErrorKind {
 impl std::fmt::Display for ListRecipesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListRecipesErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             ListRecipesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
             ListRecipesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4773,6 +5478,10 @@ impl ListRecipesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListRecipesErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, ListRecipesErrorKind::InvalidInputException(_))
+    }
     /// Returns `true` if the error kind is `ListRecipesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
@@ -4784,8 +5493,115 @@ impl ListRecipesError {
 impl std::error::Error for ListRecipesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListRecipesErrorKind::InvalidInputException(_inner) => Some(_inner),
             ListRecipesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
             ListRecipesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListRecommenders` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListRecommendersError {
+    /// Kind of error that occurred.
+    pub kind: ListRecommendersErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListRecommenders` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListRecommendersErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListRecommendersError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListRecommendersErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListRecommendersErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListRecommendersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListRecommendersError {
+    fn code(&self) -> Option<&str> {
+        ListRecommendersError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListRecommendersError {
+    /// Creates a new `ListRecommendersError`.
+    pub fn new(kind: ListRecommendersErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListRecommendersError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListRecommendersErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListRecommendersError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListRecommendersErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListRecommendersErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendersErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListRecommendersErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRecommendersErrorKind::InvalidNextTokenException(_)
+        )
+    }
+}
+impl std::error::Error for ListRecommendersError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListRecommendersErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListRecommendersErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListRecommendersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5337,6 +6153,123 @@ impl std::error::Error for UpdateCampaignError {
             UpdateCampaignErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateCampaignErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateCampaignErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateRecommenderError {
+    /// Kind of error that occurred.
+    pub kind: UpdateRecommenderErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateRecommender` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateRecommenderErrorKind {
+    /// <p>Provide a valid value for the field or parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The specified resource is in use.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>Could not find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateRecommenderError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateRecommenderErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateRecommenderErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdateRecommenderErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateRecommenderErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateRecommenderError {
+    fn code(&self) -> Option<&str> {
+        UpdateRecommenderError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateRecommenderError {
+    /// Creates a new `UpdateRecommenderError`.
+    pub fn new(kind: UpdateRecommenderErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateRecommenderError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateRecommenderErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateRecommenderError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateRecommenderErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateRecommenderErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRecommenderErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRecommenderErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRecommenderErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRecommenderErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRecommenderErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateRecommenderError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateRecommenderErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateRecommenderErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdateRecommenderErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateRecommenderErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

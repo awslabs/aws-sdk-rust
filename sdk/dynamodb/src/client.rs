@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_dynamodb::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -477,7 +477,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -547,6 +547,70 @@ pub mod fluent_builders {
             self.inner = self.inner.set_statements(input);
             self
         }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate
+        /// <code>ConsumedCapacity</code> for the operation, together with
+        /// <code>ConsumedCapacity</code> for each table and secondary index that was
+        /// accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and
+        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+        /// information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate
+        /// <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+        /// response.</p>
+        /// </li>
+        /// </ul>
+        pub fn return_consumed_capacity(
+            mut self,
+            inp: crate::model::ReturnConsumedCapacity,
+        ) -> Self {
+            self.inner = self.inner.return_consumed_capacity(inp);
+            self
+        }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate
+        /// <code>ConsumedCapacity</code> for the operation, together with
+        /// <code>ConsumedCapacity</code> for each table and secondary index that was
+        /// accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and
+        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+        /// information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate
+        /// <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+        /// response.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_return_consumed_capacity(
+            mut self,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
+        ) -> Self {
+            self.inner = self.inner.set_return_consumed_capacity(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `BatchGetItem`.
     ///
@@ -600,7 +664,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchGetItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -874,8 +938,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_request_items(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -906,8 +970,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1023,7 +1087,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchWriteItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1186,8 +1250,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_request_items(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1218,8 +1282,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1308,7 +1372,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBackup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1444,7 +1508,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateGlobalTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1546,7 +1610,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2187,6 +2251,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn table_class(mut self, inp: crate::model::TableClass) -> Self {
+            self.inner = self.inner.table_class(inp);
+            self
+        }
+        /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn set_table_class(
+            mut self,
+            input: std::option::Option<crate::model::TableClass>,
+        ) -> Self {
+            self.inner = self.inner.set_table_class(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteBackup`.
     ///
@@ -2196,7 +2275,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBackup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2276,7 +2355,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2468,8 +2547,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_return_values(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2500,8 +2579,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2818,7 +2897,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2890,7 +2969,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeBackup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2971,7 +3050,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeContinuousBackups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3044,7 +3123,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeContributorInsights<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3124,7 +3203,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeEndpoints<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3184,7 +3263,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeExport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3259,7 +3338,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeGlobalTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3336,7 +3415,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeGlobalTableSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3409,7 +3488,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeKinesisStreamingDestination<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3554,7 +3633,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLimits<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3623,7 +3702,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3697,7 +3776,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTableReplicaAutoScaling<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3767,7 +3846,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTimeToLive<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3838,7 +3917,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableKinesisStreamingDestination<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3923,7 +4002,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableKinesisStreamingDestination<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4004,7 +4083,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4108,6 +4187,70 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate
+        /// <code>ConsumedCapacity</code> for the operation, together with
+        /// <code>ConsumedCapacity</code> for each table and secondary index that was
+        /// accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and
+        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+        /// information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate
+        /// <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+        /// response.</p>
+        /// </li>
+        /// </ul>
+        pub fn return_consumed_capacity(
+            mut self,
+            inp: crate::model::ReturnConsumedCapacity,
+        ) -> Self {
+            self.inner = self.inner.return_consumed_capacity(inp);
+            self
+        }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate
+        /// <code>ConsumedCapacity</code> for the operation, together with
+        /// <code>ConsumedCapacity</code> for each table and secondary index that was
+        /// accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and
+        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+        /// information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate
+        /// <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+        /// response.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_return_consumed_capacity(
+            mut self,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
+        ) -> Self {
+            self.inner = self.inner.set_return_consumed_capacity(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ExecuteTransaction`.
     ///
@@ -4122,7 +4265,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExecuteTransaction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4210,6 +4353,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
+        /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+        pub fn return_consumed_capacity(
+            mut self,
+            inp: crate::model::ReturnConsumedCapacity,
+        ) -> Self {
+            self.inner = self.inner.return_consumed_capacity(inp);
+            self
+        }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
+        /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+        pub fn set_return_consumed_capacity(
+            mut self,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
+        ) -> Self {
+            self.inner = self.inner.set_return_consumed_capacity(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ExportTableToPointInTime`.
     ///
@@ -4219,7 +4380,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExportTableToPointInTime<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4445,7 +4606,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4576,8 +4737,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_consistent_read(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -4608,8 +4769,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -4801,7 +4962,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBackups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4978,7 +5139,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListContributorInsights<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5068,7 +5229,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListExports<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5166,7 +5327,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListGlobalTables<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5274,7 +5435,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTables<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5366,7 +5527,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsOfResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5526,7 +5687,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5731,8 +5892,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_return_values(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -5763,8 +5924,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6131,7 +6292,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct Query<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6521,8 +6682,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclusive_start_key(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6553,8 +6714,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -7113,7 +7274,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RestoreTableFromBackup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7336,7 +7497,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RestoreTableToPointInTime<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7577,7 +7738,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct Scan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7898,8 +8059,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclusive_start_key(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -7930,8 +8091,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -8320,7 +8481,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8435,7 +8596,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TransactGetItems<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8609,7 +8770,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TransactWriteItems<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8687,8 +8848,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transact_items(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -8719,8 +8880,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -8828,7 +8989,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8930,7 +9091,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateContinuousBackups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9021,7 +9182,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateContributorInsights<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9140,7 +9301,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateGlobalTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9230,7 +9391,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateGlobalTableSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9443,7 +9604,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateItem<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9694,8 +9855,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_return_values(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -9726,8 +9887,8 @@ pub mod fluent_builders {
             self.inner = self.inner.return_consumed_capacity(inp);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -10267,7 +10428,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10540,6 +10701,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replica_updates(input);
             self
         }
+        /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn table_class(mut self, inp: crate::model::TableClass) -> Self {
+            self.inner = self.inner.table_class(inp);
+            self
+        }
+        /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn set_table_class(
+            mut self,
+            input: std::option::Option<crate::model::TableClass>,
+        ) -> Self {
+            self.inner = self.inner.set_table_class(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateTableReplicaAutoScaling`.
     ///
@@ -10551,7 +10727,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateTableReplicaAutoScaling<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10713,7 +10889,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateTimeToLive<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10796,17 +10972,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -10815,7 +10995,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -10831,11 +11011,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

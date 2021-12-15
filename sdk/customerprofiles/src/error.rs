@@ -1205,6 +1205,145 @@ impl std::error::Error for DeleteProfileObjectTypeError {
     }
 }
 
+/// Error type for the `GetAutoMergingPreview` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetAutoMergingPreviewError {
+    /// Kind of error that occurred.
+    pub kind: GetAutoMergingPreviewErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetAutoMergingPreview` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetAutoMergingPreviewErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal service error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You exceeded the maximum number of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetAutoMergingPreviewError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetAutoMergingPreviewErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetAutoMergingPreviewErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetAutoMergingPreviewErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetAutoMergingPreviewErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetAutoMergingPreviewErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetAutoMergingPreviewErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetAutoMergingPreviewError {
+    fn code(&self) -> Option<&str> {
+        GetAutoMergingPreviewError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetAutoMergingPreviewError {
+    /// Creates a new `GetAutoMergingPreviewError`.
+    pub fn new(kind: GetAutoMergingPreviewErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetAutoMergingPreviewError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetAutoMergingPreviewErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetAutoMergingPreviewError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetAutoMergingPreviewErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetAutoMergingPreviewErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAutoMergingPreviewErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAutoMergingPreviewErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAutoMergingPreviewErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAutoMergingPreviewErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAutoMergingPreviewErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAutoMergingPreviewErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAutoMergingPreviewErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetAutoMergingPreviewErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAutoMergingPreviewErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetAutoMergingPreviewError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetAutoMergingPreviewErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetAutoMergingPreviewErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetAutoMergingPreviewErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetAutoMergingPreviewErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetAutoMergingPreviewErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetAutoMergingPreviewErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1325,6 +1464,145 @@ impl std::error::Error for GetDomainError {
             GetDomainErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetDomainErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetIdentityResolutionJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetIdentityResolutionJobError {
+    /// Kind of error that occurred.
+    pub kind: GetIdentityResolutionJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetIdentityResolutionJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetIdentityResolutionJobErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal service error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You exceeded the maximum number of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetIdentityResolutionJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetIdentityResolutionJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetIdentityResolutionJobErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetIdentityResolutionJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetIdentityResolutionJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetIdentityResolutionJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetIdentityResolutionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetIdentityResolutionJobError {
+    fn code(&self) -> Option<&str> {
+        GetIdentityResolutionJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetIdentityResolutionJobError {
+    /// Creates a new `GetIdentityResolutionJobError`.
+    pub fn new(kind: GetIdentityResolutionJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetIdentityResolutionJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetIdentityResolutionJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetIdentityResolutionJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetIdentityResolutionJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetIdentityResolutionJobErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIdentityResolutionJobErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetIdentityResolutionJobErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIdentityResolutionJobErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetIdentityResolutionJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIdentityResolutionJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetIdentityResolutionJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIdentityResolutionJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetIdentityResolutionJobErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIdentityResolutionJobErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetIdentityResolutionJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetIdentityResolutionJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetIdentityResolutionJobErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetIdentityResolutionJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetIdentityResolutionJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetIdentityResolutionJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetIdentityResolutionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2133,6 +2411,145 @@ impl std::error::Error for ListDomainsError {
             ListDomainsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListDomainsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListDomainsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListIdentityResolutionJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListIdentityResolutionJobsError {
+    /// Kind of error that occurred.
+    pub kind: ListIdentityResolutionJobsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListIdentityResolutionJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListIdentityResolutionJobsErrorKind {
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The input you provided is invalid.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal service error occurred.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The requested resource does not exist, or access was denied.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You exceeded the maximum number of requests.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListIdentityResolutionJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListIdentityResolutionJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListIdentityResolutionJobsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListIdentityResolutionJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListIdentityResolutionJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListIdentityResolutionJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListIdentityResolutionJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListIdentityResolutionJobsError {
+    fn code(&self) -> Option<&str> {
+        ListIdentityResolutionJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListIdentityResolutionJobsError {
+    /// Creates a new `ListIdentityResolutionJobsError`.
+    pub fn new(kind: ListIdentityResolutionJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListIdentityResolutionJobsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListIdentityResolutionJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListIdentityResolutionJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListIdentityResolutionJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListIdentityResolutionJobsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListIdentityResolutionJobsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListIdentityResolutionJobsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListIdentityResolutionJobsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListIdentityResolutionJobsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListIdentityResolutionJobsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListIdentityResolutionJobsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListIdentityResolutionJobsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListIdentityResolutionJobsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListIdentityResolutionJobsErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListIdentityResolutionJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListIdentityResolutionJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListIdentityResolutionJobsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListIdentityResolutionJobsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListIdentityResolutionJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListIdentityResolutionJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListIdentityResolutionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

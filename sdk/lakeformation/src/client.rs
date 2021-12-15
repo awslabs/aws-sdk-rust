@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_lakeformation::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -104,6 +104,27 @@ where
     pub fn batch_revoke_permissions(&self) -> fluent_builders::BatchRevokePermissions<C, M, R> {
         fluent_builders::BatchRevokePermissions::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CancelTransaction` operation.
+    ///
+    /// See [`CancelTransaction`](crate::client::fluent_builders::CancelTransaction) for more information about the
+    /// operation and its arguments.
+    pub fn cancel_transaction(&self) -> fluent_builders::CancelTransaction<C, M, R> {
+        fluent_builders::CancelTransaction::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CommitTransaction` operation.
+    ///
+    /// See [`CommitTransaction`](crate::client::fluent_builders::CommitTransaction) for more information about the
+    /// operation and its arguments.
+    pub fn commit_transaction(&self) -> fluent_builders::CommitTransaction<C, M, R> {
+        fluent_builders::CommitTransaction::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateDataCellsFilter` operation.
+    ///
+    /// See [`CreateDataCellsFilter`](crate::client::fluent_builders::CreateDataCellsFilter) for more information about the
+    /// operation and its arguments.
+    pub fn create_data_cells_filter(&self) -> fluent_builders::CreateDataCellsFilter<C, M, R> {
+        fluent_builders::CreateDataCellsFilter::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateLFTag` operation.
     ///
     /// See [`CreateLFTag`](crate::client::fluent_builders::CreateLFTag) for more information about the
@@ -111,12 +132,26 @@ where
     pub fn create_lf_tag(&self) -> fluent_builders::CreateLFTag<C, M, R> {
         fluent_builders::CreateLFTag::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteDataCellsFilter` operation.
+    ///
+    /// See [`DeleteDataCellsFilter`](crate::client::fluent_builders::DeleteDataCellsFilter) for more information about the
+    /// operation and its arguments.
+    pub fn delete_data_cells_filter(&self) -> fluent_builders::DeleteDataCellsFilter<C, M, R> {
+        fluent_builders::DeleteDataCellsFilter::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteLFTag` operation.
     ///
     /// See [`DeleteLFTag`](crate::client::fluent_builders::DeleteLFTag) for more information about the
     /// operation and its arguments.
     pub fn delete_lf_tag(&self) -> fluent_builders::DeleteLFTag<C, M, R> {
         fluent_builders::DeleteLFTag::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteObjectsOnCancel` operation.
+    ///
+    /// See [`DeleteObjectsOnCancel`](crate::client::fluent_builders::DeleteObjectsOnCancel) for more information about the
+    /// operation and its arguments.
+    pub fn delete_objects_on_cancel(&self) -> fluent_builders::DeleteObjectsOnCancel<C, M, R> {
+        fluent_builders::DeleteObjectsOnCancel::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeregisterResource` operation.
     ///
@@ -131,6 +166,20 @@ where
     /// operation and its arguments.
     pub fn describe_resource(&self) -> fluent_builders::DescribeResource<C, M, R> {
         fluent_builders::DescribeResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeTransaction` operation.
+    ///
+    /// See [`DescribeTransaction`](crate::client::fluent_builders::DescribeTransaction) for more information about the
+    /// operation and its arguments.
+    pub fn describe_transaction(&self) -> fluent_builders::DescribeTransaction<C, M, R> {
+        fluent_builders::DescribeTransaction::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ExtendTransaction` operation.
+    ///
+    /// See [`ExtendTransaction`](crate::client::fluent_builders::ExtendTransaction) for more information about the
+    /// operation and its arguments.
+    pub fn extend_transaction(&self) -> fluent_builders::ExtendTransaction<C, M, R> {
+        fluent_builders::ExtendTransaction::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetDataLakeSettings` operation.
     ///
@@ -155,6 +204,20 @@ where
     pub fn get_lf_tag(&self) -> fluent_builders::GetLFTag<C, M, R> {
         fluent_builders::GetLFTag::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetQueryState` operation.
+    ///
+    /// See [`GetQueryState`](crate::client::fluent_builders::GetQueryState) for more information about the
+    /// operation and its arguments.
+    pub fn get_query_state(&self) -> fluent_builders::GetQueryState<C, M, R> {
+        fluent_builders::GetQueryState::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetQueryStatistics` operation.
+    ///
+    /// See [`GetQueryStatistics`](crate::client::fluent_builders::GetQueryStatistics) for more information about the
+    /// operation and its arguments.
+    pub fn get_query_statistics(&self) -> fluent_builders::GetQueryStatistics<C, M, R> {
+        fluent_builders::GetQueryStatistics::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetResourceLFTags` operation.
     ///
     /// See [`GetResourceLFTags`](crate::client::fluent_builders::GetResourceLFTags) for more information about the
@@ -162,12 +225,40 @@ where
     pub fn get_resource_lf_tags(&self) -> fluent_builders::GetResourceLFTags<C, M, R> {
         fluent_builders::GetResourceLFTags::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetTableObjects` operation.
+    ///
+    /// See [`GetTableObjects`](crate::client::fluent_builders::GetTableObjects) for more information about the
+    /// operation and its arguments.
+    pub fn get_table_objects(&self) -> fluent_builders::GetTableObjects<C, M, R> {
+        fluent_builders::GetTableObjects::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetWorkUnitResults` operation.
+    ///
+    /// See [`GetWorkUnitResults`](crate::client::fluent_builders::GetWorkUnitResults) for more information about the
+    /// operation and its arguments.
+    pub fn get_work_unit_results(&self) -> fluent_builders::GetWorkUnitResults<C, M, R> {
+        fluent_builders::GetWorkUnitResults::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetWorkUnits` operation.
+    ///
+    /// See [`GetWorkUnits`](crate::client::fluent_builders::GetWorkUnits) for more information about the
+    /// operation and its arguments.
+    pub fn get_work_units(&self) -> fluent_builders::GetWorkUnits<C, M, R> {
+        fluent_builders::GetWorkUnits::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GrantPermissions` operation.
     ///
     /// See [`GrantPermissions`](crate::client::fluent_builders::GrantPermissions) for more information about the
     /// operation and its arguments.
     pub fn grant_permissions(&self) -> fluent_builders::GrantPermissions<C, M, R> {
         fluent_builders::GrantPermissions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListDataCellsFilter` operation.
+    ///
+    /// See [`ListDataCellsFilter`](crate::client::fluent_builders::ListDataCellsFilter) for more information about the
+    /// operation and its arguments.
+    pub fn list_data_cells_filter(&self) -> fluent_builders::ListDataCellsFilter<C, M, R> {
+        fluent_builders::ListDataCellsFilter::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListLFTags` operation.
     ///
@@ -189,6 +280,22 @@ where
     /// operation and its arguments.
     pub fn list_resources(&self) -> fluent_builders::ListResources<C, M, R> {
         fluent_builders::ListResources::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListTableStorageOptimizers` operation.
+    ///
+    /// See [`ListTableStorageOptimizers`](crate::client::fluent_builders::ListTableStorageOptimizers) for more information about the
+    /// operation and its arguments.
+    pub fn list_table_storage_optimizers(
+        &self,
+    ) -> fluent_builders::ListTableStorageOptimizers<C, M, R> {
+        fluent_builders::ListTableStorageOptimizers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListTransactions` operation.
+    ///
+    /// See [`ListTransactions`](crate::client::fluent_builders::ListTransactions) for more information about the
+    /// operation and its arguments.
+    pub fn list_transactions(&self) -> fluent_builders::ListTransactions<C, M, R> {
+        fluent_builders::ListTransactions::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `PutDataLakeSettings` operation.
     ///
@@ -234,6 +341,20 @@ where
     pub fn search_tables_by_lf_tags(&self) -> fluent_builders::SearchTablesByLFTags<C, M, R> {
         fluent_builders::SearchTablesByLFTags::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `StartQueryPlanning` operation.
+    ///
+    /// See [`StartQueryPlanning`](crate::client::fluent_builders::StartQueryPlanning) for more information about the
+    /// operation and its arguments.
+    pub fn start_query_planning(&self) -> fluent_builders::StartQueryPlanning<C, M, R> {
+        fluent_builders::StartQueryPlanning::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StartTransaction` operation.
+    ///
+    /// See [`StartTransaction`](crate::client::fluent_builders::StartTransaction) for more information about the
+    /// operation and its arguments.
+    pub fn start_transaction(&self) -> fluent_builders::StartTransaction<C, M, R> {
+        fluent_builders::StartTransaction::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateLFTag` operation.
     ///
     /// See [`UpdateLFTag`](crate::client::fluent_builders::UpdateLFTag) for more information about the
@@ -248,6 +369,22 @@ where
     pub fn update_resource(&self) -> fluent_builders::UpdateResource<C, M, R> {
         fluent_builders::UpdateResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateTableObjects` operation.
+    ///
+    /// See [`UpdateTableObjects`](crate::client::fluent_builders::UpdateTableObjects) for more information about the
+    /// operation and its arguments.
+    pub fn update_table_objects(&self) -> fluent_builders::UpdateTableObjects<C, M, R> {
+        fluent_builders::UpdateTableObjects::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateTableStorageOptimizer` operation.
+    ///
+    /// See [`UpdateTableStorageOptimizer`](crate::client::fluent_builders::UpdateTableStorageOptimizer) for more information about the
+    /// operation and its arguments.
+    pub fn update_table_storage_optimizer(
+        &self,
+    ) -> fluent_builders::UpdateTableStorageOptimizer<C, M, R> {
+        fluent_builders::UpdateTableStorageOptimizer::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     //!
@@ -259,11 +396,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddLFTagsToResource`.
     ///
-    /// <p>Attaches one or more tags to an existing resource.</p>
+    /// <p>Attaches one or more LF-tags to an existing resource.</p>
     #[derive(std::fmt::Debug)]
     pub struct AddLFTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -316,22 +453,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The resource to which to attach a tag.</p>
+        /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
         pub fn resource(mut self, inp: crate::model::Resource) -> Self {
             self.inner = self.inner.resource(inp);
             self
         }
-        /// <p>The resource to which to attach a tag.</p>
+        /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.inner = self.inner.set_resource(input);
             self
@@ -340,12 +477,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
-        /// <p>The tags to attach to the resource.</p>
+        /// <p>The LF-tags to attach to the resource.</p>
         pub fn lf_tags(mut self, inp: impl Into<crate::model::LfTagPair>) -> Self {
             self.inner = self.inner.lf_tags(inp);
             self
         }
-        /// <p>The tags to attach to the resource.</p>
+        /// <p>The LF-tags to attach to the resource.</p>
         pub fn set_lf_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -360,7 +497,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchGrantPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -413,12 +550,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -450,7 +587,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchRevokePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -503,12 +640,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -534,13 +671,232 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CancelTransaction`.
+    ///
+    /// <p>Attempts to cancel the specified transaction. Returns an exception if the transaction was previously committed.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CancelTransaction<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::cancel_transaction_input::Builder,
+    }
+    impl<C, M, R> CancelTransaction<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CancelTransaction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelTransactionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CancelTransactionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CancelTransactionInputOperationOutputAlias,
+                crate::output::CancelTransactionOutput,
+                crate::error::CancelTransactionError,
+                crate::input::CancelTransactionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The transaction to cancel.</p>
+        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(inp);
+            self
+        }
+        /// <p>The transaction to cancel.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CommitTransaction`.
+    ///
+    /// <p>Attempts to commit the specified transaction. Returns an exception if the transaction was previously aborted. This API action is idempotent if called multiple times for the same transaction.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CommitTransaction<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::commit_transaction_input::Builder,
+    }
+    impl<C, M, R> CommitTransaction<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CommitTransaction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CommitTransactionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CommitTransactionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CommitTransactionInputOperationOutputAlias,
+                crate::output::CommitTransactionOutput,
+                crate::error::CommitTransactionError,
+                crate::input::CommitTransactionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The transaction to commit.</p>
+        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(inp);
+            self
+        }
+        /// <p>The transaction to commit.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateDataCellsFilter`.
+    ///
+    /// <p>Creates a data cell filter to allow one to grant access to certain columns on certain rows.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateDataCellsFilter<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_data_cells_filter_input::Builder,
+    }
+    impl<C, M, R> CreateDataCellsFilter<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateDataCellsFilter`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateDataCellsFilterOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateDataCellsFilterError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateDataCellsFilterInputOperationOutputAlias,
+                crate::output::CreateDataCellsFilterOutput,
+                crate::error::CreateDataCellsFilterError,
+                crate::input::CreateDataCellsFilterInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+        pub fn table_data(mut self, inp: crate::model::DataCellsFilter) -> Self {
+            self.inner = self.inner.table_data(inp);
+            self
+        }
+        /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+        pub fn set_table_data(
+            mut self,
+            input: std::option::Option<crate::model::DataCellsFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_table_data(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateLFTag`.
     ///
-    /// <p>Creates a tag with the specified name and values.</p>
+    /// <p>Creates an LF-tag with the specified name and values.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateLFTag<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -593,22 +949,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The key-name for the tag.</p>
+        /// <p>The key-name for the LF-tag.</p>
         pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_key(inp);
             self
         }
-        /// <p>The key-name for the tag.</p>
+        /// <p>The key-name for the LF-tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_tag_key(input);
             self
@@ -631,13 +987,119 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteDataCellsFilter`.
+    ///
+    /// <p>Deletes a data cell filter.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteDataCellsFilter<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_data_cells_filter_input::Builder,
+    }
+    impl<C, M, R> DeleteDataCellsFilter<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteDataCellsFilter`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteDataCellsFilterOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDataCellsFilterError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteDataCellsFilterInputOperationOutputAlias,
+                crate::output::DeleteDataCellsFilterOutput,
+                crate::error::DeleteDataCellsFilterError,
+                crate::input::DeleteDataCellsFilterInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the catalog to which the table belongs.</p>
+        pub fn table_catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_catalog_id(inp);
+            self
+        }
+        /// <p>The ID of the catalog to which the table belongs.</p>
+        pub fn set_table_catalog_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_table_catalog_id(input);
+            self
+        }
+        /// <p>A database in the Glue Data Catalog.</p>
+        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(inp);
+            self
+        }
+        /// <p>A database in the Glue Data Catalog.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        /// <p>A table in the database.</p>
+        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(inp);
+            self
+        }
+        /// <p>A table in the database.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
+            self
+        }
+        /// <p>The name given by the user to the data filter cell.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name given by the user to the data filter cell.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteLFTag`.
     ///
-    /// <p>Deletes the specified tag key name. If the attribute key does not exist or the tag does not exist, then the operation will not do anything. If the attribute key exists, then the operation checks if any resources are tagged with this attribute key, if yes, the API throws a 400 Exception with the message "Delete not allowed" as the tag key is still attached with resources. You can consider untagging resources with this tag key.</p>
+    /// <p>Deletes the specified LF-tag key name. If the attribute key does not exist or the LF-tag does not exist, then the operation will not do anything. If the attribute key exists, then the operation checks if any resources are tagged with this attribute key, if yes, the API throws a 400 Exception with the message "Delete not allowed" as the LF-tag key is still attached with resources. You can consider untagging resources with this LF-tag key.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteLFTag<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -690,24 +1152,154 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The key-name for the tag to delete.</p>
+        /// <p>The key-name for the LF-tag to delete.</p>
         pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_key(inp);
             self
         }
-        /// <p>The key-name for the tag to delete.</p>
+        /// <p>The key-name for the LF-tag to delete.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_tag_key(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteObjectsOnCancel`.
+    ///
+    /// <p>For a specific governed table, provides a list of Amazon S3 objects that will be written during the current transaction and that can be automatically deleted
+    /// if the transaction is canceled. Without this call, no Amazon S3 objects are automatically deleted when a transaction cancels.
+    /// </p>
+    /// <p>
+    /// The Glue ETL library function <code>write_dynamic_frame.from_catalog()</code> includes an option to automatically
+    /// call <code>DeleteObjectsOnCancel</code> before writes. For more information, see
+    /// <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling Back Amazon S3 Writes</a>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteObjectsOnCancel<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_objects_on_cancel_input::Builder,
+    }
+    impl<C, M, R> DeleteObjectsOnCancel<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteObjectsOnCancel`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteObjectsOnCancelOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteObjectsOnCancelError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteObjectsOnCancelInputOperationOutputAlias,
+                crate::output::DeleteObjectsOnCancelOutput,
+                crate::error::DeleteObjectsOnCancelError,
+                crate::input::DeleteObjectsOnCancelInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
+        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(inp);
+            self
+        }
+        /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        /// <p>The database that contains the governed table.</p>
+        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(inp);
+            self
+        }
+        /// <p>The database that contains the governed table.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        /// <p>The name of the governed table.</p>
+        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(inp);
+            self
+        }
+        /// <p>The name of the governed table.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
+            self
+        }
+        /// <p>ID of the transaction that the writes occur in.</p>
+        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(inp);
+            self
+        }
+        /// <p>ID of the transaction that the writes occur in.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
+            self
+        }
+        /// Appends an item to `Objects`.
+        ///
+        /// To override the contents of this collection use [`set_objects`](Self::set_objects).
+        ///
+        /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+        pub fn objects(mut self, inp: impl Into<crate::model::VirtualObject>) -> Self {
+            self.inner = self.inner.objects(inp);
+            self
+        }
+        /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+        pub fn set_objects(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VirtualObject>>,
+        ) -> Self {
+            self.inner = self.inner.set_objects(input);
             self
         }
     }
@@ -719,7 +1311,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -785,11 +1377,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeResource`.
     ///
-    /// <p>Retrieves the current data access role for the given resource registered in AWS Lake Formation.</p>
+    /// <p>Retrieves the current data access role for the given resource registered in Lake Formation.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -853,13 +1445,161 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeTransaction`.
+    ///
+    /// <p>Returns the details of a single transaction.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeTransaction<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_transaction_input::Builder,
+    }
+    impl<C, M, R> DescribeTransaction<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeTransaction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeTransactionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeTransactionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeTransactionInputOperationOutputAlias,
+                crate::output::DescribeTransactionOutput,
+                crate::error::DescribeTransactionError,
+                crate::input::DescribeTransactionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The transaction for which to return status.</p>
+        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(inp);
+            self
+        }
+        /// <p>The transaction for which to return status.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ExtendTransaction`.
+    ///
+    /// <p>Indicates to the service that the specified transaction is still active and should not be treated as idle and aborted.</p>
+    ///
+    /// <p>Write transactions that remain idle for a long period are automatically aborted unless explicitly extended.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ExtendTransaction<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::extend_transaction_input::Builder,
+    }
+    impl<C, M, R> ExtendTransaction<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ExtendTransaction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ExtendTransactionOutput,
+            aws_smithy_http::result::SdkError<crate::error::ExtendTransactionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ExtendTransactionInputOperationOutputAlias,
+                crate::output::ExtendTransactionOutput,
+                crate::error::ExtendTransactionError,
+                crate::input::ExtendTransactionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The transaction to extend.</p>
+        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(inp);
+            self
+        }
+        /// <p>The transaction to extend.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetDataLakeSettings`.
     ///
     /// <p>Retrieves the list of the data lake administrators of a Lake Formation-managed data lake. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetDataLakeSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -912,12 +1652,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -930,7 +1670,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetEffectivePermissionsForPath<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -983,12 +1723,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -1026,11 +1766,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLFTag`.
     ///
-    /// <p>Returns a tag definition.</p>
+    /// <p>Returns an LF-tag definition.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetLFTag<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1083,34 +1823,174 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The key-name for the tag.</p>
+        /// <p>The key-name for the LF-tag.</p>
         pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_key(inp);
             self
         }
-        /// <p>The key-name for the tag.</p>
+        /// <p>The key-name for the LF-tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_tag_key(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `GetQueryState`.
+    ///
+    /// <p>Returns the state of a query previously submitted. Clients are expected to poll <code>GetQueryState</code> to monitor the current state of the planning before retrieving the work units. A query state is only visible to the principal that made the initial call to <code>StartQueryPlanning</code>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetQueryState<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_query_state_input::Builder,
+    }
+    impl<C, M, R> GetQueryState<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetQueryState`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetQueryStateOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetQueryStateError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetQueryStateInputOperationOutputAlias,
+                crate::output::GetQueryStateOutput,
+                crate::error::GetQueryStateError,
+                crate::input::GetQueryStateInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(inp);
+            self
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetQueryStatistics`.
+    ///
+    /// <p>Retrieves statistics on the planning and execution of a query.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetQueryStatistics<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_query_statistics_input::Builder,
+    }
+    impl<C, M, R> GetQueryStatistics<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetQueryStatistics`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetQueryStatisticsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetQueryStatisticsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetQueryStatisticsInputOperationOutputAlias,
+                crate::output::GetQueryStatisticsOutput,
+                crate::error::GetQueryStatisticsError,
+                crate::input::GetQueryStatisticsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(inp);
+            self
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetResourceLFTags`.
     ///
-    /// <p>Returns the tags applied to a resource.</p>
+    /// <p>Returns the LF-tags applied to a resource.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetResourceLFTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1163,34 +2043,391 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The resource for which you want to return tags.</p>
+        /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
         pub fn resource(mut self, inp: crate::model::Resource) -> Self {
             self.inner = self.inner.resource(inp);
             self
         }
-        /// <p>The resource for which you want to return tags.</p>
+        /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.inner = self.inner.set_resource(input);
             self
         }
-        /// <p>Indicates whether to show the assigned tags.</p>
+        /// <p>Indicates whether to show the assigned LF-tags.</p>
         pub fn show_assigned_lf_tags(mut self, inp: bool) -> Self {
             self.inner = self.inner.show_assigned_lf_tags(inp);
             self
         }
-        /// <p>Indicates whether to show the assigned tags.</p>
+        /// <p>Indicates whether to show the assigned LF-tags.</p>
         pub fn set_show_assigned_lf_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_show_assigned_lf_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetTableObjects`.
+    ///
+    /// <p>Returns the set of Amazon S3 objects that make up the specified governed table. A transaction ID or timestamp can be specified for time-travel queries.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetTableObjects<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_table_objects_input::Builder,
+    }
+    impl<C, M, R> GetTableObjects<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetTableObjects`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetTableObjectsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetTableObjectsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetTableObjectsInputOperationOutputAlias,
+                crate::output::GetTableObjectsOutput,
+                crate::error::GetTableObjectsError,
+                crate::input::GetTableObjectsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
+        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(inp);
+            self
+        }
+        /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        /// <p>The database containing the governed table.</p>
+        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(inp);
+            self
+        }
+        /// <p>The database containing the governed table.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        /// <p>The governed table for which to retrieve objects.</p>
+        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(inp);
+            self
+        }
+        /// <p>The governed table for which to retrieve objects.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
+            self
+        }
+        /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(inp);
+            self
+        }
+        /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
+            self
+        }
+        /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn query_as_of_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_as_of_time(inp);
+            self
+        }
+        /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn set_query_as_of_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_query_as_of_time(input);
+            self
+        }
+        /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
+        /// </li>
+        /// <li>
+        /// <p>The logical operators supported are: AND</p>
+        /// </li>
+        /// <li>
+        /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
+        /// </li>
+        /// </ul>
+        pub fn partition_predicate(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_predicate(inp);
+            self
+        }
+        /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
+        /// </li>
+        /// <li>
+        /// <p>The logical operators supported are: AND</p>
+        /// </li>
+        /// <li>
+        /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_partition_predicate(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_partition_predicate(input);
+            self
+        }
+        /// <p>Specifies how many values to return in a page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>Specifies how many values to return in a page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetWorkUnitResults`.
+    ///
+    /// <p>Returns the work units resulting from the query. Work units can be executed in any order and in parallel. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetWorkUnitResults<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_work_unit_results_input::Builder,
+    }
+    impl<C, M, R> GetWorkUnitResults<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetWorkUnitResults`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetWorkUnitResultsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetWorkUnitResultsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetWorkUnitResultsInputOperationOutputAlias,
+                crate::output::GetWorkUnitResultsOutput,
+                crate::error::GetWorkUnitResultsError,
+                crate::input::GetWorkUnitResultsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the plan query operation for which to get results.</p>
+        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(inp);
+            self
+        }
+        /// <p>The ID of the plan query operation for which to get results.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_id(input);
+            self
+        }
+        /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
+        pub fn work_unit_id(mut self, inp: i64) -> Self {
+            self.inner = self.inner.work_unit_id(inp);
+            self
+        }
+        /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
+        pub fn set_work_unit_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_work_unit_id(input);
+            self
+        }
+        /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
+        pub fn work_unit_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_unit_token(inp);
+            self
+        }
+        /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
+        pub fn set_work_unit_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_work_unit_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetWorkUnits`.
+    ///
+    /// <p>Retrieves the work units generated by the <code>StartQueryPlanning</code> operation.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetWorkUnits<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_work_units_input::Builder,
+    }
+    impl<C, M, R> GetWorkUnits<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetWorkUnits`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetWorkUnitsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetWorkUnitsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetWorkUnitsInputOperationOutputAlias,
+                crate::output::GetWorkUnitsOutput,
+                crate::error::GetWorkUnitsError,
+                crate::input::GetWorkUnitsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+        pub fn page_size(mut self, inp: i32) -> Self {
+            self.inner = self.inner.page_size(inp);
+            self
+        }
+        /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_page_size(input);
+            self
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn query_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(inp);
+            self
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_id(input);
             self
         }
     }
@@ -1201,7 +2438,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GrantPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1254,12 +2491,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -1279,12 +2516,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal(input);
             self
         }
-        /// <p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>
+        /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
         pub fn resource(mut self, inp: crate::model::Resource) -> Self {
             self.inner = self.inner.resource(inp);
             self
         }
-        /// <p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>
+        /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.inner = self.inner.set_resource(input);
             self
@@ -1293,12 +2530,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>
+        /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
         pub fn permissions(mut self, inp: impl Into<crate::model::Permission>) -> Self {
             self.inner = self.inner.permissions(inp);
             self
         }
-        /// <p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>
+        /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -1327,13 +2564,106 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListDataCellsFilter`.
+    ///
+    /// <p>Lists all the data cell filters on a table.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListDataCellsFilter<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_data_cells_filter_input::Builder,
+    }
+    impl<C, M, R> ListDataCellsFilter<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListDataCellsFilter`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDataCellsFilterOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDataCellsFilterError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDataCellsFilterInputOperationOutputAlias,
+                crate::output::ListDataCellsFilterOutput,
+                crate::error::ListDataCellsFilterError,
+                crate::input::ListDataCellsFilterInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A table in the Glue Data Catalog.</p>
+        pub fn table(mut self, inp: crate::model::TableResource) -> Self {
+            self.inner = self.inner.table(inp);
+            self
+        }
+        /// <p>A table in the Glue Data Catalog.</p>
+        pub fn set_table(
+            mut self,
+            input: std::option::Option<crate::model::TableResource>,
+        ) -> Self {
+            self.inner = self.inner.set_table(input);
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum size of the response.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum size of the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListLFTags`.
     ///
-    /// <p>Lists tags that the requester has permission to view. </p>
+    /// <p>Lists LF-tags that the requester has permission to view. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListLFTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1386,22 +2716,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>If resource share type is <code>ALL</code>, returns both in-account tags and shared tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share tags that the requester can view. If no resource share type is passed, lists tags in the given catalog ID that the requester has permission to view.</p>
+        /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
         pub fn resource_share_type(mut self, inp: crate::model::ResourceShareType) -> Self {
             self.inner = self.inner.resource_share_type(inp);
             self
         }
-        /// <p>If resource share type is <code>ALL</code>, returns both in-account tags and shared tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share tags that the requester can view. If no resource share type is passed, lists tags in the given catalog ID that the requester has permission to view.</p>
+        /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
         pub fn set_resource_share_type(
             mut self,
             input: std::option::Option<crate::model::ResourceShareType>,
@@ -1438,7 +2768,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1491,12 +2821,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -1559,6 +2889,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// <p>Indicates that related permissions should be included in the results.</p>
+        pub fn include_related(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include_related(inp);
+            self
+        }
+        /// <p>Indicates that related permissions should be included in the results.</p>
+        pub fn set_include_related(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_include_related(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListResources`.
     ///
@@ -1566,7 +2909,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1660,6 +3003,236 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTableStorageOptimizers`.
+    ///
+    /// <p>Returns the configuration of all storage optimizers associated with a specified table.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListTableStorageOptimizers<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_table_storage_optimizers_input::Builder,
+    }
+    impl<C, M, R> ListTableStorageOptimizers<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListTableStorageOptimizers`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTableStorageOptimizersOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTableStorageOptimizersError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListTableStorageOptimizersInputOperationOutputAlias,
+                crate::output::ListTableStorageOptimizersOutput,
+                crate::error::ListTableStorageOptimizersError,
+                crate::input::ListTableStorageOptimizersInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Catalog ID of the table.</p>
+        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(inp);
+            self
+        }
+        /// <p>The Catalog ID of the table.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        /// <p>Name of the database where the table is present.</p>
+        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(inp);
+            self
+        }
+        /// <p>Name of the database where the table is present.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        /// <p>Name of the table.</p>
+        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(inp);
+            self
+        }
+        /// <p>Name of the table.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
+            self
+        }
+        /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+        pub fn storage_optimizer_type(mut self, inp: crate::model::OptimizerType) -> Self {
+            self.inner = self.inner.storage_optimizer_type(inp);
+            self
+        }
+        /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+        pub fn set_storage_optimizer_type(
+            mut self,
+            input: std::option::Option<crate::model::OptimizerType>,
+        ) -> Self {
+            self.inner = self.inner.set_storage_optimizer_type(input);
+            self
+        }
+        /// <p>The number of storage optimizers to return on each call.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The number of storage optimizers to return on each call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListTransactions`.
+    ///
+    /// <p>Returns metadata about transactions and their status. To prevent the response from growing indefinitely, only uncommitted transactions and those available for time-travel queries are returned.</p>
+    /// <p>This operation can help you identify uncommitted transactions or to get information about transactions.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListTransactions<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_transactions_input::Builder,
+    }
+    impl<C, M, R> ListTransactions<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListTransactions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTransactionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTransactionsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListTransactionsInputOperationOutputAlias,
+                crate::output::ListTransactionsOutput,
+                crate::error::ListTransactionsError,
+                crate::input::ListTransactionsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(inp);
+            self
+        }
+        /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+        pub fn status_filter(mut self, inp: crate::model::TransactionStatusFilter) -> Self {
+            self.inner = self.inner.status_filter(inp);
+            self
+        }
+        /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+        pub fn set_status_filter(
+            mut self,
+            input: std::option::Option<crate::model::TransactionStatusFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_status_filter(input);
+            self
+        }
+        /// <p>The maximum number of transactions to return in a single call.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of transactions to return in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutDataLakeSettings`.
     ///
     /// <p>Sets the list of data lake administrators who have admin privileges on all resources managed by Lake Formation. For more information on admin privileges, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting Lake Formation Permissions</a>.</p>
@@ -1668,7 +3241,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutDataLakeSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1721,22 +3294,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
+        /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
         pub fn data_lake_settings(mut self, inp: crate::model::DataLakeSettings) -> Self {
             self.inner = self.inner.data_lake_settings(inp);
             self
         }
-        /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
+        /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
         pub fn set_data_lake_settings(
             mut self,
             input: std::option::Option<crate::model::DataLakeSettings>,
@@ -1751,7 +3324,7 @@ pub mod fluent_builders {
     ///
     /// <p>To add or update data, Lake Formation needs read/write access to the chosen Amazon S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess service-linked role. When you register the first Amazon S3 path, the service-linked role and a new inline policy are created on your behalf. Lake Formation adds the first path to the inline policy and attaches it to the service-linked role. When you register subsequent paths, Lake Formation adds the path to the existing policy.</p>
     ///
-    /// <p>The following request registers a new location and gives AWS Lake Formation permission to use the service-linked role to access that location.</p>
+    /// <p>The following request registers a new location and gives Lake Formation permission to use the service-linked role to access that location.</p>
     ///
     /// <p>
     /// <code>ResourceArn = arn:aws:s3:::my-bucket
@@ -1766,7 +3339,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1829,14 +3402,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+        /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
         ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn use_service_linked_role(mut self, inp: bool) -> Self {
             self.inner = self.inner.use_service_linked_role(inp);
             self
         }
-        /// <p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+        /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
         ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn set_use_service_linked_role(mut self, input: std::option::Option<bool>) -> Self {
@@ -1856,11 +3429,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveLFTagsFromResource`.
     ///
-    /// <p>Removes a tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code> to specify column input.</p>
+    /// <p>Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code> to specify column input.</p>
     #[derive(std::fmt::Debug)]
     pub struct RemoveLFTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1913,22 +3486,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The resource where you want to remove a tag.</p>
+        /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
         pub fn resource(mut self, inp: crate::model::Resource) -> Self {
             self.inner = self.inner.resource(inp);
             self
         }
-        /// <p>The resource where you want to remove a tag.</p>
+        /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.inner = self.inner.set_resource(input);
             self
@@ -1937,12 +3510,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
-        /// <p>The tags to be removed from the resource.</p>
+        /// <p>The LF-tags to be removed from the resource.</p>
         pub fn lf_tags(mut self, inp: impl Into<crate::model::LfTagPair>) -> Self {
             self.inner = self.inner.lf_tags(inp);
             self
         }
-        /// <p>The tags to be removed from the resource.</p>
+        /// <p>The LF-tags to be removed from the resource.</p>
         pub fn set_lf_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -1957,7 +3530,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RevokePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2010,12 +3583,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -2089,7 +3662,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchDatabasesByLFTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2162,12 +3735,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -2192,11 +3765,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchTablesByLFTags`.
     ///
-    /// <p>This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by admins who want to grant user permissions on certain LFTags. Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify whether the returned resources can be shared.</p>
+    /// <p>This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by admins who want to grant user permissions on certain LF-tags. Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify whether the returned resources can be shared.</p>
     #[derive(std::fmt::Debug)]
     pub struct SearchTablesByLFTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2269,12 +3842,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -2297,13 +3870,171 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `StartQueryPlanning`.
+    ///
+    /// <p>Submits a request to process a query statement.</p>
+    ///
+    /// <p>This operation generates work units that can be retrieved with the <code>GetWorkUnits</code> operation as soon as the query state is WORKUNITS_AVAILABLE or FINISHED.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartQueryPlanning<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_query_planning_input::Builder,
+    }
+    impl<C, M, R> StartQueryPlanning<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartQueryPlanning`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartQueryPlanningOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartQueryPlanningError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartQueryPlanningInputOperationOutputAlias,
+                crate::output::StartQueryPlanningOutput,
+                crate::error::StartQueryPlanningError,
+                crate::input::StartQueryPlanningInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A structure containing information about the query plan.</p>
+        pub fn query_planning_context(mut self, inp: crate::model::QueryPlanningContext) -> Self {
+            self.inner = self.inner.query_planning_context(inp);
+            self
+        }
+        /// <p>A structure containing information about the query plan.</p>
+        pub fn set_query_planning_context(
+            mut self,
+            input: std::option::Option<crate::model::QueryPlanningContext>,
+        ) -> Self {
+            self.inner = self.inner.set_query_planning_context(input);
+            self
+        }
+        /// <p>A PartiQL query statement used as an input to the planner service.</p>
+        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(inp);
+            self
+        }
+        /// <p>A PartiQL query statement used as an input to the planner service.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_string(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartTransaction`.
+    ///
+    /// <p>Starts a new transaction and returns its transaction ID. Transaction IDs are opaque objects that you can use to identify a transaction.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartTransaction<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_transaction_input::Builder,
+    }
+    impl<C, M, R> StartTransaction<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartTransaction`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartTransactionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartTransactionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartTransactionInputOperationOutputAlias,
+                crate::output::StartTransactionOutput,
+                crate::error::StartTransactionError,
+                crate::input::StartTransactionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+        pub fn transaction_type(mut self, inp: crate::model::TransactionType) -> Self {
+            self.inner = self.inner.transaction_type(inp);
+            self
+        }
+        /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+        pub fn set_transaction_type(
+            mut self,
+            input: std::option::Option<crate::model::TransactionType>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_type(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateLFTag`.
     ///
-    /// <p>Updates the list of possible values for the specified tag key. If the tag does not exist, the operation throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception - "Update not allowed". Untag the attribute before deleting the tag key's value.  </p>
+    /// <p>Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception - "Update not allowed". Untag the attribute before deleting the LF-tag key's value. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateLFTag<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2356,22 +4087,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(inp);
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The key-name for the tag for which to add or delete values.</p>
+        /// <p>The key-name for the LF-tag for which to add or delete values.</p>
         pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_key(inp);
             self
         }
-        /// <p>The key-name for the tag for which to add or delete values.</p>
+        /// <p>The key-name for the LF-tag for which to add or delete values.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_tag_key(input);
             self
@@ -2380,12 +4111,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_values_to_delete`](Self::set_tag_values_to_delete).
         ///
-        /// <p>A list of tag values to delete from the tag.</p>
+        /// <p>A list of LF-tag values to delete from the LF-tag.</p>
         pub fn tag_values_to_delete(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_values_to_delete(inp);
             self
         }
-        /// <p>A list of tag values to delete from the tag.</p>
+        /// <p>A list of LF-tag values to delete from the LF-tag.</p>
         pub fn set_tag_values_to_delete(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2397,12 +4128,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_values_to_add`](Self::set_tag_values_to_add).
         ///
-        /// <p>A list of tag values to add from the tag.</p>
+        /// <p>A list of LF-tag values to add from the LF-tag.</p>
         pub fn tag_values_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_values_to_add(inp);
             self
         }
-        /// <p>A list of tag values to add from the tag.</p>
+        /// <p>A list of LF-tag values to add from the LF-tag.</p>
         pub fn set_tag_values_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2413,11 +4144,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResource`.
     ///
-    /// <p>Updates the data access role used for vending access to the given (registered) resource in AWS Lake Formation. </p>
+    /// <p>Updates the data access role used for vending access to the given (registered) resource in Lake Formation. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2470,12 +4201,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The new role to use for the given resource registered in AWS Lake Formation.</p>
+        /// <p>The new role to use for the given resource registered in Lake Formation.</p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(inp);
             self
         }
-        /// <p>The new role to use for the given resource registered in AWS Lake Formation.</p>
+        /// <p>The new role to use for the given resource registered in Lake Formation.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -2491,18 +4222,264 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateTableObjects`.
+    ///
+    /// <p>Updates the manifest of Amazon S3 objects that make up the specified governed table.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateTableObjects<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_table_objects_input::Builder,
+    }
+    impl<C, M, R> UpdateTableObjects<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateTableObjects`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateTableObjectsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateTableObjectsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateTableObjectsInputOperationOutputAlias,
+                crate::output::UpdateTableObjectsOutput,
+                crate::error::UpdateTableObjectsError,
+                crate::input::UpdateTableObjectsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(inp);
+            self
+        }
+        /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        /// <p>The database containing the governed table to update.</p>
+        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(inp);
+            self
+        }
+        /// <p>The database containing the governed table to update.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        /// <p>The governed table to update.</p>
+        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(inp);
+            self
+        }
+        /// <p>The governed table to update.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
+            self
+        }
+        /// <p>The transaction at which to do the write.</p>
+        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(inp);
+            self
+        }
+        /// <p>The transaction at which to do the write.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
+            self
+        }
+        /// Appends an item to `WriteOperations`.
+        ///
+        /// To override the contents of this collection use [`set_write_operations`](Self::set_write_operations).
+        ///
+        /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+        pub fn write_operations(mut self, inp: impl Into<crate::model::WriteOperation>) -> Self {
+            self.inner = self.inner.write_operations(inp);
+            self
+        }
+        /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+        pub fn set_write_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WriteOperation>>,
+        ) -> Self {
+            self.inner = self.inner.set_write_operations(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateTableStorageOptimizer`.
+    ///
+    /// <p>Updates the configuration of the storage optimizers for a table.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateTableStorageOptimizer<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_table_storage_optimizer_input::Builder,
+    }
+    impl<C, M, R> UpdateTableStorageOptimizer<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateTableStorageOptimizer`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateTableStorageOptimizerOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateTableStorageOptimizerError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateTableStorageOptimizerInputOperationOutputAlias,
+                crate::output::UpdateTableStorageOptimizerOutput,
+                crate::error::UpdateTableStorageOptimizerError,
+                crate::input::UpdateTableStorageOptimizerInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Catalog ID of the table.</p>
+        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(inp);
+            self
+        }
+        /// <p>The Catalog ID of the table.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        /// <p>Name of the database where the table is present.</p>
+        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(inp);
+            self
+        }
+        /// <p>Name of the database where the table is present.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        /// <p>Name of the table for which to enable the storage optimizer.</p>
+        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(inp);
+            self
+        }
+        /// <p>Name of the table for which to enable the storage optimizer.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
+            self
+        }
+        /// Adds a key-value pair to `StorageOptimizerConfig`.
+        ///
+        /// To override the contents of this collection use [`set_storage_optimizer_config`](Self::set_storage_optimizer_config).
+        ///
+        /// <p>Name of the table for which to enable the storage optimizer.</p>
+        pub fn storage_optimizer_config(
+            mut self,
+            k: impl Into<crate::model::OptimizerType>,
+            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.storage_optimizer_config(k, v);
+            self
+        }
+        /// <p>Name of the table for which to enable the storage optimizer.</p>
+        pub fn set_storage_optimizer_config(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::OptimizerType,
+                    std::collections::HashMap<std::string::String, std::string::String>,
+                >,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_storage_optimizer_config(input);
+            self
+        }
+    }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2511,7 +4488,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -2527,11 +4504,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -3,11 +3,15 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>Your request caused an exception with an internal dependency. Contact customer support. </p>
+    InternalDependencyException(crate::error::InternalDependencyException),
     /// <p> An internal failure occurred. </p>
     InternalFailure(crate::error::InternalFailure),
     /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code.
     /// </p>
     ModelError(crate::error::ModelError),
+    /// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
+    ModelNotReadyException(crate::error::ModelNotReadyException),
     /// <p> The service is unavailable. Try your call again. </p>
     ServiceUnavailable(crate::error::ServiceUnavailable),
     /// <p> Inspect your request and try again. </p>
@@ -18,8 +22,10 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::InternalDependencyException(inner) => inner.fmt(f),
             Error::InternalFailure(inner) => inner.fmt(f),
             Error::ModelError(inner) => inner.fmt(f),
+            Error::ModelNotReadyException(inner) => inner.fmt(f),
             Error::ServiceUnavailable(inner) => inner.fmt(f),
             Error::ValidationError(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -33,11 +39,17 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::InvokeEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::InvokeEndpointErrorKind::InternalDependencyException(inner) => {
+                    Error::InternalDependencyException(inner)
+                }
                 crate::error::InvokeEndpointErrorKind::InternalFailure(inner) => {
                     Error::InternalFailure(inner)
                 }
                 crate::error::InvokeEndpointErrorKind::ModelError(inner) => {
                     Error::ModelError(inner)
+                }
+                crate::error::InvokeEndpointErrorKind::ModelNotReadyException(inner) => {
+                    Error::ModelNotReadyException(inner)
                 }
                 crate::error::InvokeEndpointErrorKind::ServiceUnavailable(inner) => {
                     Error::ServiceUnavailable(inner)

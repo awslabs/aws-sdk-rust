@@ -1,9 +1,9 @@
 # aws-sdk-wellarchitected
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-This is the _AWS Well-Architected Tool API Reference_. The AWS Well-Architected Tool API provides programmatic access to the [AWS Well-Architected Tool](http://aws.amazon.com/well-architected-tool) in the [AWS Management Console](https://console.aws.amazon.com/wellarchitected). For information about the AWS Well-Architected Tool, see the [AWS Well-Architected Tool User Guide](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
+This is the _Well-Architected Tool API Reference_. The WA Tool API provides programmatic access to the [Well-Architected Tool](http://aws.amazon.com/well-architected-tool) in the [Amazon Web Services Management Console](https://console.aws.amazon.com/wellarchitected). For information about the Well-Architected Tool, see the [Well-Architected Tool User Guide](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
 
 ## Getting Started
 
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-wellarchitected = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-wellarchitected = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

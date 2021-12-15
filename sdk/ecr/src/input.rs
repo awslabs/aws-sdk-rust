@@ -615,6 +615,172 @@ impl BatchGetImageInput {
     }
 }
 
+/// See [`BatchGetRepositoryScanningConfigurationInput`](crate::input::BatchGetRepositoryScanningConfigurationInput)
+pub mod batch_get_repository_scanning_configuration_input {
+    /// A builder for [`BatchGetRepositoryScanningConfigurationInput`](crate::input::BatchGetRepositoryScanningConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `repository_names`.
+        ///
+        /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
+        ///
+        /// <p>One or more repository names to get the scanning configuration for.</p>
+        pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.repository_names.unwrap_or_default();
+            v.push(input.into());
+            self.repository_names = Some(v);
+            self
+        }
+        /// <p>One or more repository names to get the scanning configuration for.</p>
+        pub fn set_repository_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.repository_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetRepositoryScanningConfigurationInput`](crate::input::BatchGetRepositoryScanningConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::BatchGetRepositoryScanningConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchGetRepositoryScanningConfigurationInput {
+                repository_names: self.repository_names,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchGetRepositoryScanningConfigurationInputOperationOutputAlias =
+    crate::operation::BatchGetRepositoryScanningConfiguration;
+#[doc(hidden)]
+pub type BatchGetRepositoryScanningConfigurationInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl BatchGetRepositoryScanningConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetRepositoryScanningConfiguration`](crate::operation::BatchGetRepositoryScanningConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetRepositoryScanningConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::BatchGetRepositoryScanningConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::BatchGetRepositoryScanningConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::BatchGetRepositoryScanningConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonEC2ContainerRegistry_V20150921.BatchGetRepositoryScanningConfiguration",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_repository_scanning_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetRepositoryScanningConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetRepositoryScanningConfiguration",
+            "ecr",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetRepositoryScanningConfigurationInput`](crate::input::BatchGetRepositoryScanningConfigurationInput)
+    pub fn builder() -> crate::input::batch_get_repository_scanning_configuration_input::Builder {
+        crate::input::batch_get_repository_scanning_configuration_input::Builder::default()
+    }
+}
+
 /// See [`CompleteLayerUploadInput`](crate::input::CompleteLayerUploadInput)
 pub mod complete_layer_upload_input {
     /// A builder for [`CompleteLayerUploadInput`](crate::input::CompleteLayerUploadInput)
@@ -821,6 +987,196 @@ impl CompleteLayerUploadInput {
     }
 }
 
+/// See [`CreatePullThroughCacheRuleInput`](crate::input::CreatePullThroughCacheRuleInput)
+pub mod create_pull_through_cache_rule_input {
+    /// A builder for [`CreatePullThroughCacheRuleInput`](crate::input::CreatePullThroughCacheRuleInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
+        pub(crate) upstream_registry_url: std::option::Option<std::string::String>,
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The repository name prefix to use when caching images from the source registry.</p>
+        pub fn ecr_repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ecr_repository_prefix = Some(input.into());
+            self
+        }
+        /// <p>The repository name prefix to use when caching images from the source registry.</p>
+        pub fn set_ecr_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ecr_repository_prefix = input;
+            self
+        }
+        /// <p>The registry URL of the upstream public registry to use as the source for the pull
+        /// through cache rule.</p>
+        pub fn upstream_registry_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upstream_registry_url = Some(input.into());
+            self
+        }
+        /// <p>The registry URL of the upstream public registry to use as the source for the pull
+        /// through cache rule.</p>
+        pub fn set_upstream_registry_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.upstream_registry_url = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
+        /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
+        /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreatePullThroughCacheRuleInput`](crate::input::CreatePullThroughCacheRuleInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreatePullThroughCacheRuleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreatePullThroughCacheRuleInput {
+                ecr_repository_prefix: self.ecr_repository_prefix,
+                upstream_registry_url: self.upstream_registry_url,
+                registry_id: self.registry_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreatePullThroughCacheRuleInputOperationOutputAlias =
+    crate::operation::CreatePullThroughCacheRule;
+#[doc(hidden)]
+pub type CreatePullThroughCacheRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreatePullThroughCacheRuleInput {
+    /// Consumes the builder and constructs an Operation<[`CreatePullThroughCacheRule`](crate::operation::CreatePullThroughCacheRule)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreatePullThroughCacheRule,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreatePullThroughCacheRuleInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreatePullThroughCacheRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreatePullThroughCacheRuleInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonEC2ContainerRegistry_V20150921.CreatePullThroughCacheRule",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_pull_through_cache_rule(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreatePullThroughCacheRule::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreatePullThroughCacheRule",
+            "ecr",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreatePullThroughCacheRuleInput`](crate::input::CreatePullThroughCacheRuleInput)
+    pub fn builder() -> crate::input::create_pull_through_cache_rule_input::Builder {
+        crate::input::create_pull_through_cache_rule_input::Builder::default()
+    }
+}
+
 /// See [`CreateRepositoryInput`](crate::input::CreateRepositoryInput)
 pub mod create_repository_input {
     /// A builder for [`CreateRepositoryInput`](crate::input::CreateRepositoryInput)
@@ -837,13 +1193,13 @@ pub mod create_repository_input {
             std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry to create the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry to create the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
@@ -1256,6 +1612,181 @@ impl DeleteLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyInput`](crate::input::DeleteLifecyclePolicyInput)
     pub fn builder() -> crate::input::delete_lifecycle_policy_input::Builder {
         crate::input::delete_lifecycle_policy_input::Builder::default()
+    }
+}
+
+/// See [`DeletePullThroughCacheRuleInput`](crate::input::DeletePullThroughCacheRuleInput)
+pub mod delete_pull_through_cache_rule_input {
+    /// A builder for [`DeletePullThroughCacheRuleInput`](crate::input::DeletePullThroughCacheRuleInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
+        /// delete.</p>
+        pub fn ecr_repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ecr_repository_prefix = Some(input.into());
+            self
+        }
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
+        /// delete.</p>
+        pub fn set_ecr_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ecr_repository_prefix = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
+        /// rule. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
+        /// rule. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeletePullThroughCacheRuleInput`](crate::input::DeletePullThroughCacheRuleInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeletePullThroughCacheRuleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeletePullThroughCacheRuleInput {
+                ecr_repository_prefix: self.ecr_repository_prefix,
+                registry_id: self.registry_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeletePullThroughCacheRuleInputOperationOutputAlias =
+    crate::operation::DeletePullThroughCacheRule;
+#[doc(hidden)]
+pub type DeletePullThroughCacheRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeletePullThroughCacheRuleInput {
+    /// Consumes the builder and constructs an Operation<[`DeletePullThroughCacheRule`](crate::operation::DeletePullThroughCacheRule)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeletePullThroughCacheRule,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeletePullThroughCacheRuleInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeletePullThroughCacheRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeletePullThroughCacheRuleInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonEC2ContainerRegistry_V20150921.DeletePullThroughCacheRule",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_pull_through_cache_rule(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePullThroughCacheRule::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeletePullThroughCacheRule",
+            "ecr",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeletePullThroughCacheRuleInput`](crate::input::DeletePullThroughCacheRuleInput)
+    pub fn builder() -> crate::input::delete_pull_through_cache_rule_input::Builder {
+        crate::input::delete_pull_through_cache_rule_input::Builder::default()
     }
 }
 
@@ -2430,6 +2961,239 @@ impl DescribeImageScanFindingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageScanFindingsInput`](crate::input::DescribeImageScanFindingsInput)
     pub fn builder() -> crate::input::describe_image_scan_findings_input::Builder {
         crate::input::describe_image_scan_findings_input::Builder::default()
+    }
+}
+
+/// See [`DescribePullThroughCacheRulesInput`](crate::input::DescribePullThroughCacheRulesInput)
+pub mod describe_pull_through_cache_rules_input {
+    /// A builder for [`DescribePullThroughCacheRulesInput`](crate::input::DescribePullThroughCacheRulesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+        pub(crate) ecr_repository_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
+        /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
+        /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// Appends an item to `ecr_repository_prefixes`.
+        ///
+        /// To override the contents of this collection use [`set_ecr_repository_prefixes`](Self::set_ecr_repository_prefixes).
+        ///
+        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
+        /// If no repository prefix value is specified, all pull through cache rules are
+        /// returned.</p>
+        pub fn ecr_repository_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ecr_repository_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ecr_repository_prefixes = Some(v);
+            self
+        }
+        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
+        /// If no repository prefix value is specified, all pull through cache rules are
+        /// returned.</p>
+        pub fn set_ecr_repository_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ecr_repository_prefixes = input;
+            self
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>DescribePullThroughCacheRulesRequest</code> request where
+        /// <code>maxResults</code> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned the
+        /// <code>nextToken</code> value. This value is null when there are no more results to
+        /// return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>DescribePullThroughCacheRulesRequest</code> request where
+        /// <code>maxResults</code> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned the
+        /// <code>nextToken</code> value. This value is null when there are no more results to
+        /// return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of pull through cache rules returned by
+        /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
+        /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
+        /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
+        /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of pull through cache rules returned by
+        /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
+        /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
+        /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
+        /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribePullThroughCacheRulesInput`](crate::input::DescribePullThroughCacheRulesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribePullThroughCacheRulesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribePullThroughCacheRulesInput {
+                registry_id: self.registry_id,
+                ecr_repository_prefixes: self.ecr_repository_prefixes,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribePullThroughCacheRulesInputOperationOutputAlias =
+    crate::operation::DescribePullThroughCacheRules;
+#[doc(hidden)]
+pub type DescribePullThroughCacheRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribePullThroughCacheRulesInput {
+    /// Consumes the builder and constructs an Operation<[`DescribePullThroughCacheRules`](crate::operation::DescribePullThroughCacheRules)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribePullThroughCacheRules,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribePullThroughCacheRulesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribePullThroughCacheRulesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribePullThroughCacheRulesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonEC2ContainerRegistry_V20150921.DescribePullThroughCacheRules",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_pull_through_cache_rules(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribePullThroughCacheRules::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribePullThroughCacheRules",
+            "ecr",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribePullThroughCacheRulesInput`](crate::input::DescribePullThroughCacheRulesInput)
+    pub fn builder() -> crate::input::describe_pull_through_cache_rules_input::Builder {
+        crate::input::describe_pull_through_cache_rules_input::Builder::default()
     }
 }
 
@@ -3722,6 +4486,140 @@ impl GetRegistryPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetRegistryPolicyInput`](crate::input::GetRegistryPolicyInput)
     pub fn builder() -> crate::input::get_registry_policy_input::Builder {
         crate::input::get_registry_policy_input::Builder::default()
+    }
+}
+
+/// See [`GetRegistryScanningConfigurationInput`](crate::input::GetRegistryScanningConfigurationInput)
+pub mod get_registry_scanning_configuration_input {
+    /// A builder for [`GetRegistryScanningConfigurationInput`](crate::input::GetRegistryScanningConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`GetRegistryScanningConfigurationInput`](crate::input::GetRegistryScanningConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetRegistryScanningConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetRegistryScanningConfigurationInput {})
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetRegistryScanningConfigurationInputOperationOutputAlias =
+    crate::operation::GetRegistryScanningConfiguration;
+#[doc(hidden)]
+pub type GetRegistryScanningConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetRegistryScanningConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`GetRegistryScanningConfiguration`](crate::operation::GetRegistryScanningConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetRegistryScanningConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetRegistryScanningConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetRegistryScanningConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetRegistryScanningConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonEC2ContainerRegistry_V20150921.GetRegistryScanningConfiguration",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_registry_scanning_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRegistryScanningConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRegistryScanningConfiguration",
+            "ecr",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetRegistryScanningConfigurationInput`](crate::input::GetRegistryScanningConfigurationInput)
+    pub fn builder() -> crate::input::get_registry_scanning_configuration_input::Builder {
+        crate::input::get_registry_scanning_configuration_input::Builder::default()
     }
 }
 
@@ -5429,6 +6327,197 @@ impl PutRegistryPolicyInput {
     }
 }
 
+/// See [`PutRegistryScanningConfigurationInput`](crate::input::PutRegistryScanningConfigurationInput)
+pub mod put_registry_scanning_configuration_input {
+    /// A builder for [`PutRegistryScanningConfigurationInput`](crate::input::PutRegistryScanningConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_type: std::option::Option<crate::model::ScanType>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
+    }
+    impl Builder {
+        /// <p>The scanning type to set for the registry.</p>
+        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
+        /// may specify filters to determine which individual repositories, or all repositories, are
+        /// scanned when new images are pushed. Alternatively, you can do manual scans of images
+        /// with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
+        /// scanning of all repositories in your registry.</p>
+        pub fn scan_type(mut self, input: crate::model::ScanType) -> Self {
+            self.scan_type = Some(input);
+            self
+        }
+        /// <p>The scanning type to set for the registry.</p>
+        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
+        /// may specify filters to determine which individual repositories, or all repositories, are
+        /// scanned when new images are pushed. Alternatively, you can do manual scans of images
+        /// with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
+        /// scanning of all repositories in your registry.</p>
+        pub fn set_scan_type(mut self, input: std::option::Option<crate::model::ScanType>) -> Self {
+            self.scan_type = input;
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
+        /// repository filters are used and at what frequency scanning will occur.</p>
+        pub fn rules(mut self, input: impl Into<crate::model::RegistryScanningRule>) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input.into());
+            self.rules = Some(v);
+            self
+        }
+        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
+        /// repository filters are used and at what frequency scanning will occur.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutRegistryScanningConfigurationInput`](crate::input::PutRegistryScanningConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PutRegistryScanningConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutRegistryScanningConfigurationInput {
+                scan_type: self.scan_type,
+                rules: self.rules,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutRegistryScanningConfigurationInputOperationOutputAlias =
+    crate::operation::PutRegistryScanningConfiguration;
+#[doc(hidden)]
+pub type PutRegistryScanningConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl PutRegistryScanningConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`PutRegistryScanningConfiguration`](crate::operation::PutRegistryScanningConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutRegistryScanningConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::PutRegistryScanningConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutRegistryScanningConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutRegistryScanningConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonEC2ContainerRegistry_V20150921.PutRegistryScanningConfiguration",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_registry_scanning_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutRegistryScanningConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutRegistryScanningConfiguration",
+            "ecr",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`PutRegistryScanningConfigurationInput`](crate::input::PutRegistryScanningConfigurationInput)
+    pub fn builder() -> crate::input::put_registry_scanning_configuration_input::Builder {
+        crate::input::put_registry_scanning_configuration_input::Builder::default()
+    }
+}
+
 /// See [`PutReplicationConfigurationInput`](crate::input::PutReplicationConfigurationInput)
 pub mod put_replication_configuration_input {
     /// A builder for [`PutReplicationConfigurationInput`](crate::input::PutReplicationConfigurationInput)
@@ -7029,6 +8118,48 @@ impl std::fmt::Debug for PutReplicationConfigurationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutRegistryScanningConfigurationInput {
+    /// <p>The scanning type to set for the registry.</p>
+    /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
+    /// may specify filters to determine which individual repositories, or all repositories, are
+    /// scanned when new images are pushed. Alternatively, you can do manual scans of images
+    /// with basic scanning.</p>
+    /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
+    /// scanning of all repositories in your registry.</p>
+    pub scan_type: std::option::Option<crate::model::ScanType>,
+    /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
+    /// repository filters are used and at what frequency scanning will occur.</p>
+    pub rules: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
+}
+impl PutRegistryScanningConfigurationInput {
+    /// <p>The scanning type to set for the registry.</p>
+    /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
+    /// may specify filters to determine which individual repositories, or all repositories, are
+    /// scanned when new images are pushed. Alternatively, you can do manual scans of images
+    /// with basic scanning.</p>
+    /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
+    /// scanning of all repositories in your registry.</p>
+    pub fn scan_type(&self) -> std::option::Option<&crate::model::ScanType> {
+        self.scan_type.as_ref()
+    }
+    /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
+    /// repository filters are used and at what frequency scanning will occur.</p>
+    pub fn rules(&self) -> std::option::Option<&[crate::model::RegistryScanningRule]> {
+        self.rules.as_deref()
+    }
+}
+impl std::fmt::Debug for PutRegistryScanningConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutRegistryScanningConfigurationInput");
+        formatter.field("scan_type", &self.scan_type);
+        formatter.field("rules", &self.rules);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRegistryPolicyInput {
     /// <p>The JSON policy text to apply to your registry. The policy text follows the same
     /// format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
@@ -7416,6 +8547,17 @@ impl std::fmt::Debug for GetRepositoryPolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRegistryScanningConfigurationInput {}
+impl std::fmt::Debug for GetRegistryScanningConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetRegistryScanningConfigurationInput");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegistryPolicyInput {}
 impl std::fmt::Debug for GetRegistryPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7700,6 +8842,80 @@ impl std::fmt::Debug for DescribeRegistryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePullThroughCacheRulesInput {
+    /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
+    /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
+    /// If no repository prefix value is specified, all pull through cache rules are
+    /// returned.</p>
+    pub ecr_repository_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>DescribePullThroughCacheRulesRequest</code> request where
+    /// <code>maxResults</code> was used and the results exceeded the value of that
+    /// parameter. Pagination continues from the end of the previous results that returned the
+    /// <code>nextToken</code> value. This value is null when there are no more results to
+    /// return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of pull through cache rules returned by
+    /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
+    /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
+    /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
+    /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
+    /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl DescribePullThroughCacheRulesInput {
+    /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
+    /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
+    /// If no repository prefix value is specified, all pull through cache rules are
+    /// returned.</p>
+    pub fn ecr_repository_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+        self.ecr_repository_prefixes.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated
+    /// <code>DescribePullThroughCacheRulesRequest</code> request where
+    /// <code>maxResults</code> was used and the results exceeded the value of that
+    /// parameter. Pagination continues from the end of the previous results that returned the
+    /// <code>nextToken</code> value. This value is null when there are no more results to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of pull through cache rules returned by
+    /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
+    /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
+    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+    /// response element. The remaining results of the initial request can be seen by sending
+    /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
+    /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
+    /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
+    /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for DescribePullThroughCacheRulesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribePullThroughCacheRulesInput");
+        formatter.field("registry_id", &self.registry_id);
+        formatter.field("ecr_repository_prefixes", &self.ecr_repository_prefixes);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageScanFindingsInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
     /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
@@ -7976,6 +9192,38 @@ impl std::fmt::Debug for DeleteRegistryPolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePullThroughCacheRuleInput {
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
+    /// delete.</p>
+    pub ecr_repository_prefix: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
+    /// rule. If you do not specify a registry, the default registry is assumed.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+}
+impl DeletePullThroughCacheRuleInput {
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
+    /// delete.</p>
+    pub fn ecr_repository_prefix(&self) -> std::option::Option<&str> {
+        self.ecr_repository_prefix.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
+    /// rule. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeletePullThroughCacheRuleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePullThroughCacheRuleInput");
+        formatter.field("ecr_repository_prefix", &self.ecr_repository_prefix);
+        formatter.field("registry_id", &self.registry_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecyclePolicyInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
@@ -8007,7 +9255,7 @@ impl std::fmt::Debug for DeleteLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryInput {
-    /// <p>The AWS account ID associated with the registry to create the repository.
+    /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name to use for the repository. The repository name may be specified on its own
@@ -8032,7 +9280,7 @@ pub struct CreateRepositoryInput {
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl CreateRepositoryInput {
-    /// <p>The AWS account ID associated with the registry to create the repository.
+    /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
     /// If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
@@ -8091,6 +9339,45 @@ impl std::fmt::Debug for CreateRepositoryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreatePullThroughCacheRuleInput {
+    /// <p>The repository name prefix to use when caching images from the source registry.</p>
+    pub ecr_repository_prefix: std::option::Option<std::string::String>,
+    /// <p>The registry URL of the upstream public registry to use as the source for the pull
+    /// through cache rule.</p>
+    pub upstream_registry_url: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
+    /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+}
+impl CreatePullThroughCacheRuleInput {
+    /// <p>The repository name prefix to use when caching images from the source registry.</p>
+    pub fn ecr_repository_prefix(&self) -> std::option::Option<&str> {
+        self.ecr_repository_prefix.as_deref()
+    }
+    /// <p>The registry URL of the upstream public registry to use as the source for the pull
+    /// through cache rule.</p>
+    pub fn upstream_registry_url(&self) -> std::option::Option<&str> {
+        self.upstream_registry_url.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
+    /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreatePullThroughCacheRuleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreatePullThroughCacheRuleInput");
+        formatter.field("ecr_repository_prefix", &self.ecr_repository_prefix);
+        formatter.field("upstream_registry_url", &self.upstream_registry_url);
+        formatter.field("registry_id", &self.registry_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteLayerUploadInput {
     /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
     /// If you do not specify a registry, the default registry is assumed.</p>
@@ -8130,6 +9417,27 @@ impl std::fmt::Debug for CompleteLayerUploadInput {
         formatter.field("repository_name", &self.repository_name);
         formatter.field("upload_id", &self.upload_id);
         formatter.field("layer_digests", &self.layer_digests);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetRepositoryScanningConfigurationInput {
+    /// <p>One or more repository names to get the scanning configuration for.</p>
+    pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetRepositoryScanningConfigurationInput {
+    /// <p>One or more repository names to get the scanning configuration for.</p>
+    pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.repository_names.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetRepositoryScanningConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetRepositoryScanningConfigurationInput");
+        formatter.field("repository_names", &self.repository_names);
         formatter.finish()
     }
 }

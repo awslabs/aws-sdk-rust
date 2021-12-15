@@ -193,6 +193,63 @@ impl UpdateDirectoryConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateApplicationOutput {
+    /// <p>Describes an application in the application catalog.</p>
+    pub application: std::option::Option<crate::model::Application>,
+}
+impl UpdateApplicationOutput {
+    /// <p>Describes an application in the application catalog.</p>
+    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+        self.application.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateApplicationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateApplicationOutput");
+        formatter.field("application", &self.application);
+        formatter.finish()
+    }
+}
+/// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+pub mod update_application_output {
+    /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application: std::option::Option<crate::model::Application>,
+    }
+    impl Builder {
+        /// <p>Describes an application in the application catalog.</p>
+        pub fn application(mut self, input: crate::model::Application) -> Self {
+            self.application = Some(input);
+            self
+        }
+        /// <p>Describes an application in the application catalog.</p>
+        pub fn set_application(
+            mut self,
+            input: std::option::Option<crate::model::Application>,
+        ) -> Self {
+            self.application = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+        pub fn build(self) -> crate::output::UpdateApplicationOutput {
+            crate::output::UpdateApplicationOutput {
+                application: self.application,
+            }
+        }
+    }
+}
+impl UpdateApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+    pub fn builder() -> crate::output::update_application_output::Builder {
+        crate::output::update_application_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -748,6 +805,36 @@ impl DisassociateFleetOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFleetOutput`](crate::output::DisassociateFleetOutput)
     pub fn builder() -> crate::output::disassociate_fleet_output::Builder {
         crate::output::disassociate_fleet_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateApplicationFleetOutput {}
+impl std::fmt::Debug for DisassociateApplicationFleetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateApplicationFleetOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateApplicationFleetOutput`](crate::output::DisassociateApplicationFleetOutput)
+pub mod disassociate_application_fleet_output {
+    /// A builder for [`DisassociateApplicationFleetOutput`](crate::output::DisassociateApplicationFleetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateApplicationFleetOutput`](crate::output::DisassociateApplicationFleetOutput)
+        pub fn build(self) -> crate::output::DisassociateApplicationFleetOutput {
+            crate::output::DisassociateApplicationFleetOutput {}
+        }
+    }
+}
+impl DisassociateApplicationFleetOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateApplicationFleetOutput`](crate::output::DisassociateApplicationFleetOutput)
+    pub fn builder() -> crate::output::disassociate_application_fleet_output::Builder {
+        crate::output::disassociate_application_fleet_output::Builder::default()
     }
 }
 
@@ -1654,6 +1741,274 @@ impl DescribeDirectoryConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeApplicationsOutput {
+    /// <p>The applications in the list.</p>
+    pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
+    /// <p>The pagination token used to retrieve the next page of results for this
+    /// operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeApplicationsOutput {
+    /// <p>The applications in the list.</p>
+    pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
+        self.applications.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this
+    /// operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeApplicationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeApplicationsOutput");
+        formatter.field("applications", &self.applications);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput)
+pub mod describe_applications_output {
+    /// A builder for [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>The applications in the list.</p>
+        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+            let mut v = self.applications.unwrap_or_default();
+            v.push(input.into());
+            self.applications = Some(v);
+            self
+        }
+        /// <p>The applications in the list.</p>
+        pub fn set_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Application>>,
+        ) -> Self {
+            self.applications = input;
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput)
+        pub fn build(self) -> crate::output::DescribeApplicationsOutput {
+            crate::output::DescribeApplicationsOutput {
+                applications: self.applications,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeApplicationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput)
+    pub fn builder() -> crate::output::describe_applications_output::Builder {
+        crate::output::describe_applications_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeApplicationFleetAssociationsOutput {
+    /// <p>The application fleet associations in the list.</p>
+    pub application_fleet_associations:
+        std::option::Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
+    /// <p>The pagination token used to retrieve the next page of results for this
+    /// operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeApplicationFleetAssociationsOutput {
+    /// <p>The application fleet associations in the list.</p>
+    pub fn application_fleet_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ApplicationFleetAssociation]> {
+        self.application_fleet_associations.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this
+    /// operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeApplicationFleetAssociationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeApplicationFleetAssociationsOutput");
+        formatter.field(
+            "application_fleet_associations",
+            &self.application_fleet_associations,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeApplicationFleetAssociationsOutput`](crate::output::DescribeApplicationFleetAssociationsOutput)
+pub mod describe_application_fleet_associations_output {
+    /// A builder for [`DescribeApplicationFleetAssociationsOutput`](crate::output::DescribeApplicationFleetAssociationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_fleet_associations:
+            std::option::Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `application_fleet_associations`.
+        ///
+        /// To override the contents of this collection use [`set_application_fleet_associations`](Self::set_application_fleet_associations).
+        ///
+        /// <p>The application fleet associations in the list.</p>
+        pub fn application_fleet_associations(
+            mut self,
+            input: impl Into<crate::model::ApplicationFleetAssociation>,
+        ) -> Self {
+            let mut v = self.application_fleet_associations.unwrap_or_default();
+            v.push(input.into());
+            self.application_fleet_associations = Some(v);
+            self
+        }
+        /// <p>The application fleet associations in the list.</p>
+        pub fn set_application_fleet_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
+        ) -> Self {
+            self.application_fleet_associations = input;
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeApplicationFleetAssociationsOutput`](crate::output::DescribeApplicationFleetAssociationsOutput)
+        pub fn build(self) -> crate::output::DescribeApplicationFleetAssociationsOutput {
+            crate::output::DescribeApplicationFleetAssociationsOutput {
+                application_fleet_associations: self.application_fleet_associations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeApplicationFleetAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationFleetAssociationsOutput`](crate::output::DescribeApplicationFleetAssociationsOutput)
+    pub fn builder() -> crate::output::describe_application_fleet_associations_output::Builder {
+        crate::output::describe_application_fleet_associations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAppBlocksOutput {
+    /// <p>The app blocks in the list.</p>
+    pub app_blocks: std::option::Option<std::vec::Vec<crate::model::AppBlock>>,
+    /// <p>The pagination token used to retrieve the next page of results for this
+    /// operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeAppBlocksOutput {
+    /// <p>The app blocks in the list.</p>
+    pub fn app_blocks(&self) -> std::option::Option<&[crate::model::AppBlock]> {
+        self.app_blocks.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this
+    /// operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeAppBlocksOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAppBlocksOutput");
+        formatter.field("app_blocks", &self.app_blocks);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeAppBlocksOutput`](crate::output::DescribeAppBlocksOutput)
+pub mod describe_app_blocks_output {
+    /// A builder for [`DescribeAppBlocksOutput`](crate::output::DescribeAppBlocksOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_blocks: std::option::Option<std::vec::Vec<crate::model::AppBlock>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `app_blocks`.
+        ///
+        /// To override the contents of this collection use [`set_app_blocks`](Self::set_app_blocks).
+        ///
+        /// <p>The app blocks in the list.</p>
+        pub fn app_blocks(mut self, input: impl Into<crate::model::AppBlock>) -> Self {
+            let mut v = self.app_blocks.unwrap_or_default();
+            v.push(input.into());
+            self.app_blocks = Some(v);
+            self
+        }
+        /// <p>The app blocks in the list.</p>
+        pub fn set_app_blocks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AppBlock>>,
+        ) -> Self {
+            self.app_blocks = input;
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAppBlocksOutput`](crate::output::DescribeAppBlocksOutput)
+        pub fn build(self) -> crate::output::DescribeAppBlocksOutput {
+            crate::output::DescribeAppBlocksOutput {
+                app_blocks: self.app_blocks,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeAppBlocksOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAppBlocksOutput`](crate::output::DescribeAppBlocksOutput)
+    pub fn builder() -> crate::output::describe_app_blocks_output::Builder {
+        crate::output::describe_app_blocks_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserOutput {}
 impl std::fmt::Debug for DeleteUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1937,6 +2292,66 @@ impl DeleteDirectoryConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectoryConfigOutput`](crate::output::DeleteDirectoryConfigOutput)
     pub fn builder() -> crate::output::delete_directory_config_output::Builder {
         crate::output::delete_directory_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteApplicationOutput {}
+impl std::fmt::Debug for DeleteApplicationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteApplicationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+pub mod delete_application_output {
+    /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+        pub fn build(self) -> crate::output::DeleteApplicationOutput {
+            crate::output::DeleteApplicationOutput {}
+        }
+    }
+}
+impl DeleteApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+    pub fn builder() -> crate::output::delete_application_output::Builder {
+        crate::output::delete_application_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAppBlockOutput {}
+impl std::fmt::Debug for DeleteAppBlockOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAppBlockOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteAppBlockOutput`](crate::output::DeleteAppBlockOutput)
+pub mod delete_app_block_output {
+    /// A builder for [`DeleteAppBlockOutput`](crate::output::DeleteAppBlockOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteAppBlockOutput`](crate::output::DeleteAppBlockOutput)
+        pub fn build(self) -> crate::output::DeleteAppBlockOutput {
+            crate::output::DeleteAppBlockOutput {}
+        }
+    }
+}
+impl DeleteAppBlockOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAppBlockOutput`](crate::output::DeleteAppBlockOutput)
+    pub fn builder() -> crate::output::delete_app_block_output::Builder {
+        crate::output::delete_app_block_output::Builder::default()
     }
 }
 
@@ -2525,6 +2940,117 @@ impl CreateDirectoryConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateApplicationOutput {
+    /// <p>Describes an application in the application catalog.</p>
+    pub application: std::option::Option<crate::model::Application>,
+}
+impl CreateApplicationOutput {
+    /// <p>Describes an application in the application catalog.</p>
+    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+        self.application.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateApplicationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateApplicationOutput");
+        formatter.field("application", &self.application);
+        formatter.finish()
+    }
+}
+/// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
+pub mod create_application_output {
+    /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application: std::option::Option<crate::model::Application>,
+    }
+    impl Builder {
+        /// <p>Describes an application in the application catalog.</p>
+        pub fn application(mut self, input: crate::model::Application) -> Self {
+            self.application = Some(input);
+            self
+        }
+        /// <p>Describes an application in the application catalog.</p>
+        pub fn set_application(
+            mut self,
+            input: std::option::Option<crate::model::Application>,
+        ) -> Self {
+            self.application = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
+        pub fn build(self) -> crate::output::CreateApplicationOutput {
+            crate::output::CreateApplicationOutput {
+                application: self.application,
+            }
+        }
+    }
+}
+impl CreateApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
+    pub fn builder() -> crate::output::create_application_output::Builder {
+        crate::output::create_application_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAppBlockOutput {
+    /// <p>The app block.</p>
+    pub app_block: std::option::Option<crate::model::AppBlock>,
+}
+impl CreateAppBlockOutput {
+    /// <p>The app block.</p>
+    pub fn app_block(&self) -> std::option::Option<&crate::model::AppBlock> {
+        self.app_block.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateAppBlockOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAppBlockOutput");
+        formatter.field("app_block", &self.app_block);
+        formatter.finish()
+    }
+}
+/// See [`CreateAppBlockOutput`](crate::output::CreateAppBlockOutput)
+pub mod create_app_block_output {
+    /// A builder for [`CreateAppBlockOutput`](crate::output::CreateAppBlockOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_block: std::option::Option<crate::model::AppBlock>,
+    }
+    impl Builder {
+        /// <p>The app block.</p>
+        pub fn app_block(mut self, input: crate::model::AppBlock) -> Self {
+            self.app_block = Some(input);
+            self
+        }
+        /// <p>The app block.</p>
+        pub fn set_app_block(mut self, input: std::option::Option<crate::model::AppBlock>) -> Self {
+            self.app_block = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAppBlockOutput`](crate::output::CreateAppBlockOutput)
+        pub fn build(self) -> crate::output::CreateAppBlockOutput {
+            crate::output::CreateAppBlockOutput {
+                app_block: self.app_block,
+            }
+        }
+    }
+}
+impl CreateAppBlockOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAppBlockOutput`](crate::output::CreateAppBlockOutput)
+    pub fn builder() -> crate::output::create_app_block_output::Builder {
+        crate::output::create_app_block_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyImageOutput {
     /// <p>The name of the destination image.</p>
     pub destination_image_name: std::option::Option<std::string::String>,
@@ -2734,5 +3260,80 @@ impl AssociateFleetOutput {
     /// Creates a new builder-style object to manufacture [`AssociateFleetOutput`](crate::output::AssociateFleetOutput)
     pub fn builder() -> crate::output::associate_fleet_output::Builder {
         crate::output::associate_fleet_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateApplicationFleetOutput {
+    /// <p>If fleet name is specified, this returns the list of applications that are associated
+    /// to it. If application ARN is specified, this returns the list of fleets to which it is
+    /// associated.</p>
+    pub application_fleet_association:
+        std::option::Option<crate::model::ApplicationFleetAssociation>,
+}
+impl AssociateApplicationFleetOutput {
+    /// <p>If fleet name is specified, this returns the list of applications that are associated
+    /// to it. If application ARN is specified, this returns the list of fleets to which it is
+    /// associated.</p>
+    pub fn application_fleet_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ApplicationFleetAssociation> {
+        self.application_fleet_association.as_ref()
+    }
+}
+impl std::fmt::Debug for AssociateApplicationFleetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateApplicationFleetOutput");
+        formatter.field(
+            "application_fleet_association",
+            &self.application_fleet_association,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AssociateApplicationFleetOutput`](crate::output::AssociateApplicationFleetOutput)
+pub mod associate_application_fleet_output {
+    /// A builder for [`AssociateApplicationFleetOutput`](crate::output::AssociateApplicationFleetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_fleet_association:
+            std::option::Option<crate::model::ApplicationFleetAssociation>,
+    }
+    impl Builder {
+        /// <p>If fleet name is specified, this returns the list of applications that are associated
+        /// to it. If application ARN is specified, this returns the list of fleets to which it is
+        /// associated.</p>
+        pub fn application_fleet_association(
+            mut self,
+            input: crate::model::ApplicationFleetAssociation,
+        ) -> Self {
+            self.application_fleet_association = Some(input);
+            self
+        }
+        /// <p>If fleet name is specified, this returns the list of applications that are associated
+        /// to it. If application ARN is specified, this returns the list of fleets to which it is
+        /// associated.</p>
+        pub fn set_application_fleet_association(
+            mut self,
+            input: std::option::Option<crate::model::ApplicationFleetAssociation>,
+        ) -> Self {
+            self.application_fleet_association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateApplicationFleetOutput`](crate::output::AssociateApplicationFleetOutput)
+        pub fn build(self) -> crate::output::AssociateApplicationFleetOutput {
+            crate::output::AssociateApplicationFleetOutput {
+                application_fleet_association: self.application_fleet_association,
+            }
+        }
+    }
+}
+impl AssociateApplicationFleetOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateApplicationFleetOutput`](crate::output::AssociateApplicationFleetOutput)
+    pub fn builder() -> crate::output::associate_application_fleet_output::Builder {
+        crate::output::associate_application_fleet_output::Builder::default()
     }
 }

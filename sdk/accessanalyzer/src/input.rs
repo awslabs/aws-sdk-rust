@@ -5266,6 +5266,8 @@ pub mod validate_policy_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) policy_document: std::option::Option<std::string::String>,
         pub(crate) policy_type: std::option::Option<crate::model::PolicyType>,
+        pub(crate) validate_policy_resource_type:
+            std::option::Option<crate::model::ValidatePolicyResourceType>,
     }
     impl Builder {
         /// <p>The locale to use for localizing the findings.</p>
@@ -5338,6 +5340,36 @@ pub mod validate_policy_input {
             self.policy_type = input;
             self
         }
+        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
+        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
+        /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
+        /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
+        /// apply to all resource policies. For example, to validate a resource policy to attach to a
+        /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
+        /// will run policy checks that apply to all resource policies.</p>
+        pub fn validate_policy_resource_type(
+            mut self,
+            input: crate::model::ValidatePolicyResourceType,
+        ) -> Self {
+            self.validate_policy_resource_type = Some(input);
+            self
+        }
+        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
+        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
+        /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
+        /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
+        /// apply to all resource policies. For example, to validate a resource policy to attach to a
+        /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
+        /// will run policy checks that apply to all resource policies.</p>
+        pub fn set_validate_policy_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ValidatePolicyResourceType>,
+        ) -> Self {
+            self.validate_policy_resource_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ValidatePolicyInput`](crate::input::ValidatePolicyInput)
         pub fn build(
             self,
@@ -5351,6 +5383,7 @@ pub mod validate_policy_input {
                 next_token: self.next_token,
                 policy_document: self.policy_document,
                 policy_type: self.policy_type,
+                validate_policy_resource_type: self.validate_policy_resource_type,
             })
         }
     }
@@ -5847,6 +5880,16 @@ pub struct ValidatePolicyInput {
     /// input such as identity policy or resource policy or a specific input such as managed policy
     /// or Amazon S3 bucket policy. </p>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
+    /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
+    /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
+    /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
+    /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+    /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
+    /// apply to all resource policies. For example, to validate a resource policy to attach to a
+    /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
+    /// will run policy checks that apply to all resource policies.</p>
+    pub validate_policy_resource_type:
+        std::option::Option<crate::model::ValidatePolicyResourceType>,
 }
 impl ValidatePolicyInput {
     /// <p>The locale to use for localizing the findings.</p>
@@ -5876,6 +5919,19 @@ impl ValidatePolicyInput {
     pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.policy_type.as_ref()
     }
+    /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
+    /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
+    /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
+    /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+    /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
+    /// apply to all resource policies. For example, to validate a resource policy to attach to a
+    /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
+    /// will run policy checks that apply to all resource policies.</p>
+    pub fn validate_policy_resource_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ValidatePolicyResourceType> {
+        self.validate_policy_resource_type.as_ref()
+    }
 }
 impl std::fmt::Debug for ValidatePolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5885,6 +5941,10 @@ impl std::fmt::Debug for ValidatePolicyInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("policy_document", &self.policy_document);
         formatter.field("policy_type", &self.policy_type);
+        formatter.field(
+            "validate_policy_resource_type",
+            &self.validate_policy_resource_type,
+        );
         formatter.finish()
     }
 }

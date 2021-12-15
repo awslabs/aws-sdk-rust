@@ -59,6 +59,8 @@ impl<'a> Writer<'a> {
 #[cfg(test)]
 mod test {
     use crate::query::{fmt_string, Writer};
+    use http::Uri;
+    use proptest::proptest;
 
     #[test]
     fn url_encode() {
@@ -78,5 +80,12 @@ mod test {
         writer.push_v("a");
         writer.push_kv("b", "c");
         assert_eq!(out, "?a&b=c");
+    }
+
+    proptest! {
+        #[test]
+        fn test_encode_request(s: String) {
+            let _: Uri = format!("http://host.example.com/?{}", fmt_string(&s)).parse().expect("all strings should be encoded properly");
+        }
     }
 }

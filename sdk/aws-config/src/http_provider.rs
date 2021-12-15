@@ -8,11 +8,10 @@
 //!
 //! Future work will stabilize this interface and enable it to be used directly.
 
-use aws_hyper::{DynConnector, SdkSuccess};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation::{Operation, Request};
 use aws_smithy_http::response::ParseStrictResponse;
-use aws_smithy_http::result::SdkError;
+use aws_smithy_http::result::{SdkError, SdkSuccess};
 use aws_smithy_http::retry::ClassifyResponse;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
 use aws_types::credentials::CredentialsError;
@@ -22,6 +21,7 @@ use crate::connector::expect_connector;
 use crate::json_credentials::{parse_json_credentials, JsonCredentials};
 use crate::provider_config::{HttpSettings, ProviderConfig};
 
+use aws_smithy_client::erase::DynConnector;
 use aws_smithy_client::timeout;
 use bytes::Bytes;
 use http::header::{ACCEPT, AUTHORIZATION};
@@ -195,11 +195,10 @@ impl ClassifyResponse<SdkSuccess<Credentials>, SdkError<CredentialsError>>
 #[cfg(test)]
 mod test {
     use crate::http_provider::{CredentialsResponseParser, HttpCredentialRetryPolicy};
-    use aws_hyper::SdkSuccess;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::operation;
     use aws_smithy_http::response::ParseStrictResponse;
-    use aws_smithy_http::result::SdkError;
+    use aws_smithy_http::result::{SdkError, SdkSuccess};
     use aws_smithy_http::retry::ClassifyResponse;
     use aws_smithy_types::retry::{ErrorKind, RetryKind};
     use aws_types::credentials::CredentialsError;

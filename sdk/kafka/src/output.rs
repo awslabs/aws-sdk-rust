@@ -1313,6 +1313,92 @@ impl ListConfigurationRevisionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListClustersV2Output {
+    /// <p>Information on each of the MSK clusters in the response.</p>
+    pub cluster_info_list: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
+    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
+    /// To get another batch of clusters, provide this token in your next request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListClustersV2Output {
+    /// <p>Information on each of the MSK clusters in the response.</p>
+    pub fn cluster_info_list(&self) -> std::option::Option<&[crate::model::Cluster]> {
+        self.cluster_info_list.as_deref()
+    }
+    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
+    /// To get another batch of clusters, provide this token in your next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListClustersV2Output {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListClustersV2Output");
+        formatter.field("cluster_info_list", &self.cluster_info_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListClustersV2Output`](crate::output::ListClustersV2Output)
+pub mod list_clusters_v2_output {
+    /// A builder for [`ListClustersV2Output`](crate::output::ListClustersV2Output)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cluster_info_list: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `cluster_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_cluster_info_list`](Self::set_cluster_info_list).
+        ///
+        /// <p>Information on each of the MSK clusters in the response.</p>
+        pub fn cluster_info_list(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+            let mut v = self.cluster_info_list.unwrap_or_default();
+            v.push(input.into());
+            self.cluster_info_list = Some(v);
+            self
+        }
+        /// <p>Information on each of the MSK clusters in the response.</p>
+        pub fn set_cluster_info_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
+        ) -> Self {
+            self.cluster_info_list = input;
+            self
+        }
+        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
+        /// To get another batch of clusters, provide this token in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
+        /// To get another batch of clusters, provide this token in your next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListClustersV2Output`](crate::output::ListClustersV2Output)
+        pub fn build(self) -> crate::output::ListClustersV2Output {
+            crate::output::ListClustersV2Output {
+                cluster_info_list: self.cluster_info_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListClustersV2Output {
+    /// Creates a new builder-style object to manufacture [`ListClustersV2Output`](crate::output::ListClustersV2Output)
+    pub fn builder() -> crate::output::list_clusters_v2_output::Builder {
+        crate::output::list_clusters_v2_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
     /// <p>Information on each of the MSK clusters in the response.</p>
     pub cluster_info_list: std::option::Option<std::vec::Vec<crate::model::ClusterInfo>>,
@@ -2116,6 +2202,63 @@ impl DescribeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeClusterV2Output {
+    /// <p>The cluster information.</p>
+    pub cluster_info: std::option::Option<crate::model::Cluster>,
+}
+impl DescribeClusterV2Output {
+    /// <p>The cluster information.</p>
+    pub fn cluster_info(&self) -> std::option::Option<&crate::model::Cluster> {
+        self.cluster_info.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeClusterV2Output {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeClusterV2Output");
+        formatter.field("cluster_info", &self.cluster_info);
+        formatter.finish()
+    }
+}
+/// See [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output)
+pub mod describe_cluster_v2_output {
+    /// A builder for [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cluster_info: std::option::Option<crate::model::Cluster>,
+    }
+    impl Builder {
+        /// <p>The cluster information.</p>
+        pub fn cluster_info(mut self, input: crate::model::Cluster) -> Self {
+            self.cluster_info = Some(input);
+            self
+        }
+        /// <p>The cluster information.</p>
+        pub fn set_cluster_info(
+            mut self,
+            input: std::option::Option<crate::model::Cluster>,
+        ) -> Self {
+            self.cluster_info = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output)
+        pub fn build(self) -> crate::output::DescribeClusterV2Output {
+            crate::output::DescribeClusterV2Output {
+                cluster_info: self.cluster_info,
+            }
+        }
+    }
+}
+impl DescribeClusterV2Output {
+    /// Creates a new builder-style object to manufacture [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output)
+    pub fn builder() -> crate::output::describe_cluster_v2_output::Builder {
+        crate::output::describe_cluster_v2_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOperationOutput {
     /// <p>Cluster operation information</p>
     pub cluster_operation_info: std::option::Option<crate::model::ClusterOperationInfo>,
@@ -2514,6 +2657,120 @@ impl CreateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput)
     pub fn builder() -> crate::output::create_configuration_output::Builder {
         crate::output::create_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateClusterV2Output {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub cluster_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the MSK cluster.</p>
+    pub cluster_name: std::option::Option<std::string::String>,
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub state: std::option::Option<crate::model::ClusterState>,
+    /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
+    pub cluster_type: std::option::Option<crate::model::ClusterType>,
+}
+impl CreateClusterV2Output {
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+        self.cluster_arn.as_deref()
+    }
+    /// <p>The name of the MSK cluster.</p>
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
+        self.cluster_name.as_deref()
+    }
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+        self.state.as_ref()
+    }
+    /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
+    pub fn cluster_type(&self) -> std::option::Option<&crate::model::ClusterType> {
+        self.cluster_type.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateClusterV2Output {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateClusterV2Output");
+        formatter.field("cluster_arn", &self.cluster_arn);
+        formatter.field("cluster_name", &self.cluster_name);
+        formatter.field("state", &self.state);
+        formatter.field("cluster_type", &self.cluster_type);
+        formatter.finish()
+    }
+}
+/// See [`CreateClusterV2Output`](crate::output::CreateClusterV2Output)
+pub mod create_cluster_v2_output {
+    /// A builder for [`CreateClusterV2Output`](crate::output::CreateClusterV2Output)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cluster_arn: std::option::Option<std::string::String>,
+        pub(crate) cluster_name: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::ClusterState>,
+        pub(crate) cluster_type: std::option::Option<crate::model::ClusterType>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+        pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_arn = input;
+            self
+        }
+        /// <p>The name of the MSK cluster.</p>
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the MSK cluster.</p>
+        pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_name = input;
+            self
+        }
+        /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+        pub fn state(mut self, input: crate::model::ClusterState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
+        pub fn cluster_type(mut self, input: crate::model::ClusterType) -> Self {
+            self.cluster_type = Some(input);
+            self
+        }
+        /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
+        pub fn set_cluster_type(
+            mut self,
+            input: std::option::Option<crate::model::ClusterType>,
+        ) -> Self {
+            self.cluster_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateClusterV2Output`](crate::output::CreateClusterV2Output)
+        pub fn build(self) -> crate::output::CreateClusterV2Output {
+            crate::output::CreateClusterV2Output {
+                cluster_arn: self.cluster_arn,
+                cluster_name: self.cluster_name,
+                state: self.state,
+                cluster_type: self.cluster_type,
+            }
+        }
+    }
+}
+impl CreateClusterV2Output {
+    /// Creates a new builder-style object to manufacture [`CreateClusterV2Output`](crate::output::CreateClusterV2Output)
+    pub fn builder() -> crate::output::create_cluster_v2_output::Builder {
+        crate::output::create_cluster_v2_output::Builder::default()
     }
 }
 

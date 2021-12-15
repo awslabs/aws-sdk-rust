@@ -2585,6 +2585,61 @@ impl AsRef<str> for HoursOfOperationDays {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ContactFlowModuleState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Archived,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ContactFlowModuleState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ContactFlowModuleState::Active,
+            "ARCHIVED" => ContactFlowModuleState::Archived,
+            other => ContactFlowModuleState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ContactFlowModuleState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContactFlowModuleState::from(s))
+    }
+}
+impl ContactFlowModuleState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContactFlowModuleState::Active => "ACTIVE",
+            ContactFlowModuleState::Archived => "ARCHIVED",
+            ContactFlowModuleState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "ARCHIVED"]
+    }
+}
+impl AsRef<str> for ContactFlowModuleState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about a problem detail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2636,6 +2691,61 @@ impl ProblemDetail {
     /// Creates a new builder-style object to manufacture [`ProblemDetail`](crate::model::ProblemDetail)
     pub fn builder() -> crate::model::problem_detail::Builder {
         crate::model::problem_detail::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ContactFlowState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Archived,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ContactFlowState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => ContactFlowState::Active,
+            "ARCHIVED" => ContactFlowState::Archived,
+            other => ContactFlowState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ContactFlowState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContactFlowState::from(s))
+    }
+}
+impl ContactFlowState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContactFlowState::Active => "ACTIVE",
+            ContactFlowState::Archived => "ARCHIVED",
+            ContactFlowState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "ARCHIVED"]
+    }
+}
+impl AsRef<str> for ContactFlowState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6578,7 +6688,8 @@ impl HoursOfOperationSummary {
 pub enum ReferenceSummary {
     /// <p>Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
     Attachment(crate::model::AttachmentReference),
-    /// <p>Information about Url reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.</p>
+    /// <p>Information about the URL reference if the <code>referenceType</code> is <code>URL</code>.
+    /// Otherwise, null.</p>
     Url(crate::model::UrlReference),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -6860,6 +6971,8 @@ pub struct ContactFlowSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of contact flow.</p>
     pub contact_flow_type: std::option::Option<crate::model::ContactFlowType>,
+    /// <p>The type of contact flow.</p>
+    pub contact_flow_state: std::option::Option<crate::model::ContactFlowState>,
 }
 impl ContactFlowSummary {
     /// <p>The identifier of the contact flow.</p>
@@ -6878,6 +6991,10 @@ impl ContactFlowSummary {
     pub fn contact_flow_type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
         self.contact_flow_type.as_ref()
     }
+    /// <p>The type of contact flow.</p>
+    pub fn contact_flow_state(&self) -> std::option::Option<&crate::model::ContactFlowState> {
+        self.contact_flow_state.as_ref()
+    }
 }
 impl std::fmt::Debug for ContactFlowSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6886,6 +7003,7 @@ impl std::fmt::Debug for ContactFlowSummary {
         formatter.field("arn", &self.arn);
         formatter.field("name", &self.name);
         formatter.field("contact_flow_type", &self.contact_flow_type);
+        formatter.field("contact_flow_state", &self.contact_flow_state);
         formatter.finish()
     }
 }
@@ -6899,6 +7017,7 @@ pub mod contact_flow_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) contact_flow_type: std::option::Option<crate::model::ContactFlowType>,
+        pub(crate) contact_flow_state: std::option::Option<crate::model::ContactFlowState>,
     }
     impl Builder {
         /// <p>The identifier of the contact flow.</p>
@@ -6944,6 +7063,19 @@ pub mod contact_flow_summary {
             self.contact_flow_type = input;
             self
         }
+        /// <p>The type of contact flow.</p>
+        pub fn contact_flow_state(mut self, input: crate::model::ContactFlowState) -> Self {
+            self.contact_flow_state = Some(input);
+            self
+        }
+        /// <p>The type of contact flow.</p>
+        pub fn set_contact_flow_state(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowState>,
+        ) -> Self {
+            self.contact_flow_state = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ContactFlowSummary`](crate::model::ContactFlowSummary)
         pub fn build(self) -> crate::model::ContactFlowSummary {
             crate::model::ContactFlowSummary {
@@ -6951,6 +7083,7 @@ pub mod contact_flow_summary {
                 arn: self.arn,
                 name: self.name,
                 contact_flow_type: self.contact_flow_type,
+                contact_flow_state: self.contact_flow_state,
             }
         }
     }
@@ -7052,6 +7185,120 @@ impl ContactFlowType {
 impl AsRef<str> for ContactFlowType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Contains summary information about a contact flow.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContactFlowModuleSummary {
+    /// <p>The identifier of the contact flow module.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the contact flow module.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The type of contact flow module.</p>
+    pub state: std::option::Option<crate::model::ContactFlowModuleState>,
+}
+impl ContactFlowModuleSummary {
+    /// <p>The identifier of the contact flow module.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The name of the contact flow module.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The type of contact flow module.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ContactFlowModuleState> {
+        self.state.as_ref()
+    }
+}
+impl std::fmt::Debug for ContactFlowModuleSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactFlowModuleSummary");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`ContactFlowModuleSummary`](crate::model::ContactFlowModuleSummary)
+pub mod contact_flow_module_summary {
+    /// A builder for [`ContactFlowModuleSummary`](crate::model::ContactFlowModuleSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::ContactFlowModuleState>,
+    }
+    impl Builder {
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the contact flow module.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the contact flow module.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The type of contact flow module.</p>
+        pub fn state(mut self, input: crate::model::ContactFlowModuleState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The type of contact flow module.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowModuleState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContactFlowModuleSummary`](crate::model::ContactFlowModuleSummary)
+        pub fn build(self) -> crate::model::ContactFlowModuleSummary {
+            crate::model::ContactFlowModuleSummary {
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+                state: self.state,
+            }
+        }
+    }
+}
+impl ContactFlowModuleSummary {
+    /// Creates a new builder-style object to manufacture [`ContactFlowModuleSummary`](crate::model::ContactFlowModuleSummary)
+    pub fn builder() -> crate::model::contact_flow_module_summary::Builder {
+        crate::model::contact_flow_module_summary::Builder::default()
     }
 }
 
@@ -9699,7 +9946,7 @@ pub struct SecurityProfile {
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The description of the security profile.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9724,7 +9971,7 @@ impl SecurityProfile {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9820,7 +10067,7 @@ pub mod security_profile {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9831,7 +10078,7 @@ pub mod security_profile {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -10109,7 +10356,7 @@ pub struct QuickConnect {
     pub description: std::option::Option<std::string::String>,
     /// <p>Contains information about the quick connect.</p>
     pub quick_connect_config: std::option::Option<crate::model::QuickConnectConfig>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10134,7 +10381,7 @@ impl QuickConnect {
     pub fn quick_connect_config(&self) -> std::option::Option<&crate::model::QuickConnectConfig> {
         self.quick_connect_config.as_ref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -10233,7 +10480,7 @@ pub mod quick_connect {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -10244,7 +10491,7 @@ pub mod quick_connect {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -10294,7 +10541,7 @@ pub struct Queue {
     pub max_contacts: std::option::Option<i32>,
     /// <p>The status of the queue.</p>
     pub status: std::option::Option<crate::model::QueueStatus>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10333,7 +10580,7 @@ impl Queue {
     pub fn status(&self) -> std::option::Option<&crate::model::QueueStatus> {
         self.status.as_ref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -10465,7 +10712,7 @@ pub mod queue {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -10476,7 +10723,7 @@ pub mod queue {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -10824,7 +11071,7 @@ pub struct HoursOfOperation {
     pub time_zone: std::option::Option<std::string::String>,
     /// <p>Configuration information for the hours of operation.</p>
     pub config: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10853,7 +11100,7 @@ impl HoursOfOperation {
     pub fn config(&self) -> std::option::Option<&[crate::model::HoursOfOperationConfig]> {
         self.config.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -10970,7 +11217,7 @@ pub mod hours_of_operation {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -10981,7 +11228,7 @@ pub mod hours_of_operation {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -11012,6 +11259,275 @@ impl HoursOfOperation {
     }
 }
 
+/// <p>Contains information about a contact flow module.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContactFlowModule {
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the contact flow module.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The name of the contact flow module.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The content of the contact flow module.</p>
+    pub content: std::option::Option<std::string::String>,
+    /// <p>The description of the contact flow module.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The type of contact flow module.</p>
+    pub state: std::option::Option<crate::model::ContactFlowModuleState>,
+    /// <p>The status of the contact flow module.</p>
+    pub status: std::option::Option<crate::model::ContactFlowModuleStatus>,
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ContactFlowModule {
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The identifier of the contact flow module.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The name of the contact flow module.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The content of the contact flow module.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The description of the contact flow module.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The type of contact flow module.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ContactFlowModuleState> {
+        self.state.as_ref()
+    }
+    /// <p>The status of the contact flow module.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ContactFlowModuleStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for ContactFlowModule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactFlowModule");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("content", &self.content);
+        formatter.field("description", &self.description);
+        formatter.field("state", &self.state);
+        formatter.field("status", &self.status);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ContactFlowModule`](crate::model::ContactFlowModule)
+pub mod contact_flow_module {
+    /// A builder for [`ContactFlowModule`](crate::model::ContactFlowModule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::ContactFlowModuleState>,
+        pub(crate) status: std::option::Option<crate::model::ContactFlowModuleStatus>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN).</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN).</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The name of the contact flow module.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the contact flow module.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The content of the contact flow module.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>The content of the contact flow module.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>The description of the contact flow module.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the contact flow module.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The type of contact flow module.</p>
+        pub fn state(mut self, input: crate::model::ContactFlowModuleState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The type of contact flow module.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowModuleState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The status of the contact flow module.</p>
+        pub fn status(mut self, input: crate::model::ContactFlowModuleStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the contact flow module.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowModuleStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContactFlowModule`](crate::model::ContactFlowModule)
+        pub fn build(self) -> crate::model::ContactFlowModule {
+            crate::model::ContactFlowModule {
+                arn: self.arn,
+                id: self.id,
+                name: self.name,
+                content: self.content,
+                description: self.description,
+                state: self.state,
+                status: self.status,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl ContactFlowModule {
+    /// Creates a new builder-style object to manufacture [`ContactFlowModule`](crate::model::ContactFlowModule)
+    pub fn builder() -> crate::model::contact_flow_module::Builder {
+        crate::model::contact_flow_module::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ContactFlowModuleStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Published,
+    #[allow(missing_docs)] // documentation missing in model
+    Saved,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ContactFlowModuleStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "PUBLISHED" => ContactFlowModuleStatus::Published,
+            "SAVED" => ContactFlowModuleStatus::Saved,
+            other => ContactFlowModuleStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ContactFlowModuleStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContactFlowModuleStatus::from(s))
+    }
+}
+impl ContactFlowModuleStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContactFlowModuleStatus::Published => "PUBLISHED",
+            ContactFlowModuleStatus::Saved => "SAVED",
+            ContactFlowModuleStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PUBLISHED", "SAVED"]
+    }
+}
+impl AsRef<str> for ContactFlowModuleStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains information about a contact flow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11025,6 +11541,8 @@ pub struct ContactFlow {
     /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
     /// Guide</i>.</p>
     pub r#type: std::option::Option<crate::model::ContactFlowType>,
+    /// <p>The type of contact flow.</p>
+    pub state: std::option::Option<crate::model::ContactFlowState>,
     /// <p>The description of the contact flow.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The content of the contact flow.</p>
@@ -11051,6 +11569,10 @@ impl ContactFlow {
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
         self.r#type.as_ref()
     }
+    /// <p>The type of contact flow.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::ContactFlowState> {
+        self.state.as_ref()
+    }
     /// <p>The description of the contact flow.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
@@ -11074,6 +11596,7 @@ impl std::fmt::Debug for ContactFlow {
         formatter.field("id", &self.id);
         formatter.field("name", &self.name);
         formatter.field("r#type", &self.r#type);
+        formatter.field("state", &self.state);
         formatter.field("description", &self.description);
         formatter.field("content", &self.content);
         formatter.field("tags", &self.tags);
@@ -11090,6 +11613,7 @@ pub mod contact_flow {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ContactFlowType>,
+        pub(crate) state: std::option::Option<crate::model::ContactFlowState>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -11140,6 +11664,19 @@ pub mod contact_flow {
             input: std::option::Option<crate::model::ContactFlowType>,
         ) -> Self {
             self.r#type = input;
+            self
+        }
+        /// <p>The type of contact flow.</p>
+        pub fn state(mut self, input: crate::model::ContactFlowState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The type of contact flow.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowState>,
+        ) -> Self {
+            self.state = input;
             self
         }
         /// <p>The description of the contact flow.</p>
@@ -11194,6 +11731,7 @@ pub mod contact_flow {
                 id: self.id,
                 name: self.name,
                 r#type: self.r#type,
+                state: self.state,
                 description: self.description,
                 content: self.content,
                 tags: self.tags,
@@ -11799,7 +12337,7 @@ pub struct AgentStatus {
     pub display_order: std::option::Option<i32>,
     /// <p>The state of the agent status.</p>
     pub state: std::option::Option<crate::model::AgentStatusState>,
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11832,7 +12370,7 @@ impl AgentStatus {
     pub fn state(&self) -> std::option::Option<&crate::model::AgentStatusState> {
         self.state.as_ref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11958,7 +12496,7 @@ pub mod agent_status {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -11969,7 +12507,7 @@ pub mod agent_status {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

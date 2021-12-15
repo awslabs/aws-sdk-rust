@@ -16559,6 +16559,198 @@ impl SendMessagesInput {
     }
 }
 
+/// See [`SendOtpMessageInput`](crate::input::SendOtpMessageInput)
+pub mod send_otp_message_input {
+    /// A builder for [`SendOtpMessageInput`](crate::input::SendOtpMessageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_id: std::option::Option<std::string::String>,
+        pub(crate) send_otp_message_request_parameters:
+            std::option::Option<crate::model::SendOtpMessageRequestParameters>,
+    }
+    impl Builder {
+        /// <p>The unique ID of your Amazon Pinpoint application.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of your Amazon Pinpoint application.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_id = input;
+            self
+        }
+        /// <p>Send OTP message request parameters.</p>
+        pub fn send_otp_message_request_parameters(
+            mut self,
+            input: crate::model::SendOtpMessageRequestParameters,
+        ) -> Self {
+            self.send_otp_message_request_parameters = Some(input);
+            self
+        }
+        /// <p>Send OTP message request parameters.</p>
+        pub fn set_send_otp_message_request_parameters(
+            mut self,
+            input: std::option::Option<crate::model::SendOtpMessageRequestParameters>,
+        ) -> Self {
+            self.send_otp_message_request_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendOtpMessageInput`](crate::input::SendOtpMessageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SendOtpMessageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SendOtpMessageInput {
+                application_id: self.application_id,
+                send_otp_message_request_parameters: self.send_otp_message_request_parameters,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SendOtpMessageInputOperationOutputAlias = crate::operation::SendOTPMessage;
+#[doc(hidden)]
+pub type SendOtpMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl SendOtpMessageInput {
+    /// Consumes the builder and constructs an Operation<[`SendOTPMessage`](crate::operation::SendOTPMessage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SendOTPMessage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::SendOtpMessageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_173 = &_input.application_id;
+            let input_173 =
+                input_173
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "application_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let application_id = aws_smithy_http::label::fmt_string(input_173, false);
+            if application_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "application_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/v1/apps/{ApplicationId}/otp",
+                ApplicationId = application_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SendOtpMessageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SendOtpMessageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::ser_payload_send_otp_message_input(
+            &self.send_otp_message_request_parameters,
+        )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendOTPMessage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendOTPMessage",
+            "pinpoint",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`SendOtpMessageInput`](crate::input::SendOtpMessageInput)
+    pub fn builder() -> crate::input::send_otp_message_input::Builder {
+        crate::input::send_otp_message_input::Builder::default()
+    }
+}
+
 /// See [`SendUsersMessagesInput`](crate::input::SendUsersMessagesInput)
 pub mod send_users_messages_input {
     /// A builder for [`SendUsersMessagesInput`](crate::input::SendUsersMessagesInput)
@@ -16635,15 +16827,15 @@ impl SendUsersMessagesInput {
             _input: &crate::input::SendUsersMessagesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_173 = &_input.application_id;
-            let input_173 =
-                input_173
+            let input_174 = &_input.application_id;
+            let input_174 =
+                input_174
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_173, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_174, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -16820,15 +17012,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_174 = &_input.resource_arn;
-            let input_174 =
-                input_174
+            let input_175 = &_input.resource_arn;
+            let input_175 =
+                input_175
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_174, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_175, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -17005,15 +17197,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_175 = &_input.resource_arn;
-            let input_175 =
-                input_175
+            let input_176 = &_input.resource_arn;
+            let input_176 =
+                input_176
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_175, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_176, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -17029,9 +17221,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_176) = &_input.tag_keys {
-                for inner_177 in inner_176 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_177));
+            if let Some(inner_177) = &_input.tag_keys {
+                for inner_178 in inner_177 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_178));
                 }
             }
             Ok(())
@@ -17187,15 +17379,15 @@ impl UpdateAdmChannelInput {
             _input: &crate::input::UpdateAdmChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_178 = &_input.application_id;
-            let input_178 =
-                input_178
+            let input_179 = &_input.application_id;
+            let input_179 =
+                input_179
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_178, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_179, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -17374,15 +17566,15 @@ impl UpdateApnsChannelInput {
             _input: &crate::input::UpdateApnsChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_179 = &_input.application_id;
-            let input_179 =
-                input_179
+            let input_180 = &_input.application_id;
+            let input_180 =
+                input_180
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_179, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_180, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -17567,15 +17759,15 @@ impl UpdateApnsSandboxChannelInput {
             _input: &crate::input::UpdateApnsSandboxChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_180 = &_input.application_id;
-            let input_180 =
-                input_180
+            let input_181 = &_input.application_id;
+            let input_181 =
+                input_181
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_180, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_181, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -17759,15 +17951,15 @@ impl UpdateApnsVoipChannelInput {
             _input: &crate::input::UpdateApnsVoipChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_181 = &_input.application_id;
-            let input_181 =
-                input_181
+            let input_182 = &_input.application_id;
+            let input_182 =
+                input_182
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_181, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_182, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -17952,15 +18144,15 @@ impl UpdateApnsVoipSandboxChannelInput {
             _input: &crate::input::UpdateApnsVoipSandboxChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_182 = &_input.application_id;
-            let input_182 =
-                input_182
+            let input_183 = &_input.application_id;
+            let input_183 =
+                input_183
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_182, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_183, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -18145,15 +18337,15 @@ impl UpdateApplicationSettingsInput {
             _input: &crate::input::UpdateApplicationSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_183 = &_input.application_id;
-            let input_183 =
-                input_183
+            let input_184 = &_input.application_id;
+            let input_184 =
+                input_184
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_183, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_184, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -18333,15 +18525,15 @@ impl UpdateBaiduChannelInput {
             _input: &crate::input::UpdateBaiduChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_184 = &_input.application_id;
-            let input_184 =
-                input_184
+            let input_185 = &_input.application_id;
+            let input_185 =
+                input_185
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_184, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_185, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -18533,30 +18725,30 @@ impl UpdateCampaignInput {
             _input: &crate::input::UpdateCampaignInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_185 = &_input.application_id;
-            let input_185 =
-                input_185
+            let input_186 = &_input.application_id;
+            let input_186 =
+                input_186
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_185, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_186, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_186 = &_input.campaign_id;
-            let input_186 =
-                input_186
+            let input_187 = &_input.campaign_id;
+            let input_187 =
+                input_187
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "campaign_id",
                         details: "cannot be empty or unset",
                     })?;
-            let campaign_id = aws_smithy_http::label::fmt_string(input_186, false);
+            let campaign_id = aws_smithy_http::label::fmt_string(input_187, false);
             if campaign_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "campaign_id",
@@ -18736,15 +18928,15 @@ impl UpdateEmailChannelInput {
             _input: &crate::input::UpdateEmailChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_187 = &_input.application_id;
-            let input_187 =
-                input_187
+            let input_188 = &_input.application_id;
+            let input_188 =
+                input_188
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_187, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_188, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -18948,15 +19140,15 @@ impl UpdateEmailTemplateInput {
             _input: &crate::input::UpdateEmailTemplateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_188 = &_input.template_name;
-            let input_188 =
-                input_188
+            let input_189 = &_input.template_name;
+            let input_189 =
+                input_189
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     })?;
-            let template_name = aws_smithy_http::label::fmt_string(input_188, false);
+            let template_name = aws_smithy_http::label::fmt_string(input_189, false);
             if template_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
@@ -18982,8 +19174,8 @@ impl UpdateEmailTemplateInput {
                     aws_smithy_types::primitive::Encoder::from(_input.create_new_version).encode(),
                 );
             }
-            if let Some(inner_189) = &_input.version {
-                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_189));
+            if let Some(inner_190) = &_input.version {
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_190));
             }
             Ok(())
         }
@@ -19165,30 +19357,30 @@ impl UpdateEndpointInput {
             _input: &crate::input::UpdateEndpointInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_190 = &_input.application_id;
-            let input_190 =
-                input_190
+            let input_191 = &_input.application_id;
+            let input_191 =
+                input_191
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_190, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_191, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_191 = &_input.endpoint_id;
-            let input_191 =
-                input_191
+            let input_192 = &_input.endpoint_id;
+            let input_192 =
+                input_192
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "endpoint_id",
                         details: "cannot be empty or unset",
                     })?;
-            let endpoint_id = aws_smithy_http::label::fmt_string(input_191, false);
+            let endpoint_id = aws_smithy_http::label::fmt_string(input_192, false);
             if endpoint_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "endpoint_id",
@@ -19367,15 +19559,15 @@ impl UpdateEndpointsBatchInput {
             _input: &crate::input::UpdateEndpointsBatchInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_192 = &_input.application_id;
-            let input_192 =
-                input_192
+            let input_193 = &_input.application_id;
+            let input_193 =
+                input_193
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_192, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_193, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -19555,15 +19747,15 @@ impl UpdateGcmChannelInput {
             _input: &crate::input::UpdateGcmChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_193 = &_input.application_id;
-            let input_193 =
-                input_193
+            let input_194 = &_input.application_id;
+            let input_194 =
+                input_194
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_193, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_194, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -19769,15 +19961,15 @@ impl UpdateInAppTemplateInput {
             _input: &crate::input::UpdateInAppTemplateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_194 = &_input.template_name;
-            let input_194 =
-                input_194
+            let input_195 = &_input.template_name;
+            let input_195 =
+                input_195
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     })?;
-            let template_name = aws_smithy_http::label::fmt_string(input_194, false);
+            let template_name = aws_smithy_http::label::fmt_string(input_195, false);
             if template_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
@@ -19803,8 +19995,8 @@ impl UpdateInAppTemplateInput {
                     aws_smithy_types::primitive::Encoder::from(_input.create_new_version).encode(),
                 );
             }
-            if let Some(inner_195) = &_input.version {
-                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_195));
+            if let Some(inner_196) = &_input.version {
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_196));
             }
             Ok(())
         }
@@ -19986,30 +20178,30 @@ impl UpdateJourneyInput {
             _input: &crate::input::UpdateJourneyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_196 = &_input.application_id;
-            let input_196 =
-                input_196
+            let input_197 = &_input.application_id;
+            let input_197 =
+                input_197
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_196, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_197, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_197 = &_input.journey_id;
-            let input_197 =
-                input_197
+            let input_198 = &_input.journey_id;
+            let input_198 =
+                input_198
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "journey_id",
                         details: "cannot be empty or unset",
                     })?;
-            let journey_id = aws_smithy_http::label::fmt_string(input_197, false);
+            let journey_id = aws_smithy_http::label::fmt_string(input_198, false);
             if journey_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "journey_id",
@@ -20201,30 +20393,30 @@ impl UpdateJourneyStateInput {
             _input: &crate::input::UpdateJourneyStateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_198 = &_input.application_id;
-            let input_198 =
-                input_198
+            let input_199 = &_input.application_id;
+            let input_199 =
+                input_199
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_198, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_199, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_199 = &_input.journey_id;
-            let input_199 =
-                input_199
+            let input_200 = &_input.journey_id;
+            let input_200 =
+                input_200
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "journey_id",
                         details: "cannot be empty or unset",
                     })?;
-            let journey_id = aws_smithy_http::label::fmt_string(input_199, false);
+            let journey_id = aws_smithy_http::label::fmt_string(input_200, false);
             if journey_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "journey_id",
@@ -20433,15 +20625,15 @@ impl UpdatePushTemplateInput {
             _input: &crate::input::UpdatePushTemplateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_200 = &_input.template_name;
-            let input_200 =
-                input_200
+            let input_201 = &_input.template_name;
+            let input_201 =
+                input_201
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     })?;
-            let template_name = aws_smithy_http::label::fmt_string(input_200, false);
+            let template_name = aws_smithy_http::label::fmt_string(input_201, false);
             if template_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
@@ -20467,8 +20659,8 @@ impl UpdatePushTemplateInput {
                     aws_smithy_types::primitive::Encoder::from(_input.create_new_version).encode(),
                 );
             }
-            if let Some(inner_201) = &_input.version {
-                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_201));
+            if let Some(inner_202) = &_input.version {
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_202));
             }
             Ok(())
         }
@@ -20643,15 +20835,15 @@ impl UpdateRecommenderConfigurationInput {
             _input: &crate::input::UpdateRecommenderConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_202 = &_input.recommender_id;
-            let input_202 =
-                input_202
+            let input_203 = &_input.recommender_id;
+            let input_203 =
+                input_203
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "recommender_id",
                         details: "cannot be empty or unset",
                     })?;
-            let recommender_id = aws_smithy_http::label::fmt_string(input_202, false);
+            let recommender_id = aws_smithy_http::label::fmt_string(input_203, false);
             if recommender_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "recommender_id",
@@ -20843,30 +21035,30 @@ impl UpdateSegmentInput {
             _input: &crate::input::UpdateSegmentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_203 = &_input.application_id;
-            let input_203 =
-                input_203
+            let input_204 = &_input.application_id;
+            let input_204 =
+                input_204
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_203, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_204, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_204 = &_input.segment_id;
-            let input_204 =
-                input_204
+            let input_205 = &_input.segment_id;
+            let input_205 =
+                input_205
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "segment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let segment_id = aws_smithy_http::label::fmt_string(input_204, false);
+            let segment_id = aws_smithy_http::label::fmt_string(input_205, false);
             if segment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "segment_id",
@@ -21046,15 +21238,15 @@ impl UpdateSmsChannelInput {
             _input: &crate::input::UpdateSmsChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_205 = &_input.application_id;
-            let input_205 =
-                input_205
+            let input_206 = &_input.application_id;
+            let input_206 =
+                input_206
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_205, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_206, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -21257,15 +21449,15 @@ impl UpdateSmsTemplateInput {
             _input: &crate::input::UpdateSmsTemplateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_206 = &_input.template_name;
-            let input_206 =
-                input_206
+            let input_207 = &_input.template_name;
+            let input_207 =
+                input_207
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     })?;
-            let template_name = aws_smithy_http::label::fmt_string(input_206, false);
+            let template_name = aws_smithy_http::label::fmt_string(input_207, false);
             if template_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
@@ -21291,8 +21483,8 @@ impl UpdateSmsTemplateInput {
                     aws_smithy_types::primitive::Encoder::from(_input.create_new_version).encode(),
                 );
             }
-            if let Some(inner_207) = &_input.version {
-                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_207));
+            if let Some(inner_208) = &_input.version {
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_208));
             }
             Ok(())
         }
@@ -21482,30 +21674,30 @@ impl UpdateTemplateActiveVersionInput {
             _input: &crate::input::UpdateTemplateActiveVersionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_208 = &_input.template_name;
-            let input_208 =
-                input_208
+            let input_209 = &_input.template_name;
+            let input_209 =
+                input_209
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     })?;
-            let template_name = aws_smithy_http::label::fmt_string(input_208, false);
+            let template_name = aws_smithy_http::label::fmt_string(input_209, false);
             if template_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_209 = &_input.template_type;
-            let input_209 =
-                input_209
+            let input_210 = &_input.template_type;
+            let input_210 =
+                input_210
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_type",
                         details: "cannot be empty or unset",
                     })?;
-            let template_type = aws_smithy_http::label::fmt_string(input_209, false);
+            let template_type = aws_smithy_http::label::fmt_string(input_210, false);
             if template_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_type",
@@ -21686,15 +21878,15 @@ impl UpdateVoiceChannelInput {
             _input: &crate::input::UpdateVoiceChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_210 = &_input.application_id;
-            let input_210 =
-                input_210
+            let input_211 = &_input.application_id;
+            let input_211 =
+                input_211
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_210, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_211, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -21898,15 +22090,15 @@ impl UpdateVoiceTemplateInput {
             _input: &crate::input::UpdateVoiceTemplateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_211 = &_input.template_name;
-            let input_211 =
-                input_211
+            let input_212 = &_input.template_name;
+            let input_212 =
+                input_212
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     })?;
-            let template_name = aws_smithy_http::label::fmt_string(input_211, false);
+            let template_name = aws_smithy_http::label::fmt_string(input_212, false);
             if template_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
@@ -21932,8 +22124,8 @@ impl UpdateVoiceTemplateInput {
                     aws_smithy_types::primitive::Encoder::from(_input.create_new_version).encode(),
                 );
             }
-            if let Some(inner_212) = &_input.version {
-                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_212));
+            if let Some(inner_213) = &_input.version {
+                query.push_kv("version", &aws_smithy_http::query::fmt_string(&inner_213));
             }
             Ok(())
         }
@@ -22028,6 +22220,232 @@ impl UpdateVoiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceTemplateInput`](crate::input::UpdateVoiceTemplateInput)
     pub fn builder() -> crate::input::update_voice_template_input::Builder {
         crate::input::update_voice_template_input::Builder::default()
+    }
+}
+
+/// See [`VerifyOtpMessageInput`](crate::input::VerifyOtpMessageInput)
+pub mod verify_otp_message_input {
+    /// A builder for [`VerifyOtpMessageInput`](crate::input::VerifyOtpMessageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) application_id: std::option::Option<std::string::String>,
+        pub(crate) verify_otp_message_request_parameters:
+            std::option::Option<crate::model::VerifyOtpMessageRequestParameters>,
+    }
+    impl Builder {
+        /// <p>The unique ID of your Amazon Pinpoint application.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of your Amazon Pinpoint application.</p>
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_id = input;
+            self
+        }
+        /// <p>Verify OTP message request.</p>
+        pub fn verify_otp_message_request_parameters(
+            mut self,
+            input: crate::model::VerifyOtpMessageRequestParameters,
+        ) -> Self {
+            self.verify_otp_message_request_parameters = Some(input);
+            self
+        }
+        /// <p>Verify OTP message request.</p>
+        pub fn set_verify_otp_message_request_parameters(
+            mut self,
+            input: std::option::Option<crate::model::VerifyOtpMessageRequestParameters>,
+        ) -> Self {
+            self.verify_otp_message_request_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VerifyOtpMessageInput`](crate::input::VerifyOtpMessageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::VerifyOtpMessageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::VerifyOtpMessageInput {
+                application_id: self.application_id,
+                verify_otp_message_request_parameters: self.verify_otp_message_request_parameters,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type VerifyOtpMessageInputOperationOutputAlias = crate::operation::VerifyOTPMessage;
+#[doc(hidden)]
+pub type VerifyOtpMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl VerifyOtpMessageInput {
+    /// Consumes the builder and constructs an Operation<[`VerifyOTPMessage`](crate::operation::VerifyOTPMessage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::VerifyOTPMessage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::VerifyOtpMessageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_214 = &_input.application_id;
+            let input_214 =
+                input_214
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "application_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let application_id = aws_smithy_http::label::fmt_string(input_214, false);
+            if application_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "application_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/v1/apps/{ApplicationId}/verify-otp",
+                ApplicationId = application_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::VerifyOtpMessageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::VerifyOtpMessageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::ser_payload_verify_otp_message_input(
+            &self.verify_otp_message_request_parameters,
+        )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::VerifyOTPMessage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "VerifyOTPMessage",
+            "pinpoint",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`VerifyOtpMessageInput`](crate::input::VerifyOtpMessageInput)
+    pub fn builder() -> crate::input::verify_otp_message_input::Builder {
+        crate::input::verify_otp_message_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VerifyOtpMessageInput {
+    /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    pub application_id: std::option::Option<std::string::String>,
+    /// <p>Verify OTP message request.</p>
+    pub verify_otp_message_request_parameters:
+        std::option::Option<crate::model::VerifyOtpMessageRequestParameters>,
+}
+impl VerifyOtpMessageInput {
+    /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Verify OTP message request.</p>
+    pub fn verify_otp_message_request_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::VerifyOtpMessageRequestParameters> {
+        self.verify_otp_message_request_parameters.as_ref()
+    }
+}
+impl std::fmt::Debug for VerifyOtpMessageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VerifyOtpMessageInput");
+        formatter.field("application_id", &self.application_id);
+        formatter.field(
+            "verify_otp_message_request_parameters",
+            &self.verify_otp_message_request_parameters,
+        );
+        formatter.finish()
     }
 }
 
@@ -22946,6 +23364,40 @@ impl std::fmt::Debug for SendUsersMessagesInput {
         formatter.field(
             "send_users_message_request",
             &self.send_users_message_request,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendOtpMessageInput {
+    /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    pub application_id: std::option::Option<std::string::String>,
+    /// <p>Send OTP message request parameters.</p>
+    pub send_otp_message_request_parameters:
+        std::option::Option<crate::model::SendOtpMessageRequestParameters>,
+}
+impl SendOtpMessageInput {
+    /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    pub fn application_id(&self) -> std::option::Option<&str> {
+        self.application_id.as_deref()
+    }
+    /// <p>Send OTP message request parameters.</p>
+    pub fn send_otp_message_request_parameters(
+        &self,
+    ) -> std::option::Option<&crate::model::SendOtpMessageRequestParameters> {
+        self.send_otp_message_request_parameters.as_ref()
+    }
+}
+impl std::fmt::Debug for SendOtpMessageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendOtpMessageInput");
+        formatter.field("application_id", &self.application_id);
+        formatter.field(
+            "send_otp_message_request_parameters",
+            &self.send_otp_message_request_parameters,
         );
         formatter.finish()
     }

@@ -84,6 +84,8 @@ pub struct DbInstanceAutomatedBackup {
     /// <p>The list of replications to different Amazon Web Services Regions associated with the automated backup.</p>
     pub db_instance_automated_backups_replications:
         std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackupsReplication>>,
+    /// <p>Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub backup_target: std::option::Option<std::string::String>,
 }
 impl DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -219,6 +221,10 @@ impl DbInstanceAutomatedBackup {
     ) -> std::option::Option<&[crate::model::DbInstanceAutomatedBackupsReplication]> {
         self.db_instance_automated_backups_replications.as_deref()
     }
+    /// <p>Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn backup_target(&self) -> std::option::Option<&str> {
+        self.backup_target.as_deref()
+    }
 }
 impl std::fmt::Debug for DbInstanceAutomatedBackup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -258,6 +264,7 @@ impl std::fmt::Debug for DbInstanceAutomatedBackup {
             "db_instance_automated_backups_replications",
             &self.db_instance_automated_backups_replications,
         );
+        formatter.field("backup_target", &self.backup_target);
         formatter.finish()
     }
 }
@@ -294,6 +301,7 @@ pub mod db_instance_automated_backup {
         pub(crate) db_instance_automated_backups_arn: std::option::Option<std::string::String>,
         pub(crate) db_instance_automated_backups_replications:
             std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackupsReplication>>,
+        pub(crate) backup_target: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -668,6 +676,19 @@ pub mod db_instance_automated_backup {
             self.db_instance_automated_backups_replications = input;
             self
         }
+        /// <p>Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+        pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_target = Some(input.into());
+            self
+        }
+        /// <p>Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+        pub fn set_backup_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_target = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbInstanceAutomatedBackup`](crate::model::DbInstanceAutomatedBackup)
         pub fn build(self) -> crate::model::DbInstanceAutomatedBackup {
             crate::model::DbInstanceAutomatedBackup {
@@ -700,6 +721,7 @@ pub mod db_instance_automated_backup {
                 db_instance_automated_backups_arn: self.db_instance_automated_backups_arn,
                 db_instance_automated_backups_replications: self
                     .db_instance_automated_backups_replications,
+                backup_target: self.backup_target,
             }
         }
     }
@@ -855,7 +877,11 @@ impl RestoreWindow {
 
 /// <p>Contains the details of an Amazon RDS DB instance.
 /// </p>
-/// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+/// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+/// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+/// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+/// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+/// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -941,8 +967,8 @@ pub struct DbInstance {
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance
     /// is replicated as a read replica. For example, when you create an Aurora read replica of
-    /// an RDS MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is
-    /// shown. This output does not contain information about cross region Aurora read
+    /// an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is
+    /// shown. This output doesn't contain information about cross-Region Aurora read
     /// replicas.</p>
     /// <note>
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
@@ -972,9 +998,12 @@ pub struct DbInstance {
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
     pub secondary_availability_zone: std::option::Option<std::string::String>,
     /// <p>Specifies the accessibility options for the DB instance.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub publicly_accessible: bool,
@@ -1135,6 +1164,8 @@ pub struct DbInstance {
     /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service
     /// User Guide</i>.</p>
     pub custom_iam_instance_profile: std::option::Option<std::string::String>,
+    /// <p>Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub backup_target: std::option::Option<std::string::String>,
 }
 impl DbInstance {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -1274,8 +1305,8 @@ impl DbInstance {
     }
     /// <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance
     /// is replicated as a read replica. For example, when you create an Aurora read replica of
-    /// an RDS MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is
-    /// shown. This output does not contain information about cross region Aurora read
+    /// an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is
+    /// shown. This output doesn't contain information about cross-Region Aurora read
     /// replicas.</p>
     /// <note>
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
@@ -1323,9 +1354,12 @@ impl DbInstance {
         self.secondary_availability_zone.as_deref()
     }
     /// <p>Specifies the accessibility options for the DB instance.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub fn publicly_accessible(&self) -> bool {
@@ -1571,6 +1605,10 @@ impl DbInstance {
     pub fn custom_iam_instance_profile(&self) -> std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
     }
+    /// <p>Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn backup_target(&self) -> std::option::Option<&str> {
+        self.backup_target.as_deref()
+    }
 }
 impl std::fmt::Debug for DbInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1705,6 +1743,7 @@ impl std::fmt::Debug for DbInstance {
             "custom_iam_instance_profile",
             &self.custom_iam_instance_profile,
         );
+        formatter.field("backup_target", &self.backup_target);
         formatter.finish()
     }
 }
@@ -1802,6 +1841,7 @@ pub mod db_instance {
         pub(crate) resume_full_automation_mode_time:
             std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
+        pub(crate) backup_target: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -2211,8 +2251,8 @@ pub mod db_instance {
         ///
         /// <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance
         /// is replicated as a read replica. For example, when you create an Aurora read replica of
-        /// an RDS MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is
-        /// shown. This output does not contain information about cross region Aurora read
+        /// an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is
+        /// shown. This output doesn't contain information about cross-Region Aurora read
         /// replicas.</p>
         /// <note>
         /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
@@ -2228,8 +2268,8 @@ pub mod db_instance {
         }
         /// <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance
         /// is replicated as a read replica. For example, when you create an Aurora read replica of
-        /// an RDS MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is
-        /// shown. This output does not contain information about cross region Aurora read
+        /// an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is
+        /// shown. This output doesn't contain information about cross-Region Aurora read
         /// replicas.</p>
         /// <note>
         /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
@@ -2356,9 +2396,12 @@ pub mod db_instance {
             self
         }
         /// <p>Specifies the accessibility options for the DB instance.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -2366,9 +2409,12 @@ pub mod db_instance {
             self
         }
         /// <p>Specifies the accessibility options for the DB instance.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
@@ -3084,6 +3130,19 @@ pub mod db_instance {
             self.custom_iam_instance_profile = input;
             self
         }
+        /// <p>Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+        pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_target = Some(input.into());
+            self
+        }
+        /// <p>Specifies where automated backups and manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+        pub fn set_backup_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_target = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbInstance`](crate::model::DbInstance)
         pub fn build(self) -> crate::model::DbInstance {
             crate::model::DbInstance {
@@ -3165,6 +3224,7 @@ pub mod db_instance {
                 automation_mode: self.automation_mode,
                 resume_full_automation_mode_time: self.resume_full_automation_mode_time,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
+                backup_target: self.backup_target,
             }
         }
     }
@@ -5555,11 +5615,28 @@ impl DbSecurityGroupMembership {
     }
 }
 
-/// <p>Contains the details of an Amazon Aurora DB cluster.
+/// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
 /// </p>
-/// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-/// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+/// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+/// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+/// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+/// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+/// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+/// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+/// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+/// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+/// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+/// <p>For more information on Amazon Aurora DB clusters, see  
+/// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+/// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
 /// </p>
+/// <p>For more information on Multi-AZ DB clusters, see
+/// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+/// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+/// </p>
+/// <note>
+/// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbCluster {
@@ -5728,6 +5805,44 @@ pub struct DbCluster {
     /// <p>A value that specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
     /// Specific changes are identified by subelements.</p>
     pub pending_modified_values: std::option::Option<crate::model::ClusterPendingModifiedValues>,
+    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub db_cluster_instance_class: std::option::Option<std::string::String>,
+    /// <p>The storage type associated with DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub storage_type: std::option::Option<std::string::String>,
+    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub iops: std::option::Option<i32>,
+    /// <p>Specifies the accessibility options for the DB instance.</p>
+    /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
+    /// IP address from within the DB instance's virtual private cloud (VPC).
+    /// It resolves to the public IP address from outside of the DB instance's VPC.
+    /// Access to the DB instance is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
+    /// <p>For more information, see <a>CreateDBInstance</a>.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub publicly_accessible: std::option::Option<bool>,
+    /// <p>A value that indicates that minor version patches are applied automatically.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub auto_minor_version_upgrade: bool,
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub monitoring_interval: std::option::Option<i32>,
+    /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub monitoring_role_arn: std::option::Option<std::string::String>,
+    /// <p>True if Performance Insights is enabled for the DB cluster, and otherwise false.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub performance_insights_enabled: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub performance_insights_retention_period: std::option::Option<i32>,
 }
 impl DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB).
@@ -6019,6 +6134,64 @@ impl DbCluster {
     ) -> std::option::Option<&crate::model::ClusterPendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
+    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
+        self.db_cluster_instance_class.as_deref()
+    }
+    /// <p>The storage type associated with DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>Specifies the accessibility options for the DB instance.</p>
+    /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
+    /// IP address from within the DB instance's virtual private cloud (VPC).
+    /// It resolves to the public IP address from outside of the DB instance's VPC.
+    /// Access to the DB instance is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
+    /// <p>For more information, see <a>CreateDBInstance</a>.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>A value that indicates that minor version patches are applied automatically.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn auto_minor_version_upgrade(&self) -> bool {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn monitoring_interval(&self) -> std::option::Option<i32> {
+        self.monitoring_interval
+    }
+    /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_role_arn.as_deref()
+    }
+    /// <p>True if Performance Insights is enabled for the DB cluster, and otherwise false.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn performance_insights_enabled(&self) -> std::option::Option<bool> {
+        self.performance_insights_enabled
+    }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
+    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
+        self.performance_insights_retention_period
+    }
 }
 impl std::fmt::Debug for DbCluster {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6116,6 +6289,28 @@ impl std::fmt::Debug for DbCluster {
             &self.global_write_forwarding_requested,
         );
         formatter.field("pending_modified_values", &self.pending_modified_values);
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("iops", &self.iops);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field(
+            "auto_minor_version_upgrade",
+            &self.auto_minor_version_upgrade,
+        );
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field(
+            "performance_insights_enabled",
+            &self.performance_insights_enabled,
+        );
+        formatter.field(
+            "performance_insights_kms_key_id",
+            &self.performance_insights_kms_key_id,
+        );
+        formatter.field(
+            "performance_insights_retention_period",
+            &self.performance_insights_retention_period,
+        );
         formatter.finish()
     }
 }
@@ -6192,6 +6387,16 @@ pub mod db_cluster {
         pub(crate) global_write_forwarding_requested: std::option::Option<bool>,
         pub(crate) pending_modified_values:
             std::option::Option<crate::model::ClusterPendingModifiedValues>,
+        pub(crate) db_cluster_instance_class: std::option::Option<std::string::String>,
+        pub(crate) storage_type: std::option::Option<std::string::String>,
+        pub(crate) iops: std::option::Option<i32>,
+        pub(crate) publicly_accessible: std::option::Option<bool>,
+        pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
+        pub(crate) monitoring_interval: std::option::Option<i32>,
+        pub(crate) monitoring_role_arn: std::option::Option<std::string::String>,
+        pub(crate) performance_insights_enabled: std::option::Option<bool>,
+        pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) performance_insights_retention_period: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB).
@@ -7078,6 +7283,160 @@ pub mod db_cluster {
             self.pending_modified_values = input;
             self
         }
+        /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_instance_class = Some(input.into());
+            self
+        }
+        /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_db_cluster_instance_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_instance_class = input;
+            self
+        }
+        /// <p>The storage type associated with DB instance.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
+            self
+        }
+        /// <p>The storage type associated with DB instance.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
+            self
+        }
+        /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
+            self
+        }
+        /// <p>Specifies the accessibility options for the DB instance.</p>
+        /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
+        /// IP address from within the DB instance's virtual private cloud (VPC).
+        /// It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
+        /// <p>For more information, see <a>CreateDBInstance</a>.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
+            self
+        }
+        /// <p>Specifies the accessibility options for the DB instance.</p>
+        /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
+        /// IP address from within the DB instance's virtual private cloud (VPC).
+        /// It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
+        /// <p>For more information, see <a>CreateDBInstance</a>.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
+            self
+        }
+        /// <p>A value that indicates that minor version patches are applied automatically.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
+            self
+        }
+        /// <p>A value that indicates that minor version patches are applied automatically.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
+            self
+        }
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.monitoring_interval = Some(input);
+            self
+        }
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_interval = input;
+            self
+        }
+        /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_monitoring_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_role_arn = input;
+            self
+        }
+        /// <p>True if Performance Insights is enabled for the DB cluster, and otherwise false.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn performance_insights_enabled(mut self, input: bool) -> Self {
+            self.performance_insights_enabled = Some(input);
+            self
+        }
+        /// <p>True if Performance Insights is enabled for the DB cluster, and otherwise false.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_performance_insights_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.performance_insights_enabled = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn performance_insights_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_performance_insights_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = input;
+            self
+        }
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.performance_insights_retention_period = Some(input);
+            self
+        }
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+        pub fn set_performance_insights_retention_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.performance_insights_retention_period = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbCluster`](crate::model::DbCluster)
         pub fn build(self) -> crate::model::DbCluster {
             crate::model::DbCluster {
@@ -7138,6 +7497,16 @@ pub mod db_cluster {
                 global_write_forwarding_status: self.global_write_forwarding_status,
                 global_write_forwarding_requested: self.global_write_forwarding_requested,
                 pending_modified_values: self.pending_modified_values,
+                db_cluster_instance_class: self.db_cluster_instance_class,
+                storage_type: self.storage_type,
+                iops: self.iops,
+                publicly_accessible: self.publicly_accessible,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+                monitoring_interval: self.monitoring_interval,
+                monitoring_role_arn: self.monitoring_role_arn,
+                performance_insights_enabled: self.performance_insights_enabled,
+                performance_insights_kms_key_id: self.performance_insights_kms_key_id,
+                performance_insights_retention_period: self.performance_insights_retention_period,
             }
         }
     }
@@ -12322,6 +12691,8 @@ pub struct DbSnapshot {
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time (UTC). Doesn't change when the snapshot is copied.</p>
     pub original_snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub snapshot_target: std::option::Option<std::string::String>,
 }
 impl DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -12460,6 +12831,10 @@ impl DbSnapshot {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.original_snapshot_create_time.as_ref()
     }
+    /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn snapshot_target(&self) -> std::option::Option<&str> {
+        self.snapshot_target.as_deref()
+    }
 }
 impl std::fmt::Debug for DbSnapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12503,6 +12878,7 @@ impl std::fmt::Debug for DbSnapshot {
             "original_snapshot_create_time",
             &self.original_snapshot_create_time,
         );
+        formatter.field("snapshot_target", &self.snapshot_target);
         formatter.finish()
     }
 }
@@ -12543,6 +12919,7 @@ pub mod db_snapshot {
         pub(crate) dbi_resource_id: std::option::Option<std::string::String>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) original_snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) snapshot_target: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -12948,6 +13325,19 @@ pub mod db_snapshot {
             self.original_snapshot_create_time = input;
             self
         }
+        /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+        pub fn snapshot_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_target = Some(input.into());
+            self
+        }
+        /// <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+        pub fn set_snapshot_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_target = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbSnapshot`](crate::model::DbSnapshot)
         pub fn build(self) -> crate::model::DbSnapshot {
             crate::model::DbSnapshot {
@@ -12983,6 +13373,7 @@ pub mod db_snapshot {
                 dbi_resource_id: self.dbi_resource_id,
                 tag_list: self.tag_list,
                 original_snapshot_create_time: self.original_snapshot_create_time,
+                snapshot_target: self.snapshot_target,
             }
         }
     }
@@ -17493,6 +17884,13 @@ pub struct OrderableDbInstanceOption {
     pub supported_activity_stream_modes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub supports_global_databases: bool,
+    /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    pub supports_clusters: bool,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -17614,6 +18012,15 @@ impl OrderableDbInstanceOption {
     pub fn supports_global_databases(&self) -> bool {
         self.supports_global_databases
     }
+    /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    pub fn supports_clusters(&self) -> bool {
+        self.supports_clusters
+    }
 }
 impl std::fmt::Debug for OrderableDbInstanceOption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17670,6 +18077,7 @@ impl std::fmt::Debug for OrderableDbInstanceOption {
             &self.supported_activity_stream_modes,
         );
         formatter.field("supports_global_databases", &self.supports_global_databases);
+        formatter.field("supports_clusters", &self.supports_clusters);
         formatter.finish()
     }
 }
@@ -17710,6 +18118,7 @@ pub mod orderable_db_instance_option {
         pub(crate) supported_activity_stream_modes:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) supports_global_databases: std::option::Option<bool>,
+        pub(crate) supports_clusters: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The engine type of a DB instance.</p>
@@ -18074,6 +18483,26 @@ pub mod orderable_db_instance_option {
             self.supports_global_databases = input;
             self
         }
+        /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        pub fn supports_clusters(mut self, input: bool) -> Self {
+            self.supports_clusters = Some(input);
+            self
+        }
+        /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        pub fn set_supports_clusters(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_clusters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption)
         pub fn build(self) -> crate::model::OrderableDbInstanceOption {
             crate::model::OrderableDbInstanceOption {
@@ -18109,6 +18538,7 @@ pub mod orderable_db_instance_option {
                 outpost_capable: self.outpost_capable.unwrap_or_default(),
                 supported_activity_stream_modes: self.supported_activity_stream_modes,
                 supports_global_databases: self.supports_global_databases.unwrap_or_default(),
+                supports_clusters: self.supports_clusters.unwrap_or_default(),
             }
         }
     }

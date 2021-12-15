@@ -259,8 +259,7 @@ pub mod associate_identity_provider_config_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the configuration to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -272,8 +271,7 @@ pub mod associate_identity_provider_config_input {
             self
         }
         /// <p>The metadata to apply to the configuration to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -576,7 +574,7 @@ pub mod create_addon_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. </p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -588,7 +586,7 @@ pub mod create_addon_input {
             self
         }
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. </p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -819,21 +817,21 @@ pub mod create_cluster_input {
             self.role_arn = input;
             self
         }
-        /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+        /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
         /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
         /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
         /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-        /// security groups, but we recommend that you use a dedicated security group for your
+        /// security groups. However, we recommend that you use a dedicated security group for your
         /// cluster control plane.</p>
         pub fn resources_vpc_config(mut self, input: crate::model::VpcConfigRequest) -> Self {
             self.resources_vpc_config = Some(input);
             self
         }
-        /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+        /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
         /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
         /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
         /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-        /// security groups, but we recommend that you use a dedicated security group for your
+        /// security groups. However, we recommend that you use a dedicated security group for your
         /// cluster control plane.</p>
         pub fn set_resources_vpc_config(
             mut self,
@@ -906,7 +904,7 @@ pub mod create_cluster_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -918,7 +916,7 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1218,8 +1216,8 @@ pub mod create_fargate_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Fargate profile tags do not propagate to any other resources associated with the
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Fargate profile tags do not propagate to any other resources associated with the
         /// Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn tags(
             mut self,
@@ -1232,8 +1230,8 @@ pub mod create_fargate_profile_input {
             self
         }
         /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Fargate profile tags do not propagate to any other resources associated with the
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Fargate profile tags do not propagate to any other resources associated with the
         /// Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn set_tags(
             mut self,
@@ -1673,8 +1671,8 @@ pub mod create_nodegroup_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the node group to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Node group tags do not propagate to any other resources associated with the node
+        /// organization. Each tag consists of a key and an optional value. You
+        /// define both. Node group tags do not propagate to any other resources associated with the node
         /// group, such as the Amazon EC2 instances or subnets.</p>
         pub fn tags(
             mut self,
@@ -1687,8 +1685,8 @@ pub mod create_nodegroup_input {
             self
         }
         /// <p>The metadata to apply to the node group to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Node group tags do not propagate to any other resources associated with the node
+        /// organization. Each tag consists of a key and an optional value. You
+        /// define both. Node group tags do not propagate to any other resources associated with the node
         /// group, such as the Amazon EC2 instances or subnets.</p>
         pub fn set_tags(
             mut self,
@@ -4695,14 +4693,14 @@ pub mod list_clusters_input {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
+        /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
         pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
-        /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
+        /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8563,7 +8561,7 @@ pub struct ListClustersInput {
     /// retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
+    /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
     pub include: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListClustersInput {
@@ -8589,7 +8587,7 @@ impl ListClustersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
+    /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
     pub fn include(&self) -> std::option::Option<&[std::string::String]> {
         self.include.as_deref()
     }
@@ -9154,8 +9152,8 @@ pub struct CreateNodegroupInput {
     /// <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
     pub taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
     /// <p>The metadata to apply to the node group to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Node group tags do not propagate to any other resources associated with the node
+    /// organization. Each tag consists of a key and an optional value. You
+    /// define both. Node group tags do not propagate to any other resources associated with the node
     /// group, such as the Amazon EC2 instances or subnets.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -9269,8 +9267,8 @@ impl CreateNodegroupInput {
         self.taints.as_deref()
     }
     /// <p>The metadata to apply to the node group to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Node group tags do not propagate to any other resources associated with the node
+    /// organization. Each tag consists of a key and an optional value. You
+    /// define both. Node group tags do not propagate to any other resources associated with the node
     /// group, such as the Amazon EC2 instances or subnets.</p>
     pub fn tags(
         &self,
@@ -9368,8 +9366,8 @@ pub struct CreateFargateProfileInput {
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Fargate profile tags do not propagate to any other resources associated with the
+    /// organization. Each tag consists of a key and an optional value. You define both.
+    /// Fargate profile tags do not propagate to any other resources associated with the
     /// Fargate profile, such as the pods that are scheduled with it.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -9409,8 +9407,8 @@ impl CreateFargateProfileInput {
         self.client_request_token.as_deref()
     }
     /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Fargate profile tags do not propagate to any other resources associated with the
+    /// organization. Each tag consists of a key and an optional value. You define both.
+    /// Fargate profile tags do not propagate to any other resources associated with the
     /// Fargate profile, such as the pods that are scheduled with it.</p>
     pub fn tags(
         &self,
@@ -9449,11 +9447,11 @@ pub struct CreateClusterInput {
     /// <i>Amazon EKS User Guide</i>
     /// </i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+    /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
     /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
     /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
     /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-    /// security groups, but we recommend that you use a dedicated security group for your
+    /// security groups. However, we recommend that you use a dedicated security group for your
     /// cluster control plane.</p>
     pub resources_vpc_config: std::option::Option<crate::model::VpcConfigRequest>,
     /// <p>The Kubernetes network configuration for the cluster.</p>
@@ -9474,7 +9472,7 @@ pub struct CreateClusterInput {
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value, both of which you define.</p>
+    /// Each tag consists of a key and an optional value. You define both.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The encryption configuration for the cluster.</p>
@@ -9499,11 +9497,11 @@ impl CreateClusterInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+    /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
     /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
     /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
     /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-    /// security groups, but we recommend that you use a dedicated security group for your
+    /// security groups. However, we recommend that you use a dedicated security group for your
     /// cluster control plane.</p>
     pub fn resources_vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigRequest> {
         self.resources_vpc_config.as_ref()
@@ -9533,7 +9531,7 @@ impl CreateClusterInput {
         self.client_request_token.as_deref()
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value, both of which you define.</p>
+    /// Each tag consists of a key and an optional value. You define both.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9591,7 +9589,7 @@ pub struct CreateAddonInput {
     /// request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value, both of which you define. </p>
+    /// Each tag consists of a key and an optional value. You define both.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9634,7 +9632,7 @@ impl CreateAddonInput {
         self.client_request_token.as_deref()
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value, both of which you define. </p>
+    /// Each tag consists of a key and an optional value. You define both.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9666,8 +9664,7 @@ pub struct AssociateIdentityProviderConfigInput {
     /// configuration.</p>
     pub oidc: std::option::Option<crate::model::OidcIdentityProviderConfigRequest>,
     /// <p>The metadata to apply to the configuration to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// organization. Each tag consists of a key and an optional value. You define both.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -9685,8 +9682,7 @@ impl AssociateIdentityProviderConfigInput {
         self.oidc.as_ref()
     }
     /// <p>The metadata to apply to the configuration to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// organization. Each tag consists of a key and an optional value. You define both.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

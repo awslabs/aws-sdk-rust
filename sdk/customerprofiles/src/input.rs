@@ -286,18 +286,24 @@ pub mod create_domain_input {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -2086,6 +2092,207 @@ impl DeleteProfileObjectTypeInput {
     }
 }
 
+/// See [`GetAutoMergingPreviewInput`](crate::input::GetAutoMergingPreviewInput)
+pub mod get_auto_merging_preview_input {
+    /// A builder for [`GetAutoMergingPreviewInput`](crate::input::GetAutoMergingPreviewInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) consolidation: std::option::Option<crate::model::Consolidation>,
+        pub(crate) conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>A list of matching attributes that represent matching criteria.</p>
+        pub fn consolidation(mut self, input: crate::model::Consolidation) -> Self {
+            self.consolidation = Some(input);
+            self
+        }
+        /// <p>A list of matching attributes that represent matching criteria.</p>
+        pub fn set_consolidation(
+            mut self,
+            input: std::option::Option<crate::model::Consolidation>,
+        ) -> Self {
+            self.consolidation = input;
+            self
+        }
+        /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.conflict_resolution = Some(input);
+            self
+        }
+        /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+        pub fn set_conflict_resolution(
+            mut self,
+            input: std::option::Option<crate::model::ConflictResolution>,
+        ) -> Self {
+            self.conflict_resolution = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAutoMergingPreviewInput`](crate::input::GetAutoMergingPreviewInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetAutoMergingPreviewInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetAutoMergingPreviewInput {
+                domain_name: self.domain_name,
+                consolidation: self.consolidation,
+                conflict_resolution: self.conflict_resolution,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetAutoMergingPreviewInputOperationOutputAlias = crate::operation::GetAutoMergingPreview;
+#[doc(hidden)]
+pub type GetAutoMergingPreviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetAutoMergingPreviewInput {
+    /// Consumes the builder and constructs an Operation<[`GetAutoMergingPreview`](crate::operation::GetAutoMergingPreview)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetAutoMergingPreview,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetAutoMergingPreviewInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_11 = &_input.domain_name;
+            let input_11 =
+                input_11
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let domain_name = aws_smithy_http::label::fmt_string(input_11, false);
+            if domain_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/domains/{DomainName}/identity-resolution-jobs/auto-merging-preview",
+                DomainName = domain_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetAutoMergingPreviewInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetAutoMergingPreviewInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_auto_merging_preview(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAutoMergingPreview::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAutoMergingPreview",
+            "customerprofiles",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetAutoMergingPreviewInput`](crate::input::GetAutoMergingPreviewInput)
+    pub fn builder() -> crate::input::get_auto_merging_preview_input::Builder {
+        crate::input::get_auto_merging_preview_input::Builder::default()
+    }
+}
+
 /// See [`GetDomainInput`](crate::input::GetDomainInput)
 pub mod get_domain_input {
     /// A builder for [`GetDomainInput`](crate::input::GetDomainInput)
@@ -2138,15 +2345,15 @@ impl GetDomainInput {
             _input: &crate::input::GetDomainInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.domain_name;
-            let input_11 =
-                input_11
+            let input_12 = &_input.domain_name;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_11, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_12, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -2233,6 +2440,190 @@ impl GetDomainInput {
     }
 }
 
+/// See [`GetIdentityResolutionJobInput`](crate::input::GetIdentityResolutionJobInput)
+pub mod get_identity_resolution_job_input {
+    /// A builder for [`GetIdentityResolutionJobInput`](crate::input::GetIdentityResolutionJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) job_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The unique identifier of the Identity Resolution Job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the Identity Resolution Job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetIdentityResolutionJobInput`](crate::input::GetIdentityResolutionJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetIdentityResolutionJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetIdentityResolutionJobInput {
+                domain_name: self.domain_name,
+                job_id: self.job_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetIdentityResolutionJobInputOperationOutputAlias =
+    crate::operation::GetIdentityResolutionJob;
+#[doc(hidden)]
+pub type GetIdentityResolutionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetIdentityResolutionJobInput {
+    /// Consumes the builder and constructs an Operation<[`GetIdentityResolutionJob`](crate::operation::GetIdentityResolutionJob)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetIdentityResolutionJob,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetIdentityResolutionJobInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_13 = &_input.domain_name;
+            let input_13 =
+                input_13
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let domain_name = aws_smithy_http::label::fmt_string(input_13, false);
+            if domain_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_14 = &_input.job_id;
+            let input_14 =
+                input_14
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "job_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let job_id = aws_smithy_http::label::fmt_string(input_14, false);
+            if job_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "job_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/domains/{DomainName}/identity-resolution-jobs/{JobId}",
+                DomainName = domain_name,
+                JobId = job_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetIdentityResolutionJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetIdentityResolutionJobInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetIdentityResolutionJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetIdentityResolutionJob",
+            "customerprofiles",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetIdentityResolutionJobInput`](crate::input::GetIdentityResolutionJobInput)
+    pub fn builder() -> crate::input::get_identity_resolution_job_input::Builder {
+        crate::input::get_identity_resolution_job_input::Builder::default()
+    }
+}
+
 /// See [`GetIntegrationInput`](crate::input::GetIntegrationInput)
 pub mod get_integration_input {
     /// A builder for [`GetIntegrationInput`](crate::input::GetIntegrationInput)
@@ -2299,15 +2690,15 @@ impl GetIntegrationInput {
             _input: &crate::input::GetIntegrationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.domain_name;
-            let input_12 =
-                input_12
+            let input_15 = &_input.domain_name;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_12, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_15, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -2494,15 +2885,15 @@ impl GetMatchesInput {
             _input: &crate::input::GetMatchesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.domain_name;
-            let input_13 =
-                input_13
+            let input_16 = &_input.domain_name;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_13, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_16, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -2522,13 +2913,13 @@ impl GetMatchesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_14) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_14));
+            if let Some(inner_17) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_17));
             }
-            if let Some(inner_15) = &_input.max_results {
+            if let Some(inner_18) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
                 );
             }
             Ok(())
@@ -2681,30 +3072,30 @@ impl GetProfileObjectTypeInput {
             _input: &crate::input::GetProfileObjectTypeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_16 = &_input.domain_name;
-            let input_16 =
-                input_16
+            let input_19 = &_input.domain_name;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_16, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_19, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_17 = &_input.object_type_name;
-            let input_17 =
-                input_17
+            let input_20 = &_input.object_type_name;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "object_type_name",
                         details: "cannot be empty or unset",
                     })?;
-            let object_type_name = aws_smithy_http::label::fmt_string(input_17, false);
+            let object_type_name = aws_smithy_http::label::fmt_string(input_20, false);
             if object_type_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "object_type_name",
@@ -2853,15 +3244,15 @@ impl GetProfileObjectTypeTemplateInput {
             _input: &crate::input::GetProfileObjectTypeTemplateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.template_id;
-            let input_18 =
-                input_18
+            let input_21 = &_input.template_id;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_id",
                         details: "cannot be empty or unset",
                     })?;
-            let template_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let template_id = aws_smithy_http::label::fmt_string(input_21, false);
             if template_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
@@ -3037,13 +3428,13 @@ impl ListAccountIntegrationsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_19) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_19));
+            if let Some(inner_22) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_22));
             }
-            if let Some(inner_20) = &_input.max_results {
+            if let Some(inner_23) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_23).encode(),
                 );
             }
             Ok(())
@@ -3217,13 +3608,13 @@ impl ListDomainsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_21) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_21));
+            if let Some(inner_24) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_24));
             }
-            if let Some(inner_22) = &_input.max_results {
+            if let Some(inner_25) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
                 );
             }
             Ok(())
@@ -3307,6 +3698,205 @@ impl ListDomainsInput {
     }
 }
 
+/// See [`ListIdentityResolutionJobsInput`](crate::input::ListIdentityResolutionJobsInput)
+pub mod list_identity_resolution_jobs_input {
+    /// A builder for [`ListIdentityResolutionJobsInput`](crate::input::ListIdentityResolutionJobsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListIdentityResolutionJobsInput`](crate::input::ListIdentityResolutionJobsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListIdentityResolutionJobsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListIdentityResolutionJobsInput {
+                domain_name: self.domain_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListIdentityResolutionJobsInputOperationOutputAlias =
+    crate::operation::ListIdentityResolutionJobs;
+#[doc(hidden)]
+pub type ListIdentityResolutionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListIdentityResolutionJobsInput {
+    /// Consumes the builder and constructs an Operation<[`ListIdentityResolutionJobs`](crate::operation::ListIdentityResolutionJobs)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListIdentityResolutionJobs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListIdentityResolutionJobsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_26 = &_input.domain_name;
+            let input_26 =
+                input_26
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "domain_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let domain_name = aws_smithy_http::label::fmt_string(input_26, false);
+            if domain_name.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "domain_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/domains/{DomainName}/identity-resolution-jobs",
+                DomainName = domain_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListIdentityResolutionJobsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_27) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_27));
+            }
+            if let Some(inner_28) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListIdentityResolutionJobsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListIdentityResolutionJobsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListIdentityResolutionJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListIdentityResolutionJobs",
+            "customerprofiles",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListIdentityResolutionJobsInput`](crate::input::ListIdentityResolutionJobsInput)
+    pub fn builder() -> crate::input::list_identity_resolution_jobs_input::Builder {
+        crate::input::list_identity_resolution_jobs_input::Builder::default()
+    }
+}
+
 /// See [`ListIntegrationsInput`](crate::input::ListIntegrationsInput)
 pub mod list_integrations_input {
     /// A builder for [`ListIntegrationsInput`](crate::input::ListIntegrationsInput)
@@ -3385,15 +3975,15 @@ impl ListIntegrationsInput {
             _input: &crate::input::ListIntegrationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_23 = &_input.domain_name;
-            let input_23 =
-                input_23
+            let input_29 = &_input.domain_name;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_23, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_29, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -3413,13 +4003,13 @@ impl ListIntegrationsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_24) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_24));
+            if let Some(inner_30) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_30));
             }
-            if let Some(inner_25) = &_input.max_results {
+            if let Some(inner_31) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
                 );
             }
             Ok(())
@@ -3570,14 +4160,14 @@ pub mod list_profile_objects_input {
             self.profile_id = input;
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index values.
-        /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index
+        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
         pub fn object_filter(mut self, input: crate::model::ObjectFilter) -> Self {
             self.object_filter = Some(input);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index values.
-        /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index
+        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
         pub fn set_object_filter(
             mut self,
             input: std::option::Option<crate::model::ObjectFilter>,
@@ -3625,15 +4215,15 @@ impl ListProfileObjectsInput {
             _input: &crate::input::ListProfileObjectsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_26 = &_input.domain_name;
-            let input_26 =
-                input_26
+            let input_32 = &_input.domain_name;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_26, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_32, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -3653,13 +4243,13 @@ impl ListProfileObjectsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_27) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_27));
+            if let Some(inner_33) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_33));
             }
-            if let Some(inner_28) = &_input.max_results {
+            if let Some(inner_34) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
                 );
             }
             Ok(())
@@ -3835,15 +4425,15 @@ impl ListProfileObjectTypesInput {
             _input: &crate::input::ListProfileObjectTypesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_29 = &_input.domain_name;
-            let input_29 =
-                input_29
+            let input_35 = &_input.domain_name;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_29, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_35, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -3863,13 +4453,13 @@ impl ListProfileObjectTypesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_30) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_30));
+            if let Some(inner_36) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_36));
             }
-            if let Some(inner_31) = &_input.max_results {
+            if let Some(inner_37) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
                 );
             }
             Ok(())
@@ -4028,13 +4618,13 @@ impl ListProfileObjectTypeTemplatesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_32) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_32));
+            if let Some(inner_38) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_38));
             }
-            if let Some(inner_33) = &_input.max_results {
+            if let Some(inner_39) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
                 );
             }
             Ok(())
@@ -4172,15 +4762,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_34 = &_input.resource_arn;
-            let input_34 =
-                input_34
+            let input_40 = &_input.resource_arn;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -4383,15 +4973,15 @@ impl MergeProfilesInput {
             _input: &crate::input::MergeProfilesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_35 = &_input.domain_name;
-            let input_35 =
-                input_35
+            let input_41 = &_input.domain_name;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_35, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_41, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -4624,15 +5214,15 @@ impl PutIntegrationInput {
             _input: &crate::input::PutIntegrationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_36 = &_input.domain_name;
-            let input_36 =
-                input_36
+            let input_42 = &_input.domain_name;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_36, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_42, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -4820,15 +5410,15 @@ impl PutProfileObjectInput {
             _input: &crate::input::PutProfileObjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_37 = &_input.domain_name;
-            let input_37 =
-                input_37
+            let input_43 = &_input.domain_name;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_37, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_43, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -4948,6 +5538,7 @@ pub mod put_profile_object_type_input {
         pub(crate) expiration_days: std::option::Option<i32>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
         pub(crate) allow_profile_creation: std::option::Option<bool>,
+        pub(crate) source_last_updated_timestamp_format: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
         >,
@@ -5048,6 +5639,24 @@ pub mod put_profile_object_type_input {
             self.allow_profile_creation = input;
             self
         }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
+        /// </p>
+        pub fn source_last_updated_timestamp_format(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.source_last_updated_timestamp_format = Some(input.into());
+            self
+        }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
+        /// </p>
+        pub fn set_source_last_updated_timestamp_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_last_updated_timestamp_format = input;
+            self
+        }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -5141,6 +5750,7 @@ pub mod put_profile_object_type_input {
                 expiration_days: self.expiration_days,
                 encryption_key: self.encryption_key,
                 allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
+                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
                 fields: self.fields,
                 keys: self.keys,
                 tags: self.tags,
@@ -5170,30 +5780,30 @@ impl PutProfileObjectTypeInput {
             _input: &crate::input::PutProfileObjectTypeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_38 = &_input.domain_name;
-            let input_38 =
-                input_38
+            let input_44 = &_input.domain_name;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_38, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_44, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_39 = &_input.object_type_name;
-            let input_39 =
-                input_39
+            let input_45 = &_input.object_type_name;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "object_type_name",
                         details: "cannot be empty or unset",
                     })?;
-            let object_type_name = aws_smithy_http::label::fmt_string(input_39, false);
+            let object_type_name = aws_smithy_http::label::fmt_string(input_45, false);
             if object_type_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "object_type_name",
@@ -5418,15 +6028,15 @@ impl SearchProfilesInput {
             _input: &crate::input::SearchProfilesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.domain_name;
-            let input_40 =
-                input_40
+            let input_46 = &_input.domain_name;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_40, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_46, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -5446,13 +6056,13 @@ impl SearchProfilesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_41) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_41));
+            if let Some(inner_47) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_47));
             }
-            if let Some(inner_42) = &_input.max_results {
+            if let Some(inner_48) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
                 );
             }
             Ok(())
@@ -5633,15 +6243,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.resource_arn;
-            let input_43 =
-                input_43
+            let input_49 = &_input.resource_arn;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_43, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_49, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5818,15 +6428,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_44 = &_input.resource_arn;
-            let input_44 =
-                input_44
+            let input_50 = &_input.resource_arn;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_50, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5842,9 +6452,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_45) = &_input.tag_keys {
-                for inner_46 in inner_45 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
+            if let Some(inner_51) = &_input.tag_keys {
+                for inner_52 in inner_51 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_52));
                 }
             }
             Ok(())
@@ -6004,18 +6614,24 @@ pub mod update_domain_input {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -6088,15 +6704,15 @@ impl UpdateDomainInput {
             _input: &crate::input::UpdateDomainInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_47 = &_input.domain_name;
-            let input_47 =
-                input_47
+            let input_53 = &_input.domain_name;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_47, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_53, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -6581,15 +7197,15 @@ impl UpdateProfileInput {
             _input: &crate::input::UpdateProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_48 = &_input.domain_name;
-            let input_48 =
-                input_48
+            let input_54 = &_input.domain_name;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = aws_smithy_http::label::fmt_string(input_48, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_54, false);
             if domain_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
@@ -6899,10 +7515,13 @@ pub struct UpdateDomainInput {
     /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
     /// DeadLetterQueue.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -6932,10 +7551,13 @@ impl UpdateDomainInput {
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingRequest> {
         self.matching.as_ref()
     }
@@ -7096,6 +7718,9 @@ pub struct PutProfileObjectTypeInput {
     /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
     /// is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
+    /// </p>
+    pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
@@ -7142,6 +7767,11 @@ impl PutProfileObjectTypeInput {
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
+    /// </p>
+    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
+        self.source_last_updated_timestamp_format.as_deref()
+    }
     /// <p>A map of the name and ObjectType field.</p>
     pub fn fields(
         &self,
@@ -7176,6 +7806,10 @@ impl std::fmt::Debug for PutProfileObjectTypeInput {
         formatter.field("expiration_days", &self.expiration_days);
         formatter.field("encryption_key", &self.encryption_key);
         formatter.field("allow_profile_creation", &self.allow_profile_creation);
+        formatter.field(
+            "source_last_updated_timestamp_format",
+            &self.source_last_updated_timestamp_format,
+        );
         formatter.field("fields", &self.fields);
         formatter.field("keys", &self.keys);
         formatter.field("tags", &self.tags);
@@ -7419,8 +8053,8 @@ pub struct ListProfileObjectsInput {
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: std::option::Option<std::string::String>,
-    /// <p>Applies a filter to the response to include profile objects with the specified index values.
-    /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index
+    /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
     pub object_filter: std::option::Option<crate::model::ObjectFilter>,
 }
 impl ListProfileObjectsInput {
@@ -7444,8 +8078,8 @@ impl ListProfileObjectsInput {
     pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
-    /// <p>Applies a filter to the response to include profile objects with the specified index values.
-    /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index
+    /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
     pub fn object_filter(&self) -> std::option::Option<&crate::model::ObjectFilter> {
         self.object_filter.as_ref()
     }
@@ -7491,6 +8125,43 @@ impl ListIntegrationsInput {
 impl std::fmt::Debug for ListIntegrationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIntegrationsInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListIdentityResolutionJobsInput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per page.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListIdentityResolutionJobsInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous
+    /// response in the next request to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListIdentityResolutionJobsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListIdentityResolutionJobsInput");
         formatter.field("domain_name", &self.domain_name);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
@@ -7678,6 +8349,34 @@ impl std::fmt::Debug for GetIntegrationInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetIdentityResolutionJobInput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the Identity Resolution Job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+}
+impl GetIdentityResolutionJobInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The unique identifier of the Identity Resolution Job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetIdentityResolutionJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetIdentityResolutionJobInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
@@ -7692,6 +8391,41 @@ impl std::fmt::Debug for GetDomainInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDomainInput");
         formatter.field("domain_name", &self.domain_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAutoMergingPreviewInput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>A list of matching attributes that represent matching criteria.</p>
+    pub consolidation: std::option::Option<crate::model::Consolidation>,
+    /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
+}
+impl GetAutoMergingPreviewInput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>A list of matching attributes that represent matching criteria.</p>
+    pub fn consolidation(&self) -> std::option::Option<&crate::model::Consolidation> {
+        self.consolidation.as_ref()
+    }
+    /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
+        self.conflict_resolution.as_ref()
+    }
+}
+impl std::fmt::Debug for GetAutoMergingPreviewInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetAutoMergingPreviewInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("consolidation", &self.consolidation);
+        formatter.field("conflict_resolution", &self.conflict_resolution);
         formatter.finish()
     }
 }
@@ -8080,10 +8814,13 @@ pub struct CreateDomainInput {
     /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
     /// messages to the DeadLetterQueue.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -8111,10 +8848,13 @@ impl CreateDomainInput {
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingRequest> {
         self.matching.as_ref()
     }

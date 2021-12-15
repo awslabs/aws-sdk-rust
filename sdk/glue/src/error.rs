@@ -413,12 +413,16 @@ pub struct BatchDeleteTableError {
 pub enum BatchDeleteTableErrorKind {
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An encryption operation failed.</p>
+    GlueEncryptionException(crate::error::GlueEncryptionException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource was not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -426,9 +430,11 @@ impl std::fmt::Display for BatchDeleteTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             BatchDeleteTableErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            BatchDeleteTableErrorKind::GlueEncryptionException(_inner) => _inner.fmt(f),
             BatchDeleteTableErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             BatchDeleteTableErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             BatchDeleteTableErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            BatchDeleteTableErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
             BatchDeleteTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -492,6 +498,13 @@ impl BatchDeleteTableError {
             BatchDeleteTableErrorKind::EntityNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `BatchDeleteTableErrorKind::GlueEncryptionException`.
+    pub fn is_glue_encryption_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteTableErrorKind::GlueEncryptionException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BatchDeleteTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
@@ -513,14 +526,23 @@ impl BatchDeleteTableError {
             BatchDeleteTableErrorKind::OperationTimeoutException(_)
         )
     }
+    /// Returns `true` if the error kind is `BatchDeleteTableErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteTableErrorKind::ResourceNotReadyException(_)
+        )
+    }
 }
 impl std::error::Error for BatchDeleteTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             BatchDeleteTableErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            BatchDeleteTableErrorKind::GlueEncryptionException(_inner) => Some(_inner),
             BatchDeleteTableErrorKind::InternalServiceException(_inner) => Some(_inner),
             BatchDeleteTableErrorKind::InvalidInputException(_inner) => Some(_inner),
             BatchDeleteTableErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            BatchDeleteTableErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             BatchDeleteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1140,6 +1162,8 @@ pub enum BatchGetPartitionErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
+    /// <p>An error that indicates your data is in an invalid state.</p>
+    InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1152,6 +1176,7 @@ impl std::fmt::Display for BatchGetPartitionError {
             BatchGetPartitionErrorKind::GlueEncryptionException(_inner) => _inner.fmt(f),
             BatchGetPartitionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             BatchGetPartitionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            BatchGetPartitionErrorKind::InvalidStateException(_inner) => _inner.fmt(f),
             BatchGetPartitionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
             BatchGetPartitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1237,6 +1262,13 @@ impl BatchGetPartitionError {
             BatchGetPartitionErrorKind::InvalidInputException(_)
         )
     }
+    /// Returns `true` if the error kind is `BatchGetPartitionErrorKind::InvalidStateException`.
+    pub fn is_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetPartitionErrorKind::InvalidStateException(_)
+        )
+    }
     /// Returns `true` if the error kind is `BatchGetPartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
@@ -1252,6 +1284,7 @@ impl std::error::Error for BatchGetPartitionError {
             BatchGetPartitionErrorKind::GlueEncryptionException(_inner) => Some(_inner),
             BatchGetPartitionErrorKind::InternalServiceException(_inner) => Some(_inner),
             BatchGetPartitionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            BatchGetPartitionErrorKind::InvalidStateException(_inner) => Some(_inner),
             BatchGetPartitionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             BatchGetPartitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4066,6 +4099,8 @@ pub enum CreateTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource was not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4081,6 +4116,7 @@ impl std::fmt::Display for CreateTableError {
             CreateTableErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             CreateTableErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             CreateTableErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            CreateTableErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
             CreateTableErrorKind::ResourceNumberLimitExceededException(_inner) => _inner.fmt(f),
             CreateTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4175,6 +4211,13 @@ impl CreateTableError {
             CreateTableErrorKind::OperationTimeoutException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateTableErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTableErrorKind::ResourceNotReadyException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateTableErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -4193,6 +4236,7 @@ impl std::error::Error for CreateTableError {
             CreateTableErrorKind::InternalServiceException(_inner) => Some(_inner),
             CreateTableErrorKind::InvalidInputException(_inner) => Some(_inner),
             CreateTableErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            CreateTableErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             CreateTableErrorKind::ResourceNumberLimitExceededException(_inner) => Some(_inner),
             CreateTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -6911,6 +6955,8 @@ pub enum DeleteTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource was not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -6922,6 +6968,7 @@ impl std::fmt::Display for DeleteTableError {
             DeleteTableErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             DeleteTableErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             DeleteTableErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            DeleteTableErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
             DeleteTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7007,6 +7054,13 @@ impl DeleteTableError {
             DeleteTableErrorKind::OperationTimeoutException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTableErrorKind::ResourceNotReadyException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7016,6 +7070,7 @@ impl std::error::Error for DeleteTableError {
             DeleteTableErrorKind::InternalServiceException(_inner) => Some(_inner),
             DeleteTableErrorKind::InvalidInputException(_inner) => Some(_inner),
             DeleteTableErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            DeleteTableErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             DeleteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11338,8 +11393,12 @@ pub enum GetPartitionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
+    /// <p>An error that indicates your data is in an invalid state.</p>
+    InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource was not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -11350,7 +11409,9 @@ impl std::fmt::Display for GetPartitionsError {
             GetPartitionsErrorKind::GlueEncryptionException(_inner) => _inner.fmt(f),
             GetPartitionsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             GetPartitionsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetPartitionsErrorKind::InvalidStateException(_inner) => _inner.fmt(f),
             GetPartitionsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetPartitionsErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
             GetPartitionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11432,11 +11493,22 @@ impl GetPartitionsError {
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetPartitionsErrorKind::InvalidInputException(_))
     }
+    /// Returns `true` if the error kind is `GetPartitionsErrorKind::InvalidStateException`.
+    pub fn is_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, GetPartitionsErrorKind::InvalidStateException(_))
+    }
     /// Returns `true` if the error kind is `GetPartitionsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionsErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetPartitionsErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPartitionsErrorKind::ResourceNotReadyException(_)
         )
     }
 }
@@ -11447,7 +11519,9 @@ impl std::error::Error for GetPartitionsError {
             GetPartitionsErrorKind::GlueEncryptionException(_inner) => Some(_inner),
             GetPartitionsErrorKind::InternalServiceException(_inner) => Some(_inner),
             GetPartitionsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetPartitionsErrorKind::InvalidStateException(_inner) => Some(_inner),
             GetPartitionsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetPartitionsErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             GetPartitionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12715,6 +12789,8 @@ pub enum GetTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource was not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -12726,6 +12802,7 @@ impl std::fmt::Display for GetTableError {
             GetTableErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             GetTableErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             GetTableErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetTableErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
             GetTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12802,6 +12879,10 @@ impl GetTableError {
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetTableErrorKind::OperationTimeoutException(_))
     }
+    /// Returns `true` if the error kind is `GetTableErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(&self.kind, GetTableErrorKind::ResourceNotReadyException(_))
+    }
 }
 impl std::error::Error for GetTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12811,6 +12892,7 @@ impl std::error::Error for GetTableError {
             GetTableErrorKind::InternalServiceException(_inner) => Some(_inner),
             GetTableErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetTableErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetTableErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             GetTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -21227,6 +21309,8 @@ pub enum UpdateTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource was not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -21241,6 +21325,7 @@ impl std::fmt::Display for UpdateTableError {
             UpdateTableErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             UpdateTableErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             UpdateTableErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            UpdateTableErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
             UpdateTableErrorKind::ResourceNumberLimitExceededException(_inner) => _inner.fmt(f),
             UpdateTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -21331,6 +21416,13 @@ impl UpdateTableError {
             UpdateTableErrorKind::OperationTimeoutException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableErrorKind::ResourceNotReadyException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateTableErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -21348,6 +21440,7 @@ impl std::error::Error for UpdateTableError {
             UpdateTableErrorKind::InternalServiceException(_inner) => Some(_inner),
             UpdateTableErrorKind::InvalidInputException(_inner) => Some(_inner),
             UpdateTableErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            UpdateTableErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
             UpdateTableErrorKind::ResourceNumberLimitExceededException(_inner) => Some(_inner),
             UpdateTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -22216,6 +22309,70 @@ impl ResourceNumberLimitExceededException {
     }
 }
 
+/// <p>A resource was not ready for a transaction.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotReadyException {
+    /// <p>A message describing the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNotReadyException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourceNotReadyException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotReadyException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotReadyException {}
+/// See [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+pub mod resource_not_ready_exception {
+    /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+        pub fn build(self) -> crate::error::ResourceNotReadyException {
+            crate::error::ResourceNotReadyException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceNotReadyException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+    pub fn builder() -> crate::error::resource_not_ready_exception::Builder {
+        crate::error::resource_not_ready_exception::Builder::default()
+    }
+}
+
 /// <p>Access to a resource was denied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -22239,8 +22396,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -22303,8 +22460,8 @@ impl ValidationException {
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -22367,8 +22524,8 @@ impl VersionMismatchException {
 impl std::fmt::Display for VersionMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "VersionMismatchException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -22431,8 +22588,8 @@ impl SchedulerTransitioningException {
 impl std::fmt::Display for SchedulerTransitioningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SchedulerTransitioningException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -22495,8 +22652,8 @@ impl CrawlerRunningException {
 impl std::fmt::Display for CrawlerRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CrawlerRunningException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -22559,8 +22716,8 @@ impl IllegalBlueprintStateException {
 impl std::fmt::Display for IllegalBlueprintStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalBlueprintStateException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -22623,8 +22780,8 @@ impl IllegalWorkflowStateException {
 impl std::fmt::Display for IllegalWorkflowStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IllegalWorkflowStateException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -22687,8 +22844,8 @@ impl SchedulerNotRunningException {
 impl std::fmt::Display for SchedulerNotRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SchedulerNotRunningException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -22751,8 +22908,8 @@ impl CrawlerStoppingException {
 impl std::fmt::Display for CrawlerStoppingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CrawlerStoppingException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -22815,8 +22972,8 @@ impl CrawlerNotRunningException {
 impl std::fmt::Display for CrawlerNotRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CrawlerNotRunningException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -22879,8 +23036,8 @@ impl ConcurrentRunsExceededException {
 impl std::fmt::Display for ConcurrentRunsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentRunsExceededException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -22946,8 +23103,8 @@ impl std::fmt::Display for MlTransformNotReadyException {
             f,
             "MlTransformNotReadyException [MLTransformNotReadyException]"
         )?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -23010,8 +23167,8 @@ impl SchedulerRunningException {
 impl std::fmt::Display for SchedulerRunningException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SchedulerRunningException")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -23074,8 +23231,8 @@ impl NoScheduleException {
 impl std::fmt::Display for NoScheduleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoScheduleException")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -23138,8 +23295,8 @@ impl AlreadyExistsException {
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -23202,8 +23359,8 @@ impl ConditionCheckFailureException {
 impl std::fmt::Display for ConditionCheckFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConditionCheckFailureException")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -23243,6 +23400,70 @@ impl ConditionCheckFailureException {
     }
 }
 
+/// <p>An error that indicates your data is in an invalid state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidStateException {
+    /// <p>A message describing the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidStateException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidStateException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidStateException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidStateException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidStateException")?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidStateException {}
+/// See [`InvalidStateException`](crate::error::InvalidStateException)
+pub mod invalid_state_exception {
+    /// A builder for [`InvalidStateException`](crate::error::InvalidStateException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidStateException`](crate::error::InvalidStateException)
+        pub fn build(self) -> crate::error::InvalidStateException {
+            crate::error::InvalidStateException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidStateException {
+    /// Creates a new builder-style object to manufacture [`InvalidStateException`](crate::error::InvalidStateException)
+    pub fn builder() -> crate::error::invalid_state_exception::Builder {
+        crate::error::invalid_state_exception::Builder::default()
+    }
+}
+
 /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.  </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -23266,8 +23487,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -23330,8 +23551,8 @@ impl IdempotentParameterMismatchException {
 impl std::fmt::Display for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotentParameterMismatchException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }

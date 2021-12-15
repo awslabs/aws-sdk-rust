@@ -2,6 +2,65 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VerifyOtpMessageOutput {
+    /// <p>Verify OTP Message Response.</p>
+    pub verification_response: std::option::Option<crate::model::VerificationResponse>,
+}
+impl VerifyOtpMessageOutput {
+    /// <p>Verify OTP Message Response.</p>
+    pub fn verification_response(
+        &self,
+    ) -> std::option::Option<&crate::model::VerificationResponse> {
+        self.verification_response.as_ref()
+    }
+}
+impl std::fmt::Debug for VerifyOtpMessageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VerifyOtpMessageOutput");
+        formatter.field("verification_response", &self.verification_response);
+        formatter.finish()
+    }
+}
+/// See [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput)
+pub mod verify_otp_message_output {
+    /// A builder for [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) verification_response: std::option::Option<crate::model::VerificationResponse>,
+    }
+    impl Builder {
+        /// <p>Verify OTP Message Response.</p>
+        pub fn verification_response(mut self, input: crate::model::VerificationResponse) -> Self {
+            self.verification_response = Some(input);
+            self
+        }
+        /// <p>Verify OTP Message Response.</p>
+        pub fn set_verification_response(
+            mut self,
+            input: std::option::Option<crate::model::VerificationResponse>,
+        ) -> Self {
+            self.verification_response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput)
+        pub fn build(self) -> crate::output::VerifyOtpMessageOutput {
+            crate::output::VerifyOtpMessageOutput {
+                verification_response: self.verification_response,
+            }
+        }
+    }
+}
+impl VerifyOtpMessageOutput {
+    /// Creates a new builder-style object to manufacture [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput)
+    pub fn builder() -> crate::output::verify_otp_message_output::Builder {
+        crate::output::verify_otp_message_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
     pub message_body: std::option::Option<crate::model::MessageBody>,
@@ -1545,6 +1604,63 @@ impl SendUsersMessagesOutput {
     /// Creates a new builder-style object to manufacture [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput)
     pub fn builder() -> crate::output::send_users_messages_output::Builder {
         crate::output::send_users_messages_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendOtpMessageOutput {
+    /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+    pub message_response: std::option::Option<crate::model::MessageResponse>,
+}
+impl SendOtpMessageOutput {
+    /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+    pub fn message_response(&self) -> std::option::Option<&crate::model::MessageResponse> {
+        self.message_response.as_ref()
+    }
+}
+impl std::fmt::Debug for SendOtpMessageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendOtpMessageOutput");
+        formatter.field("message_response", &self.message_response);
+        formatter.finish()
+    }
+}
+/// See [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput)
+pub mod send_otp_message_output {
+    /// A builder for [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message_response: std::option::Option<crate::model::MessageResponse>,
+    }
+    impl Builder {
+        /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+        pub fn message_response(mut self, input: crate::model::MessageResponse) -> Self {
+            self.message_response = Some(input);
+            self
+        }
+        /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+        pub fn set_message_response(
+            mut self,
+            input: std::option::Option<crate::model::MessageResponse>,
+        ) -> Self {
+            self.message_response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput)
+        pub fn build(self) -> crate::output::SendOtpMessageOutput {
+            crate::output::SendOtpMessageOutput {
+                message_response: self.message_response,
+            }
+        }
+    }
+}
+impl SendOtpMessageOutput {
+    /// Creates a new builder-style object to manufacture [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput)
+    pub fn builder() -> crate::output::send_otp_message_output::Builder {
+        crate::output::send_otp_message_output::Builder::default()
     }
 }
 

@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_personalize::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -89,6 +89,13 @@ where
     /// operation and its arguments.
     pub fn create_batch_inference_job(&self) -> fluent_builders::CreateBatchInferenceJob<C, M, R> {
         fluent_builders::CreateBatchInferenceJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateBatchSegmentJob` operation.
+    ///
+    /// See [`CreateBatchSegmentJob`](crate::client::fluent_builders::CreateBatchSegmentJob) for more information about the
+    /// operation and its arguments.
+    pub fn create_batch_segment_job(&self) -> fluent_builders::CreateBatchSegmentJob<C, M, R> {
+        fluent_builders::CreateBatchSegmentJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateCampaign` operation.
     ///
@@ -138,6 +145,13 @@ where
     /// operation and its arguments.
     pub fn create_filter(&self) -> fluent_builders::CreateFilter<C, M, R> {
         fluent_builders::CreateFilter::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateRecommender` operation.
+    ///
+    /// See [`CreateRecommender`](crate::client::fluent_builders::CreateRecommender) for more information about the
+    /// operation and its arguments.
+    pub fn create_recommender(&self) -> fluent_builders::CreateRecommender<C, M, R> {
+        fluent_builders::CreateRecommender::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateSchema` operation.
     ///
@@ -195,6 +209,13 @@ where
     pub fn delete_filter(&self) -> fluent_builders::DeleteFilter<C, M, R> {
         fluent_builders::DeleteFilter::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteRecommender` operation.
+    ///
+    /// See [`DeleteRecommender`](crate::client::fluent_builders::DeleteRecommender) for more information about the
+    /// operation and its arguments.
+    pub fn delete_recommender(&self) -> fluent_builders::DeleteRecommender<C, M, R> {
+        fluent_builders::DeleteRecommender::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteSchema` operation.
     ///
     /// See [`DeleteSchema`](crate::client::fluent_builders::DeleteSchema) for more information about the
@@ -224,6 +245,13 @@ where
         &self,
     ) -> fluent_builders::DescribeBatchInferenceJob<C, M, R> {
         fluent_builders::DescribeBatchInferenceJob::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeBatchSegmentJob` operation.
+    ///
+    /// See [`DescribeBatchSegmentJob`](crate::client::fluent_builders::DescribeBatchSegmentJob) for more information about the
+    /// operation and its arguments.
+    pub fn describe_batch_segment_job(&self) -> fluent_builders::DescribeBatchSegmentJob<C, M, R> {
+        fluent_builders::DescribeBatchSegmentJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeCampaign` operation.
     ///
@@ -294,6 +322,13 @@ where
     pub fn describe_recipe(&self) -> fluent_builders::DescribeRecipe<C, M, R> {
         fluent_builders::DescribeRecipe::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeRecommender` operation.
+    ///
+    /// See [`DescribeRecommender`](crate::client::fluent_builders::DescribeRecommender) for more information about the
+    /// operation and its arguments.
+    pub fn describe_recommender(&self) -> fluent_builders::DescribeRecommender<C, M, R> {
+        fluent_builders::DescribeRecommender::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeSchema` operation.
     ///
     /// See [`DescribeSchema`](crate::client::fluent_builders::DescribeSchema) for more information about the
@@ -328,6 +363,13 @@ where
     /// operation and its arguments.
     pub fn list_batch_inference_jobs(&self) -> fluent_builders::ListBatchInferenceJobs<C, M, R> {
         fluent_builders::ListBatchInferenceJobs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListBatchSegmentJobs` operation.
+    ///
+    /// See [`ListBatchSegmentJobs`](crate::client::fluent_builders::ListBatchSegmentJobs) for more information about the
+    /// operation and its arguments.
+    pub fn list_batch_segment_jobs(&self) -> fluent_builders::ListBatchSegmentJobs<C, M, R> {
+        fluent_builders::ListBatchSegmentJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListCampaigns` operation.
     ///
@@ -385,6 +427,13 @@ where
     pub fn list_recipes(&self) -> fluent_builders::ListRecipes<C, M, R> {
         fluent_builders::ListRecipes::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListRecommenders` operation.
+    ///
+    /// See [`ListRecommenders`](crate::client::fluent_builders::ListRecommenders) for more information about the
+    /// operation and its arguments.
+    pub fn list_recommenders(&self) -> fluent_builders::ListRecommenders<C, M, R> {
+        fluent_builders::ListRecommenders::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListSchemas` operation.
     ///
     /// See [`ListSchemas`](crate::client::fluent_builders::ListSchemas) for more information about the
@@ -422,6 +471,13 @@ where
     pub fn update_campaign(&self) -> fluent_builders::UpdateCampaign<C, M, R> {
         fluent_builders::UpdateCampaign::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateRecommender` operation.
+    ///
+    /// See [`UpdateRecommender`](crate::client::fluent_builders::UpdateRecommender) for more information about the
+    /// operation and its arguments.
+    pub fn update_recommender(&self) -> fluent_builders::UpdateRecommender<C, M, R> {
+        fluent_builders::UpdateRecommender::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     //!
@@ -438,7 +494,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBatchInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -597,9 +653,155 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateBatchSegmentJob`.
+    ///
+    /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the
+    /// input file must be in JSON format. For more information, see <a>recommendations-batch</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateBatchSegmentJob<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_batch_segment_job_input::Builder,
+    }
+    impl<C, M, R> CreateBatchSegmentJob<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateBatchSegmentJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateBatchSegmentJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateBatchSegmentJobError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateBatchSegmentJobInputOperationOutputAlias,
+                crate::output::CreateBatchSegmentJobOutput,
+                crate::error::CreateBatchSegmentJobError,
+                crate::input::CreateBatchSegmentJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the batch segment job to create.</p>
+        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(inp);
+            self
+        }
+        /// <p>The name of the batch segment job to create.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
+        /// batch segments.</p>
+        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
+        /// batch segments.</p>
+        pub fn set_solution_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_solution_version_arn(input);
+            self
+        }
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
+        /// filters, see <a>filter-batch</a>.</p>
+        pub fn filter_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(inp);
+            self
+        }
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
+        /// filters, see <a>filter-batch</a>.</p>
+        pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_filter_arn(input);
+            self
+        }
+        /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
+        pub fn num_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.num_results(inp);
+            self
+        }
+        /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
+        pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_num_results(input);
+            self
+        }
+        /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
+        pub fn job_input(mut self, inp: crate::model::BatchSegmentJobInput) -> Self {
+            self.inner = self.inner.job_input(inp);
+            self
+        }
+        /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
+        pub fn set_job_input(
+            mut self,
+            input: std::option::Option<crate::model::BatchSegmentJobInput>,
+        ) -> Self {
+            self.inner = self.inner.set_job_input(input);
+            self
+        }
+        /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
+        pub fn job_output(mut self, inp: crate::model::BatchSegmentJobOutput) -> Self {
+            self.inner = self.inner.job_output(inp);
+            self
+        }
+        /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
+        pub fn set_job_output(
+            mut self,
+            input: std::option::Option<crate::model::BatchSegmentJobOutput>,
+        ) -> Self {
+            self.inner = self.inner.set_job_output(input);
+            self
+        }
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
+        /// Amazon S3 buckets respectively.</p>
+        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(inp);
+            self
+        }
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
+        /// Amazon S3 buckets respectively.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateCampaign`.
     ///
-    /// <p>Creates a campaign by deploying a solution version. When a client calls the
+    /// <p>Creates a campaign that deploys a solution version. When a client calls the
     /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
     /// and
     /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
@@ -673,7 +875,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCampaign<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -831,7 +1033,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -981,7 +1183,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDatasetExportJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1101,8 +1303,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetGroup`.
     ///
-    /// <p>Creates an empty dataset group. A dataset group contains related datasets that supply data
-    /// for training a model. A dataset group can contain at most three datasets, one for each type of
+    /// <p>Creates an empty dataset group. A dataset group is a container for Amazon Personalize resources.
+    /// A dataset group can contain at most three datasets, one for each type of
     /// dataset:</p>
     /// <ul>
     /// <li>
@@ -1115,9 +1317,12 @@ pub mod fluent_builders {
     /// <p>Users</p>
     /// </li>
     /// </ul>
-    /// <p>To train a model (create a solution), a dataset group that contains an
-    /// <code>Interactions</code> dataset is required. Call <a>CreateDataset</a> to add a
-    /// dataset to the group.</p>
+    /// <p>
+    /// A dataset group can be a Domain dataset group, where you specify a domain and use
+    /// pre-configured resources like recommenders, or a Custom dataset group, where you use custom resources, such as a solution with a solution version, that
+    /// you deploy with a campaign.  If you start with a Domain dataset group, you can still add custom resources such as
+    /// solutions and solution versions trained with recipes for custom use cases and deployed with campaigns.
+    /// </p>
     /// <p>A dataset group can be in one of the following states:</p>
     /// <ul>
     /// <li>
@@ -1180,7 +1385,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1265,6 +1470,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
+        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
+        /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
+        /// you create a Custom dataset group with solution versions that you deploy with a campaign.
+        /// </p>
+        pub fn domain(mut self, inp: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(inp);
+            self
+        }
+        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
+        /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
+        /// you create a Custom dataset group with solution versions that you deploy with a campaign.
+        /// </p>
+        pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
+            self.inner = self.inner.set_domain(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDatasetImportJob`.
     ///
@@ -1313,7 +1534,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1461,7 +1682,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateEventTracker<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1544,7 +1765,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFilter<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1638,12 +1859,172 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateRecommender`.
+    ///
+    /// <p>Creates a recommender with the recipe (a Domain dataset group use case) you specify.
+    /// You create recommenders for a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+    /// request.
+    /// </p>
+    ///
+    ///
+    ///
+    /// <p>
+    /// <b>Status</b>
+    /// </p>
+    /// <p>A recommender can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    /// <p>To get the recommender status, call <a>DescribeRecommender</a>.</p>
+    /// <note>
+    /// <p>Wait until the <code>status</code> of the recommender
+    /// is <code>ACTIVE</code> before asking the recommender for recommendations.</p>
+    /// </note>
+    /// <p class="title">
+    /// <b>Related APIs</b>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a>ListRecommenders</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>DescribeRecommender</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>UpdateRecommender</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a>DeleteRecommender</a>
+    /// </p>
+    /// </li>
+    /// </ul>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateRecommender<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_recommender_input::Builder,
+    }
+    impl<C, M, R> CreateRecommender<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateRecommender`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateRecommenderOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateRecommenderError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateRecommenderInputOperationOutputAlias,
+                crate::output::CreateRecommenderOutput,
+                crate::error::CreateRecommenderError,
+                crate::input::CreateRecommenderInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the recommender.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the recommender.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
+        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
+        pub fn set_dataset_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_group_arn(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
+        /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
+        /// </p>
+        pub fn recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
+        /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
+        /// </p>
+        pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_recipe_arn(input);
+            self
+        }
+        /// <p>The configuration details of the recommender.</p>
+        pub fn recommender_config(mut self, inp: crate::model::RecommenderConfig) -> Self {
+            self.inner = self.inner.recommender_config(inp);
+            self
+        }
+        /// <p>The configuration details of the recommender.</p>
+        pub fn set_recommender_config(
+            mut self,
+            input: std::option::Option<crate::model::RecommenderConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_recommender_config(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateSchema`.
     ///
     /// <p>Creates an Amazon Personalize schema from the specified schema string. The schema you create
     /// must be in Avro JSON format.</p>
     /// <p>Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset
-    /// type and has a set of required field and keywords.
+    /// type and has a set of required field and keywords. If you are creating a schema for a dataset in a Domain dataset group, you
+    /// provide the domain of the Domain dataset group.
     /// You specify a schema when you call <a>CreateDataset</a>.</p>
     ///
     /// <p class="title">
@@ -1669,7 +2050,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSchema<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1740,6 +2121,18 @@ pub mod fluent_builders {
         /// <p>A schema in Avro JSON format.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema(input);
+            self
+        }
+        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
+        /// the domain you chose when you created the Domain dataset group.</p>
+        pub fn domain(mut self, inp: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(inp);
+            self
+        }
+        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
+        /// the domain you chose when you created the Domain dataset group.</p>
+        pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
+            self.inner = self.inner.set_domain(input);
             self
         }
     }
@@ -1821,7 +2214,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSolution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1993,7 +2386,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSolutionVersion`.
     ///
-    /// <p>Trains or retrains an active solution. A solution is created using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
+    /// <p>Trains or retrains an active solution in a Custom dataset group. A solution is created using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
     /// <code>CreateSolutionVersion</code>. A new version of the solution is created every time you
     /// call this operation.</p>
     /// <p>
@@ -2064,7 +2457,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSolutionVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2178,7 +2571,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCampaign<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2250,7 +2643,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2332,7 +2725,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2407,7 +2800,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteEventTracker<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2480,7 +2873,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFilter<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2544,6 +2937,80 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteRecommender`.
+    ///
+    /// <p>Deactivates and removes a recommender. A deleted recommender can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+    /// request.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteRecommender<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_recommender_input::Builder,
+    }
+    impl<C, M, R> DeleteRecommender<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteRecommender`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteRecommenderOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteRecommenderError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteRecommenderInputOperationOutputAlias,
+                crate::output::DeleteRecommenderOutput,
+                crate::error::DeleteRecommenderError,
+                crate::input::DeleteRecommenderInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
+        pub fn recommender_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_recommender_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
     /// <p>Deletes a schema. Before deleting a schema, you must delete all
@@ -2552,7 +3019,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2628,7 +3095,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSolution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2698,7 +3165,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAlgorithm<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2773,7 +3240,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeBatchInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2840,6 +3307,81 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeBatchSegmentJob`.
+    ///
+    /// <p>Gets the properties of a batch segment job including name, Amazon Resource Name (ARN),
+    /// status, input and output configurations, and the ARN of the solution version used to generate
+    /// segments.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeBatchSegmentJob<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_batch_segment_job_input::Builder,
+    }
+    impl<C, M, R> DescribeBatchSegmentJob<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeBatchSegmentJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeBatchSegmentJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeBatchSegmentJobError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeBatchSegmentJobInputOperationOutputAlias,
+                crate::output::DescribeBatchSegmentJobOutput,
+                crate::error::DescribeBatchSegmentJobError,
+                crate::input::DescribeBatchSegmentJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the batch segment job to describe.</p>
+        pub fn batch_segment_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_segment_job_arn(inp);
+            self
+        }
+        /// <p>The ARN of the batch segment job to describe.</p>
+        pub fn set_batch_segment_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_batch_segment_job_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeCampaign`.
     ///
     /// <p>Describes the given campaign, including its status.</p>
@@ -2858,7 +3400,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCampaign<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2928,7 +3470,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2999,7 +3541,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDatasetExportJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3072,7 +3614,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3146,7 +3688,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3221,7 +3763,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeEventTracker<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3294,7 +3836,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFeatureTransformation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3367,7 +3909,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFilter<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3455,7 +3997,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRecipe<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3519,6 +4061,91 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeRecommender`.
+    ///
+    /// <p>Describes the given recommender, including its status.</p>
+    /// <p>A recommender can be in one of the following states:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CREATE PENDING > CREATE IN_PROGRESS > ACTIVE -or- CREATE FAILED</p>
+    /// </li>
+    /// <li>
+    /// <p>DELETE PENDING > DELETE IN_PROGRESS</p>
+    /// </li>
+    /// </ul>
+    /// <p>When the <code>status</code> is <code>CREATE FAILED</code>, the response includes the
+    /// <code>failureReason</code> key, which describes why.</p>
+    /// <p>For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeRecommender<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_recommender_input::Builder,
+    }
+    impl<C, M, R> DescribeRecommender<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeRecommender`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeRecommenderOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeRecommenderError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeRecommenderInputOperationOutputAlias,
+                crate::output::DescribeRecommenderOutput,
+                crate::error::DescribeRecommenderError,
+                crate::input::DescribeRecommenderInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
+        pub fn recommender_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_recommender_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeSchema`.
     ///
     /// <p>Describes a schema. For more information on schemas, see
@@ -3526,7 +4153,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSchema<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3597,7 +4224,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSolution<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3667,7 +4294,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSolutionVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3740,7 +4367,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSolutionMetrics<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3814,7 +4441,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBatchInferenceJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3905,6 +4532,102 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListBatchSegmentJobs`.
+    ///
+    /// <p>Gets a list of the batch segment jobs that have been performed off of a solution
+    /// version that you specify.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListBatchSegmentJobs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_batch_segment_jobs_input::Builder,
+    }
+    impl<C, M, R> ListBatchSegmentJobs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListBatchSegmentJobs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListBatchSegmentJobsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListBatchSegmentJobsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListBatchSegmentJobsInputOperationOutputAlias,
+                crate::output::ListBatchSegmentJobsOutput,
+                crate::error::ListBatchSegmentJobsError,
+                crate::input::ListBatchSegmentJobsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
+        pub fn solution_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.solution_version_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
+        pub fn set_solution_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_solution_version_arn(input);
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token to request the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of batch segment job results to return in each page. The default
+        /// value is 100.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of batch segment job results to return in each page. The default
+        /// value is 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListCampaigns`.
     ///
     /// <p>Returns a list of campaigns that use the given solution.
@@ -3914,7 +4637,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListCampaigns<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4012,7 +4735,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDatasetExportJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4106,7 +4829,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDatasetGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4192,7 +4915,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDatasetImportJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4286,7 +5009,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4386,7 +5109,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListEventTrackers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4481,7 +5204,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListFilters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4577,7 +5300,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListRecipes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4665,6 +5388,122 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// <p>
+        /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
+        /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
+        /// </p>
+        pub fn domain(mut self, inp: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(inp);
+            self
+        }
+        /// <p>
+        /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
+        /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
+        /// </p>
+        pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
+            self.inner = self.inner.set_domain(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListRecommenders`.
+    ///
+    /// <p>Returns a list of recommenders in a given Domain dataset group.
+    /// When a Domain dataset group is not specified, all the recommenders associated with the account are listed.
+    /// The response provides the properties for each recommender, including the Amazon Resource Name (ARN).
+    /// For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListRecommenders<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_recommenders_input::Builder,
+    }
+    impl<C, M, R> ListRecommenders<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListRecommenders`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRecommendersOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListRecommendersError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListRecommendersInputOperationOutputAlias,
+                crate::output::ListRecommendersOutput,
+                crate::error::ListRecommendersError,
+                crate::input::ListRecommendersInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
+        /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
+        /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+        pub fn set_dataset_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_group_arn(input);
+            self
+        }
+        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
+        /// the next set of recommenders (if they exist).</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
+        /// the next set of recommenders (if they exist).</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of recommenders to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of recommenders to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListSchemas`.
     ///
@@ -4674,7 +5513,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4759,7 +5598,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListSolutions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4857,7 +5696,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListSolutionVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4962,7 +5801,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopSolutionVersionCreation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5043,7 +5882,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateCampaign<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5145,18 +5984,108 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateRecommender`.
+    ///
+    /// <p>Updates the recommender to modify the recommender configuration.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateRecommender<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_recommender_input::Builder,
+    }
+    impl<C, M, R> UpdateRecommender<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateRecommender`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateRecommenderOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateRecommenderError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateRecommenderInputOperationOutputAlias,
+                crate::output::UpdateRecommenderOutput,
+                crate::error::UpdateRecommenderError,
+                crate::input::UpdateRecommenderInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
+        pub fn recommender_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_arn(inp);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to modify.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_recommender_arn(input);
+            self
+        }
+        /// <p>The configuration details of the recommender.</p>
+        pub fn recommender_config(mut self, inp: crate::model::RecommenderConfig) -> Self {
+            self.inner = self.inner.recommender_config(inp);
+            self
+        }
+        /// <p>The configuration details of the recommender.</p>
+        pub fn set_recommender_config(
+            mut self,
+            input: std::option::Option<crate::model::RecommenderConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_recommender_config(input);
+            self
+        }
+    }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5165,7 +6094,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -5181,11 +6110,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -6496,6 +6496,87 @@ pub fn parse_describe_partners_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_reserved_node_exchange_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReservedNodeExchangeStatusOutput,
+    crate::error::DescribeReservedNodeExchangeStatusError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeReservedNodeExchangeStatusError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeReservedNodeExchangeStatusError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ReservedNodeExchangeNotFond" => crate::error::DescribeReservedNodeExchangeStatusError { meta: generic, kind: crate::error::DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeExchangeNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_exchange_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_exchange_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodeExchangeStatusError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeNotFound" => crate::error::DescribeReservedNodeExchangeStatusError { meta: generic, kind: crate::error::DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodeExchangeStatusError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperation" => crate::error::DescribeReservedNodeExchangeStatusError { meta: generic, kind: crate::error::DescribeReservedNodeExchangeStatusErrorKind::UnsupportedOperationFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodeExchangeStatusError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeReservedNodeExchangeStatusError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_reserved_node_exchange_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReservedNodeExchangeStatusOutput,
+    crate::error::DescribeReservedNodeExchangeStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_reserved_node_exchange_status_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_reserved_node_exchange_status(response.body().as_ref(), output).map_err(crate::error::DescribeReservedNodeExchangeStatusError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_node_offerings_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -7870,6 +7951,157 @@ pub fn parse_get_cluster_credentials_response(
             output,
         )
         .map_err(crate::error::GetClusterCredentialsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_reserved_node_exchange_configuration_options_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetReservedNodeExchangeConfigurationOptionsOutput,
+    crate::error::GetReservedNodeExchangeConfigurationOptionsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ClusterNotFound" => crate::error::GetReservedNodeExchangeConfigurationOptionsError { meta: generic, kind: crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cluster_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ClusterSnapshotNotFound" => crate::error::GetReservedNodeExchangeConfigurationOptionsError { meta: generic, kind: crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cluster_snapshot_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "DependentServiceUnavailableFault" => crate::error::GetReservedNodeExchangeConfigurationOptionsError { meta: generic, kind: crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::DependentServiceUnavailableFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::dependent_service_unavailable_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_dependent_service_unavailable_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidReservedNodeState" => crate::error::GetReservedNodeExchangeConfigurationOptionsError { meta: generic, kind: crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::InvalidReservedNodeStateFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_reserved_node_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_reserved_node_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeAlreadyMigrated" => crate::error::GetReservedNodeExchangeConfigurationOptionsError { meta: generic, kind: crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeAlreadyMigratedFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_already_migrated_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_migrated_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeNotFound" => crate::error::GetReservedNodeExchangeConfigurationOptionsError { meta: generic, kind: crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeOfferingNotFound" => crate::error::GetReservedNodeExchangeConfigurationOptionsError { meta: generic, kind: crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeOfferingNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_offering_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperation" => crate::error::GetReservedNodeExchangeConfigurationOptionsError { meta: generic, kind: crate::error::GetReservedNodeExchangeConfigurationOptionsErrorKind::UnsupportedOperationFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetReservedNodeExchangeConfigurationOptionsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_reserved_node_exchange_configuration_options_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetReservedNodeExchangeConfigurationOptionsOutput,
+    crate::error::GetReservedNodeExchangeConfigurationOptionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::get_reserved_node_exchange_configuration_options_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_reserved_node_exchange_configuration_options(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeConfigurationOptionsError::unhandled)?;
         output.build()
     })
 }
@@ -10343,6 +10575,24 @@ pub fn parse_resize_cluster_error(
                 tmp
             }),
         },
+        "DependentServiceUnavailableFault" => crate::error::ResizeClusterError {
+            meta: generic,
+            kind: crate::error::ResizeClusterErrorKind::DependentServiceUnavailableFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::dependent_service_unavailable_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_dependent_service_unavailable_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InsufficientClusterCapacity" => crate::error::ResizeClusterError {
             meta: generic,
             kind: crate::error::ResizeClusterErrorKind::InsufficientClusterCapacityFault({
@@ -10370,6 +10620,24 @@ pub fn parse_resize_cluster_error(
                     let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidReservedNodeState" => crate::error::ResizeClusterError {
+            meta: generic,
+            kind: crate::error::ResizeClusterErrorKind::InvalidReservedNodeStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_reserved_node_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_reserved_node_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10425,6 +10693,78 @@ pub fn parse_resize_cluster_error(
                         crate::error::number_of_nodes_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_number_of_nodes_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ReservedNodeAlreadyExists" => crate::error::ResizeClusterError {
+            meta: generic,
+            kind: crate::error::ResizeClusterErrorKind::ReservedNodeAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::reserved_node_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ReservedNodeAlreadyMigrated" => crate::error::ResizeClusterError {
+            meta: generic,
+            kind: crate::error::ResizeClusterErrorKind::ReservedNodeAlreadyMigratedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::reserved_node_already_migrated_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_migrated_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ReservedNodeNotFound" => crate::error::ResizeClusterError {
+            meta: generic,
+            kind: crate::error::ResizeClusterErrorKind::ReservedNodeNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::reserved_node_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ReservedNodeOfferingNotFound" => crate::error::ResizeClusterError {
+            meta: generic,
+            kind: crate::error::ResizeClusterErrorKind::ReservedNodeOfferingNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::reserved_node_offering_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResizeClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10637,6 +10977,20 @@ pub fn parse_restore_from_cluster_snapshot_error(
                                                     }
             tmp
         })},
+        "DependentServiceUnavailableFault" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::DependentServiceUnavailableFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::dependent_service_unavailable_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_dependent_service_unavailable_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "HsmClientCertificateNotFoundFault" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -10727,6 +11081,20 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_elastic_ip_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_elastic_ip_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidReservedNodeState" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::InvalidReservedNodeStateFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_reserved_node_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_reserved_node_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
                     output.build()
                 }
             ;
@@ -10833,6 +11201,62 @@ pub fn parse_restore_from_cluster_snapshot_error(
                                                     }
             tmp
         })},
+        "ReservedNodeAlreadyExists" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyExistsFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeAlreadyMigrated" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyMigratedFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_already_migrated_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_already_migrated_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeNotFound" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ReservedNodeOfferingNotFound" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::ReservedNodeOfferingNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::reserved_node_offering_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "SnapshotScheduleNotFound" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -10867,6 +11291,20 @@ pub fn parse_restore_from_cluster_snapshot_error(
                     #[allow(unused_mut)]let mut output = crate::error::unauthorized_operation::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperation" => crate::error::RestoreFromClusterSnapshotError { meta: generic, kind: crate::error::RestoreFromClusterSnapshotErrorKind::UnsupportedOperationFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
                     output.build()
                 }
             ;

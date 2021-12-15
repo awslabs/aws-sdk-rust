@@ -25,6 +25,9 @@ pub enum Error {
     InternalException(crate::error::InternalException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
+    /// <p>Internal error from the service that indicates an unexpected error or that the service
+    /// is unavailable.</p>
+    InternalServerException(crate::error::InternalServerException),
     /// <p>The aggregation is invalid.</p>
     InvalidAggregationException(crate::error::InvalidAggregationException),
     /// <p>The query is invalid.</p>
@@ -90,6 +93,7 @@ impl std::fmt::Display for Error {
             Error::IndexNotReadyException(inner) => inner.fmt(f),
             Error::InternalException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
+            Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidAggregationException(inner) => inner.fmt(f),
             Error::InvalidQueryException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
@@ -3125,6 +3129,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeManagedJobTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeManagedJobTemplateError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeManagedJobTemplateErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DescribeManagedJobTemplateErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::DescribeManagedJobTemplateErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeManagedJobTemplateErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeManagedJobTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMitigationActionError, R>>
     for Error
 where
@@ -4829,6 +4863,36 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListJobTemplatesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListManagedJobTemplatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListManagedJobTemplatesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListManagedJobTemplatesErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListManagedJobTemplatesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListManagedJobTemplatesErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::ListManagedJobTemplatesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListManagedJobTemplatesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

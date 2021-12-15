@@ -909,6 +909,13 @@ pub fn deser_operation_crate_operation_allocate_private_virtual_interface(
                             )?,
                         );
                     }
+                    "siteLinkEnabled" => {
+                        builder = builder.set_site_link_enabled(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -1157,6 +1164,13 @@ pub fn deser_operation_crate_operation_allocate_public_virtual_interface(
                         builder = builder.set_tags(
                             crate::json_deser::deser_list_com_amazonaws_directconnect_tag_list(
                                 tokens,
+                            )?,
+                        );
+                    }
+                    "siteLinkEnabled" => {
+                        builder = builder.set_site_link_enabled(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
                             )?,
                         );
                     }
@@ -1955,6 +1969,13 @@ pub fn deser_operation_crate_operation_associate_virtual_interface(
                         builder = builder.set_tags(
                             crate::json_deser::deser_list_com_amazonaws_directconnect_tag_list(
                                 tokens,
+                            )?,
+                        );
+                    }
+                    "siteLinkEnabled" => {
+                        builder = builder.set_site_link_enabled(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
                             )?,
                         );
                     }
@@ -3214,6 +3235,13 @@ pub fn deser_operation_crate_operation_create_private_virtual_interface(
                             )?,
                         );
                     }
+                    "siteLinkEnabled" => {
+                        builder = builder.set_site_link_enabled(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -3462,6 +3490,13 @@ pub fn deser_operation_crate_operation_create_public_virtual_interface(
                         builder = builder.set_tags(
                             crate::json_deser::deser_list_com_amazonaws_directconnect_tag_list(
                                 tokens,
+                            )?,
+                        );
+                    }
+                    "siteLinkEnabled" => {
+                        builder = builder.set_site_link_enabled(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
                             )?,
                         );
                     }
@@ -6196,6 +6231,13 @@ pub fn deser_operation_crate_operation_update_virtual_interface_attributes(
                             )?,
                         );
                     }
+                    "siteLinkEnabled" => {
+                        builder = builder.set_site_link_enabled(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -6723,6 +6765,13 @@ where
                             "tags" => {
                                 builder = builder.set_tags(
                                     crate::json_deser::deser_list_com_amazonaws_directconnect_tag_list(tokens)?
+                                );
+                            }
+                            "siteLinkEnabled" => {
+                                builder = builder.set_site_link_enabled(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

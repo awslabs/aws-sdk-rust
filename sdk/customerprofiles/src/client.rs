@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_customerprofiles::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -146,12 +146,28 @@ where
     pub fn delete_profile_object_type(&self) -> fluent_builders::DeleteProfileObjectType<C, M, R> {
         fluent_builders::DeleteProfileObjectType::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetAutoMergingPreview` operation.
+    ///
+    /// See [`GetAutoMergingPreview`](crate::client::fluent_builders::GetAutoMergingPreview) for more information about the
+    /// operation and its arguments.
+    pub fn get_auto_merging_preview(&self) -> fluent_builders::GetAutoMergingPreview<C, M, R> {
+        fluent_builders::GetAutoMergingPreview::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetDomain` operation.
     ///
     /// See [`GetDomain`](crate::client::fluent_builders::GetDomain) for more information about the
     /// operation and its arguments.
     pub fn get_domain(&self) -> fluent_builders::GetDomain<C, M, R> {
         fluent_builders::GetDomain::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetIdentityResolutionJob` operation.
+    ///
+    /// See [`GetIdentityResolutionJob`](crate::client::fluent_builders::GetIdentityResolutionJob) for more information about the
+    /// operation and its arguments.
+    pub fn get_identity_resolution_job(
+        &self,
+    ) -> fluent_builders::GetIdentityResolutionJob<C, M, R> {
+        fluent_builders::GetIdentityResolutionJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetIntegration` operation.
     ///
@@ -196,6 +212,15 @@ where
     /// operation and its arguments.
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListIdentityResolutionJobs` operation.
+    ///
+    /// See [`ListIdentityResolutionJobs`](crate::client::fluent_builders::ListIdentityResolutionJobs) for more information about the
+    /// operation and its arguments.
+    pub fn list_identity_resolution_jobs(
+        &self,
+    ) -> fluent_builders::ListIdentityResolutionJobs<C, M, R> {
+        fluent_builders::ListIdentityResolutionJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListIntegrations` operation.
     ///
@@ -315,7 +340,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AddProfileKey<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -426,10 +451,12 @@ pub mod fluent_builders {
     /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to
     /// enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
     /// resolution</a>: set <code>Matching</code> to true. </p>
+    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should
+    /// apply. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -538,18 +565,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_queue_url(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn matching(mut self, inp: crate::model::MatchingRequest) -> Self {
             self.inner = self.inner.matching(inp);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -589,7 +622,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -928,7 +961,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -998,7 +1031,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteIntegration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1078,7 +1111,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1158,7 +1191,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteProfileKey<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1265,7 +1298,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteProfileObject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1374,7 +1407,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1451,13 +1484,122 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetAutoMergingPreview`.
+    ///
+    /// <p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly
+    /// selects a sample of matching groups from the existing matching results, and applies the
+    /// automerging settings that you provided. You can then view the number of profiles in the
+    /// sample, the number of matches, and the number of profiles identified to be merged. This
+    /// enables you to evaluate the accuracy of the attributes in your matching list. </p>
+    /// <p>You can't view which profiles are matched and would be merged.</p>
+    /// <important>
+    ///
+    /// <p>We strongly recommend you use this API to do a dry run of the automerging process
+    /// before running the Identity Resolution Job. Include <b>at least</b> two matching
+    /// attributes. If your matching list includes too few attributes (such as only
+    /// <code>FirstName</code> or only <code>LastName</code>), there may be a large number of
+    /// matches. This increases the chances of erroneous merges.</p>
+    /// </important>
+    #[derive(std::fmt::Debug)]
+    pub struct GetAutoMergingPreview<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_auto_merging_preview_input::Builder,
+    }
+    impl<C, M, R> GetAutoMergingPreview<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetAutoMergingPreview`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetAutoMergingPreviewOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetAutoMergingPreviewError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetAutoMergingPreviewInputOperationOutputAlias,
+                crate::output::GetAutoMergingPreviewOutput,
+                crate::error::GetAutoMergingPreviewError,
+                crate::input::GetAutoMergingPreviewInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(inp);
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>A list of matching attributes that represent matching criteria.</p>
+        pub fn consolidation(mut self, inp: crate::model::Consolidation) -> Self {
+            self.inner = self.inner.consolidation(inp);
+            self
+        }
+        /// <p>A list of matching attributes that represent matching criteria.</p>
+        pub fn set_consolidation(
+            mut self,
+            input: std::option::Option<crate::model::Consolidation>,
+        ) -> Self {
+            self.inner = self.inner.set_consolidation(input);
+            self
+        }
+        /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+        pub fn conflict_resolution(mut self, inp: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(inp);
+            self
+        }
+        /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+        pub fn set_conflict_resolution(
+            mut self,
+            input: std::option::Option<crate::model::ConflictResolution>,
+        ) -> Self {
+            self.inner = self.inner.set_conflict_resolution(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetDomain`.
     ///
     /// <p>Returns information about a specific domain.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1521,13 +1663,95 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetIdentityResolutionJob`.
+    ///
+    /// <p>Returns information about an Identity Resolution Job in a specific domain. </p>
+    /// <p>Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
+    /// Identity Resolution to consolidate similar profiles</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetIdentityResolutionJob<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_identity_resolution_job_input::Builder,
+    }
+    impl<C, M, R> GetIdentityResolutionJob<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetIdentityResolutionJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetIdentityResolutionJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetIdentityResolutionJobError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetIdentityResolutionJobInputOperationOutputAlias,
+                crate::output::GetIdentityResolutionJobOutput,
+                crate::error::GetIdentityResolutionJobError,
+                crate::input::GetIdentityResolutionJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(inp);
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The unique identifier of the Identity Resolution Job.</p>
+        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the Identity Resolution Job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetIntegration`.
     ///
     /// <p>Returns an integration for a domain.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetIntegration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1610,8 +1834,13 @@ pub mod fluent_builders {
     /// <p>GetMatches returns potentially matching profiles, based on the results of the latest run
     /// of a machine learning process. </p>
     /// <important>
-    /// <p>Amazon Connect starts a batch process every Saturday at 12AM UTC to identify matching profiles.
-    /// The results are returned up to seven days after the Saturday run.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     /// </important>
     ///
     /// <p>Amazon Connect uses the following profile attributes to identify matches:</p>
@@ -1651,7 +1880,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMatches<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1743,7 +1972,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1830,7 +2059,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetProfileObjectTypeTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1900,7 +2129,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAccountIntegrations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1990,7 +2219,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2064,13 +2293,106 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListIdentityResolutionJobs`.
+    ///
+    /// <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by
+    /// <code>JobStartTime</code>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListIdentityResolutionJobs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_identity_resolution_jobs_input::Builder,
+    }
+    impl<C, M, R> ListIdentityResolutionJobs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListIdentityResolutionJobs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListIdentityResolutionJobsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListIdentityResolutionJobsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListIdentityResolutionJobsInputOperationOutputAlias,
+                crate::output::ListIdentityResolutionJobsOutput,
+                crate::error::ListIdentityResolutionJobsError,
+                crate::input::ListIdentityResolutionJobsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(inp);
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListIntegrations`.
     ///
     /// <p>Lists all of the integrations in your domain.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListIntegrations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2160,7 +2482,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListProfileObjects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2266,14 +2588,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_id(input);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index values.
-        /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index
+        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
         pub fn object_filter(mut self, inp: crate::model::ObjectFilter) -> Self {
             self.inner = self.inner.object_filter(inp);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index values.
-        /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index
+        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
         pub fn set_object_filter(
             mut self,
             input: std::option::Option<crate::model::ObjectFilter>,
@@ -2288,7 +2610,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListProfileObjectTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2378,7 +2700,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListProfileObjectTypeTemplates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2459,7 +2781,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2573,7 +2895,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct MergeProfiles<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2695,7 +3017,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutIntegration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2835,7 +3157,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutProfileObject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2928,7 +3250,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3067,6 +3389,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_allow_profile_creation(input);
             self
         }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
+        /// </p>
+        pub fn source_last_updated_timestamp_format(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.source_last_updated_timestamp_format(inp);
+            self
+        }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
+        /// </p>
+        pub fn set_source_last_updated_timestamp_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_last_updated_timestamp_format(input);
+            self
+        }
         /// Adds a key-value pair to `Fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -3147,7 +3487,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchProfiles<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3279,7 +3619,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3373,7 +3713,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3462,10 +3802,12 @@ pub mod fluent_builders {
     /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to
     /// enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
     /// resolution</a>: set <code>Matching</code> to true. </p>
+    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should
+    /// apply. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3578,18 +3920,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_queue_url(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn matching(mut self, inp: crate::model::MatchingRequest) -> Self {
             self.inner = self.inner.matching(inp);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -3631,7 +3979,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3977,17 +4325,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3996,7 +4348,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -4012,11 +4364,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

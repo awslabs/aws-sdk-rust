@@ -5259,6 +5259,13 @@ pub struct LoadBalancerAttribute {
     /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
     /// access logs.</p>
     /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the
+    /// load balancer. It is set to <code>false</code> for internet-facing load balancers and
+    /// <code>true</code> for internal load balancers, preventing unintended access to your
+    /// internal load balancer through an internet gateway.</p>
+    /// </li>
     /// </ul>
     ///
     /// <p>The following attributes are supported by only Application Load Balancers:</p>
@@ -5362,6 +5369,13 @@ impl LoadBalancerAttribute {
     /// <p>
     /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
     /// access logs.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the
+    /// load balancer. It is set to <code>false</code> for internet-facing load balancers and
+    /// <code>true</code> for internal load balancers, preventing unintended access to your
+    /// internal load balancer through an internet gateway.</p>
     /// </li>
     /// </ul>
     ///
@@ -5488,6 +5502,13 @@ pub mod load_balancer_attribute {
         /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
         /// access logs.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the
+        /// load balancer. It is set to <code>false</code> for internet-facing load balancers and
+        /// <code>true</code> for internal load balancers, preventing unintended access to your
+        /// internal load balancer through an internet gateway.</p>
+        /// </li>
         /// </ul>
         ///
         /// <p>The following attributes are supported by only Application Load Balancers:</p>
@@ -5590,6 +5611,13 @@ pub mod load_balancer_attribute {
         /// <p>
         /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
         /// access logs.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the
+        /// load balancer. It is set to <code>false</code> for internet-facing load balancers and
+        /// <code>true</code> for internal load balancers, preventing unintended access to your
+        /// internal load balancer through an internet gateway.</p>
         /// </li>
         /// </ul>
         ///
@@ -6841,9 +6869,7 @@ pub struct SslPolicy {
     pub ciphers: std::option::Option<std::vec::Vec<crate::model::Cipher>>,
     /// <p>The name of the policy.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The supported load balancers.
-    /// </p>
+    /// <p> The supported load balancers. </p>
     pub supported_load_balancer_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SslPolicy {
@@ -6859,9 +6885,7 @@ impl SslPolicy {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// The supported load balancers.
-    /// </p>
+    /// <p> The supported load balancers. </p>
     pub fn supported_load_balancer_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_load_balancer_types.as_deref()
     }
@@ -6944,9 +6968,7 @@ pub mod ssl_policy {
         ///
         /// To override the contents of this collection use [`set_supported_load_balancer_types`](Self::set_supported_load_balancer_types).
         ///
-        /// <p>
-        /// The supported load balancers.
-        /// </p>
+        /// <p> The supported load balancers. </p>
         pub fn supported_load_balancer_types(
             mut self,
             input: impl Into<std::string::String>,
@@ -6956,9 +6978,7 @@ pub mod ssl_policy {
             self.supported_load_balancer_types = Some(v);
             self
         }
-        /// <p>
-        /// The supported load balancers.
-        /// </p>
+        /// <p> The supported load balancers. </p>
         pub fn set_supported_load_balancer_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

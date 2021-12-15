@@ -76,14 +76,22 @@ impl StopDbInstanceAutomatedBackupsReplicationOutput {
 pub struct StopDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl StopDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -107,7 +115,11 @@ pub mod stop_db_instance_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -115,7 +127,11 @@ pub mod stop_db_instance_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -143,19 +159,53 @@ impl StopDbInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StopDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -176,20 +226,54 @@ pub mod stop_db_cluster_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -852,14 +936,22 @@ impl StartDbInstanceAutomatedBackupsReplicationOutput {
 pub struct StartDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl StartDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -883,7 +975,11 @@ pub mod start_db_instance_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -891,7 +987,11 @@ pub mod start_db_instance_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -919,19 +1019,53 @@ impl StartDbInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StartDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -952,20 +1086,54 @@ pub mod start_db_cluster_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -1235,14 +1403,22 @@ impl RevokeDbSecurityGroupIngressOutput {
 pub struct RestoreDbInstanceToPointInTimeOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceToPointInTimeOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -1266,7 +1442,11 @@ pub mod restore_db_instance_to_point_in_time_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -1274,7 +1454,11 @@ pub mod restore_db_instance_to_point_in_time_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -1304,14 +1488,22 @@ impl RestoreDbInstanceToPointInTimeOutput {
 pub struct RestoreDbInstanceFromS3Output {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceFromS3Output {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -1335,7 +1527,11 @@ pub mod restore_db_instance_from_s3_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -1343,7 +1539,11 @@ pub mod restore_db_instance_from_s3_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -1373,14 +1573,22 @@ impl RestoreDbInstanceFromS3Output {
 pub struct RestoreDbInstanceFromDbSnapshotOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceFromDbSnapshotOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -1404,7 +1612,11 @@ pub mod restore_db_instance_from_db_snapshot_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -1412,7 +1624,11 @@ pub mod restore_db_instance_from_db_snapshot_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -1440,19 +1656,53 @@ impl RestoreDbInstanceFromDbSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterToPointInTimeOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterToPointInTimeOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -1473,20 +1723,54 @@ pub mod restore_db_cluster_to_point_in_time_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -1513,19 +1797,53 @@ impl RestoreDbClusterToPointInTimeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterFromSnapshotOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromSnapshotOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -1546,20 +1864,54 @@ pub mod restore_db_cluster_from_snapshot_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -1586,19 +1938,53 @@ impl RestoreDbClusterFromSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterFromS3Output {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromS3Output {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -1619,20 +2005,54 @@ pub mod restore_db_cluster_from_s3_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -2112,14 +2532,22 @@ impl RegisterDbProxyTargetsOutput {
 pub struct RebootDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RebootDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -2143,7 +2571,11 @@ pub mod reboot_db_instance_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -2151,7 +2583,11 @@ pub mod reboot_db_instance_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -2172,6 +2608,147 @@ impl RebootDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput)
     pub fn builder() -> crate::output::reboot_db_instance_output::Builder {
         crate::output::reboot_db_instance_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RebootDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
+    /// </p>
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
+    /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
+    pub db_cluster: std::option::Option<crate::model::DbCluster>,
+}
+impl RebootDbClusterOutput {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
+    /// </p>
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
+    /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
+    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+        self.db_cluster.as_ref()
+    }
+}
+impl std::fmt::Debug for RebootDbClusterOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RebootDbClusterOutput");
+        formatter.field("db_cluster", &self.db_cluster);
+        formatter.finish()
+    }
+}
+/// See [`RebootDbClusterOutput`](crate::output::RebootDbClusterOutput)
+pub mod reboot_db_cluster_output {
+    /// A builder for [`RebootDbClusterOutput`](crate::output::RebootDbClusterOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+    }
+    impl Builder {
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
+        /// </p>
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
+        /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
+        pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
+            self.db_cluster = Some(input);
+            self
+        }
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
+        /// </p>
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
+        /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
+        pub fn set_db_cluster(
+            mut self,
+            input: std::option::Option<crate::model::DbCluster>,
+        ) -> Self {
+            self.db_cluster = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RebootDbClusterOutput`](crate::output::RebootDbClusterOutput)
+        pub fn build(self) -> crate::output::RebootDbClusterOutput {
+            crate::output::RebootDbClusterOutput {
+                db_cluster: self.db_cluster,
+            }
+        }
+    }
+}
+impl RebootDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`RebootDbClusterOutput`](crate::output::RebootDbClusterOutput)
+    pub fn builder() -> crate::output::reboot_db_cluster_output::Builder {
+        crate::output::reboot_db_cluster_output::Builder::default()
     }
 }
 
@@ -2252,19 +2829,53 @@ impl PurchaseReservedDbInstancesOfferingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromoteReadReplicaDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl PromoteReadReplicaDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -2285,20 +2896,54 @@ pub mod promote_read_replica_db_cluster_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -2327,14 +2972,22 @@ impl PromoteReadReplicaDbClusterOutput {
 pub struct PromoteReadReplicaOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl PromoteReadReplicaOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -2358,7 +3011,11 @@ pub mod promote_read_replica_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -2366,7 +3023,11 @@ pub mod promote_read_replica_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -3024,14 +3685,22 @@ impl ModifyDbParameterGroupOutput {
 pub struct ModifyDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl ModifyDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -3055,7 +3724,11 @@ pub mod modify_db_instance_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -3063,7 +3736,11 @@ pub mod modify_db_instance_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -3617,19 +4294,53 @@ impl ModifyDbClusterEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl ModifyDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -3650,20 +4361,54 @@ pub mod modify_db_cluster_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -4998,19 +5743,53 @@ impl FailoverGlobalClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl FailoverDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -5031,20 +5810,54 @@ pub mod failover_db_cluster_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -9952,14 +10765,22 @@ impl DeleteDbInstanceAutomatedBackupOutput {
 pub struct DeleteDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl DeleteDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -9983,7 +10804,11 @@ pub mod delete_db_instance_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -9991,7 +10816,11 @@ pub mod delete_db_instance_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -10442,19 +11271,53 @@ impl DeleteDbClusterEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl DeleteDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -10475,20 +11338,54 @@ pub mod delete_db_cluster_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,
@@ -11938,14 +12835,22 @@ impl CreateDbParameterGroupOutput {
 pub struct CreateDbInstanceReadReplicaOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceReadReplicaOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -11969,7 +12874,11 @@ pub mod create_db_instance_read_replica_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -11977,7 +12886,11 @@ pub mod create_db_instance_read_replica_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -12007,14 +12920,22 @@ impl CreateDbInstanceReadReplicaOutput {
 pub struct CreateDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceOutput {
     /// <p>Contains the details of an Amazon RDS DB instance.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+    /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+    /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
     /// </p>
     pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
         self.db_instance.as_ref()
@@ -12038,7 +12959,11 @@ pub mod create_db_instance_output {
     impl Builder {
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
@@ -12046,7 +12971,11 @@ pub mod create_db_instance_output {
         }
         /// <p>Contains the details of an Amazon RDS DB instance.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.
+        /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+        /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+        /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+        /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>,
+        /// <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
         /// </p>
         pub fn set_db_instance(
             mut self,
@@ -12545,19 +13474,53 @@ impl CreateDbClusterEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl CreateDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster.
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// </p>
-    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+    /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+    /// <p>For more information on Amazon Aurora DB clusters, see  
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>For more information on Multi-AZ DB clusters, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <note>
+    /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+    /// </note>
     pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
@@ -12578,20 +13541,54 @@ pub mod create_db_cluster_output {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster.
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
         /// </p>
-        /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>,
-        /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+        /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>,
+        /// <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+        /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+        /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+        /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
+        /// <p>For more information on Amazon Aurora DB clusters, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>For more information on Multi-AZ DB clusters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <note>
+        /// <p>The Multi-AZ DB clusters feature is in preview and is subject to change.</p>
+        /// </note>
         pub fn set_db_cluster(
             mut self,
             input: std::option::Option<crate::model::DbCluster>,

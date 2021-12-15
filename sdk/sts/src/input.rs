@@ -71,6 +71,7 @@ pub mod assume_role_input {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -100,6 +101,7 @@ pub mod assume_role_input {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -138,6 +140,7 @@ pub mod assume_role_input {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -164,6 +167,7 @@ pub mod assume_role_input {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -176,13 +180,19 @@ pub mod assume_role_input {
             self.policy = input;
             self
         }
-        /// <p>The duration, in seconds, of the role session. The value specified can can range from
-        /// 900 seconds (15 minutes) up to the maximum session duration that is set for the role. The
-        /// maximum session duration setting can have a value from 1 hour to 12 hours. If you specify a
-        /// value higher than this setting or the administrator setting (whichever is lower), the
-        /// operation fails. For example, if you specify a session duration of 12 hours, but your
-        /// administrator set the maximum session duration to 6 hours, your operation fails. To learn
-        /// how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
+        /// <p>The duration, in seconds, of the role session. The value specified can range from 900
+        /// seconds (15 minutes) up to the maximum session duration set for the role. The maximum
+        /// session duration setting can have a value from 1 hour to 12 hours. If you specify a value
+        /// higher than this setting or the administrator setting (whichever is lower), the operation
+        /// fails. For example, if you specify a session duration of 12 hours, but your administrator
+        /// set the maximum session duration to 6 hours, your operation fails. </p>
+        /// <p>Role chaining limits your Amazon Web Services CLI or Amazon Web Services API role session to a maximum of one hour.
+        /// When you use the <code>AssumeRole</code> API operation to assume a role, you can specify
+        /// the duration of your role session with the <code>DurationSeconds</code> parameter. You can
+        /// specify a parameter value of up to 43200 seconds (12 hours), depending on the maximum
+        /// session duration setting for your role. However, if you assume a role using role chaining
+        /// and provide a <code>DurationSeconds</code> parameter value greater than one hour, the
+        /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
         /// Maximum Session Duration Setting for a Role</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// <p>By default, the value is set to <code>3600</code> seconds. </p>
@@ -192,20 +202,26 @@ pub mod assume_role_input {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, input: i32) -> Self {
             self.duration_seconds = Some(input);
             self
         }
-        /// <p>The duration, in seconds, of the role session. The value specified can can range from
-        /// 900 seconds (15 minutes) up to the maximum session duration that is set for the role. The
-        /// maximum session duration setting can have a value from 1 hour to 12 hours. If you specify a
-        /// value higher than this setting or the administrator setting (whichever is lower), the
-        /// operation fails. For example, if you specify a session duration of 12 hours, but your
-        /// administrator set the maximum session duration to 6 hours, your operation fails. To learn
-        /// how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
+        /// <p>The duration, in seconds, of the role session. The value specified can range from 900
+        /// seconds (15 minutes) up to the maximum session duration set for the role. The maximum
+        /// session duration setting can have a value from 1 hour to 12 hours. If you specify a value
+        /// higher than this setting or the administrator setting (whichever is lower), the operation
+        /// fails. For example, if you specify a session duration of 12 hours, but your administrator
+        /// set the maximum session duration to 6 hours, your operation fails. </p>
+        /// <p>Role chaining limits your Amazon Web Services CLI or Amazon Web Services API role session to a maximum of one hour.
+        /// When you use the <code>AssumeRole</code> API operation to assume a role, you can specify
+        /// the duration of your role session with the <code>DurationSeconds</code> parameter. You can
+        /// specify a parameter value of up to 43200 seconds (12 hours), depending on the maximum
+        /// session duration setting for your role. However, if you assume a role using role chaining
+        /// and provide a <code>DurationSeconds</code> parameter value greater than one hour, the
+        /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
         /// Maximum Session Duration Setting for a Role</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// <p>By default, the value is set to <code>3600</code> seconds. </p>
@@ -215,7 +231,7 @@ pub mod assume_role_input {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -227,7 +243,7 @@ pub mod assume_role_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of session tags that you want to pass. Each session tag consists of a key name
-        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS
+        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS
         /// Sessions</a> in the <i>IAM User Guide</i>.</p>
         /// <p>This parameter is optional. You can pass up to 50 session tags. The plaintext session
         /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters. For these
@@ -242,8 +258,9 @@ pub mod assume_role_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        /// <p>You can pass a session tag with the same key as a tag that is already
-        /// attached to the role. When you do, session tags override a role tag with the same key. </p>
+        ///
+        /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+        /// role. When you do, session tags override a role tag with the same key. </p>
         /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
         /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
         /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -262,7 +279,7 @@ pub mod assume_role_input {
             self
         }
         /// <p>A list of session tags that you want to pass. Each session tag consists of a key name
-        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS
+        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS
         /// Sessions</a> in the <i>IAM User Guide</i>.</p>
         /// <p>This parameter is optional. You can pass up to 50 session tags. The plaintext session
         /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters. For these
@@ -277,8 +294,9 @@ pub mod assume_role_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        /// <p>You can pass a session tag with the same key as a tag that is already
-        /// attached to the role. When you do, session tags override a role tag with the same key. </p>
+        ///
+        /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+        /// role. When you do, session tags override a role tag with the same key. </p>
         /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
         /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
         /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -426,8 +444,7 @@ pub mod assume_role_input {
         /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
         /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
         /// any of the following characters: =,.@-. You cannot use a value that begins with the text
-        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal
-        /// use.</p>
+        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
         pub fn source_identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_identity = Some(input.into());
             self
@@ -445,8 +462,7 @@ pub mod assume_role_input {
         /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
         /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
         /// any of the following characters: =,.@-. You cannot use a value that begins with the text
-        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal
-        /// use.</p>
+        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
         pub fn set_source_identity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -660,6 +676,7 @@ pub mod assume_role_with_saml_input {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -689,6 +706,7 @@ pub mod assume_role_with_saml_input {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -727,6 +745,7 @@ pub mod assume_role_with_saml_input {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -753,6 +772,7 @@ pub mod assume_role_with_saml_input {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -783,7 +803,7 @@ pub mod assume_role_with_saml_input {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, input: i32) -> Self {
@@ -808,7 +828,7 @@ pub mod assume_role_with_saml_input {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -1053,6 +1073,7 @@ pub mod assume_role_with_web_identity_input {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1082,6 +1103,7 @@ pub mod assume_role_with_web_identity_input {
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
         /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1120,6 +1142,7 @@ pub mod assume_role_with_web_identity_input {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1146,6 +1169,7 @@ pub mod assume_role_with_web_identity_input {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1173,7 +1197,7 @@ pub mod assume_role_with_web_identity_input {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, input: i32) -> Self {
@@ -1195,7 +1219,7 @@ pub mod assume_role_with_web_identity_input {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the Management Console</a> in the
+        /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -1836,6 +1860,7 @@ pub mod get_federation_token_input {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1871,6 +1896,7 @@ pub mod get_federation_token_input {
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1896,7 +1922,8 @@ pub mod get_federation_token_input {
         /// The plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. You can provide up to 10 managed policy ARNs. For more information about ARNs,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+        /// Amazon Web Services General Reference.</p>
         /// <p>This parameter is optional. However, if you do not pass any session policies, then the
         /// resulting federated user session has no permissions.</p>
         /// <p>When you pass session policies, the session permissions are the intersection of the
@@ -1910,6 +1937,7 @@ pub mod get_federation_token_input {
         /// <code>Principal</code> element of the policy, the session has the permissions allowed by
         /// the policy. These permissions are granted in addition to the permissions that are granted
         /// by the session policies.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -1933,7 +1961,8 @@ pub mod get_federation_token_input {
         /// The plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. You can provide up to 10 managed policy ARNs. For more information about ARNs,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+        /// Amazon Web Services General Reference.</p>
         /// <p>This parameter is optional. However, if you do not pass any session policies, then the
         /// resulting federated user session has no permissions.</p>
         /// <p>When you pass session policies, the session permissions are the intersection of the
@@ -1947,6 +1976,7 @@ pub mod get_federation_token_input {
         /// <code>Principal</code> element of the policy, the session has the permissions allowed by
         /// the policy. These permissions are granted in addition to the permissions that are granted
         /// by the session policies.</p>
+        ///
         /// <note>
         /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2002,9 +2032,9 @@ pub mod get_federation_token_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        /// <p>You can pass a session tag with the same key as a tag that is already
-        /// attached to the user you are federating. When you do, session tags override a user tag with
-        /// the same key. </p>
+        ///
+        /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+        /// user you are federating. When you do, session tags override a user tag with the same key. </p>
         /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
         /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
         /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -2033,9 +2063,9 @@ pub mod get_federation_token_input {
         /// request are to the upper size limit.
         /// </p>
         /// </note>
-        /// <p>You can pass a session tag with the same key as a tag that is already
-        /// attached to the user you are federating. When you do, session tags override a user tag with
-        /// the same key. </p>
+        ///
+        /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+        /// user you are federating. When you do, session tags override a user tag with the same key. </p>
         /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
         /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
         /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -2194,31 +2224,31 @@ pub mod get_session_token_input {
         pub(crate) token_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable
-        /// durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds
-        /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account
-        /// owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
-        /// longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
+        /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations
+        /// for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours),
+        /// with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are
+        /// restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one
+        /// hour, the session for Amazon Web Services account owners defaults to one hour.</p>
         pub fn duration_seconds(mut self, input: i32) -> Self {
             self.duration_seconds = Some(input);
             self
         }
-        /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable
-        /// durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds
-        /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account
-        /// owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
-        /// longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
+        /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations
+        /// for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours),
+        /// with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are
+        /// restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one
+        /// hour, the session for Amazon Web Services account owners defaults to one hour.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_seconds = input;
             self
         }
         /// <p>The identification number of the MFA device that is associated with the IAM user who
-        /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user
-        /// has a policy that requires MFA authentication. The value is either the serial number for
-        /// a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN)
-        /// for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can
-        /// find the device for an IAM user by going to the Management Console and viewing the user's
-        /// security credentials. </p>
+        /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user has a
+        /// policy that requires MFA authentication. The value is either the serial number for a
+        /// hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
+        /// virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
+        /// device for an IAM user by going to the Amazon Web Services Management Console and viewing the user's security
+        /// credentials. </p>
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
@@ -2227,12 +2257,12 @@ pub mod get_session_token_input {
             self
         }
         /// <p>The identification number of the MFA device that is associated with the IAM user who
-        /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user
-        /// has a policy that requires MFA authentication. The value is either the serial number for
-        /// a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN)
-        /// for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can
-        /// find the device for an IAM user by going to the Management Console and viewing the user's
-        /// security credentials. </p>
+        /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user has a
+        /// policy that requires MFA authentication. The value is either the serial number for a
+        /// hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
+        /// virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
+        /// device for an IAM user by going to the Amazon Web Services Management Console and viewing the user's security
+        /// credentials. </p>
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
@@ -2401,19 +2431,19 @@ impl GetSessionTokenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionTokenInput {
-    /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable
-    /// durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds
-    /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account
-    /// owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
-    /// longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
+    /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations
+    /// for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours),
+    /// with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are
+    /// restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one
+    /// hour, the session for Amazon Web Services account owners defaults to one hour.</p>
     pub duration_seconds: std::option::Option<i32>,
     /// <p>The identification number of the MFA device that is associated with the IAM user who
-    /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user
-    /// has a policy that requires MFA authentication. The value is either the serial number for
-    /// a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN)
-    /// for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can
-    /// find the device for an IAM user by going to the Management Console and viewing the user's
-    /// security credentials. </p>
+    /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user has a
+    /// policy that requires MFA authentication. The value is either the serial number for a
+    /// hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
+    /// virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
+    /// device for an IAM user by going to the Amazon Web Services Management Console and viewing the user's security
+    /// credentials. </p>
     /// <p>The regex used to validate this parameter is a string of
     /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
     /// You can also include underscores or any of the following characters: =,.@:/-</p>
@@ -2428,21 +2458,21 @@ pub struct GetSessionTokenInput {
     pub token_code: std::option::Option<std::string::String>,
 }
 impl GetSessionTokenInput {
-    /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable
-    /// durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds
-    /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account
-    /// owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
-    /// longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
+    /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations
+    /// for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours),
+    /// with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are
+    /// restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one
+    /// hour, the session for Amazon Web Services account owners defaults to one hour.</p>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
         self.duration_seconds
     }
     /// <p>The identification number of the MFA device that is associated with the IAM user who
-    /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user
-    /// has a policy that requires MFA authentication. The value is either the serial number for
-    /// a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN)
-    /// for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can
-    /// find the device for an IAM user by going to the Management Console and viewing the user's
-    /// security credentials. </p>
+    /// is making the <code>GetSessionToken</code> call. Specify this value if the IAM user has a
+    /// policy that requires MFA authentication. The value is either the serial number for a
+    /// hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
+    /// virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
+    /// device for an IAM user by going to the Amazon Web Services Management Console and viewing the user's security
+    /// credentials. </p>
     /// <p>The regex used to validate this parameter is a string of
     /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
     /// You can also include underscores or any of the following characters: =,.@:/-</p>
@@ -2504,6 +2534,7 @@ pub struct GetFederationTokenInput {
     /// character to the end of the valid character list (\u0020 through \u00FF). It can also
     /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
     /// characters.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2522,7 +2553,8 @@ pub struct GetFederationTokenInput {
     /// The plaintext that you use for both inline and managed session policies can't exceed 2,048
     /// characters. You can provide up to 10 managed policy ARNs. For more information about ARNs,
     /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+    /// Amazon Web Services General Reference.</p>
     /// <p>This parameter is optional. However, if you do not pass any session policies, then the
     /// resulting federated user session has no permissions.</p>
     /// <p>When you pass session policies, the session permissions are the intersection of the
@@ -2536,6 +2568,7 @@ pub struct GetFederationTokenInput {
     /// <code>Principal</code> element of the policy, the session has the permissions allowed by
     /// the policy. These permissions are granted in addition to the permissions that are granted
     /// by the session policies.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2568,9 +2601,9 @@ pub struct GetFederationTokenInput {
     /// request are to the upper size limit.
     /// </p>
     /// </note>
-    /// <p>You can pass a session tag with the same key as a tag that is already
-    /// attached to the user you are federating. When you do, session tags override a user tag with
-    /// the same key. </p>
+    ///
+    /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+    /// user you are federating. When you do, session tags override a user tag with the same key. </p>
     /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
     /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
     /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -2612,6 +2645,7 @@ impl GetFederationTokenInput {
     /// character to the end of the valid character list (\u0020 through \u00FF). It can also
     /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
     /// characters.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2632,7 +2666,8 @@ impl GetFederationTokenInput {
     /// The plaintext that you use for both inline and managed session policies can't exceed 2,048
     /// characters. You can provide up to 10 managed policy ARNs. For more information about ARNs,
     /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+    /// Amazon Web Services General Reference.</p>
     /// <p>This parameter is optional. However, if you do not pass any session policies, then the
     /// resulting federated user session has no permissions.</p>
     /// <p>When you pass session policies, the session permissions are the intersection of the
@@ -2646,6 +2681,7 @@ impl GetFederationTokenInput {
     /// <code>Principal</code> element of the policy, the session has the permissions allowed by
     /// the policy. These permissions are granted in addition to the permissions that are granted
     /// by the session policies.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2682,9 +2718,9 @@ impl GetFederationTokenInput {
     /// request are to the upper size limit.
     /// </p>
     /// </note>
-    /// <p>You can pass a session tag with the same key as a tag that is already
-    /// attached to the user you are federating. When you do, session tags override a user tag with
-    /// the same key. </p>
+    ///
+    /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+    /// user you are federating. When you do, session tags override a user tag with the same key. </p>
     /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
     /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
     /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -2797,6 +2833,7 @@ pub struct AssumeRoleWithWebIdentityInput {
     /// plaintext that you use for both inline and managed session policies can't exceed 2,048
     /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
     /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2829,6 +2866,7 @@ pub struct AssumeRoleWithWebIdentityInput {
     /// character to the end of the valid character list (\u0020 through \u00FF). It can also
     /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
     /// characters.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2853,7 +2891,7 @@ pub struct AssumeRoleWithWebIdentityInput {
     /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
     /// parameter that specifies the maximum length of the console session. For more
     /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-    /// that Enables Federated Users to Access the Management Console</a> in the
+    /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
     pub duration_seconds: std::option::Option<i32>,
@@ -2896,6 +2934,7 @@ impl AssumeRoleWithWebIdentityInput {
     /// plaintext that you use for both inline and managed session policies can't exceed 2,048
     /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
     /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2930,6 +2969,7 @@ impl AssumeRoleWithWebIdentityInput {
     /// character to the end of the valid character list (\u0020 through \u00FF). It can also
     /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
     /// characters.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -2956,7 +2996,7 @@ impl AssumeRoleWithWebIdentityInput {
     /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
     /// parameter that specifies the maximum length of the console session. For more
     /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-    /// that Enables Federated Users to Access the Management Console</a> in the
+    /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
@@ -2996,6 +3036,7 @@ pub struct AssumeRoleWithSamlInput {
     /// plaintext that you use for both inline and managed session policies can't exceed 2,048
     /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
     /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -3028,6 +3069,7 @@ pub struct AssumeRoleWithSamlInput {
     /// character to the end of the valid character list (\u0020 through \u00FF). It can also
     /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
     /// characters.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -3055,7 +3097,7 @@ pub struct AssumeRoleWithSamlInput {
     /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
     /// parameter that specifies the maximum length of the console session. For more
     /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-    /// that Enables Federated Users to Access the Management Console</a> in the
+    /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
     pub duration_seconds: std::option::Option<i32>,
@@ -3082,6 +3124,7 @@ impl AssumeRoleWithSamlInput {
     /// plaintext that you use for both inline and managed session policies can't exceed 2,048
     /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
     /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -3116,6 +3159,7 @@ impl AssumeRoleWithSamlInput {
     /// character to the end of the valid character list (\u0020 through \u00FF). It can also
     /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
     /// characters.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -3145,7 +3189,7 @@ impl AssumeRoleWithSamlInput {
     /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
     /// parameter that specifies the maximum length of the console session. For more
     /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-    /// that Enables Federated Users to Access the Management Console</a> in the
+    /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
@@ -3188,6 +3232,7 @@ pub struct AssumeRoleInput {
     /// plaintext that you use for both inline and managed session policies can't exceed 2,048
     /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
     /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -3220,6 +3265,7 @@ pub struct AssumeRoleInput {
     /// character to the end of the valid character list (\u0020 through \u00FF). It can also
     /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
     /// characters.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -3229,13 +3275,19 @@ pub struct AssumeRoleInput {
     /// </p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>The duration, in seconds, of the role session. The value specified can can range from
-    /// 900 seconds (15 minutes) up to the maximum session duration that is set for the role. The
-    /// maximum session duration setting can have a value from 1 hour to 12 hours. If you specify a
-    /// value higher than this setting or the administrator setting (whichever is lower), the
-    /// operation fails. For example, if you specify a session duration of 12 hours, but your
-    /// administrator set the maximum session duration to 6 hours, your operation fails. To learn
-    /// how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
+    /// <p>The duration, in seconds, of the role session. The value specified can range from 900
+    /// seconds (15 minutes) up to the maximum session duration set for the role. The maximum
+    /// session duration setting can have a value from 1 hour to 12 hours. If you specify a value
+    /// higher than this setting or the administrator setting (whichever is lower), the operation
+    /// fails. For example, if you specify a session duration of 12 hours, but your administrator
+    /// set the maximum session duration to 6 hours, your operation fails. </p>
+    /// <p>Role chaining limits your Amazon Web Services CLI or Amazon Web Services API role session to a maximum of one hour.
+    /// When you use the <code>AssumeRole</code> API operation to assume a role, you can specify
+    /// the duration of your role session with the <code>DurationSeconds</code> parameter. You can
+    /// specify a parameter value of up to 43200 seconds (12 hours), depending on the maximum
+    /// session duration setting for your role. However, if you assume a role using role chaining
+    /// and provide a <code>DurationSeconds</code> parameter value greater than one hour, the
+    /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
     /// Maximum Session Duration Setting for a Role</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// <p>By default, the value is set to <code>3600</code> seconds. </p>
@@ -3245,12 +3297,12 @@ pub struct AssumeRoleInput {
     /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
     /// parameter that specifies the maximum length of the console session. For more
     /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-    /// that Enables Federated Users to Access the Management Console</a> in the
+    /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
     pub duration_seconds: std::option::Option<i32>,
     /// <p>A list of session tags that you want to pass. Each session tag consists of a key name
-    /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS
+    /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS
     /// Sessions</a> in the <i>IAM User Guide</i>.</p>
     /// <p>This parameter is optional. You can pass up to 50 session tags. The plaintext session
     /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters. For these
@@ -3265,8 +3317,9 @@ pub struct AssumeRoleInput {
     /// request are to the upper size limit.
     /// </p>
     /// </note>
-    /// <p>You can pass a session tag with the same key as a tag that is already
-    /// attached to the role. When you do, session tags override a role tag with the same key. </p>
+    ///
+    /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+    /// role. When you do, session tags override a role tag with the same key. </p>
     /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
     /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
     /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -3332,8 +3385,7 @@ pub struct AssumeRoleInput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
     /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
     /// any of the following characters: =,.@-. You cannot use a value that begins with the text
-    /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal
-    /// use.</p>
+    /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
     pub source_identity: std::option::Option<std::string::String>,
 }
 impl AssumeRoleInput {
@@ -3360,6 +3412,7 @@ impl AssumeRoleInput {
     /// plaintext that you use for both inline and managed session policies can't exceed 2,048
     /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
     /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -3394,6 +3447,7 @@ impl AssumeRoleInput {
     /// character to the end of the valid character list (\u0020 through \u00FF). It can also
     /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
     /// characters.</p>
+    ///
     /// <note>
     /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
     /// packed binary format that has a separate limit. Your request can fail for this limit
@@ -3405,13 +3459,19 @@ impl AssumeRoleInput {
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>The duration, in seconds, of the role session. The value specified can can range from
-    /// 900 seconds (15 minutes) up to the maximum session duration that is set for the role. The
-    /// maximum session duration setting can have a value from 1 hour to 12 hours. If you specify a
-    /// value higher than this setting or the administrator setting (whichever is lower), the
-    /// operation fails. For example, if you specify a session duration of 12 hours, but your
-    /// administrator set the maximum session duration to 6 hours, your operation fails. To learn
-    /// how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
+    /// <p>The duration, in seconds, of the role session. The value specified can range from 900
+    /// seconds (15 minutes) up to the maximum session duration set for the role. The maximum
+    /// session duration setting can have a value from 1 hour to 12 hours. If you specify a value
+    /// higher than this setting or the administrator setting (whichever is lower), the operation
+    /// fails. For example, if you specify a session duration of 12 hours, but your administrator
+    /// set the maximum session duration to 6 hours, your operation fails. </p>
+    /// <p>Role chaining limits your Amazon Web Services CLI or Amazon Web Services API role session to a maximum of one hour.
+    /// When you use the <code>AssumeRole</code> API operation to assume a role, you can specify
+    /// the duration of your role session with the <code>DurationSeconds</code> parameter. You can
+    /// specify a parameter value of up to 43200 seconds (12 hours), depending on the maximum
+    /// session duration setting for your role. However, if you assume a role using role chaining
+    /// and provide a <code>DurationSeconds</code> parameter value greater than one hour, the
+    /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the
     /// Maximum Session Duration Setting for a Role</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// <p>By default, the value is set to <code>3600</code> seconds. </p>
@@ -3421,14 +3481,14 @@ impl AssumeRoleInput {
     /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
     /// parameter that specifies the maximum length of the console session. For more
     /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-    /// that Enables Federated Users to Access the Management Console</a> in the
+    /// that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the
     /// <i>IAM User Guide</i>.</p>
     /// </note>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
         self.duration_seconds
     }
     /// <p>A list of session tags that you want to pass. Each session tag consists of a key name
-    /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS
+    /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS
     /// Sessions</a> in the <i>IAM User Guide</i>.</p>
     /// <p>This parameter is optional. You can pass up to 50 session tags. The plaintext session
     /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters. For these
@@ -3443,8 +3503,9 @@ impl AssumeRoleInput {
     /// request are to the upper size limit.
     /// </p>
     /// </note>
-    /// <p>You can pass a session tag with the same key as a tag that is already
-    /// attached to the role. When you do, session tags override a role tag with the same key. </p>
+    ///
+    /// <p>You can pass a session tag with the same key as a tag that is already attached to the
+    /// role. When you do, session tags override a role tag with the same key. </p>
     /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you
     /// cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume
     /// that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
@@ -3520,8 +3581,7 @@ impl AssumeRoleInput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
     /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
     /// any of the following characters: =,.@-. You cannot use a value that begins with the text
-    /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal
-    /// use.</p>
+    /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
     pub fn source_identity(&self) -> std::option::Option<&str> {
         self.source_identity.as_deref()
     }

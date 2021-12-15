@@ -1263,6 +1263,31 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetNetworkAnalyzerConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetNetworkAnalyzerConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetNetworkAnalyzerConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetNetworkAnalyzerConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetNetworkAnalyzerConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::GetNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPartnerAccountError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2477,6 +2502,32 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::UpdateNetworkAnalyzerConfigurationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateNetworkAnalyzerConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::UpdateNetworkAnalyzerConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

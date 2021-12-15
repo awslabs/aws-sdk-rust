@@ -784,12 +784,12 @@ pub mod authorize_data_share_input {
             self.data_share_arn = input;
             self
         }
-        /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
+        /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID.</p>
         pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.consumer_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
+        /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID.</p>
         pub fn set_consumer_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2320,6 +2320,7 @@ pub mod create_cluster_input {
         pub(crate) availability_zone_relocation: std::option::Option<bool>,
         pub(crate) aqua_configuration_status:
             std::option::Option<crate::model::AquaConfigurationStatus>,
+        pub(crate) default_iam_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -3163,6 +3164,19 @@ pub mod create_cluster_input {
             self.aqua_configuration_status = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
+        pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_iam_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
+        pub fn set_default_iam_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_iam_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput)
         pub fn build(
             self,
@@ -3203,6 +3217,7 @@ pub mod create_cluster_input {
                 snapshot_schedule_identifier: self.snapshot_schedule_identifier,
                 availability_zone_relocation: self.availability_zone_relocation,
                 aqua_configuration_status: self.aqua_configuration_status,
+                default_iam_role_arn: self.default_iam_role_arn,
             })
         }
     }
@@ -6488,13 +6503,13 @@ pub mod deauthorize_data_share_input {
             self
         }
         /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
-        /// This identifier is an AWS account ID.</p>
+        /// This identifier is an Amazon Web Services account ID.</p>
         pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.consumer_identifier = Some(input.into());
             self
         }
         /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
-        /// This identifier is an AWS account ID.</p>
+        /// This identifier is an Amazon Web Services account ID.</p>
         pub fn set_consumer_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12091,12 +12106,12 @@ pub mod describe_data_shares_input {
             self.max_records = input;
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12288,7 +12303,7 @@ pub mod describe_data_shares_for_consumer_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -12298,7 +12313,7 @@ pub mod describe_data_shares_for_consumer_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -12496,7 +12511,7 @@ pub mod describe_data_shares_for_producer_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -12506,7 +12521,7 @@ pub mod describe_data_shares_for_producer_input {
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -15478,6 +15493,216 @@ impl DescribePartnersInput {
     /// Creates a new builder-style object to manufacture [`DescribePartnersInput`](crate::input::DescribePartnersInput)
     pub fn builder() -> crate::input::describe_partners_input::Builder {
         crate::input::describe_partners_input::Builder::default()
+    }
+}
+
+/// See [`DescribeReservedNodeExchangeStatusInput`](crate::input::DescribeReservedNodeExchangeStatusInput)
+pub mod describe_reserved_node_exchange_status_input {
+    /// A builder for [`DescribeReservedNodeExchangeStatusInput`](crate::input::DescribeReservedNodeExchangeStatusInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reserved_node_id: std::option::Option<std::string::String>,
+        pub(crate) reserved_node_exchange_request_id: std::option::Option<std::string::String>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_node_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
+        pub fn set_reserved_node_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reserved_node_id = input;
+            self
+        }
+        /// <p>The identifier of the reserved-node exchange request.</p>
+        pub fn reserved_node_exchange_request_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.reserved_node_exchange_request_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the reserved-node exchange request.</p>
+        pub fn set_reserved_node_exchange_request_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reserved_node_exchange_request_id = input;
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the value
+        /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the value
+        /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeReservedNodeExchangeStatusInput`](crate::input::DescribeReservedNodeExchangeStatusInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeReservedNodeExchangeStatusInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeReservedNodeExchangeStatusInput {
+                reserved_node_id: self.reserved_node_id,
+                reserved_node_exchange_request_id: self.reserved_node_exchange_request_id,
+                max_records: self.max_records,
+                marker: self.marker,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeReservedNodeExchangeStatusInputOperationOutputAlias =
+    crate::operation::DescribeReservedNodeExchangeStatus;
+#[doc(hidden)]
+pub type DescribeReservedNodeExchangeStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeReservedNodeExchangeStatusInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeReservedNodeExchangeStatus`](crate::operation::DescribeReservedNodeExchangeStatus)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeReservedNodeExchangeStatus,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeReservedNodeExchangeStatusInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeReservedNodeExchangeStatusInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeReservedNodeExchangeStatusInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-www-form-urlencoded",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_node_exchange_status(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeReservedNodeExchangeStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeReservedNodeExchangeStatus",
+            "redshift",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeReservedNodeExchangeStatusInput`](crate::input::DescribeReservedNodeExchangeStatusInput)
+    pub fn builder() -> crate::input::describe_reserved_node_exchange_status_input::Builder {
+        crate::input::describe_reserved_node_exchange_status_input::Builder::default()
     }
 }
 
@@ -19167,6 +19392,232 @@ impl GetClusterCredentialsInput {
     }
 }
 
+/// See [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput)
+pub mod get_reserved_node_exchange_configuration_options_input {
+    /// A builder for [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action_type: std::option::Option<crate::model::ReservedNodeExchangeActionType>,
+        pub(crate) cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) snapshot_identifier: std::option::Option<std::string::String>,
+        pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
+        pub fn action_type(mut self, input: crate::model::ReservedNodeExchangeActionType) -> Self {
+            self.action_type = Some(input);
+            self
+        }
+        /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
+        pub fn set_action_type(
+            mut self,
+            input: std::option::Option<crate::model::ReservedNodeExchangeActionType>,
+        ) -> Self {
+            self.action_type = input;
+            self
+        }
+        /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
+        pub fn set_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cluster_identifier = input;
+            self
+        }
+        /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_identifier = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
+        pub fn set_snapshot_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_identifier = input;
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.max_records = Some(input);
+            self
+        }
+        /// <p>The maximum number of response records to return in each call. If the number of
+        /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+        /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
+        /// set of records by retrying the command with the returned marker value.</p>
+        pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_records = input;
+            self
+        }
+        /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the value
+        /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the value
+        /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetReservedNodeExchangeConfigurationOptionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::GetReservedNodeExchangeConfigurationOptionsInput {
+                    action_type: self.action_type,
+                    cluster_identifier: self.cluster_identifier,
+                    snapshot_identifier: self.snapshot_identifier,
+                    max_records: self.max_records,
+                    marker: self.marker,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetReservedNodeExchangeConfigurationOptionsInputOperationOutputAlias =
+    crate::operation::GetReservedNodeExchangeConfigurationOptions;
+#[doc(hidden)]
+pub type GetReservedNodeExchangeConfigurationOptionsInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl GetReservedNodeExchangeConfigurationOptionsInput {
+    /// Consumes the builder and constructs an Operation<[`GetReservedNodeExchangeConfigurationOptions`](crate::operation::GetReservedNodeExchangeConfigurationOptions)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetReservedNodeExchangeConfigurationOptions,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetReservedNodeExchangeConfigurationOptionsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetReservedNodeExchangeConfigurationOptionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetReservedNodeExchangeConfigurationOptionsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-www-form-urlencoded",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_reserved_node_exchange_configuration_options(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetReservedNodeExchangeConfigurationOptions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetReservedNodeExchangeConfigurationOptions",
+            "redshift",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput)
+    pub fn builder() -> crate::input::get_reserved_node_exchange_configuration_options_input::Builder
+    {
+        crate::input::get_reserved_node_exchange_configuration_options_input::Builder::default()
+    }
+}
+
 /// See [`GetReservedNodeExchangeOfferingsInput`](crate::input::GetReservedNodeExchangeOfferingsInput)
 pub mod get_reserved_node_exchange_offerings_input {
     /// A builder for [`GetReservedNodeExchangeOfferingsInput`](crate::input::GetReservedNodeExchangeOfferingsInput)
@@ -20718,6 +21169,7 @@ pub mod modify_cluster_iam_roles_input {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) add_iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) remove_iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) default_iam_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of the cluster for which you want to associate or
@@ -20779,6 +21231,19 @@ pub mod modify_cluster_iam_roles_input {
             self.remove_iam_roles = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
+        pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_iam_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
+        pub fn set_default_iam_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_iam_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyClusterIamRolesInput`](crate::input::ModifyClusterIamRolesInput)
         pub fn build(
             self,
@@ -20790,6 +21255,7 @@ pub mod modify_cluster_iam_roles_input {
                 cluster_identifier: self.cluster_identifier,
                 add_iam_roles: self.add_iam_roles,
                 remove_iam_roles: self.remove_iam_roles,
+                default_iam_role_arn: self.default_iam_role_arn,
             })
         }
     }
@@ -24021,6 +24487,8 @@ pub mod resize_cluster_input {
         pub(crate) node_type: std::option::Option<std::string::String>,
         pub(crate) number_of_nodes: std::option::Option<i32>,
         pub(crate) classic: std::option::Option<bool>,
+        pub(crate) reserved_node_id: std::option::Option<std::string::String>,
+        pub(crate) target_reserved_node_offering_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier for the cluster to resize.</p>
@@ -24080,6 +24548,35 @@ pub mod resize_cluster_input {
             self.classic = input;
             self
         }
+        /// <p>The identifier of the reserved node.</p>
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_node_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the reserved node.</p>
+        pub fn set_reserved_node_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reserved_node_id = input;
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn target_reserved_node_offering_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_offering_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn set_target_reserved_node_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_offering_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResizeClusterInput`](crate::input::ResizeClusterInput)
         pub fn build(
             self,
@@ -24093,6 +24590,8 @@ pub mod resize_cluster_input {
                 node_type: self.node_type,
                 number_of_nodes: self.number_of_nodes,
                 classic: self.classic,
+                reserved_node_id: self.reserved_node_id,
+                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
             })
         }
     }
@@ -24248,6 +24747,9 @@ pub mod restore_from_cluster_snapshot_input {
         pub(crate) availability_zone_relocation: std::option::Option<bool>,
         pub(crate) aqua_configuration_status:
             std::option::Option<crate::model::AquaConfigurationStatus>,
+        pub(crate) default_iam_role_arn: std::option::Option<std::string::String>,
+        pub(crate) reserved_node_id: std::option::Option<std::string::String>,
+        pub(crate) target_reserved_node_offering_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the cluster that will be created from restoring the
@@ -24849,6 +25351,48 @@ pub mod restore_from_cluster_snapshot_input {
             self.aqua_configuration_status = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
+        pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_iam_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
+        pub fn set_default_iam_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_iam_role_arn = input;
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_node_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn set_reserved_node_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reserved_node_id = input;
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn target_reserved_node_offering_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_offering_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the target reserved node offering.</p>
+        pub fn set_target_reserved_node_offering_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_reserved_node_offering_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreFromClusterSnapshotInput`](crate::input::RestoreFromClusterSnapshotInput)
         pub fn build(
             self,
@@ -24885,6 +25429,9 @@ pub mod restore_from_cluster_snapshot_input {
                 number_of_nodes: self.number_of_nodes,
                 availability_zone_relocation: self.availability_zone_relocation,
                 aqua_configuration_status: self.aqua_configuration_status,
+                default_iam_role_arn: self.default_iam_role_arn,
+                reserved_node_id: self.reserved_node_id,
+                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
             })
         }
     }
@@ -26972,6 +27519,12 @@ pub struct RestoreFromClusterSnapshotInput {
     /// </li>
     /// </ul>
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
+    pub default_iam_role_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub reserved_node_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
 }
 impl RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the cluster that will be created from restoring the
@@ -27198,6 +27751,18 @@ impl RestoreFromClusterSnapshotInput {
     ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
         self.aqua_configuration_status.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
+    pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
+        self.default_iam_role_arn.as_deref()
+    }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_id.as_deref()
+    }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.target_reserved_node_offering_id.as_deref()
+    }
 }
 impl std::fmt::Debug for RestoreFromClusterSnapshotInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27257,6 +27822,12 @@ impl std::fmt::Debug for RestoreFromClusterSnapshotInput {
             &self.availability_zone_relocation,
         );
         formatter.field("aqua_configuration_status", &self.aqua_configuration_status);
+        formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
+        formatter.field("reserved_node_id", &self.reserved_node_id);
+        formatter.field(
+            "target_reserved_node_offering_id",
+            &self.target_reserved_node_offering_id,
+        );
         formatter.finish()
     }
 }
@@ -27277,6 +27848,10 @@ pub struct ResizeClusterInput {
     /// process. If you don't provide this parameter or set the value to
     /// <code>false</code>, the resize type is elastic. </p>
     pub classic: std::option::Option<bool>,
+    /// <p>The identifier of the reserved node.</p>
+    pub reserved_node_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
 }
 impl ResizeClusterInput {
     /// <p>The unique identifier for the cluster to resize.</p>
@@ -27301,6 +27876,14 @@ impl ResizeClusterInput {
     pub fn classic(&self) -> std::option::Option<bool> {
         self.classic
     }
+    /// <p>The identifier of the reserved node.</p>
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_id.as_deref()
+    }
+    /// <p>The identifier of the target reserved node offering.</p>
+    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+        self.target_reserved_node_offering_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ResizeClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27310,6 +27893,11 @@ impl std::fmt::Debug for ResizeClusterInput {
         formatter.field("node_type", &self.node_type);
         formatter.field("number_of_nodes", &self.number_of_nodes);
         formatter.field("classic", &self.classic);
+        formatter.field("reserved_node_id", &self.reserved_node_id);
+        formatter.field(
+            "target_reserved_node_offering_id",
+            &self.target_reserved_node_offering_id,
+        );
         formatter.finish()
     }
 }
@@ -28050,6 +28638,8 @@ pub struct ModifyClusterIamRolesInput {
     /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can
     /// disassociate up to 10 IAM roles from a single cluster in a single request.</p>
     pub remove_iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
+    pub default_iam_role_arn: std::option::Option<std::string::String>,
 }
 impl ModifyClusterIamRolesInput {
     /// <p>The unique identifier of the cluster for which you want to associate or
@@ -28068,6 +28658,10 @@ impl ModifyClusterIamRolesInput {
     pub fn remove_iam_roles(&self) -> std::option::Option<&[std::string::String]> {
         self.remove_iam_roles.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
+    pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
+        self.default_iam_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for ModifyClusterIamRolesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28075,6 +28669,7 @@ impl std::fmt::Debug for ModifyClusterIamRolesInput {
         formatter.field("cluster_identifier", &self.cluster_identifier);
         formatter.field("add_iam_roles", &self.add_iam_roles);
         formatter.field("remove_iam_roles", &self.remove_iam_roles);
+        formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
         formatter.finish()
     }
 }
@@ -28750,6 +29345,71 @@ impl std::fmt::Debug for GetReservedNodeExchangeOfferingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetReservedNodeExchangeOfferingsInput");
         formatter.field("reserved_node_id", &self.reserved_node_id);
+        formatter.field("max_records", &self.max_records);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetReservedNodeExchangeConfigurationOptionsInput {
+    /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
+    pub action_type: std::option::Option<crate::model::ReservedNodeExchangeActionType>,
+    /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
+    pub cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
+    pub snapshot_identifier: std::option::Option<std::string::String>,
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value.</p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the value
+    /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request.</p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl GetReservedNodeExchangeConfigurationOptionsInput {
+    /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
+    pub fn action_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReservedNodeExchangeActionType> {
+        self.action_type.as_ref()
+    }
+    /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
+    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+        self.snapshot_identifier.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the value
+    /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
+impl std::fmt::Debug for GetReservedNodeExchangeConfigurationOptionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetReservedNodeExchangeConfigurationOptionsInput");
+        formatter.field("action_type", &self.action_type);
+        formatter.field("cluster_identifier", &self.cluster_identifier);
+        formatter.field("snapshot_identifier", &self.snapshot_identifier);
         formatter.field("max_records", &self.max_records);
         formatter.field("marker", &self.marker);
         formatter.finish()
@@ -29992,6 +30652,65 @@ impl std::fmt::Debug for DescribeReservedNodeOfferingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeReservedNodeExchangeStatusInput {
+    /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
+    pub reserved_node_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the reserved-node exchange request.</p>
+    pub reserved_node_exchange_request_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value.</p>
+    pub max_records: std::option::Option<i32>,
+    /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the value
+    /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request.</p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl DescribeReservedNodeExchangeStatusInput {
+    /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_id.as_deref()
+    }
+    /// <p>The identifier of the reserved-node exchange request.</p>
+    pub fn reserved_node_exchange_request_id(&self) -> std::option::Option<&str> {
+        self.reserved_node_exchange_request_id.as_deref()
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of
+    /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
+    /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
+    /// set of records by retrying the command with the returned marker value.</p>
+    pub fn max_records(&self) -> std::option::Option<i32> {
+        self.max_records
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this
+    /// parameter is specified, the response includes only records beyond the marker, up to the value
+    /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request.</p>
+    pub fn marker(&self) -> std::option::Option<&str> {
+        self.marker.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeReservedNodeExchangeStatusInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeReservedNodeExchangeStatusInput");
+        formatter.field("reserved_node_id", &self.reserved_node_id);
+        formatter.field(
+            "reserved_node_exchange_request_id",
+            &self.reserved_node_exchange_request_id,
+        );
+        formatter.field("max_records", &self.max_records);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePartnersInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub account_id: std::option::Option<std::string::String>,
@@ -30946,7 +31665,7 @@ pub struct DescribeDataSharesForProducerInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -30971,7 +31690,7 @@ impl DescribeDataSharesForProducerInput {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -31006,7 +31725,7 @@ pub struct DescribeDataSharesForConsumerInput {
     pub max_records: std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -31031,7 +31750,7 @@ impl DescribeDataSharesForConsumerInput {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -31061,7 +31780,7 @@ pub struct DescribeDataSharesInput {
     /// is returned in a <code>marker</code> field of the response. You can retrieve the next
     /// set of records by retrying the command with the returned marker value. </p>
     pub max_records: std::option::Option<i32>,
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesInput {
@@ -31076,7 +31795,7 @@ impl DescribeDataSharesInput {
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -32561,7 +33280,7 @@ pub struct DeauthorizeDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
-    /// This identifier is an AWS account ID.</p>
+    /// This identifier is an Amazon Web Services account ID.</p>
     pub consumer_identifier: std::option::Option<std::string::String>,
 }
 impl DeauthorizeDataShareInput {
@@ -32570,7 +33289,7 @@ impl DeauthorizeDataShareInput {
         self.data_share_arn.as_deref()
     }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
-    /// This identifier is an AWS account ID.</p>
+    /// This identifier is an Amazon Web Services account ID.</p>
     pub fn consumer_identifier(&self) -> std::option::Option<&str> {
         self.consumer_identifier.as_deref()
     }
@@ -33823,6 +34542,8 @@ pub struct CreateClusterInput {
     /// </li>
     /// </ul>
     pub aqua_configuration_status: std::option::Option<crate::model::AquaConfigurationStatus>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
+    pub default_iam_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateClusterInput {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -34163,6 +34884,10 @@ impl CreateClusterInput {
     ) -> std::option::Option<&crate::model::AquaConfigurationStatus> {
         self.aqua_configuration_status.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
+    pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
+        self.default_iam_role_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34223,6 +34948,7 @@ impl std::fmt::Debug for CreateClusterInput {
             &self.availability_zone_relocation,
         );
         formatter.field("aqua_configuration_status", &self.aqua_configuration_status);
+        formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
         formatter.finish()
     }
 }
@@ -34576,7 +35302,7 @@ pub struct AuthorizeDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize
     /// sharing for.</p>
     pub data_share_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
+    /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID.</p>
     pub consumer_identifier: std::option::Option<std::string::String>,
 }
 impl AuthorizeDataShareInput {
@@ -34585,7 +35311,7 @@ impl AuthorizeDataShareInput {
     pub fn data_share_arn(&self) -> std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
-    /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID.</p>
+    /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID.</p>
     pub fn consumer_identifier(&self) -> std::option::Option<&str> {
         self.consumer_identifier.as_deref()
     }

@@ -2754,6 +2754,12 @@ pub struct GatewayInfo {
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
     pub ec2_instance_region: std::option::Option<std::string::String>,
+    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    pub host_environment: std::option::Option<crate::model::HostEnvironment>,
+    /// <p>A unique identifier for the specific instance of the host platform running the gateway.
+    /// This value is only available for certain host environments, and its format depends on the
+    /// host environment type.</p>
+    pub host_environment_id: std::option::Option<std::string::String>,
 }
 impl GatewayInfo {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part
@@ -2790,6 +2796,16 @@ impl GatewayInfo {
     pub fn ec2_instance_region(&self) -> std::option::Option<&str> {
         self.ec2_instance_region.as_deref()
     }
+    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    pub fn host_environment(&self) -> std::option::Option<&crate::model::HostEnvironment> {
+        self.host_environment.as_ref()
+    }
+    /// <p>A unique identifier for the specific instance of the host platform running the gateway.
+    /// This value is only available for certain host environments, and its format depends on the
+    /// host environment type.</p>
+    pub fn host_environment_id(&self) -> std::option::Option<&str> {
+        self.host_environment_id.as_deref()
+    }
 }
 impl std::fmt::Debug for GatewayInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2801,6 +2817,8 @@ impl std::fmt::Debug for GatewayInfo {
         formatter.field("gateway_name", &self.gateway_name);
         formatter.field("ec2_instance_id", &self.ec2_instance_id);
         formatter.field("ec2_instance_region", &self.ec2_instance_region);
+        formatter.field("host_environment", &self.host_environment);
+        formatter.field("host_environment_id", &self.host_environment_id);
         formatter.finish()
     }
 }
@@ -2817,6 +2835,8 @@ pub mod gateway_info {
         pub(crate) gateway_name: std::option::Option<std::string::String>,
         pub(crate) ec2_instance_id: std::option::Option<std::string::String>,
         pub(crate) ec2_instance_region: std::option::Option<std::string::String>,
+        pub(crate) host_environment: std::option::Option<crate::model::HostEnvironment>,
+        pub(crate) host_environment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part
@@ -2910,6 +2930,36 @@ pub mod gateway_info {
             self.ec2_instance_region = input;
             self
         }
+        /// <p>The type of hardware or software platform on which the gateway is running.</p>
+        pub fn host_environment(mut self, input: crate::model::HostEnvironment) -> Self {
+            self.host_environment = Some(input);
+            self
+        }
+        /// <p>The type of hardware or software platform on which the gateway is running.</p>
+        pub fn set_host_environment(
+            mut self,
+            input: std::option::Option<crate::model::HostEnvironment>,
+        ) -> Self {
+            self.host_environment = input;
+            self
+        }
+        /// <p>A unique identifier for the specific instance of the host platform running the gateway.
+        /// This value is only available for certain host environments, and its format depends on the
+        /// host environment type.</p>
+        pub fn host_environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_environment_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the specific instance of the host platform running the gateway.
+        /// This value is only available for certain host environments, and its format depends on the
+        /// host environment type.</p>
+        pub fn set_host_environment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.host_environment_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GatewayInfo`](crate::model::GatewayInfo)
         pub fn build(self) -> crate::model::GatewayInfo {
             crate::model::GatewayInfo {
@@ -2920,6 +2970,8 @@ pub mod gateway_info {
                 gateway_name: self.gateway_name,
                 ec2_instance_id: self.ec2_instance_id,
                 ec2_instance_region: self.ec2_instance_region,
+                host_environment: self.host_environment,
+                host_environment_id: self.host_environment_id,
             }
         }
     }
@@ -2928,6 +2980,77 @@ impl GatewayInfo {
     /// Creates a new builder-style object to manufacture [`GatewayInfo`](crate::model::GatewayInfo)
     pub fn builder() -> crate::model::gateway_info::Builder {
         crate::model::gateway_info::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HostEnvironment {
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2,
+    #[allow(missing_docs)] // documentation missing in model
+    HyperV,
+    #[allow(missing_docs)] // documentation missing in model
+    Kvm,
+    #[allow(missing_docs)] // documentation missing in model
+    Other,
+    #[allow(missing_docs)] // documentation missing in model
+    Snowball,
+    #[allow(missing_docs)] // documentation missing in model
+    Vmware,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HostEnvironment {
+    fn from(s: &str) -> Self {
+        match s {
+            "EC2" => HostEnvironment::Ec2,
+            "HYPER-V" => HostEnvironment::HyperV,
+            "KVM" => HostEnvironment::Kvm,
+            "OTHER" => HostEnvironment::Other,
+            "SNOWBALL" => HostEnvironment::Snowball,
+            "VMWARE" => HostEnvironment::Vmware,
+            other => HostEnvironment::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HostEnvironment {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HostEnvironment::from(s))
+    }
+}
+impl HostEnvironment {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HostEnvironment::Ec2 => "EC2",
+            HostEnvironment::HyperV => "HYPER-V",
+            HostEnvironment::Kvm => "KVM",
+            HostEnvironment::Other => "OTHER",
+            HostEnvironment::Snowball => "SNOWBALL",
+            HostEnvironment::Vmware => "VMWARE",
+            HostEnvironment::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"]
+    }
+}
+impl AsRef<str> for HostEnvironment {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7491,73 +7614,6 @@ impl NfsFileShareInfo {
     /// Creates a new builder-style object to manufacture [`NfsFileShareInfo`](crate::model::NfsFileShareInfo)
     pub fn builder() -> crate::model::nfs_file_share_info::Builder {
         crate::model::nfs_file_share_info::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum HostEnvironment {
-    #[allow(missing_docs)] // documentation missing in model
-    Ec2,
-    #[allow(missing_docs)] // documentation missing in model
-    HyperV,
-    #[allow(missing_docs)] // documentation missing in model
-    Kvm,
-    #[allow(missing_docs)] // documentation missing in model
-    Other,
-    #[allow(missing_docs)] // documentation missing in model
-    Vmware,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for HostEnvironment {
-    fn from(s: &str) -> Self {
-        match s {
-            "EC2" => HostEnvironment::Ec2,
-            "HYPER-V" => HostEnvironment::HyperV,
-            "KVM" => HostEnvironment::Kvm,
-            "OTHER" => HostEnvironment::Other,
-            "VMWARE" => HostEnvironment::Vmware,
-            other => HostEnvironment::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for HostEnvironment {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HostEnvironment::from(s))
-    }
-}
-impl HostEnvironment {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HostEnvironment::Ec2 => "EC2",
-            HostEnvironment::HyperV => "HYPER-V",
-            HostEnvironment::Kvm => "KVM",
-            HostEnvironment::Other => "OTHER",
-            HostEnvironment::Vmware => "VMWARE",
-            HostEnvironment::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["EC2", "HYPER-V", "KVM", "OTHER", "VMWARE"]
-    }
-}
-impl AsRef<str> for HostEnvironment {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

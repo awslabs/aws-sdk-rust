@@ -2468,7 +2468,7 @@ pub fn deser_operation_crate_operation_create_user(
                 builder = builder.set_engine(var_68);
             }
             ,
-            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#CreateUserOutput$AccessString */ =>  {
+            s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache.synthetic#CreateUserOutput$MinimumEngineVersion */ =>  {
                 let var_69 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2478,31 +2478,11 @@ pub fn deser_operation_crate_operation_create_user(
                         ?
                     )
                 ;
-                builder = builder.set_access_string(var_69);
+                builder = builder.set_minimum_engine_version(var_69);
             }
             ,
-            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#CreateUserOutput$UserGroupIds */ =>  {
+            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#CreateUserOutput$AccessString */ =>  {
                 let var_70 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_user_group_ids(var_70);
-            }
-            ,
-            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#CreateUserOutput$Authentication */ =>  {
-                let var_71 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_authentication(var_71);
-            }
-            ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#CreateUserOutput$ARN */ =>  {
-                let var_72 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2511,7 +2491,40 @@ pub fn deser_operation_crate_operation_create_user(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_72);
+                builder = builder.set_access_string(var_70);
+            }
+            ,
+            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#CreateUserOutput$UserGroupIds */ =>  {
+                let var_71 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_user_group_ids(var_71);
+            }
+            ,
+            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#CreateUserOutput$Authentication */ =>  {
+                let var_72 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_authentication(var_72);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#CreateUserOutput$ARN */ =>  {
+                let var_73 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_73);
             }
             ,
             _ => {}
@@ -2540,7 +2553,7 @@ pub fn deser_structure_crate_error_default_user_required_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#DefaultUserRequired$message */ =>  {
-                let var_73 =
+                let var_74 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2549,7 +2562,7 @@ pub fn deser_structure_crate_error_default_user_required_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_73);
+                builder = builder.set_message(var_74);
             }
             ,
             _ => {}
@@ -2574,7 +2587,7 @@ pub fn deser_structure_crate_error_user_group_already_exists_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#UserGroupAlreadyExistsFault$message */ =>  {
-                let var_74 =
+                let var_75 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2583,7 +2596,7 @@ pub fn deser_structure_crate_error_user_group_already_exists_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_74);
+                builder = builder.set_message(var_75);
             }
             ,
             _ => {}
@@ -2608,7 +2621,7 @@ pub fn deser_structure_crate_error_user_group_quota_exceeded_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#UserGroupQuotaExceededFault$message */ =>  {
-                let var_75 =
+                let var_76 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2617,7 +2630,7 @@ pub fn deser_structure_crate_error_user_group_quota_exceeded_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_75);
+                builder = builder.set_message(var_76);
             }
             ,
             _ => {}
@@ -2654,19 +2667,6 @@ pub fn deser_operation_crate_operation_create_user_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$UserGroupId */ =>  {
-                let var_76 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_user_group_id(var_76);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$Status */ =>  {
                 let var_77 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2676,10 +2676,10 @@ pub fn deser_operation_crate_operation_create_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_77);
+                builder = builder.set_user_group_id(var_77);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$Engine */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$Status */ =>  {
                 let var_78 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -2689,41 +2689,11 @@ pub fn deser_operation_crate_operation_create_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_78);
+                builder = builder.set_status(var_78);
             }
             ,
-            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$UserIds */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$Engine */ =>  {
                 let var_79 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_user_ids(var_79);
-            }
-            ,
-            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$PendingChanges */ =>  {
-                let var_80 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_pending_changes(var_80);
-            }
-            ,
-            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$ReplicationGroups */ =>  {
-                let var_81 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_replication_groups(var_81);
-            }
-            ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$ARN */ =>  {
-                let var_82 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2732,7 +2702,63 @@ pub fn deser_operation_crate_operation_create_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_82);
+                builder = builder.set_engine(var_79);
+            }
+            ,
+            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$UserIds */ =>  {
+                let var_80 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_user_ids(var_80);
+            }
+            ,
+            s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$MinimumEngineVersion */ =>  {
+                let var_81 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum_engine_version(var_81);
+            }
+            ,
+            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$PendingChanges */ =>  {
+                let var_82 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_pending_changes(var_82);
+            }
+            ,
+            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$ReplicationGroups */ =>  {
+                let var_83 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_replication_groups(var_83);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#CreateUserGroupOutput$ARN */ =>  {
+                let var_84 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_84);
             }
             ,
             _ => {}
@@ -2774,13 +2800,13 @@ pub fn deser_operation_crate_operation_decrease_node_groups_in_global_replicatio
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#DecreaseNodeGroupsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
-                let var_83 =
+                let var_85 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group(var_83);
+                builder = builder.set_global_replication_group(var_85);
             }
             ,
             _ => {}
@@ -2809,7 +2835,7 @@ pub fn deser_structure_crate_error_no_operation_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#NoOperationFault$message */ =>  {
-                let var_84 =
+                let var_86 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2818,7 +2844,7 @@ pub fn deser_structure_crate_error_no_operation_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_84);
+                builder = builder.set_message(var_86);
             }
             ,
             _ => {}
@@ -2856,13 +2882,13 @@ pub fn deser_operation_crate_operation_decrease_replica_count(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#DecreaseReplicaCountOutput$ReplicationGroup */ =>  {
-                let var_85 =
+                let var_87 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replication_group(var_85);
+                builder = builder.set_replication_group(var_87);
             }
             ,
             _ => {}
@@ -2904,13 +2930,13 @@ pub fn deser_operation_crate_operation_delete_cache_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache.synthetic#DeleteCacheClusterOutput$CacheCluster */ =>  {
-                let var_86 =
+                let var_88 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_cache_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster(var_86);
+                builder = builder.set_cache_cluster(var_88);
             }
             ,
             _ => {}
@@ -2939,7 +2965,7 @@ pub fn deser_structure_crate_error_cache_subnet_group_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#CacheSubnetGroupInUse$message */ =>  {
-                let var_87 =
+                let var_89 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -2948,7 +2974,7 @@ pub fn deser_structure_crate_error_cache_subnet_group_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_87);
+                builder = builder.set_message(var_89);
             }
             ,
             _ => {}
@@ -2988,13 +3014,13 @@ pub fn deser_operation_crate_operation_delete_global_replication_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#DeleteGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
-                let var_88 =
+                let var_90 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group(var_88);
+                builder = builder.set_global_replication_group(var_90);
             }
             ,
             _ => {}
@@ -3037,13 +3063,13 @@ pub fn deser_operation_crate_operation_delete_replication_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#DeleteReplicationGroupOutput$ReplicationGroup */ =>  {
-                let var_89 =
+                let var_91 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replication_group(var_89);
+                builder = builder.set_replication_group(var_91);
             }
             ,
             _ => {}
@@ -3085,13 +3111,13 @@ pub fn deser_operation_crate_operation_delete_snapshot(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Snapshot") /* Snapshot com.amazonaws.elasticache.synthetic#DeleteSnapshotOutput$Snapshot */ =>  {
-                let var_90 =
+                let var_92 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_snapshot(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_snapshot(var_90);
+                builder = builder.set_snapshot(var_92);
             }
             ,
             _ => {}
@@ -3123,7 +3149,7 @@ pub fn deser_structure_crate_error_default_user_associated_to_user_group_fault_x
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#DefaultUserAssociatedToUserGroupFault$message */ =>  {
-                let var_91 =
+                let var_93 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3132,7 +3158,7 @@ pub fn deser_structure_crate_error_default_user_associated_to_user_group_fault_x
                         ?
                     )
                 ;
-                builder = builder.set_message(var_91);
+                builder = builder.set_message(var_93);
             }
             ,
             _ => {}
@@ -3156,7 +3182,7 @@ pub fn deser_structure_crate_error_invalid_user_state_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#InvalidUserStateFault$message */ =>  {
-                let var_92 =
+                let var_94 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3165,7 +3191,7 @@ pub fn deser_structure_crate_error_invalid_user_state_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_92);
+                builder = builder.set_message(var_94);
             }
             ,
             _ => {}
@@ -3202,32 +3228,6 @@ pub fn deser_operation_crate_operation_delete_user(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("UserId") /* UserId com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserId */ =>  {
-                let var_93 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_user_id(var_93);
-            }
-            ,
-            s if s.matches("UserName") /* UserName com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserName */ =>  {
-                let var_94 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_user_name(var_94);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#DeleteUserOutput$Status */ =>  {
                 let var_95 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3237,10 +3237,10 @@ pub fn deser_operation_crate_operation_delete_user(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_95);
+                builder = builder.set_user_id(var_95);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#DeleteUserOutput$Engine */ =>  {
+            s if s.matches("UserName") /* UserName com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserName */ =>  {
                 let var_96 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3250,10 +3250,10 @@ pub fn deser_operation_crate_operation_delete_user(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_96);
+                builder = builder.set_user_name(var_96);
             }
             ,
-            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#DeleteUserOutput$AccessString */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#DeleteUserOutput$Status */ =>  {
                 let var_97 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3263,30 +3263,36 @@ pub fn deser_operation_crate_operation_delete_user(
                         ?
                     )
                 ;
-                builder = builder.set_access_string(var_97);
+                builder = builder.set_status(var_97);
             }
             ,
-            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserGroupIds */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#DeleteUserOutput$Engine */ =>  {
                 let var_98 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_user_group_ids(var_98);
+                builder = builder.set_engine(var_98);
             }
             ,
-            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#DeleteUserOutput$Authentication */ =>  {
+            s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache.synthetic#DeleteUserOutput$MinimumEngineVersion */ =>  {
                 let var_99 =
                     Some(
-                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_authentication(var_99);
+                builder = builder.set_minimum_engine_version(var_99);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#DeleteUserOutput$ARN */ =>  {
+            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#DeleteUserOutput$AccessString */ =>  {
                 let var_100 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -3296,7 +3302,40 @@ pub fn deser_operation_crate_operation_delete_user(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_100);
+                builder = builder.set_access_string(var_100);
+            }
+            ,
+            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#DeleteUserOutput$UserGroupIds */ =>  {
+                let var_101 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_user_group_ids(var_101);
+            }
+            ,
+            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#DeleteUserOutput$Authentication */ =>  {
+                let var_102 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_authentication(var_102);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#DeleteUserOutput$ARN */ =>  {
+                let var_103 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_103);
             }
             ,
             _ => {}
@@ -3338,7 +3377,7 @@ pub fn deser_operation_crate_operation_delete_user_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$UserGroupId */ =>  {
-                let var_101 =
+                let var_104 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3347,11 +3386,11 @@ pub fn deser_operation_crate_operation_delete_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_user_group_id(var_101);
+                builder = builder.set_user_group_id(var_104);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$Status */ =>  {
-                let var_102 =
+                let var_105 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3360,11 +3399,11 @@ pub fn deser_operation_crate_operation_delete_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_102);
+                builder = builder.set_status(var_105);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$Engine */ =>  {
-                let var_103 =
+                let var_106 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3373,41 +3412,21 @@ pub fn deser_operation_crate_operation_delete_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_103);
+                builder = builder.set_engine(var_106);
             }
             ,
             s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$UserIds */ =>  {
-                let var_104 =
+                let var_107 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_ids(var_104);
+                builder = builder.set_user_ids(var_107);
             }
             ,
-            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$PendingChanges */ =>  {
-                let var_105 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_pending_changes(var_105);
-            }
-            ,
-            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$ReplicationGroups */ =>  {
-                let var_106 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_replication_groups(var_106);
-            }
-            ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$ARN */ =>  {
-                let var_107 =
+            s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$MinimumEngineVersion */ =>  {
+                let var_108 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3416,7 +3435,40 @@ pub fn deser_operation_crate_operation_delete_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_107);
+                builder = builder.set_minimum_engine_version(var_108);
+            }
+            ,
+            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$PendingChanges */ =>  {
+                let var_109 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_pending_changes(var_109);
+            }
+            ,
+            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$ReplicationGroups */ =>  {
+                let var_110 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_replication_groups(var_110);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#DeleteUserGroupOutput$ARN */ =>  {
+                let var_111 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_111);
             }
             ,
             _ => {}
@@ -3459,7 +3511,7 @@ pub fn deser_operation_crate_operation_describe_cache_clusters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheClustersOutput$Marker */ =>  {
-                let var_108 =
+                let var_112 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3468,17 +3520,17 @@ pub fn deser_operation_crate_operation_describe_cache_clusters(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_108);
+                builder = builder.set_marker(var_112);
             }
             ,
             s if s.matches("CacheClusters") /* CacheClusters com.amazonaws.elasticache.synthetic#DescribeCacheClustersOutput$CacheClusters */ =>  {
-                let var_109 =
+                let var_113 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_cluster_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_clusters(var_109);
+                builder = builder.set_cache_clusters(var_113);
             }
             ,
             _ => {}
@@ -3523,7 +3575,7 @@ pub fn deser_operation_crate_operation_describe_cache_engine_versions(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheEngineVersionsOutput$Marker */ =>  {
-                let var_110 =
+                let var_114 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3532,17 +3584,17 @@ pub fn deser_operation_crate_operation_describe_cache_engine_versions(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_110);
+                builder = builder.set_marker(var_114);
             }
             ,
             s if s.matches("CacheEngineVersions") /* CacheEngineVersions com.amazonaws.elasticache.synthetic#DescribeCacheEngineVersionsOutput$CacheEngineVersions */ =>  {
-                let var_111 =
+                let var_115 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_engine_version_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_engine_versions(var_111);
+                builder = builder.set_cache_engine_versions(var_115);
             }
             ,
             _ => {}
@@ -3587,7 +3639,7 @@ pub fn deser_operation_crate_operation_describe_cache_parameter_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheParameterGroupsOutput$Marker */ =>  {
-                let var_112 =
+                let var_116 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3596,17 +3648,17 @@ pub fn deser_operation_crate_operation_describe_cache_parameter_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_112);
+                builder = builder.set_marker(var_116);
             }
             ,
             s if s.matches("CacheParameterGroups") /* CacheParameterGroups com.amazonaws.elasticache.synthetic#DescribeCacheParameterGroupsOutput$CacheParameterGroups */ =>  {
-                let var_113 =
+                let var_117 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_parameter_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_parameter_groups(var_113);
+                builder = builder.set_cache_parameter_groups(var_117);
             }
             ,
             _ => {}
@@ -3651,7 +3703,7 @@ pub fn deser_operation_crate_operation_describe_cache_parameters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheParametersOutput$Marker */ =>  {
-                let var_114 =
+                let var_118 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3660,27 +3712,27 @@ pub fn deser_operation_crate_operation_describe_cache_parameters(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_114);
+                builder = builder.set_marker(var_118);
             }
             ,
             s if s.matches("Parameters") /* Parameters com.amazonaws.elasticache.synthetic#DescribeCacheParametersOutput$Parameters */ =>  {
-                let var_115 =
+                let var_119 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_parameters_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_parameters(var_115);
+                builder = builder.set_parameters(var_119);
             }
             ,
             s if s.matches("CacheNodeTypeSpecificParameters") /* CacheNodeTypeSpecificParameters com.amazonaws.elasticache.synthetic#DescribeCacheParametersOutput$CacheNodeTypeSpecificParameters */ =>  {
-                let var_116 =
+                let var_120 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_type_specific_parameters_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_type_specific_parameters(var_116);
+                builder = builder.set_cache_node_type_specific_parameters(var_120);
             }
             ,
             _ => {}
@@ -3725,7 +3777,7 @@ pub fn deser_operation_crate_operation_describe_cache_security_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheSecurityGroupsOutput$Marker */ =>  {
-                let var_117 =
+                let var_121 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3734,17 +3786,17 @@ pub fn deser_operation_crate_operation_describe_cache_security_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_117);
+                builder = builder.set_marker(var_121);
             }
             ,
             s if s.matches("CacheSecurityGroups") /* CacheSecurityGroups com.amazonaws.elasticache.synthetic#DescribeCacheSecurityGroupsOutput$CacheSecurityGroups */ =>  {
-                let var_118 =
+                let var_122 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_security_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_security_groups(var_118);
+                builder = builder.set_cache_security_groups(var_122);
             }
             ,
             _ => {}
@@ -3789,7 +3841,7 @@ pub fn deser_operation_crate_operation_describe_cache_subnet_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeCacheSubnetGroupsOutput$Marker */ =>  {
-                let var_119 =
+                let var_123 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3798,17 +3850,17 @@ pub fn deser_operation_crate_operation_describe_cache_subnet_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_119);
+                builder = builder.set_marker(var_123);
             }
             ,
             s if s.matches("CacheSubnetGroups") /* CacheSubnetGroups com.amazonaws.elasticache.synthetic#DescribeCacheSubnetGroupsOutput$CacheSubnetGroups */ =>  {
-                let var_120 =
+                let var_124 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_subnet_groups(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_subnet_groups(var_120);
+                builder = builder.set_cache_subnet_groups(var_124);
             }
             ,
             _ => {}
@@ -3853,13 +3905,13 @@ pub fn deser_operation_crate_operation_describe_engine_default_parameters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("EngineDefaults") /* EngineDefaults com.amazonaws.elasticache.synthetic#DescribeEngineDefaultParametersOutput$EngineDefaults */ =>  {
-                let var_121 =
+                let var_125 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_engine_defaults(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_engine_defaults(var_121);
+                builder = builder.set_engine_defaults(var_125);
             }
             ,
             _ => {}
@@ -3901,7 +3953,7 @@ pub fn deser_operation_crate_operation_describe_events(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeEventsOutput$Marker */ =>  {
-                let var_122 =
+                let var_126 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3910,17 +3962,17 @@ pub fn deser_operation_crate_operation_describe_events(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_122);
+                builder = builder.set_marker(var_126);
             }
             ,
             s if s.matches("Events") /* Events com.amazonaws.elasticache.synthetic#DescribeEventsOutput$Events */ =>  {
-                let var_123 =
+                let var_127 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_event_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_events(var_123);
+                builder = builder.set_events(var_127);
             }
             ,
             _ => {}
@@ -3965,7 +4017,7 @@ pub fn deser_operation_crate_operation_describe_global_replication_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeGlobalReplicationGroupsOutput$Marker */ =>  {
-                let var_124 =
+                let var_128 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -3974,17 +4026,17 @@ pub fn deser_operation_crate_operation_describe_global_replication_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_124);
+                builder = builder.set_marker(var_128);
             }
             ,
             s if s.matches("GlobalReplicationGroups") /* GlobalReplicationGroups com.amazonaws.elasticache.synthetic#DescribeGlobalReplicationGroupsOutput$GlobalReplicationGroups */ =>  {
-                let var_125 =
+                let var_129 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_global_replication_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_groups(var_125);
+                builder = builder.set_global_replication_groups(var_129);
             }
             ,
             _ => {}
@@ -4029,7 +4081,7 @@ pub fn deser_operation_crate_operation_describe_replication_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeReplicationGroupsOutput$Marker */ =>  {
-                let var_126 =
+                let var_130 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4038,17 +4090,17 @@ pub fn deser_operation_crate_operation_describe_replication_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_126);
+                builder = builder.set_marker(var_130);
             }
             ,
             s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#DescribeReplicationGroupsOutput$ReplicationGroups */ =>  {
-                let var_127 =
+                let var_131 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_replication_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replication_groups(var_127);
+                builder = builder.set_replication_groups(var_131);
             }
             ,
             _ => {}
@@ -4093,7 +4145,7 @@ pub fn deser_operation_crate_operation_describe_reserved_cache_nodes(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOutput$Marker */ =>  {
-                let var_128 =
+                let var_132 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4102,17 +4154,17 @@ pub fn deser_operation_crate_operation_describe_reserved_cache_nodes(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_128);
+                builder = builder.set_marker(var_132);
             }
             ,
             s if s.matches("ReservedCacheNodes") /* ReservedCacheNodes com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOutput$ReservedCacheNodes */ =>  {
-                let var_129 =
+                let var_133 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_reserved_cache_node_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reserved_cache_nodes(var_129);
+                builder = builder.set_reserved_cache_nodes(var_133);
             }
             ,
             _ => {}
@@ -4144,7 +4196,7 @@ pub fn deser_structure_crate_error_reserved_cache_nodes_offering_not_found_fault
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#ReservedCacheNodesOfferingNotFoundFault$message */ =>  {
-                let var_130 =
+                let var_134 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4153,7 +4205,7 @@ pub fn deser_structure_crate_error_reserved_cache_nodes_offering_not_found_fault
                         ?
                     )
                 ;
-                builder = builder.set_message(var_130);
+                builder = builder.set_message(var_134);
             }
             ,
             _ => {}
@@ -4193,7 +4245,7 @@ pub fn deser_operation_crate_operation_describe_reserved_cache_nodes_offerings(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOfferingsOutput$Marker */ =>  {
-                let var_131 =
+                let var_135 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4202,17 +4254,17 @@ pub fn deser_operation_crate_operation_describe_reserved_cache_nodes_offerings(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_131);
+                builder = builder.set_marker(var_135);
             }
             ,
             s if s.matches("ReservedCacheNodesOfferings") /* ReservedCacheNodesOfferings com.amazonaws.elasticache.synthetic#DescribeReservedCacheNodesOfferingsOutput$ReservedCacheNodesOfferings */ =>  {
-                let var_132 =
+                let var_136 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_reserved_cache_nodes_offering_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reserved_cache_nodes_offerings(var_132);
+                builder = builder.set_reserved_cache_nodes_offerings(var_136);
             }
             ,
             _ => {}
@@ -4255,7 +4307,7 @@ pub fn deser_operation_crate_operation_describe_service_updates(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeServiceUpdatesOutput$Marker */ =>  {
-                let var_133 =
+                let var_137 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4264,17 +4316,17 @@ pub fn deser_operation_crate_operation_describe_service_updates(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_133);
+                builder = builder.set_marker(var_137);
             }
             ,
             s if s.matches("ServiceUpdates") /* ServiceUpdates com.amazonaws.elasticache.synthetic#DescribeServiceUpdatesOutput$ServiceUpdates */ =>  {
-                let var_134 =
+                let var_138 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_service_update_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_service_updates(var_134);
+                builder = builder.set_service_updates(var_138);
             }
             ,
             _ => {}
@@ -4316,7 +4368,7 @@ pub fn deser_operation_crate_operation_describe_snapshots(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeSnapshotsOutput$Marker */ =>  {
-                let var_135 =
+                let var_139 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4325,17 +4377,17 @@ pub fn deser_operation_crate_operation_describe_snapshots(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_135);
+                builder = builder.set_marker(var_139);
             }
             ,
             s if s.matches("Snapshots") /* Snapshots com.amazonaws.elasticache.synthetic#DescribeSnapshotsOutput$Snapshots */ =>  {
-                let var_136 =
+                let var_140 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_snapshot_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_snapshots(var_136);
+                builder = builder.set_snapshots(var_140);
             }
             ,
             _ => {}
@@ -4378,7 +4430,7 @@ pub fn deser_operation_crate_operation_describe_update_actions(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeUpdateActionsOutput$Marker */ =>  {
-                let var_137 =
+                let var_141 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4387,17 +4439,17 @@ pub fn deser_operation_crate_operation_describe_update_actions(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_137);
+                builder = builder.set_marker(var_141);
             }
             ,
             s if s.matches("UpdateActions") /* UpdateActions com.amazonaws.elasticache.synthetic#DescribeUpdateActionsOutput$UpdateActions */ =>  {
-                let var_138 =
+                let var_142 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_update_action_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_update_actions(var_138);
+                builder = builder.set_update_actions(var_142);
             }
             ,
             _ => {}
@@ -4439,17 +4491,17 @@ pub fn deser_operation_crate_operation_describe_user_groups(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("UserGroups") /* UserGroups com.amazonaws.elasticache.synthetic#DescribeUserGroupsOutput$UserGroups */ =>  {
-                let var_139 =
+                let var_143 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_groups(var_139);
+                builder = builder.set_user_groups(var_143);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeUserGroupsOutput$Marker */ =>  {
-                let var_140 =
+                let var_144 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4458,7 +4510,7 @@ pub fn deser_operation_crate_operation_describe_user_groups(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_140);
+                builder = builder.set_marker(var_144);
             }
             ,
             _ => {}
@@ -4500,17 +4552,17 @@ pub fn deser_operation_crate_operation_describe_users(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("Users") /* Users com.amazonaws.elasticache.synthetic#DescribeUsersOutput$Users */ =>  {
-                let var_141 =
+                let var_145 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_users(var_141);
+                builder = builder.set_users(var_145);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache.synthetic#DescribeUsersOutput$Marker */ =>  {
-                let var_142 =
+                let var_146 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4519,7 +4571,7 @@ pub fn deser_operation_crate_operation_describe_users(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_142);
+                builder = builder.set_marker(var_146);
             }
             ,
             _ => {}
@@ -4564,13 +4616,13 @@ pub fn deser_operation_crate_operation_disassociate_global_replication_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#DisassociateGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
-                let var_143 =
+                let var_147 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group(var_143);
+                builder = builder.set_global_replication_group(var_147);
             }
             ,
             _ => {}
@@ -4615,13 +4667,13 @@ pub fn deser_operation_crate_operation_failover_global_replication_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#FailoverGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
-                let var_144 =
+                let var_148 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group(var_144);
+                builder = builder.set_global_replication_group(var_148);
             }
             ,
             _ => {}
@@ -4663,13 +4715,13 @@ pub fn deser_operation_crate_operation_increase_node_groups_in_global_replicatio
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#IncreaseNodeGroupsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
-                let var_145 =
+                let var_149 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group(var_145);
+                builder = builder.set_global_replication_group(var_149);
             }
             ,
             _ => {}
@@ -4698,7 +4750,7 @@ pub fn deser_structure_crate_error_invalid_kms_key_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#InvalidKMSKeyFault$message */ =>  {
-                let var_146 =
+                let var_150 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4707,7 +4759,7 @@ pub fn deser_structure_crate_error_invalid_kms_key_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_146);
+                builder = builder.set_message(var_150);
             }
             ,
             _ => {}
@@ -4745,13 +4797,13 @@ pub fn deser_operation_crate_operation_increase_replica_count(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#IncreaseReplicaCountOutput$ReplicationGroup */ =>  {
-                let var_147 =
+                let var_151 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replication_group(var_147);
+                builder = builder.set_replication_group(var_151);
             }
             ,
             _ => {}
@@ -4796,23 +4848,23 @@ pub fn deser_operation_crate_operation_list_allowed_node_type_modifications(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ScaleUpModifications") /* ScaleUpModifications com.amazonaws.elasticache.synthetic#ListAllowedNodeTypeModificationsOutput$ScaleUpModifications */ =>  {
-                let var_148 =
+                let var_152 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_node_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_scale_up_modifications(var_148);
+                builder = builder.set_scale_up_modifications(var_152);
             }
             ,
             s if s.matches("ScaleDownModifications") /* ScaleDownModifications com.amazonaws.elasticache.synthetic#ListAllowedNodeTypeModificationsOutput$ScaleDownModifications */ =>  {
-                let var_149 =
+                let var_153 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_node_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_scale_down_modifications(var_149);
+                builder = builder.set_scale_down_modifications(var_153);
             }
             ,
             _ => {}
@@ -4855,13 +4907,13 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("TagList") /* TagList com.amazonaws.elasticache.synthetic#ListTagsForResourceOutput$TagList */ =>  {
-                let var_150 =
+                let var_154 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_150);
+                builder = builder.set_tag_list(var_154);
             }
             ,
             _ => {}
@@ -4903,13 +4955,13 @@ pub fn deser_operation_crate_operation_modify_cache_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache.synthetic#ModifyCacheClusterOutput$CacheCluster */ =>  {
-                let var_151 =
+                let var_155 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_cache_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster(var_151);
+                builder = builder.set_cache_cluster(var_155);
             }
             ,
             _ => {}
@@ -4954,7 +5006,7 @@ pub fn deser_operation_crate_operation_modify_cache_parameter_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache.synthetic#ModifyCacheParameterGroupOutput$CacheParameterGroupName */ =>  {
-                let var_152 =
+                let var_156 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4963,7 +5015,7 @@ pub fn deser_operation_crate_operation_modify_cache_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_cache_parameter_group_name(var_152);
+                builder = builder.set_cache_parameter_group_name(var_156);
             }
             ,
             _ => {}
@@ -4992,7 +5044,7 @@ pub fn deser_structure_crate_error_subnet_in_use_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#SubnetInUse$message */ =>  {
-                let var_153 =
+                let var_157 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5001,7 +5053,7 @@ pub fn deser_structure_crate_error_subnet_in_use_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_153);
+                builder = builder.set_message(var_157);
             }
             ,
             _ => {}
@@ -5041,13 +5093,13 @@ pub fn deser_operation_crate_operation_modify_cache_subnet_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("CacheSubnetGroup") /* CacheSubnetGroup com.amazonaws.elasticache.synthetic#ModifyCacheSubnetGroupOutput$CacheSubnetGroup */ =>  {
-                let var_154 =
+                let var_158 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_cache_subnet_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_subnet_group(var_154);
+                builder = builder.set_cache_subnet_group(var_158);
             }
             ,
             _ => {}
@@ -5092,13 +5144,13 @@ pub fn deser_operation_crate_operation_modify_global_replication_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#ModifyGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
-                let var_155 =
+                let var_159 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group(var_155);
+                builder = builder.set_global_replication_group(var_159);
             }
             ,
             _ => {}
@@ -5141,13 +5193,13 @@ pub fn deser_operation_crate_operation_modify_replication_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#ModifyReplicationGroupOutput$ReplicationGroup */ =>  {
-                let var_156 =
+                let var_160 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replication_group(var_156);
+                builder = builder.set_replication_group(var_160);
             }
             ,
             _ => {}
@@ -5192,13 +5244,13 @@ pub fn deser_operation_crate_operation_modify_replication_group_shard_configurat
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#ModifyReplicationGroupShardConfigurationOutput$ReplicationGroup */ =>  {
-                let var_157 =
+                let var_161 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replication_group(var_157);
+                builder = builder.set_replication_group(var_161);
             }
             ,
             _ => {}
@@ -5240,58 +5292,6 @@ pub fn deser_operation_crate_operation_modify_user(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("UserId") /* UserId com.amazonaws.elasticache.synthetic#ModifyUserOutput$UserId */ =>  {
-                let var_158 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_user_id(var_158);
-            }
-            ,
-            s if s.matches("UserName") /* UserName com.amazonaws.elasticache.synthetic#ModifyUserOutput$UserName */ =>  {
-                let var_159 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_user_name(var_159);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#ModifyUserOutput$Status */ =>  {
-                let var_160 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_160);
-            }
-            ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#ModifyUserOutput$Engine */ =>  {
-                let var_161 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine(var_161);
-            }
-            ,
-            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#ModifyUserOutput$AccessString */ =>  {
                 let var_162 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5301,30 +5301,36 @@ pub fn deser_operation_crate_operation_modify_user(
                         ?
                     )
                 ;
-                builder = builder.set_access_string(var_162);
+                builder = builder.set_user_id(var_162);
             }
             ,
-            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#ModifyUserOutput$UserGroupIds */ =>  {
+            s if s.matches("UserName") /* UserName com.amazonaws.elasticache.synthetic#ModifyUserOutput$UserName */ =>  {
                 let var_163 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_user_group_ids(var_163);
+                builder = builder.set_user_name(var_163);
             }
             ,
-            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#ModifyUserOutput$Authentication */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#ModifyUserOutput$Status */ =>  {
                 let var_164 =
                     Some(
-                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_authentication(var_164);
+                builder = builder.set_status(var_164);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#ModifyUserOutput$ARN */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#ModifyUserOutput$Engine */ =>  {
                 let var_165 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5334,7 +5340,66 @@ pub fn deser_operation_crate_operation_modify_user(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_165);
+                builder = builder.set_engine(var_165);
+            }
+            ,
+            s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache.synthetic#ModifyUserOutput$MinimumEngineVersion */ =>  {
+                let var_166 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum_engine_version(var_166);
+            }
+            ,
+            s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache.synthetic#ModifyUserOutput$AccessString */ =>  {
+                let var_167 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_access_string(var_167);
+            }
+            ,
+            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache.synthetic#ModifyUserOutput$UserGroupIds */ =>  {
+                let var_168 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_user_group_ids(var_168);
+            }
+            ,
+            s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache.synthetic#ModifyUserOutput$Authentication */ =>  {
+                let var_169 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_authentication(var_169);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#ModifyUserOutput$ARN */ =>  {
+                let var_170 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_170);
             }
             ,
             _ => {}
@@ -5376,7 +5441,7 @@ pub fn deser_operation_crate_operation_modify_user_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$UserGroupId */ =>  {
-                let var_166 =
+                let var_171 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5385,66 +5450,10 @@ pub fn deser_operation_crate_operation_modify_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_user_group_id(var_166);
+                builder = builder.set_user_group_id(var_171);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$Status */ =>  {
-                let var_167 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_167);
-            }
-            ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$Engine */ =>  {
-                let var_168 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine(var_168);
-            }
-            ,
-            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$UserIds */ =>  {
-                let var_169 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_user_ids(var_169);
-            }
-            ,
-            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$PendingChanges */ =>  {
-                let var_170 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_pending_changes(var_170);
-            }
-            ,
-            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ReplicationGroups */ =>  {
-                let var_171 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_replication_groups(var_171);
-            }
-            ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ARN */ =>  {
                 let var_172 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -5454,7 +5463,76 @@ pub fn deser_operation_crate_operation_modify_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_172);
+                builder = builder.set_status(var_172);
+            }
+            ,
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$Engine */ =>  {
+                let var_173 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine(var_173);
+            }
+            ,
+            s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$UserIds */ =>  {
+                let var_174 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_user_ids(var_174);
+            }
+            ,
+            s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$MinimumEngineVersion */ =>  {
+                let var_175 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum_engine_version(var_175);
+            }
+            ,
+            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$PendingChanges */ =>  {
+                let var_176 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_pending_changes(var_176);
+            }
+            ,
+            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ReplicationGroups */ =>  {
+                let var_177 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_replication_groups(var_177);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ARN */ =>  {
+                let var_178 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_178);
             }
             ,
             _ => {}
@@ -5486,7 +5564,7 @@ pub fn deser_structure_crate_error_reserved_cache_node_already_exists_fault_xml_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#ReservedCacheNodeAlreadyExistsFault$message */ =>  {
-                let var_173 =
+                let var_179 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5495,7 +5573,7 @@ pub fn deser_structure_crate_error_reserved_cache_node_already_exists_fault_xml_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_173);
+                builder = builder.set_message(var_179);
             }
             ,
             _ => {}
@@ -5522,7 +5600,7 @@ pub fn deser_structure_crate_error_reserved_cache_node_quota_exceeded_fault_xml_
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#ReservedCacheNodeQuotaExceededFault$message */ =>  {
-                let var_174 =
+                let var_180 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5531,7 +5609,7 @@ pub fn deser_structure_crate_error_reserved_cache_node_quota_exceeded_fault_xml_
                         ?
                     )
                 ;
-                builder = builder.set_message(var_174);
+                builder = builder.set_message(var_180);
             }
             ,
             _ => {}
@@ -5571,13 +5649,13 @@ pub fn deser_operation_crate_operation_purchase_reserved_cache_nodes_offering(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReservedCacheNode") /* ReservedCacheNode com.amazonaws.elasticache.synthetic#PurchaseReservedCacheNodesOfferingOutput$ReservedCacheNode */ =>  {
-                let var_175 =
+                let var_181 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_reserved_cache_node(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reserved_cache_node(var_175);
+                builder = builder.set_reserved_cache_node(var_181);
             }
             ,
             _ => {}
@@ -5622,13 +5700,13 @@ pub fn deser_operation_crate_operation_rebalance_slots_in_global_replication_gro
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("GlobalReplicationGroup") /* GlobalReplicationGroup com.amazonaws.elasticache.synthetic#RebalanceSlotsInGlobalReplicationGroupOutput$GlobalReplicationGroup */ =>  {
-                let var_176 =
+                let var_182 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_global_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group(var_176);
+                builder = builder.set_global_replication_group(var_182);
             }
             ,
             _ => {}
@@ -5670,13 +5748,13 @@ pub fn deser_operation_crate_operation_reboot_cache_cluster(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("CacheCluster") /* CacheCluster com.amazonaws.elasticache.synthetic#RebootCacheClusterOutput$CacheCluster */ =>  {
-                let var_177 =
+                let var_183 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_cache_cluster(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster(var_177);
+                builder = builder.set_cache_cluster(var_183);
             }
             ,
             _ => {}
@@ -5705,7 +5783,7 @@ pub fn deser_structure_crate_error_tag_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#TagNotFoundFault$message */ =>  {
-                let var_178 =
+                let var_184 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5714,7 +5792,7 @@ pub fn deser_structure_crate_error_tag_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_178);
+                builder = builder.set_message(var_184);
             }
             ,
             _ => {}
@@ -5754,13 +5832,13 @@ pub fn deser_operation_crate_operation_remove_tags_from_resource(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("TagList") /* TagList com.amazonaws.elasticache.synthetic#RemoveTagsFromResourceOutput$TagList */ =>  {
-                let var_179 =
+                let var_185 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_179);
+                builder = builder.set_tag_list(var_185);
             }
             ,
             _ => {}
@@ -5805,7 +5883,7 @@ pub fn deser_operation_crate_operation_reset_cache_parameter_group(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache.synthetic#ResetCacheParameterGroupOutput$CacheParameterGroupName */ =>  {
-                let var_180 =
+                let var_186 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5814,7 +5892,7 @@ pub fn deser_operation_crate_operation_reset_cache_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_cache_parameter_group_name(var_180);
+                builder = builder.set_cache_parameter_group_name(var_186);
             }
             ,
             _ => {}
@@ -5844,7 +5922,7 @@ pub fn deser_structure_crate_error_authorization_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#AuthorizationNotFoundFault$message */ =>  {
-                let var_181 =
+                let var_187 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5853,7 +5931,7 @@ pub fn deser_structure_crate_error_authorization_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_181);
+                builder = builder.set_message(var_187);
             }
             ,
             _ => {}
@@ -5893,13 +5971,13 @@ pub fn deser_operation_crate_operation_revoke_cache_security_group_ingress(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("CacheSecurityGroup") /* CacheSecurityGroup com.amazonaws.elasticache.synthetic#RevokeCacheSecurityGroupIngressOutput$CacheSecurityGroup */ =>  {
-                let var_182 =
+                let var_188 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_cache_security_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_security_group(var_182);
+                builder = builder.set_cache_security_group(var_188);
             }
             ,
             _ => {}
@@ -5931,7 +6009,7 @@ pub fn deser_structure_crate_error_replication_group_already_under_migration_fau
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#ReplicationGroupAlreadyUnderMigrationFault$message */ =>  {
-                let var_183 =
+                let var_189 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -5940,7 +6018,7 @@ pub fn deser_structure_crate_error_replication_group_already_under_migration_fau
                         ?
                     )
                 ;
-                builder = builder.set_message(var_183);
+                builder = builder.set_message(var_189);
             }
             ,
             _ => {}
@@ -5977,13 +6055,13 @@ pub fn deser_operation_crate_operation_start_migration(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#StartMigrationOutput$ReplicationGroup */ =>  {
-                let var_184 =
+                let var_190 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replication_group(var_184);
+                builder = builder.set_replication_group(var_190);
             }
             ,
             _ => {}
@@ -6015,7 +6093,7 @@ pub fn deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_xml
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#APICallRateForCustomerExceededFault$message */ =>  {
-                let var_185 =
+                let var_191 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6024,7 +6102,7 @@ pub fn deser_structure_crate_error_api_call_rate_for_customer_exceeded_fault_xml
                         ?
                     )
                 ;
-                builder = builder.set_message(var_185);
+                builder = builder.set_message(var_191);
             }
             ,
             _ => {}
@@ -6048,7 +6126,7 @@ pub fn deser_structure_crate_error_node_group_not_found_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#NodeGroupNotFoundFault$message */ =>  {
-                let var_186 =
+                let var_192 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6057,7 +6135,7 @@ pub fn deser_structure_crate_error_node_group_not_found_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_186);
+                builder = builder.set_message(var_192);
             }
             ,
             _ => {}
@@ -6084,7 +6162,7 @@ pub fn deser_structure_crate_error_test_failover_not_available_fault_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("message") /* message com.amazonaws.elasticache#TestFailoverNotAvailableFault$message */ =>  {
-                let var_187 =
+                let var_193 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6093,7 +6171,7 @@ pub fn deser_structure_crate_error_test_failover_not_available_fault_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_187);
+                builder = builder.set_message(var_193);
             }
             ,
             _ => {}
@@ -6130,13 +6208,13 @@ pub fn deser_operation_crate_operation_test_failover(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("ReplicationGroup") /* ReplicationGroup com.amazonaws.elasticache.synthetic#TestFailoverOutput$ReplicationGroup */ =>  {
-                let var_188 =
+                let var_194 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_replication_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replication_group(var_188);
+                builder = builder.set_replication_group(var_194);
             }
             ,
             _ => {}
@@ -6177,7 +6255,7 @@ pub fn deser_structure_crate_model_cache_security_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OwnerId") /* OwnerId com.amazonaws.elasticache#CacheSecurityGroup$OwnerId */ =>  {
-                let var_189 =
+                let var_195 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6186,11 +6264,11 @@ pub fn deser_structure_crate_model_cache_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_189);
+                builder = builder.set_owner_id(var_195);
             }
             ,
             s if s.matches("CacheSecurityGroupName") /* CacheSecurityGroupName com.amazonaws.elasticache#CacheSecurityGroup$CacheSecurityGroupName */ =>  {
-                let var_190 =
+                let var_196 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6199,11 +6277,11 @@ pub fn deser_structure_crate_model_cache_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_cache_security_group_name(var_190);
+                builder = builder.set_cache_security_group_name(var_196);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.elasticache#CacheSecurityGroup$Description */ =>  {
-                let var_191 =
+                let var_197 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6212,21 +6290,21 @@ pub fn deser_structure_crate_model_cache_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_191);
+                builder = builder.set_description(var_197);
             }
             ,
             s if s.matches("EC2SecurityGroups") /* EC2SecurityGroups com.amazonaws.elasticache#CacheSecurityGroup$EC2SecurityGroups */ =>  {
-                let var_192 =
+                let var_198 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_ec2_security_group_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ec2_security_groups(var_192);
+                builder = builder.set_ec2_security_groups(var_198);
             }
             ,
             s if s.matches("ARN") /* ARN com.amazonaws.elasticache#CacheSecurityGroup$ARN */ =>  {
-                let var_193 =
+                let var_199 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6235,7 +6313,7 @@ pub fn deser_structure_crate_model_cache_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_193);
+                builder = builder.set_arn(var_199);
             }
             ,
             _ => {}
@@ -6291,7 +6369,7 @@ pub fn deser_structure_crate_model_replication_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#ReplicationGroup$ReplicationGroupId */ =>  {
-                let var_194 =
+                let var_200 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6300,76 +6378,10 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_id(var_194);
+                builder = builder.set_replication_group_id(var_200);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.elasticache#ReplicationGroup$Description */ =>  {
-                let var_195 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_description(var_195);
-            }
-            ,
-            s if s.matches("GlobalReplicationGroupInfo") /* GlobalReplicationGroupInfo com.amazonaws.elasticache#ReplicationGroup$GlobalReplicationGroupInfo */ =>  {
-                let var_196 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_global_replication_group_info(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_global_replication_group_info(var_196);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#ReplicationGroup$Status */ =>  {
-                let var_197 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_197);
-            }
-            ,
-            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.elasticache#ReplicationGroup$PendingModifiedValues */ =>  {
-                let var_198 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_replication_group_pending_modified_values(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_pending_modified_values(var_198);
-            }
-            ,
-            s if s.matches("MemberClusters") /* MemberClusters com.amazonaws.elasticache#ReplicationGroup$MemberClusters */ =>  {
-                let var_199 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cluster_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_member_clusters(var_199);
-            }
-            ,
-            s if s.matches("NodeGroups") /* NodeGroups com.amazonaws.elasticache#ReplicationGroup$NodeGroups */ =>  {
-                let var_200 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_node_groups(var_200);
-            }
-            ,
-            s if s.matches("SnapshottingClusterId") /* SnapshottingClusterId com.amazonaws.elasticache#ReplicationGroup$SnapshottingClusterId */ =>  {
                 let var_201 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6379,11 +6391,77 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_snapshotting_cluster_id(var_201);
+                builder = builder.set_description(var_201);
+            }
+            ,
+            s if s.matches("GlobalReplicationGroupInfo") /* GlobalReplicationGroupInfo com.amazonaws.elasticache#ReplicationGroup$GlobalReplicationGroupInfo */ =>  {
+                let var_202 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_global_replication_group_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_global_replication_group_info(var_202);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.elasticache#ReplicationGroup$Status */ =>  {
+                let var_203 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_203);
+            }
+            ,
+            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.elasticache#ReplicationGroup$PendingModifiedValues */ =>  {
+                let var_204 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_replication_group_pending_modified_values(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_pending_modified_values(var_204);
+            }
+            ,
+            s if s.matches("MemberClusters") /* MemberClusters com.amazonaws.elasticache#ReplicationGroup$MemberClusters */ =>  {
+                let var_205 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cluster_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_member_clusters(var_205);
+            }
+            ,
+            s if s.matches("NodeGroups") /* NodeGroups com.amazonaws.elasticache#ReplicationGroup$NodeGroups */ =>  {
+                let var_206 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_node_groups(var_206);
+            }
+            ,
+            s if s.matches("SnapshottingClusterId") /* SnapshottingClusterId com.amazonaws.elasticache#ReplicationGroup$SnapshottingClusterId */ =>  {
+                let var_207 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_snapshotting_cluster_id(var_207);
             }
             ,
             s if s.matches("AutomaticFailover") /* AutomaticFailover com.amazonaws.elasticache#ReplicationGroup$AutomaticFailover */ =>  {
-                let var_202 =
+                let var_208 =
                     Some(
                         Result::<crate::model::AutomaticFailoverStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AutomaticFailoverStatus::from(
@@ -6393,11 +6471,11 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_automatic_failover(var_202);
+                builder = builder.set_automatic_failover(var_208);
             }
             ,
             s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.elasticache#ReplicationGroup$MultiAZ */ =>  {
-                let var_203 =
+                let var_209 =
                     Some(
                         Result::<crate::model::MultiAzStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::MultiAzStatus::from(
@@ -6407,21 +6485,21 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_multi_az(var_203);
+                builder = builder.set_multi_az(var_209);
             }
             ,
             s if s.matches("ConfigurationEndpoint") /* ConfigurationEndpoint com.amazonaws.elasticache#ReplicationGroup$ConfigurationEndpoint */ =>  {
-                let var_204 =
+                let var_210 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_configuration_endpoint(var_204);
+                builder = builder.set_configuration_endpoint(var_210);
             }
             ,
             s if s.matches("SnapshotRetentionLimit") /* SnapshotRetentionLimit com.amazonaws.elasticache#ReplicationGroup$SnapshotRetentionLimit */ =>  {
-                let var_205 =
+                let var_211 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6432,11 +6510,11 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_retention_limit(var_205);
+                builder = builder.set_snapshot_retention_limit(var_211);
             }
             ,
             s if s.matches("SnapshotWindow") /* SnapshotWindow com.amazonaws.elasticache#ReplicationGroup$SnapshotWindow */ =>  {
-                let var_206 =
+                let var_212 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6445,11 +6523,11 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_window(var_206);
+                builder = builder.set_snapshot_window(var_212);
             }
             ,
             s if s.matches("ClusterEnabled") /* ClusterEnabled com.amazonaws.elasticache#ReplicationGroup$ClusterEnabled */ =>  {
-                let var_207 =
+                let var_213 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6460,92 +6538,10 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_cluster_enabled(var_207);
+                builder = builder.set_cluster_enabled(var_213);
             }
             ,
             s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#ReplicationGroup$CacheNodeType */ =>  {
-                let var_208 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_node_type(var_208);
-            }
-            ,
-            s if s.matches("AuthTokenEnabled") /* AuthTokenEnabled com.amazonaws.elasticache#ReplicationGroup$AuthTokenEnabled */ =>  {
-                let var_209 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_auth_token_enabled(var_209);
-            }
-            ,
-            s if s.matches("AuthTokenLastModifiedDate") /* AuthTokenLastModifiedDate com.amazonaws.elasticache#ReplicationGroup$AuthTokenLastModifiedDate */ =>  {
-                let var_210 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_auth_token_last_modified_date(var_210);
-            }
-            ,
-            s if s.matches("TransitEncryptionEnabled") /* TransitEncryptionEnabled com.amazonaws.elasticache#ReplicationGroup$TransitEncryptionEnabled */ =>  {
-                let var_211 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_transit_encryption_enabled(var_211);
-            }
-            ,
-            s if s.matches("AtRestEncryptionEnabled") /* AtRestEncryptionEnabled com.amazonaws.elasticache#ReplicationGroup$AtRestEncryptionEnabled */ =>  {
-                let var_212 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_at_rest_encryption_enabled(var_212);
-            }
-            ,
-            s if s.matches("MemberClustersOutpostArns") /* MemberClustersOutpostArns com.amazonaws.elasticache#ReplicationGroup$MemberClustersOutpostArns */ =>  {
-                let var_213 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_replication_group_outpost_arn_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_member_clusters_outpost_arns(var_213);
-            }
-            ,
-            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.elasticache#ReplicationGroup$KmsKeyId */ =>  {
                 let var_214 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6555,44 +6551,26 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_214);
+                builder = builder.set_cache_node_type(var_214);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#ReplicationGroup$ARN */ =>  {
+            s if s.matches("AuthTokenEnabled") /* AuthTokenEnabled com.amazonaws.elasticache#ReplicationGroup$AuthTokenEnabled */ =>  {
                 let var_215 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_215);
+                builder = builder.set_auth_token_enabled(var_215);
             }
             ,
-            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#ReplicationGroup$UserGroupIds */ =>  {
+            s if s.matches("AuthTokenLastModifiedDate") /* AuthTokenLastModifiedDate com.amazonaws.elasticache#ReplicationGroup$AuthTokenLastModifiedDate */ =>  {
                 let var_216 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_user_group_ids(var_216);
-            }
-            ,
-            s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#ReplicationGroup$LogDeliveryConfigurations */ =>  {
-                let var_217 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_log_delivery_configuration_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_log_delivery_configurations(var_217);
-            }
-            ,
-            s if s.matches("ReplicationGroupCreateTime") /* ReplicationGroupCreateTime com.amazonaws.elasticache#ReplicationGroup$ReplicationGroupCreateTime */ =>  {
-                let var_218 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6602,7 +6580,121 @@ pub fn deser_structure_crate_model_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_create_time(var_218);
+                builder = builder.set_auth_token_last_modified_date(var_216);
+            }
+            ,
+            s if s.matches("TransitEncryptionEnabled") /* TransitEncryptionEnabled com.amazonaws.elasticache#ReplicationGroup$TransitEncryptionEnabled */ =>  {
+                let var_217 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_encryption_enabled(var_217);
+            }
+            ,
+            s if s.matches("AtRestEncryptionEnabled") /* AtRestEncryptionEnabled com.amazonaws.elasticache#ReplicationGroup$AtRestEncryptionEnabled */ =>  {
+                let var_218 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_at_rest_encryption_enabled(var_218);
+            }
+            ,
+            s if s.matches("MemberClustersOutpostArns") /* MemberClustersOutpostArns com.amazonaws.elasticache#ReplicationGroup$MemberClustersOutpostArns */ =>  {
+                let var_219 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_replication_group_outpost_arn_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_member_clusters_outpost_arns(var_219);
+            }
+            ,
+            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.elasticache#ReplicationGroup$KmsKeyId */ =>  {
+                let var_220 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kms_key_id(var_220);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#ReplicationGroup$ARN */ =>  {
+                let var_221 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_221);
+            }
+            ,
+            s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#ReplicationGroup$UserGroupIds */ =>  {
+                let var_222 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_user_group_ids(var_222);
+            }
+            ,
+            s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#ReplicationGroup$LogDeliveryConfigurations */ =>  {
+                let var_223 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_log_delivery_configuration_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_log_delivery_configurations(var_223);
+            }
+            ,
+            s if s.matches("ReplicationGroupCreateTime") /* ReplicationGroupCreateTime com.amazonaws.elasticache#ReplicationGroup$ReplicationGroupCreateTime */ =>  {
+                let var_224 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_replication_group_create_time(var_224);
+            }
+            ,
+            s if s.matches("DataTiering") /* DataTiering com.amazonaws.elasticache#ReplicationGroup$DataTiering */ =>  {
+                let var_225 =
+                    Some(
+                        Result::<crate::model::DataTieringStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::DataTieringStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_data_tiering(var_225);
             }
             ,
             _ => {}
@@ -6619,97 +6711,6 @@ pub fn deser_structure_crate_model_snapshot(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SnapshotName") /* SnapshotName com.amazonaws.elasticache#Snapshot$SnapshotName */ =>  {
-                let var_219 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_snapshot_name(var_219);
-            }
-            ,
-            s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#Snapshot$ReplicationGroupId */ =>  {
-                let var_220 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_replication_group_id(var_220);
-            }
-            ,
-            s if s.matches("ReplicationGroupDescription") /* ReplicationGroupDescription com.amazonaws.elasticache#Snapshot$ReplicationGroupDescription */ =>  {
-                let var_221 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_replication_group_description(var_221);
-            }
-            ,
-            s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#Snapshot$CacheClusterId */ =>  {
-                let var_222 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_cluster_id(var_222);
-            }
-            ,
-            s if s.matches("SnapshotStatus") /* SnapshotStatus com.amazonaws.elasticache#Snapshot$SnapshotStatus */ =>  {
-                let var_223 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_snapshot_status(var_223);
-            }
-            ,
-            s if s.matches("SnapshotSource") /* SnapshotSource com.amazonaws.elasticache#Snapshot$SnapshotSource */ =>  {
-                let var_224 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_snapshot_source(var_224);
-            }
-            ,
-            s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#Snapshot$CacheNodeType */ =>  {
-                let var_225 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_node_type(var_225);
-            }
-            ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#Snapshot$Engine */ =>  {
                 let var_226 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6719,10 +6720,10 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_226);
+                builder = builder.set_snapshot_name(var_226);
             }
             ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#Snapshot$EngineVersion */ =>  {
+            s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#Snapshot$ReplicationGroupId */ =>  {
                 let var_227 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6732,25 +6733,23 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_227);
+                builder = builder.set_replication_group_id(var_227);
             }
             ,
-            s if s.matches("NumCacheNodes") /* NumCacheNodes com.amazonaws.elasticache#Snapshot$NumCacheNodes */ =>  {
+            s if s.matches("ReplicationGroupDescription") /* ReplicationGroupDescription com.amazonaws.elasticache#Snapshot$ReplicationGroupDescription */ =>  {
                 let var_228 =
                     Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#IntegerOptional`)"))
-                        }
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_num_cache_nodes(var_228);
+                builder = builder.set_replication_group_description(var_228);
             }
             ,
-            s if s.matches("PreferredAvailabilityZone") /* PreferredAvailabilityZone com.amazonaws.elasticache#Snapshot$PreferredAvailabilityZone */ =>  {
+            s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#Snapshot$CacheClusterId */ =>  {
                 let var_229 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6760,10 +6759,10 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_availability_zone(var_229);
+                builder = builder.set_cache_cluster_id(var_229);
             }
             ,
-            s if s.matches("PreferredOutpostArn") /* PreferredOutpostArn com.amazonaws.elasticache#Snapshot$PreferredOutpostArn */ =>  {
+            s if s.matches("SnapshotStatus") /* SnapshotStatus com.amazonaws.elasticache#Snapshot$SnapshotStatus */ =>  {
                 let var_230 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6773,24 +6772,23 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_outpost_arn(var_230);
+                builder = builder.set_snapshot_status(var_230);
             }
             ,
-            s if s.matches("CacheClusterCreateTime") /* CacheClusterCreateTime com.amazonaws.elasticache#Snapshot$CacheClusterCreateTime */ =>  {
+            s if s.matches("SnapshotSource") /* SnapshotSource com.amazonaws.elasticache#Snapshot$SnapshotSource */ =>  {
                 let var_231 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            .into()
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster_create_time(var_231);
+                builder = builder.set_snapshot_source(var_231);
             }
             ,
-            s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.elasticache#Snapshot$PreferredMaintenanceWindow */ =>  {
+            s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#Snapshot$CacheNodeType */ =>  {
                 let var_232 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6800,10 +6798,10 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_maintenance_window(var_232);
+                builder = builder.set_cache_node_type(var_232);
             }
             ,
-            s if s.matches("TopicArn") /* TopicArn com.amazonaws.elasticache#Snapshot$TopicArn */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#Snapshot$Engine */ =>  {
                 let var_233 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6813,11 +6811,24 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_233);
+                builder = builder.set_engine(var_233);
             }
             ,
-            s if s.matches("Port") /* Port com.amazonaws.elasticache#Snapshot$Port */ =>  {
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#Snapshot$EngineVersion */ =>  {
                 let var_234 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_version(var_234);
+            }
+            ,
+            s if s.matches("NumCacheNodes") /* NumCacheNodes com.amazonaws.elasticache#Snapshot$NumCacheNodes */ =>  {
+                let var_235 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -6828,23 +6839,10 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_234);
+                builder = builder.set_num_cache_nodes(var_235);
             }
             ,
-            s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache#Snapshot$CacheParameterGroupName */ =>  {
-                let var_235 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_parameter_group_name(var_235);
-            }
-            ,
-            s if s.matches("CacheSubnetGroupName") /* CacheSubnetGroupName com.amazonaws.elasticache#Snapshot$CacheSubnetGroupName */ =>  {
+            s if s.matches("PreferredAvailabilityZone") /* PreferredAvailabilityZone com.amazonaws.elasticache#Snapshot$PreferredAvailabilityZone */ =>  {
                 let var_236 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6854,10 +6852,10 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_cache_subnet_group_name(var_236);
+                builder = builder.set_preferred_availability_zone(var_236);
             }
             ,
-            s if s.matches("VpcId") /* VpcId com.amazonaws.elasticache#Snapshot$VpcId */ =>  {
+            s if s.matches("PreferredOutpostArn") /* PreferredOutpostArn com.amazonaws.elasticache#Snapshot$PreferredOutpostArn */ =>  {
                 let var_237 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6867,40 +6865,37 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_237);
+                builder = builder.set_preferred_outpost_arn(var_237);
             }
             ,
-            s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.elasticache#Snapshot$AutoMinorVersionUpgrade */ =>  {
+            s if s.matches("CacheClusterCreateTime") /* CacheClusterCreateTime com.amazonaws.elasticache#Snapshot$CacheClusterCreateTime */ =>  {
                 let var_238 =
                     Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#Boolean`)"))
-                        }
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_auto_minor_version_upgrade(var_238);
+                builder = builder.set_cache_cluster_create_time(var_238);
             }
             ,
-            s if s.matches("SnapshotRetentionLimit") /* SnapshotRetentionLimit com.amazonaws.elasticache#Snapshot$SnapshotRetentionLimit */ =>  {
+            s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.elasticache#Snapshot$PreferredMaintenanceWindow */ =>  {
                 let var_239 =
                     Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#IntegerOptional`)"))
-                        }
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_retention_limit(var_239);
+                builder = builder.set_preferred_maintenance_window(var_239);
             }
             ,
-            s if s.matches("SnapshotWindow") /* SnapshotWindow com.amazonaws.elasticache#Snapshot$SnapshotWindow */ =>  {
+            s if s.matches("TopicArn") /* TopicArn com.amazonaws.elasticache#Snapshot$TopicArn */ =>  {
                 let var_240 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6910,10 +6905,10 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_window(var_240);
+                builder = builder.set_topic_arn(var_240);
             }
             ,
-            s if s.matches("NumNodeGroups") /* NumNodeGroups com.amazonaws.elasticache#Snapshot$NumNodeGroups */ =>  {
+            s if s.matches("Port") /* Port com.amazonaws.elasticache#Snapshot$Port */ =>  {
                 let var_241 =
                     Some(
                          {
@@ -6925,34 +6920,36 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_num_node_groups(var_241);
+                builder = builder.set_port(var_241);
             }
             ,
-            s if s.matches("AutomaticFailover") /* AutomaticFailover com.amazonaws.elasticache#Snapshot$AutomaticFailover */ =>  {
+            s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache#Snapshot$CacheParameterGroupName */ =>  {
                 let var_242 =
                     Some(
-                        Result::<crate::model::AutomaticFailoverStatus, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::AutomaticFailoverStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
                         )
                         ?
                     )
                 ;
-                builder = builder.set_automatic_failover(var_242);
+                builder = builder.set_cache_parameter_group_name(var_242);
             }
             ,
-            s if s.matches("NodeSnapshots") /* NodeSnapshots com.amazonaws.elasticache#Snapshot$NodeSnapshots */ =>  {
+            s if s.matches("CacheSubnetGroupName") /* CacheSubnetGroupName com.amazonaws.elasticache#Snapshot$CacheSubnetGroupName */ =>  {
                 let var_243 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_snapshot_list(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_node_snapshots(var_243);
+                builder = builder.set_cache_subnet_group_name(var_243);
             }
             ,
-            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.elasticache#Snapshot$KmsKeyId */ =>  {
+            s if s.matches("VpcId") /* VpcId com.amazonaws.elasticache#Snapshot$VpcId */ =>  {
                 let var_244 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -6962,11 +6959,41 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_244);
+                builder = builder.set_vpc_id(var_244);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#Snapshot$ARN */ =>  {
+            s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.elasticache#Snapshot$AutoMinorVersionUpgrade */ =>  {
                 let var_245 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_auto_minor_version_upgrade(var_245);
+            }
+            ,
+            s if s.matches("SnapshotRetentionLimit") /* SnapshotRetentionLimit com.amazonaws.elasticache#Snapshot$SnapshotRetentionLimit */ =>  {
+                let var_246 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_snapshot_retention_limit(var_246);
+            }
+            ,
+            s if s.matches("SnapshotWindow") /* SnapshotWindow com.amazonaws.elasticache#Snapshot$SnapshotWindow */ =>  {
+                let var_247 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -6975,7 +7002,86 @@ pub fn deser_structure_crate_model_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_245);
+                builder = builder.set_snapshot_window(var_247);
+            }
+            ,
+            s if s.matches("NumNodeGroups") /* NumNodeGroups com.amazonaws.elasticache#Snapshot$NumNodeGroups */ =>  {
+                let var_248 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_num_node_groups(var_248);
+            }
+            ,
+            s if s.matches("AutomaticFailover") /* AutomaticFailover com.amazonaws.elasticache#Snapshot$AutomaticFailover */ =>  {
+                let var_249 =
+                    Some(
+                        Result::<crate::model::AutomaticFailoverStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::AutomaticFailoverStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_automatic_failover(var_249);
+            }
+            ,
+            s if s.matches("NodeSnapshots") /* NodeSnapshots com.amazonaws.elasticache#Snapshot$NodeSnapshots */ =>  {
+                let var_250 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_node_snapshot_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_node_snapshots(var_250);
+            }
+            ,
+            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.elasticache#Snapshot$KmsKeyId */ =>  {
+                let var_251 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kms_key_id(var_251);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#Snapshot$ARN */ =>  {
+                let var_252 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_252);
+            }
+            ,
+            s if s.matches("DataTiering") /* DataTiering com.amazonaws.elasticache#Snapshot$DataTiering */ =>  {
+                let var_253 =
+                    Some(
+                        Result::<crate::model::DataTieringStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::DataTieringStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_data_tiering(var_253);
             }
             ,
             _ => {}
@@ -6992,109 +7098,6 @@ pub fn deser_structure_crate_model_cache_cluster(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#CacheCluster$CacheClusterId */ =>  {
-                let var_246 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_cluster_id(var_246);
-            }
-            ,
-            s if s.matches("ConfigurationEndpoint") /* ConfigurationEndpoint com.amazonaws.elasticache#CacheCluster$ConfigurationEndpoint */ =>  {
-                let var_247 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_configuration_endpoint(var_247);
-            }
-            ,
-            s if s.matches("ClientDownloadLandingPage") /* ClientDownloadLandingPage com.amazonaws.elasticache#CacheCluster$ClientDownloadLandingPage */ =>  {
-                let var_248 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_client_download_landing_page(var_248);
-            }
-            ,
-            s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#CacheCluster$CacheNodeType */ =>  {
-                let var_249 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_node_type(var_249);
-            }
-            ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#CacheCluster$Engine */ =>  {
-                let var_250 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine(var_250);
-            }
-            ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#CacheCluster$EngineVersion */ =>  {
-                let var_251 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_version(var_251);
-            }
-            ,
-            s if s.matches("CacheClusterStatus") /* CacheClusterStatus com.amazonaws.elasticache#CacheCluster$CacheClusterStatus */ =>  {
-                let var_252 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_cluster_status(var_252);
-            }
-            ,
-            s if s.matches("NumCacheNodes") /* NumCacheNodes com.amazonaws.elasticache#CacheCluster$NumCacheNodes */ =>  {
-                let var_253 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_num_cache_nodes(var_253);
-            }
-            ,
-            s if s.matches("PreferredAvailabilityZone") /* PreferredAvailabilityZone com.amazonaws.elasticache#CacheCluster$PreferredAvailabilityZone */ =>  {
                 let var_254 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -7104,11 +7107,21 @@ pub fn deser_structure_crate_model_cache_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_availability_zone(var_254);
+                builder = builder.set_cache_cluster_id(var_254);
             }
             ,
-            s if s.matches("PreferredOutpostArn") /* PreferredOutpostArn com.amazonaws.elasticache#CacheCluster$PreferredOutpostArn */ =>  {
+            s if s.matches("ConfigurationEndpoint") /* ConfigurationEndpoint com.amazonaws.elasticache#CacheCluster$ConfigurationEndpoint */ =>  {
                 let var_255 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_configuration_endpoint(var_255);
+            }
+            ,
+            s if s.matches("ClientDownloadLandingPage") /* ClientDownloadLandingPage com.amazonaws.elasticache#CacheCluster$ClientDownloadLandingPage */ =>  {
+                let var_256 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7117,24 +7130,10 @@ pub fn deser_structure_crate_model_cache_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_outpost_arn(var_255);
+                builder = builder.set_client_download_landing_page(var_256);
             }
             ,
-            s if s.matches("CacheClusterCreateTime") /* CacheClusterCreateTime com.amazonaws.elasticache#CacheCluster$CacheClusterCreateTime */ =>  {
-                let var_256 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_cluster_create_time(var_256);
-            }
-            ,
-            s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.elasticache#CacheCluster$PreferredMaintenanceWindow */ =>  {
+            s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#CacheCluster$CacheNodeType */ =>  {
                 let var_257 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -7144,112 +7143,50 @@ pub fn deser_structure_crate_model_cache_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_maintenance_window(var_257);
+                builder = builder.set_cache_node_type(var_257);
             }
             ,
-            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.elasticache#CacheCluster$PendingModifiedValues */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#CacheCluster$Engine */ =>  {
                 let var_258 =
                     Some(
-                        crate::xml_deser::deser_structure_crate_model_pending_modified_values(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_pending_modified_values(var_258);
+                builder = builder.set_engine(var_258);
             }
             ,
-            s if s.matches("NotificationConfiguration") /* NotificationConfiguration com.amazonaws.elasticache#CacheCluster$NotificationConfiguration */ =>  {
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#CacheCluster$EngineVersion */ =>  {
                 let var_259 =
                     Some(
-                        crate::xml_deser::deser_structure_crate_model_notification_configuration(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_notification_configuration(var_259);
+                builder = builder.set_engine_version(var_259);
             }
             ,
-            s if s.matches("CacheSecurityGroups") /* CacheSecurityGroups com.amazonaws.elasticache#CacheCluster$CacheSecurityGroups */ =>  {
+            s if s.matches("CacheClusterStatus") /* CacheClusterStatus com.amazonaws.elasticache#CacheCluster$CacheClusterStatus */ =>  {
                 let var_260 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_security_group_membership_list(&mut tag)
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_cache_security_groups(var_260);
+                builder = builder.set_cache_cluster_status(var_260);
             }
             ,
-            s if s.matches("CacheParameterGroup") /* CacheParameterGroup com.amazonaws.elasticache#CacheCluster$CacheParameterGroup */ =>  {
+            s if s.matches("NumCacheNodes") /* NumCacheNodes com.amazonaws.elasticache#CacheCluster$NumCacheNodes */ =>  {
                 let var_261 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_cache_parameter_group_status(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_parameter_group(var_261);
-            }
-            ,
-            s if s.matches("CacheSubnetGroupName") /* CacheSubnetGroupName com.amazonaws.elasticache#CacheCluster$CacheSubnetGroupName */ =>  {
-                let var_262 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_subnet_group_name(var_262);
-            }
-            ,
-            s if s.matches("CacheNodes") /* CacheNodes com.amazonaws.elasticache#CacheCluster$CacheNodes */ =>  {
-                let var_263 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_nodes(var_263);
-            }
-            ,
-            s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.elasticache#CacheCluster$AutoMinorVersionUpgrade */ =>  {
-                let var_264 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_auto_minor_version_upgrade(var_264);
-            }
-            ,
-            s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.elasticache#CacheCluster$SecurityGroups */ =>  {
-                let var_265 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_security_group_membership_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_security_groups(var_265);
-            }
-            ,
-            s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#CacheCluster$ReplicationGroupId */ =>  {
-                let var_266 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_replication_group_id(var_266);
-            }
-            ,
-            s if s.matches("SnapshotRetentionLimit") /* SnapshotRetentionLimit com.amazonaws.elasticache#CacheCluster$SnapshotRetentionLimit */ =>  {
-                let var_267 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7260,11 +7197,11 @@ pub fn deser_structure_crate_model_cache_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_retention_limit(var_267);
+                builder = builder.set_num_cache_nodes(var_261);
             }
             ,
-            s if s.matches("SnapshotWindow") /* SnapshotWindow com.amazonaws.elasticache#CacheCluster$SnapshotWindow */ =>  {
-                let var_268 =
+            s if s.matches("PreferredAvailabilityZone") /* PreferredAvailabilityZone com.amazonaws.elasticache#CacheCluster$PreferredAvailabilityZone */ =>  {
+                let var_262 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7273,26 +7210,24 @@ pub fn deser_structure_crate_model_cache_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_window(var_268);
+                builder = builder.set_preferred_availability_zone(var_262);
             }
             ,
-            s if s.matches("AuthTokenEnabled") /* AuthTokenEnabled com.amazonaws.elasticache#CacheCluster$AuthTokenEnabled */ =>  {
-                let var_269 =
+            s if s.matches("PreferredOutpostArn") /* PreferredOutpostArn com.amazonaws.elasticache#CacheCluster$PreferredOutpostArn */ =>  {
+                let var_263 =
                     Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_auth_token_enabled(var_269);
+                builder = builder.set_preferred_outpost_arn(var_263);
             }
             ,
-            s if s.matches("AuthTokenLastModifiedDate") /* AuthTokenLastModifiedDate com.amazonaws.elasticache#CacheCluster$AuthTokenLastModifiedDate */ =>  {
-                let var_270 =
+            s if s.matches("CacheClusterCreateTime") /* CacheClusterCreateTime com.amazonaws.elasticache#CacheCluster$CacheClusterCreateTime */ =>  {
+                let var_264 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7302,41 +7237,11 @@ pub fn deser_structure_crate_model_cache_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_auth_token_last_modified_date(var_270);
+                builder = builder.set_cache_cluster_create_time(var_264);
             }
             ,
-            s if s.matches("TransitEncryptionEnabled") /* TransitEncryptionEnabled com.amazonaws.elasticache#CacheCluster$TransitEncryptionEnabled */ =>  {
-                let var_271 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_transit_encryption_enabled(var_271);
-            }
-            ,
-            s if s.matches("AtRestEncryptionEnabled") /* AtRestEncryptionEnabled com.amazonaws.elasticache#CacheCluster$AtRestEncryptionEnabled */ =>  {
-                let var_272 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_at_rest_encryption_enabled(var_272);
-            }
-            ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#CacheCluster$ARN */ =>  {
-                let var_273 =
+            s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.elasticache#CacheCluster$PreferredMaintenanceWindow */ =>  {
+                let var_265 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7345,11 +7250,74 @@ pub fn deser_structure_crate_model_cache_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_273);
+                builder = builder.set_preferred_maintenance_window(var_265);
             }
             ,
-            s if s.matches("ReplicationGroupLogDeliveryEnabled") /* ReplicationGroupLogDeliveryEnabled com.amazonaws.elasticache#CacheCluster$ReplicationGroupLogDeliveryEnabled */ =>  {
-                let var_274 =
+            s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.elasticache#CacheCluster$PendingModifiedValues */ =>  {
+                let var_266 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_pending_modified_values(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_pending_modified_values(var_266);
+            }
+            ,
+            s if s.matches("NotificationConfiguration") /* NotificationConfiguration com.amazonaws.elasticache#CacheCluster$NotificationConfiguration */ =>  {
+                let var_267 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_notification_configuration(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_notification_configuration(var_267);
+            }
+            ,
+            s if s.matches("CacheSecurityGroups") /* CacheSecurityGroups com.amazonaws.elasticache#CacheCluster$CacheSecurityGroups */ =>  {
+                let var_268 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_security_group_membership_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_security_groups(var_268);
+            }
+            ,
+            s if s.matches("CacheParameterGroup") /* CacheParameterGroup com.amazonaws.elasticache#CacheCluster$CacheParameterGroup */ =>  {
+                let var_269 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_cache_parameter_group_status(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_parameter_group(var_269);
+            }
+            ,
+            s if s.matches("CacheSubnetGroupName") /* CacheSubnetGroupName com.amazonaws.elasticache#CacheCluster$CacheSubnetGroupName */ =>  {
+                let var_270 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_subnet_group_name(var_270);
+            }
+            ,
+            s if s.matches("CacheNodes") /* CacheNodes com.amazonaws.elasticache#CacheCluster$CacheNodes */ =>  {
+                let var_271 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_nodes(var_271);
+            }
+            ,
+            s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.elasticache#CacheCluster$AutoMinorVersionUpgrade */ =>  {
+                let var_272 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7360,17 +7328,155 @@ pub fn deser_structure_crate_model_cache_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_log_delivery_enabled(var_274);
+                builder = builder.set_auto_minor_version_upgrade(var_272);
+            }
+            ,
+            s if s.matches("SecurityGroups") /* SecurityGroups com.amazonaws.elasticache#CacheCluster$SecurityGroups */ =>  {
+                let var_273 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_security_group_membership_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_security_groups(var_273);
+            }
+            ,
+            s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#CacheCluster$ReplicationGroupId */ =>  {
+                let var_274 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_replication_group_id(var_274);
+            }
+            ,
+            s if s.matches("SnapshotRetentionLimit") /* SnapshotRetentionLimit com.amazonaws.elasticache#CacheCluster$SnapshotRetentionLimit */ =>  {
+                let var_275 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_snapshot_retention_limit(var_275);
+            }
+            ,
+            s if s.matches("SnapshotWindow") /* SnapshotWindow com.amazonaws.elasticache#CacheCluster$SnapshotWindow */ =>  {
+                let var_276 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_snapshot_window(var_276);
+            }
+            ,
+            s if s.matches("AuthTokenEnabled") /* AuthTokenEnabled com.amazonaws.elasticache#CacheCluster$AuthTokenEnabled */ =>  {
+                let var_277 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_auth_token_enabled(var_277);
+            }
+            ,
+            s if s.matches("AuthTokenLastModifiedDate") /* AuthTokenLastModifiedDate com.amazonaws.elasticache#CacheCluster$AuthTokenLastModifiedDate */ =>  {
+                let var_278 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_auth_token_last_modified_date(var_278);
+            }
+            ,
+            s if s.matches("TransitEncryptionEnabled") /* TransitEncryptionEnabled com.amazonaws.elasticache#CacheCluster$TransitEncryptionEnabled */ =>  {
+                let var_279 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_encryption_enabled(var_279);
+            }
+            ,
+            s if s.matches("AtRestEncryptionEnabled") /* AtRestEncryptionEnabled com.amazonaws.elasticache#CacheCluster$AtRestEncryptionEnabled */ =>  {
+                let var_280 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_at_rest_encryption_enabled(var_280);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#CacheCluster$ARN */ =>  {
+                let var_281 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_281);
+            }
+            ,
+            s if s.matches("ReplicationGroupLogDeliveryEnabled") /* ReplicationGroupLogDeliveryEnabled com.amazonaws.elasticache#CacheCluster$ReplicationGroupLogDeliveryEnabled */ =>  {
+                let var_282 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_replication_group_log_delivery_enabled(var_282);
             }
             ,
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#CacheCluster$LogDeliveryConfigurations */ =>  {
-                let var_275 =
+                let var_283 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_log_delivery_configuration_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_log_delivery_configurations(var_275);
+                builder = builder.set_log_delivery_configurations(var_283);
             }
             ,
             _ => {}
@@ -7387,7 +7493,7 @@ pub fn deser_structure_crate_model_cache_parameter_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache#CacheParameterGroup$CacheParameterGroupName */ =>  {
-                let var_276 =
+                let var_284 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7396,11 +7502,11 @@ pub fn deser_structure_crate_model_cache_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_cache_parameter_group_name(var_276);
+                builder = builder.set_cache_parameter_group_name(var_284);
             }
             ,
             s if s.matches("CacheParameterGroupFamily") /* CacheParameterGroupFamily com.amazonaws.elasticache#CacheParameterGroup$CacheParameterGroupFamily */ =>  {
-                let var_277 =
+                let var_285 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7409,11 +7515,11 @@ pub fn deser_structure_crate_model_cache_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_cache_parameter_group_family(var_277);
+                builder = builder.set_cache_parameter_group_family(var_285);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.elasticache#CacheParameterGroup$Description */ =>  {
-                let var_278 =
+                let var_286 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7422,11 +7528,11 @@ pub fn deser_structure_crate_model_cache_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_278);
+                builder = builder.set_description(var_286);
             }
             ,
             s if s.matches("IsGlobal") /* IsGlobal com.amazonaws.elasticache#CacheParameterGroup$IsGlobal */ =>  {
-                let var_279 =
+                let var_287 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7437,11 +7543,11 @@ pub fn deser_structure_crate_model_cache_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_is_global(var_279);
+                builder = builder.set_is_global(var_287);
             }
             ,
             s if s.matches("ARN") /* ARN com.amazonaws.elasticache#CacheParameterGroup$ARN */ =>  {
-                let var_280 =
+                let var_288 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7450,7 +7556,7 @@ pub fn deser_structure_crate_model_cache_parameter_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_280);
+                builder = builder.set_arn(var_288);
             }
             ,
             _ => {}
@@ -7467,7 +7573,7 @@ pub fn deser_structure_crate_model_cache_subnet_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheSubnetGroupName") /* CacheSubnetGroupName com.amazonaws.elasticache#CacheSubnetGroup$CacheSubnetGroupName */ =>  {
-                let var_281 =
+                let var_289 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7476,11 +7582,11 @@ pub fn deser_structure_crate_model_cache_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_cache_subnet_group_name(var_281);
+                builder = builder.set_cache_subnet_group_name(var_289);
             }
             ,
             s if s.matches("CacheSubnetGroupDescription") /* CacheSubnetGroupDescription com.amazonaws.elasticache#CacheSubnetGroup$CacheSubnetGroupDescription */ =>  {
-                let var_282 =
+                let var_290 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7489,11 +7595,11 @@ pub fn deser_structure_crate_model_cache_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_cache_subnet_group_description(var_282);
+                builder = builder.set_cache_subnet_group_description(var_290);
             }
             ,
             s if s.matches("VpcId") /* VpcId com.amazonaws.elasticache#CacheSubnetGroup$VpcId */ =>  {
-                let var_283 =
+                let var_291 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7502,21 +7608,21 @@ pub fn deser_structure_crate_model_cache_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_283);
+                builder = builder.set_vpc_id(var_291);
             }
             ,
             s if s.matches("Subnets") /* Subnets com.amazonaws.elasticache#CacheSubnetGroup$Subnets */ =>  {
-                let var_284 =
+                let var_292 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_subnet_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subnets(var_284);
+                builder = builder.set_subnets(var_292);
             }
             ,
             s if s.matches("ARN") /* ARN com.amazonaws.elasticache#CacheSubnetGroup$ARN */ =>  {
-                let var_285 =
+                let var_293 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7525,7 +7631,7 @@ pub fn deser_structure_crate_model_cache_subnet_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_285);
+                builder = builder.set_arn(var_293);
             }
             ,
             _ => {}
@@ -7542,7 +7648,7 @@ pub fn deser_structure_crate_model_global_replication_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("GlobalReplicationGroupId") /* GlobalReplicationGroupId com.amazonaws.elasticache#GlobalReplicationGroup$GlobalReplicationGroupId */ =>  {
-                let var_286 =
+                let var_294 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7551,11 +7657,11 @@ pub fn deser_structure_crate_model_global_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group_id(var_286);
+                builder = builder.set_global_replication_group_id(var_294);
             }
             ,
             s if s.matches("GlobalReplicationGroupDescription") /* GlobalReplicationGroupDescription com.amazonaws.elasticache#GlobalReplicationGroup$GlobalReplicationGroupDescription */ =>  {
-                let var_287 =
+                let var_295 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7564,11 +7670,11 @@ pub fn deser_structure_crate_model_global_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group_description(var_287);
+                builder = builder.set_global_replication_group_description(var_295);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticache#GlobalReplicationGroup$Status */ =>  {
-                let var_288 =
+                let var_296 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7577,11 +7683,11 @@ pub fn deser_structure_crate_model_global_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_288);
+                builder = builder.set_status(var_296);
             }
             ,
             s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#GlobalReplicationGroup$CacheNodeType */ =>  {
-                let var_289 =
+                let var_297 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -7590,116 +7696,10 @@ pub fn deser_structure_crate_model_global_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_type(var_289);
+                builder = builder.set_cache_node_type(var_297);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.elasticache#GlobalReplicationGroup$Engine */ =>  {
-                let var_290 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine(var_290);
-            }
-            ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#GlobalReplicationGroup$EngineVersion */ =>  {
-                let var_291 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_engine_version(var_291);
-            }
-            ,
-            s if s.matches("Members") /* Members com.amazonaws.elasticache#GlobalReplicationGroup$Members */ =>  {
-                let var_292 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_global_replication_group_member_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_members(var_292);
-            }
-            ,
-            s if s.matches("ClusterEnabled") /* ClusterEnabled com.amazonaws.elasticache#GlobalReplicationGroup$ClusterEnabled */ =>  {
-                let var_293 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_cluster_enabled(var_293);
-            }
-            ,
-            s if s.matches("GlobalNodeGroups") /* GlobalNodeGroups com.amazonaws.elasticache#GlobalReplicationGroup$GlobalNodeGroups */ =>  {
-                let var_294 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_global_node_group_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_global_node_groups(var_294);
-            }
-            ,
-            s if s.matches("AuthTokenEnabled") /* AuthTokenEnabled com.amazonaws.elasticache#GlobalReplicationGroup$AuthTokenEnabled */ =>  {
-                let var_295 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_auth_token_enabled(var_295);
-            }
-            ,
-            s if s.matches("TransitEncryptionEnabled") /* TransitEncryptionEnabled com.amazonaws.elasticache#GlobalReplicationGroup$TransitEncryptionEnabled */ =>  {
-                let var_296 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_transit_encryption_enabled(var_296);
-            }
-            ,
-            s if s.matches("AtRestEncryptionEnabled") /* AtRestEncryptionEnabled com.amazonaws.elasticache#GlobalReplicationGroup$AtRestEncryptionEnabled */ =>  {
-                let var_297 =
-                    Some(
-                         {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_at_rest_encryption_enabled(var_297);
-            }
-            ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#GlobalReplicationGroup$ARN */ =>  {
                 let var_298 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -7709,7 +7709,113 @@ pub fn deser_structure_crate_model_global_replication_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_298);
+                builder = builder.set_engine(var_298);
+            }
+            ,
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#GlobalReplicationGroup$EngineVersion */ =>  {
+                let var_299 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_version(var_299);
+            }
+            ,
+            s if s.matches("Members") /* Members com.amazonaws.elasticache#GlobalReplicationGroup$Members */ =>  {
+                let var_300 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_global_replication_group_member_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_members(var_300);
+            }
+            ,
+            s if s.matches("ClusterEnabled") /* ClusterEnabled com.amazonaws.elasticache#GlobalReplicationGroup$ClusterEnabled */ =>  {
+                let var_301 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_cluster_enabled(var_301);
+            }
+            ,
+            s if s.matches("GlobalNodeGroups") /* GlobalNodeGroups com.amazonaws.elasticache#GlobalReplicationGroup$GlobalNodeGroups */ =>  {
+                let var_302 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_global_node_group_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_global_node_groups(var_302);
+            }
+            ,
+            s if s.matches("AuthTokenEnabled") /* AuthTokenEnabled com.amazonaws.elasticache#GlobalReplicationGroup$AuthTokenEnabled */ =>  {
+                let var_303 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_auth_token_enabled(var_303);
+            }
+            ,
+            s if s.matches("TransitEncryptionEnabled") /* TransitEncryptionEnabled com.amazonaws.elasticache#GlobalReplicationGroup$TransitEncryptionEnabled */ =>  {
+                let var_304 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_encryption_enabled(var_304);
+            }
+            ,
+            s if s.matches("AtRestEncryptionEnabled") /* AtRestEncryptionEnabled com.amazonaws.elasticache#GlobalReplicationGroup$AtRestEncryptionEnabled */ =>  {
+                let var_305 =
+                    Some(
+                         {
+                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticache#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_at_rest_encryption_enabled(var_305);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#GlobalReplicationGroup$ARN */ =>  {
+                let var_306 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_306);
             }
             ,
             _ => {}
@@ -7748,7 +7854,7 @@ pub fn deser_structure_crate_model_authentication(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Type") /* Type com.amazonaws.elasticache#Authentication$Type */ =>  {
-                let var_299 =
+                let var_307 =
                     Some(
                         Result::<crate::model::AuthenticationType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AuthenticationType::from(
@@ -7758,11 +7864,11 @@ pub fn deser_structure_crate_model_authentication(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_299);
+                builder = builder.set_type(var_307);
             }
             ,
             s if s.matches("PasswordCount") /* PasswordCount com.amazonaws.elasticache#Authentication$PasswordCount */ =>  {
-                let var_300 =
+                let var_308 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -7773,7 +7879,7 @@ pub fn deser_structure_crate_model_authentication(
                         ?
                     )
                 ;
-                builder = builder.set_password_count(var_300);
+                builder = builder.set_password_count(var_308);
             }
             ,
             _ => {}
@@ -7812,23 +7918,23 @@ pub fn deser_structure_crate_model_user_group_pending_changes(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UserIdsToRemove") /* UserIdsToRemove com.amazonaws.elasticache#UserGroupPendingChanges$UserIdsToRemove */ =>  {
-                let var_301 =
+                let var_309 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_ids_to_remove(var_301);
+                builder = builder.set_user_ids_to_remove(var_309);
             }
             ,
             s if s.matches("UserIdsToAdd") /* UserIdsToAdd com.amazonaws.elasticache#UserGroupPendingChanges$UserIdsToAdd */ =>  {
-                let var_302 =
+                let var_310 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_ids_to_add(var_302);
+                builder = builder.set_user_ids_to_add(var_310);
             }
             ,
             _ => {}
@@ -8003,7 +8109,7 @@ pub fn deser_structure_crate_model_engine_defaults(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheParameterGroupFamily") /* CacheParameterGroupFamily com.amazonaws.elasticache#EngineDefaults$CacheParameterGroupFamily */ =>  {
-                let var_303 =
+                let var_311 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8012,11 +8118,11 @@ pub fn deser_structure_crate_model_engine_defaults(
                         ?
                     )
                 ;
-                builder = builder.set_cache_parameter_group_family(var_303);
+                builder = builder.set_cache_parameter_group_family(var_311);
             }
             ,
             s if s.matches("Marker") /* Marker com.amazonaws.elasticache#EngineDefaults$Marker */ =>  {
-                let var_304 =
+                let var_312 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8025,27 +8131,27 @@ pub fn deser_structure_crate_model_engine_defaults(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_304);
+                builder = builder.set_marker(var_312);
             }
             ,
             s if s.matches("Parameters") /* Parameters com.amazonaws.elasticache#EngineDefaults$Parameters */ =>  {
-                let var_305 =
+                let var_313 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_parameters_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_parameters(var_305);
+                builder = builder.set_parameters(var_313);
             }
             ,
             s if s.matches("CacheNodeTypeSpecificParameters") /* CacheNodeTypeSpecificParameters com.amazonaws.elasticache#EngineDefaults$CacheNodeTypeSpecificParameters */ =>  {
-                let var_306 =
+                let var_314 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_type_specific_parameters_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_type_specific_parameters(var_306);
+                builder = builder.set_cache_node_type_specific_parameters(var_314);
             }
             ,
             _ => {}
@@ -8275,119 +8381,6 @@ pub fn deser_structure_crate_model_reserved_cache_node(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReservedCacheNodeId") /* ReservedCacheNodeId com.amazonaws.elasticache#ReservedCacheNode$ReservedCacheNodeId */ =>  {
-                let var_307 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_reserved_cache_node_id(var_307);
-            }
-            ,
-            s if s.matches("ReservedCacheNodesOfferingId") /* ReservedCacheNodesOfferingId com.amazonaws.elasticache#ReservedCacheNode$ReservedCacheNodesOfferingId */ =>  {
-                let var_308 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_reserved_cache_nodes_offering_id(var_308);
-            }
-            ,
-            s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#ReservedCacheNode$CacheNodeType */ =>  {
-                let var_309 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_node_type(var_309);
-            }
-            ,
-            s if s.matches("StartTime") /* StartTime com.amazonaws.elasticache#ReservedCacheNode$StartTime */ =>  {
-                let var_310 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_start_time(var_310);
-            }
-            ,
-            s if s.matches("Duration") /* Duration com.amazonaws.elasticache#ReservedCacheNode$Duration */ =>  {
-                let var_311 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#Integer`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_duration(var_311);
-            }
-            ,
-            s if s.matches("FixedPrice") /* FixedPrice com.amazonaws.elasticache#ReservedCacheNode$FixedPrice */ =>  {
-                let var_312 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticache#Double`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_fixed_price(var_312);
-            }
-            ,
-            s if s.matches("UsagePrice") /* UsagePrice com.amazonaws.elasticache#ReservedCacheNode$UsagePrice */ =>  {
-                let var_313 =
-                    Some(
-                         {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticache#Double`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_usage_price(var_313);
-            }
-            ,
-            s if s.matches("CacheNodeCount") /* CacheNodeCount com.amazonaws.elasticache#ReservedCacheNode$CacheNodeCount */ =>  {
-                let var_314 =
-                    Some(
-                         {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#Integer`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_node_count(var_314);
-            }
-            ,
-            s if s.matches("ProductDescription") /* ProductDescription com.amazonaws.elasticache#ReservedCacheNode$ProductDescription */ =>  {
                 let var_315 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -8397,10 +8390,10 @@ pub fn deser_structure_crate_model_reserved_cache_node(
                         ?
                     )
                 ;
-                builder = builder.set_product_description(var_315);
+                builder = builder.set_reserved_cache_node_id(var_315);
             }
             ,
-            s if s.matches("OfferingType") /* OfferingType com.amazonaws.elasticache#ReservedCacheNode$OfferingType */ =>  {
+            s if s.matches("ReservedCacheNodesOfferingId") /* ReservedCacheNodesOfferingId com.amazonaws.elasticache#ReservedCacheNode$ReservedCacheNodesOfferingId */ =>  {
                 let var_316 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -8410,10 +8403,10 @@ pub fn deser_structure_crate_model_reserved_cache_node(
                         ?
                     )
                 ;
-                builder = builder.set_offering_type(var_316);
+                builder = builder.set_reserved_cache_nodes_offering_id(var_316);
             }
             ,
-            s if s.matches("State") /* State com.amazonaws.elasticache#ReservedCacheNode$State */ =>  {
+            s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#ReservedCacheNode$CacheNodeType */ =>  {
                 let var_317 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -8423,21 +8416,85 @@ pub fn deser_structure_crate_model_reserved_cache_node(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_317);
+                builder = builder.set_cache_node_type(var_317);
             }
             ,
-            s if s.matches("RecurringCharges") /* RecurringCharges com.amazonaws.elasticache#ReservedCacheNode$RecurringCharges */ =>  {
+            s if s.matches("StartTime") /* StartTime com.amazonaws.elasticache#ReservedCacheNode$StartTime */ =>  {
                 let var_318 =
                     Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_recurring_charge_list(&mut tag)
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_recurring_charges(var_318);
+                builder = builder.set_start_time(var_318);
             }
             ,
-            s if s.matches("ReservationARN") /* ReservationARN com.amazonaws.elasticache#ReservedCacheNode$ReservationARN */ =>  {
+            s if s.matches("Duration") /* Duration com.amazonaws.elasticache#ReservedCacheNode$Duration */ =>  {
                 let var_319 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_duration(var_319);
+            }
+            ,
+            s if s.matches("FixedPrice") /* FixedPrice com.amazonaws.elasticache#ReservedCacheNode$FixedPrice */ =>  {
+                let var_320 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticache#Double`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_fixed_price(var_320);
+            }
+            ,
+            s if s.matches("UsagePrice") /* UsagePrice com.amazonaws.elasticache#ReservedCacheNode$UsagePrice */ =>  {
+                let var_321 =
+                    Some(
+                         {
+                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.elasticache#Double`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_usage_price(var_321);
+            }
+            ,
+            s if s.matches("CacheNodeCount") /* CacheNodeCount com.amazonaws.elasticache#ReservedCacheNode$CacheNodeCount */ =>  {
+                let var_322 =
+                    Some(
+                         {
+                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticache#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_node_count(var_322);
+            }
+            ,
+            s if s.matches("ProductDescription") /* ProductDescription com.amazonaws.elasticache#ReservedCacheNode$ProductDescription */ =>  {
+                let var_323 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8446,7 +8503,56 @@ pub fn deser_structure_crate_model_reserved_cache_node(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_arn(var_319);
+                builder = builder.set_product_description(var_323);
+            }
+            ,
+            s if s.matches("OfferingType") /* OfferingType com.amazonaws.elasticache#ReservedCacheNode$OfferingType */ =>  {
+                let var_324 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_offering_type(var_324);
+            }
+            ,
+            s if s.matches("State") /* State com.amazonaws.elasticache#ReservedCacheNode$State */ =>  {
+                let var_325 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_325);
+            }
+            ,
+            s if s.matches("RecurringCharges") /* RecurringCharges com.amazonaws.elasticache#ReservedCacheNode$RecurringCharges */ =>  {
+                let var_326 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_recurring_charge_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_recurring_charges(var_326);
+            }
+            ,
+            s if s.matches("ReservationARN") /* ReservationARN com.amazonaws.elasticache#ReservedCacheNode$ReservationARN */ =>  {
+                let var_327 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reservation_arn(var_327);
             }
             ,
             _ => {}
@@ -8463,7 +8569,7 @@ pub fn deser_structure_crate_model_tag(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.elasticache#Tag$Key */ =>  {
-                let var_320 =
+                let var_328 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8472,11 +8578,11 @@ pub fn deser_structure_crate_model_tag(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_320);
+                builder = builder.set_key(var_328);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.elasticache#Tag$Value */ =>  {
-                let var_321 =
+                let var_329 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8485,7 +8591,7 @@ pub fn deser_structure_crate_model_tag(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_321);
+                builder = builder.set_value(var_329);
             }
             ,
             _ => {}
@@ -8521,7 +8627,7 @@ pub fn deser_structure_crate_model_processed_update_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#ProcessedUpdateAction$ReplicationGroupId */ =>  {
-                let var_322 =
+                let var_330 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8530,11 +8636,11 @@ pub fn deser_structure_crate_model_processed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_id(var_322);
+                builder = builder.set_replication_group_id(var_330);
             }
             ,
             s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#ProcessedUpdateAction$CacheClusterId */ =>  {
-                let var_323 =
+                let var_331 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8543,11 +8649,11 @@ pub fn deser_structure_crate_model_processed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster_id(var_323);
+                builder = builder.set_cache_cluster_id(var_331);
             }
             ,
             s if s.matches("ServiceUpdateName") /* ServiceUpdateName com.amazonaws.elasticache#ProcessedUpdateAction$ServiceUpdateName */ =>  {
-                let var_324 =
+                let var_332 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8556,11 +8662,11 @@ pub fn deser_structure_crate_model_processed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_service_update_name(var_324);
+                builder = builder.set_service_update_name(var_332);
             }
             ,
             s if s.matches("UpdateActionStatus") /* UpdateActionStatus com.amazonaws.elasticache#ProcessedUpdateAction$UpdateActionStatus */ =>  {
-                let var_325 =
+                let var_333 =
                     Some(
                         Result::<crate::model::UpdateActionStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::UpdateActionStatus::from(
@@ -8570,7 +8676,7 @@ pub fn deser_structure_crate_model_processed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_update_action_status(var_325);
+                builder = builder.set_update_action_status(var_333);
             }
             ,
             _ => {}
@@ -8587,7 +8693,7 @@ pub fn deser_structure_crate_model_unprocessed_update_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#UnprocessedUpdateAction$ReplicationGroupId */ =>  {
-                let var_326 =
+                let var_334 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8596,11 +8702,11 @@ pub fn deser_structure_crate_model_unprocessed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_id(var_326);
+                builder = builder.set_replication_group_id(var_334);
             }
             ,
             s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#UnprocessedUpdateAction$CacheClusterId */ =>  {
-                let var_327 =
+                let var_335 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8609,11 +8715,11 @@ pub fn deser_structure_crate_model_unprocessed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster_id(var_327);
+                builder = builder.set_cache_cluster_id(var_335);
             }
             ,
             s if s.matches("ServiceUpdateName") /* ServiceUpdateName com.amazonaws.elasticache#UnprocessedUpdateAction$ServiceUpdateName */ =>  {
-                let var_328 =
+                let var_336 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8622,11 +8728,11 @@ pub fn deser_structure_crate_model_unprocessed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_service_update_name(var_328);
+                builder = builder.set_service_update_name(var_336);
             }
             ,
             s if s.matches("ErrorType") /* ErrorType com.amazonaws.elasticache#UnprocessedUpdateAction$ErrorType */ =>  {
-                let var_329 =
+                let var_337 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8635,11 +8741,11 @@ pub fn deser_structure_crate_model_unprocessed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_error_type(var_329);
+                builder = builder.set_error_type(var_337);
             }
             ,
             s if s.matches("ErrorMessage") /* ErrorMessage com.amazonaws.elasticache#UnprocessedUpdateAction$ErrorMessage */ =>  {
-                let var_330 =
+                let var_338 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8648,7 +8754,7 @@ pub fn deser_structure_crate_model_unprocessed_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_error_message(var_330);
+                builder = builder.set_error_message(var_338);
             }
             ,
             _ => {}
@@ -8665,7 +8771,7 @@ pub fn deser_structure_crate_model_global_replication_group_info(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("GlobalReplicationGroupId") /* GlobalReplicationGroupId com.amazonaws.elasticache#GlobalReplicationGroupInfo$GlobalReplicationGroupId */ =>  {
-                let var_331 =
+                let var_339 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8674,11 +8780,11 @@ pub fn deser_structure_crate_model_global_replication_group_info(
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group_id(var_331);
+                builder = builder.set_global_replication_group_id(var_339);
             }
             ,
             s if s.matches("GlobalReplicationGroupMemberRole") /* GlobalReplicationGroupMemberRole com.amazonaws.elasticache#GlobalReplicationGroupInfo$GlobalReplicationGroupMemberRole */ =>  {
-                let var_332 =
+                let var_340 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8687,7 +8793,7 @@ pub fn deser_structure_crate_model_global_replication_group_info(
                         ?
                     )
                 ;
-                builder = builder.set_global_replication_group_member_role(var_332);
+                builder = builder.set_global_replication_group_member_role(var_340);
             }
             ,
             _ => {}
@@ -8704,7 +8810,7 @@ pub fn deser_structure_crate_model_replication_group_pending_modified_values(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PrimaryClusterId") /* PrimaryClusterId com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$PrimaryClusterId */ =>  {
-                let var_333 =
+                let var_341 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8713,11 +8819,11 @@ pub fn deser_structure_crate_model_replication_group_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_primary_cluster_id(var_333);
+                builder = builder.set_primary_cluster_id(var_341);
             }
             ,
             s if s.matches("AutomaticFailoverStatus") /* AutomaticFailoverStatus com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$AutomaticFailoverStatus */ =>  {
-                let var_334 =
+                let var_342 =
                     Some(
                         Result::<crate::model::PendingAutomaticFailoverStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::PendingAutomaticFailoverStatus::from(
@@ -8727,21 +8833,21 @@ pub fn deser_structure_crate_model_replication_group_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_automatic_failover_status(var_334);
+                builder = builder.set_automatic_failover_status(var_342);
             }
             ,
             s if s.matches("Resharding") /* Resharding com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$Resharding */ =>  {
-                let var_335 =
+                let var_343 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_resharding_status(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_resharding(var_335);
+                builder = builder.set_resharding(var_343);
             }
             ,
             s if s.matches("AuthTokenStatus") /* AuthTokenStatus com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$AuthTokenStatus */ =>  {
-                let var_336 =
+                let var_344 =
                     Some(
                         Result::<crate::model::AuthTokenUpdateStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AuthTokenUpdateStatus::from(
@@ -8751,27 +8857,27 @@ pub fn deser_structure_crate_model_replication_group_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_auth_token_status(var_336);
+                builder = builder.set_auth_token_status(var_344);
             }
             ,
             s if s.matches("UserGroups") /* UserGroups com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$UserGroups */ =>  {
-                let var_337 =
+                let var_345 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_user_groups_update_status(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_groups(var_337);
+                builder = builder.set_user_groups(var_345);
             }
             ,
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$LogDeliveryConfigurations */ =>  {
-                let var_338 =
+                let var_346 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_pending_log_delivery_configuration_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_log_delivery_configurations(var_338);
+                builder = builder.set_log_delivery_configurations(var_346);
             }
             ,
             _ => {}
@@ -8829,7 +8935,7 @@ pub fn deser_structure_crate_model_endpoint(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Address") /* Address com.amazonaws.elasticache#Endpoint$Address */ =>  {
-                let var_339 =
+                let var_347 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8838,11 +8944,11 @@ pub fn deser_structure_crate_model_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_address(var_339);
+                builder = builder.set_address(var_347);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.elasticache#Endpoint$Port */ =>  {
-                let var_340 =
+                let var_348 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8853,7 +8959,7 @@ pub fn deser_structure_crate_model_endpoint(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_340);
+                builder = builder.set_port(var_348);
             }
             ,
             _ => {}
@@ -8931,7 +9037,7 @@ pub fn deser_structure_crate_model_pending_modified_values(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NumCacheNodes") /* NumCacheNodes com.amazonaws.elasticache#PendingModifiedValues$NumCacheNodes */ =>  {
-                let var_341 =
+                let var_349 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -8942,21 +9048,21 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_num_cache_nodes(var_341);
+                builder = builder.set_num_cache_nodes(var_349);
             }
             ,
             s if s.matches("CacheNodeIdsToRemove") /* CacheNodeIdsToRemove com.amazonaws.elasticache#PendingModifiedValues$CacheNodeIdsToRemove */ =>  {
-                let var_342 =
+                let var_350 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_ids_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_ids_to_remove(var_342);
+                builder = builder.set_cache_node_ids_to_remove(var_350);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#PendingModifiedValues$EngineVersion */ =>  {
-                let var_343 =
+                let var_351 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8965,11 +9071,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_343);
+                builder = builder.set_engine_version(var_351);
             }
             ,
             s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#PendingModifiedValues$CacheNodeType */ =>  {
-                let var_344 =
+                let var_352 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -8978,11 +9084,11 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_type(var_344);
+                builder = builder.set_cache_node_type(var_352);
             }
             ,
             s if s.matches("AuthTokenStatus") /* AuthTokenStatus com.amazonaws.elasticache#PendingModifiedValues$AuthTokenStatus */ =>  {
-                let var_345 =
+                let var_353 =
                     Some(
                         Result::<crate::model::AuthTokenUpdateStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AuthTokenUpdateStatus::from(
@@ -8992,17 +9098,17 @@ pub fn deser_structure_crate_model_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_auth_token_status(var_345);
+                builder = builder.set_auth_token_status(var_353);
             }
             ,
             s if s.matches("LogDeliveryConfigurations") /* LogDeliveryConfigurations com.amazonaws.elasticache#PendingModifiedValues$LogDeliveryConfigurations */ =>  {
-                let var_346 =
+                let var_354 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_pending_log_delivery_configuration_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_log_delivery_configurations(var_346);
+                builder = builder.set_log_delivery_configurations(var_354);
             }
             ,
             _ => {}
@@ -9019,7 +9125,7 @@ pub fn deser_structure_crate_model_notification_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.elasticache#NotificationConfiguration$TopicArn */ =>  {
-                let var_347 =
+                let var_355 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9028,11 +9134,11 @@ pub fn deser_structure_crate_model_notification_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_347);
+                builder = builder.set_topic_arn(var_355);
             }
             ,
             s if s.matches("TopicStatus") /* TopicStatus com.amazonaws.elasticache#NotificationConfiguration$TopicStatus */ =>  {
-                let var_348 =
+                let var_356 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9041,7 +9147,7 @@ pub fn deser_structure_crate_model_notification_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_topic_status(var_348);
+                builder = builder.set_topic_status(var_356);
             }
             ,
             _ => {}
@@ -9080,7 +9186,7 @@ pub fn deser_structure_crate_model_cache_parameter_group_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheParameterGroupName") /* CacheParameterGroupName com.amazonaws.elasticache#CacheParameterGroupStatus$CacheParameterGroupName */ =>  {
-                let var_349 =
+                let var_357 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9089,11 +9195,11 @@ pub fn deser_structure_crate_model_cache_parameter_group_status(
                         ?
                     )
                 ;
-                builder = builder.set_cache_parameter_group_name(var_349);
+                builder = builder.set_cache_parameter_group_name(var_357);
             }
             ,
             s if s.matches("ParameterApplyStatus") /* ParameterApplyStatus com.amazonaws.elasticache#CacheParameterGroupStatus$ParameterApplyStatus */ =>  {
-                let var_350 =
+                let var_358 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9102,17 +9208,17 @@ pub fn deser_structure_crate_model_cache_parameter_group_status(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_apply_status(var_350);
+                builder = builder.set_parameter_apply_status(var_358);
             }
             ,
             s if s.matches("CacheNodeIdsToReboot") /* CacheNodeIdsToReboot com.amazonaws.elasticache#CacheParameterGroupStatus$CacheNodeIdsToReboot */ =>  {
-                let var_351 =
+                let var_359 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_ids_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_ids_to_reboot(var_351);
+                builder = builder.set_cache_node_ids_to_reboot(var_359);
             }
             ,
             _ => {}
@@ -9228,7 +9334,7 @@ pub fn deser_structure_crate_model_cache_engine_version(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Engine") /* Engine com.amazonaws.elasticache#CacheEngineVersion$Engine */ =>  {
-                let var_352 =
+                let var_360 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9237,11 +9343,11 @@ pub fn deser_structure_crate_model_cache_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_352);
+                builder = builder.set_engine(var_360);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#CacheEngineVersion$EngineVersion */ =>  {
-                let var_353 =
+                let var_361 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9250,11 +9356,11 @@ pub fn deser_structure_crate_model_cache_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_353);
+                builder = builder.set_engine_version(var_361);
             }
             ,
             s if s.matches("CacheParameterGroupFamily") /* CacheParameterGroupFamily com.amazonaws.elasticache#CacheEngineVersion$CacheParameterGroupFamily */ =>  {
-                let var_354 =
+                let var_362 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9263,11 +9369,11 @@ pub fn deser_structure_crate_model_cache_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_cache_parameter_group_family(var_354);
+                builder = builder.set_cache_parameter_group_family(var_362);
             }
             ,
             s if s.matches("CacheEngineDescription") /* CacheEngineDescription com.amazonaws.elasticache#CacheEngineVersion$CacheEngineDescription */ =>  {
-                let var_355 =
+                let var_363 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9276,11 +9382,11 @@ pub fn deser_structure_crate_model_cache_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_cache_engine_description(var_355);
+                builder = builder.set_cache_engine_description(var_363);
             }
             ,
             s if s.matches("CacheEngineVersionDescription") /* CacheEngineVersionDescription com.amazonaws.elasticache#CacheEngineVersion$CacheEngineVersionDescription */ =>  {
-                let var_356 =
+                let var_364 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9289,7 +9395,7 @@ pub fn deser_structure_crate_model_cache_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_cache_engine_version_description(var_356);
+                builder = builder.set_cache_engine_version_description(var_364);
             }
             ,
             _ => {}
@@ -9306,7 +9412,7 @@ pub fn deser_structure_crate_model_parameter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ParameterName") /* ParameterName com.amazonaws.elasticache#Parameter$ParameterName */ =>  {
-                let var_357 =
+                let var_365 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9315,11 +9421,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_name(var_357);
+                builder = builder.set_parameter_name(var_365);
             }
             ,
             s if s.matches("ParameterValue") /* ParameterValue com.amazonaws.elasticache#Parameter$ParameterValue */ =>  {
-                let var_358 =
+                let var_366 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9328,11 +9434,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_value(var_358);
+                builder = builder.set_parameter_value(var_366);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.elasticache#Parameter$Description */ =>  {
-                let var_359 =
+                let var_367 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9341,11 +9447,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_359);
+                builder = builder.set_description(var_367);
             }
             ,
             s if s.matches("Source") /* Source com.amazonaws.elasticache#Parameter$Source */ =>  {
-                let var_360 =
+                let var_368 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9354,11 +9460,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_source(var_360);
+                builder = builder.set_source(var_368);
             }
             ,
             s if s.matches("DataType") /* DataType com.amazonaws.elasticache#Parameter$DataType */ =>  {
-                let var_361 =
+                let var_369 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9367,11 +9473,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_361);
+                builder = builder.set_data_type(var_369);
             }
             ,
             s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.elasticache#Parameter$AllowedValues */ =>  {
-                let var_362 =
+                let var_370 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9380,11 +9486,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_362);
+                builder = builder.set_allowed_values(var_370);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.elasticache#Parameter$IsModifiable */ =>  {
-                let var_363 =
+                let var_371 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9395,11 +9501,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_363);
+                builder = builder.set_is_modifiable(var_371);
             }
             ,
             s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache#Parameter$MinimumEngineVersion */ =>  {
-                let var_364 =
+                let var_372 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9408,11 +9514,11 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_minimum_engine_version(var_364);
+                builder = builder.set_minimum_engine_version(var_372);
             }
             ,
             s if s.matches("ChangeType") /* ChangeType com.amazonaws.elasticache#Parameter$ChangeType */ =>  {
-                let var_365 =
+                let var_373 =
                     Some(
                         Result::<crate::model::ChangeType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ChangeType::from(
@@ -9422,7 +9528,7 @@ pub fn deser_structure_crate_model_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_change_type(var_365);
+                builder = builder.set_change_type(var_373);
             }
             ,
             _ => {}
@@ -9439,7 +9545,7 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ParameterName") /* ParameterName com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$ParameterName */ =>  {
-                let var_366 =
+                let var_374 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9448,11 +9554,11 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_name(var_366);
+                builder = builder.set_parameter_name(var_374);
             }
             ,
             s if s.matches("Description") /* Description com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$Description */ =>  {
-                let var_367 =
+                let var_375 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9461,11 +9567,11 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_367);
+                builder = builder.set_description(var_375);
             }
             ,
             s if s.matches("Source") /* Source com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$Source */ =>  {
-                let var_368 =
+                let var_376 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9474,11 +9580,11 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_source(var_368);
+                builder = builder.set_source(var_376);
             }
             ,
             s if s.matches("DataType") /* DataType com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$DataType */ =>  {
-                let var_369 =
+                let var_377 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9487,11 +9593,11 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_369);
+                builder = builder.set_data_type(var_377);
             }
             ,
             s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$AllowedValues */ =>  {
-                let var_370 =
+                let var_378 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9500,11 +9606,11 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_370);
+                builder = builder.set_allowed_values(var_378);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$IsModifiable */ =>  {
-                let var_371 =
+                let var_379 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9515,11 +9621,11 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_371);
+                builder = builder.set_is_modifiable(var_379);
             }
             ,
             s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$MinimumEngineVersion */ =>  {
-                let var_372 =
+                let var_380 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9528,21 +9634,21 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_minimum_engine_version(var_372);
+                builder = builder.set_minimum_engine_version(var_380);
             }
             ,
             s if s.matches("CacheNodeTypeSpecificValues") /* CacheNodeTypeSpecificValues com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$CacheNodeTypeSpecificValues */ =>  {
-                let var_373 =
+                let var_381 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_type_specific_value_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_type_specific_values(var_373);
+                builder = builder.set_cache_node_type_specific_values(var_381);
             }
             ,
             s if s.matches("ChangeType") /* ChangeType com.amazonaws.elasticache#CacheNodeTypeSpecificParameter$ChangeType */ =>  {
-                let var_374 =
+                let var_382 =
                     Some(
                         Result::<crate::model::ChangeType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::ChangeType::from(
@@ -9552,7 +9658,7 @@ pub fn deser_structure_crate_model_cache_node_type_specific_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_change_type(var_374);
+                builder = builder.set_change_type(var_382);
             }
             ,
             _ => {}
@@ -9569,7 +9675,7 @@ pub fn deser_structure_crate_model_event(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SourceIdentifier") /* SourceIdentifier com.amazonaws.elasticache#Event$SourceIdentifier */ =>  {
-                let var_375 =
+                let var_383 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9578,11 +9684,11 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_source_identifier(var_375);
+                builder = builder.set_source_identifier(var_383);
             }
             ,
             s if s.matches("SourceType") /* SourceType com.amazonaws.elasticache#Event$SourceType */ =>  {
-                let var_376 =
+                let var_384 =
                     Some(
                         Result::<crate::model::SourceType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::SourceType::from(
@@ -9592,11 +9698,11 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_source_type(var_376);
+                builder = builder.set_source_type(var_384);
             }
             ,
             s if s.matches("Message") /* Message com.amazonaws.elasticache#Event$Message */ =>  {
-                let var_377 =
+                let var_385 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9605,11 +9711,11 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_377);
+                builder = builder.set_message(var_385);
             }
             ,
             s if s.matches("Date") /* Date com.amazonaws.elasticache#Event$Date */ =>  {
-                let var_378 =
+                let var_386 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9619,7 +9725,7 @@ pub fn deser_structure_crate_model_event(
                         ?
                     )
                 ;
-                builder = builder.set_date(var_378);
+                builder = builder.set_date(var_386);
             }
             ,
             _ => {}
@@ -9636,7 +9742,7 @@ pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReservedCacheNodesOfferingId") /* ReservedCacheNodesOfferingId com.amazonaws.elasticache#ReservedCacheNodesOffering$ReservedCacheNodesOfferingId */ =>  {
-                let var_379 =
+                let var_387 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9645,11 +9751,11 @@ pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
                         ?
                     )
                 ;
-                builder = builder.set_reserved_cache_nodes_offering_id(var_379);
+                builder = builder.set_reserved_cache_nodes_offering_id(var_387);
             }
             ,
             s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#ReservedCacheNodesOffering$CacheNodeType */ =>  {
-                let var_380 =
+                let var_388 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9658,11 +9764,11 @@ pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_type(var_380);
+                builder = builder.set_cache_node_type(var_388);
             }
             ,
             s if s.matches("Duration") /* Duration com.amazonaws.elasticache#ReservedCacheNodesOffering$Duration */ =>  {
-                let var_381 =
+                let var_389 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9673,11 +9779,11 @@ pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
                         ?
                     )
                 ;
-                builder = builder.set_duration(var_381);
+                builder = builder.set_duration(var_389);
             }
             ,
             s if s.matches("FixedPrice") /* FixedPrice com.amazonaws.elasticache#ReservedCacheNodesOffering$FixedPrice */ =>  {
-                let var_382 =
+                let var_390 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9688,11 +9794,11 @@ pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
                         ?
                     )
                 ;
-                builder = builder.set_fixed_price(var_382);
+                builder = builder.set_fixed_price(var_390);
             }
             ,
             s if s.matches("UsagePrice") /* UsagePrice com.amazonaws.elasticache#ReservedCacheNodesOffering$UsagePrice */ =>  {
-                let var_383 =
+                let var_391 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9703,11 +9809,11 @@ pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
                         ?
                     )
                 ;
-                builder = builder.set_usage_price(var_383);
+                builder = builder.set_usage_price(var_391);
             }
             ,
             s if s.matches("ProductDescription") /* ProductDescription com.amazonaws.elasticache#ReservedCacheNodesOffering$ProductDescription */ =>  {
-                let var_384 =
+                let var_392 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9716,11 +9822,11 @@ pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
                         ?
                     )
                 ;
-                builder = builder.set_product_description(var_384);
+                builder = builder.set_product_description(var_392);
             }
             ,
             s if s.matches("OfferingType") /* OfferingType com.amazonaws.elasticache#ReservedCacheNodesOffering$OfferingType */ =>  {
-                let var_385 =
+                let var_393 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9729,17 +9835,17 @@ pub fn deser_structure_crate_model_reserved_cache_nodes_offering(
                         ?
                     )
                 ;
-                builder = builder.set_offering_type(var_385);
+                builder = builder.set_offering_type(var_393);
             }
             ,
             s if s.matches("RecurringCharges") /* RecurringCharges com.amazonaws.elasticache#ReservedCacheNodesOffering$RecurringCharges */ =>  {
-                let var_386 =
+                let var_394 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_recurring_charge_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_recurring_charges(var_386);
+                builder = builder.set_recurring_charges(var_394);
             }
             ,
             _ => {}
@@ -9756,116 +9862,6 @@ pub fn deser_structure_crate_model_service_update(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ServiceUpdateName") /* ServiceUpdateName com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateName */ =>  {
-                let var_387 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_name(var_387);
-            }
-            ,
-            s if s.matches("ServiceUpdateReleaseDate") /* ServiceUpdateReleaseDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateReleaseDate */ =>  {
-                let var_388 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_release_date(var_388);
-            }
-            ,
-            s if s.matches("ServiceUpdateEndDate") /* ServiceUpdateEndDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateEndDate */ =>  {
-                let var_389 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_end_date(var_389);
-            }
-            ,
-            s if s.matches("ServiceUpdateSeverity") /* ServiceUpdateSeverity com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateSeverity */ =>  {
-                let var_390 =
-                    Some(
-                        Result::<crate::model::ServiceUpdateSeverity, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ServiceUpdateSeverity::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_severity(var_390);
-            }
-            ,
-            s if s.matches("ServiceUpdateRecommendedApplyByDate") /* ServiceUpdateRecommendedApplyByDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateRecommendedApplyByDate */ =>  {
-                let var_391 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_recommended_apply_by_date(var_391);
-            }
-            ,
-            s if s.matches("ServiceUpdateStatus") /* ServiceUpdateStatus com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateStatus */ =>  {
-                let var_392 =
-                    Some(
-                        Result::<crate::model::ServiceUpdateStatus, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ServiceUpdateStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_status(var_392);
-            }
-            ,
-            s if s.matches("ServiceUpdateDescription") /* ServiceUpdateDescription com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateDescription */ =>  {
-                let var_393 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_description(var_393);
-            }
-            ,
-            s if s.matches("ServiceUpdateType") /* ServiceUpdateType com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateType */ =>  {
-                let var_394 =
-                    Some(
-                        Result::<crate::model::ServiceUpdateType, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ServiceUpdateType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_type(var_394);
-            }
-            ,
-            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#ServiceUpdate$Engine */ =>  {
                 let var_395 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -9875,11 +9871,81 @@ pub fn deser_structure_crate_model_service_update(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_395);
+                builder = builder.set_service_update_name(var_395);
             }
             ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#ServiceUpdate$EngineVersion */ =>  {
+            s if s.matches("ServiceUpdateReleaseDate") /* ServiceUpdateReleaseDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateReleaseDate */ =>  {
                 let var_396 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_release_date(var_396);
+            }
+            ,
+            s if s.matches("ServiceUpdateEndDate") /* ServiceUpdateEndDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateEndDate */ =>  {
+                let var_397 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_end_date(var_397);
+            }
+            ,
+            s if s.matches("ServiceUpdateSeverity") /* ServiceUpdateSeverity com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateSeverity */ =>  {
+                let var_398 =
+                    Some(
+                        Result::<crate::model::ServiceUpdateSeverity, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ServiceUpdateSeverity::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_severity(var_398);
+            }
+            ,
+            s if s.matches("ServiceUpdateRecommendedApplyByDate") /* ServiceUpdateRecommendedApplyByDate com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateRecommendedApplyByDate */ =>  {
+                let var_399 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_recommended_apply_by_date(var_399);
+            }
+            ,
+            s if s.matches("ServiceUpdateStatus") /* ServiceUpdateStatus com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateStatus */ =>  {
+                let var_400 =
+                    Some(
+                        Result::<crate::model::ServiceUpdateStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ServiceUpdateStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_status(var_400);
+            }
+            ,
+            s if s.matches("ServiceUpdateDescription") /* ServiceUpdateDescription com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateDescription */ =>  {
+                let var_401 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9888,11 +9954,51 @@ pub fn deser_structure_crate_model_service_update(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_396);
+                builder = builder.set_service_update_description(var_401);
+            }
+            ,
+            s if s.matches("ServiceUpdateType") /* ServiceUpdateType com.amazonaws.elasticache#ServiceUpdate$ServiceUpdateType */ =>  {
+                let var_402 =
+                    Some(
+                        Result::<crate::model::ServiceUpdateType, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ServiceUpdateType::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_type(var_402);
+            }
+            ,
+            s if s.matches("Engine") /* Engine com.amazonaws.elasticache#ServiceUpdate$Engine */ =>  {
+                let var_403 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine(var_403);
+            }
+            ,
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.elasticache#ServiceUpdate$EngineVersion */ =>  {
+                let var_404 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_version(var_404);
             }
             ,
             s if s.matches("AutoUpdateAfterRecommendedApplyByDate") /* AutoUpdateAfterRecommendedApplyByDate com.amazonaws.elasticache#ServiceUpdate$AutoUpdateAfterRecommendedApplyByDate */ =>  {
-                let var_397 =
+                let var_405 =
                     Some(
                          {
                             <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -9903,11 +10009,11 @@ pub fn deser_structure_crate_model_service_update(
                         ?
                     )
                 ;
-                builder = builder.set_auto_update_after_recommended_apply_by_date(var_397);
+                builder = builder.set_auto_update_after_recommended_apply_by_date(var_405);
             }
             ,
             s if s.matches("EstimatedUpdateTime") /* EstimatedUpdateTime com.amazonaws.elasticache#ServiceUpdate$EstimatedUpdateTime */ =>  {
-                let var_398 =
+                let var_406 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9916,7 +10022,7 @@ pub fn deser_structure_crate_model_service_update(
                         ?
                     )
                 ;
-                builder = builder.set_estimated_update_time(var_398);
+                builder = builder.set_estimated_update_time(var_406);
             }
             ,
             _ => {}
@@ -9933,7 +10039,7 @@ pub fn deser_structure_crate_model_update_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#UpdateAction$ReplicationGroupId */ =>  {
-                let var_399 =
+                let var_407 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9942,11 +10048,11 @@ pub fn deser_structure_crate_model_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_id(var_399);
+                builder = builder.set_replication_group_id(var_407);
             }
             ,
             s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#UpdateAction$CacheClusterId */ =>  {
-                let var_400 =
+                let var_408 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -9955,121 +10061,10 @@ pub fn deser_structure_crate_model_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster_id(var_400);
+                builder = builder.set_cache_cluster_id(var_408);
             }
             ,
             s if s.matches("ServiceUpdateName") /* ServiceUpdateName com.amazonaws.elasticache#UpdateAction$ServiceUpdateName */ =>  {
-                let var_401 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_name(var_401);
-            }
-            ,
-            s if s.matches("ServiceUpdateReleaseDate") /* ServiceUpdateReleaseDate com.amazonaws.elasticache#UpdateAction$ServiceUpdateReleaseDate */ =>  {
-                let var_402 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_release_date(var_402);
-            }
-            ,
-            s if s.matches("ServiceUpdateSeverity") /* ServiceUpdateSeverity com.amazonaws.elasticache#UpdateAction$ServiceUpdateSeverity */ =>  {
-                let var_403 =
-                    Some(
-                        Result::<crate::model::ServiceUpdateSeverity, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ServiceUpdateSeverity::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_severity(var_403);
-            }
-            ,
-            s if s.matches("ServiceUpdateStatus") /* ServiceUpdateStatus com.amazonaws.elasticache#UpdateAction$ServiceUpdateStatus */ =>  {
-                let var_404 =
-                    Some(
-                        Result::<crate::model::ServiceUpdateStatus, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ServiceUpdateStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_status(var_404);
-            }
-            ,
-            s if s.matches("ServiceUpdateRecommendedApplyByDate") /* ServiceUpdateRecommendedApplyByDate com.amazonaws.elasticache#UpdateAction$ServiceUpdateRecommendedApplyByDate */ =>  {
-                let var_405 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_recommended_apply_by_date(var_405);
-            }
-            ,
-            s if s.matches("ServiceUpdateType") /* ServiceUpdateType com.amazonaws.elasticache#UpdateAction$ServiceUpdateType */ =>  {
-                let var_406 =
-                    Some(
-                        Result::<crate::model::ServiceUpdateType, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::ServiceUpdateType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_service_update_type(var_406);
-            }
-            ,
-            s if s.matches("UpdateActionAvailableDate") /* UpdateActionAvailableDate com.amazonaws.elasticache#UpdateAction$UpdateActionAvailableDate */ =>  {
-                let var_407 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_update_action_available_date(var_407);
-            }
-            ,
-            s if s.matches("UpdateActionStatus") /* UpdateActionStatus com.amazonaws.elasticache#UpdateAction$UpdateActionStatus */ =>  {
-                let var_408 =
-                    Some(
-                        Result::<crate::model::UpdateActionStatus, aws_smithy_xml::decode::XmlError>::Ok(
-                            crate::model::UpdateActionStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_update_action_status(var_408);
-            }
-            ,
-            s if s.matches("NodesUpdated") /* NodesUpdated com.amazonaws.elasticache#UpdateAction$NodesUpdated */ =>  {
                 let var_409 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -10079,10 +10074,10 @@ pub fn deser_structure_crate_model_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_nodes_updated(var_409);
+                builder = builder.set_service_update_name(var_409);
             }
             ,
-            s if s.matches("UpdateActionStatusModifiedDate") /* UpdateActionStatusModifiedDate com.amazonaws.elasticache#UpdateAction$UpdateActionStatusModifiedDate */ =>  {
+            s if s.matches("ServiceUpdateReleaseDate") /* ServiceUpdateReleaseDate com.amazonaws.elasticache#UpdateAction$ServiceUpdateReleaseDate */ =>  {
                 let var_410 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
@@ -10093,11 +10088,122 @@ pub fn deser_structure_crate_model_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_update_action_status_modified_date(var_410);
+                builder = builder.set_service_update_release_date(var_410);
+            }
+            ,
+            s if s.matches("ServiceUpdateSeverity") /* ServiceUpdateSeverity com.amazonaws.elasticache#UpdateAction$ServiceUpdateSeverity */ =>  {
+                let var_411 =
+                    Some(
+                        Result::<crate::model::ServiceUpdateSeverity, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ServiceUpdateSeverity::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_severity(var_411);
+            }
+            ,
+            s if s.matches("ServiceUpdateStatus") /* ServiceUpdateStatus com.amazonaws.elasticache#UpdateAction$ServiceUpdateStatus */ =>  {
+                let var_412 =
+                    Some(
+                        Result::<crate::model::ServiceUpdateStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ServiceUpdateStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_status(var_412);
+            }
+            ,
+            s if s.matches("ServiceUpdateRecommendedApplyByDate") /* ServiceUpdateRecommendedApplyByDate com.amazonaws.elasticache#UpdateAction$ServiceUpdateRecommendedApplyByDate */ =>  {
+                let var_413 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_recommended_apply_by_date(var_413);
+            }
+            ,
+            s if s.matches("ServiceUpdateType") /* ServiceUpdateType com.amazonaws.elasticache#UpdateAction$ServiceUpdateType */ =>  {
+                let var_414 =
+                    Some(
+                        Result::<crate::model::ServiceUpdateType, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::ServiceUpdateType::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_service_update_type(var_414);
+            }
+            ,
+            s if s.matches("UpdateActionAvailableDate") /* UpdateActionAvailableDate com.amazonaws.elasticache#UpdateAction$UpdateActionAvailableDate */ =>  {
+                let var_415 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_update_action_available_date(var_415);
+            }
+            ,
+            s if s.matches("UpdateActionStatus") /* UpdateActionStatus com.amazonaws.elasticache#UpdateAction$UpdateActionStatus */ =>  {
+                let var_416 =
+                    Some(
+                        Result::<crate::model::UpdateActionStatus, aws_smithy_xml::decode::XmlError>::Ok(
+                            crate::model::UpdateActionStatus::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_update_action_status(var_416);
+            }
+            ,
+            s if s.matches("NodesUpdated") /* NodesUpdated com.amazonaws.elasticache#UpdateAction$NodesUpdated */ =>  {
+                let var_417 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_nodes_updated(var_417);
+            }
+            ,
+            s if s.matches("UpdateActionStatusModifiedDate") /* UpdateActionStatusModifiedDate com.amazonaws.elasticache#UpdateAction$UpdateActionStatusModifiedDate */ =>  {
+                let var_418 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_update_action_status_modified_date(var_418);
             }
             ,
             s if s.matches("SlaMet") /* SlaMet com.amazonaws.elasticache#UpdateAction$SlaMet */ =>  {
-                let var_411 =
+                let var_419 =
                     Some(
                         Result::<crate::model::SlaMet, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::SlaMet::from(
@@ -10107,31 +10213,31 @@ pub fn deser_structure_crate_model_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_sla_met(var_411);
+                builder = builder.set_sla_met(var_419);
             }
             ,
             s if s.matches("NodeGroupUpdateStatus") /* NodeGroupUpdateStatus com.amazonaws.elasticache#UpdateAction$NodeGroupUpdateStatus */ =>  {
-                let var_412 =
+                let var_420 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_update_status_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_node_group_update_status(var_412);
+                builder = builder.set_node_group_update_status(var_420);
             }
             ,
             s if s.matches("CacheNodeUpdateStatus") /* CacheNodeUpdateStatus com.amazonaws.elasticache#UpdateAction$CacheNodeUpdateStatus */ =>  {
-                let var_413 =
+                let var_421 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_cache_node_update_status_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_update_status(var_413);
+                builder = builder.set_cache_node_update_status(var_421);
             }
             ,
             s if s.matches("EstimatedUpdateTime") /* EstimatedUpdateTime com.amazonaws.elasticache#UpdateAction$EstimatedUpdateTime */ =>  {
-                let var_414 =
+                let var_422 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10140,11 +10246,11 @@ pub fn deser_structure_crate_model_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_estimated_update_time(var_414);
+                builder = builder.set_estimated_update_time(var_422);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.elasticache#UpdateAction$Engine */ =>  {
-                let var_415 =
+                let var_423 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10153,7 +10259,7 @@ pub fn deser_structure_crate_model_update_action(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_415);
+                builder = builder.set_engine(var_423);
             }
             ,
             _ => {}
@@ -10170,7 +10276,7 @@ pub fn deser_structure_crate_model_user_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UserGroupId") /* UserGroupId com.amazonaws.elasticache#UserGroup$UserGroupId */ =>  {
-                let var_416 =
+                let var_424 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10179,11 +10285,11 @@ pub fn deser_structure_crate_model_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_user_group_id(var_416);
+                builder = builder.set_user_group_id(var_424);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticache#UserGroup$Status */ =>  {
-                let var_417 =
+                let var_425 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10192,11 +10298,11 @@ pub fn deser_structure_crate_model_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_417);
+                builder = builder.set_status(var_425);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.elasticache#UserGroup$Engine */ =>  {
-                let var_418 =
+                let var_426 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10205,41 +10311,21 @@ pub fn deser_structure_crate_model_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_418);
+                builder = builder.set_engine(var_426);
             }
             ,
             s if s.matches("UserIds") /* UserIds com.amazonaws.elasticache#UserGroup$UserIds */ =>  {
-                let var_419 =
+                let var_427 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_ids(var_419);
+                builder = builder.set_user_ids(var_427);
             }
             ,
-            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache#UserGroup$PendingChanges */ =>  {
-                let var_420 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_pending_changes(var_420);
-            }
-            ,
-            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache#UserGroup$ReplicationGroups */ =>  {
-                let var_421 =
-                    Some(
-                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_replication_groups(var_421);
-            }
-            ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#UserGroup$ARN */ =>  {
-                let var_422 =
+            s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache#UserGroup$MinimumEngineVersion */ =>  {
+                let var_428 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10248,7 +10334,40 @@ pub fn deser_structure_crate_model_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_422);
+                builder = builder.set_minimum_engine_version(var_428);
+            }
+            ,
+            s if s.matches("PendingChanges") /* PendingChanges com.amazonaws.elasticache#UserGroup$PendingChanges */ =>  {
+                let var_429 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_user_group_pending_changes(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_pending_changes(var_429);
+            }
+            ,
+            s if s.matches("ReplicationGroups") /* ReplicationGroups com.amazonaws.elasticache#UserGroup$ReplicationGroups */ =>  {
+                let var_430 =
+                    Some(
+                        crate::xml_deser::deser_list_com_amazonaws_elasticache_ug_replication_group_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_replication_groups(var_430);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache#UserGroup$ARN */ =>  {
+                let var_431 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_arn(var_431);
             }
             ,
             _ => {}
@@ -10265,7 +10384,7 @@ pub fn deser_structure_crate_model_user(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UserId") /* UserId com.amazonaws.elasticache#User$UserId */ =>  {
-                let var_423 =
+                let var_432 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10274,11 +10393,11 @@ pub fn deser_structure_crate_model_user(
                         ?
                     )
                 ;
-                builder = builder.set_user_id(var_423);
+                builder = builder.set_user_id(var_432);
             }
             ,
             s if s.matches("UserName") /* UserName com.amazonaws.elasticache#User$UserName */ =>  {
-                let var_424 =
+                let var_433 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10287,11 +10406,11 @@ pub fn deser_structure_crate_model_user(
                         ?
                     )
                 ;
-                builder = builder.set_user_name(var_424);
+                builder = builder.set_user_name(var_433);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticache#User$Status */ =>  {
-                let var_425 =
+                let var_434 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10300,11 +10419,11 @@ pub fn deser_structure_crate_model_user(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_425);
+                builder = builder.set_status(var_434);
             }
             ,
             s if s.matches("Engine") /* Engine com.amazonaws.elasticache#User$Engine */ =>  {
-                let var_426 =
+                let var_435 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10313,11 +10432,24 @@ pub fn deser_structure_crate_model_user(
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_426);
+                builder = builder.set_engine(var_435);
+            }
+            ,
+            s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.elasticache#User$MinimumEngineVersion */ =>  {
+                let var_436 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum_engine_version(var_436);
             }
             ,
             s if s.matches("AccessString") /* AccessString com.amazonaws.elasticache#User$AccessString */ =>  {
-                let var_427 =
+                let var_437 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10326,31 +10458,31 @@ pub fn deser_structure_crate_model_user(
                         ?
                     )
                 ;
-                builder = builder.set_access_string(var_427);
+                builder = builder.set_access_string(var_437);
             }
             ,
             s if s.matches("UserGroupIds") /* UserGroupIds com.amazonaws.elasticache#User$UserGroupIds */ =>  {
-                let var_428 =
+                let var_438 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_group_ids(var_428);
+                builder = builder.set_user_group_ids(var_438);
             }
             ,
             s if s.matches("Authentication") /* Authentication com.amazonaws.elasticache#User$Authentication */ =>  {
-                let var_429 =
+                let var_439 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_authentication(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_authentication(var_429);
+                builder = builder.set_authentication(var_439);
             }
             ,
             s if s.matches("ARN") /* ARN com.amazonaws.elasticache#User$ARN */ =>  {
-                let var_430 =
+                let var_440 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10359,7 +10491,7 @@ pub fn deser_structure_crate_model_user(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_430);
+                builder = builder.set_arn(var_440);
             }
             ,
             _ => {}
@@ -10395,7 +10527,7 @@ pub fn deser_structure_crate_model_ec2_security_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Status") /* Status com.amazonaws.elasticache#EC2SecurityGroup$Status */ =>  {
-                let var_431 =
+                let var_441 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10404,11 +10536,11 @@ pub fn deser_structure_crate_model_ec2_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_431);
+                builder = builder.set_status(var_441);
             }
             ,
             s if s.matches("EC2SecurityGroupName") /* EC2SecurityGroupName com.amazonaws.elasticache#EC2SecurityGroup$EC2SecurityGroupName */ =>  {
-                let var_432 =
+                let var_442 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10417,11 +10549,11 @@ pub fn deser_structure_crate_model_ec2_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_ec2_security_group_name(var_432);
+                builder = builder.set_ec2_security_group_name(var_442);
             }
             ,
             s if s.matches("EC2SecurityGroupOwnerId") /* EC2SecurityGroupOwnerId com.amazonaws.elasticache#EC2SecurityGroup$EC2SecurityGroupOwnerId */ =>  {
-                let var_433 =
+                let var_443 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10430,7 +10562,7 @@ pub fn deser_structure_crate_model_ec2_security_group(
                         ?
                     )
                 ;
-                builder = builder.set_ec2_security_group_owner_id(var_433);
+                builder = builder.set_ec2_security_group_owner_id(var_443);
             }
             ,
             _ => {}
@@ -10447,13 +10579,13 @@ pub fn deser_structure_crate_model_resharding_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SlotMigration") /* SlotMigration com.amazonaws.elasticache#ReshardingStatus$SlotMigration */ =>  {
-                let var_434 =
+                let var_444 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_slot_migration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_slot_migration(var_434);
+                builder = builder.set_slot_migration(var_444);
             }
             ,
             _ => {}
@@ -10470,23 +10602,23 @@ pub fn deser_structure_crate_model_user_groups_update_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UserGroupIdsToAdd") /* UserGroupIdsToAdd com.amazonaws.elasticache#UserGroupsUpdateStatus$UserGroupIdsToAdd */ =>  {
-                let var_435 =
+                let var_445 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_group_ids_to_add(var_435);
+                builder = builder.set_user_group_ids_to_add(var_445);
             }
             ,
             s if s.matches("UserGroupIdsToRemove") /* UserGroupIdsToRemove com.amazonaws.elasticache#UserGroupsUpdateStatus$UserGroupIdsToRemove */ =>  {
-                let var_436 =
+                let var_446 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_user_group_id_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_user_group_ids_to_remove(var_436);
+                builder = builder.set_user_group_ids_to_remove(var_446);
             }
             ,
             _ => {}
@@ -10525,7 +10657,7 @@ pub fn deser_structure_crate_model_node_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NodeGroupId") /* NodeGroupId com.amazonaws.elasticache#NodeGroup$NodeGroupId */ =>  {
-                let var_437 =
+                let var_447 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10534,11 +10666,11 @@ pub fn deser_structure_crate_model_node_group(
                         ?
                     )
                 ;
-                builder = builder.set_node_group_id(var_437);
+                builder = builder.set_node_group_id(var_447);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticache#NodeGroup$Status */ =>  {
-                let var_438 =
+                let var_448 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10547,31 +10679,31 @@ pub fn deser_structure_crate_model_node_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_438);
+                builder = builder.set_status(var_448);
             }
             ,
             s if s.matches("PrimaryEndpoint") /* PrimaryEndpoint com.amazonaws.elasticache#NodeGroup$PrimaryEndpoint */ =>  {
-                let var_439 =
+                let var_449 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_primary_endpoint(var_439);
+                builder = builder.set_primary_endpoint(var_449);
             }
             ,
             s if s.matches("ReaderEndpoint") /* ReaderEndpoint com.amazonaws.elasticache#NodeGroup$ReaderEndpoint */ =>  {
-                let var_440 =
+                let var_450 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_reader_endpoint(var_440);
+                builder = builder.set_reader_endpoint(var_450);
             }
             ,
             s if s.matches("Slots") /* Slots com.amazonaws.elasticache#NodeGroup$Slots */ =>  {
-                let var_441 =
+                let var_451 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10580,17 +10712,17 @@ pub fn deser_structure_crate_model_node_group(
                         ?
                     )
                 ;
-                builder = builder.set_slots(var_441);
+                builder = builder.set_slots(var_451);
             }
             ,
             s if s.matches("NodeGroupMembers") /* NodeGroupMembers com.amazonaws.elasticache#NodeGroup$NodeGroupMembers */ =>  {
-                let var_442 =
+                let var_452 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_member_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_node_group_members(var_442);
+                builder = builder.set_node_group_members(var_452);
             }
             ,
             _ => {}
@@ -10607,7 +10739,7 @@ pub fn deser_structure_crate_model_log_delivery_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LogType") /* LogType com.amazonaws.elasticache#LogDeliveryConfiguration$LogType */ =>  {
-                let var_443 =
+                let var_453 =
                     Some(
                         Result::<crate::model::LogType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::LogType::from(
@@ -10617,11 +10749,11 @@ pub fn deser_structure_crate_model_log_delivery_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_log_type(var_443);
+                builder = builder.set_log_type(var_453);
             }
             ,
             s if s.matches("DestinationType") /* DestinationType com.amazonaws.elasticache#LogDeliveryConfiguration$DestinationType */ =>  {
-                let var_444 =
+                let var_454 =
                     Some(
                         Result::<crate::model::DestinationType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::DestinationType::from(
@@ -10631,21 +10763,21 @@ pub fn deser_structure_crate_model_log_delivery_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_destination_type(var_444);
+                builder = builder.set_destination_type(var_454);
             }
             ,
             s if s.matches("DestinationDetails") /* DestinationDetails com.amazonaws.elasticache#LogDeliveryConfiguration$DestinationDetails */ =>  {
-                let var_445 =
+                let var_455 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_destination_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_destination_details(var_445);
+                builder = builder.set_destination_details(var_455);
             }
             ,
             s if s.matches("LogFormat") /* LogFormat com.amazonaws.elasticache#LogDeliveryConfiguration$LogFormat */ =>  {
-                let var_446 =
+                let var_456 =
                     Some(
                         Result::<crate::model::LogFormat, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::LogFormat::from(
@@ -10655,11 +10787,11 @@ pub fn deser_structure_crate_model_log_delivery_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_log_format(var_446);
+                builder = builder.set_log_format(var_456);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticache#LogDeliveryConfiguration$Status */ =>  {
-                let var_447 =
+                let var_457 =
                     Some(
                         Result::<crate::model::LogDeliveryConfigurationStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::LogDeliveryConfigurationStatus::from(
@@ -10669,11 +10801,11 @@ pub fn deser_structure_crate_model_log_delivery_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_447);
+                builder = builder.set_status(var_457);
             }
             ,
             s if s.matches("Message") /* Message com.amazonaws.elasticache#LogDeliveryConfiguration$Message */ =>  {
-                let var_448 =
+                let var_458 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10682,7 +10814,7 @@ pub fn deser_structure_crate_model_log_delivery_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_448);
+                builder = builder.set_message(var_458);
             }
             ,
             _ => {}
@@ -10699,7 +10831,7 @@ pub fn deser_structure_crate_model_node_snapshot(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#NodeSnapshot$CacheClusterId */ =>  {
-                let var_449 =
+                let var_459 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10708,11 +10840,11 @@ pub fn deser_structure_crate_model_node_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster_id(var_449);
+                builder = builder.set_cache_cluster_id(var_459);
             }
             ,
             s if s.matches("NodeGroupId") /* NodeGroupId com.amazonaws.elasticache#NodeSnapshot$NodeGroupId */ =>  {
-                let var_450 =
+                let var_460 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10721,11 +10853,11 @@ pub fn deser_structure_crate_model_node_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_node_group_id(var_450);
+                builder = builder.set_node_group_id(var_460);
             }
             ,
             s if s.matches("CacheNodeId") /* CacheNodeId com.amazonaws.elasticache#NodeSnapshot$CacheNodeId */ =>  {
-                let var_451 =
+                let var_461 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10734,21 +10866,21 @@ pub fn deser_structure_crate_model_node_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_id(var_451);
+                builder = builder.set_cache_node_id(var_461);
             }
             ,
             s if s.matches("NodeGroupConfiguration") /* NodeGroupConfiguration com.amazonaws.elasticache#NodeSnapshot$NodeGroupConfiguration */ =>  {
-                let var_452 =
+                let var_462 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_node_group_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_node_group_configuration(var_452);
+                builder = builder.set_node_group_configuration(var_462);
             }
             ,
             s if s.matches("CacheSize") /* CacheSize com.amazonaws.elasticache#NodeSnapshot$CacheSize */ =>  {
-                let var_453 =
+                let var_463 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10757,11 +10889,11 @@ pub fn deser_structure_crate_model_node_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_cache_size(var_453);
+                builder = builder.set_cache_size(var_463);
             }
             ,
             s if s.matches("CacheNodeCreateTime") /* CacheNodeCreateTime com.amazonaws.elasticache#NodeSnapshot$CacheNodeCreateTime */ =>  {
-                let var_454 =
+                let var_464 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10771,11 +10903,11 @@ pub fn deser_structure_crate_model_node_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_create_time(var_454);
+                builder = builder.set_cache_node_create_time(var_464);
             }
             ,
             s if s.matches("SnapshotCreateTime") /* SnapshotCreateTime com.amazonaws.elasticache#NodeSnapshot$SnapshotCreateTime */ =>  {
-                let var_455 =
+                let var_465 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -10785,7 +10917,7 @@ pub fn deser_structure_crate_model_node_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_create_time(var_455);
+                builder = builder.set_snapshot_create_time(var_465);
             }
             ,
             _ => {}
@@ -10824,160 +10956,6 @@ pub fn deser_structure_crate_model_cache_security_group_membership(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheSecurityGroupName") /* CacheSecurityGroupName com.amazonaws.elasticache#CacheSecurityGroupMembership$CacheSecurityGroupName */ =>  {
-                let var_456 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_security_group_name(var_456);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#CacheSecurityGroupMembership$Status */ =>  {
-                let var_457 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_457);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn deser_structure_crate_model_cache_node(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::CacheNode, aws_smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::CacheNode::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("CacheNodeId") /* CacheNodeId com.amazonaws.elasticache#CacheNode$CacheNodeId */ =>  {
-                let var_458 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_node_id(var_458);
-            }
-            ,
-            s if s.matches("CacheNodeStatus") /* CacheNodeStatus com.amazonaws.elasticache#CacheNode$CacheNodeStatus */ =>  {
-                let var_459 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_node_status(var_459);
-            }
-            ,
-            s if s.matches("CacheNodeCreateTime") /* CacheNodeCreateTime com.amazonaws.elasticache#CacheNode$CacheNodeCreateTime */ =>  {
-                let var_460 =
-                    Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
-                        )
-                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_cache_node_create_time(var_460);
-            }
-            ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.elasticache#CacheNode$Endpoint */ =>  {
-                let var_461 =
-                    Some(
-                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_endpoint(var_461);
-            }
-            ,
-            s if s.matches("ParameterGroupStatus") /* ParameterGroupStatus com.amazonaws.elasticache#CacheNode$ParameterGroupStatus */ =>  {
-                let var_462 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_parameter_group_status(var_462);
-            }
-            ,
-            s if s.matches("SourceCacheNodeId") /* SourceCacheNodeId com.amazonaws.elasticache#CacheNode$SourceCacheNodeId */ =>  {
-                let var_463 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_source_cache_node_id(var_463);
-            }
-            ,
-            s if s.matches("CustomerAvailabilityZone") /* CustomerAvailabilityZone com.amazonaws.elasticache#CacheNode$CustomerAvailabilityZone */ =>  {
-                let var_464 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_customer_availability_zone(var_464);
-            }
-            ,
-            s if s.matches("CustomerOutpostArn") /* CustomerOutpostArn com.amazonaws.elasticache#CacheNode$CustomerOutpostArn */ =>  {
-                let var_465 =
-                    Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_customer_outpost_arn(var_465);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder.build())
-}
-
-pub fn deser_structure_crate_model_security_group_membership(
-    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SecurityGroupMembership, aws_smithy_xml::decode::XmlError> {
-    #[allow(unused_mut)]
-    let mut builder = crate::model::SecurityGroupMembership::builder();
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("SecurityGroupId") /* SecurityGroupId com.amazonaws.elasticache#SecurityGroupMembership$SecurityGroupId */ =>  {
                 let var_466 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -10987,10 +10965,10 @@ pub fn deser_structure_crate_model_security_group_membership(
                         ?
                     )
                 ;
-                builder = builder.set_security_group_id(var_466);
+                builder = builder.set_cache_security_group_name(var_466);
             }
             ,
-            s if s.matches("Status") /* Status com.amazonaws.elasticache#SecurityGroupMembership$Status */ =>  {
+            s if s.matches("Status") /* Status com.amazonaws.elasticache#CacheSecurityGroupMembership$Status */ =>  {
                 let var_467 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -11009,14 +10987,14 @@ pub fn deser_structure_crate_model_security_group_membership(
     Ok(builder.build())
 }
 
-pub fn deser_structure_crate_model_subnet(
+pub fn deser_structure_crate_model_cache_node(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Subnet, aws_smithy_xml::decode::XmlError> {
+) -> Result<crate::model::CacheNode, aws_smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Subnet::builder();
+    let mut builder = crate::model::CacheNode::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("SubnetIdentifier") /* SubnetIdentifier com.amazonaws.elasticache#Subnet$SubnetIdentifier */ =>  {
+            s if s.matches("CacheNodeId") /* CacheNodeId com.amazonaws.elasticache#CacheNode$CacheNodeId */ =>  {
                 let var_468 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
@@ -11026,27 +11004,181 @@ pub fn deser_structure_crate_model_subnet(
                         ?
                     )
                 ;
-                builder = builder.set_subnet_identifier(var_468);
+                builder = builder.set_cache_node_id(var_468);
+            }
+            ,
+            s if s.matches("CacheNodeStatus") /* CacheNodeStatus com.amazonaws.elasticache#CacheNode$CacheNodeStatus */ =>  {
+                let var_469 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_node_status(var_469);
+            }
+            ,
+            s if s.matches("CacheNodeCreateTime") /* CacheNodeCreateTime com.amazonaws.elasticache#CacheNode$CacheNodeCreateTime */ =>  {
+                let var_470 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTime
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.elasticache#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_cache_node_create_time(var_470);
+            }
+            ,
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.elasticache#CacheNode$Endpoint */ =>  {
+                let var_471 =
+                    Some(
+                        crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_471);
+            }
+            ,
+            s if s.matches("ParameterGroupStatus") /* ParameterGroupStatus com.amazonaws.elasticache#CacheNode$ParameterGroupStatus */ =>  {
+                let var_472 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_parameter_group_status(var_472);
+            }
+            ,
+            s if s.matches("SourceCacheNodeId") /* SourceCacheNodeId com.amazonaws.elasticache#CacheNode$SourceCacheNodeId */ =>  {
+                let var_473 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_source_cache_node_id(var_473);
+            }
+            ,
+            s if s.matches("CustomerAvailabilityZone") /* CustomerAvailabilityZone com.amazonaws.elasticache#CacheNode$CustomerAvailabilityZone */ =>  {
+                let var_474 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_customer_availability_zone(var_474);
+            }
+            ,
+            s if s.matches("CustomerOutpostArn") /* CustomerOutpostArn com.amazonaws.elasticache#CacheNode$CustomerOutpostArn */ =>  {
+                let var_475 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_customer_outpost_arn(var_475);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_crate_model_security_group_membership(
+    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::SecurityGroupMembership, aws_smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::SecurityGroupMembership::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("SecurityGroupId") /* SecurityGroupId com.amazonaws.elasticache#SecurityGroupMembership$SecurityGroupId */ =>  {
+                let var_476 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_security_group_id(var_476);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.elasticache#SecurityGroupMembership$Status */ =>  {
+                let var_477 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_477);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}
+
+pub fn deser_structure_crate_model_subnet(
+    decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
+) -> Result<crate::model::Subnet, aws_smithy_xml::decode::XmlError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::model::Subnet::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("SubnetIdentifier") /* SubnetIdentifier com.amazonaws.elasticache#Subnet$SubnetIdentifier */ =>  {
+                let var_478 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_subnet_identifier(var_478);
             }
             ,
             s if s.matches("SubnetAvailabilityZone") /* SubnetAvailabilityZone com.amazonaws.elasticache#Subnet$SubnetAvailabilityZone */ =>  {
-                let var_469 =
+                let var_479 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_availability_zone(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subnet_availability_zone(var_469);
+                builder = builder.set_subnet_availability_zone(var_479);
             }
             ,
             s if s.matches("SubnetOutpost") /* SubnetOutpost com.amazonaws.elasticache#Subnet$SubnetOutpost */ =>  {
-                let var_470 =
+                let var_480 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_subnet_outpost(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_subnet_outpost(var_470);
+                builder = builder.set_subnet_outpost(var_480);
             }
             ,
             _ => {}
@@ -11063,7 +11195,7 @@ pub fn deser_structure_crate_model_global_replication_group_member(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReplicationGroupId") /* ReplicationGroupId com.amazonaws.elasticache#GlobalReplicationGroupMember$ReplicationGroupId */ =>  {
-                let var_471 =
+                let var_481 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11072,11 +11204,11 @@ pub fn deser_structure_crate_model_global_replication_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_id(var_471);
+                builder = builder.set_replication_group_id(var_481);
             }
             ,
             s if s.matches("ReplicationGroupRegion") /* ReplicationGroupRegion com.amazonaws.elasticache#GlobalReplicationGroupMember$ReplicationGroupRegion */ =>  {
-                let var_472 =
+                let var_482 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11085,11 +11217,11 @@ pub fn deser_structure_crate_model_global_replication_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_replication_group_region(var_472);
+                builder = builder.set_replication_group_region(var_482);
             }
             ,
             s if s.matches("Role") /* Role com.amazonaws.elasticache#GlobalReplicationGroupMember$Role */ =>  {
-                let var_473 =
+                let var_483 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11098,11 +11230,11 @@ pub fn deser_structure_crate_model_global_replication_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_role(var_473);
+                builder = builder.set_role(var_483);
             }
             ,
             s if s.matches("AutomaticFailover") /* AutomaticFailover com.amazonaws.elasticache#GlobalReplicationGroupMember$AutomaticFailover */ =>  {
-                let var_474 =
+                let var_484 =
                     Some(
                         Result::<crate::model::AutomaticFailoverStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::AutomaticFailoverStatus::from(
@@ -11112,11 +11244,11 @@ pub fn deser_structure_crate_model_global_replication_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_automatic_failover(var_474);
+                builder = builder.set_automatic_failover(var_484);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticache#GlobalReplicationGroupMember$Status */ =>  {
-                let var_475 =
+                let var_485 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11125,7 +11257,7 @@ pub fn deser_structure_crate_model_global_replication_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_475);
+                builder = builder.set_status(var_485);
             }
             ,
             _ => {}
@@ -11142,7 +11274,7 @@ pub fn deser_structure_crate_model_global_node_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("GlobalNodeGroupId") /* GlobalNodeGroupId com.amazonaws.elasticache#GlobalNodeGroup$GlobalNodeGroupId */ =>  {
-                let var_476 =
+                let var_486 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11151,11 +11283,11 @@ pub fn deser_structure_crate_model_global_node_group(
                         ?
                     )
                 ;
-                builder = builder.set_global_node_group_id(var_476);
+                builder = builder.set_global_node_group_id(var_486);
             }
             ,
             s if s.matches("Slots") /* Slots com.amazonaws.elasticache#GlobalNodeGroup$Slots */ =>  {
-                let var_477 =
+                let var_487 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11164,7 +11296,7 @@ pub fn deser_structure_crate_model_global_node_group(
                         ?
                     )
                 ;
-                builder = builder.set_slots(var_477);
+                builder = builder.set_slots(var_487);
             }
             ,
             _ => {}
@@ -11239,7 +11371,7 @@ pub fn deser_structure_crate_model_recurring_charge(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RecurringChargeAmount") /* RecurringChargeAmount com.amazonaws.elasticache#RecurringCharge$RecurringChargeAmount */ =>  {
-                let var_478 =
+                let var_488 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -11250,11 +11382,11 @@ pub fn deser_structure_crate_model_recurring_charge(
                         ?
                     )
                 ;
-                builder = builder.set_recurring_charge_amount(var_478);
+                builder = builder.set_recurring_charge_amount(var_488);
             }
             ,
             s if s.matches("RecurringChargeFrequency") /* RecurringChargeFrequency com.amazonaws.elasticache#RecurringCharge$RecurringChargeFrequency */ =>  {
-                let var_479 =
+                let var_489 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11263,7 +11395,7 @@ pub fn deser_structure_crate_model_recurring_charge(
                         ?
                     )
                 ;
-                builder = builder.set_recurring_charge_frequency(var_479);
+                builder = builder.set_recurring_charge_frequency(var_489);
             }
             ,
             _ => {}
@@ -11280,7 +11412,7 @@ pub fn deser_structure_crate_model_slot_migration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ProgressPercentage") /* ProgressPercentage com.amazonaws.elasticache#SlotMigration$ProgressPercentage */ =>  {
-                let var_480 =
+                let var_490 =
                     Some(
                          {
                             <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -11291,7 +11423,7 @@ pub fn deser_structure_crate_model_slot_migration(
                         ?
                     )
                 ;
-                builder = builder.set_progress_percentage(var_480);
+                builder = builder.set_progress_percentage(var_490);
             }
             ,
             _ => {}
@@ -11308,7 +11440,7 @@ pub fn deser_structure_crate_model_pending_log_delivery_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LogType") /* LogType com.amazonaws.elasticache#PendingLogDeliveryConfiguration$LogType */ =>  {
-                let var_481 =
+                let var_491 =
                     Some(
                         Result::<crate::model::LogType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::LogType::from(
@@ -11318,11 +11450,11 @@ pub fn deser_structure_crate_model_pending_log_delivery_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_log_type(var_481);
+                builder = builder.set_log_type(var_491);
             }
             ,
             s if s.matches("DestinationType") /* DestinationType com.amazonaws.elasticache#PendingLogDeliveryConfiguration$DestinationType */ =>  {
-                let var_482 =
+                let var_492 =
                     Some(
                         Result::<crate::model::DestinationType, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::DestinationType::from(
@@ -11332,21 +11464,21 @@ pub fn deser_structure_crate_model_pending_log_delivery_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_destination_type(var_482);
+                builder = builder.set_destination_type(var_492);
             }
             ,
             s if s.matches("DestinationDetails") /* DestinationDetails com.amazonaws.elasticache#PendingLogDeliveryConfiguration$DestinationDetails */ =>  {
-                let var_483 =
+                let var_493 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_destination_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_destination_details(var_483);
+                builder = builder.set_destination_details(var_493);
             }
             ,
             s if s.matches("LogFormat") /* LogFormat com.amazonaws.elasticache#PendingLogDeliveryConfiguration$LogFormat */ =>  {
-                let var_484 =
+                let var_494 =
                     Some(
                         Result::<crate::model::LogFormat, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::LogFormat::from(
@@ -11356,7 +11488,7 @@ pub fn deser_structure_crate_model_pending_log_delivery_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_log_format(var_484);
+                builder = builder.set_log_format(var_494);
             }
             ,
             _ => {}
@@ -11392,23 +11524,23 @@ pub fn deser_structure_crate_model_destination_details(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CloudWatchLogsDetails") /* CloudWatchLogsDetails com.amazonaws.elasticache#DestinationDetails$CloudWatchLogsDetails */ =>  {
-                let var_485 =
+                let var_495 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_cloud_watch_logs_destination_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cloud_watch_logs_details(var_485);
+                builder = builder.set_cloud_watch_logs_details(var_495);
             }
             ,
             s if s.matches("KinesisFirehoseDetails") /* KinesisFirehoseDetails com.amazonaws.elasticache#DestinationDetails$KinesisFirehoseDetails */ =>  {
-                let var_486 =
+                let var_496 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_kinesis_firehose_destination_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_kinesis_firehose_details(var_486);
+                builder = builder.set_kinesis_firehose_details(var_496);
             }
             ,
             _ => {}
@@ -11425,7 +11557,7 @@ pub fn deser_structure_crate_model_node_group_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NodeGroupId") /* NodeGroupId com.amazonaws.elasticache#NodeGroupConfiguration$NodeGroupId */ =>  {
-                let var_487 =
+                let var_497 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11434,11 +11566,11 @@ pub fn deser_structure_crate_model_node_group_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_node_group_id(var_487);
+                builder = builder.set_node_group_id(var_497);
             }
             ,
             s if s.matches("Slots") /* Slots com.amazonaws.elasticache#NodeGroupConfiguration$Slots */ =>  {
-                let var_488 =
+                let var_498 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11447,11 +11579,11 @@ pub fn deser_structure_crate_model_node_group_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_slots(var_488);
+                builder = builder.set_slots(var_498);
             }
             ,
             s if s.matches("ReplicaCount") /* ReplicaCount com.amazonaws.elasticache#NodeGroupConfiguration$ReplicaCount */ =>  {
-                let var_489 =
+                let var_499 =
                     Some(
                          {
                             <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -11462,11 +11594,11 @@ pub fn deser_structure_crate_model_node_group_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_replica_count(var_489);
+                builder = builder.set_replica_count(var_499);
             }
             ,
             s if s.matches("PrimaryAvailabilityZone") /* PrimaryAvailabilityZone com.amazonaws.elasticache#NodeGroupConfiguration$PrimaryAvailabilityZone */ =>  {
-                let var_490 =
+                let var_500 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11475,21 +11607,21 @@ pub fn deser_structure_crate_model_node_group_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_primary_availability_zone(var_490);
+                builder = builder.set_primary_availability_zone(var_500);
             }
             ,
             s if s.matches("ReplicaAvailabilityZones") /* ReplicaAvailabilityZones com.amazonaws.elasticache#NodeGroupConfiguration$ReplicaAvailabilityZones */ =>  {
-                let var_491 =
+                let var_501 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_availability_zones_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replica_availability_zones(var_491);
+                builder = builder.set_replica_availability_zones(var_501);
             }
             ,
             s if s.matches("PrimaryOutpostArn") /* PrimaryOutpostArn com.amazonaws.elasticache#NodeGroupConfiguration$PrimaryOutpostArn */ =>  {
-                let var_492 =
+                let var_502 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11498,17 +11630,17 @@ pub fn deser_structure_crate_model_node_group_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_primary_outpost_arn(var_492);
+                builder = builder.set_primary_outpost_arn(var_502);
             }
             ,
             s if s.matches("ReplicaOutpostArns") /* ReplicaOutpostArns com.amazonaws.elasticache#NodeGroupConfiguration$ReplicaOutpostArns */ =>  {
-                let var_493 =
+                let var_503 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_outpost_arns_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_replica_outpost_arns(var_493);
+                builder = builder.set_replica_outpost_arns(var_503);
             }
             ,
             _ => {}
@@ -11525,7 +11657,7 @@ pub fn deser_structure_crate_model_availability_zone(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.elasticache#AvailabilityZone$Name */ =>  {
-                let var_494 =
+                let var_504 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11534,7 +11666,7 @@ pub fn deser_structure_crate_model_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_494);
+                builder = builder.set_name(var_504);
             }
             ,
             _ => {}
@@ -11551,7 +11683,7 @@ pub fn deser_structure_crate_model_subnet_outpost(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SubnetOutpostArn") /* SubnetOutpostArn com.amazonaws.elasticache#SubnetOutpost$SubnetOutpostArn */ =>  {
-                let var_495 =
+                let var_505 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11560,7 +11692,7 @@ pub fn deser_structure_crate_model_subnet_outpost(
                         ?
                     )
                 ;
-                builder = builder.set_subnet_outpost_arn(var_495);
+                builder = builder.set_subnet_outpost_arn(var_505);
             }
             ,
             _ => {}
@@ -11577,7 +11709,7 @@ pub fn deser_structure_crate_model_cache_node_type_specific_value(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheNodeType") /* CacheNodeType com.amazonaws.elasticache#CacheNodeTypeSpecificValue$CacheNodeType */ =>  {
-                let var_496 =
+                let var_506 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11586,11 +11718,11 @@ pub fn deser_structure_crate_model_cache_node_type_specific_value(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_type(var_496);
+                builder = builder.set_cache_node_type(var_506);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.elasticache#CacheNodeTypeSpecificValue$Value */ =>  {
-                let var_497 =
+                let var_507 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11599,7 +11731,7 @@ pub fn deser_structure_crate_model_cache_node_type_specific_value(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_497);
+                builder = builder.set_value(var_507);
             }
             ,
             _ => {}
@@ -11616,7 +11748,7 @@ pub fn deser_structure_crate_model_node_group_update_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("NodeGroupId") /* NodeGroupId com.amazonaws.elasticache#NodeGroupUpdateStatus$NodeGroupId */ =>  {
-                let var_498 =
+                let var_508 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11625,17 +11757,17 @@ pub fn deser_structure_crate_model_node_group_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_group_id(var_498);
+                builder = builder.set_node_group_id(var_508);
             }
             ,
             s if s.matches("NodeGroupMemberUpdateStatus") /* NodeGroupMemberUpdateStatus com.amazonaws.elasticache#NodeGroupUpdateStatus$NodeGroupMemberUpdateStatus */ =>  {
-                let var_499 =
+                let var_509 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_elasticache_node_group_member_update_status_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_node_group_member_update_status(var_499);
+                builder = builder.set_node_group_member_update_status(var_509);
             }
             ,
             _ => {}
@@ -11652,7 +11784,7 @@ pub fn deser_structure_crate_model_cache_node_update_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheNodeId") /* CacheNodeId com.amazonaws.elasticache#CacheNodeUpdateStatus$CacheNodeId */ =>  {
-                let var_500 =
+                let var_510 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11661,11 +11793,11 @@ pub fn deser_structure_crate_model_cache_node_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_id(var_500);
+                builder = builder.set_cache_node_id(var_510);
             }
             ,
             s if s.matches("NodeUpdateStatus") /* NodeUpdateStatus com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateStatus */ =>  {
-                let var_501 =
+                let var_511 =
                     Some(
                         Result::<crate::model::NodeUpdateStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::NodeUpdateStatus::from(
@@ -11675,11 +11807,11 @@ pub fn deser_structure_crate_model_cache_node_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_status(var_501);
+                builder = builder.set_node_update_status(var_511);
             }
             ,
             s if s.matches("NodeDeletionDate") /* NodeDeletionDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeDeletionDate */ =>  {
-                let var_502 =
+                let var_512 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11689,11 +11821,11 @@ pub fn deser_structure_crate_model_cache_node_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_deletion_date(var_502);
+                builder = builder.set_node_deletion_date(var_512);
             }
             ,
             s if s.matches("NodeUpdateStartDate") /* NodeUpdateStartDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateStartDate */ =>  {
-                let var_503 =
+                let var_513 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11703,11 +11835,11 @@ pub fn deser_structure_crate_model_cache_node_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_start_date(var_503);
+                builder = builder.set_node_update_start_date(var_513);
             }
             ,
             s if s.matches("NodeUpdateEndDate") /* NodeUpdateEndDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateEndDate */ =>  {
-                let var_504 =
+                let var_514 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11717,11 +11849,11 @@ pub fn deser_structure_crate_model_cache_node_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_end_date(var_504);
+                builder = builder.set_node_update_end_date(var_514);
             }
             ,
             s if s.matches("NodeUpdateInitiatedBy") /* NodeUpdateInitiatedBy com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateInitiatedBy */ =>  {
-                let var_505 =
+                let var_515 =
                     Some(
                         Result::<crate::model::NodeUpdateInitiatedBy, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::NodeUpdateInitiatedBy::from(
@@ -11731,11 +11863,11 @@ pub fn deser_structure_crate_model_cache_node_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_initiated_by(var_505);
+                builder = builder.set_node_update_initiated_by(var_515);
             }
             ,
             s if s.matches("NodeUpdateInitiatedDate") /* NodeUpdateInitiatedDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateInitiatedDate */ =>  {
-                let var_506 =
+                let var_516 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11745,11 +11877,11 @@ pub fn deser_structure_crate_model_cache_node_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_initiated_date(var_506);
+                builder = builder.set_node_update_initiated_date(var_516);
             }
             ,
             s if s.matches("NodeUpdateStatusModifiedDate") /* NodeUpdateStatusModifiedDate com.amazonaws.elasticache#CacheNodeUpdateStatus$NodeUpdateStatusModifiedDate */ =>  {
-                let var_507 =
+                let var_517 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11759,7 +11891,7 @@ pub fn deser_structure_crate_model_cache_node_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_status_modified_date(var_507);
+                builder = builder.set_node_update_status_modified_date(var_517);
             }
             ,
             _ => {}
@@ -11776,7 +11908,7 @@ pub fn deser_structure_crate_model_node_group_member(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#NodeGroupMember$CacheClusterId */ =>  {
-                let var_508 =
+                let var_518 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11785,11 +11917,11 @@ pub fn deser_structure_crate_model_node_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster_id(var_508);
+                builder = builder.set_cache_cluster_id(var_518);
             }
             ,
             s if s.matches("CacheNodeId") /* CacheNodeId com.amazonaws.elasticache#NodeGroupMember$CacheNodeId */ =>  {
-                let var_509 =
+                let var_519 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11798,21 +11930,21 @@ pub fn deser_structure_crate_model_node_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_id(var_509);
+                builder = builder.set_cache_node_id(var_519);
             }
             ,
             s if s.matches("ReadEndpoint") /* ReadEndpoint com.amazonaws.elasticache#NodeGroupMember$ReadEndpoint */ =>  {
-                let var_510 =
+                let var_520 =
                     Some(
                         crate::xml_deser::deser_structure_crate_model_endpoint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_read_endpoint(var_510);
+                builder = builder.set_read_endpoint(var_520);
             }
             ,
             s if s.matches("PreferredAvailabilityZone") /* PreferredAvailabilityZone com.amazonaws.elasticache#NodeGroupMember$PreferredAvailabilityZone */ =>  {
-                let var_511 =
+                let var_521 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11821,11 +11953,11 @@ pub fn deser_structure_crate_model_node_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_availability_zone(var_511);
+                builder = builder.set_preferred_availability_zone(var_521);
             }
             ,
             s if s.matches("PreferredOutpostArn") /* PreferredOutpostArn com.amazonaws.elasticache#NodeGroupMember$PreferredOutpostArn */ =>  {
-                let var_512 =
+                let var_522 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11834,11 +11966,11 @@ pub fn deser_structure_crate_model_node_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_outpost_arn(var_512);
+                builder = builder.set_preferred_outpost_arn(var_522);
             }
             ,
             s if s.matches("CurrentRole") /* CurrentRole com.amazonaws.elasticache#NodeGroupMember$CurrentRole */ =>  {
-                let var_513 =
+                let var_523 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11847,7 +11979,7 @@ pub fn deser_structure_crate_model_node_group_member(
                         ?
                     )
                 ;
-                builder = builder.set_current_role(var_513);
+                builder = builder.set_current_role(var_523);
             }
             ,
             _ => {}
@@ -11864,7 +11996,7 @@ pub fn deser_structure_crate_model_cloud_watch_logs_destination_details(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LogGroup") /* LogGroup com.amazonaws.elasticache#CloudWatchLogsDestinationDetails$LogGroup */ =>  {
-                let var_514 =
+                let var_524 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11873,7 +12005,7 @@ pub fn deser_structure_crate_model_cloud_watch_logs_destination_details(
                         ?
                     )
                 ;
-                builder = builder.set_log_group(var_514);
+                builder = builder.set_log_group(var_524);
             }
             ,
             _ => {}
@@ -11890,7 +12022,7 @@ pub fn deser_structure_crate_model_kinesis_firehose_destination_details(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DeliveryStream") /* DeliveryStream com.amazonaws.elasticache#KinesisFirehoseDestinationDetails$DeliveryStream */ =>  {
-                let var_515 =
+                let var_525 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11899,7 +12031,7 @@ pub fn deser_structure_crate_model_kinesis_firehose_destination_details(
                         ?
                     )
                 ;
-                builder = builder.set_delivery_stream(var_515);
+                builder = builder.set_delivery_stream(var_525);
             }
             ,
             _ => {}
@@ -11982,7 +12114,7 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CacheClusterId") /* CacheClusterId com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$CacheClusterId */ =>  {
-                let var_516 =
+                let var_526 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -11991,11 +12123,11 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_cache_cluster_id(var_516);
+                builder = builder.set_cache_cluster_id(var_526);
             }
             ,
             s if s.matches("CacheNodeId") /* CacheNodeId com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$CacheNodeId */ =>  {
-                let var_517 =
+                let var_527 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12004,11 +12136,11 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_cache_node_id(var_517);
+                builder = builder.set_cache_node_id(var_527);
             }
             ,
             s if s.matches("NodeUpdateStatus") /* NodeUpdateStatus com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateStatus */ =>  {
-                let var_518 =
+                let var_528 =
                     Some(
                         Result::<crate::model::NodeUpdateStatus, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::NodeUpdateStatus::from(
@@ -12018,11 +12150,11 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_status(var_518);
+                builder = builder.set_node_update_status(var_528);
             }
             ,
             s if s.matches("NodeDeletionDate") /* NodeDeletionDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeDeletionDate */ =>  {
-                let var_519 =
+                let var_529 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12032,11 +12164,11 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_deletion_date(var_519);
+                builder = builder.set_node_deletion_date(var_529);
             }
             ,
             s if s.matches("NodeUpdateStartDate") /* NodeUpdateStartDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateStartDate */ =>  {
-                let var_520 =
+                let var_530 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12046,11 +12178,11 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_start_date(var_520);
+                builder = builder.set_node_update_start_date(var_530);
             }
             ,
             s if s.matches("NodeUpdateEndDate") /* NodeUpdateEndDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateEndDate */ =>  {
-                let var_521 =
+                let var_531 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12060,11 +12192,11 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_end_date(var_521);
+                builder = builder.set_node_update_end_date(var_531);
             }
             ,
             s if s.matches("NodeUpdateInitiatedBy") /* NodeUpdateInitiatedBy com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateInitiatedBy */ =>  {
-                let var_522 =
+                let var_532 =
                     Some(
                         Result::<crate::model::NodeUpdateInitiatedBy, aws_smithy_xml::decode::XmlError>::Ok(
                             crate::model::NodeUpdateInitiatedBy::from(
@@ -12074,11 +12206,11 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_initiated_by(var_522);
+                builder = builder.set_node_update_initiated_by(var_532);
             }
             ,
             s if s.matches("NodeUpdateInitiatedDate") /* NodeUpdateInitiatedDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateInitiatedDate */ =>  {
-                let var_523 =
+                let var_533 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12088,11 +12220,11 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_initiated_date(var_523);
+                builder = builder.set_node_update_initiated_date(var_533);
             }
             ,
             s if s.matches("NodeUpdateStatusModifiedDate") /* NodeUpdateStatusModifiedDate com.amazonaws.elasticache#NodeGroupMemberUpdateStatus$NodeUpdateStatusModifiedDate */ =>  {
-                let var_524 =
+                let var_534 =
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -12102,7 +12234,7 @@ pub fn deser_structure_crate_model_node_group_member_update_status(
                         ?
                     )
                 ;
-                builder = builder.set_node_update_status_modified_date(var_524);
+                builder = builder.set_node_update_status_modified_date(var_534);
             }
             ,
             _ => {}

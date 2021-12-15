@@ -517,6 +517,8 @@ pub mod create_bucket_input {
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) create_bucket_configuration:
+            std::option::Option<crate::model::CreateBucketConfiguration>,
         pub(crate) grant_full_control: std::option::Option<std::string::String>,
         pub(crate) grant_read: std::option::Option<std::string::String>,
         pub(crate) grant_read_acp: std::option::Option<std::string::String>,
@@ -524,8 +526,6 @@ pub mod create_bucket_input {
         pub(crate) grant_write_acp: std::option::Option<std::string::String>,
         pub(crate) object_lock_enabled_for_bucket: std::option::Option<bool>,
         pub(crate) outpost_id: std::option::Option<std::string::String>,
-        pub(crate) create_bucket_configuration:
-            std::option::Option<crate::model::CreateBucketConfiguration>,
     }
     impl Builder {
         /// <p>The canned ACL to apply to the bucket.</p>
@@ -555,6 +555,28 @@ pub mod create_bucket_input {
         /// <p>The name of the bucket.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
+            self
+        }
+        /// <p>The configuration information for the bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
+        pub fn create_bucket_configuration(
+            mut self,
+            input: crate::model::CreateBucketConfiguration,
+        ) -> Self {
+            self.create_bucket_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration information for the bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
+        pub fn set_create_bucket_configuration(
+            mut self,
+            input: std::option::Option<crate::model::CreateBucketConfiguration>,
+        ) -> Self {
+            self.create_bucket_configuration = input;
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
@@ -681,28 +703,6 @@ pub mod create_bucket_input {
             self.outpost_id = input;
             self
         }
-        /// <p>The configuration information for the bucket.</p>
-        /// <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
-        /// </note>
-        pub fn create_bucket_configuration(
-            mut self,
-            input: crate::model::CreateBucketConfiguration,
-        ) -> Self {
-            self.create_bucket_configuration = Some(input);
-            self
-        }
-        /// <p>The configuration information for the bucket.</p>
-        /// <note>
-        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
-        /// </note>
-        pub fn set_create_bucket_configuration(
-            mut self,
-            input: std::option::Option<crate::model::CreateBucketConfiguration>,
-        ) -> Self {
-            self.create_bucket_configuration = input;
-            self
-        }
         /// Consumes the builder and constructs a [`CreateBucketInput`](crate::input::CreateBucketInput)
         pub fn build(
             self,
@@ -713,6 +713,7 @@ pub mod create_bucket_input {
             Ok(crate::input::CreateBucketInput {
                 acl: self.acl,
                 bucket: self.bucket,
+                create_bucket_configuration: self.create_bucket_configuration,
                 grant_full_control: self.grant_full_control,
                 grant_read: self.grant_read,
                 grant_read_acp: self.grant_read_acp,
@@ -722,7 +723,6 @@ pub mod create_bucket_input {
                     .object_lock_enabled_for_bucket
                     .unwrap_or_default(),
                 outpost_id: self.outpost_id,
-                create_bucket_configuration: self.create_bucket_configuration,
             })
         }
     }
@@ -11671,23 +11671,11 @@ pub mod put_public_access_block_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) public_access_block_configuration:
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-        /// to set.</p>
-        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.account_id = Some(input.into());
-            self
-        }
-        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-        /// to set.</p>
-        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
-        }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
         pub fn public_access_block_configuration(
             mut self,
@@ -11704,6 +11692,18 @@ pub mod put_public_access_block_input {
             self.public_access_block_configuration = input;
             self
         }
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+        /// to set.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+        /// to set.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput)
         pub fn build(
             self,
@@ -11712,8 +11712,8 @@ pub mod put_public_access_block_input {
             aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutPublicAccessBlockInput {
-                account_id: self.account_id,
                 public_access_block_configuration: self.public_access_block_configuration,
+                account_id: self.account_id,
             })
         }
     }
@@ -13033,34 +13033,34 @@ impl std::fmt::Debug for PutStorageLensConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPublicAccessBlockInput {
-    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
-    /// to set.</p>
-    pub account_id: std::option::Option<std::string::String>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-}
-impl PutPublicAccessBlockInput {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
     /// to set.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
-        self.account_id.as_deref()
-    }
+    pub account_id: std::option::Option<std::string::String>,
+}
+impl PutPublicAccessBlockInput {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
     pub fn public_access_block_configuration(
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+    /// to set.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl std::fmt::Debug for PutPublicAccessBlockInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutPublicAccessBlockInput");
-        formatter.field("account_id", &self.account_id);
         formatter.field(
             "public_access_block_configuration",
             &self.public_access_block_configuration,
         );
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -14758,6 +14758,11 @@ pub struct CreateBucketInput {
     pub acl: std::option::Option<crate::model::BucketCannedAcl>,
     /// <p>The name of the bucket.</p>
     pub bucket: std::option::Option<std::string::String>,
+    /// <p>The configuration information for the bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub create_bucket_configuration: std::option::Option<crate::model::CreateBucketConfiguration>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     /// <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
@@ -14793,11 +14798,6 @@ pub struct CreateBucketInput {
     /// <p>This is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub outpost_id: std::option::Option<std::string::String>,
-    /// <p>The configuration information for the bucket.</p>
-    /// <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
-    /// </note>
-    pub create_bucket_configuration: std::option::Option<crate::model::CreateBucketConfiguration>,
 }
 impl CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p>
@@ -14810,6 +14810,15 @@ impl CreateBucketInput {
     /// <p>The name of the bucket.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
+    }
+    /// <p>The configuration information for the bucket.</p>
+    /// <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn create_bucket_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::CreateBucketConfiguration> {
+        self.create_bucket_configuration.as_ref()
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     /// <note>
@@ -14860,21 +14869,16 @@ impl CreateBucketInput {
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
-    /// <p>The configuration information for the bucket.</p>
-    /// <note>
-    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
-    /// </note>
-    pub fn create_bucket_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::CreateBucketConfiguration> {
-        self.create_bucket_configuration.as_ref()
-    }
 }
 impl std::fmt::Debug for CreateBucketInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBucketInput");
         formatter.field("acl", &self.acl);
         formatter.field("bucket", &self.bucket);
+        formatter.field(
+            "create_bucket_configuration",
+            &self.create_bucket_configuration,
+        );
         formatter.field("grant_full_control", &self.grant_full_control);
         formatter.field("grant_read", &self.grant_read);
         formatter.field("grant_read_acp", &self.grant_read_acp);
@@ -14885,10 +14889,6 @@ impl std::fmt::Debug for CreateBucketInput {
             &self.object_lock_enabled_for_bucket,
         );
         formatter.field("outpost_id", &self.outpost_id);
-        formatter.field(
-            "create_bucket_configuration",
-            &self.create_bucket_configuration,
-        );
         formatter.finish()
     }
 }

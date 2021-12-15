@@ -3,10 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use route53::{Client, Region};
-
 use aws_config::meta::region::RegionProviderChain;
-
+use aws_sdk_route53::{Client, Region};
 use structopt::StructOpt;
 use tracing_subscriber::fmt::format::FmtSpan;
 use tracing_subscriber::fmt::SubscriberBuilder;
@@ -30,7 +28,7 @@ struct Opt {
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
-async fn main() -> Result<(), route53::Error> {
+async fn main() -> Result<(), aws_sdk_route53::Error> {
     let Opt {
         default_region,
         verbose,
@@ -43,7 +41,7 @@ async fn main() -> Result<(), route53::Error> {
     let client = Client::new(&shared_config);
 
     if verbose {
-        println!("Route53 client version: {}\n", route53::PKG_VERSION);
+        println!("Route53 client version: {}\n", aws_sdk_route53::PKG_VERSION);
         println!(
             "Region:                 {:?}",
             shared_config.region().unwrap()

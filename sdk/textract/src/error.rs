@@ -43,7 +43,7 @@ pub enum AnalyzeDocumentErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -246,7 +246,7 @@ pub enum AnalyzeExpenseErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -393,6 +393,181 @@ impl std::error::Error for AnalyzeExpenseError {
     }
 }
 
+/// Error type for the `AnalyzeID` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AnalyzeIDError {
+    /// Kind of error that occurred.
+    pub kind: AnalyzeIDErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AnalyzeID` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AnalyzeIDErrorKind {
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
+    /// of an authorized user or IAM role to perform the operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document
+    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    BadDocumentException(crate::error::BadDocumentException),
+    /// <p>The document can't be processed because it's too large. The maximum document size for
+    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
+    /// MB for PDF files.</p>
+    DocumentTooLargeException(crate::error::DocumentTooLargeException),
+    /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
+    /// an <code>InvalidParameterException</code> exception occurs
+    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
+    /// request parameter.
+    /// Validate your parameter before calling the API operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
+    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
+    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+    /// </p>
+    InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
+    /// contact Amazon Textract.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
+    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AnalyzeIDError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AnalyzeIDErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::BadDocumentException(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::DocumentTooLargeException(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::UnsupportedDocumentException(_inner) => _inner.fmt(f),
+            AnalyzeIDErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AnalyzeIDError {
+    fn code(&self) -> Option<&str> {
+        AnalyzeIDError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AnalyzeIDError {
+    /// Creates a new `AnalyzeIDError`.
+    pub fn new(kind: AnalyzeIDErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AnalyzeIDError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AnalyzeIDErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AnalyzeIDError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AnalyzeIDErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, AnalyzeIDErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::BadDocumentException`.
+    pub fn is_bad_document_exception(&self) -> bool {
+        matches!(&self.kind, AnalyzeIDErrorKind::BadDocumentException(_))
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::DocumentTooLargeException`.
+    pub fn is_document_too_large_exception(&self) -> bool {
+        matches!(&self.kind, AnalyzeIDErrorKind::DocumentTooLargeException(_))
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, AnalyzeIDErrorKind::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(&self.kind, AnalyzeIDErrorKind::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::InvalidS3ObjectException`.
+    pub fn is_invalid_s3_object_exception(&self) -> bool {
+        matches!(&self.kind, AnalyzeIDErrorKind::InvalidS3ObjectException(_))
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, AnalyzeIDErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `AnalyzeIDErrorKind::UnsupportedDocumentException`.
+    pub fn is_unsupported_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AnalyzeIDErrorKind::UnsupportedDocumentException(_)
+        )
+    }
+}
+impl std::error::Error for AnalyzeIDError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AnalyzeIDErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::BadDocumentException(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::DocumentTooLargeException(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::InternalServerError(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::ThrottlingException(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::UnsupportedDocumentException(_inner) => Some(_inner),
+            AnalyzeIDErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DetectDocumentText` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -435,7 +610,7 @@ pub enum DetectDocumentTextErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1209,7 +1384,7 @@ pub enum StartDocumentAnalysisErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1453,7 +1628,7 @@ pub enum StartDocumentTextDetectionErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1701,7 +1876,7 @@ pub enum StartExpenseAnalysisErrorKind {
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1891,7 +2066,7 @@ impl std::error::Error for StartExpenseAnalysisError {
 }
 
 /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-/// PNG or JPEG format. Documents for asynchronous operations can also be in PDF format.</p>
+/// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedDocumentException {

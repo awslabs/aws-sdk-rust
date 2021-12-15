@@ -170,6 +170,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSourceServer {
     }
 }
 
+/// Operation shape for `DeleteVcenterClient`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_vcenter_client`](crate::client::Client::delete_vcenter_client).
+///
+/// See [`crate::client::fluent_builders::DeleteVcenterClient`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteVcenterClient {
+    _private: (),
+}
+impl DeleteVcenterClient {
+    /// Creates a new builder-style object to manufacture [`DeleteVcenterClientInput`](crate::input::DeleteVcenterClientInput)
+    pub fn builder() -> crate::input::delete_vcenter_client_input::Builder {
+        crate::input::delete_vcenter_client_input::Builder::default()
+    }
+    /// Creates a new `DeleteVcenterClient` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteVcenterClient {
+    type Output = std::result::Result<
+        crate::output::DeleteVcenterClientOutput,
+        crate::error::DeleteVcenterClientError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_vcenter_client_error(response)
+        } else {
+            crate::operation_deser::parse_delete_vcenter_client_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeJobLogItems`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -304,6 +338,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSourceServers {
             crate::operation_deser::parse_describe_source_servers_error(response)
         } else {
             crate::operation_deser::parse_describe_source_servers_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeVcenterClients`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_vcenter_clients`](crate::client::Client::describe_vcenter_clients).
+///
+/// See [`crate::client::fluent_builders::DescribeVcenterClients`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeVcenterClients {
+    _private: (),
+}
+impl DescribeVcenterClients {
+    /// Creates a new builder-style object to manufacture [`DescribeVcenterClientsInput`](crate::input::DescribeVcenterClientsInput)
+    pub fn builder() -> crate::input::describe_vcenter_clients_input::Builder {
+        crate::input::describe_vcenter_clients_input::Builder::default()
+    }
+    /// Creates a new `DescribeVcenterClients` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeVcenterClients {
+    type Output = std::result::Result<
+        crate::output::DescribeVcenterClientsOutput,
+        crate::error::DescribeVcenterClientsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_vcenter_clients_error(response)
+        } else {
+            crate::operation_deser::parse_describe_vcenter_clients_response(response)
         }
     }
 }
@@ -610,6 +678,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCutover {
     }
 }
 
+/// Operation shape for `StartReplication`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_replication`](crate::client::Client::start_replication).
+///
+/// See [`crate::client::fluent_builders::StartReplication`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartReplication {
+    _private: (),
+}
+impl StartReplication {
+    /// Creates a new builder-style object to manufacture [`StartReplicationInput`](crate::input::StartReplicationInput)
+    pub fn builder() -> crate::input::start_replication_input::Builder {
+        crate::input::start_replication_input::Builder::default()
+    }
+    /// Creates a new `StartReplication` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartReplication {
+    type Output = std::result::Result<
+        crate::output::StartReplicationOutput,
+        crate::error::StartReplicationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_replication_error(response)
+        } else {
+            crate::operation_deser::parse_start_replication_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartTest`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -839,6 +941,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReplicationConfigu
             crate::operation_deser::parse_update_replication_configuration_template_response(
                 response,
             )
+        }
+    }
+}
+
+/// Operation shape for `UpdateSourceServerReplicationType`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_source_server_replication_type`](crate::client::Client::update_source_server_replication_type).
+///
+/// See [`crate::client::fluent_builders::UpdateSourceServerReplicationType`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateSourceServerReplicationType {
+    _private: (),
+}
+impl UpdateSourceServerReplicationType {
+    /// Creates a new builder-style object to manufacture [`UpdateSourceServerReplicationTypeInput`](crate::input::UpdateSourceServerReplicationTypeInput)
+    pub fn builder() -> crate::input::update_source_server_replication_type_input::Builder {
+        crate::input::update_source_server_replication_type_input::Builder::default()
+    }
+    /// Creates a new `UpdateSourceServerReplicationType` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateSourceServerReplicationType {
+    type Output = std::result::Result<
+        crate::output::UpdateSourceServerReplicationTypeOutput,
+        crate::error::UpdateSourceServerReplicationTypeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_source_server_replication_type_error(response)
+        } else {
+            crate::operation_deser::parse_update_source_server_replication_type_response(response)
         }
     }
 }

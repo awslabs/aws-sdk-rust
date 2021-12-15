@@ -2,6 +2,63 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRecommenderOutput {
+    /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
+    pub recommender_arn: std::option::Option<std::string::String>,
+}
+impl UpdateRecommenderOutput {
+    /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+        self.recommender_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateRecommenderOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRecommenderOutput");
+        formatter.field("recommender_arn", &self.recommender_arn);
+        formatter.finish()
+    }
+}
+/// See [`UpdateRecommenderOutput`](crate::output::UpdateRecommenderOutput)
+pub mod update_recommender_output {
+    /// A builder for [`UpdateRecommenderOutput`](crate::output::UpdateRecommenderOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommender_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
+        pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommender_arn = Some(input.into());
+            self
+        }
+        /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommender_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRecommenderOutput`](crate::output::UpdateRecommenderOutput)
+        pub fn build(self) -> crate::output::UpdateRecommenderOutput {
+            crate::output::UpdateRecommenderOutput {
+                recommender_arn: self.recommender_arn,
+            }
+        }
+    }
+}
+impl UpdateRecommenderOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRecommenderOutput`](crate::output::UpdateRecommenderOutput)
+    pub fn builder() -> crate::output::update_recommender_output::Builder {
+        crate::output::update_recommender_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCampaignOutput {
     /// <p>The same campaign ARN as given in the request.</p>
     pub campaign_arn: std::option::Option<std::string::String>,
@@ -332,6 +389,89 @@ impl ListSchemasOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemasOutput`](crate::output::ListSchemasOutput)
     pub fn builder() -> crate::output::list_schemas_output::Builder {
         crate::output::list_schemas_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRecommendersOutput {
+    /// <p>A list of the recommenders.</p>
+    pub recommenders: std::option::Option<std::vec::Vec<crate::model::RecommenderSummary>>,
+    /// <p>A token for getting the next set of recommenders (if they exist).</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListRecommendersOutput {
+    /// <p>A list of the recommenders.</p>
+    pub fn recommenders(&self) -> std::option::Option<&[crate::model::RecommenderSummary]> {
+        self.recommenders.as_deref()
+    }
+    /// <p>A token for getting the next set of recommenders (if they exist).</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListRecommendersOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRecommendersOutput");
+        formatter.field("recommenders", &self.recommenders);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListRecommendersOutput`](crate::output::ListRecommendersOutput)
+pub mod list_recommenders_output {
+    /// A builder for [`ListRecommendersOutput`](crate::output::ListRecommendersOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommenders:
+            std::option::Option<std::vec::Vec<crate::model::RecommenderSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `recommenders`.
+        ///
+        /// To override the contents of this collection use [`set_recommenders`](Self::set_recommenders).
+        ///
+        /// <p>A list of the recommenders.</p>
+        pub fn recommenders(mut self, input: impl Into<crate::model::RecommenderSummary>) -> Self {
+            let mut v = self.recommenders.unwrap_or_default();
+            v.push(input.into());
+            self.recommenders = Some(v);
+            self
+        }
+        /// <p>A list of the recommenders.</p>
+        pub fn set_recommenders(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RecommenderSummary>>,
+        ) -> Self {
+            self.recommenders = input;
+            self
+        }
+        /// <p>A token for getting the next set of recommenders (if they exist).</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token for getting the next set of recommenders (if they exist).</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRecommendersOutput`](crate::output::ListRecommendersOutput)
+        pub fn build(self) -> crate::output::ListRecommendersOutput {
+            crate::output::ListRecommendersOutput {
+                recommenders: self.recommenders,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListRecommendersOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecommendersOutput`](crate::output::ListRecommendersOutput)
+    pub fn builder() -> crate::output::list_recommenders_output::Builder {
+        crate::output::list_recommenders_output::Builder::default()
     }
 }
 
@@ -1020,6 +1160,99 @@ impl ListCampaignsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListBatchSegmentJobsOutput {
+    /// <p>A list containing information on each job that is returned.</p>
+    pub batch_segment_jobs:
+        std::option::Option<std::vec::Vec<crate::model::BatchSegmentJobSummary>>,
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBatchSegmentJobsOutput {
+    /// <p>A list containing information on each job that is returned.</p>
+    pub fn batch_segment_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::BatchSegmentJobSummary]> {
+        self.batch_segment_jobs.as_deref()
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
+    /// there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListBatchSegmentJobsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListBatchSegmentJobsOutput");
+        formatter.field("batch_segment_jobs", &self.batch_segment_jobs);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListBatchSegmentJobsOutput`](crate::output::ListBatchSegmentJobsOutput)
+pub mod list_batch_segment_jobs_output {
+    /// A builder for [`ListBatchSegmentJobsOutput`](crate::output::ListBatchSegmentJobsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) batch_segment_jobs:
+            std::option::Option<std::vec::Vec<crate::model::BatchSegmentJobSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `batch_segment_jobs`.
+        ///
+        /// To override the contents of this collection use [`set_batch_segment_jobs`](Self::set_batch_segment_jobs).
+        ///
+        /// <p>A list containing information on each job that is returned.</p>
+        pub fn batch_segment_jobs(
+            mut self,
+            input: impl Into<crate::model::BatchSegmentJobSummary>,
+        ) -> Self {
+            let mut v = self.batch_segment_jobs.unwrap_or_default();
+            v.push(input.into());
+            self.batch_segment_jobs = Some(v);
+            self
+        }
+        /// <p>A list containing information on each job that is returned.</p>
+        pub fn set_batch_segment_jobs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchSegmentJobSummary>>,
+        ) -> Self {
+            self.batch_segment_jobs = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
+        /// there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when
+        /// there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListBatchSegmentJobsOutput`](crate::output::ListBatchSegmentJobsOutput)
+        pub fn build(self) -> crate::output::ListBatchSegmentJobsOutput {
+            crate::output::ListBatchSegmentJobsOutput {
+                batch_segment_jobs: self.batch_segment_jobs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListBatchSegmentJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListBatchSegmentJobsOutput`](crate::output::ListBatchSegmentJobsOutput)
+    pub fn builder() -> crate::output::list_batch_segment_jobs_output::Builder {
+        crate::output::list_batch_segment_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchInferenceJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
     pub batch_inference_jobs:
@@ -1363,6 +1596,63 @@ impl DescribeSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSchemaOutput`](crate::output::DescribeSchemaOutput)
     pub fn builder() -> crate::output::describe_schema_output::Builder {
         crate::output::describe_schema_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRecommenderOutput {
+    /// <p>The properties of the recommender.</p>
+    pub recommender: std::option::Option<crate::model::Recommender>,
+}
+impl DescribeRecommenderOutput {
+    /// <p>The properties of the recommender.</p>
+    pub fn recommender(&self) -> std::option::Option<&crate::model::Recommender> {
+        self.recommender.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeRecommenderOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeRecommenderOutput");
+        formatter.field("recommender", &self.recommender);
+        formatter.finish()
+    }
+}
+/// See [`DescribeRecommenderOutput`](crate::output::DescribeRecommenderOutput)
+pub mod describe_recommender_output {
+    /// A builder for [`DescribeRecommenderOutput`](crate::output::DescribeRecommenderOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommender: std::option::Option<crate::model::Recommender>,
+    }
+    impl Builder {
+        /// <p>The properties of the recommender.</p>
+        pub fn recommender(mut self, input: crate::model::Recommender) -> Self {
+            self.recommender = Some(input);
+            self
+        }
+        /// <p>The properties of the recommender.</p>
+        pub fn set_recommender(
+            mut self,
+            input: std::option::Option<crate::model::Recommender>,
+        ) -> Self {
+            self.recommender = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeRecommenderOutput`](crate::output::DescribeRecommenderOutput)
+        pub fn build(self) -> crate::output::DescribeRecommenderOutput {
+            crate::output::DescribeRecommenderOutput {
+                recommender: self.recommender,
+            }
+        }
+    }
+}
+impl DescribeRecommenderOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRecommenderOutput`](crate::output::DescribeRecommenderOutput)
+    pub fn builder() -> crate::output::describe_recommender_output::Builder {
+        crate::output::describe_recommender_output::Builder::default()
     }
 }
 
@@ -1995,6 +2285,63 @@ impl DescribeCampaignOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeBatchSegmentJobOutput {
+    /// <p>Information on the specified batch segment job.</p>
+    pub batch_segment_job: std::option::Option<crate::model::BatchSegmentJob>,
+}
+impl DescribeBatchSegmentJobOutput {
+    /// <p>Information on the specified batch segment job.</p>
+    pub fn batch_segment_job(&self) -> std::option::Option<&crate::model::BatchSegmentJob> {
+        self.batch_segment_job.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeBatchSegmentJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeBatchSegmentJobOutput");
+        formatter.field("batch_segment_job", &self.batch_segment_job);
+        formatter.finish()
+    }
+}
+/// See [`DescribeBatchSegmentJobOutput`](crate::output::DescribeBatchSegmentJobOutput)
+pub mod describe_batch_segment_job_output {
+    /// A builder for [`DescribeBatchSegmentJobOutput`](crate::output::DescribeBatchSegmentJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) batch_segment_job: std::option::Option<crate::model::BatchSegmentJob>,
+    }
+    impl Builder {
+        /// <p>Information on the specified batch segment job.</p>
+        pub fn batch_segment_job(mut self, input: crate::model::BatchSegmentJob) -> Self {
+            self.batch_segment_job = Some(input);
+            self
+        }
+        /// <p>Information on the specified batch segment job.</p>
+        pub fn set_batch_segment_job(
+            mut self,
+            input: std::option::Option<crate::model::BatchSegmentJob>,
+        ) -> Self {
+            self.batch_segment_job = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeBatchSegmentJobOutput`](crate::output::DescribeBatchSegmentJobOutput)
+        pub fn build(self) -> crate::output::DescribeBatchSegmentJobOutput {
+            crate::output::DescribeBatchSegmentJobOutput {
+                batch_segment_job: self.batch_segment_job,
+            }
+        }
+    }
+}
+impl DescribeBatchSegmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBatchSegmentJobOutput`](crate::output::DescribeBatchSegmentJobOutput)
+    pub fn builder() -> crate::output::describe_batch_segment_job_output::Builder {
+        crate::output::describe_batch_segment_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBatchInferenceJobOutput {
     /// <p>Information on the specified batch inference job.</p>
     pub batch_inference_job: std::option::Option<crate::model::BatchInferenceJob>,
@@ -2163,6 +2510,36 @@ impl DeleteSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput)
     pub fn builder() -> crate::output::delete_schema_output::Builder {
         crate::output::delete_schema_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRecommenderOutput {}
+impl std::fmt::Debug for DeleteRecommenderOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteRecommenderOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteRecommenderOutput`](crate::output::DeleteRecommenderOutput)
+pub mod delete_recommender_output {
+    /// A builder for [`DeleteRecommenderOutput`](crate::output::DeleteRecommenderOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteRecommenderOutput`](crate::output::DeleteRecommenderOutput)
+        pub fn build(self) -> crate::output::DeleteRecommenderOutput {
+            crate::output::DeleteRecommenderOutput {}
+        }
+    }
+}
+impl DeleteRecommenderOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRecommenderOutput`](crate::output::DeleteRecommenderOutput)
+    pub fn builder() -> crate::output::delete_recommender_output::Builder {
+        crate::output::delete_recommender_output::Builder::default()
     }
 }
 
@@ -2484,6 +2861,63 @@ impl CreateSchemaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateRecommenderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
+    pub recommender_arn: std::option::Option<std::string::String>,
+}
+impl CreateRecommenderOutput {
+    /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+        self.recommender_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateRecommenderOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateRecommenderOutput");
+        formatter.field("recommender_arn", &self.recommender_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateRecommenderOutput`](crate::output::CreateRecommenderOutput)
+pub mod create_recommender_output {
+    /// A builder for [`CreateRecommenderOutput`](crate::output::CreateRecommenderOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recommender_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
+        pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommender_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommender_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateRecommenderOutput`](crate::output::CreateRecommenderOutput)
+        pub fn build(self) -> crate::output::CreateRecommenderOutput {
+            crate::output::CreateRecommenderOutput {
+                recommender_arn: self.recommender_arn,
+            }
+        }
+    }
+}
+impl CreateRecommenderOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRecommenderOutput`](crate::output::CreateRecommenderOutput)
+    pub fn builder() -> crate::output::create_recommender_output::Builder {
+        crate::output::create_recommender_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterOutput {
     /// <p>The ARN of the new filter.</p>
     pub filter_arn: std::option::Option<std::string::String>,
@@ -2678,17 +3112,24 @@ impl CreateDatasetImportJobOutput {
 pub struct CreateDatasetGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
+    /// <p>The domain for the new Domain dataset group.</p>
+    pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateDatasetGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
+    /// <p>The domain for the new Domain dataset group.</p>
+    pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
+        self.domain.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDatasetGroupOutput");
         formatter.field("dataset_group_arn", &self.dataset_group_arn);
+        formatter.field("domain", &self.domain);
         formatter.finish()
     }
 }
@@ -2699,6 +3140,7 @@ pub mod create_dataset_group_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
+        pub(crate) domain: std::option::Option<crate::model::Domain>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
@@ -2714,10 +3156,21 @@ pub mod create_dataset_group_output {
             self.dataset_group_arn = input;
             self
         }
+        /// <p>The domain for the new Domain dataset group.</p>
+        pub fn domain(mut self, input: crate::model::Domain) -> Self {
+            self.domain = Some(input);
+            self
+        }
+        /// <p>The domain for the new Domain dataset group.</p>
+        pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
+            self.domain = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDatasetGroupOutput`](crate::output::CreateDatasetGroupOutput)
         pub fn build(self) -> crate::output::CreateDatasetGroupOutput {
             crate::output::CreateDatasetGroupOutput {
                 dataset_group_arn: self.dataset_group_arn,
+                domain: self.domain,
             }
         }
     }
@@ -2891,6 +3344,63 @@ impl CreateCampaignOutput {
     /// Creates a new builder-style object to manufacture [`CreateCampaignOutput`](crate::output::CreateCampaignOutput)
     pub fn builder() -> crate::output::create_campaign_output::Builder {
         crate::output::create_campaign_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBatchSegmentJobOutput {
+    /// <p>The ARN of the batch segment job.</p>
+    pub batch_segment_job_arn: std::option::Option<std::string::String>,
+}
+impl CreateBatchSegmentJobOutput {
+    /// <p>The ARN of the batch segment job.</p>
+    pub fn batch_segment_job_arn(&self) -> std::option::Option<&str> {
+        self.batch_segment_job_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateBatchSegmentJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBatchSegmentJobOutput");
+        formatter.field("batch_segment_job_arn", &self.batch_segment_job_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateBatchSegmentJobOutput`](crate::output::CreateBatchSegmentJobOutput)
+pub mod create_batch_segment_job_output {
+    /// A builder for [`CreateBatchSegmentJobOutput`](crate::output::CreateBatchSegmentJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) batch_segment_job_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the batch segment job.</p>
+        pub fn batch_segment_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.batch_segment_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the batch segment job.</p>
+        pub fn set_batch_segment_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.batch_segment_job_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBatchSegmentJobOutput`](crate::output::CreateBatchSegmentJobOutput)
+        pub fn build(self) -> crate::output::CreateBatchSegmentJobOutput {
+            crate::output::CreateBatchSegmentJobOutput {
+                batch_segment_job_arn: self.batch_segment_job_arn,
+            }
+        }
+    }
+}
+impl CreateBatchSegmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBatchSegmentJobOutput`](crate::output::CreateBatchSegmentJobOutput)
+    pub fn builder() -> crate::output::create_batch_segment_job_output::Builder {
+        crate::output::create_batch_segment_job_output::Builder::default()
     }
 }
 

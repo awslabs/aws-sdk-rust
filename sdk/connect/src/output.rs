@@ -723,6 +723,96 @@ impl UpdateContactFlowNameOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateContactFlowModuleMetadataOutput {}
+impl std::fmt::Debug for UpdateContactFlowModuleMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateContactFlowModuleMetadataOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateContactFlowModuleMetadataOutput`](crate::output::UpdateContactFlowModuleMetadataOutput)
+pub mod update_contact_flow_module_metadata_output {
+    /// A builder for [`UpdateContactFlowModuleMetadataOutput`](crate::output::UpdateContactFlowModuleMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateContactFlowModuleMetadataOutput`](crate::output::UpdateContactFlowModuleMetadataOutput)
+        pub fn build(self) -> crate::output::UpdateContactFlowModuleMetadataOutput {
+            crate::output::UpdateContactFlowModuleMetadataOutput {}
+        }
+    }
+}
+impl UpdateContactFlowModuleMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContactFlowModuleMetadataOutput`](crate::output::UpdateContactFlowModuleMetadataOutput)
+    pub fn builder() -> crate::output::update_contact_flow_module_metadata_output::Builder {
+        crate::output::update_contact_flow_module_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateContactFlowModuleContentOutput {}
+impl std::fmt::Debug for UpdateContactFlowModuleContentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateContactFlowModuleContentOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateContactFlowModuleContentOutput`](crate::output::UpdateContactFlowModuleContentOutput)
+pub mod update_contact_flow_module_content_output {
+    /// A builder for [`UpdateContactFlowModuleContentOutput`](crate::output::UpdateContactFlowModuleContentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateContactFlowModuleContentOutput`](crate::output::UpdateContactFlowModuleContentOutput)
+        pub fn build(self) -> crate::output::UpdateContactFlowModuleContentOutput {
+            crate::output::UpdateContactFlowModuleContentOutput {}
+        }
+    }
+}
+impl UpdateContactFlowModuleContentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContactFlowModuleContentOutput`](crate::output::UpdateContactFlowModuleContentOutput)
+    pub fn builder() -> crate::output::update_contact_flow_module_content_output::Builder {
+        crate::output::update_contact_flow_module_content_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateContactFlowMetadataOutput {}
+impl std::fmt::Debug for UpdateContactFlowMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateContactFlowMetadataOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
+pub mod update_contact_flow_metadata_output {
+    /// A builder for [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
+        pub fn build(self) -> crate::output::UpdateContactFlowMetadataOutput {
+            crate::output::UpdateContactFlowMetadataOutput {}
+        }
+    }
+}
+impl UpdateContactFlowMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
+    pub fn builder() -> crate::output::update_contact_flow_metadata_output::Builder {
+        crate::output::update_contact_flow_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowContentOutput {}
 impl std::fmt::Debug for UpdateContactFlowContentOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3358,6 +3448,98 @@ impl ListContactFlowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListContactFlowModulesOutput {
+    /// <p>Information about the contact flow module.</p>
+    pub contact_flow_modules_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::ContactFlowModuleSummary>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListContactFlowModulesOutput {
+    /// <p>Information about the contact flow module.</p>
+    pub fn contact_flow_modules_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::ContactFlowModuleSummary]> {
+        self.contact_flow_modules_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListContactFlowModulesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListContactFlowModulesOutput");
+        formatter.field(
+            "contact_flow_modules_summary_list",
+            &self.contact_flow_modules_summary_list,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListContactFlowModulesOutput`](crate::output::ListContactFlowModulesOutput)
+pub mod list_contact_flow_modules_output {
+    /// A builder for [`ListContactFlowModulesOutput`](crate::output::ListContactFlowModulesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) contact_flow_modules_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::ContactFlowModuleSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `contact_flow_modules_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_contact_flow_modules_summary_list`](Self::set_contact_flow_modules_summary_list).
+        ///
+        /// <p>Information about the contact flow module.</p>
+        pub fn contact_flow_modules_summary_list(
+            mut self,
+            input: impl Into<crate::model::ContactFlowModuleSummary>,
+        ) -> Self {
+            let mut v = self.contact_flow_modules_summary_list.unwrap_or_default();
+            v.push(input.into());
+            self.contact_flow_modules_summary_list = Some(v);
+            self
+        }
+        /// <p>Information about the contact flow module.</p>
+        pub fn set_contact_flow_modules_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ContactFlowModuleSummary>>,
+        ) -> Self {
+            self.contact_flow_modules_summary_list = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListContactFlowModulesOutput`](crate::output::ListContactFlowModulesOutput)
+        pub fn build(self) -> crate::output::ListContactFlowModulesOutput {
+            crate::output::ListContactFlowModulesOutput {
+                contact_flow_modules_summary_list: self.contact_flow_modules_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListContactFlowModulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListContactFlowModulesOutput`](crate::output::ListContactFlowModulesOutput)
+    pub fn builder() -> crate::output::list_contact_flow_modules_output::Builder {
+        crate::output::list_contact_flow_modules_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsOutput {
     /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
     /// instance.</p>
@@ -4823,6 +5005,63 @@ impl DescribeHoursOfOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeContactFlowModuleOutput {
+    /// <p>Information about the contact flow module.</p>
+    pub contact_flow_module: std::option::Option<crate::model::ContactFlowModule>,
+}
+impl DescribeContactFlowModuleOutput {
+    /// <p>Information about the contact flow module.</p>
+    pub fn contact_flow_module(&self) -> std::option::Option<&crate::model::ContactFlowModule> {
+        self.contact_flow_module.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeContactFlowModuleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeContactFlowModuleOutput");
+        formatter.field("contact_flow_module", &self.contact_flow_module);
+        formatter.finish()
+    }
+}
+/// See [`DescribeContactFlowModuleOutput`](crate::output::DescribeContactFlowModuleOutput)
+pub mod describe_contact_flow_module_output {
+    /// A builder for [`DescribeContactFlowModuleOutput`](crate::output::DescribeContactFlowModuleOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) contact_flow_module: std::option::Option<crate::model::ContactFlowModule>,
+    }
+    impl Builder {
+        /// <p>Information about the contact flow module.</p>
+        pub fn contact_flow_module(mut self, input: crate::model::ContactFlowModule) -> Self {
+            self.contact_flow_module = Some(input);
+            self
+        }
+        /// <p>Information about the contact flow module.</p>
+        pub fn set_contact_flow_module(
+            mut self,
+            input: std::option::Option<crate::model::ContactFlowModule>,
+        ) -> Self {
+            self.contact_flow_module = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeContactFlowModuleOutput`](crate::output::DescribeContactFlowModuleOutput)
+        pub fn build(self) -> crate::output::DescribeContactFlowModuleOutput {
+            crate::output::DescribeContactFlowModuleOutput {
+                contact_flow_module: self.contact_flow_module,
+            }
+        }
+    }
+}
+impl DescribeContactFlowModuleOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeContactFlowModuleOutput`](crate::output::DescribeContactFlowModuleOutput)
+    pub fn builder() -> crate::output::describe_contact_flow_module_output::Builder {
+        crate::output::describe_contact_flow_module_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContactFlowOutput {
     /// <p>Information about the contact flow.</p>
     pub contact_flow: std::option::Option<crate::model::ContactFlow>,
@@ -5231,6 +5470,66 @@ impl DeleteHoursOfOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteContactFlowModuleOutput {}
+impl std::fmt::Debug for DeleteContactFlowModuleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteContactFlowModuleOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteContactFlowModuleOutput`](crate::output::DeleteContactFlowModuleOutput)
+pub mod delete_contact_flow_module_output {
+    /// A builder for [`DeleteContactFlowModuleOutput`](crate::output::DeleteContactFlowModuleOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteContactFlowModuleOutput`](crate::output::DeleteContactFlowModuleOutput)
+        pub fn build(self) -> crate::output::DeleteContactFlowModuleOutput {
+            crate::output::DeleteContactFlowModuleOutput {}
+        }
+    }
+}
+impl DeleteContactFlowModuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContactFlowModuleOutput`](crate::output::DeleteContactFlowModuleOutput)
+    pub fn builder() -> crate::output::delete_contact_flow_module_output::Builder {
+        crate::output::delete_contact_flow_module_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteContactFlowOutput {}
+impl std::fmt::Debug for DeleteContactFlowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteContactFlowOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
+pub mod delete_contact_flow_output {
+    /// A builder for [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
+        pub fn build(self) -> crate::output::DeleteContactFlowOutput {
+            crate::output::DeleteContactFlowOutput {}
+        }
+    }
+}
+impl DeleteContactFlowOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
+    pub fn builder() -> crate::output::delete_contact_flow_output::Builder {
+        crate::output::delete_contact_flow_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserHierarchyGroupOutput {
     /// <p>The identifier of the hierarchy group.</p>
     pub hierarchy_group_id: std::option::Option<std::string::String>,
@@ -5617,7 +5916,8 @@ impl CreateRoutingProfileOutput {
 pub struct CreateQuickConnectOutput {
     /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub quick_connect_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier for the quick connect. </p>
+    /// <p>The identifier for the quick connect.
+    /// </p>
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
 impl CreateQuickConnectOutput {
@@ -5625,7 +5925,8 @@ impl CreateQuickConnectOutput {
     pub fn quick_connect_arn(&self) -> std::option::Option<&str> {
         self.quick_connect_arn.as_deref()
     }
-    /// <p>The identifier for the quick connect. </p>
+    /// <p>The identifier for the quick connect.
+    /// </p>
     pub fn quick_connect_id(&self) -> std::option::Option<&str> {
         self.quick_connect_id.as_deref()
     }
@@ -5661,12 +5962,14 @@ pub mod create_quick_connect_output {
             self.quick_connect_arn = input;
             self
         }
-        /// <p>The identifier for the quick connect. </p>
+        /// <p>The identifier for the quick connect.
+        /// </p>
         pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.quick_connect_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the quick connect. </p>
+        /// <p>The identifier for the quick connect.
+        /// </p>
         pub fn set_quick_connect_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6000,6 +6303,79 @@ impl CreateHoursOfOperationOutput {
     /// Creates a new builder-style object to manufacture [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput)
     pub fn builder() -> crate::output::create_hours_of_operation_output::Builder {
         crate::output::create_hours_of_operation_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateContactFlowModuleOutput {
+    /// <p>The identifier of the contact flow module.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    pub arn: std::option::Option<std::string::String>,
+}
+impl CreateContactFlowModuleOutput {
+    /// <p>The identifier of the contact flow module.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateContactFlowModuleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateContactFlowModuleOutput");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput)
+pub mod create_contact_flow_module_output {
+    /// A builder for [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the contact flow module.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput)
+        pub fn build(self) -> crate::output::CreateContactFlowModuleOutput {
+            crate::output::CreateContactFlowModuleOutput {
+                id: self.id,
+                arn: self.arn,
+            }
+        }
+    }
+}
+impl CreateContactFlowModuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput)
+    pub fn builder() -> crate::output::create_contact_flow_module_output::Builder {
+        crate::output::create_contact_flow_module_output::Builder::default()
     }
 }
 

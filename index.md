@@ -1,6 +1,5 @@
 # AWS SDK for Rust
-The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-config](https://crates.io/crates/aws-config) ([docs](https://docs.rs/aws-config)),
-a crate implementing configuration loading such as credential providers.
+The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-config](https://crates.io/crates/aws-config) ([docs](https://docs.rs/aws-config)), a crate implementing configuration loading such as credential providers. For usage documentation see the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html).
 ## AWS Services
 
 | Service | Package |
@@ -9,12 +8,14 @@ a crate implementing configuration loading such as credential providers.
 | AWS Amplify | [aws-sdk-amplify](https://crates.io/crates/aws-sdk-amplify) ([docs](https://docs.rs/aws-sdk-amplify)) |
 | AWS App Mesh | [aws-sdk-appmesh](https://crates.io/crates/aws-sdk-appmesh) ([docs](https://docs.rs/aws-sdk-appmesh)) |
 | AWS App Runner | [aws-sdk-apprunner](https://crates.io/crates/aws-sdk-apprunner) ([docs](https://docs.rs/aws-sdk-apprunner)) |
+| AWS AppConfig Data | [aws-sdk-appconfigdata](https://crates.io/crates/aws-sdk-appconfigdata) ([docs](https://docs.rs/aws-sdk-appconfigdata)) |
 | AWS AppSync | [aws-sdk-appsync](https://crates.io/crates/aws-sdk-appsync) ([docs](https://docs.rs/aws-sdk-appsync)) |
 | AWS Application Cost Profiler | [aws-sdk-applicationcostprofiler](https://crates.io/crates/aws-sdk-applicationcostprofiler) ([docs](https://docs.rs/aws-sdk-applicationcostprofiler)) |
 | AWS Application Discovery Service | [aws-sdk-applicationdiscovery](https://crates.io/crates/aws-sdk-applicationdiscovery) ([docs](https://docs.rs/aws-sdk-applicationdiscovery)) |
 | AWS Audit Manager | [aws-sdk-auditmanager](https://crates.io/crates/aws-sdk-auditmanager) ([docs](https://docs.rs/aws-sdk-auditmanager)) |
 | AWS Auto Scaling Plans | [aws-sdk-autoscalingplans](https://crates.io/crates/aws-sdk-autoscalingplans) ([docs](https://docs.rs/aws-sdk-autoscalingplans)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/autoscalingplans)) |
 | AWS Backup | [aws-sdk-backup](https://crates.io/crates/aws-sdk-backup) ([docs](https://docs.rs/aws-sdk-backup)) |
+| AWS Backup Gateway | [aws-sdk-backupgateway](https://crates.io/crates/aws-sdk-backupgateway) ([docs](https://docs.rs/aws-sdk-backupgateway)) |
 | AWS Batch | [aws-sdk-batch](https://crates.io/crates/aws-sdk-batch) ([docs](https://docs.rs/aws-sdk-batch)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/batch)) |
 | AWS Budgets | [aws-sdk-budgets](https://crates.io/crates/aws-sdk-budgets) ([docs](https://docs.rs/aws-sdk-budgets)) |
 | AWS Certificate Manager | [aws-sdk-acm](https://crates.io/crates/aws-sdk-acm) ([docs](https://docs.rs/aws-sdk-acm)) |
@@ -74,6 +75,7 @@ a crate implementing configuration loading such as credential providers.
 | AWS IoT Secure Tunneling | [aws-sdk-iotsecuretunneling](https://crates.io/crates/aws-sdk-iotsecuretunneling) ([docs](https://docs.rs/aws-sdk-iotsecuretunneling)) |
 | AWS IoT SiteWise | [aws-sdk-iotsitewise](https://crates.io/crates/aws-sdk-iotsitewise) ([docs](https://docs.rs/aws-sdk-iotsitewise)) |
 | AWS IoT Things Graph | [aws-sdk-iotthingsgraph](https://crates.io/crates/aws-sdk-iotthingsgraph) ([docs](https://docs.rs/aws-sdk-iotthingsgraph)) |
+| AWS IoT TwinMaker | [aws-sdk-iottwinmaker](https://crates.io/crates/aws-sdk-iottwinmaker) ([docs](https://docs.rs/aws-sdk-iottwinmaker)) |
 | AWS IoT Wireless | [aws-sdk-iotwireless](https://crates.io/crates/aws-sdk-iotwireless) ([docs](https://docs.rs/aws-sdk-iotwireless)) |
 | AWS Key Management Service | [aws-sdk-kms](https://crates.io/crates/aws-sdk-kms) ([docs](https://docs.rs/aws-sdk-kms)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/kms)) |
 | AWS Lake Formation | [aws-sdk-lakeformation](https://crates.io/crates/aws-sdk-lakeformation) ([docs](https://docs.rs/aws-sdk-lakeformation)) |
@@ -86,6 +88,7 @@ a crate implementing configuration loading such as credential providers.
 | AWS MediaTailor | [aws-sdk-mediatailor](https://crates.io/crates/aws-sdk-mediatailor) ([docs](https://docs.rs/aws-sdk-mediatailor)) |
 | AWS Migration Hub | [aws-sdk-migrationhub](https://crates.io/crates/aws-sdk-migrationhub) ([docs](https://docs.rs/aws-sdk-migrationhub)) |
 | AWS Migration Hub Config | [aws-sdk-migrationhubconfig](https://crates.io/crates/aws-sdk-migrationhubconfig) ([docs](https://docs.rs/aws-sdk-migrationhubconfig)) |
+| AWS Migration Hub Refactor Spaces | [aws-sdk-migrationhubrefactorspaces](https://crates.io/crates/aws-sdk-migrationhubrefactorspaces) ([docs](https://docs.rs/aws-sdk-migrationhubrefactorspaces)) |
 | AWS Mobile | [aws-sdk-mobile](https://crates.io/crates/aws-sdk-mobile) ([docs](https://docs.rs/aws-sdk-mobile)) |
 | AWS Network Firewall | [aws-sdk-networkfirewall](https://crates.io/crates/aws-sdk-networkfirewall) ([docs](https://docs.rs/aws-sdk-networkfirewall)) |
 | AWS Network Manager | [aws-sdk-networkmanager](https://crates.io/crates/aws-sdk-networkmanager) ([docs](https://docs.rs/aws-sdk-networkmanager)) |
@@ -98,6 +101,7 @@ a crate implementing configuration loading such as credential providers.
 | AWS Price List Service | [aws-sdk-pricing](https://crates.io/crates/aws-sdk-pricing) ([docs](https://docs.rs/aws-sdk-pricing)) |
 | AWS Proton | [aws-sdk-proton](https://crates.io/crates/aws-sdk-proton) ([docs](https://docs.rs/aws-sdk-proton)) |
 | AWS RDS DataService | [aws-sdk-rdsdata](https://crates.io/crates/aws-sdk-rdsdata) ([docs](https://docs.rs/aws-sdk-rdsdata)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/rdsdata)) |
+| AWS Resilience Hub | [aws-sdk-resiliencehub](https://crates.io/crates/aws-sdk-resiliencehub) ([docs](https://docs.rs/aws-sdk-resiliencehub)) |
 | AWS Resource Access Manager | [aws-sdk-ram](https://crates.io/crates/aws-sdk-ram) ([docs](https://docs.rs/aws-sdk-ram)) |
 | AWS Resource Groups | [aws-sdk-resourcegroups](https://crates.io/crates/aws-sdk-resourcegroups) ([docs](https://docs.rs/aws-sdk-resourcegroups)) |
 | AWS Resource Groups Tagging API | [aws-sdk-resourcegroupstagging](https://crates.io/crates/aws-sdk-resourcegroupstagging) ([docs](https://docs.rs/aws-sdk-resourcegroupstagging)) |
@@ -144,6 +148,7 @@ a crate implementing configuration loading such as credential providers.
 | Amazon Augmented AI Runtime | [aws-sdk-sagemakera2iruntime](https://crates.io/crates/aws-sdk-sagemakera2iruntime) ([docs](https://docs.rs/aws-sdk-sagemakera2iruntime)) |
 | Amazon Chime | [aws-sdk-chime](https://crates.io/crates/aws-sdk-chime) ([docs](https://docs.rs/aws-sdk-chime)) |
 | Amazon Chime SDK Identity | [aws-sdk-chimesdkidentity](https://crates.io/crates/aws-sdk-chimesdkidentity) ([docs](https://docs.rs/aws-sdk-chimesdkidentity)) |
+| Amazon Chime SDK Meetings | [aws-sdk-chimesdkmeetings](https://crates.io/crates/aws-sdk-chimesdkmeetings) ([docs](https://docs.rs/aws-sdk-chimesdkmeetings)) |
 | Amazon Chime SDK Messaging | [aws-sdk-chimesdkmessaging](https://crates.io/crates/aws-sdk-chimesdkmessaging) ([docs](https://docs.rs/aws-sdk-chimesdkmessaging)) |
 | Amazon CloudDirectory | [aws-sdk-clouddirectory](https://crates.io/crates/aws-sdk-clouddirectory) ([docs](https://docs.rs/aws-sdk-clouddirectory)) |
 | Amazon CloudFront | [aws-sdk-cloudfront](https://crates.io/crates/aws-sdk-cloudfront) ([docs](https://docs.rs/aws-sdk-cloudfront)) |
@@ -153,6 +158,7 @@ a crate implementing configuration loading such as credential providers.
 | Amazon CloudWatch | [aws-sdk-cloudwatch](https://crates.io/crates/aws-sdk-cloudwatch) ([docs](https://docs.rs/aws-sdk-cloudwatch)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cloudwatch)) |
 | Amazon CloudWatch Application Insights | [aws-sdk-applicationinsights](https://crates.io/crates/aws-sdk-applicationinsights) ([docs](https://docs.rs/aws-sdk-applicationinsights)) |
 | Amazon CloudWatch Events | [aws-sdk-cloudwatchevents](https://crates.io/crates/aws-sdk-cloudwatchevents) ([docs](https://docs.rs/aws-sdk-cloudwatchevents)) |
+| Amazon CloudWatch Evidently | [aws-sdk-evidently](https://crates.io/crates/aws-sdk-evidently) ([docs](https://docs.rs/aws-sdk-evidently)) |
 | Amazon CloudWatch Logs | [aws-sdk-cloudwatchlogs](https://crates.io/crates/aws-sdk-cloudwatchlogs) ([docs](https://docs.rs/aws-sdk-cloudwatchlogs)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cloudwatchlogs)) |
 | Amazon CodeGuru Profiler | [aws-sdk-codeguruprofiler](https://crates.io/crates/aws-sdk-codeguruprofiler) ([docs](https://docs.rs/aws-sdk-codeguruprofiler)) |
 | Amazon CodeGuru Reviewer | [aws-sdk-codegurureviewer](https://crates.io/crates/aws-sdk-codegurureviewer) ([docs](https://docs.rs/aws-sdk-codegurureviewer)) |
@@ -235,6 +241,7 @@ a crate implementing configuration loading such as credential providers.
 | Amazon QLDB | [aws-sdk-qldb](https://crates.io/crates/aws-sdk-qldb) ([docs](https://docs.rs/aws-sdk-qldb)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/qldb)) |
 | Amazon QLDB Session | [aws-sdk-qldbsession](https://crates.io/crates/aws-sdk-qldbsession) ([docs](https://docs.rs/aws-sdk-qldbsession)) |
 | Amazon QuickSight | [aws-sdk-quicksight](https://crates.io/crates/aws-sdk-quicksight) ([docs](https://docs.rs/aws-sdk-quicksight)) |
+| Amazon Recycle Bin | [aws-sdk-rbin](https://crates.io/crates/aws-sdk-rbin) ([docs](https://docs.rs/aws-sdk-rbin)) |
 | Amazon Redshift | [aws-sdk-redshift](https://crates.io/crates/aws-sdk-redshift) ([docs](https://docs.rs/aws-sdk-redshift)) |
 | Amazon Rekognition | [aws-sdk-rekognition](https://crates.io/crates/aws-sdk-rekognition) ([docs](https://docs.rs/aws-sdk-rekognition)) |
 | Amazon Relational Database Service | [aws-sdk-rds](https://crates.io/crates/aws-sdk-rds) ([docs](https://docs.rs/aws-sdk-rds)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/rds)) |
@@ -263,6 +270,7 @@ a crate implementing configuration loading such as credential providers.
 | Amazon WorkMail | [aws-sdk-workmail](https://crates.io/crates/aws-sdk-workmail) ([docs](https://docs.rs/aws-sdk-workmail)) |
 | Amazon WorkMail Message Flow | [aws-sdk-workmailmessageflow](https://crates.io/crates/aws-sdk-workmailmessageflow) ([docs](https://docs.rs/aws-sdk-workmailmessageflow)) |
 | Amazon WorkSpaces | [aws-sdk-workspaces](https://crates.io/crates/aws-sdk-workspaces) ([docs](https://docs.rs/aws-sdk-workspaces)) |
+| Amazon WorkSpaces Web | [aws-sdk-workspacesweb](https://crates.io/crates/aws-sdk-workspacesweb) ([docs](https://docs.rs/aws-sdk-workspacesweb)) |
 | AmazonApiGatewayManagementApi | [aws-sdk-apigatewaymanagement](https://crates.io/crates/aws-sdk-apigatewaymanagement) ([docs](https://docs.rs/aws-sdk-apigatewaymanagement)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/apigatewaymanagement)) |
 | AmazonApiGatewayV2 | [aws-sdk-apigatewayv2](https://crates.io/crates/aws-sdk-apigatewayv2) ([docs](https://docs.rs/aws-sdk-apigatewayv2)) |
 | AmazonMQ | [aws-sdk-mq](https://crates.io/crates/aws-sdk-mq) ([docs](https://docs.rs/aws-sdk-mq)) |
@@ -273,15 +281,19 @@ a crate implementing configuration loading such as credential providers.
 | Application Migration Service | [aws-sdk-mgn](https://crates.io/crates/aws-sdk-mgn) ([docs](https://docs.rs/aws-sdk-mgn)) |
 | Auto Scaling | [aws-sdk-autoscaling](https://crates.io/crates/aws-sdk-autoscaling) ([docs](https://docs.rs/aws-sdk-autoscaling)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/autoscaling)) |
 | Braket | [aws-sdk-braket](https://crates.io/crates/aws-sdk-braket) ([docs](https://docs.rs/aws-sdk-braket)) |
+| CloudWatch RUM | [aws-sdk-rum](https://crates.io/crates/aws-sdk-rum) ([docs](https://docs.rs/aws-sdk-rum)) |
 | CodeArtifact | [aws-sdk-codeartifact](https://crates.io/crates/aws-sdk-codeartifact) ([docs](https://docs.rs/aws-sdk-codeartifact)) |
 | EC2 Image Builder | [aws-sdk-imagebuilder](https://crates.io/crates/aws-sdk-imagebuilder) ([docs](https://docs.rs/aws-sdk-imagebuilder)) |
+| Elastic Disaster Recovery Service | [aws-sdk-drs](https://crates.io/crates/aws-sdk-drs) ([docs](https://docs.rs/aws-sdk-drs)) |
 | Elastic Load Balancing | [aws-sdk-elasticloadbalancing](https://crates.io/crates/aws-sdk-elasticloadbalancing) ([docs](https://docs.rs/aws-sdk-elasticloadbalancing)) |
 | Elastic Load Balancing | [aws-sdk-elasticloadbalancingv2](https://crates.io/crates/aws-sdk-elasticloadbalancingv2) ([docs](https://docs.rs/aws-sdk-elasticloadbalancingv2)) |
 | FinSpace Public API | [aws-sdk-finspacedata](https://crates.io/crates/aws-sdk-finspacedata) ([docs](https://docs.rs/aws-sdk-finspacedata)) |
 | FinSpace User Environment Management service | [aws-sdk-finspace](https://crates.io/crates/aws-sdk-finspace) ([docs](https://docs.rs/aws-sdk-finspace)) |
 | Firewall Management Service | [aws-sdk-fms](https://crates.io/crates/aws-sdk-fms) ([docs](https://docs.rs/aws-sdk-fms)) |
+| Inspector2 | [aws-sdk-inspector2](https://crates.io/crates/aws-sdk-inspector2) ([docs](https://docs.rs/aws-sdk-inspector2)) |
 | Managed Streaming for Kafka | [aws-sdk-kafka](https://crates.io/crates/aws-sdk-kafka) ([docs](https://docs.rs/aws-sdk-kafka)) |
 | Managed Streaming for Kafka Connect | [aws-sdk-kafkaconnect](https://crates.io/crates/aws-sdk-kafkaconnect) ([docs](https://docs.rs/aws-sdk-kafkaconnect)) |
+| Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |
 | Redshift Data API Service | [aws-sdk-redshiftdata](https://crates.io/crates/aws-sdk-redshiftdata) ([docs](https://docs.rs/aws-sdk-redshiftdata)) |
 | Route53 Recovery Cluster | [aws-sdk-route53recoverycluster](https://crates.io/crates/aws-sdk-route53recoverycluster) ([docs](https://docs.rs/aws-sdk-route53recoverycluster)) |
 | Schemas | [aws-sdk-schemas](https://crates.io/crates/aws-sdk-schemas) ([docs](https://docs.rs/aws-sdk-schemas)) |

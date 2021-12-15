@@ -486,6 +486,158 @@ impl std::error::Error for CreateClusterError {
     }
 }
 
+/// Error type for the `CreateClusterV2` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateClusterV2Error {
+    /// Kind of error that occurred.
+    pub kind: CreateClusterV2ErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateClusterV2` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateClusterV2ErrorKind {
+    /// <p>Returns information about an error.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Returns information about an error.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>Returns information about an error.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>Returns information about an error.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>Returns information about an error.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>Returns information about an error.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>Returns information about an error.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateClusterV2Error {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateClusterV2ErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateClusterV2ErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateClusterV2ErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateClusterV2ErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateClusterV2ErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateClusterV2ErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateClusterV2ErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            CreateClusterV2ErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateClusterV2Error {
+    fn code(&self) -> Option<&str> {
+        CreateClusterV2Error::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateClusterV2Error {
+    /// Creates a new `CreateClusterV2Error`.
+    pub fn new(kind: CreateClusterV2ErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateClusterV2Error::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateClusterV2ErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateClusterV2Error::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateClusterV2ErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateClusterV2ErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateClusterV2ErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `CreateClusterV2ErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateClusterV2ErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateClusterV2ErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, CreateClusterV2ErrorKind::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `CreateClusterV2ErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateClusterV2ErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateClusterV2ErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateClusterV2ErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateClusterV2ErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateClusterV2ErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateClusterV2ErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateClusterV2ErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for CreateClusterV2Error {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateClusterV2ErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateClusterV2ErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateClusterV2ErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateClusterV2ErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateClusterV2ErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateClusterV2ErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateClusterV2ErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            CreateClusterV2ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1161,6 +1313,142 @@ impl std::error::Error for DescribeClusterOperationError {
             DescribeClusterOperationErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeClusterOperationErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DescribeClusterOperationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeClusterV2` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeClusterV2Error {
+    /// Kind of error that occurred.
+    pub kind: DescribeClusterV2ErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeClusterV2` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeClusterV2ErrorKind {
+    /// <p>Returns information about an error.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Returns information about an error.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>Returns information about an error.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>Returns information about an error.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>Returns information about an error.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeClusterV2Error {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeClusterV2ErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeClusterV2ErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeClusterV2ErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeClusterV2ErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeClusterV2ErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeClusterV2ErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeClusterV2Error {
+    fn code(&self) -> Option<&str> {
+        DescribeClusterV2Error::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeClusterV2Error {
+    /// Creates a new `DescribeClusterV2Error`.
+    pub fn new(kind: DescribeClusterV2ErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeClusterV2Error::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeClusterV2ErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeClusterV2Error::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeClusterV2ErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeClusterV2ErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClusterV2ErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeClusterV2ErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClusterV2ErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeClusterV2ErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClusterV2ErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeClusterV2ErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeClusterV2ErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeClusterV2ErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClusterV2ErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeClusterV2Error {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeClusterV2ErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeClusterV2ErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeClusterV2ErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeClusterV2ErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeClusterV2ErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeClusterV2ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2027,6 +2315,128 @@ impl std::error::Error for ListClustersError {
             ListClustersErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             ListClustersErrorKind::UnauthorizedException(_inner) => Some(_inner),
             ListClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListClustersV2` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListClustersV2Error {
+    /// Kind of error that occurred.
+    pub kind: ListClustersV2ErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListClustersV2` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListClustersV2ErrorKind {
+    /// <p>Returns information about an error.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>Returns information about an error.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>Returns information about an error.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>Returns information about an error.</p>
+    UnauthorizedException(crate::error::UnauthorizedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListClustersV2Error {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListClustersV2ErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListClustersV2ErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListClustersV2ErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListClustersV2ErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            ListClustersV2ErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListClustersV2Error {
+    fn code(&self) -> Option<&str> {
+        ListClustersV2Error::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListClustersV2Error {
+    /// Creates a new `ListClustersV2Error`.
+    pub fn new(kind: ListClustersV2ErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListClustersV2Error::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListClustersV2ErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListClustersV2Error::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListClustersV2ErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListClustersV2ErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ListClustersV2ErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ListClustersV2ErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListClustersV2ErrorKind::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `ListClustersV2ErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListClustersV2ErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListClustersV2ErrorKind::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListClustersV2ErrorKind::UnauthorizedException(_)
+        )
+    }
+}
+impl std::error::Error for ListClustersV2Error {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListClustersV2ErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListClustersV2ErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListClustersV2ErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListClustersV2ErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            ListClustersV2ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

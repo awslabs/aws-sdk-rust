@@ -19,6 +19,9 @@ pub const BASE_SET: &AsciiSet = &CONTROLS
     .add(b'#')
     .add(b'[')
     .add(b']')
+    .add(b'{')
+    .add(b'}')
+    .add(b'|')
     .add(b'@')
     .add(b'!')
     .add(b'$')
@@ -30,7 +33,13 @@ pub const BASE_SET: &AsciiSet = &CONTROLS
     .add(b'+')
     .add(b';')
     .add(b'=')
-    .add(b'%');
+    .add(b'%')
+    .add(b'<')
+    .add(b'>')
+    .add(b'"')
+    .add(b'^')
+    .add(b'`')
+    .add(b'\\');
 
 #[cfg(test)]
 mod test {

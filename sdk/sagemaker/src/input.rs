@@ -2589,6 +2589,7 @@ pub mod create_compilation_job_input {
     pub struct Builder {
         pub(crate) compilation_job_name: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) model_package_version_arn: std::option::Option<std::string::String>,
         pub(crate) input_config: std::option::Option<crate::model::InputConfig>,
         pub(crate) output_config: std::option::Option<crate::model::OutputConfig>,
         pub(crate) vpc_config: std::option::Option<crate::model::NeoVpcConfig>,
@@ -2661,6 +2662,25 @@ pub mod create_compilation_job_input {
         /// </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+        /// <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+        /// request syntax. The presence of both objects in the <code>CreateCompilationJob</code>
+        /// request will return an exception.</p>
+        pub fn model_package_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_package_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+        /// <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+        /// request syntax. The presence of both objects in the <code>CreateCompilationJob</code>
+        /// request will return an exception.</p>
+        pub fn set_model_package_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_package_version_arn = input;
             self
         }
         /// <p>Provides information about the location of input model artifacts, the name and shape
@@ -2764,6 +2784,7 @@ pub mod create_compilation_job_input {
             Ok(crate::input::CreateCompilationJobInput {
                 compilation_job_name: self.compilation_job_name,
                 role_arn: self.role_arn,
+                model_package_version_arn: self.model_package_version_arn,
                 input_config: self.input_config,
                 output_config: self.output_config,
                 vpc_config: self.vpc_config,
@@ -6732,6 +6753,279 @@ impl CreateImageVersionInput {
     }
 }
 
+/// See [`CreateInferenceRecommendationsJobInput`](crate::input::CreateInferenceRecommendationsJobInput)
+pub mod create_inference_recommendations_job_input {
+    /// A builder for [`CreateInferenceRecommendationsJobInput`](crate::input::CreateInferenceRecommendationsJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_type: std::option::Option<crate::model::RecommendationJobType>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) input_config: std::option::Option<crate::model::RecommendationJobInputConfig>,
+        pub(crate) job_description: std::option::Option<std::string::String>,
+        pub(crate) stopping_conditions:
+            std::option::Option<crate::model::RecommendationJobStoppingConditions>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>A name for the recommendation job. The name must be unique within
+        /// the Amazon Web Services Region and within your Amazon Web Services account.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>A name for the recommendation job. The name must be unique within
+        /// the Amazon Web Services Region and within your Amazon Web Services account.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance
+        /// recommendation and <code>Advanced</code> to initiate a load test. If left unspecified,
+        /// Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+        pub fn job_type(mut self, input: crate::model::RecommendationJobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance
+        /// recommendation and <code>Advanced</code> to initiate a load test. If left unspecified,
+        /// Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+        pub fn set_job_type(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobType>,
+        ) -> Self {
+            self.job_type = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+        /// to perform tasks on your behalf.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+        /// to perform tasks on your behalf.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>Provides information about the versioned model package Amazon Resource Name (ARN),
+        /// the traffic pattern, and endpoint configurations.</p>
+        pub fn input_config(mut self, input: crate::model::RecommendationJobInputConfig) -> Self {
+            self.input_config = Some(input);
+            self
+        }
+        /// <p>Provides information about the versioned model package Amazon Resource Name (ARN),
+        /// the traffic pattern, and endpoint configurations.</p>
+        pub fn set_input_config(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobInputConfig>,
+        ) -> Self {
+            self.input_config = input;
+            self
+        }
+        /// <p>Description of the recommendation job.</p>
+        pub fn job_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_description = Some(input.into());
+            self
+        }
+        /// <p>Description of the recommendation job.</p>
+        pub fn set_job_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.job_description = input;
+            self
+        }
+        /// <p>A set of conditions for stopping a recommendation job.  If any of
+        /// the conditions are met, the job is automatically stopped.</p>
+        pub fn stopping_conditions(
+            mut self,
+            input: crate::model::RecommendationJobStoppingConditions,
+        ) -> Self {
+            self.stopping_conditions = Some(input);
+            self
+        }
+        /// <p>A set of conditions for stopping a recommendation job.  If any of
+        /// the conditions are met, the job is automatically stopped.</p>
+        pub fn set_stopping_conditions(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobStoppingConditions>,
+        ) -> Self {
+            self.stopping_conditions = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to Amazon Web Services resources to help you
+        /// categorize and organize them. Each tag consists of a key and a value, both of
+        /// which you define. For more information, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+        /// in the Amazon Web Services General Reference.</p>
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The metadata that you apply to Amazon Web Services resources to help you
+        /// categorize and organize them. Each tag consists of a key and a value, both of
+        /// which you define. For more information, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+        /// in the Amazon Web Services General Reference.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateInferenceRecommendationsJobInput`](crate::input::CreateInferenceRecommendationsJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateInferenceRecommendationsJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateInferenceRecommendationsJobInput {
+                job_name: self.job_name,
+                job_type: self.job_type,
+                role_arn: self.role_arn,
+                input_config: self.input_config,
+                job_description: self.job_description,
+                stopping_conditions: self.stopping_conditions,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateInferenceRecommendationsJobInputOperationOutputAlias =
+    crate::operation::CreateInferenceRecommendationsJob;
+#[doc(hidden)]
+pub type CreateInferenceRecommendationsJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateInferenceRecommendationsJobInput {
+    /// Consumes the builder and constructs an Operation<[`CreateInferenceRecommendationsJob`](crate::operation::CreateInferenceRecommendationsJob)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateInferenceRecommendationsJob,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateInferenceRecommendationsJobInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateInferenceRecommendationsJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateInferenceRecommendationsJobInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.CreateInferenceRecommendationsJob",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_inference_recommendations_job(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateInferenceRecommendationsJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateInferenceRecommendationsJob",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateInferenceRecommendationsJobInput`](crate::input::CreateInferenceRecommendationsJobInput)
+    pub fn builder() -> crate::input::create_inference_recommendations_job_input::Builder {
+        crate::input::create_inference_recommendations_job_input::Builder::default()
+    }
+}
+
 /// See [`CreateLabelingJobInput`](crate::input::CreateLabelingJobInput)
 pub mod create_labeling_job_input {
     /// A builder for [`CreateLabelingJobInput`](crate::input::CreateLabelingJobInput)
@@ -8281,6 +8575,13 @@ pub mod create_model_package_input {
         pub(crate) customer_metadata_properties: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) drift_check_baselines: std::option::Option<crate::model::DriftCheckBaselines>,
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) task: std::option::Option<std::string::String>,
+        pub(crate) sample_payload_url: std::option::Option<std::string::String>,
+        pub(crate) additional_inference_specifications: std::option::Option<
+            std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+        >,
     }
     impl Builder {
         /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters
@@ -8529,6 +8830,92 @@ pub mod create_model_package_input {
             self.customer_metadata_properties = input;
             self
         }
+        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
+        /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </p>
+        pub fn drift_check_baselines(mut self, input: crate::model::DriftCheckBaselines) -> Self {
+            self.drift_check_baselines = Some(input);
+            self
+        }
+        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
+        /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </p>
+        pub fn set_drift_check_baselines(
+            mut self,
+            input: std::option::Option<crate::model::DriftCheckBaselines>,
+        ) -> Self {
+            self.drift_check_baselines = input;
+            self
+        }
+        /// <p>The machine learning domain of your model package and its components. Common
+        /// machine learning domains include computer vision and natural language processing.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>The machine learning domain of your model package and its components. Common
+        /// machine learning domains include computer vision and natural language processing.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p>The machine learning task your model package accomplishes. Common machine
+        /// learning tasks include object detection and image classification.</p>
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task = Some(input.into());
+            self
+        }
+        /// <p>The machine learning task your model package accomplishes. Common machine
+        /// learning tasks include object detection and image classification.</p>
+        pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task = input;
+            self
+        }
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point
+        /// to a single gzip compressed tar archive (.tar.gz suffix).</p>
+        pub fn sample_payload_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sample_payload_url = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point
+        /// to a single gzip compressed tar archive (.tar.gz suffix).</p>
+        pub fn set_sample_payload_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sample_payload_url = input;
+            self
+        }
+        /// Appends an item to `additional_inference_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_additional_inference_specifications`](Self::set_additional_inference_specifications).
+        ///
+        /// <p>An array of additional Inference Specification objects. Each additional
+        /// Inference Specification specifies artifacts based on this model package that can
+        /// be used on inference endpoints. Generally used with SageMaker Neo to store the
+        /// compiled artifacts. </p>
+        pub fn additional_inference_specifications(
+            mut self,
+            input: impl Into<crate::model::AdditionalInferenceSpecificationDefinition>,
+        ) -> Self {
+            let mut v = self.additional_inference_specifications.unwrap_or_default();
+            v.push(input.into());
+            self.additional_inference_specifications = Some(v);
+            self
+        }
+        /// <p>An array of additional Inference Specification objects. Each additional
+        /// Inference Specification specifies artifacts based on this model package that can
+        /// be used on inference endpoints. Generally used with SageMaker Neo to store the
+        /// compiled artifacts. </p>
+        pub fn set_additional_inference_specifications(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+            >,
+        ) -> Self {
+            self.additional_inference_specifications = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateModelPackageInput`](crate::input::CreateModelPackageInput)
         pub fn build(
             self,
@@ -8550,6 +8937,11 @@ pub mod create_model_package_input {
                 model_metrics: self.model_metrics,
                 client_token: self.client_token,
                 customer_metadata_properties: self.customer_metadata_properties,
+                drift_check_baselines: self.drift_check_baselines,
+                domain: self.domain,
+                task: self.task,
+                sample_payload_url: self.sample_payload_url,
+                additional_inference_specifications: self.additional_inference_specifications,
             })
         }
     }
@@ -24164,6 +24556,165 @@ impl DescribeImageVersionInput {
     }
 }
 
+/// See [`DescribeInferenceRecommendationsJobInput`](crate::input::DescribeInferenceRecommendationsJobInput)
+pub mod describe_inference_recommendations_job_input {
+    /// A builder for [`DescribeInferenceRecommendationsJobInput`](crate::input::DescribeInferenceRecommendationsJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the job. The name must be unique within an
+        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the job. The name must be unique within an
+        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeInferenceRecommendationsJobInput`](crate::input::DescribeInferenceRecommendationsJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeInferenceRecommendationsJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeInferenceRecommendationsJobInput {
+                job_name: self.job_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeInferenceRecommendationsJobInputOperationOutputAlias =
+    crate::operation::DescribeInferenceRecommendationsJob;
+#[doc(hidden)]
+pub type DescribeInferenceRecommendationsJobInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl DescribeInferenceRecommendationsJobInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeInferenceRecommendationsJob`](crate::operation::DescribeInferenceRecommendationsJob)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeInferenceRecommendationsJob,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeInferenceRecommendationsJobInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeInferenceRecommendationsJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeInferenceRecommendationsJobInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeInferenceRecommendationsJob",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_inference_recommendations_job(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeInferenceRecommendationsJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeInferenceRecommendationsJob",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeInferenceRecommendationsJobInput`](crate::input::DescribeInferenceRecommendationsJobInput)
+    pub fn builder() -> crate::input::describe_inference_recommendations_job_input::Builder {
+        crate::input::describe_inference_recommendations_job_input::Builder::default()
+    }
+}
+
 /// See [`DescribeLabelingJobInput`](crate::input::DescribeLabelingJobInput)
 pub mod describe_labeling_job_input {
     /// A builder for [`DescribeLabelingJobInput`](crate::input::DescribeLabelingJobInput)
@@ -24318,6 +24869,165 @@ impl DescribeLabelingJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelingJobInput`](crate::input::DescribeLabelingJobInput)
     pub fn builder() -> crate::input::describe_labeling_job_input::Builder {
         crate::input::describe_labeling_job_input::Builder::default()
+    }
+}
+
+/// See [`DescribeLineageGroupInput`](crate::input::DescribeLineageGroupInput)
+pub mod describe_lineage_group_input {
+    /// A builder for [`DescribeLineageGroupInput`](crate::input::DescribeLineageGroupInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lineage_group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the lineage group.</p>
+        pub fn lineage_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the lineage group.</p>
+        pub fn set_lineage_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeLineageGroupInput`](crate::input::DescribeLineageGroupInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeLineageGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeLineageGroupInput {
+                lineage_group_name: self.lineage_group_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeLineageGroupInputOperationOutputAlias = crate::operation::DescribeLineageGroup;
+#[doc(hidden)]
+pub type DescribeLineageGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeLineageGroupInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeLineageGroup`](crate::operation::DescribeLineageGroup)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeLineageGroup,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeLineageGroupInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeLineageGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeLineageGroupInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.DescribeLineageGroup",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_lineage_group(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLineageGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeLineageGroup",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeLineageGroupInput`](crate::input::DescribeLineageGroupInput)
+    pub fn builder() -> crate::input::describe_lineage_group_input::Builder {
+        crate::input::describe_lineage_group_input::Builder::default()
     }
 }
 
@@ -28592,6 +29302,165 @@ impl GetDeviceFleetReportInput {
     /// Creates a new builder-style object to manufacture [`GetDeviceFleetReportInput`](crate::input::GetDeviceFleetReportInput)
     pub fn builder() -> crate::input::get_device_fleet_report_input::Builder {
         crate::input::get_device_fleet_report_input::Builder::default()
+    }
+}
+
+/// See [`GetLineageGroupPolicyInput`](crate::input::GetLineageGroupPolicyInput)
+pub mod get_lineage_group_policy_input {
+    /// A builder for [`GetLineageGroupPolicyInput`](crate::input::GetLineageGroupPolicyInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lineage_group_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn lineage_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn set_lineage_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLineageGroupPolicyInput`](crate::input::GetLineageGroupPolicyInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetLineageGroupPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetLineageGroupPolicyInput {
+                lineage_group_name: self.lineage_group_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetLineageGroupPolicyInputOperationOutputAlias = crate::operation::GetLineageGroupPolicy;
+#[doc(hidden)]
+pub type GetLineageGroupPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetLineageGroupPolicyInput {
+    /// Consumes the builder and constructs an Operation<[`GetLineageGroupPolicy`](crate::operation::GetLineageGroupPolicy)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetLineageGroupPolicy,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetLineageGroupPolicyInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetLineageGroupPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetLineageGroupPolicyInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.GetLineageGroupPolicy",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_lineage_group_policy(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLineageGroupPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetLineageGroupPolicy",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetLineageGroupPolicyInput`](crate::input::GetLineageGroupPolicyInput)
+    pub fn builder() -> crate::input::get_lineage_group_policy_input::Builder {
+        crate::input::get_lineage_group_policy_input::Builder::default()
     }
 }
 
@@ -35564,6 +36433,302 @@ impl ListImageVersionsInput {
     }
 }
 
+/// See [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput)
+pub mod list_inference_recommendations_jobs_input {
+    /// A builder for [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) name_contains: std::option::Option<std::string::String>,
+        pub(crate) status_equals: std::option::Option<crate::model::RecommendationJobStatus>,
+        pub(crate) sort_by:
+            std::option::Option<crate::model::ListInferenceRecommendationsJobsSortBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_after = Some(input);
+            self
+        }
+        /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
+        pub fn set_creation_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_after = input;
+            self
+        }
+        /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time_before = Some(input);
+            self
+        }
+        /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
+        pub fn set_creation_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time_before = input;
+            self
+        }
+        /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time_after = Some(input);
+            self
+        }
+        /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
+        pub fn set_last_modified_time_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time_after = input;
+            self
+        }
+        /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time_before = Some(input);
+            self
+        }
+        /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
+        pub fn set_last_modified_time_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time_before = input;
+            self
+        }
+        /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_contains = Some(input.into());
+            self
+        }
+        /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
+        pub fn set_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.name_contains = input;
+            self
+        }
+        /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
+        pub fn status_equals(mut self, input: crate::model::RecommendationJobStatus) -> Self {
+            self.status_equals = Some(input);
+            self
+        }
+        /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
+        pub fn set_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobStatus>,
+        ) -> Self {
+            self.status_equals = input;
+            self
+        }
+        /// <p>The parameter by which to sort the results.</p>
+        pub fn sort_by(
+            mut self,
+            input: crate::model::ListInferenceRecommendationsJobsSortBy,
+        ) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>The parameter by which to sort the results.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::ListInferenceRecommendationsJobsSortBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>The sort order for the results.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>The sort order for the results.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request
+        /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
+        /// of recommendations, use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request
+        /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
+        /// of recommendations, use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of recommendations to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of recommendations to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListInferenceRecommendationsJobsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListInferenceRecommendationsJobsInput {
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                last_modified_time_after: self.last_modified_time_after,
+                last_modified_time_before: self.last_modified_time_before,
+                name_contains: self.name_contains,
+                status_equals: self.status_equals,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListInferenceRecommendationsJobsInputOperationOutputAlias =
+    crate::operation::ListInferenceRecommendationsJobs;
+#[doc(hidden)]
+pub type ListInferenceRecommendationsJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListInferenceRecommendationsJobsInput {
+    /// Consumes the builder and constructs an Operation<[`ListInferenceRecommendationsJobs`](crate::operation::ListInferenceRecommendationsJobs)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListInferenceRecommendationsJobs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListInferenceRecommendationsJobsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListInferenceRecommendationsJobsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListInferenceRecommendationsJobsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListInferenceRecommendationsJobs",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_inference_recommendations_jobs(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListInferenceRecommendationsJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListInferenceRecommendationsJobs",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput)
+    pub fn builder() -> crate::input::list_inference_recommendations_jobs_input::Builder {
+        crate::input::list_inference_recommendations_jobs_input::Builder::default()
+    }
+}
+
 /// See [`ListLabelingJobsInput`](crate::input::ListLabelingJobsInput)
 pub mod list_labeling_jobs_input {
     /// A builder for [`ListLabelingJobsInput`](crate::input::ListLabelingJobsInput)
@@ -36135,6 +37300,238 @@ impl ListLabelingJobsForWorkteamInput {
     }
 }
 
+/// See [`ListLineageGroupsInput`](crate::input::ListLineageGroupsInput)
+pub mod list_lineage_groups_input {
+    /// A builder for [`ListLineageGroupsInput`](crate::input::ListLineageGroupsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) sort_by: std::option::Option<crate::model::SortLineageGroupsBy>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_after = Some(input);
+            self
+        }
+        /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
+        pub fn set_created_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_after = input;
+            self
+        }
+        /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_before = Some(input);
+            self
+        }
+        /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
+        pub fn set_created_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_before = input;
+            self
+        }
+        /// <p>The parameter by which to sort the results. The default is
+        /// <code>CreationTime</code>.</p>
+        pub fn sort_by(mut self, input: crate::model::SortLineageGroupsBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>The parameter by which to sort the results. The default is
+        /// <code>CreationTime</code>.</p>
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::SortLineageGroupsBy>,
+        ) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
+        /// algorithms, use it in the subsequent request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
+        /// algorithms, use it in the subsequent request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of endpoints to return in the response. This value defaults to
+        /// 10.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of endpoints to return in the response. This value defaults to
+        /// 10.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLineageGroupsInput`](crate::input::ListLineageGroupsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListLineageGroupsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListLineageGroupsInput {
+                created_after: self.created_after,
+                created_before: self.created_before,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListLineageGroupsInputOperationOutputAlias = crate::operation::ListLineageGroups;
+#[doc(hidden)]
+pub type ListLineageGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListLineageGroupsInput {
+    /// Consumes the builder and constructs an Operation<[`ListLineageGroups`](crate::operation::ListLineageGroups)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListLineageGroups,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListLineageGroupsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListLineageGroupsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListLineageGroupsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListLineageGroups",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_lineage_groups(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLineageGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLineageGroups",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListLineageGroupsInput`](crate::input::ListLineageGroupsInput)
+    pub fn builder() -> crate::input::list_lineage_groups_input::Builder {
+        crate::input::list_lineage_groups_input::Builder::default()
+    }
+}
+
 /// See [`ListModelBiasJobDefinitionsInput`](crate::input::ListModelBiasJobDefinitionsInput)
 pub mod list_model_bias_job_definitions_input {
     /// A builder for [`ListModelBiasJobDefinitionsInput`](crate::input::ListModelBiasJobDefinitionsInput)
@@ -36667,6 +38064,201 @@ impl ListModelExplainabilityJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListModelExplainabilityJobDefinitionsInput`](crate::input::ListModelExplainabilityJobDefinitionsInput)
     pub fn builder() -> crate::input::list_model_explainability_job_definitions_input::Builder {
         crate::input::list_model_explainability_job_definitions_input::Builder::default()
+    }
+}
+
+/// See [`ListModelMetadataInput`](crate::input::ListModelMetadataInput)
+pub mod list_model_metadata_input {
+    /// A builder for [`ListModelMetadataInput`](crate::input::ListModelMetadataInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) search_expression:
+            std::option::Option<crate::model::ModelMetadataSearchExpression>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>One or more filters that searches for the specified resource or resources
+        /// in a search. All resource objects that satisfy the expression's condition are
+        /// included in the search results. Specify the  Framework, FrameworkVersion, Domain
+        /// or Task to filter supported. Filter names and values are case-sensitive.</p>
+        pub fn search_expression(
+            mut self,
+            input: crate::model::ModelMetadataSearchExpression,
+        ) -> Self {
+            self.search_expression = Some(input);
+            self
+        }
+        /// <p>One or more filters that searches for the specified resource or resources
+        /// in a search. All resource objects that satisfy the expression's condition are
+        /// included in the search results. Specify the  Framework, FrameworkVersion, Domain
+        /// or Task to filter supported. Filter names and values are case-sensitive.</p>
+        pub fn set_search_expression(
+            mut self,
+            input: std::option::Option<crate::model::ModelMetadataSearchExpression>,
+        ) -> Self {
+            self.search_expression = input;
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
+        /// the response includes a NextToken. To retrieve the next set of model metadata,
+        /// use the token in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
+        /// the response includes a NextToken. To retrieve the next set of model metadata,
+        /// use the token in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of models to return in the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of models to return in the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelMetadataInput`](crate::input::ListModelMetadataInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListModelMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListModelMetadataInput {
+                search_expression: self.search_expression,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListModelMetadataInputOperationOutputAlias = crate::operation::ListModelMetadata;
+#[doc(hidden)]
+pub type ListModelMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListModelMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`ListModelMetadata`](crate::operation::ListModelMetadata)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListModelMetadata,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListModelMetadataInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListModelMetadataInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListModelMetadataInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.ListModelMetadata",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_model_metadata(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListModelMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListModelMetadata",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListModelMetadataInput`](crate::input::ListModelMetadataInput)
+    pub fn builder() -> crate::input::list_model_metadata_input::Builder {
+        crate::input::list_model_metadata_input::Builder::default()
     }
 }
 
@@ -43458,6 +45050,290 @@ impl PutModelPackageGroupPolicyInput {
     }
 }
 
+/// See [`QueryLineageInput`](crate::input::QueryLineageInput)
+pub mod query_lineage_input {
+    /// A builder for [`QueryLineageInput`](crate::input::QueryLineageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) direction: std::option::Option<crate::model::Direction>,
+        pub(crate) include_edges: std::option::Option<bool>,
+        pub(crate) filters: std::option::Option<crate::model::QueryFilters>,
+        pub(crate) max_depth: std::option::Option<i32>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `start_arns`.
+        ///
+        /// To override the contents of this collection use [`set_start_arns`](Self::set_start_arns).
+        ///
+        /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
+        pub fn start_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.start_arns.unwrap_or_default();
+            v.push(input.into());
+            self.start_arns = Some(v);
+            self
+        }
+        /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
+        pub fn set_start_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.start_arns = input;
+            self
+        }
+        /// <p>Associations between lineage entities are directed.  This parameter determines the direction from the
+        /// StartArn(s) the query will look.</p>
+        pub fn direction(mut self, input: crate::model::Direction) -> Self {
+            self.direction = Some(input);
+            self
+        }
+        /// <p>Associations between lineage entities are directed.  This parameter determines the direction from the
+        /// StartArn(s) the query will look.</p>
+        pub fn set_direction(
+            mut self,
+            input: std::option::Option<crate::model::Direction>,
+        ) -> Self {
+            self.direction = input;
+            self
+        }
+        /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
+        /// lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+        pub fn include_edges(mut self, input: bool) -> Self {
+            self.include_edges = Some(input);
+            self
+        }
+        /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
+        /// lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+        pub fn set_include_edges(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_edges = input;
+            self
+        }
+        /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p>
+        /// </li>
+        /// <li>
+        /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>,
+        /// <code>Artifact</code>, or <code>Context</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>CreatedBefore - Filter entities created before this date.</p>
+        /// </li>
+        /// <li>
+        /// <p>ModifiedBefore - Filter entities modified before this date.</p>
+        /// </li>
+        /// <li>
+        /// <p>ModifiedAfter - Filter entities modified after this date.</p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, input: crate::model::QueryFilters) -> Self {
+            self.filters = Some(input);
+            self
+        }
+        /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p>
+        /// </li>
+        /// <li>
+        /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>,
+        /// <code>Artifact</code>, or <code>Context</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>CreatedBefore - Filter entities created before this date.</p>
+        /// </li>
+        /// <li>
+        /// <p>ModifiedBefore - Filter entities modified before this date.</p>
+        /// </li>
+        /// <li>
+        /// <p>ModifiedAfter - Filter entities modified after this date.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::QueryFilters>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number
+        /// of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+        pub fn max_depth(mut self, input: i32) -> Self {
+            self.max_depth = Some(input);
+            self
+        }
+        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number
+        /// of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+        pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_depth = input;
+            self
+        }
+        /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryLineageInput`](crate::input::QueryLineageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::QueryLineageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::QueryLineageInput {
+                start_arns: self.start_arns,
+                direction: self.direction,
+                include_edges: self.include_edges.unwrap_or_default(),
+                filters: self.filters,
+                max_depth: self.max_depth,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type QueryLineageInputOperationOutputAlias = crate::operation::QueryLineage;
+#[doc(hidden)]
+pub type QueryLineageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl QueryLineageInput {
+    /// Consumes the builder and constructs an Operation<[`QueryLineage`](crate::operation::QueryLineage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::QueryLineage,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::QueryLineageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::QueryLineageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::QueryLineageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.QueryLineage",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_query_lineage(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::QueryLineage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "QueryLineage",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`QueryLineageInput`](crate::input::QueryLineageInput)
+    pub fn builder() -> crate::input::query_lineage_input::Builder {
+        crate::input::query_lineage_input::Builder::default()
+    }
+}
+
 /// See [`RegisterDevicesInput`](crate::input::RegisterDevicesInput)
 pub mod register_devices_input {
     /// A builder for [`RegisterDevicesInput`](crate::input::RegisterDevicesInput)
@@ -45866,6 +47742,162 @@ impl StopHyperParameterTuningJobInput {
     /// Creates a new builder-style object to manufacture [`StopHyperParameterTuningJobInput`](crate::input::StopHyperParameterTuningJobInput)
     pub fn builder() -> crate::input::stop_hyper_parameter_tuning_job_input::Builder {
         crate::input::stop_hyper_parameter_tuning_job_input::Builder::default()
+    }
+}
+
+/// See [`StopInferenceRecommendationsJobInput`](crate::input::StopInferenceRecommendationsJobInput)
+pub mod stop_inference_recommendations_job_input {
+    /// A builder for [`StopInferenceRecommendationsJobInput`](crate::input::StopInferenceRecommendationsJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the job you want to stop.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the job you want to stop.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopInferenceRecommendationsJobInput`](crate::input::StopInferenceRecommendationsJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StopInferenceRecommendationsJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StopInferenceRecommendationsJobInput {
+                job_name: self.job_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StopInferenceRecommendationsJobInputOperationOutputAlias =
+    crate::operation::StopInferenceRecommendationsJob;
+#[doc(hidden)]
+pub type StopInferenceRecommendationsJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StopInferenceRecommendationsJobInput {
+    /// Consumes the builder and constructs an Operation<[`StopInferenceRecommendationsJob`](crate::operation::StopInferenceRecommendationsJob)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopInferenceRecommendationsJob,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StopInferenceRecommendationsJobInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StopInferenceRecommendationsJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StopInferenceRecommendationsJobInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "SageMaker.StopInferenceRecommendationsJob",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_stop_inference_recommendations_job(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopInferenceRecommendationsJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopInferenceRecommendationsJob",
+            "sagemaker",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StopInferenceRecommendationsJobInput`](crate::input::StopInferenceRecommendationsJobInput)
+    pub fn builder() -> crate::input::stop_inference_recommendations_job_input::Builder {
+        crate::input::stop_inference_recommendations_job_input::Builder::default()
     }
 }
 
@@ -49460,6 +51492,9 @@ pub mod update_model_package_input {
         >,
         pub(crate) customer_metadata_properties_to_remove:
             std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) additional_inference_specifications_to_add: std::option::Option<
+            std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+        >,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -49550,6 +51585,40 @@ pub mod update_model_package_input {
             self.customer_metadata_properties_to_remove = input;
             self
         }
+        /// Appends an item to `additional_inference_specifications_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_additional_inference_specifications_to_add`](Self::set_additional_inference_specifications_to_add).
+        ///
+        /// <p>An array of additional Inference Specification objects to be added to the
+        /// existing array additional Inference Specification. Total number of additional
+        /// Inference Specifications can not exceed 15. Each additional Inference Specification
+        /// specifies artifacts based on this model package that can be used on inference endpoints.
+        /// Generally used with SageMaker Neo to store the compiled artifacts.</p>
+        pub fn additional_inference_specifications_to_add(
+            mut self,
+            input: impl Into<crate::model::AdditionalInferenceSpecificationDefinition>,
+        ) -> Self {
+            let mut v = self
+                .additional_inference_specifications_to_add
+                .unwrap_or_default();
+            v.push(input.into());
+            self.additional_inference_specifications_to_add = Some(v);
+            self
+        }
+        /// <p>An array of additional Inference Specification objects to be added to the
+        /// existing array additional Inference Specification. Total number of additional
+        /// Inference Specifications can not exceed 15. Each additional Inference Specification
+        /// specifies artifacts based on this model package that can be used on inference endpoints.
+        /// Generally used with SageMaker Neo to store the compiled artifacts.</p>
+        pub fn set_additional_inference_specifications_to_add(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+            >,
+        ) -> Self {
+            self.additional_inference_specifications_to_add = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateModelPackageInput`](crate::input::UpdateModelPackageInput)
         pub fn build(
             self,
@@ -49563,6 +51632,8 @@ pub mod update_model_package_input {
                 approval_description: self.approval_description,
                 customer_metadata_properties: self.customer_metadata_properties,
                 customer_metadata_properties_to_remove: self.customer_metadata_properties_to_remove,
+                additional_inference_specifications_to_add: self
+                    .additional_inference_specifications_to_add,
             })
         }
     }
@@ -53361,6 +55432,14 @@ pub struct UpdateModelPackageInput {
     /// <p>The metadata properties associated with the model package versions to remove.</p>
     pub customer_metadata_properties_to_remove:
         std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>An array of additional Inference Specification objects to be added to the
+    /// existing array additional Inference Specification. Total number of additional
+    /// Inference Specifications can not exceed 15. Each additional Inference Specification
+    /// specifies artifacts based on this model package that can be used on inference endpoints.
+    /// Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    pub additional_inference_specifications_to_add: std::option::Option<
+        std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+    >,
 }
 impl UpdateModelPackageInput {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -53388,6 +55467,16 @@ impl UpdateModelPackageInput {
     ) -> std::option::Option<&[std::string::String]> {
         self.customer_metadata_properties_to_remove.as_deref()
     }
+    /// <p>An array of additional Inference Specification objects to be added to the
+    /// existing array additional Inference Specification. Total number of additional
+    /// Inference Specifications can not exceed 15. Each additional Inference Specification
+    /// specifies artifacts based on this model package that can be used on inference endpoints.
+    /// Generally used with SageMaker Neo to store the compiled artifacts.</p>
+    pub fn additional_inference_specifications_to_add(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalInferenceSpecificationDefinition]> {
+        self.additional_inference_specifications_to_add.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateModelPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53402,6 +55491,10 @@ impl std::fmt::Debug for UpdateModelPackageInput {
         formatter.field(
             "customer_metadata_properties_to_remove",
             &self.customer_metadata_properties_to_remove,
+        );
+        formatter.field(
+            "additional_inference_specifications_to_add",
+            &self.additional_inference_specifications_to_add,
         );
         formatter.finish()
     }
@@ -54120,6 +56213,27 @@ impl std::fmt::Debug for StopLabelingJobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopInferenceRecommendationsJobInput {
+    /// <p>The name of the job you want to stop.</p>
+    pub job_name: std::option::Option<std::string::String>,
+}
+impl StopInferenceRecommendationsJobInput {
+    /// <p>The name of the job you want to stop.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+}
+impl std::fmt::Debug for StopInferenceRecommendationsJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopInferenceRecommendationsJobInput");
+        formatter.field("job_name", &self.job_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopHyperParameterTuningJobInput {
     /// <p>The name of the tuning job to stop.</p>
     pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
@@ -54564,6 +56678,113 @@ impl std::fmt::Debug for RegisterDevicesInput {
         formatter.field("device_fleet_name", &self.device_fleet_name);
         formatter.field("devices", &self.devices);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryLineageInput {
+    /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
+    pub start_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Associations between lineage entities are directed.  This parameter determines the direction from the
+    /// StartArn(s) the query will look.</p>
+    pub direction: std::option::Option<crate::model::Direction>,
+    /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
+    /// lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+    pub include_edges: bool,
+    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p>
+    /// </li>
+    /// <li>
+    /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>,
+    /// <code>Artifact</code>, or <code>Context</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>CreatedBefore - Filter entities created before this date.</p>
+    /// </li>
+    /// <li>
+    /// <p>ModifiedBefore - Filter entities modified before this date.</p>
+    /// </li>
+    /// <li>
+    /// <p>ModifiedAfter - Filter entities modified after this date.</p>
+    /// </li>
+    /// </ul>
+    pub filters: std::option::Option<crate::model::QueryFilters>,
+    /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number
+    /// of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+    pub max_depth: std::option::Option<i32>,
+    /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl QueryLineageInput {
+    /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
+    pub fn start_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.start_arns.as_deref()
+    }
+    /// <p>Associations between lineage entities are directed.  This parameter determines the direction from the
+    /// StartArn(s) the query will look.</p>
+    pub fn direction(&self) -> std::option::Option<&crate::model::Direction> {
+        self.direction.as_ref()
+    }
+    /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
+    /// lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+    pub fn include_edges(&self) -> bool {
+        self.include_edges
+    }
+    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p>
+    /// </li>
+    /// <li>
+    /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>,
+    /// <code>Artifact</code>, or <code>Context</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>CreatedBefore - Filter entities created before this date.</p>
+    /// </li>
+    /// <li>
+    /// <p>ModifiedBefore - Filter entities modified before this date.</p>
+    /// </li>
+    /// <li>
+    /// <p>ModifiedAfter - Filter entities modified after this date.</p>
+    /// </li>
+    /// </ul>
+    pub fn filters(&self) -> std::option::Option<&crate::model::QueryFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number
+    /// of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+    pub fn max_depth(&self) -> std::option::Option<i32> {
+        self.max_depth
+    }
+    /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for QueryLineageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryLineageInput");
+        formatter.field("start_arns", &self.start_arns);
+        formatter.field("direction", &self.direction);
+        formatter.field("include_edges", &self.include_edges);
+        formatter.field("filters", &self.filters);
+        formatter.field("max_depth", &self.max_depth);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -56596,6 +58817,53 @@ impl std::fmt::Debug for ListModelPackageGroupsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListModelMetadataInput {
+    /// <p>One or more filters that searches for the specified resource or resources
+    /// in a search. All resource objects that satisfy the expression's condition are
+    /// included in the search results. Specify the  Framework, FrameworkVersion, Domain
+    /// or Task to filter supported. Filter names and values are case-sensitive.</p>
+    pub search_expression: std::option::Option<crate::model::ModelMetadataSearchExpression>,
+    /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
+    /// the response includes a NextToken. To retrieve the next set of model metadata,
+    /// use the token in the next request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of models to return in the response.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListModelMetadataInput {
+    /// <p>One or more filters that searches for the specified resource or resources
+    /// in a search. All resource objects that satisfy the expression's condition are
+    /// included in the search results. Specify the  Framework, FrameworkVersion, Domain
+    /// or Task to filter supported. Filter names and values are case-sensitive.</p>
+    pub fn search_expression(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelMetadataSearchExpression> {
+        self.search_expression.as_ref()
+    }
+    /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
+    /// the response includes a NextToken. To retrieve the next set of model metadata,
+    /// use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of models to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListModelMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListModelMetadataInput");
+        formatter.field("search_expression", &self.search_expression);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelExplainabilityJobDefinitionsInput {
     /// <p>Name of the endpoint to monitor for model explainability.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
@@ -56747,6 +59015,68 @@ impl std::fmt::Debug for ListModelBiasJobDefinitionsInput {
         formatter.field("name_contains", &self.name_contains);
         formatter.field("creation_time_before", &self.creation_time_before);
         formatter.field("creation_time_after", &self.creation_time_after);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLineageGroupsInput {
+    /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
+    pub created_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
+    pub created_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The parameter by which to sort the results. The default is
+    /// <code>CreationTime</code>.</p>
+    pub sort_by: std::option::Option<crate::model::SortLineageGroupsBy>,
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
+    /// algorithms, use it in the subsequent request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of endpoints to return in the response. This value defaults to
+    /// 10.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListLineageGroupsInput {
+    /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_after.as_ref()
+    }
+    /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_before.as_ref()
+    }
+    /// <p>The parameter by which to sort the results. The default is
+    /// <code>CreationTime</code>.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortLineageGroupsBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
+    /// algorithms, use it in the subsequent request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of endpoints to return in the response. This value defaults to
+    /// 10.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListLineageGroupsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLineageGroupsInput");
+        formatter.field("created_after", &self.created_after);
+        formatter.field("created_before", &self.created_before);
+        formatter.field("sort_by", &self.sort_by);
+        formatter.field("sort_order", &self.sort_order);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -56932,6 +59262,96 @@ impl std::fmt::Debug for ListLabelingJobsInput {
         formatter.field("sort_by", &self.sort_by);
         formatter.field("sort_order", &self.sort_order);
         formatter.field("status_equals", &self.status_equals);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListInferenceRecommendationsJobsInput {
+    /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
+    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
+    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
+    pub last_modified_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
+    pub last_modified_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
+    pub name_contains: std::option::Option<std::string::String>,
+    /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
+    pub status_equals: std::option::Option<crate::model::RecommendationJobStatus>,
+    /// <p>The parameter by which to sort the results.</p>
+    pub sort_by: std::option::Option<crate::model::ListInferenceRecommendationsJobsSortBy>,
+    /// <p>The sort order for the results.</p>
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request
+    /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
+    /// of recommendations, use the token in the next request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of recommendations to return in the response.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListInferenceRecommendationsJobsInput {
+    /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_after.as_ref()
+    }
+    /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time_before.as_ref()
+    }
+    /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
+    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time_after.as_ref()
+    }
+    /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
+    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time_before.as_ref()
+    }
+    /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
+    pub fn name_contains(&self) -> std::option::Option<&str> {
+        self.name_contains.as_deref()
+    }
+    /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
+    pub fn status_equals(&self) -> std::option::Option<&crate::model::RecommendationJobStatus> {
+        self.status_equals.as_ref()
+    }
+    /// <p>The parameter by which to sort the results.</p>
+    pub fn sort_by(
+        &self,
+    ) -> std::option::Option<&crate::model::ListInferenceRecommendationsJobsSortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The sort order for the results.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request
+    /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
+    /// of recommendations, use the token in the next request.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of recommendations to return in the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListInferenceRecommendationsJobsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListInferenceRecommendationsJobsInput");
+        formatter.field("creation_time_after", &self.creation_time_after);
+        formatter.field("creation_time_before", &self.creation_time_before);
+        formatter.field("last_modified_time_after", &self.last_modified_time_after);
+        formatter.field("last_modified_time_before", &self.last_modified_time_before);
+        formatter.field("name_contains", &self.name_contains);
+        formatter.field("status_equals", &self.status_equals);
+        formatter.field("sort_by", &self.sort_by);
+        formatter.field("sort_order", &self.sort_order);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -58899,6 +61319,27 @@ impl std::fmt::Debug for GetModelPackageGroupPolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetLineageGroupPolicyInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    pub lineage_group_name: std::option::Option<std::string::String>,
+}
+impl GetLineageGroupPolicyInput {
+    /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn lineage_group_name(&self) -> std::option::Option<&str> {
+        self.lineage_group_name.as_deref()
+    }
+}
+impl std::fmt::Debug for GetLineageGroupPolicyInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetLineageGroupPolicyInput");
+        formatter.field("lineage_group_name", &self.lineage_group_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceFleetReportInput {
     /// <p>The name of the fleet.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
@@ -59482,6 +61923,27 @@ impl std::fmt::Debug for DescribeModelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeLineageGroupInput {
+    /// <p>The name of the lineage group.</p>
+    pub lineage_group_name: std::option::Option<std::string::String>,
+}
+impl DescribeLineageGroupInput {
+    /// <p>The name of the lineage group.</p>
+    pub fn lineage_group_name(&self) -> std::option::Option<&str> {
+        self.lineage_group_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeLineageGroupInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeLineageGroupInput");
+        formatter.field("lineage_group_name", &self.lineage_group_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLabelingJobInput {
     /// <p>The name of the labeling job to return information for.</p>
     pub labeling_job_name: std::option::Option<std::string::String>,
@@ -59496,6 +61958,29 @@ impl std::fmt::Debug for DescribeLabelingJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeLabelingJobInput");
         formatter.field("labeling_job_name", &self.labeling_job_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeInferenceRecommendationsJobInput {
+    /// <p>The name of the job. The name must be unique within an
+    /// Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub job_name: std::option::Option<std::string::String>,
+}
+impl DescribeInferenceRecommendationsJobInput {
+    /// <p>The name of the job. The name must be unique within an
+    /// Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeInferenceRecommendationsJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeInferenceRecommendationsJobInput");
+        formatter.field("job_name", &self.job_name);
         formatter.finish()
     }
 }
@@ -62935,6 +65420,26 @@ pub struct CreateModelPackageInput {
     /// <p>The metadata properties associated with the model package versions.</p>
     pub customer_metadata_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
+    /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
+    /// </p>
+    pub drift_check_baselines: std::option::Option<crate::model::DriftCheckBaselines>,
+    /// <p>The machine learning domain of your model package and its components. Common
+    /// machine learning domains include computer vision and natural language processing.</p>
+    pub domain: std::option::Option<std::string::String>,
+    /// <p>The machine learning task your model package accomplishes. Common machine
+    /// learning tasks include object detection and image classification.</p>
+    pub task: std::option::Option<std::string::String>,
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point
+    /// to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub sample_payload_url: std::option::Option<std::string::String>,
+    /// <p>An array of additional Inference Specification objects. Each additional
+    /// Inference Specification specifies artifacts based on this model package that can
+    /// be used on inference endpoints. Generally used with SageMaker Neo to store the
+    /// compiled artifacts. </p>
+    pub additional_inference_specifications: std::option::Option<
+        std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+    >,
 }
 impl CreateModelPackageInput {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters
@@ -63026,6 +65531,36 @@ impl CreateModelPackageInput {
     {
         self.customer_metadata_properties.as_ref()
     }
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
+    /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
+    /// </p>
+    pub fn drift_check_baselines(&self) -> std::option::Option<&crate::model::DriftCheckBaselines> {
+        self.drift_check_baselines.as_ref()
+    }
+    /// <p>The machine learning domain of your model package and its components. Common
+    /// machine learning domains include computer vision and natural language processing.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The machine learning task your model package accomplishes. Common machine
+    /// learning tasks include object detection and image classification.</p>
+    pub fn task(&self) -> std::option::Option<&str> {
+        self.task.as_deref()
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point
+    /// to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn sample_payload_url(&self) -> std::option::Option<&str> {
+        self.sample_payload_url.as_deref()
+    }
+    /// <p>An array of additional Inference Specification objects. Each additional
+    /// Inference Specification specifies artifacts based on this model package that can
+    /// be used on inference endpoints. Generally used with SageMaker Neo to store the
+    /// compiled artifacts. </p>
+    pub fn additional_inference_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalInferenceSpecificationDefinition]> {
+        self.additional_inference_specifications.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateModelPackageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -63048,6 +65583,14 @@ impl std::fmt::Debug for CreateModelPackageInput {
         formatter.field(
             "customer_metadata_properties",
             &self.customer_metadata_properties,
+        );
+        formatter.field("drift_check_baselines", &self.drift_check_baselines);
+        formatter.field("domain", &self.domain);
+        formatter.field("task", &self.task);
+        formatter.field("sample_payload_url", &self.sample_payload_url);
+        formatter.field(
+            "additional_inference_specifications",
+            &self.additional_inference_specifications,
         );
         formatter.finish()
     }
@@ -63745,6 +66288,91 @@ impl std::fmt::Debug for CreateLabelingJobInput {
             &self.labeling_job_algorithms_config,
         );
         formatter.field("human_task_config", &self.human_task_config);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateInferenceRecommendationsJobInput {
+    /// <p>A name for the recommendation job. The name must be unique within
+    /// the Amazon Web Services Region and within your Amazon Web Services account.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance
+    /// recommendation and <code>Advanced</code> to initiate a load test. If left unspecified,
+    /// Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+    pub job_type: std::option::Option<crate::model::RecommendationJobType>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+    /// to perform tasks on your behalf.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>Provides information about the versioned model package Amazon Resource Name (ARN),
+    /// the traffic pattern, and endpoint configurations.</p>
+    pub input_config: std::option::Option<crate::model::RecommendationJobInputConfig>,
+    /// <p>Description of the recommendation job.</p>
+    pub job_description: std::option::Option<std::string::String>,
+    /// <p>A set of conditions for stopping a recommendation job.  If any of
+    /// the conditions are met, the job is automatically stopped.</p>
+    pub stopping_conditions: std::option::Option<crate::model::RecommendationJobStoppingConditions>,
+    /// <p>The metadata that you apply to Amazon Web Services resources to help you
+    /// categorize and organize them. Each tag consists of a key and a value, both of
+    /// which you define. For more information, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+    /// in the Amazon Web Services General Reference.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateInferenceRecommendationsJobInput {
+    /// <p>A name for the recommendation job. The name must be unique within
+    /// the Amazon Web Services Region and within your Amazon Web Services account.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance
+    /// recommendation and <code>Advanced</code> to initiate a load test. If left unspecified,
+    /// Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::RecommendationJobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+    /// to perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>Provides information about the versioned model package Amazon Resource Name (ARN),
+    /// the traffic pattern, and endpoint configurations.</p>
+    pub fn input_config(&self) -> std::option::Option<&crate::model::RecommendationJobInputConfig> {
+        self.input_config.as_ref()
+    }
+    /// <p>Description of the recommendation job.</p>
+    pub fn job_description(&self) -> std::option::Option<&str> {
+        self.job_description.as_deref()
+    }
+    /// <p>A set of conditions for stopping a recommendation job.  If any of
+    /// the conditions are met, the job is automatically stopped.</p>
+    pub fn stopping_conditions(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationJobStoppingConditions> {
+        self.stopping_conditions.as_ref()
+    }
+    /// <p>The metadata that you apply to Amazon Web Services resources to help you
+    /// categorize and organize them. Each tag consists of a key and a value, both of
+    /// which you define. For more information, see
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
+    /// in the Amazon Web Services General Reference.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateInferenceRecommendationsJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateInferenceRecommendationsJobInput");
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_type", &self.job_type);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("input_config", &self.input_config);
+        formatter.field("job_description", &self.job_description);
+        formatter.field("stopping_conditions", &self.stopping_conditions);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -65073,6 +67701,11 @@ pub struct CreateCompilationJobInput {
     /// Roles.</a>
     /// </p>
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+    /// <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+    /// request syntax. The presence of both objects in the <code>CreateCompilationJob</code>
+    /// request will return an exception.</p>
+    pub model_package_version_arn: std::option::Option<std::string::String>,
     /// <p>Provides information about the location of input model artifacts, the name and shape
     /// of the expected data inputs, and the framework in which the model was trained.</p>
     pub input_config: std::option::Option<crate::model::InputConfig>,
@@ -65125,6 +67758,13 @@ impl CreateCompilationJobInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+    /// <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+    /// request syntax. The presence of both objects in the <code>CreateCompilationJob</code>
+    /// request will return an exception.</p>
+    pub fn model_package_version_arn(&self) -> std::option::Option<&str> {
+        self.model_package_version_arn.as_deref()
+    }
     /// <p>Provides information about the location of input model artifacts, the name and shape
     /// of the expected data inputs, and the framework in which the model was trained.</p>
     pub fn input_config(&self) -> std::option::Option<&crate::model::InputConfig> {
@@ -65161,6 +67801,7 @@ impl std::fmt::Debug for CreateCompilationJobInput {
         let mut formatter = f.debug_struct("CreateCompilationJobInput");
         formatter.field("compilation_job_name", &self.compilation_job_name);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("model_package_version_arn", &self.model_package_version_arn);
         formatter.field("input_config", &self.input_config);
         formatter.field("output_config", &self.output_config);
         formatter.field("vpc_config", &self.vpc_config);

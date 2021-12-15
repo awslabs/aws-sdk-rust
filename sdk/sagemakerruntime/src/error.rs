@@ -12,11 +12,15 @@ pub struct InvokeEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InvokeEndpointErrorKind {
+    /// <p>Your request caused an exception with an internal dependency. Contact customer support. </p>
+    InternalDependencyException(crate::error::InternalDependencyException),
     /// <p> An internal failure occurred. </p>
     InternalFailure(crate::error::InternalFailure),
     /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code.
     /// </p>
     ModelError(crate::error::ModelError),
+    /// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
+    ModelNotReadyException(crate::error::ModelNotReadyException),
     /// <p> The service is unavailable. Try your call again. </p>
     ServiceUnavailable(crate::error::ServiceUnavailable),
     /// <p> Inspect your request and try again. </p>
@@ -27,8 +31,10 @@ pub enum InvokeEndpointErrorKind {
 impl std::fmt::Display for InvokeEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            InvokeEndpointErrorKind::InternalDependencyException(_inner) => _inner.fmt(f),
             InvokeEndpointErrorKind::InternalFailure(_inner) => _inner.fmt(f),
             InvokeEndpointErrorKind::ModelError(_inner) => _inner.fmt(f),
+            InvokeEndpointErrorKind::ModelNotReadyException(_inner) => _inner.fmt(f),
             InvokeEndpointErrorKind::ServiceUnavailable(_inner) => _inner.fmt(f),
             InvokeEndpointErrorKind::ValidationError(_inner) => _inner.fmt(f),
             InvokeEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -87,6 +93,13 @@ impl InvokeEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `InvokeEndpointErrorKind::InternalDependencyException`.
+    pub fn is_internal_dependency_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeEndpointErrorKind::InternalDependencyException(_)
+        )
+    }
     /// Returns `true` if the error kind is `InvokeEndpointErrorKind::InternalFailure`.
     pub fn is_internal_failure(&self) -> bool {
         matches!(&self.kind, InvokeEndpointErrorKind::InternalFailure(_))
@@ -94,6 +107,13 @@ impl InvokeEndpointError {
     /// Returns `true` if the error kind is `InvokeEndpointErrorKind::ModelError`.
     pub fn is_model_error(&self) -> bool {
         matches!(&self.kind, InvokeEndpointErrorKind::ModelError(_))
+    }
+    /// Returns `true` if the error kind is `InvokeEndpointErrorKind::ModelNotReadyException`.
+    pub fn is_model_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeEndpointErrorKind::ModelNotReadyException(_)
+        )
     }
     /// Returns `true` if the error kind is `InvokeEndpointErrorKind::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
@@ -107,8 +127,10 @@ impl InvokeEndpointError {
 impl std::error::Error for InvokeEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            InvokeEndpointErrorKind::InternalDependencyException(_inner) => Some(_inner),
             InvokeEndpointErrorKind::InternalFailure(_inner) => Some(_inner),
             InvokeEndpointErrorKind::ModelError(_inner) => Some(_inner),
+            InvokeEndpointErrorKind::ModelNotReadyException(_inner) => Some(_inner),
             InvokeEndpointErrorKind::ServiceUnavailable(_inner) => Some(_inner),
             InvokeEndpointErrorKind::ValidationError(_inner) => Some(_inner),
             InvokeEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -419,6 +441,70 @@ impl InternalFailure {
     }
 }
 
+/// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelNotReadyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ModelNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelNotReadyException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ModelNotReadyException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ModelNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ModelNotReadyException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ModelNotReadyException {}
+/// See [`ModelNotReadyException`](crate::error::ModelNotReadyException)
+pub mod model_not_ready_exception {
+    /// A builder for [`ModelNotReadyException`](crate::error::ModelNotReadyException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelNotReadyException`](crate::error::ModelNotReadyException)
+        pub fn build(self) -> crate::error::ModelNotReadyException {
+            crate::error::ModelNotReadyException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ModelNotReadyException {
+    /// Creates a new builder-style object to manufacture [`ModelNotReadyException`](crate::error::ModelNotReadyException)
+    pub fn builder() -> crate::error::model_not_ready_exception::Builder {
+        crate::error::model_not_ready_exception::Builder::default()
+    }
+}
+
 /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code.
 /// </p>
 #[non_exhaustive]
@@ -466,8 +552,8 @@ impl ModelError {
 impl std::fmt::Display for ModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ModelError")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -546,5 +632,69 @@ impl ModelError {
     /// Creates a new builder-style object to manufacture [`ModelError`](crate::error::ModelError)
     pub fn builder() -> crate::error::model_error::Builder {
         crate::error::model_error::Builder::default()
+    }
+}
+
+/// <p>Your request caused an exception with an internal dependency. Contact customer support. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalDependencyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InternalDependencyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InternalDependencyException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InternalDependencyException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalDependencyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalDependencyException")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalDependencyException {}
+/// See [`InternalDependencyException`](crate::error::InternalDependencyException)
+pub mod internal_dependency_exception {
+    /// A builder for [`InternalDependencyException`](crate::error::InternalDependencyException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InternalDependencyException`](crate::error::InternalDependencyException)
+        pub fn build(self) -> crate::error::InternalDependencyException {
+            crate::error::InternalDependencyException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InternalDependencyException {
+    /// Creates a new builder-style object to manufacture [`InternalDependencyException`](crate::error::InternalDependencyException)
+    pub fn builder() -> crate::error::internal_dependency_exception::Builder {
+        crate::error::internal_dependency_exception::Builder::default()
     }
 }

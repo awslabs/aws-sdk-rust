@@ -731,7 +731,7 @@ impl LineItemFields {
 }
 
 /// <p>Breakdown of detected information, seperated into
-/// the catagories Type, LableDetection, and ValueDetection</p>
+/// the catagories Type, LabelDetection, and ValueDetection</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpenseField {
@@ -2719,6 +2719,410 @@ impl Document {
     /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document)
     pub fn builder() -> crate::model::document::Builder {
         crate::model::document::Builder::default()
+    }
+}
+
+/// <p>The structure that lists each document processed in an AnalyzeID operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IdentityDocument {
+    /// <p>Denotes the placement of a document in the IdentityDocument list. The first document
+    /// is marked 1, the second 2 and so on.</p>
+    pub document_index: std::option::Option<i32>,
+    /// <p>The structure used to record information extracted from identity documents.
+    /// Contains both normalized field and value of the extracted text.</p>
+    pub identity_document_fields:
+        std::option::Option<std::vec::Vec<crate::model::IdentityDocumentField>>,
+}
+impl IdentityDocument {
+    /// <p>Denotes the placement of a document in the IdentityDocument list. The first document
+    /// is marked 1, the second 2 and so on.</p>
+    pub fn document_index(&self) -> std::option::Option<i32> {
+        self.document_index
+    }
+    /// <p>The structure used to record information extracted from identity documents.
+    /// Contains both normalized field and value of the extracted text.</p>
+    pub fn identity_document_fields(
+        &self,
+    ) -> std::option::Option<&[crate::model::IdentityDocumentField]> {
+        self.identity_document_fields.as_deref()
+    }
+}
+impl std::fmt::Debug for IdentityDocument {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentityDocument");
+        formatter.field("document_index", &self.document_index);
+        formatter.field("identity_document_fields", &self.identity_document_fields);
+        formatter.finish()
+    }
+}
+/// See [`IdentityDocument`](crate::model::IdentityDocument)
+pub mod identity_document {
+    /// A builder for [`IdentityDocument`](crate::model::IdentityDocument)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document_index: std::option::Option<i32>,
+        pub(crate) identity_document_fields:
+            std::option::Option<std::vec::Vec<crate::model::IdentityDocumentField>>,
+    }
+    impl Builder {
+        /// <p>Denotes the placement of a document in the IdentityDocument list. The first document
+        /// is marked 1, the second 2 and so on.</p>
+        pub fn document_index(mut self, input: i32) -> Self {
+            self.document_index = Some(input);
+            self
+        }
+        /// <p>Denotes the placement of a document in the IdentityDocument list. The first document
+        /// is marked 1, the second 2 and so on.</p>
+        pub fn set_document_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.document_index = input;
+            self
+        }
+        /// Appends an item to `identity_document_fields`.
+        ///
+        /// To override the contents of this collection use [`set_identity_document_fields`](Self::set_identity_document_fields).
+        ///
+        /// <p>The structure used to record information extracted from identity documents.
+        /// Contains both normalized field and value of the extracted text.</p>
+        pub fn identity_document_fields(
+            mut self,
+            input: impl Into<crate::model::IdentityDocumentField>,
+        ) -> Self {
+            let mut v = self.identity_document_fields.unwrap_or_default();
+            v.push(input.into());
+            self.identity_document_fields = Some(v);
+            self
+        }
+        /// <p>The structure used to record information extracted from identity documents.
+        /// Contains both normalized field and value of the extracted text.</p>
+        pub fn set_identity_document_fields(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IdentityDocumentField>>,
+        ) -> Self {
+            self.identity_document_fields = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IdentityDocument`](crate::model::IdentityDocument)
+        pub fn build(self) -> crate::model::IdentityDocument {
+            crate::model::IdentityDocument {
+                document_index: self.document_index,
+                identity_document_fields: self.identity_document_fields,
+            }
+        }
+    }
+}
+impl IdentityDocument {
+    /// Creates a new builder-style object to manufacture [`IdentityDocument`](crate::model::IdentityDocument)
+    pub fn builder() -> crate::model::identity_document::Builder {
+        crate::model::identity_document::Builder::default()
+    }
+}
+
+/// <p>Structure containing both the normalized type of the extracted information
+/// and the text associated with it. These are extracted as Type and Value respectively.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IdentityDocumentField {
+    /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+    pub r#type: std::option::Option<crate::model::AnalyzeIdDetections>,
+    /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+    pub value_detection: std::option::Option<crate::model::AnalyzeIdDetections>,
+}
+impl IdentityDocumentField {
+    /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::AnalyzeIdDetections> {
+        self.r#type.as_ref()
+    }
+    /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+    pub fn value_detection(&self) -> std::option::Option<&crate::model::AnalyzeIdDetections> {
+        self.value_detection.as_ref()
+    }
+}
+impl std::fmt::Debug for IdentityDocumentField {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentityDocumentField");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("value_detection", &self.value_detection);
+        formatter.finish()
+    }
+}
+/// See [`IdentityDocumentField`](crate::model::IdentityDocumentField)
+pub mod identity_document_field {
+    /// A builder for [`IdentityDocumentField`](crate::model::IdentityDocumentField)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::AnalyzeIdDetections>,
+        pub(crate) value_detection: std::option::Option<crate::model::AnalyzeIdDetections>,
+    }
+    impl Builder {
+        /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+        pub fn r#type(mut self, input: crate::model::AnalyzeIdDetections) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AnalyzeIdDetections>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+        pub fn value_detection(mut self, input: crate::model::AnalyzeIdDetections) -> Self {
+            self.value_detection = Some(input);
+            self
+        }
+        /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+        pub fn set_value_detection(
+            mut self,
+            input: std::option::Option<crate::model::AnalyzeIdDetections>,
+        ) -> Self {
+            self.value_detection = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IdentityDocumentField`](crate::model::IdentityDocumentField)
+        pub fn build(self) -> crate::model::IdentityDocumentField {
+            crate::model::IdentityDocumentField {
+                r#type: self.r#type,
+                value_detection: self.value_detection,
+            }
+        }
+    }
+}
+impl IdentityDocumentField {
+    /// Creates a new builder-style object to manufacture [`IdentityDocumentField`](crate::model::IdentityDocumentField)
+    pub fn builder() -> crate::model::identity_document_field::Builder {
+        crate::model::identity_document_field::Builder::default()
+    }
+}
+
+/// <p>Used to contain the information detected by an AnalyzeID operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnalyzeIdDetections {
+    /// <p>Text of either the normalized field or value associated with it.</p>
+    pub text: std::option::Option<std::string::String>,
+    /// <p>Only returned for dates, returns the type of value detected and the date
+    /// written in a more machine readable way.</p>
+    pub normalized_value: std::option::Option<crate::model::NormalizedValue>,
+    /// <p>The confidence score of the detected text.</p>
+    pub confidence: std::option::Option<f32>,
+}
+impl AnalyzeIdDetections {
+    /// <p>Text of either the normalized field or value associated with it.</p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p>Only returned for dates, returns the type of value detected and the date
+    /// written in a more machine readable way.</p>
+    pub fn normalized_value(&self) -> std::option::Option<&crate::model::NormalizedValue> {
+        self.normalized_value.as_ref()
+    }
+    /// <p>The confidence score of the detected text.</p>
+    pub fn confidence(&self) -> std::option::Option<f32> {
+        self.confidence
+    }
+}
+impl std::fmt::Debug for AnalyzeIdDetections {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnalyzeIdDetections");
+        formatter.field("text", &self.text);
+        formatter.field("normalized_value", &self.normalized_value);
+        formatter.field("confidence", &self.confidence);
+        formatter.finish()
+    }
+}
+/// See [`AnalyzeIdDetections`](crate::model::AnalyzeIdDetections)
+pub mod analyze_id_detections {
+    /// A builder for [`AnalyzeIdDetections`](crate::model::AnalyzeIdDetections)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) normalized_value: std::option::Option<crate::model::NormalizedValue>,
+        pub(crate) confidence: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>Text of either the normalized field or value associated with it.</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p>Text of either the normalized field or value associated with it.</p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// <p>Only returned for dates, returns the type of value detected and the date
+        /// written in a more machine readable way.</p>
+        pub fn normalized_value(mut self, input: crate::model::NormalizedValue) -> Self {
+            self.normalized_value = Some(input);
+            self
+        }
+        /// <p>Only returned for dates, returns the type of value detected and the date
+        /// written in a more machine readable way.</p>
+        pub fn set_normalized_value(
+            mut self,
+            input: std::option::Option<crate::model::NormalizedValue>,
+        ) -> Self {
+            self.normalized_value = input;
+            self
+        }
+        /// <p>The confidence score of the detected text.</p>
+        pub fn confidence(mut self, input: f32) -> Self {
+            self.confidence = Some(input);
+            self
+        }
+        /// <p>The confidence score of the detected text.</p>
+        pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+            self.confidence = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnalyzeIdDetections`](crate::model::AnalyzeIdDetections)
+        pub fn build(self) -> crate::model::AnalyzeIdDetections {
+            crate::model::AnalyzeIdDetections {
+                text: self.text,
+                normalized_value: self.normalized_value,
+                confidence: self.confidence,
+            }
+        }
+    }
+}
+impl AnalyzeIdDetections {
+    /// Creates a new builder-style object to manufacture [`AnalyzeIdDetections`](crate::model::AnalyzeIdDetections)
+    pub fn builder() -> crate::model::analyze_id_detections::Builder {
+        crate::model::analyze_id_detections::Builder::default()
+    }
+}
+
+/// <p>Contains information relating to dates in a document, including the type
+/// of value, and the value.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NormalizedValue {
+    /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p>The normalized type of the value detected. In this case, DATE.</p>
+    pub value_type: std::option::Option<crate::model::ValueType>,
+}
+impl NormalizedValue {
+    /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+    /// <p>The normalized type of the value detected. In this case, DATE.</p>
+    pub fn value_type(&self) -> std::option::Option<&crate::model::ValueType> {
+        self.value_type.as_ref()
+    }
+}
+impl std::fmt::Debug for NormalizedValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NormalizedValue");
+        formatter.field("value", &self.value);
+        formatter.field("value_type", &self.value_type);
+        formatter.finish()
+    }
+}
+/// See [`NormalizedValue`](crate::model::NormalizedValue)
+pub mod normalized_value {
+    /// A builder for [`NormalizedValue`](crate::model::NormalizedValue)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) value_type: std::option::Option<crate::model::ValueType>,
+    }
+    impl Builder {
+        /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The normalized type of the value detected. In this case, DATE.</p>
+        pub fn value_type(mut self, input: crate::model::ValueType) -> Self {
+            self.value_type = Some(input);
+            self
+        }
+        /// <p>The normalized type of the value detected. In this case, DATE.</p>
+        pub fn set_value_type(
+            mut self,
+            input: std::option::Option<crate::model::ValueType>,
+        ) -> Self {
+            self.value_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NormalizedValue`](crate::model::NormalizedValue)
+        pub fn build(self) -> crate::model::NormalizedValue {
+            crate::model::NormalizedValue {
+                value: self.value,
+                value_type: self.value_type,
+            }
+        }
+    }
+}
+impl NormalizedValue {
+    /// Creates a new builder-style object to manufacture [`NormalizedValue`](crate::model::NormalizedValue)
+    pub fn builder() -> crate::model::normalized_value::Builder {
+        crate::model::normalized_value::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ValueType {
+    #[allow(missing_docs)] // documentation missing in model
+    Date,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ValueType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DATE" => ValueType::Date,
+            other => ValueType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ValueType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ValueType::from(s))
+    }
+}
+impl ValueType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ValueType::Date => "DATE",
+            ValueType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DATE"]
+    }
+}
+impl AsRef<str> for ValueType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

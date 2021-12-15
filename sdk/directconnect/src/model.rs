@@ -3111,6 +3111,8 @@ pub struct VirtualInterface {
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub site_link_enabled: std::option::Option<bool>,
 }
 impl VirtualInterface {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -3255,6 +3257,10 @@ impl VirtualInterface {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub fn site_link_enabled(&self) -> std::option::Option<bool> {
+        self.site_link_enabled
+    }
 }
 impl std::fmt::Debug for VirtualInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3284,6 +3290,7 @@ impl std::fmt::Debug for VirtualInterface {
         formatter.field("aws_device_v2", &self.aws_device_v2);
         formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
+        formatter.field("site_link_enabled", &self.site_link_enabled);
         formatter.finish()
     }
 }
@@ -3320,6 +3327,7 @@ pub mod virtual_interface {
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) site_link_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -3727,6 +3735,16 @@ pub mod virtual_interface {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn site_link_enabled(mut self, input: bool) -> Self {
+            self.site_link_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.site_link_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VirtualInterface`](crate::model::VirtualInterface)
         pub fn build(self) -> crate::model::VirtualInterface {
             crate::model::VirtualInterface {
@@ -3755,6 +3773,7 @@ pub mod virtual_interface {
                 aws_device_v2: self.aws_device_v2,
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
+                site_link_enabled: self.site_link_enabled,
             }
         }
     }
@@ -6591,6 +6610,8 @@ pub struct NewTransitVirtualInterface {
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the transitive virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub enable_site_link: std::option::Option<bool>,
 }
 impl NewTransitVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
@@ -6634,6 +6655,10 @@ impl NewTransitVirtualInterface {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub fn enable_site_link(&self) -> std::option::Option<bool> {
+        self.enable_site_link
+    }
 }
 impl std::fmt::Debug for NewTransitVirtualInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6648,6 +6673,7 @@ impl std::fmt::Debug for NewTransitVirtualInterface {
         formatter.field("address_family", &self.address_family);
         formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
         formatter.field("tags", &self.tags);
+        formatter.field("enable_site_link", &self.enable_site_link);
         formatter.finish()
     }
 }
@@ -6667,6 +6693,7 @@ pub mod new_transit_virtual_interface {
         pub(crate) address_family: std::option::Option<crate::model::AddressFamily>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) enable_site_link: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
@@ -6795,6 +6822,16 @@ pub mod new_transit_virtual_interface {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether to enable or disable SiteLink.</p>
+        pub fn enable_site_link(mut self, input: bool) -> Self {
+            self.enable_site_link = Some(input);
+            self
+        }
+        /// <p>Indicates whether to enable or disable SiteLink.</p>
+        pub fn set_enable_site_link(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_site_link = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface)
         pub fn build(self) -> crate::model::NewTransitVirtualInterface {
             crate::model::NewTransitVirtualInterface {
@@ -6808,6 +6845,7 @@ pub mod new_transit_virtual_interface {
                 address_family: self.address_family,
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
                 tags: self.tags,
+                enable_site_link: self.enable_site_link,
             }
         }
     }
@@ -7090,6 +7128,8 @@ pub struct NewPrivateVirtualInterface {
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the private virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub enable_site_link: std::option::Option<bool>,
 }
 impl NewPrivateVirtualInterface {
     /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
@@ -7137,6 +7177,10 @@ impl NewPrivateVirtualInterface {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub fn enable_site_link(&self) -> std::option::Option<bool> {
+        self.enable_site_link
+    }
 }
 impl std::fmt::Debug for NewPrivateVirtualInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7152,6 +7196,7 @@ impl std::fmt::Debug for NewPrivateVirtualInterface {
         formatter.field("virtual_gateway_id", &self.virtual_gateway_id);
         formatter.field("direct_connect_gateway_id", &self.direct_connect_gateway_id);
         formatter.field("tags", &self.tags);
+        formatter.field("enable_site_link", &self.enable_site_link);
         formatter.finish()
     }
 }
@@ -7172,6 +7217,7 @@ pub mod new_private_virtual_interface {
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) enable_site_link: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
@@ -7313,6 +7359,16 @@ pub mod new_private_virtual_interface {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether to enable or disable SiteLink.</p>
+        pub fn enable_site_link(mut self, input: bool) -> Self {
+            self.enable_site_link = Some(input);
+            self
+        }
+        /// <p>Indicates whether to enable or disable SiteLink.</p>
+        pub fn set_enable_site_link(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_site_link = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface)
         pub fn build(self) -> crate::model::NewPrivateVirtualInterface {
             crate::model::NewPrivateVirtualInterface {
@@ -7327,6 +7383,7 @@ pub mod new_private_virtual_interface {
                 virtual_gateway_id: self.virtual_gateway_id,
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
                 tags: self.tags,
+                enable_site_link: self.enable_site_link,
             }
         }
     }

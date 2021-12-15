@@ -6,7 +6,7 @@ pub enum Error {
     /// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is
     /// already registered with a different patch baseline.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>You must disassociate a document from all instances before you can delete it.</p>
+    /// <p>You must disassociate a document from all managed nodes before you can delete it.</p>
     AssociatedInstances(crate::error::AssociatedInstances),
     /// <p>The specified association already exists.</p>
     AssociationAlreadyExists(crate::error::AssociationAlreadyExists),
@@ -71,7 +71,7 @@ pub enum Error {
     /// <p>The version name has already been used in this document. Specify a different version name,
     /// and then try again.</p>
     DuplicateDocumentVersionName(crate::error::DuplicateDocumentVersionName),
-    /// <p>You can't specify an instance ID in more than one association.</p>
+    /// <p>You can't specify a managed node ID in more than one association.</p>
     DuplicateInstanceId(crate::error::DuplicateInstanceId),
     /// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a
     /// region where the corresponding service isn't available. </p>
@@ -155,7 +155,7 @@ pub enum Error {
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
     /// <li>
-    /// <p>You don't have permission to access the instance.</p>
+    /// <p>You don't have permission to access the managed node.</p>
     /// </li>
     /// <li>
     /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
@@ -165,7 +165,7 @@ pub enum Error {
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
     /// </li>
     /// <li>
-    /// <p>The instance isn't in valid state. Valid states are: <code>Running</code>,
+    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
     /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
     /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
     /// </li>
@@ -210,8 +210,8 @@ pub enum Error {
     InvalidPolicyTypeException(crate::error::InvalidPolicyTypeException),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
-    /// instance must be a registered, managed instance.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
+    /// instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// <p>The specified inventory item result attribute isn't valid.</p>
     InvalidResultAttributeException(crate::error::InvalidResultAttributeException),
@@ -228,8 +228,8 @@ pub enum Error {
     InvalidTypeNameException(crate::error::InvalidTypeNameException),
     /// <p>The update isn't valid.</p>
     InvalidUpdate(crate::error::InvalidUpdate),
-    /// <p>The command ID and instance ID you specified didn't match any invocations. Verify the
-    /// command ID and the instance ID and try again. </p>
+    /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the
+    /// command ID and the managed node ID and try again. </p>
     InvocationDoesNotExist(crate::error::InvocationDoesNotExist),
     /// <p>The inventory item has invalid content. </p>
     ItemContentMismatchException(crate::error::ItemContentMismatchException),
@@ -336,10 +336,10 @@ pub enum Error {
     /// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow
     /// operation, but the target is still referenced in a task.</p>
     TargetInUseException(crate::error::TargetInUseException),
-    /// <p>The specified target instance for the session isn't fully configured for use with Session Manager. For
+    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with
     /// Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you
-    /// attempt to start a session on an instance that is located in a different account or Region</p>
+    /// attempt to start a session on a managed node that is located in a different account or Region</p>
     TargetNotConnected(crate::error::TargetNotConnected),
     /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try
     /// the command again.</p>
@@ -371,8 +371,8 @@ pub enum Error {
     UnsupportedOperatingSystem(crate::error::UnsupportedOperatingSystem),
     /// <p>The parameter type isn't supported.</p>
     UnsupportedParameterType(crate::error::UnsupportedParameterType),
-    /// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
-    /// sent an document for a Windows instance to a Linux instance.</p>
+    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
+    /// sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -623,6 +623,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateActivationErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
+                }
+                crate::error::CreateActivationErrorKind::InvalidParameters(inner) => {
+                    Error::InvalidParameters(inner)
                 }
                 crate::error::CreateActivationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

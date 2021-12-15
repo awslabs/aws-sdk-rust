@@ -2158,14 +2158,18 @@ pub mod confirm_customer_agreement_input {
     }
     impl Builder {
         /// <p>
+        ///
         /// The name of the customer agreement.
+        ///
         /// </p>
         pub fn agreement_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.agreement_name = Some(input.into());
             self
         }
         /// <p>
+        ///
         /// The name of the customer agreement.
+        ///
         /// </p>
         pub fn set_agreement_name(
             mut self,
@@ -11454,6 +11458,8 @@ pub mod update_virtual_interface_attributes_input {
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) mtu: std::option::Option<i32>,
+        pub(crate) enable_site_link: std::option::Option<bool>,
+        pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the virtual private interface.</p>
@@ -11479,6 +11485,29 @@ pub mod update_virtual_interface_attributes_input {
             self.mtu = input;
             self
         }
+        /// <p>Indicates whether to enable or disable SiteLink.</p>
+        pub fn enable_site_link(mut self, input: bool) -> Self {
+            self.enable_site_link = Some(input);
+            self
+        }
+        /// <p>Indicates whether to enable or disable SiteLink.</p>
+        pub fn set_enable_site_link(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_site_link = input;
+            self
+        }
+        /// <p>The name of the virtual private interface.</p>
+        pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.virtual_interface_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the virtual private interface.</p>
+        pub fn set_virtual_interface_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.virtual_interface_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesInput`](crate::input::UpdateVirtualInterfaceAttributesInput)
         pub fn build(
             self,
@@ -11489,6 +11518,8 @@ pub mod update_virtual_interface_attributes_input {
             Ok(crate::input::UpdateVirtualInterfaceAttributesInput {
                 virtual_interface_id: self.virtual_interface_id,
                 mtu: self.mtu,
+                enable_site_link: self.enable_site_link,
+                virtual_interface_name: self.virtual_interface_name,
             })
         }
     }
@@ -11625,6 +11656,10 @@ pub struct UpdateVirtualInterfaceAttributesInput {
     pub virtual_interface_id: std::option::Option<std::string::String>,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
     pub mtu: std::option::Option<i32>,
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub enable_site_link: std::option::Option<bool>,
+    /// <p>The name of the virtual private interface.</p>
+    pub virtual_interface_name: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
@@ -11635,12 +11670,22 @@ impl UpdateVirtualInterfaceAttributesInput {
     pub fn mtu(&self) -> std::option::Option<i32> {
         self.mtu
     }
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub fn enable_site_link(&self) -> std::option::Option<bool> {
+        self.enable_site_link
+    }
+    /// <p>The name of the virtual private interface.</p>
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
+        self.virtual_interface_name.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateVirtualInterfaceAttributesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateVirtualInterfaceAttributesInput");
         formatter.field("virtual_interface_id", &self.virtual_interface_id);
         formatter.field("mtu", &self.mtu);
+        formatter.field("enable_site_link", &self.enable_site_link);
+        formatter.field("virtual_interface_name", &self.virtual_interface_name);
         formatter.finish()
     }
 }
@@ -13359,13 +13404,17 @@ impl std::fmt::Debug for ConfirmPrivateVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmCustomerAgreementInput {
     /// <p>
+    ///
     /// The name of the customer agreement.
+    ///
     /// </p>
     pub agreement_name: std::option::Option<std::string::String>,
 }
 impl ConfirmCustomerAgreementInput {
     /// <p>
+    ///
     /// The name of the customer agreement.
+    ///
     /// </p>
     pub fn agreement_name(&self) -> std::option::Option<&str> {
         self.agreement_name.as_deref()

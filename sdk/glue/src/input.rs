@@ -616,6 +616,7 @@ pub mod batch_delete_table_input {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) tables_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -664,6 +665,19 @@ pub mod batch_delete_table_input {
             self.tables_to_delete = input;
             self
         }
+        /// <p>The transaction ID at which to delete the table contents.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction ID at which to delete the table contents.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchDeleteTableInput`](crate::input::BatchDeleteTableInput)
         pub fn build(
             self,
@@ -675,6 +689,7 @@ pub mod batch_delete_table_input {
                 catalog_id: self.catalog_id,
                 database_name: self.database_name,
                 tables_to_delete: self.tables_to_delete,
+                transaction_id: self.transaction_id,
             })
         }
     }
@@ -6924,6 +6939,7 @@ pub mod create_table_input {
         pub(crate) table_input: std::option::Option<crate::model::TableInput>,
         pub(crate) partition_indexes:
             std::option::Option<std::vec::Vec<crate::model::PartitionIndex>>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
@@ -6987,6 +7003,19 @@ pub mod create_table_input {
             self.partition_indexes = input;
             self
         }
+        /// <p>The ID of the transaction.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the transaction.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTableInput`](crate::input::CreateTableInput)
         pub fn build(
             self,
@@ -6999,6 +7028,7 @@ pub mod create_table_input {
                 database_name: self.database_name,
                 table_input: self.table_input,
                 partition_indexes: self.partition_indexes,
+                transaction_id: self.transaction_id,
             })
         }
     }
@@ -10767,6 +10797,7 @@ pub mod delete_table_input {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -10808,6 +10839,19 @@ pub mod delete_table_input {
             self.name = input;
             self
         }
+        /// <p>The transaction ID at which to delete the table contents.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction ID at which to delete the table contents.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteTableInput`](crate::input::DeleteTableInput)
         pub fn build(
             self,
@@ -10819,6 +10863,7 @@ pub mod delete_table_input {
                 catalog_id: self.catalog_id,
                 database_name: self.database_name,
                 name: self.name,
+                transaction_id: self.transaction_id,
             })
         }
     }
@@ -17137,6 +17182,8 @@ pub mod get_partitions_input {
         pub(crate) segment: std::option::Option<crate::model::Segment>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) exclude_column_schema: std::option::Option<bool>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
@@ -17436,6 +17483,32 @@ pub mod get_partitions_input {
             self.exclude_column_schema = input;
             self
         }
+        /// <p>The transaction ID at which to read the partition contents.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction ID at which to read the partition contents.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.query_as_of_time = Some(input);
+            self
+        }
+        /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn set_query_as_of_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.query_as_of_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPartitionsInput`](crate::input::GetPartitionsInput)
         pub fn build(
             self,
@@ -17452,6 +17525,8 @@ pub mod get_partitions_input {
                 segment: self.segment,
                 max_results: self.max_results,
                 exclude_column_schema: self.exclude_column_schema,
+                transaction_id: self.transaction_id,
+                query_as_of_time: self.query_as_of_time,
             })
         }
     }
@@ -19437,6 +19512,8 @@ pub mod get_table_input {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -19478,6 +19555,32 @@ pub mod get_table_input {
             self.name = input;
             self
         }
+        /// <p>The transaction ID at which to read the table contents. </p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction ID at which to read the table contents. </p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.query_as_of_time = Some(input);
+            self
+        }
+        /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn set_query_as_of_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.query_as_of_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTableInput`](crate::input::GetTableInput)
         pub fn build(
             self,
@@ -19487,6 +19590,8 @@ pub mod get_table_input {
                 catalog_id: self.catalog_id,
                 database_name: self.database_name,
                 name: self.name,
+                transaction_id: self.transaction_id,
+                query_as_of_time: self.query_as_of_time,
             })
         }
     }
@@ -19620,6 +19725,8 @@ pub mod get_tables_input {
         pub(crate) expression: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
@@ -19681,6 +19788,32 @@ pub mod get_tables_input {
             self.max_results = input;
             self
         }
+        /// <p>The transaction ID at which to read the table contents.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction ID at which to read the table contents.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.query_as_of_time = Some(input);
+            self
+        }
+        /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn set_query_as_of_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.query_as_of_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTablesInput`](crate::input::GetTablesInput)
         pub fn build(
             self,
@@ -19692,6 +19825,8 @@ pub mod get_tables_input {
                 expression: self.expression,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                transaction_id: self.transaction_id,
+                query_as_of_time: self.query_as_of_time,
             })
         }
     }
@@ -31915,6 +32050,7 @@ pub mod update_table_input {
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) table_input: std::option::Option<crate::model::TableInput>,
         pub(crate) skip_archive: std::option::Option<bool>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -31973,6 +32109,19 @@ pub mod update_table_input {
             self.skip_archive = input;
             self
         }
+        /// <p>The transaction ID at which to update the table contents. </p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction ID at which to update the table contents. </p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTableInput`](crate::input::UpdateTableInput)
         pub fn build(
             self,
@@ -31985,6 +32134,7 @@ pub mod update_table_input {
                 database_name: self.database_name,
                 table_input: self.table_input,
                 skip_archive: self.skip_archive,
+                transaction_id: self.transaction_id,
             })
         }
     }
@@ -32832,6 +32982,8 @@ pub struct UpdateTableInput {
     /// before updating it. However, if <code>skipArchive</code> is set to true,
     /// <code>UpdateTable</code> does not create the archived version.</p>
     pub skip_archive: std::option::Option<bool>,
+    /// <p>The transaction ID at which to update the table contents. </p>
+    pub transaction_id: std::option::Option<std::string::String>,
 }
 impl UpdateTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -32855,6 +33007,10 @@ impl UpdateTableInput {
     pub fn skip_archive(&self) -> std::option::Option<bool> {
         self.skip_archive
     }
+    /// <p>The transaction ID at which to update the table contents. </p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
 }
 impl std::fmt::Debug for UpdateTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32863,6 +33019,7 @@ impl std::fmt::Debug for UpdateTableInput {
         formatter.field("database_name", &self.database_name);
         formatter.field("table_input", &self.table_input);
         formatter.field("skip_archive", &self.skip_archive);
+        formatter.field("transaction_id", &self.transaction_id);
         formatter.finish()
     }
 }
@@ -35591,6 +35748,10 @@ pub struct GetTablesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tables to return in a single response.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>The transaction ID at which to read the table contents.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+    /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetTablesInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
@@ -35616,6 +35777,14 @@ impl GetTablesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The transaction ID at which to read the table contents.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub fn query_as_of_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.query_as_of_time.as_ref()
+    }
 }
 impl std::fmt::Debug for GetTablesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35625,6 +35794,8 @@ impl std::fmt::Debug for GetTablesInput {
         formatter.field("expression", &self.expression);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.field("query_as_of_time", &self.query_as_of_time);
         formatter.finish()
     }
 }
@@ -35642,6 +35813,10 @@ pub struct GetTableInput {
     /// <p>The name of the table for which to retrieve the definition. For Hive
     /// compatibility, this name is entirely lowercase.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>The transaction ID at which to read the table contents. </p>
+    pub transaction_id: std::option::Option<std::string::String>,
+    /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -35659,6 +35834,14 @@ impl GetTableInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The transaction ID at which to read the table contents. </p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub fn query_as_of_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.query_as_of_time.as_ref()
+    }
 }
 impl std::fmt::Debug for GetTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35666,6 +35849,8 @@ impl std::fmt::Debug for GetTableInput {
         formatter.field("catalog_id", &self.catalog_id);
         formatter.field("database_name", &self.database_name);
         formatter.field("name", &self.name);
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.field("query_as_of_time", &self.query_as_of_time);
         formatter.finish()
     }
 }
@@ -36209,6 +36394,10 @@ pub struct GetPartitionsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
     pub exclude_column_schema: std::option::Option<bool>,
+    /// <p>The transaction ID at which to read the partition contents.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+    /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPartitionsInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
@@ -36350,6 +36539,14 @@ impl GetPartitionsInput {
     pub fn exclude_column_schema(&self) -> std::option::Option<bool> {
         self.exclude_column_schema
     }
+    /// <p>The transaction ID at which to read the partition contents.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub fn query_as_of_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.query_as_of_time.as_ref()
+    }
 }
 impl std::fmt::Debug for GetPartitionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36362,6 +36559,8 @@ impl std::fmt::Debug for GetPartitionsInput {
         formatter.field("segment", &self.segment);
         formatter.field("max_results", &self.max_results);
         formatter.field("exclude_column_schema", &self.exclude_column_schema);
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.field("query_as_of_time", &self.query_as_of_time);
         formatter.finish()
     }
 }
@@ -37554,6 +37753,8 @@ pub struct DeleteTableInput {
     /// <p>The name of the table to be deleted. For Hive
     /// compatibility, this name is entirely lowercase.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>The transaction ID at which to delete the table contents.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
 }
 impl DeleteTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -37571,6 +37772,10 @@ impl DeleteTableInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The transaction ID at which to delete the table contents.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
 }
 impl std::fmt::Debug for DeleteTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -37578,6 +37783,7 @@ impl std::fmt::Debug for DeleteTableInput {
         formatter.field("catalog_id", &self.catalog_id);
         formatter.field("database_name", &self.database_name);
         formatter.field("name", &self.name);
+        formatter.field("transaction_id", &self.transaction_id);
         formatter.finish()
     }
 }
@@ -38305,6 +38511,8 @@ pub struct CreateTableInput {
     pub table_input: std::option::Option<crate::model::TableInput>,
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
     pub partition_indexes: std::option::Option<std::vec::Vec<crate::model::PartitionIndex>>,
+    /// <p>The ID of the transaction.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
 }
 impl CreateTableInput {
     /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
@@ -38326,6 +38534,10 @@ impl CreateTableInput {
     pub fn partition_indexes(&self) -> std::option::Option<&[crate::model::PartitionIndex]> {
         self.partition_indexes.as_deref()
     }
+    /// <p>The ID of the transaction.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38334,6 +38546,7 @@ impl std::fmt::Debug for CreateTableInput {
         formatter.field("database_name", &self.database_name);
         formatter.field("table_input", &self.table_input);
         formatter.field("partition_indexes", &self.partition_indexes);
+        formatter.field("transaction_id", &self.transaction_id);
         formatter.finish()
     }
 }
@@ -40095,6 +40308,8 @@ pub struct BatchDeleteTableInput {
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A list of the table to delete.</p>
     pub tables_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The transaction ID at which to delete the table contents.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
 }
 impl BatchDeleteTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -40111,6 +40326,10 @@ impl BatchDeleteTableInput {
     pub fn tables_to_delete(&self) -> std::option::Option<&[std::string::String]> {
         self.tables_to_delete.as_deref()
     }
+    /// <p>The transaction ID at which to delete the table contents.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
 }
 impl std::fmt::Debug for BatchDeleteTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -40118,6 +40337,7 @@ impl std::fmt::Debug for BatchDeleteTableInput {
         formatter.field("catalog_id", &self.catalog_id);
         formatter.field("database_name", &self.database_name);
         formatter.field("tables_to_delete", &self.tables_to_delete);
+        formatter.field("transaction_id", &self.transaction_id);
         formatter.finish()
     }
 }

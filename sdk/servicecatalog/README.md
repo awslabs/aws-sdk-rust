@@ -1,6 +1,6 @@
 # aws-sdk-servicecatalog
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 [AWS Service Catalog](https://aws.amazon.com/servicecatalog/) enables organizations to create and manage catalogs of IT services that are approved for AWS. To get the most out of this documentation, you should be familiar with the terminology discussed in [AWS Service Catalog Concepts](http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html).
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-servicecatalog = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-servicecatalog = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

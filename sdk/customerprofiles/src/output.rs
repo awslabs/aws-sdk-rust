@@ -68,10 +68,13 @@ pub struct UpdateDomainOutput {
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
     /// ingesting data from third party applications.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -101,10 +104,13 @@ impl UpdateDomainOutput {
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
@@ -208,18 +214,24 @@ pub mod update_domain_output {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingResponse>,
@@ -463,6 +475,10 @@ pub struct PutProfileObjectTypeOutput {
     /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
     /// is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in
+    /// fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your
+    /// field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+    pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
@@ -509,6 +525,12 @@ impl PutProfileObjectTypeOutput {
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in
+    /// fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your
+    /// field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
+        self.source_last_updated_timestamp_format.as_deref()
+    }
     /// <p>A map of the name and ObjectType field.</p>
     pub fn fields(
         &self,
@@ -550,6 +572,10 @@ impl std::fmt::Debug for PutProfileObjectTypeOutput {
         formatter.field("expiration_days", &self.expiration_days);
         formatter.field("encryption_key", &self.encryption_key);
         formatter.field("allow_profile_creation", &self.allow_profile_creation);
+        formatter.field(
+            "source_last_updated_timestamp_format",
+            &self.source_last_updated_timestamp_format,
+        );
         formatter.field("fields", &self.fields);
         formatter.field("keys", &self.keys);
         formatter.field("created_at", &self.created_at);
@@ -570,6 +596,7 @@ pub mod put_profile_object_type_output {
         pub(crate) expiration_days: std::option::Option<i32>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
         pub(crate) allow_profile_creation: std::option::Option<bool>,
+        pub(crate) source_last_updated_timestamp_format: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
         >,
@@ -660,6 +687,26 @@ pub mod put_profile_object_type_output {
         /// is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_profile_creation = input;
+            self
+        }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in
+        /// fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your
+        /// field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+        pub fn source_last_updated_timestamp_format(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.source_last_updated_timestamp_format = Some(input.into());
+            self
+        }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in
+        /// fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your
+        /// field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+        pub fn set_source_last_updated_timestamp_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_last_updated_timestamp_format = input;
             self
         }
         /// Adds a key-value pair to `fields`.
@@ -775,6 +822,7 @@ pub mod put_profile_object_type_output {
                 expiration_days: self.expiration_days,
                 encryption_key: self.encryption_key,
                 allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
+                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
                 fields: self.fields,
                 keys: self.keys,
                 created_at: self.created_at,
@@ -1492,6 +1540,98 @@ impl ListIntegrationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListIdentityResolutionJobsOutput {
+    /// <p>A list of Identity Resolution Jobs.</p>
+    pub identity_resolution_jobs_list:
+        std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListIdentityResolutionJobsOutput {
+    /// <p>A list of Identity Resolution Jobs.</p>
+    pub fn identity_resolution_jobs_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::IdentityResolutionJob]> {
+        self.identity_resolution_jobs_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListIdentityResolutionJobsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListIdentityResolutionJobsOutput");
+        formatter.field(
+            "identity_resolution_jobs_list",
+            &self.identity_resolution_jobs_list,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput)
+pub mod list_identity_resolution_jobs_output {
+    /// A builder for [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identity_resolution_jobs_list:
+            std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `identity_resolution_jobs_list`.
+        ///
+        /// To override the contents of this collection use [`set_identity_resolution_jobs_list`](Self::set_identity_resolution_jobs_list).
+        ///
+        /// <p>A list of Identity Resolution Jobs.</p>
+        pub fn identity_resolution_jobs_list(
+            mut self,
+            input: impl Into<crate::model::IdentityResolutionJob>,
+        ) -> Self {
+            let mut v = self.identity_resolution_jobs_list.unwrap_or_default();
+            v.push(input.into());
+            self.identity_resolution_jobs_list = Some(v);
+            self
+        }
+        /// <p>A list of Identity Resolution Jobs.</p>
+        pub fn set_identity_resolution_jobs_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
+        ) -> Self {
+            self.identity_resolution_jobs_list = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput)
+        pub fn build(self) -> crate::output::ListIdentityResolutionJobsOutput {
+            crate::output::ListIdentityResolutionJobsOutput {
+                identity_resolution_jobs_list: self.identity_resolution_jobs_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListIdentityResolutionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListIdentityResolutionJobsOutput`](crate::output::ListIdentityResolutionJobsOutput)
+    pub fn builder() -> crate::output::list_identity_resolution_jobs_output::Builder {
+        crate::output::list_identity_resolution_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsOutput {
     /// <p>The list of ListDomains instances.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::ListDomainItem>>,
@@ -1669,6 +1809,9 @@ pub struct GetProfileObjectTypeTemplateOutput {
     /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
     /// is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+    /// up.</p>
+    pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
@@ -1699,6 +1842,11 @@ impl GetProfileObjectTypeTemplateOutput {
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+    /// up.</p>
+    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
+        self.source_last_updated_timestamp_format.as_deref()
+    }
     /// <p>A map of the name and ObjectType field.</p>
     pub fn fields(
         &self,
@@ -1723,6 +1871,10 @@ impl std::fmt::Debug for GetProfileObjectTypeTemplateOutput {
         formatter.field("source_name", &self.source_name);
         formatter.field("source_object", &self.source_object);
         formatter.field("allow_profile_creation", &self.allow_profile_creation);
+        formatter.field(
+            "source_last_updated_timestamp_format",
+            &self.source_last_updated_timestamp_format,
+        );
         formatter.field("fields", &self.fields);
         formatter.field("keys", &self.keys);
         formatter.finish()
@@ -1738,6 +1890,7 @@ pub mod get_profile_object_type_template_output {
         pub(crate) source_name: std::option::Option<std::string::String>,
         pub(crate) source_object: std::option::Option<std::string::String>,
         pub(crate) allow_profile_creation: std::option::Option<bool>,
+        pub(crate) source_last_updated_timestamp_format: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
         >,
@@ -1800,6 +1953,24 @@ pub mod get_profile_object_type_template_output {
             self.allow_profile_creation = input;
             self
         }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+        /// up.</p>
+        pub fn source_last_updated_timestamp_format(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.source_last_updated_timestamp_format = Some(input.into());
+            self
+        }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+        /// up.</p>
+        pub fn set_source_last_updated_timestamp_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_last_updated_timestamp_format = input;
+            self
+        }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -1860,6 +2031,7 @@ pub mod get_profile_object_type_template_output {
                 source_name: self.source_name,
                 source_object: self.source_object,
                 allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
+                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
                 fields: self.fields,
                 keys: self.keys,
             }
@@ -1894,6 +2066,9 @@ pub struct GetProfileObjectTypeOutput {
     /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
     /// is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+    /// up.</p>
+    pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
@@ -1940,6 +2115,11 @@ impl GetProfileObjectTypeOutput {
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+    /// up.</p>
+    pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
+        self.source_last_updated_timestamp_format.as_deref()
+    }
     /// <p>A map of the name and ObjectType field.</p>
     pub fn fields(
         &self,
@@ -1981,6 +2161,10 @@ impl std::fmt::Debug for GetProfileObjectTypeOutput {
         formatter.field("expiration_days", &self.expiration_days);
         formatter.field("encryption_key", &self.encryption_key);
         formatter.field("allow_profile_creation", &self.allow_profile_creation);
+        formatter.field(
+            "source_last_updated_timestamp_format",
+            &self.source_last_updated_timestamp_format,
+        );
         formatter.field("fields", &self.fields);
         formatter.field("keys", &self.keys);
         formatter.field("created_at", &self.created_at);
@@ -2001,6 +2185,7 @@ pub mod get_profile_object_type_output {
         pub(crate) expiration_days: std::option::Option<i32>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
         pub(crate) allow_profile_creation: std::option::Option<bool>,
+        pub(crate) source_last_updated_timestamp_format: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::ObjectTypeField>,
         >,
@@ -2091,6 +2276,24 @@ pub mod get_profile_object_type_output {
         /// is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_profile_creation = input;
+            self
+        }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+        /// up.</p>
+        pub fn source_last_updated_timestamp_format(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.source_last_updated_timestamp_format = Some(input.into());
+            self
+        }
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+        /// up.</p>
+        pub fn set_source_last_updated_timestamp_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_last_updated_timestamp_format = input;
             self
         }
         /// Adds a key-value pair to `fields`.
@@ -2206,6 +2409,7 @@ pub mod get_profile_object_type_output {
                 expiration_days: self.expiration_days,
                 encryption_key: self.encryption_key,
                 allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
+                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
                 fields: self.fields,
                 keys: self.keys,
                 created_at: self.created_at,
@@ -2527,6 +2731,411 @@ impl GetIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetIdentityResolutionJobOutput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the Identity Resolution Job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The status of the Identity Resolution Job.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
+    /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
+    /// deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
+    /// identify profiles that belong to the same matching group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
+    /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
+    /// indicating the source of the problem.</p>
+    /// </li>
+    /// </ul>
+    pub status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
+    /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
+    pub job_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
+    pub job_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
+    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
+    pub job_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
+    pub auto_merging: std::option::Option<crate::model::AutoMerging>,
+    /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+    pub exporting_location: std::option::Option<crate::model::ExportingLocation>,
+    /// <p>Statistics about the Identity Resolution Job.</p>
+    pub job_stats: std::option::Option<crate::model::JobStats>,
+}
+impl GetIdentityResolutionJobOutput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The unique identifier of the Identity Resolution Job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The status of the Identity Resolution Job.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
+    /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
+    /// deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
+    /// identify profiles that belong to the same matching group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
+    /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
+    /// indicating the source of the problem.</p>
+    /// </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::IdentityResolutionJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
+    pub fn job_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.job_start_time.as_ref()
+    }
+    /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
+    pub fn job_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.job_end_time.as_ref()
+    }
+    /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_at.as_ref()
+    }
+    /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
+    pub fn job_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.job_expiration_time.as_ref()
+    }
+    /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
+    pub fn auto_merging(&self) -> std::option::Option<&crate::model::AutoMerging> {
+        self.auto_merging.as_ref()
+    }
+    /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+    pub fn exporting_location(&self) -> std::option::Option<&crate::model::ExportingLocation> {
+        self.exporting_location.as_ref()
+    }
+    /// <p>Statistics about the Identity Resolution Job.</p>
+    pub fn job_stats(&self) -> std::option::Option<&crate::model::JobStats> {
+        self.job_stats.as_ref()
+    }
+}
+impl std::fmt::Debug for GetIdentityResolutionJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetIdentityResolutionJobOutput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("job_id", &self.job_id);
+        formatter.field("status", &self.status);
+        formatter.field("message", &self.message);
+        formatter.field("job_start_time", &self.job_start_time);
+        formatter.field("job_end_time", &self.job_end_time);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("job_expiration_time", &self.job_expiration_time);
+        formatter.field("auto_merging", &self.auto_merging);
+        formatter.field("exporting_location", &self.exporting_location);
+        formatter.field("job_stats", &self.job_stats);
+        formatter.finish()
+    }
+}
+/// See [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput)
+pub mod get_identity_resolution_job_output {
+    /// A builder for [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) job_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) auto_merging: std::option::Option<crate::model::AutoMerging>,
+        pub(crate) exporting_location: std::option::Option<crate::model::ExportingLocation>,
+        pub(crate) job_stats: std::option::Option<crate::model::JobStats>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The unique identifier of the Identity Resolution Job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the Identity Resolution Job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The status of the Identity Resolution Job.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
+        /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
+        /// deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
+        /// identify profiles that belong to the same matching group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
+        /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
+        /// indicating the source of the problem.</p>
+        /// </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::IdentityResolutionJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the Identity Resolution Job.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
+        /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
+        /// deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
+        /// identify profiles that belong to the same matching group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
+        /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
+        /// indicating the source of the problem.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::IdentityResolutionJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
+        pub fn job_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.job_start_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
+        pub fn set_job_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.job_start_time = input;
+            self
+        }
+        /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
+        pub fn job_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.job_end_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
+        pub fn set_job_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.job_end_time = input;
+            self
+        }
+        /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
+        pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_at = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
+        pub fn set_last_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_at = input;
+            self
+        }
+        /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
+        pub fn job_expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.job_expiration_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
+        pub fn set_job_expiration_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.job_expiration_time = input;
+            self
+        }
+        /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
+        pub fn auto_merging(mut self, input: crate::model::AutoMerging) -> Self {
+            self.auto_merging = Some(input);
+            self
+        }
+        /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
+        pub fn set_auto_merging(
+            mut self,
+            input: std::option::Option<crate::model::AutoMerging>,
+        ) -> Self {
+            self.auto_merging = input;
+            self
+        }
+        /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+        pub fn exporting_location(mut self, input: crate::model::ExportingLocation) -> Self {
+            self.exporting_location = Some(input);
+            self
+        }
+        /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
+        pub fn set_exporting_location(
+            mut self,
+            input: std::option::Option<crate::model::ExportingLocation>,
+        ) -> Self {
+            self.exporting_location = input;
+            self
+        }
+        /// <p>Statistics about the Identity Resolution Job.</p>
+        pub fn job_stats(mut self, input: crate::model::JobStats) -> Self {
+            self.job_stats = Some(input);
+            self
+        }
+        /// <p>Statistics about the Identity Resolution Job.</p>
+        pub fn set_job_stats(mut self, input: std::option::Option<crate::model::JobStats>) -> Self {
+            self.job_stats = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput)
+        pub fn build(self) -> crate::output::GetIdentityResolutionJobOutput {
+            crate::output::GetIdentityResolutionJobOutput {
+                domain_name: self.domain_name,
+                job_id: self.job_id,
+                status: self.status,
+                message: self.message,
+                job_start_time: self.job_start_time,
+                job_end_time: self.job_end_time,
+                last_updated_at: self.last_updated_at,
+                job_expiration_time: self.job_expiration_time,
+                auto_merging: self.auto_merging,
+                exporting_location: self.exporting_location,
+                job_stats: self.job_stats,
+            }
+        }
+    }
+}
+impl GetIdentityResolutionJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetIdentityResolutionJobOutput`](crate::output::GetIdentityResolutionJobOutput)
+    pub fn builder() -> crate::output::get_identity_resolution_job_output::Builder {
+        crate::output::get_identity_resolution_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainOutput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
@@ -2541,10 +3150,13 @@ pub struct GetDomainOutput {
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
     /// <p>Usage-specific statistics about the domain.</p>
     pub stats: std::option::Option<crate::model::DomainStats>,
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2578,10 +3190,13 @@ impl GetDomainOutput {
     pub fn stats(&self) -> std::option::Option<&crate::model::DomainStats> {
         self.stats.as_ref()
     }
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
@@ -2697,18 +3312,24 @@ pub mod get_domain_output {
             self.stats = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingResponse>,
@@ -2787,6 +3408,135 @@ impl GetDomainOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainOutput`](crate::output::GetDomainOutput)
     pub fn builder() -> crate::output::get_domain_output::Builder {
         crate::output::get_domain_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAutoMergingPreviewOutput {
+    /// <p>The unique name of the domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>The number of match groups in the domain that have been reviewed in this preview dry
+    /// run.</p>
+    pub number_of_matches_in_sample: i64,
+    /// <p>The number of profiles found in this preview dry run.</p>
+    pub number_of_profiles_in_sample: i64,
+    /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
+    pub number_of_profiles_will_be_merged: i64,
+}
+impl GetAutoMergingPreviewOutput {
+    /// <p>The unique name of the domain.</p>
+    pub fn domain_name(&self) -> std::option::Option<&str> {
+        self.domain_name.as_deref()
+    }
+    /// <p>The number of match groups in the domain that have been reviewed in this preview dry
+    /// run.</p>
+    pub fn number_of_matches_in_sample(&self) -> i64 {
+        self.number_of_matches_in_sample
+    }
+    /// <p>The number of profiles found in this preview dry run.</p>
+    pub fn number_of_profiles_in_sample(&self) -> i64 {
+        self.number_of_profiles_in_sample
+    }
+    /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
+    pub fn number_of_profiles_will_be_merged(&self) -> i64 {
+        self.number_of_profiles_will_be_merged
+    }
+}
+impl std::fmt::Debug for GetAutoMergingPreviewOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetAutoMergingPreviewOutput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field(
+            "number_of_matches_in_sample",
+            &self.number_of_matches_in_sample,
+        );
+        formatter.field(
+            "number_of_profiles_in_sample",
+            &self.number_of_profiles_in_sample,
+        );
+        formatter.field(
+            "number_of_profiles_will_be_merged",
+            &self.number_of_profiles_will_be_merged,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput)
+pub mod get_auto_merging_preview_output {
+    /// A builder for [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) number_of_matches_in_sample: std::option::Option<i64>,
+        pub(crate) number_of_profiles_in_sample: std::option::Option<i64>,
+        pub(crate) number_of_profiles_will_be_merged: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The unique name of the domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name of the domain.</p>
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>The number of match groups in the domain that have been reviewed in this preview dry
+        /// run.</p>
+        pub fn number_of_matches_in_sample(mut self, input: i64) -> Self {
+            self.number_of_matches_in_sample = Some(input);
+            self
+        }
+        /// <p>The number of match groups in the domain that have been reviewed in this preview dry
+        /// run.</p>
+        pub fn set_number_of_matches_in_sample(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_matches_in_sample = input;
+            self
+        }
+        /// <p>The number of profiles found in this preview dry run.</p>
+        pub fn number_of_profiles_in_sample(mut self, input: i64) -> Self {
+            self.number_of_profiles_in_sample = Some(input);
+            self
+        }
+        /// <p>The number of profiles found in this preview dry run.</p>
+        pub fn set_number_of_profiles_in_sample(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_profiles_in_sample = input;
+            self
+        }
+        /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
+        pub fn number_of_profiles_will_be_merged(mut self, input: i64) -> Self {
+            self.number_of_profiles_will_be_merged = Some(input);
+            self
+        }
+        /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
+        pub fn set_number_of_profiles_will_be_merged(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.number_of_profiles_will_be_merged = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput)
+        pub fn build(self) -> crate::output::GetAutoMergingPreviewOutput {
+            crate::output::GetAutoMergingPreviewOutput {
+                domain_name: self.domain_name,
+                number_of_matches_in_sample: self.number_of_matches_in_sample.unwrap_or_default(),
+                number_of_profiles_in_sample: self.number_of_profiles_in_sample.unwrap_or_default(),
+                number_of_profiles_will_be_merged: self
+                    .number_of_profiles_will_be_merged
+                    .unwrap_or_default(),
+            }
+        }
+    }
+}
+impl GetAutoMergingPreviewOutput {
+    /// Creates a new builder-style object to manufacture [`GetAutoMergingPreviewOutput`](crate::output::GetAutoMergingPreviewOutput)
+    pub fn builder() -> crate::output::get_auto_merging_preview_output::Builder {
+        crate::output::get_auto_merging_preview_output::Builder::default()
     }
 }
 
@@ -3183,10 +3933,13 @@ pub struct CreateDomainOutput {
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
     /// ingesting data from third party applications.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -3216,10 +3969,13 @@ impl CreateDomainOutput {
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// After that batch process completes, use the
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the
     /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results.  </p>
+    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+    /// S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingResponse> {
         self.matching.as_ref()
     }
@@ -3323,18 +4079,24 @@ pub mod create_domain_output {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-        /// After that batch process completes, use the
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
+        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
+        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the
         /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results.  </p>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
+        /// S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingResponse>,

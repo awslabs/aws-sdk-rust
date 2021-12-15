@@ -104,6 +104,9 @@ pub struct ReplicationGroup {
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
     /// <p>The date and time when the cluster was created.</p>
     pub replication_group_create_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    pub data_tiering: std::option::Option<crate::model::DataTieringStatus>,
 }
 impl ReplicationGroup {
     /// <p>The identifier for the replication group.</p>
@@ -266,6 +269,11 @@ impl ReplicationGroup {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replication_group_create_time.as_ref()
     }
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    pub fn data_tiering(&self) -> std::option::Option<&crate::model::DataTieringStatus> {
+        self.data_tiering.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicationGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -316,6 +324,7 @@ impl std::fmt::Debug for ReplicationGroup {
             "replication_group_create_time",
             &self.replication_group_create_time,
         );
+        formatter.field("data_tiering", &self.data_tiering);
         formatter.finish()
     }
 }
@@ -354,6 +363,7 @@ pub mod replication_group {
         pub(crate) log_delivery_configurations:
             std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
         pub(crate) replication_group_create_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) data_tiering: std::option::Option<crate::model::DataTieringStatus>,
     }
     impl Builder {
         /// <p>The identifier for the replication group.</p>
@@ -792,6 +802,21 @@ pub mod replication_group {
             self.replication_group_create_time = input;
             self
         }
+        /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+        pub fn data_tiering(mut self, input: crate::model::DataTieringStatus) -> Self {
+            self.data_tiering = Some(input);
+            self
+        }
+        /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+        pub fn set_data_tiering(
+            mut self,
+            input: std::option::Option<crate::model::DataTieringStatus>,
+        ) -> Self {
+            self.data_tiering = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicationGroup`](crate::model::ReplicationGroup)
         pub fn build(self) -> crate::model::ReplicationGroup {
             crate::model::ReplicationGroup {
@@ -820,6 +845,7 @@ pub mod replication_group {
                 user_group_ids: self.user_group_ids,
                 log_delivery_configurations: self.log_delivery_configurations,
                 replication_group_create_time: self.replication_group_create_time,
+                data_tiering: self.data_tiering,
             }
         }
     }
@@ -828,6 +854,61 @@ impl ReplicationGroup {
     /// Creates a new builder-style object to manufacture [`ReplicationGroup`](crate::model::ReplicationGroup)
     pub fn builder() -> crate::model::replication_group::Builder {
         crate::model::replication_group::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataTieringStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DataTieringStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "disabled" => DataTieringStatus::Disabled,
+            "enabled" => DataTieringStatus::Enabled,
+            other => DataTieringStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DataTieringStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataTieringStatus::from(s))
+    }
+}
+impl DataTieringStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataTieringStatus::Disabled => "disabled",
+            DataTieringStatus::Enabled => "enabled",
+            DataTieringStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["disabled", "enabled"]
+    }
+}
+impl AsRef<str> for DataTieringStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3226,10 +3307,12 @@ pub struct CacheCluster {
     /// <li>
     /// <p>Current generation: </p>
     ///
+    ///
+    ///
+    ///
+    ///
     /// <p>
-    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-    /// <p>  
-    /// <code>cache.m6g.large</code>,
+    /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
     /// <code>cache.m6g.xlarge</code>,
     /// <code>cache.m6g.2xlarge</code>,
     /// <code>cache.m6g.4xlarge</code>,
@@ -3268,6 +3351,15 @@ pub struct CacheCluster {
     /// <code>cache.m4.4xlarge</code>,
     /// <code>cache.m4.10xlarge</code>
     /// </p>
+    ///
+    ///
+    /// <p>
+    /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+    /// <code>cache.t4g.micro</code>,
+    /// <code>cache.t4g.small</code>,
+    /// <code>cache.t4g.medium</code>
+    /// </p>
+    ///
     /// <p>
     /// <b>T3 node types:</b>
     /// <code>cache.t3.micro</code>,
@@ -3327,12 +3419,47 @@ pub struct CacheCluster {
     /// </ul>
     /// </li>
     /// <li>
+    /// <p>Memory optimized with data tiering:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    ///
+    /// <code>cache.r6gd.xlarge</code>,
+    /// <code>cache.r6gd.2xlarge</code>,
+    /// <code>cache.r6gd.4xlarge</code>,
+    /// <code>cache.r6gd.8xlarge</code>,
+    /// <code>cache.r6gd.12xlarge</code>,
+    /// <code>cache.r6gd.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>              
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
     /// <p>Memory optimized:</p>
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
+    ///
+    ///
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
     ///
     ///
     ///
@@ -3516,7 +3643,8 @@ pub struct CacheCluster {
     pub cache_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>A list of cache nodes that are members of the cluster.</p>
     pub cache_nodes: std::option::Option<std::vec::Vec<crate::model::CacheNode>>,
-    /// <p>This parameter is currently disabled.</p>
+    /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+    /// </p>
     pub auto_minor_version_upgrade: bool,
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroupMembership>>,
@@ -3602,10 +3730,12 @@ impl CacheCluster {
     /// <li>
     /// <p>Current generation: </p>
     ///
+    ///
+    ///
+    ///
+    ///
     /// <p>
-    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-    /// <p>  
-    /// <code>cache.m6g.large</code>,
+    /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
     /// <code>cache.m6g.xlarge</code>,
     /// <code>cache.m6g.2xlarge</code>,
     /// <code>cache.m6g.4xlarge</code>,
@@ -3644,6 +3774,15 @@ impl CacheCluster {
     /// <code>cache.m4.4xlarge</code>,
     /// <code>cache.m4.10xlarge</code>
     /// </p>
+    ///
+    ///
+    /// <p>
+    /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+    /// <code>cache.t4g.micro</code>,
+    /// <code>cache.t4g.small</code>,
+    /// <code>cache.t4g.medium</code>
+    /// </p>
+    ///
     /// <p>
     /// <b>T3 node types:</b>
     /// <code>cache.t3.micro</code>,
@@ -3703,12 +3842,47 @@ impl CacheCluster {
     /// </ul>
     /// </li>
     /// <li>
+    /// <p>Memory optimized with data tiering:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    ///
+    /// <code>cache.r6gd.xlarge</code>,
+    /// <code>cache.r6gd.2xlarge</code>,
+    /// <code>cache.r6gd.4xlarge</code>,
+    /// <code>cache.r6gd.8xlarge</code>,
+    /// <code>cache.r6gd.12xlarge</code>,
+    /// <code>cache.r6gd.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>              
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
     /// <p>Memory optimized:</p>
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
+    ///
+    ///
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
     ///
     ///
     ///
@@ -3929,7 +4103,8 @@ impl CacheCluster {
     pub fn cache_nodes(&self) -> std::option::Option<&[crate::model::CacheNode]> {
         self.cache_nodes.as_deref()
     }
-    /// <p>This parameter is currently disabled.</p>
+    /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+    /// </p>
     pub fn auto_minor_version_upgrade(&self) -> bool {
         self.auto_minor_version_upgrade
     }
@@ -4185,10 +4360,12 @@ pub mod cache_cluster {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
-        /// <code>cache.m6g.large</code>,
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
         /// <code>cache.m6g.4xlarge</code>,
@@ -4227,6 +4404,15 @@ pub mod cache_cluster {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -4286,12 +4472,47 @@ pub mod cache_cluster {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
         ///
         ///
         ///
@@ -4403,10 +4624,12 @@ pub mod cache_cluster {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
-        /// <code>cache.m6g.large</code>,
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
         /// <code>cache.m6g.4xlarge</code>,
@@ -4445,6 +4668,15 @@ pub mod cache_cluster {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -4504,12 +4736,47 @@ pub mod cache_cluster {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
         ///
         ///
         ///
@@ -4934,12 +5201,14 @@ pub mod cache_cluster {
             self.cache_nodes = input;
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -5296,10 +5565,12 @@ impl SecurityGroupMembership {
 /// <li>
 /// <p>Current generation: </p>
 ///
+///
+///
+///
+///
 /// <p>
-/// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-/// <p>  
-/// <code>cache.m6g.large</code>,
+/// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
 /// <code>cache.m6g.xlarge</code>,
 /// <code>cache.m6g.2xlarge</code>,
 /// <code>cache.m6g.4xlarge</code>,
@@ -5338,6 +5609,14 @@ impl SecurityGroupMembership {
 /// <code>cache.m4.4xlarge</code>,
 /// <code>cache.m4.10xlarge</code>
 /// </p>
+///
+/// <p>
+/// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+/// <code>cache.t4g.micro</code>,
+/// <code>cache.t4g.small</code>,
+/// <code>cache.t4g.medium</code>
+/// </p>                  
+///
 /// <p>
 /// <b>T3 node types:</b>
 /// <code>cache.t3.micro</code>,
@@ -5397,10 +5676,44 @@ impl SecurityGroupMembership {
 /// </ul>
 /// </li>
 /// <li>
+/// <p>Memory optimized with data tiering:</p>
+/// <ul>
+/// <li>
+/// <p>Current generation: </p>
+///
+/// <p>
+/// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+///
+///
+///
+///
+/// <p>  
+///
+/// <code>cache.r6gd.xlarge</code>,
+/// <code>cache.r6gd.2xlarge</code>,
+/// <code>cache.r6gd.4xlarge</code>,
+/// <code>cache.r6gd.8xlarge</code>,
+/// <code>cache.r6gd.12xlarge</code>,
+/// <code>cache.r6gd.16xlarge</code>
+///
+///
+///
+///
+///
+///
+/// </p>              
+///
+/// </li>
+/// </ul>
+/// </li>
+/// <li>
 /// <p>Memory optimized:</p>
 /// <ul>
 /// <li>
 /// <p>Current generation: </p>
+///
+///
+///
 /// <p>
 /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
 ///
@@ -6824,10 +7137,12 @@ pub struct ReservedCacheNode {
     /// <li>
     /// <p>Current generation: </p>
     ///
+    ///
+    ///
+    ///
+    ///
     /// <p>
-    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-    /// <p>  
-    /// <code>cache.m6g.large</code>,
+    /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):  <code>cache.m6g.large</code>,
     /// <code>cache.m6g.xlarge</code>,
     /// <code>cache.m6g.2xlarge</code>,
     /// <code>cache.m6g.4xlarge</code>,
@@ -6866,6 +7181,13 @@ pub struct ReservedCacheNode {
     /// <code>cache.m4.4xlarge</code>,
     /// <code>cache.m4.10xlarge</code>
     /// </p>
+    ///
+    /// <p>
+    /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+    /// <code>cache.t4g.micro</code>,
+    /// <code>cache.t4g.small</code>,
+    /// <code>cache.t4g.medium</code>
+    /// </p>             
     /// <p>
     /// <b>T3 node types:</b>
     /// <code>cache.t3.micro</code>,
@@ -6925,10 +7247,44 @@ pub struct ReservedCacheNode {
     /// </ul>
     /// </li>
     /// <li>
+    /// <p>Memory optimized with data tiering:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    ///
+    /// <code>cache.r6gd.xlarge</code>,
+    /// <code>cache.r6gd.2xlarge</code>,
+    /// <code>cache.r6gd.4xlarge</code>,
+    /// <code>cache.r6gd.8xlarge</code>,
+    /// <code>cache.r6gd.12xlarge</code>,
+    /// <code>cache.r6gd.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>              
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
     /// <p>Memory optimized:</p>
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
+    ///
+    ///
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     ///
@@ -7071,10 +7427,12 @@ impl ReservedCacheNode {
     /// <li>
     /// <p>Current generation: </p>
     ///
+    ///
+    ///
+    ///
+    ///
     /// <p>
-    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-    /// <p>  
-    /// <code>cache.m6g.large</code>,
+    /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):  <code>cache.m6g.large</code>,
     /// <code>cache.m6g.xlarge</code>,
     /// <code>cache.m6g.2xlarge</code>,
     /// <code>cache.m6g.4xlarge</code>,
@@ -7113,6 +7471,13 @@ impl ReservedCacheNode {
     /// <code>cache.m4.4xlarge</code>,
     /// <code>cache.m4.10xlarge</code>
     /// </p>
+    ///
+    /// <p>
+    /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+    /// <code>cache.t4g.micro</code>,
+    /// <code>cache.t4g.small</code>,
+    /// <code>cache.t4g.medium</code>
+    /// </p>             
     /// <p>
     /// <b>T3 node types:</b>
     /// <code>cache.t3.micro</code>,
@@ -7172,10 +7537,44 @@ impl ReservedCacheNode {
     /// </ul>
     /// </li>
     /// <li>
+    /// <p>Memory optimized with data tiering:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    ///
+    /// <code>cache.r6gd.xlarge</code>,
+    /// <code>cache.r6gd.2xlarge</code>,
+    /// <code>cache.r6gd.4xlarge</code>,
+    /// <code>cache.r6gd.8xlarge</code>,
+    /// <code>cache.r6gd.12xlarge</code>,
+    /// <code>cache.r6gd.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>              
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
     /// <p>Memory optimized:</p>
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
+    ///
+    ///
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     ///
@@ -7404,10 +7803,12 @@ pub mod reserved_cache_node {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
-        /// <code>cache.m6g.large</code>,
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):  <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
         /// <code>cache.m6g.4xlarge</code>,
@@ -7446,6 +7847,13 @@ pub mod reserved_cache_node {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>             
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -7505,10 +7913,44 @@ pub mod reserved_cache_node {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         ///
@@ -7622,10 +8064,12 @@ pub mod reserved_cache_node {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
-        /// <code>cache.m6g.large</code>,
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):  <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
         /// <code>cache.m6g.4xlarge</code>,
@@ -7664,6 +8108,13 @@ pub mod reserved_cache_node {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>             
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -7723,10 +8174,44 @@ pub mod reserved_cache_node {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         ///
@@ -9378,6 +9863,8 @@ pub struct User {
     pub status: std::option::Option<std::string::String>,
     /// <p>The current supported value is Redis.</p>
     pub engine: std::option::Option<std::string::String>,
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>Access permissions string used for this user.</p>
     pub access_string: std::option::Option<std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
@@ -9404,6 +9891,10 @@ impl User {
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(&self) -> std::option::Option<&str> {
         self.access_string.as_deref()
@@ -9428,6 +9919,7 @@ impl std::fmt::Debug for User {
         formatter.field("user_name", &self.user_name);
         formatter.field("status", &self.status);
         formatter.field("engine", &self.engine);
+        formatter.field("minimum_engine_version", &self.minimum_engine_version);
         formatter.field("access_string", &self.access_string);
         formatter.field("user_group_ids", &self.user_group_ids);
         formatter.field("authentication", &self.authentication);
@@ -9445,6 +9937,7 @@ pub mod user {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
+        pub(crate) minimum_engine_version: std::option::Option<std::string::String>,
         pub(crate) access_string: std::option::Option<std::string::String>,
         pub(crate) user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) authentication: std::option::Option<crate::model::Authentication>,
@@ -9489,6 +9982,19 @@ pub mod user {
         /// <p>The current supported value is Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn set_minimum_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_engine_version = input;
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -9553,6 +10059,7 @@ pub mod user {
                 user_name: self.user_name,
                 status: self.status,
                 engine: self.engine,
+                minimum_engine_version: self.minimum_engine_version,
                 access_string: self.access_string,
                 user_group_ids: self.user_group_ids,
                 authentication: self.authentication,
@@ -9662,6 +10169,8 @@ pub struct UserGroup {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub minimum_engine_version: std::option::Option<std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
@@ -9686,6 +10195,10 @@ impl UserGroup {
     pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids.as_deref()
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
+        self.minimum_engine_version.as_deref()
+    }
     /// <p>A list of updates being applied to the user group.</p>
     pub fn pending_changes(&self) -> std::option::Option<&crate::model::UserGroupPendingChanges> {
         self.pending_changes.as_ref()
@@ -9706,6 +10219,7 @@ impl std::fmt::Debug for UserGroup {
         formatter.field("status", &self.status);
         formatter.field("engine", &self.engine);
         formatter.field("user_ids", &self.user_ids);
+        formatter.field("minimum_engine_version", &self.minimum_engine_version);
         formatter.field("pending_changes", &self.pending_changes);
         formatter.field("replication_groups", &self.replication_groups);
         formatter.field("arn", &self.arn);
@@ -9722,6 +10236,7 @@ pub mod user_group {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) minimum_engine_version: std::option::Option<std::string::String>,
         pub(crate) pending_changes: std::option::Option<crate::model::UserGroupPendingChanges>,
         pub(crate) replication_groups: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -9779,6 +10294,19 @@ pub mod user_group {
             self.user_ids = input;
             self
         }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
+            self
+        }
+        /// <p>The minimum engine version required, which is Redis 6.0</p>
+        pub fn set_minimum_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.minimum_engine_version = input;
+            self
+        }
         /// <p>A list of updates being applied to the user group.</p>
         pub fn pending_changes(mut self, input: crate::model::UserGroupPendingChanges) -> Self {
             self.pending_changes = Some(input);
@@ -9828,6 +10356,7 @@ pub mod user_group {
                 status: self.status,
                 engine: self.engine,
                 user_ids: self.user_ids,
+                minimum_engine_version: self.minimum_engine_version,
                 pending_changes: self.pending_changes,
                 replication_groups: self.replication_groups,
                 arn: self.arn,
@@ -11452,6 +11981,10 @@ pub struct Snapshot {
     ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.m6g.large</code>,
     /// <code>cache.m6g.xlarge</code>,
@@ -11461,9 +11994,8 @@ pub struct Snapshot {
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
     ///
+    /// </p>
     ///
-    ///
-    /// </p>  
     ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -11492,6 +12024,19 @@ pub struct Snapshot {
     /// <code>cache.m4.4xlarge</code>,
     /// <code>cache.m4.10xlarge</code>
     /// </p>
+    ///
+    /// <p>
+    /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):</p>
+    ///
+    ///
+    /// <p>
+    /// <code>cache.t4g.micro</code>,
+    /// <code>cache.t4g.small</code>,
+    /// <code>cache.t4g.medium</code>
+    /// </p>               
+    ///
+    ///
+    ///
     /// <p>
     /// <b>T3 node types:</b>
     /// <code>cache.t3.micro</code>,
@@ -11551,13 +12096,49 @@ pub struct Snapshot {
     /// </ul>
     /// </li>
     /// <li>
-    /// <p>Memory optimized:</p>
+    /// <p>Memory optimized with data tiering:</p>
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    ///
+    /// <code>cache.r6gd.xlarge</code>,
+    /// <code>cache.r6gd.2xlarge</code>,
+    /// <code>cache.r6gd.4xlarge</code>,
+    /// <code>cache.r6gd.8xlarge</code>,
+    /// <code>cache.r6gd.12xlarge</code>,
+    /// <code>cache.r6gd.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>              
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Memory optimized:</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    ///
+    ///
+    ///
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-    ///
     ///
     ///
     ///
@@ -11576,6 +12157,15 @@ pub struct Snapshot {
     ///
     ///
     /// </p>  
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    ///
+    ///
+    ///
+    ///
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
@@ -11723,7 +12313,8 @@ pub struct Snapshot {
     pub cache_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cluster.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>This parameter is currently disabled.</p>
+    /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+    /// </p>
     pub auto_minor_version_upgrade: bool,
     /// <p>For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.</p>
     /// <p>For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the
@@ -11748,6 +12339,9 @@ pub struct Snapshot {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
     pub arn: std::option::Option<std::string::String>,
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    pub data_tiering: std::option::Option<crate::model::DataTieringStatus>,
 }
 impl Snapshot {
     /// <p>The name of a snapshot.
@@ -11792,6 +12386,10 @@ impl Snapshot {
     ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.m6g.large</code>,
     /// <code>cache.m6g.xlarge</code>,
@@ -11801,9 +12399,8 @@ impl Snapshot {
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
     ///
+    /// </p>
     ///
-    ///
-    /// </p>  
     ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -11832,6 +12429,19 @@ impl Snapshot {
     /// <code>cache.m4.4xlarge</code>,
     /// <code>cache.m4.10xlarge</code>
     /// </p>
+    ///
+    /// <p>
+    /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):</p>
+    ///
+    ///
+    /// <p>
+    /// <code>cache.t4g.micro</code>,
+    /// <code>cache.t4g.small</code>,
+    /// <code>cache.t4g.medium</code>
+    /// </p>               
+    ///
+    ///
+    ///
     /// <p>
     /// <b>T3 node types:</b>
     /// <code>cache.t3.micro</code>,
@@ -11891,13 +12501,49 @@ impl Snapshot {
     /// </ul>
     /// </li>
     /// <li>
-    /// <p>Memory optimized:</p>
+    /// <p>Memory optimized with data tiering:</p>
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    ///
+    /// <code>cache.r6gd.xlarge</code>,
+    /// <code>cache.r6gd.2xlarge</code>,
+    /// <code>cache.r6gd.4xlarge</code>,
+    /// <code>cache.r6gd.8xlarge</code>,
+    /// <code>cache.r6gd.12xlarge</code>,
+    /// <code>cache.r6gd.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>              
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>Memory optimized:</p>
+    ///
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    ///
+    ///
+    ///
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-    ///
     ///
     ///
     ///
@@ -11916,6 +12562,15 @@ impl Snapshot {
     ///
     ///
     /// </p>  
+    /// <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+    /// </p>
+    /// </note>
+    ///
+    ///
+    ///
+    ///
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
@@ -12089,7 +12744,8 @@ impl Snapshot {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>This parameter is currently disabled.</p>
+    /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+    /// </p>
     pub fn auto_minor_version_upgrade(&self) -> bool {
         self.auto_minor_version_upgrade
     }
@@ -12131,6 +12787,11 @@ impl Snapshot {
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    pub fn data_tiering(&self) -> std::option::Option<&crate::model::DataTieringStatus> {
+        self.data_tiering.as_ref()
     }
 }
 impl std::fmt::Debug for Snapshot {
@@ -12178,6 +12839,7 @@ impl std::fmt::Debug for Snapshot {
         formatter.field("node_snapshots", &self.node_snapshots);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("arn", &self.arn);
+        formatter.field("data_tiering", &self.data_tiering);
         formatter.finish()
     }
 }
@@ -12214,6 +12876,7 @@ pub mod snapshot {
         pub(crate) node_snapshots: std::option::Option<std::vec::Vec<crate::model::NodeSnapshot>>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) data_tiering: std::option::Option<crate::model::DataTieringStatus>,
     }
     impl Builder {
         /// <p>The name of a snapshot.
@@ -12319,6 +12982,10 @@ pub mod snapshot {
         ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
@@ -12328,9 +12995,8 @@ pub mod snapshot {
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
         ///
+        /// </p>
         ///
-        ///
-        /// </p>  
         ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -12359,6 +13025,19 @@ pub mod snapshot {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):</p>
+        ///
+        ///
+        /// <p>
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>               
+        ///
+        ///
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -12418,13 +13097,49 @@ pub mod snapshot {
         /// </ul>
         /// </li>
         /// <li>
-        /// <p>Memory optimized:</p>
+        /// <p>Memory optimized with data tiering:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        ///
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        ///
         ///
         ///
         ///
@@ -12443,6 +13158,15 @@ pub mod snapshot {
         ///
         ///
         /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
@@ -12537,6 +13261,10 @@ pub mod snapshot {
         ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
@@ -12546,9 +13274,8 @@ pub mod snapshot {
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
         ///
+        /// </p>
         ///
-        ///
-        /// </p>  
         ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -12577,6 +13304,19 @@ pub mod snapshot {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):</p>
+        ///
+        ///
+        /// <p>
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>               
+        ///
+        ///
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -12636,13 +13376,49 @@ pub mod snapshot {
         /// </ul>
         /// </li>
         /// <li>
-        /// <p>Memory optimized:</p>
+        /// <p>Memory optimized with data tiering:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        ///
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        ///
         ///
         ///
         ///
@@ -12661,6 +13437,15 @@ pub mod snapshot {
         ///
         ///
         /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
@@ -12983,12 +13768,14 @@ pub mod snapshot {
             self.vpc_id = input;
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -13096,6 +13883,21 @@ pub mod snapshot {
             self.arn = input;
             self
         }
+        /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+        pub fn data_tiering(mut self, input: crate::model::DataTieringStatus) -> Self {
+            self.data_tiering = Some(input);
+            self
+        }
+        /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+        pub fn set_data_tiering(
+            mut self,
+            input: std::option::Option<crate::model::DataTieringStatus>,
+        ) -> Self {
+            self.data_tiering = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Snapshot`](crate::model::Snapshot)
         pub fn build(self) -> crate::model::Snapshot {
             crate::model::Snapshot {
@@ -13126,6 +13928,7 @@ pub mod snapshot {
                 node_snapshots: self.node_snapshots,
                 kms_key_id: self.kms_key_id,
                 arn: self.arn,
+                data_tiering: self.data_tiering,
             }
         }
     }
@@ -13896,10 +14699,13 @@ pub struct ReservedCacheNodesOffering {
     /// <li>
     /// <p>Current generation: </p>
     ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// <p>
-    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-    /// <p>  
-    /// <code>cache.m6g.large</code>,
+    /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
     /// <code>cache.m6g.xlarge</code>,
     /// <code>cache.m6g.2xlarge</code>,
     /// <code>cache.m6g.4xlarge</code>,
@@ -13938,6 +14744,14 @@ pub struct ReservedCacheNodesOffering {
     /// <code>cache.m4.4xlarge</code>,
     /// <code>cache.m4.10xlarge</code>
     /// </p>
+    ///
+    /// <p>
+    /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+    /// <code>cache.t4g.micro</code>,
+    /// <code>cache.t4g.small</code>,
+    /// <code>cache.t4g.medium</code>
+    /// </p>            
+    ///
     /// <p>
     /// <b>T3 node types:</b>
     /// <code>cache.t3.micro</code>,
@@ -13997,12 +14811,48 @@ pub struct ReservedCacheNodesOffering {
     /// </ul>
     /// </li>
     /// <li>
+    /// <p>Memory optimized with data tiering:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    ///
+    /// <code>cache.r6gd.xlarge</code>,
+    /// <code>cache.r6gd.2xlarge</code>,
+    /// <code>cache.r6gd.4xlarge</code>,
+    /// <code>cache.r6gd.8xlarge</code>,
+    /// <code>cache.r6gd.12xlarge</code>,
+    /// <code>cache.r6gd.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>              
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
     /// <p>Memory optimized:</p>
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
+    ///
+    ///
+    ///
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
     ///
     ///
     ///
@@ -14128,10 +14978,13 @@ impl ReservedCacheNodesOffering {
     /// <li>
     /// <p>Current generation: </p>
     ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// <p>
-    /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-    /// <p>  
-    /// <code>cache.m6g.large</code>,
+    /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
     /// <code>cache.m6g.xlarge</code>,
     /// <code>cache.m6g.2xlarge</code>,
     /// <code>cache.m6g.4xlarge</code>,
@@ -14170,6 +15023,14 @@ impl ReservedCacheNodesOffering {
     /// <code>cache.m4.4xlarge</code>,
     /// <code>cache.m4.10xlarge</code>
     /// </p>
+    ///
+    /// <p>
+    /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+    /// <code>cache.t4g.micro</code>,
+    /// <code>cache.t4g.small</code>,
+    /// <code>cache.t4g.medium</code>
+    /// </p>            
+    ///
     /// <p>
     /// <b>T3 node types:</b>
     /// <code>cache.t3.micro</code>,
@@ -14229,12 +15090,48 @@ impl ReservedCacheNodesOffering {
     /// </ul>
     /// </li>
     /// <li>
+    /// <p>Memory optimized with data tiering:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Current generation: </p>
+    ///
+    /// <p>
+    /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+    ///
+    ///
+    ///
+    ///
+    /// <p>  
+    ///
+    /// <code>cache.r6gd.xlarge</code>,
+    /// <code>cache.r6gd.2xlarge</code>,
+    /// <code>cache.r6gd.4xlarge</code>,
+    /// <code>cache.r6gd.8xlarge</code>,
+    /// <code>cache.r6gd.12xlarge</code>,
+    /// <code>cache.r6gd.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    /// </p>              
+    ///
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
     /// <p>Memory optimized:</p>
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
+    ///
+    ///
+    ///
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
     ///
     ///
     ///
@@ -14419,10 +15316,13 @@ pub mod reserved_cache_nodes_offering {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
-        /// <code>cache.m6g.large</code>,
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
         /// <code>cache.m6g.4xlarge</code>,
@@ -14461,6 +15361,14 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>            
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -14520,12 +15428,48 @@ pub mod reserved_cache_nodes_offering {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
         ///
         ///
         ///
@@ -14636,10 +15580,13 @@ pub mod reserved_cache_nodes_offering {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
-        /// <code>cache.m6g.large</code>,
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):   <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
         /// <code>cache.m6g.4xlarge</code>,
@@ -14678,6 +15625,14 @@ pub mod reserved_cache_nodes_offering {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>            
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -14737,12 +15692,48 @@ pub mod reserved_cache_nodes_offering {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
         ///
         ///
         ///
@@ -15168,7 +16159,8 @@ pub struct EngineDefaults {
     /// <code>redis3.2</code> |
     /// <code>redis4.0</code> |
     /// <code>redis5.0</code> |
-    /// <code>redis6.x</code> |
+    /// <code>redis6.0</code> |
+    /// <code>redis6.2</code>
     /// </p>
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -15190,7 +16182,8 @@ impl EngineDefaults {
     /// <code>redis3.2</code> |
     /// <code>redis4.0</code> |
     /// <code>redis5.0</code> |
-    /// <code>redis6.x</code> |
+    /// <code>redis6.0</code> |
+    /// <code>redis6.2</code>
     /// </p>
     pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
         self.cache_parameter_group_family.as_deref()
@@ -15249,7 +16242,8 @@ pub mod engine_defaults {
         /// <code>redis3.2</code> |
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
-        /// <code>redis6.x</code> |
+        /// <code>redis6.0</code> |
+        /// <code>redis6.2</code>
         /// </p>
         pub fn cache_parameter_group_family(
             mut self,
@@ -15268,7 +16262,8 @@ pub mod engine_defaults {
         /// <code>redis3.2</code> |
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
-        /// <code>redis6.x</code> |
+        /// <code>redis6.0</code> |
+        /// <code>redis6.2</code>
         /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
@@ -15989,7 +16984,7 @@ pub struct CacheParameterGroup {
     /// <code>redis3.2</code> |
     /// <code>redis4.0</code> |
     /// <code>redis5.0</code> |
-    /// <code>redis6.x</code> |
+    /// <code>redis6.0</code> |
     /// </p>
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description for this cache parameter group.</p>
@@ -16014,7 +17009,7 @@ impl CacheParameterGroup {
     /// <code>redis3.2</code> |
     /// <code>redis4.0</code> |
     /// <code>redis5.0</code> |
-    /// <code>redis6.x</code> |
+    /// <code>redis6.0</code> |
     /// </p>
     pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
         self.cache_parameter_group_family.as_deref()
@@ -16085,7 +17080,7 @@ pub mod cache_parameter_group {
         /// <code>redis3.2</code> |
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
-        /// <code>redis6.x</code> |
+        /// <code>redis6.0</code> |
         /// </p>
         pub fn cache_parameter_group_family(
             mut self,
@@ -16104,7 +17099,7 @@ pub mod cache_parameter_group {
         /// <code>redis3.2</code> |
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
-        /// <code>redis6.x</code> |
+        /// <code>redis6.0</code> |
         /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
@@ -16180,7 +17175,8 @@ pub struct CacheEngineVersion {
     /// <code>redis3.2</code> |
     /// <code>redis4.0</code> |
     /// <code>redis5.0</code> |
-    /// <code>redis6.x</code> |
+    /// <code>redis6.0</code> |
+    /// <code>redis6.2</code>
     /// </p>
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description of the cache engine.</p>
@@ -16207,7 +17203,8 @@ impl CacheEngineVersion {
     /// <code>redis3.2</code> |
     /// <code>redis4.0</code> |
     /// <code>redis5.0</code> |
-    /// <code>redis6.x</code> |
+    /// <code>redis6.0</code> |
+    /// <code>redis6.2</code>
     /// </p>
     pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
         self.cache_parameter_group_family.as_deref()
@@ -16284,7 +17281,8 @@ pub mod cache_engine_version {
         /// <code>redis3.2</code> |
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
-        /// <code>redis6.x</code> |
+        /// <code>redis6.0</code> |
+        /// <code>redis6.2</code>
         /// </p>
         pub fn cache_parameter_group_family(
             mut self,
@@ -16303,7 +17301,8 @@ pub mod cache_engine_version {
         /// <code>redis3.2</code> |
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
-        /// <code>redis6.x</code> |
+        /// <code>redis6.0</code> |
+        /// <code>redis6.2</code>
         /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,

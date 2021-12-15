@@ -154,6 +154,173 @@ impl std::error::Error for AssociateAssetsError {
     }
 }
 
+/// Error type for the `AssociateTimeSeriesToAssetProperty` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateTimeSeriesToAssetPropertyError {
+    /// Kind of error that occurred.
+    pub kind: AssociateTimeSeriesToAssetPropertyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociateTimeSeriesToAssetProperty` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateTimeSeriesToAssetPropertyErrorKind {
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
+    /// than one operation on the same resource at the same time.</p>
+    ConflictingOperationException(crate::error::ConflictingOperationException),
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
+    /// unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
+    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
+    /// on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateTimeSeriesToAssetPropertyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateTimeSeriesToAssetPropertyErrorKind::ConflictingOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::InternalFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateTimeSeriesToAssetPropertyError {
+    fn code(&self) -> Option<&str> {
+        AssociateTimeSeriesToAssetPropertyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateTimeSeriesToAssetPropertyError {
+    /// Creates a new `AssociateTimeSeriesToAssetPropertyError`.
+    pub fn new(
+        kind: AssociateTimeSeriesToAssetPropertyErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateTimeSeriesToAssetPropertyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateTimeSeriesToAssetPropertyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateTimeSeriesToAssetPropertyErrorKind::ConflictingOperationException`.
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateTimeSeriesToAssetPropertyErrorKind::ConflictingOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateTimeSeriesToAssetPropertyErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateTimeSeriesToAssetPropertyErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateTimeSeriesToAssetPropertyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateTimeSeriesToAssetPropertyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateTimeSeriesToAssetPropertyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateTimeSeriesToAssetPropertyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateTimeSeriesToAssetPropertyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateTimeSeriesToAssetPropertyErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for AssociateTimeSeriesToAssetPropertyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateTimeSeriesToAssetPropertyErrorKind::ConflictingOperationException(_inner) => {
+                Some(_inner)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::InternalFailureException(_inner) => {
+                Some(_inner)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `BatchAssociateProjectAssets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2612,6 +2779,150 @@ impl std::error::Error for DeleteProjectError {
     }
 }
 
+/// Error type for the `DeleteTimeSeries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteTimeSeriesError {
+    /// Kind of error that occurred.
+    pub kind: DeleteTimeSeriesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteTimeSeries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteTimeSeriesErrorKind {
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
+    /// than one operation on the same resource at the same time.</p>
+    ConflictingOperationException(crate::error::ConflictingOperationException),
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
+    /// unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
+    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
+    /// on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteTimeSeriesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteTimeSeriesErrorKind::ConflictingOperationException(_inner) => _inner.fmt(f),
+            DeleteTimeSeriesErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DeleteTimeSeriesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteTimeSeriesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteTimeSeriesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteTimeSeriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteTimeSeriesError {
+    fn code(&self) -> Option<&str> {
+        DeleteTimeSeriesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteTimeSeriesError {
+    /// Creates a new `DeleteTimeSeriesError`.
+    pub fn new(kind: DeleteTimeSeriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteTimeSeriesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteTimeSeriesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteTimeSeriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteTimeSeriesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteTimeSeriesErrorKind::ConflictingOperationException`.
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTimeSeriesErrorKind::ConflictingOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTimeSeriesErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTimeSeriesErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTimeSeriesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTimeSeriesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTimeSeriesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTimeSeriesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteTimeSeriesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTimeSeriesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteTimeSeriesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteTimeSeriesErrorKind::ConflictingOperationException(_inner) => Some(_inner),
+            DeleteTimeSeriesErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DeleteTimeSeriesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteTimeSeriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteTimeSeriesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeAccessPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4247,6 +4558,138 @@ impl std::error::Error for DescribeStorageConfigurationError {
     }
 }
 
+/// Error type for the `DescribeTimeSeries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeTimeSeriesError {
+    /// Kind of error that occurred.
+    pub kind: DescribeTimeSeriesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeTimeSeries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeTimeSeriesErrorKind {
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
+    /// unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
+    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
+    /// on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeTimeSeriesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeTimeSeriesErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DescribeTimeSeriesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeTimeSeriesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeTimeSeriesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeTimeSeriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeTimeSeriesError {
+    fn code(&self) -> Option<&str> {
+        DescribeTimeSeriesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeTimeSeriesError {
+    /// Creates a new `DescribeTimeSeriesError`.
+    pub fn new(kind: DescribeTimeSeriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeTimeSeriesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeTimeSeriesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeTimeSeriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeTimeSeriesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeTimeSeriesErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTimeSeriesErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTimeSeriesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTimeSeriesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTimeSeriesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTimeSeriesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTimeSeriesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTimeSeriesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeTimeSeriesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeTimeSeriesErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeTimeSeriesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeTimeSeriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeTimeSeriesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DisassociateAssets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4387,6 +4830,175 @@ impl std::error::Error for DisassociateAssetsError {
             DisassociateAssetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
             DisassociateAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DisassociateTimeSeriesFromAssetProperty` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateTimeSeriesFromAssetPropertyError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateTimeSeriesFromAssetPropertyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisassociateTimeSeriesFromAssetProperty` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateTimeSeriesFromAssetPropertyErrorKind {
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
+    /// than one operation on the same resource at the same time.</p>
+    ConflictingOperationException(crate::error::ConflictingOperationException),
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
+    /// unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
+    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
+    /// on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateTimeSeriesFromAssetPropertyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ConflictingOperationException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::InternalFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateTimeSeriesFromAssetPropertyError {
+    fn code(&self) -> Option<&str> {
+        DisassociateTimeSeriesFromAssetPropertyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateTimeSeriesFromAssetPropertyError {
+    /// Creates a new `DisassociateTimeSeriesFromAssetPropertyError`.
+    pub fn new(
+        kind: DisassociateTimeSeriesFromAssetPropertyErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateTimeSeriesFromAssetPropertyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateTimeSeriesFromAssetPropertyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateTimeSeriesFromAssetPropertyErrorKind::ConflictingOperationException`.
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ConflictingOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateTimeSeriesFromAssetPropertyErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateTimeSeriesFromAssetPropertyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateTimeSeriesFromAssetPropertyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateTimeSeriesFromAssetPropertyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateTimeSeriesFromAssetPropertyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ConflictingOperationException(
+                _inner,
+            ) => Some(_inner),
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::InternalFailureException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -6381,6 +6993,135 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListTimeSeries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTimeSeriesError {
+    /// Kind of error that occurred.
+    pub kind: ListTimeSeriesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTimeSeries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTimeSeriesErrorKind {
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
+    /// unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
+    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
+    /// on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTimeSeriesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTimeSeriesErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            ListTimeSeriesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListTimeSeriesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTimeSeriesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListTimeSeriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTimeSeriesError {
+    fn code(&self) -> Option<&str> {
+        ListTimeSeriesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTimeSeriesError {
+    /// Creates a new `ListTimeSeriesError`.
+    pub fn new(kind: ListTimeSeriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTimeSeriesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTimeSeriesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTimeSeriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTimeSeriesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTimeSeriesErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTimeSeriesErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTimeSeriesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTimeSeriesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTimeSeriesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTimeSeriesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTimeSeriesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, ListTimeSeriesErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for ListTimeSeriesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTimeSeriesErrorKind::InternalFailureException(_inner) => Some(_inner),
+            ListTimeSeriesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListTimeSeriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTimeSeriesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListTimeSeriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

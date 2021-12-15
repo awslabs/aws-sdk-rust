@@ -2054,6 +2054,15 @@ pub fn deser_operation_crate_operation_describe_gateway_information(
                             crate::json_deser::deser_list_com_amazonaws_storagegateway_supported_gateway_capacities(tokens)?
                         );
                     }
+                    "HostEnvironmentId" => {
+                        builder = builder.set_host_environment_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -7857,6 +7866,28 @@ where
                             }
                             "Ec2InstanceRegion" => {
                                 builder = builder.set_ec2_instance_region(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "HostEnvironment" => {
+                                builder = builder.set_host_environment(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::HostEnvironment::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "HostEnvironmentId" => {
+                                builder = builder.set_host_environment_id(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

@@ -2551,6 +2551,151 @@ impl AsRef<str> for SourceAccessType {
     }
 }
 
+/// <p>
+/// An object that contains the filters for an event source.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FilterCriteria {
+    /// <p>
+    /// A list of filters.
+    /// </p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+}
+impl FilterCriteria {
+    /// <p>
+    /// A list of filters.
+    /// </p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+        self.filters.as_deref()
+    }
+}
+impl std::fmt::Debug for FilterCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterCriteria");
+        formatter.field("filters", &self.filters);
+        formatter.finish()
+    }
+}
+/// See [`FilterCriteria`](crate::model::FilterCriteria)
+pub mod filter_criteria {
+    /// A builder for [`FilterCriteria`](crate::model::FilterCriteria)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+    }
+    impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>
+        /// A list of filters.
+        /// </p>
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input.into());
+            self.filters = Some(v);
+            self
+        }
+        /// <p>
+        /// A list of filters.
+        /// </p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FilterCriteria`](crate::model::FilterCriteria)
+        pub fn build(self) -> crate::model::FilterCriteria {
+            crate::model::FilterCriteria {
+                filters: self.filters,
+            }
+        }
+    }
+}
+impl FilterCriteria {
+    /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::model::FilterCriteria)
+    pub fn builder() -> crate::model::filter_criteria::Builder {
+        crate::model::filter_criteria::Builder::default()
+    }
+}
+
+/// <p>
+/// A structure within a <code>FilterCriteria</code> object that defines an event filtering pattern.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Filter {
+    /// <p>
+    /// A filter pattern. For more information on the syntax of a filter pattern, see
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
+    /// Filter rule syntax</a>.
+    /// </p>
+    pub pattern: std::option::Option<std::string::String>,
+}
+impl Filter {
+    /// <p>
+    /// A filter pattern. For more information on the syntax of a filter pattern, see
+    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
+    /// Filter rule syntax</a>.
+    /// </p>
+    pub fn pattern(&self) -> std::option::Option<&str> {
+        self.pattern.as_deref()
+    }
+}
+impl std::fmt::Debug for Filter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Filter");
+        formatter.field("pattern", &self.pattern);
+        formatter.finish()
+    }
+}
+/// See [`Filter`](crate::model::Filter)
+pub mod filter {
+    /// A builder for [`Filter`](crate::model::Filter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pattern: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// A filter pattern. For more information on the syntax of a filter pattern, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
+        /// Filter rule syntax</a>.
+        /// </p>
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pattern = Some(input.into());
+            self
+        }
+        /// <p>
+        /// A filter pattern. For more information on the syntax of a filter pattern, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
+        /// Filter rule syntax</a>.
+        /// </p>
+        pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pattern = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
+        pub fn build(self) -> crate::model::Filter {
+            crate::model::Filter {
+                pattern: self.pattern,
+            }
+        }
+    }
+}
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter)
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -4934,6 +5079,9 @@ pub struct EventSourceMappingConfiguration {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
@@ -5005,6 +5153,11 @@ impl EventSourceMappingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
+    }
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+        self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn function_arn(&self) -> std::option::Option<&str> {
@@ -5093,6 +5246,7 @@ impl std::fmt::Debug for EventSourceMappingConfiguration {
         );
         formatter.field("parallelization_factor", &self.parallelization_factor);
         formatter.field("event_source_arn", &self.event_source_arn);
+        formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field("function_arn", &self.function_arn);
         formatter.field("last_modified", &self.last_modified);
         formatter.field("last_processing_result", &self.last_processing_result);
@@ -5136,6 +5290,7 @@ pub mod event_source_mapping_configuration {
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
+        pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
@@ -5248,6 +5403,21 @@ pub mod event_source_mapping_configuration {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.event_source_arn = input;
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.filter_criteria = Some(input);
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.filter_criteria = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
@@ -5484,6 +5654,7 @@ pub mod event_source_mapping_configuration {
                 maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
                 parallelization_factor: self.parallelization_factor,
                 event_source_arn: self.event_source_arn,
+                filter_criteria: self.filter_criteria,
                 function_arn: self.function_arn,
                 last_modified: self.last_modified,
                 last_processing_result: self.last_processing_result,

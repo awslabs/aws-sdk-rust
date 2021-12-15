@@ -3208,6 +3208,28 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootDBClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RebootDBClusterError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RebootDBClusterErrorKind::DbClusterNotFoundFault(inner) => {
+                    Error::DbClusterNotFoundFault(inner)
+                }
+                crate::error::RebootDBClusterErrorKind::InvalidDbClusterStateFault(inner) => {
+                    Error::InvalidDbClusterStateFault(inner)
+                }
+                crate::error::RebootDBClusterErrorKind::InvalidDbInstanceStateFault(inner) => {
+                    Error::InvalidDbInstanceStateFault(inner)
+                }
+                crate::error::RebootDBClusterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootDBInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

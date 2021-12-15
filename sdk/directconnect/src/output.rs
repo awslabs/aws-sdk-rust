@@ -93,6 +93,8 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub site_link_enabled: std::option::Option<bool>,
 }
 impl UpdateVirtualInterfaceAttributesOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -237,6 +239,10 @@ impl UpdateVirtualInterfaceAttributesOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub fn site_link_enabled(&self) -> std::option::Option<bool> {
+        self.site_link_enabled
+    }
 }
 impl std::fmt::Debug for UpdateVirtualInterfaceAttributesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -266,6 +272,7 @@ impl std::fmt::Debug for UpdateVirtualInterfaceAttributesOutput {
         formatter.field("aws_device_v2", &self.aws_device_v2);
         formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
+        formatter.field("site_link_enabled", &self.site_link_enabled);
         formatter.finish()
     }
 }
@@ -302,6 +309,7 @@ pub mod update_virtual_interface_attributes_output {
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) site_link_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -709,6 +717,16 @@ pub mod update_virtual_interface_attributes_output {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn site_link_enabled(mut self, input: bool) -> Self {
+            self.site_link_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.site_link_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput)
         pub fn build(self) -> crate::output::UpdateVirtualInterfaceAttributesOutput {
             crate::output::UpdateVirtualInterfaceAttributesOutput {
@@ -737,6 +755,7 @@ pub mod update_virtual_interface_attributes_output {
                 aws_device_v2: self.aws_device_v2,
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
+                site_link_enabled: self.site_link_enabled,
             }
         }
     }
@@ -3401,7 +3420,7 @@ pub struct DescribeRouterConfigurationOutput {
     pub router: std::option::Option<crate::model::RouterType>,
     /// <p>The ID assigned to the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
-    /// <p>The name of the virtual interface assigned by the customer network.</p>
+    /// <p>Provides the details about a virtual interface's router.</p>
     pub virtual_interface_name: std::option::Option<std::string::String>,
 }
 impl DescribeRouterConfigurationOutput {
@@ -3417,7 +3436,7 @@ impl DescribeRouterConfigurationOutput {
     pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
         self.virtual_interface_id.as_deref()
     }
-    /// <p>The name of the virtual interface assigned by the customer network.</p>
+    /// <p>Provides the details about a virtual interface's router.</p>
     pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
         self.virtual_interface_name.as_deref()
     }
@@ -3480,12 +3499,12 @@ pub mod describe_router_configuration_output {
             self.virtual_interface_id = input;
             self
         }
-        /// <p>The name of the virtual interface assigned by the customer network.</p>
+        /// <p>Provides the details about a virtual interface's router.</p>
         pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.virtual_interface_name = Some(input.into());
             self
         }
-        /// <p>The name of the virtual interface assigned by the customer network.</p>
+        /// <p>Provides the details about a virtual interface's router.</p>
         pub fn set_virtual_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6666,6 +6685,8 @@ pub struct CreatePublicVirtualInterfaceOutput {
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub site_link_enabled: std::option::Option<bool>,
 }
 impl CreatePublicVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -6810,6 +6831,10 @@ impl CreatePublicVirtualInterfaceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub fn site_link_enabled(&self) -> std::option::Option<bool> {
+        self.site_link_enabled
+    }
 }
 impl std::fmt::Debug for CreatePublicVirtualInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6839,6 +6864,7 @@ impl std::fmt::Debug for CreatePublicVirtualInterfaceOutput {
         formatter.field("aws_device_v2", &self.aws_device_v2);
         formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
+        formatter.field("site_link_enabled", &self.site_link_enabled);
         formatter.finish()
     }
 }
@@ -6875,6 +6901,7 @@ pub mod create_public_virtual_interface_output {
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) site_link_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -7282,6 +7309,16 @@ pub mod create_public_virtual_interface_output {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn site_link_enabled(mut self, input: bool) -> Self {
+            self.site_link_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.site_link_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput)
         pub fn build(self) -> crate::output::CreatePublicVirtualInterfaceOutput {
             crate::output::CreatePublicVirtualInterfaceOutput {
@@ -7310,6 +7347,7 @@ pub mod create_public_virtual_interface_output {
                 aws_device_v2: self.aws_device_v2,
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
+                site_link_enabled: self.site_link_enabled,
             }
         }
     }
@@ -7415,6 +7453,8 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub site_link_enabled: std::option::Option<bool>,
 }
 impl CreatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -7559,6 +7599,10 @@ impl CreatePrivateVirtualInterfaceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub fn site_link_enabled(&self) -> std::option::Option<bool> {
+        self.site_link_enabled
+    }
 }
 impl std::fmt::Debug for CreatePrivateVirtualInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7588,6 +7632,7 @@ impl std::fmt::Debug for CreatePrivateVirtualInterfaceOutput {
         formatter.field("aws_device_v2", &self.aws_device_v2);
         formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
+        formatter.field("site_link_enabled", &self.site_link_enabled);
         formatter.finish()
     }
 }
@@ -7624,6 +7669,7 @@ pub mod create_private_virtual_interface_output {
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) site_link_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -8031,6 +8077,16 @@ pub mod create_private_virtual_interface_output {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn site_link_enabled(mut self, input: bool) -> Self {
+            self.site_link_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.site_link_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput)
         pub fn build(self) -> crate::output::CreatePrivateVirtualInterfaceOutput {
             crate::output::CreatePrivateVirtualInterfaceOutput {
@@ -8059,6 +8115,7 @@ pub mod create_private_virtual_interface_output {
                 aws_device_v2: self.aws_device_v2,
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
+                site_link_enabled: self.site_link_enabled,
             }
         }
     }
@@ -11105,6 +11162,8 @@ pub struct AssociateVirtualInterfaceOutput {
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub site_link_enabled: std::option::Option<bool>,
 }
 impl AssociateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -11249,6 +11308,10 @@ impl AssociateVirtualInterfaceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub fn site_link_enabled(&self) -> std::option::Option<bool> {
+        self.site_link_enabled
+    }
 }
 impl std::fmt::Debug for AssociateVirtualInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11278,6 +11341,7 @@ impl std::fmt::Debug for AssociateVirtualInterfaceOutput {
         formatter.field("aws_device_v2", &self.aws_device_v2);
         formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
+        formatter.field("site_link_enabled", &self.site_link_enabled);
         formatter.finish()
     }
 }
@@ -11314,6 +11378,7 @@ pub mod associate_virtual_interface_output {
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) site_link_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -11721,6 +11786,16 @@ pub mod associate_virtual_interface_output {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn site_link_enabled(mut self, input: bool) -> Self {
+            self.site_link_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.site_link_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput)
         pub fn build(self) -> crate::output::AssociateVirtualInterfaceOutput {
             crate::output::AssociateVirtualInterfaceOutput {
@@ -11749,6 +11824,7 @@ pub mod associate_virtual_interface_output {
                 aws_device_v2: self.aws_device_v2,
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
+                site_link_enabled: self.site_link_enabled,
             }
         }
     }
@@ -13336,6 +13412,8 @@ pub struct AllocatePublicVirtualInterfaceOutput {
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub site_link_enabled: std::option::Option<bool>,
 }
 impl AllocatePublicVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -13480,6 +13558,10 @@ impl AllocatePublicVirtualInterfaceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub fn site_link_enabled(&self) -> std::option::Option<bool> {
+        self.site_link_enabled
+    }
 }
 impl std::fmt::Debug for AllocatePublicVirtualInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13509,6 +13591,7 @@ impl std::fmt::Debug for AllocatePublicVirtualInterfaceOutput {
         formatter.field("aws_device_v2", &self.aws_device_v2);
         formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
+        formatter.field("site_link_enabled", &self.site_link_enabled);
         formatter.finish()
     }
 }
@@ -13545,6 +13628,7 @@ pub mod allocate_public_virtual_interface_output {
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) site_link_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -13952,6 +14036,16 @@ pub mod allocate_public_virtual_interface_output {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn site_link_enabled(mut self, input: bool) -> Self {
+            self.site_link_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.site_link_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput)
         pub fn build(self) -> crate::output::AllocatePublicVirtualInterfaceOutput {
             crate::output::AllocatePublicVirtualInterfaceOutput {
@@ -13980,6 +14074,7 @@ pub mod allocate_public_virtual_interface_output {
                 aws_device_v2: self.aws_device_v2,
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
+                site_link_enabled: self.site_link_enabled,
             }
         }
     }
@@ -14085,6 +14180,8 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub site_link_enabled: std::option::Option<bool>,
 }
 impl AllocatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -14229,6 +14326,10 @@ impl AllocatePrivateVirtualInterfaceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Indicates whether SiteLink is enabled.</p>
+    pub fn site_link_enabled(&self) -> std::option::Option<bool> {
+        self.site_link_enabled
+    }
 }
 impl std::fmt::Debug for AllocatePrivateVirtualInterfaceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14258,6 +14359,7 @@ impl std::fmt::Debug for AllocatePrivateVirtualInterfaceOutput {
         formatter.field("aws_device_v2", &self.aws_device_v2);
         formatter.field("aws_logical_device_id", &self.aws_logical_device_id);
         formatter.field("tags", &self.tags);
+        formatter.field("site_link_enabled", &self.site_link_enabled);
         formatter.finish()
     }
 }
@@ -14294,6 +14396,7 @@ pub mod allocate_private_virtual_interface_output {
         pub(crate) aws_device_v2: std::option::Option<std::string::String>,
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) site_link_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -14701,6 +14804,16 @@ pub mod allocate_private_virtual_interface_output {
             self.tags = input;
             self
         }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn site_link_enabled(mut self, input: bool) -> Self {
+            self.site_link_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether SiteLink is enabled.</p>
+        pub fn set_site_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.site_link_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput)
         pub fn build(self) -> crate::output::AllocatePrivateVirtualInterfaceOutput {
             crate::output::AllocatePrivateVirtualInterfaceOutput {
@@ -14729,6 +14842,7 @@ pub mod allocate_private_virtual_interface_output {
                 aws_device_v2: self.aws_device_v2,
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
+                site_link_enabled: self.site_link_enabled,
             }
         }
     }

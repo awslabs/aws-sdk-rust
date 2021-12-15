@@ -33,13 +33,13 @@ impl UpgradeLensReviewOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkloadShareOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A workload share return object.</p>
     pub workload_share: std::option::Option<crate::model::WorkloadShare>,
 }
 impl UpdateWorkloadShareOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -66,12 +66,12 @@ pub mod update_workload_share_output {
         pub(crate) workload_share: std::option::Option<crate::model::WorkloadShare>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -220,13 +220,13 @@ impl UpdateShareInvitationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLensReviewOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A lens review of a question.</p>
     pub lens_review: std::option::Option<crate::model::LensReview>,
 }
 impl UpdateLensReviewOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -253,12 +253,12 @@ pub mod update_lens_review_output {
         pub(crate) lens_review: std::option::Option<crate::model::LensReview>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -296,16 +296,18 @@ impl UpdateLensReviewOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnswerOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>An answer of the question.</p>
     pub answer: std::option::Option<crate::model::Answer>,
 }
 impl UpdateAnswerOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -313,6 +315,10 @@ impl UpdateAnswerOutput {
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
     /// <p>An answer of the question.</p>
     pub fn answer(&self) -> std::option::Option<&crate::model::Answer> {
@@ -324,6 +330,7 @@ impl std::fmt::Debug for UpdateAnswerOutput {
         let mut formatter = f.debug_struct("UpdateAnswerOutput");
         formatter.field("workload_id", &self.workload_id);
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("answer", &self.answer);
         formatter.finish()
     }
@@ -336,15 +343,16 @@ pub mod update_answer_output {
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) answer: std::option::Option<crate::model::Answer>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -359,6 +367,16 @@ pub mod update_answer_output {
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// <p>An answer of the question.</p>
@@ -376,6 +394,7 @@ pub mod update_answer_output {
             crate::output::UpdateAnswerOutput {
                 workload_id: self.workload_id,
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 answer: self.answer,
             }
         }
@@ -452,7 +471,7 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkloadSharesOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A list of workload share summaries.</p>
     pub workload_share_summaries:
@@ -461,7 +480,7 @@ pub struct ListWorkloadSharesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkloadSharesOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -497,12 +516,12 @@ pub mod list_workload_shares_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -900,7 +919,7 @@ impl ListNotificationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMilestonesOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A list of milestone summaries.</p>
     pub milestone_summaries: std::option::Option<std::vec::Vec<crate::model::MilestoneSummary>>,
@@ -908,7 +927,7 @@ pub struct ListMilestonesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMilestonesOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -942,12 +961,12 @@ pub mod list_milestones_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1001,11 +1020,97 @@ impl ListMilestonesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListLensSharesOutput {
+    /// <p>A list of lens share summaries.</p>
+    pub lens_share_summaries: std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListLensSharesOutput {
+    /// <p>A list of lens share summaries.</p>
+    pub fn lens_share_summaries(&self) -> std::option::Option<&[crate::model::LensShareSummary]> {
+        self.lens_share_summaries.as_deref()
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListLensSharesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListLensSharesOutput");
+        formatter.field("lens_share_summaries", &self.lens_share_summaries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListLensSharesOutput`](crate::output::ListLensSharesOutput)
+pub mod list_lens_shares_output {
+    /// A builder for [`ListLensSharesOutput`](crate::output::ListLensSharesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lens_share_summaries:
+            std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `lens_share_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_lens_share_summaries`](Self::set_lens_share_summaries).
+        ///
+        /// <p>A list of lens share summaries.</p>
+        pub fn lens_share_summaries(
+            mut self,
+            input: impl Into<crate::model::LensShareSummary>,
+        ) -> Self {
+            let mut v = self.lens_share_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.lens_share_summaries = Some(v);
+            self
+        }
+        /// <p>A list of lens share summaries.</p>
+        pub fn set_lens_share_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
+        ) -> Self {
+            self.lens_share_summaries = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListLensSharesOutput`](crate::output::ListLensSharesOutput)
+        pub fn build(self) -> crate::output::ListLensSharesOutput {
+            crate::output::ListLensSharesOutput {
+                lens_share_summaries: self.lens_share_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListLensSharesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLensSharesOutput`](crate::output::ListLensSharesOutput)
+    pub fn builder() -> crate::output::list_lens_shares_output::Builder {
+        crate::output::list_lens_shares_output::Builder::default()
+    }
+}
+
 /// <p>Output of a list lens reviews call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensReviewsOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -1016,7 +1121,7 @@ pub struct ListLensReviewsOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLensReviewsOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -1057,12 +1162,12 @@ pub mod list_lens_reviews_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1133,7 +1238,7 @@ impl ListLensReviewsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensReviewImprovementsOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -1141,13 +1246,15 @@ pub struct ListLensReviewImprovementsOutput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>List of improvement summaries of lens review in a workload.</p>
     pub improvement_summaries: std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLensReviewImprovementsOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -1160,6 +1267,10 @@ impl ListLensReviewImprovementsOutput {
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
     pub fn improvement_summaries(
@@ -1178,6 +1289,7 @@ impl std::fmt::Debug for ListLensReviewImprovementsOutput {
         formatter.field("workload_id", &self.workload_id);
         formatter.field("milestone_number", &self.milestone_number);
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("improvement_summaries", &self.improvement_summaries);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
@@ -1192,17 +1304,18 @@ pub mod list_lens_review_improvements_output {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) improvement_summaries:
             std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1229,6 +1342,16 @@ pub mod list_lens_review_improvements_output {
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// Appends an item to `improvement_summaries`.
@@ -1269,6 +1392,7 @@ pub mod list_lens_review_improvements_output {
                 workload_id: self.workload_id,
                 milestone_number: self.milestone_number.unwrap_or_default(),
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 improvement_summaries: self.improvement_summaries,
                 next_token: self.next_token,
             }
@@ -1368,7 +1492,7 @@ impl ListLensesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnswersOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -1376,13 +1500,15 @@ pub struct ListAnswersOutput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>List of answer summaries of lens review in a workload.</p>
     pub answer_summaries: std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnswersOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -1395,6 +1521,10 @@ impl ListAnswersOutput {
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
     /// <p>List of answer summaries of lens review in a workload.</p>
     pub fn answer_summaries(&self) -> std::option::Option<&[crate::model::AnswerSummary]> {
@@ -1411,6 +1541,7 @@ impl std::fmt::Debug for ListAnswersOutput {
         formatter.field("workload_id", &self.workload_id);
         formatter.field("milestone_number", &self.milestone_number);
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("answer_summaries", &self.answer_summaries);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
@@ -1425,17 +1556,18 @@ pub mod list_answers_output {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) answer_summaries:
             std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1462,6 +1594,16 @@ pub mod list_answers_output {
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// Appends an item to `answer_summaries`.
@@ -1499,6 +1641,7 @@ pub mod list_answers_output {
                 workload_id: self.workload_id,
                 milestone_number: self.milestone_number.unwrap_or_default(),
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 answer_summaries: self.answer_summaries,
                 next_token: self.next_token,
             }
@@ -1509,6 +1652,82 @@ impl ListAnswersOutput {
     /// Creates a new builder-style object to manufacture [`ListAnswersOutput`](crate::output::ListAnswersOutput)
     pub fn builder() -> crate::output::list_answers_output::Builder {
         crate::output::list_answers_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportLensOutput {
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the imported lens.</p>
+    pub status: std::option::Option<crate::model::ImportLensStatus>,
+}
+impl ImportLensOutput {
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
+    /// <p>The status of the imported lens.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ImportLensStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for ImportLensOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportLensOutput");
+        formatter.field("lens_arn", &self.lens_arn);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`ImportLensOutput`](crate::output::ImportLensOutput)
+pub mod import_lens_output {
+    /// A builder for [`ImportLensOutput`](crate::output::ImportLensOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ImportLensStatus>,
+    }
+    impl Builder {
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
+        /// <p>The status of the imported lens.</p>
+        pub fn status(mut self, input: crate::model::ImportLensStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the imported lens.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ImportLensStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportLensOutput`](crate::output::ImportLensOutput)
+        pub fn build(self) -> crate::output::ImportLensOutput {
+            crate::output::ImportLensOutput {
+                lens_arn: self.lens_arn,
+                status: self.status,
+            }
+        }
+    }
+}
+impl ImportLensOutput {
+    /// Creates a new builder-style object to manufacture [`ImportLensOutput`](crate::output::ImportLensOutput)
+    pub fn builder() -> crate::output::import_lens_output::Builder {
+        crate::output::import_lens_output::Builder::default()
     }
 }
 
@@ -1570,13 +1789,13 @@ impl GetWorkloadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMilestoneOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>A milestone return object.</p>
     pub milestone: std::option::Option<crate::model::Milestone>,
 }
 impl GetMilestoneOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -1603,12 +1822,12 @@ pub mod get_milestone_output {
         pub(crate) milestone: std::option::Option<crate::model::Milestone>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1649,8 +1868,12 @@ pub struct GetLensVersionDifferenceOutput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The base version of the lens.</p>
     pub base_lens_version: std::option::Option<std::string::String>,
+    /// <p>The target lens version for the lens.</p>
+    pub target_lens_version: std::option::Option<std::string::String>,
     /// <p>The latest version of the lens.</p>
     pub latest_lens_version: std::option::Option<std::string::String>,
     /// <p>The differences between the base and latest versions of the lens.</p>
@@ -1662,9 +1885,17 @@ impl GetLensVersionDifferenceOutput {
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
     /// <p>The base version of the lens.</p>
     pub fn base_lens_version(&self) -> std::option::Option<&str> {
         self.base_lens_version.as_deref()
+    }
+    /// <p>The target lens version for the lens.</p>
+    pub fn target_lens_version(&self) -> std::option::Option<&str> {
+        self.target_lens_version.as_deref()
     }
     /// <p>The latest version of the lens.</p>
     pub fn latest_lens_version(&self) -> std::option::Option<&str> {
@@ -1679,7 +1910,9 @@ impl std::fmt::Debug for GetLensVersionDifferenceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLensVersionDifferenceOutput");
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("base_lens_version", &self.base_lens_version);
+        formatter.field("target_lens_version", &self.target_lens_version);
         formatter.field("latest_lens_version", &self.latest_lens_version);
         formatter.field("version_differences", &self.version_differences);
         formatter.finish()
@@ -1692,7 +1925,9 @@ pub mod get_lens_version_difference_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) base_lens_version: std::option::Option<std::string::String>,
+        pub(crate) target_lens_version: std::option::Option<std::string::String>,
         pub(crate) latest_lens_version: std::option::Option<std::string::String>,
         pub(crate) version_differences: std::option::Option<crate::model::VersionDifferences>,
     }
@@ -1709,6 +1944,16 @@ pub mod get_lens_version_difference_output {
             self.lens_alias = input;
             self
         }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
         /// <p>The base version of the lens.</p>
         pub fn base_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_lens_version = Some(input.into());
@@ -1720,6 +1965,19 @@ pub mod get_lens_version_difference_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.base_lens_version = input;
+            self
+        }
+        /// <p>The target lens version for the lens.</p>
+        pub fn target_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_lens_version = Some(input.into());
+            self
+        }
+        /// <p>The target lens version for the lens.</p>
+        pub fn set_target_lens_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_lens_version = input;
             self
         }
         /// <p>The latest version of the lens.</p>
@@ -1752,7 +2010,9 @@ pub mod get_lens_version_difference_output {
         pub fn build(self) -> crate::output::GetLensVersionDifferenceOutput {
             crate::output::GetLensVersionDifferenceOutput {
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 base_lens_version: self.base_lens_version,
+                target_lens_version: self.target_lens_version,
                 latest_lens_version: self.latest_lens_version,
                 version_differences: self.version_differences,
             }
@@ -1770,7 +2030,7 @@ impl GetLensVersionDifferenceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensReviewReportOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -1779,7 +2039,7 @@ pub struct GetLensReviewReportOutput {
     pub lens_review_report: std::option::Option<crate::model::LensReviewReport>,
 }
 impl GetLensReviewReportOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -1813,12 +2073,12 @@ pub mod get_lens_review_report_output {
         pub(crate) lens_review_report: std::option::Option<crate::model::LensReviewReport>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1869,7 +2129,7 @@ impl GetLensReviewReportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensReviewOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -1878,7 +2138,7 @@ pub struct GetLensReviewOutput {
     pub lens_review: std::option::Option<crate::model::LensReview>,
 }
 impl GetLensReviewOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -1912,12 +2172,12 @@ pub mod get_lens_review_output {
         pub(crate) lens_review: std::option::Option<crate::model::LensReview>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1964,11 +2224,63 @@ impl GetLensReviewOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetLensOutput {
+    /// <p>A lens return object.</p>
+    pub lens: std::option::Option<crate::model::Lens>,
+}
+impl GetLensOutput {
+    /// <p>A lens return object.</p>
+    pub fn lens(&self) -> std::option::Option<&crate::model::Lens> {
+        self.lens.as_ref()
+    }
+}
+impl std::fmt::Debug for GetLensOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetLensOutput");
+        formatter.field("lens", &self.lens);
+        formatter.finish()
+    }
+}
+/// See [`GetLensOutput`](crate::output::GetLensOutput)
+pub mod get_lens_output {
+    /// A builder for [`GetLensOutput`](crate::output::GetLensOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lens: std::option::Option<crate::model::Lens>,
+    }
+    impl Builder {
+        /// <p>A lens return object.</p>
+        pub fn lens(mut self, input: crate::model::Lens) -> Self {
+            self.lens = Some(input);
+            self
+        }
+        /// <p>A lens return object.</p>
+        pub fn set_lens(mut self, input: std::option::Option<crate::model::Lens>) -> Self {
+            self.lens = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetLensOutput`](crate::output::GetLensOutput)
+        pub fn build(self) -> crate::output::GetLensOutput {
+            crate::output::GetLensOutput { lens: self.lens }
+        }
+    }
+}
+impl GetLensOutput {
+    /// Creates a new builder-style object to manufacture [`GetLensOutput`](crate::output::GetLensOutput)
+    pub fn builder() -> crate::output::get_lens_output::Builder {
+        crate::output::get_lens_output::Builder::default()
+    }
+}
+
 /// <p>Output of a get answer call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnswerOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -1976,11 +2288,13 @@ pub struct GetAnswerOutput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>An answer of the question.</p>
     pub answer: std::option::Option<crate::model::Answer>,
 }
 impl GetAnswerOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -1994,6 +2308,10 @@ impl GetAnswerOutput {
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
     /// <p>An answer of the question.</p>
     pub fn answer(&self) -> std::option::Option<&crate::model::Answer> {
         self.answer.as_ref()
@@ -2005,6 +2323,7 @@ impl std::fmt::Debug for GetAnswerOutput {
         formatter.field("workload_id", &self.workload_id);
         formatter.field("milestone_number", &self.milestone_number);
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("answer", &self.answer);
         formatter.finish()
     }
@@ -2018,15 +2337,16 @@ pub mod get_answer_output {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) answer: std::option::Option<crate::model::Answer>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2055,6 +2375,16 @@ pub mod get_answer_output {
             self.lens_alias = input;
             self
         }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
         /// <p>An answer of the question.</p>
         pub fn answer(mut self, input: crate::model::Answer) -> Self {
             self.answer = Some(input);
@@ -2071,6 +2401,7 @@ pub mod get_answer_output {
                 workload_id: self.workload_id,
                 milestone_number: self.milestone_number.unwrap_or_default(),
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 answer: self.answer,
             }
         }
@@ -2080,6 +2411,60 @@ impl GetAnswerOutput {
     /// Creates a new builder-style object to manufacture [`GetAnswerOutput`](crate::output::GetAnswerOutput)
     pub fn builder() -> crate::output::get_answer_output::Builder {
         crate::output::get_answer_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExportLensOutput {
+    /// <p>The JSON for the lens.</p>
+    pub lens_json: std::option::Option<std::string::String>,
+}
+impl ExportLensOutput {
+    /// <p>The JSON for the lens.</p>
+    pub fn lens_json(&self) -> std::option::Option<&str> {
+        self.lens_json.as_deref()
+    }
+}
+impl std::fmt::Debug for ExportLensOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExportLensOutput");
+        formatter.field("lens_json", &self.lens_json);
+        formatter.finish()
+    }
+}
+/// See [`ExportLensOutput`](crate::output::ExportLensOutput)
+pub mod export_lens_output {
+    /// A builder for [`ExportLensOutput`](crate::output::ExportLensOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lens_json: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The JSON for the lens.</p>
+        pub fn lens_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_json = Some(input.into());
+            self
+        }
+        /// <p>The JSON for the lens.</p>
+        pub fn set_lens_json(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_json = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportLensOutput`](crate::output::ExportLensOutput)
+        pub fn build(self) -> crate::output::ExportLensOutput {
+            crate::output::ExportLensOutput {
+                lens_json: self.lens_json,
+            }
+        }
+    }
+}
+impl ExportLensOutput {
+    /// Creates a new builder-style object to manufacture [`ExportLensOutput`](crate::output::ExportLensOutput)
+    pub fn builder() -> crate::output::export_lens_output::Builder {
+        crate::output::export_lens_output::Builder::default()
     }
 }
 
@@ -2173,17 +2558,77 @@ impl DeleteWorkloadOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLensShareOutput {}
+impl std::fmt::Debug for DeleteLensShareOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLensShareOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput)
+pub mod delete_lens_share_output {
+    /// A builder for [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput)
+        pub fn build(self) -> crate::output::DeleteLensShareOutput {
+            crate::output::DeleteLensShareOutput {}
+        }
+    }
+}
+impl DeleteLensShareOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput)
+    pub fn builder() -> crate::output::delete_lens_share_output::Builder {
+        crate::output::delete_lens_share_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLensOutput {}
+impl std::fmt::Debug for DeleteLensOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteLensOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteLensOutput`](crate::output::DeleteLensOutput)
+pub mod delete_lens_output {
+    /// A builder for [`DeleteLensOutput`](crate::output::DeleteLensOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteLensOutput`](crate::output::DeleteLensOutput)
+        pub fn build(self) -> crate::output::DeleteLensOutput {
+            crate::output::DeleteLensOutput {}
+        }
+    }
+}
+impl DeleteLensOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLensOutput`](crate::output::DeleteLensOutput)
+    pub fn builder() -> crate::output::delete_lens_output::Builder {
+        crate::output::delete_lens_output::Builder::default()
+    }
+}
+
 /// <p>Input for Create Workload Share</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkloadShareOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ID associated with the workload share.</p>
     pub share_id: std::option::Option<std::string::String>,
 }
 impl CreateWorkloadShareOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -2210,12 +2655,12 @@ pub mod create_workload_share_output {
         pub(crate) share_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2250,13 +2695,13 @@ impl CreateWorkloadShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkloadOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
     pub workload_arn: std::option::Option<std::string::String>,
 }
 impl CreateWorkloadOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -2283,12 +2728,12 @@ pub mod create_workload_output {
         pub(crate) workload_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2323,14 +2768,14 @@ impl CreateWorkloadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMilestoneOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
 }
 impl CreateMilestoneOutput {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -2358,12 +2803,12 @@ pub mod create_milestone_output {
         pub(crate) milestone_number: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2393,6 +2838,133 @@ impl CreateMilestoneOutput {
     /// Creates a new builder-style object to manufacture [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput)
     pub fn builder() -> crate::output::create_milestone_output::Builder {
         crate::output::create_milestone_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLensVersionOutput {
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
+    /// <p>The version of the lens.</p>
+    pub lens_version: std::option::Option<std::string::String>,
+}
+impl CreateLensVersionOutput {
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
+    /// <p>The version of the lens.</p>
+    pub fn lens_version(&self) -> std::option::Option<&str> {
+        self.lens_version.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLensVersionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLensVersionOutput");
+        formatter.field("lens_arn", &self.lens_arn);
+        formatter.field("lens_version", &self.lens_version);
+        formatter.finish()
+    }
+}
+/// See [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput)
+pub mod create_lens_version_output {
+    /// A builder for [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
+        pub(crate) lens_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
+        /// <p>The version of the lens.</p>
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the lens.</p>
+        pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput)
+        pub fn build(self) -> crate::output::CreateLensVersionOutput {
+            crate::output::CreateLensVersionOutput {
+                lens_arn: self.lens_arn,
+                lens_version: self.lens_version,
+            }
+        }
+    }
+}
+impl CreateLensVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput)
+    pub fn builder() -> crate::output::create_lens_version_output::Builder {
+        crate::output::create_lens_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateLensShareOutput {
+    /// <p>The ID associated with the workload share.</p>
+    pub share_id: std::option::Option<std::string::String>,
+}
+impl CreateLensShareOutput {
+    /// <p>The ID associated with the workload share.</p>
+    pub fn share_id(&self) -> std::option::Option<&str> {
+        self.share_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateLensShareOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateLensShareOutput");
+        formatter.field("share_id", &self.share_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateLensShareOutput`](crate::output::CreateLensShareOutput)
+pub mod create_lens_share_output {
+    /// A builder for [`CreateLensShareOutput`](crate::output::CreateLensShareOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) share_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID associated with the workload share.</p>
+        pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.share_id = Some(input.into());
+            self
+        }
+        /// <p>The ID associated with the workload share.</p>
+        pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.share_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateLensShareOutput`](crate::output::CreateLensShareOutput)
+        pub fn build(self) -> crate::output::CreateLensShareOutput {
+            crate::output::CreateLensShareOutput {
+                share_id: self.share_id,
+            }
+        }
+    }
+}
+impl CreateLensShareOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLensShareOutput`](crate::output::CreateLensShareOutput)
+    pub fn builder() -> crate::output::create_lens_share_output::Builder {
+        crate::output::create_lens_share_output::Builder::default()
     }
 }
 

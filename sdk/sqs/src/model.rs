@@ -52,6 +52,8 @@ pub enum QueueAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     RedrivePolicy,
     #[allow(missing_docs)] // documentation missing in model
+    SqsManagedSseEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     VisibilityTimeout,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -83,6 +85,7 @@ impl std::convert::From<&str> for QueueAttributeName {
             "ReceiveMessageWaitTimeSeconds" => QueueAttributeName::ReceiveMessageWaitTimeSeconds,
             "RedriveAllowPolicy" => QueueAttributeName::RedriveAllowPolicy,
             "RedrivePolicy" => QueueAttributeName::RedrivePolicy,
+            "SqsManagedSseEnabled" => QueueAttributeName::SqsManagedSseEnabled,
             "VisibilityTimeout" => QueueAttributeName::VisibilityTimeout,
             other => QueueAttributeName::Unknown(other.to_owned()),
         }
@@ -123,6 +126,7 @@ impl QueueAttributeName {
             QueueAttributeName::ReceiveMessageWaitTimeSeconds => "ReceiveMessageWaitTimeSeconds",
             QueueAttributeName::RedriveAllowPolicy => "RedriveAllowPolicy",
             QueueAttributeName::RedrivePolicy => "RedrivePolicy",
+            QueueAttributeName::SqsManagedSseEnabled => "SqsManagedSseEnabled",
             QueueAttributeName::VisibilityTimeout => "VisibilityTimeout",
             QueueAttributeName::Unknown(s) => s.as_ref(),
         }
@@ -150,6 +154,7 @@ impl QueueAttributeName {
             "ReceiveMessageWaitTimeSeconds",
             "RedriveAllowPolicy",
             "RedrivePolicy",
+            "SqsManagedSseEnabled",
             "VisibilityTimeout",
         ]
     }
@@ -1442,7 +1447,7 @@ impl MessageAttributeValue {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
-    /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an extended period of time.</p>
+    /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all Amazon Web Services accounts for an extended period of time.</p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>An identifier associated with the act of receiving the message. A new receipt handle is returned every time you receive a message. When deleting a message, you provide the last received receipt handle to delete the message.</p>
     pub receipt_handle: std::option::Option<std::string::String>,
@@ -1508,7 +1513,7 @@ pub struct Message {
     >,
 }
 impl Message {
-    /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an extended period of time.</p>
+    /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all Amazon Web Services accounts for an extended period of time.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -1626,12 +1631,12 @@ pub mod message {
         >,
     }
     impl Builder {
-        /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an extended period of time.</p>
+        /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all Amazon Web Services accounts for an extended period of time.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an extended period of time.</p>
+        /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all Amazon Web Services accounts for an extended period of time.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self

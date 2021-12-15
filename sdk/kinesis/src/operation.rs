@@ -893,3 +893,37 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateShardCount {
         }
     }
 }
+
+/// Operation shape for `UpdateStreamMode`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_stream_mode`](crate::client::Client::update_stream_mode).
+///
+/// See [`crate::client::fluent_builders::UpdateStreamMode`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateStreamMode {
+    _private: (),
+}
+impl UpdateStreamMode {
+    /// Creates a new builder-style object to manufacture [`UpdateStreamModeInput`](crate::input::UpdateStreamModeInput)
+    pub fn builder() -> crate::input::update_stream_mode_input::Builder {
+        crate::input::update_stream_mode_input::Builder::default()
+    }
+    /// Creates a new `UpdateStreamMode` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamMode {
+    type Output = std::result::Result<
+        crate::output::UpdateStreamModeOutput,
+        crate::error::UpdateStreamModeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_stream_mode_error(response)
+        } else {
+            crate::operation_deser::parse_update_stream_mode_response(response)
+        }
+    }
+}

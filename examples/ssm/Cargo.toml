@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 aws-config = { path = "../../sdk/aws-config" }
-ssm = { package = "aws-sdk-ssm", path = "../../sdk/ssm" }
+aws-sdk-ssm = { path = "../../sdk/ssm" }
 tokio = { version = "1", features = ["full"] }
 aws-types = { path = "../../sdk/aws-types" }
 

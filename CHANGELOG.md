@@ -1,3 +1,38 @@
+v0.3.0 (December 15th, 2021)
+============================
+**Breaking Changes:**
+- ⚠ (smithy-rs#930) If you directly depend on AWS or Smithy runtime crates _(e.g., AWS crates not named `aws-config` or prefixed with `aws-sdk-`)_,
+    the formerly default features from those crates must now be explicitly set in your `Cargo.toml`.
+
+    **Upgrade guide**
+
+    | before                          | after |
+    |---------------------------------|-------|
+    | `aws-smithy-async = "VERSION"`  | `aws-smithy-async = { version = "VERSION", features = ["rt-tokio"] }` |
+    | `aws-smithy-client = "VERSION"` | `aws-smithy-client = { version = "VERSION", features = ["client-hyper", "rustls", "rt-tokio"] }` |
+    | `aws-smithy-http = "VERSION"`   | `aws-smithy-http = { version = "VERSION", features = ["rt-tokio"] }` |
+- ⚠ (smithy-rs#940) `aws_hyper::Client` which was just a re-export of `aws_smithy_types::Client` with generics set has been removed. If you used
+    `aws_hyper::Client` or `aws_hyper::Client::https()` you can update your code to use `aws_smithy_client::Builder::https()`.
+- ⚠ (smithy-rs#947) The features `aws-hyper/rustls` and `aws-hyper/native-tls` have been removed. If you were using these, use the identical features on `aws-smithy-client`.
+- ⚠ (smithy-rs#959, smithy-rs#934) `aws-hyper::AwsMiddleware` is now generated into generated service clients directly. If you used `aws_hyper::Middleware`, use <service>::middleware::DefaultMiddleware` instead.
+
+**New this release:**
+- 🐛 (aws-sdk-rust#330) A bug that occurred when signing certain query strings has been fixed
+- 🐛 (smithy-rs#949, @a-xp) Fix incorrect argument order in the builder for `LazyCachingCredentialsProvider`
+- 🐛 (aws-sdk-rust#304) `aws-config` will now work as intended for users that want to use `native-tls` instead of `rustls`. Previously, it was
+    difficult to ensure that `rustls` was not in use. Also, there is now an example of how to use `native-tls` and a test
+    that ensures `rustls` is not in the dependency tree
+- 🐛 (aws-sdk-rust#317, smithy-rs#907) Removed inaccurate log message when a client was used without a sleep implementation, and
+    improved context and call to action in logged messages around missing sleep implementations.
+- (smithy-rs#923) Use provided `sleep_impl` for retries instead of using Tokio directly.
+- (smithy-rs#920) Fix typos in module documentation for generated crates
+- 🐛 (aws-sdk-rust#301, smithy-rs#892) Avoid serializing repetitive `xmlns` attributes when serializing XML. This reduces the length of serialized requests and should improve compatibility with localstack.
+- 🐛 (smithy-rs#953, aws-sdk-rust#331) Fixed a bug where certain characters caused a panic during URI encoding.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @a-xp (smithy-rs#949)
+
 v0.2.0 (December 2nd, 2021)
 ===========================
 

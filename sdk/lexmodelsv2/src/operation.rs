@@ -885,6 +885,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBotLocale {
     }
 }
 
+/// Operation shape for `DescribeBotRecommendation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_bot_recommendation`](crate::client::Client::describe_bot_recommendation).
+///
+/// See [`crate::client::fluent_builders::DescribeBotRecommendation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeBotRecommendation {
+    _private: (),
+}
+impl DescribeBotRecommendation {
+    /// Creates a new builder-style object to manufacture [`DescribeBotRecommendationInput`](crate::input::DescribeBotRecommendationInput)
+    pub fn builder() -> crate::input::describe_bot_recommendation_input::Builder {
+        crate::input::describe_bot_recommendation_input::Builder::default()
+    }
+    /// Creates a new `DescribeBotRecommendation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeBotRecommendation {
+    type Output = std::result::Result<
+        crate::output::DescribeBotRecommendationOutput,
+        crate::error::DescribeBotRecommendationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_bot_recommendation_error(response)
+        } else {
+            crate::operation_deser::parse_describe_bot_recommendation_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeBotVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1213,6 +1247,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBotLocales {
     }
 }
 
+/// Operation shape for `ListBotRecommendations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_bot_recommendations`](crate::client::Client::list_bot_recommendations).
+///
+/// See [`crate::client::fluent_builders::ListBotRecommendations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListBotRecommendations {
+    _private: (),
+}
+impl ListBotRecommendations {
+    /// Creates a new builder-style object to manufacture [`ListBotRecommendationsInput`](crate::input::ListBotRecommendationsInput)
+    pub fn builder() -> crate::input::list_bot_recommendations_input::Builder {
+        crate::input::list_bot_recommendations_input::Builder::default()
+    }
+    /// Creates a new `ListBotRecommendations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListBotRecommendations {
+    type Output = std::result::Result<
+        crate::output::ListBotRecommendationsOutput,
+        crate::error::ListBotRecommendationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_bot_recommendations_error(response)
+        } else {
+            crate::operation_deser::parse_list_bot_recommendations_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListBots`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1442,6 +1510,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIntents {
     }
 }
 
+/// Operation shape for `ListRecommendedIntents`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_recommended_intents`](crate::client::Client::list_recommended_intents).
+///
+/// See [`crate::client::fluent_builders::ListRecommendedIntents`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListRecommendedIntents {
+    _private: (),
+}
+impl ListRecommendedIntents {
+    /// Creates a new builder-style object to manufacture [`ListRecommendedIntentsInput`](crate::input::ListRecommendedIntentsInput)
+    pub fn builder() -> crate::input::list_recommended_intents_input::Builder {
+        crate::input::list_recommended_intents_input::Builder::default()
+    }
+    /// Creates a new `ListRecommendedIntents` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListRecommendedIntents {
+    type Output = std::result::Result<
+        crate::output::ListRecommendedIntentsOutput,
+        crate::error::ListRecommendedIntentsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_recommended_intents_error(response)
+        } else {
+            crate::operation_deser::parse_list_recommended_intents_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListSlots`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1535,6 +1637,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchAssociatedTranscripts`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_associated_transcripts`](crate::client::Client::search_associated_transcripts).
+///
+/// See [`crate::client::fluent_builders::SearchAssociatedTranscripts`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchAssociatedTranscripts {
+    _private: (),
+}
+impl SearchAssociatedTranscripts {
+    /// Creates a new builder-style object to manufacture [`SearchAssociatedTranscriptsInput`](crate::input::SearchAssociatedTranscriptsInput)
+    pub fn builder() -> crate::input::search_associated_transcripts_input::Builder {
+        crate::input::search_associated_transcripts_input::Builder::default()
+    }
+    /// Creates a new `SearchAssociatedTranscripts` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchAssociatedTranscripts {
+    type Output = std::result::Result<
+        crate::output::SearchAssociatedTranscriptsOutput,
+        crate::error::SearchAssociatedTranscriptsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_associated_transcripts_error(response)
+        } else {
+            crate::operation_deser::parse_search_associated_transcripts_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartBotRecommendation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_bot_recommendation`](crate::client::Client::start_bot_recommendation).
+///
+/// See [`crate::client::fluent_builders::StartBotRecommendation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartBotRecommendation {
+    _private: (),
+}
+impl StartBotRecommendation {
+    /// Creates a new builder-style object to manufacture [`StartBotRecommendationInput`](crate::input::StartBotRecommendationInput)
+    pub fn builder() -> crate::input::start_bot_recommendation_input::Builder {
+        crate::input::start_bot_recommendation_input::Builder::default()
+    }
+    /// Creates a new `StartBotRecommendation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartBotRecommendation {
+    type Output = std::result::Result<
+        crate::output::StartBotRecommendationOutput,
+        crate::error::StartBotRecommendationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_start_bot_recommendation_error(response)
+        } else {
+            crate::operation_deser::parse_start_bot_recommendation_response(response)
         }
     }
 }
@@ -1728,6 +1898,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBotLocale {
             crate::operation_deser::parse_update_bot_locale_error(response)
         } else {
             crate::operation_deser::parse_update_bot_locale_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateBotRecommendation`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_bot_recommendation`](crate::client::Client::update_bot_recommendation).
+///
+/// See [`crate::client::fluent_builders::UpdateBotRecommendation`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateBotRecommendation {
+    _private: (),
+}
+impl UpdateBotRecommendation {
+    /// Creates a new builder-style object to manufacture [`UpdateBotRecommendationInput`](crate::input::UpdateBotRecommendationInput)
+    pub fn builder() -> crate::input::update_bot_recommendation_input::Builder {
+        crate::input::update_bot_recommendation_input::Builder::default()
+    }
+    /// Creates a new `UpdateBotRecommendation` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateBotRecommendation {
+    type Output = std::result::Result<
+        crate::output::UpdateBotRecommendationOutput,
+        crate::error::UpdateBotRecommendationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_update_bot_recommendation_error(response)
+        } else {
+            crate::operation_deser::parse_update_bot_recommendation_response(response)
         }
     }
 }

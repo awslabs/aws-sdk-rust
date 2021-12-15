@@ -953,6 +953,121 @@ impl DetectDocumentTextOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnalyzeIdOutput {
+    /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
+    /// place in the list and the response structure for the document.</p>
+    pub identity_documents: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
+    /// <p>Information about the input document.</p>
+    pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+    /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
+    pub analyze_id_model_version: std::option::Option<std::string::String>,
+}
+impl AnalyzeIdOutput {
+    /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
+    /// place in the list and the response structure for the document.</p>
+    pub fn identity_documents(&self) -> std::option::Option<&[crate::model::IdentityDocument]> {
+        self.identity_documents.as_deref()
+    }
+    /// <p>Information about the input document.</p>
+    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+        self.document_metadata.as_ref()
+    }
+    /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
+    pub fn analyze_id_model_version(&self) -> std::option::Option<&str> {
+        self.analyze_id_model_version.as_deref()
+    }
+}
+impl std::fmt::Debug for AnalyzeIdOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnalyzeIdOutput");
+        formatter.field("identity_documents", &self.identity_documents);
+        formatter.field("document_metadata", &self.document_metadata);
+        formatter.field("analyze_id_model_version", &self.analyze_id_model_version);
+        formatter.finish()
+    }
+}
+/// See [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
+pub mod analyze_id_output {
+    /// A builder for [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) identity_documents:
+            std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
+        pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+        pub(crate) analyze_id_model_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `identity_documents`.
+        ///
+        /// To override the contents of this collection use [`set_identity_documents`](Self::set_identity_documents).
+        ///
+        /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
+        /// place in the list and the response structure for the document.</p>
+        pub fn identity_documents(
+            mut self,
+            input: impl Into<crate::model::IdentityDocument>,
+        ) -> Self {
+            let mut v = self.identity_documents.unwrap_or_default();
+            v.push(input.into());
+            self.identity_documents = Some(v);
+            self
+        }
+        /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
+        /// place in the list and the response structure for the document.</p>
+        pub fn set_identity_documents(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
+        ) -> Self {
+            self.identity_documents = input;
+            self
+        }
+        /// <p>Information about the input document.</p>
+        pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
+            self.document_metadata = Some(input);
+            self
+        }
+        /// <p>Information about the input document.</p>
+        pub fn set_document_metadata(
+            mut self,
+            input: std::option::Option<crate::model::DocumentMetadata>,
+        ) -> Self {
+            self.document_metadata = input;
+            self
+        }
+        /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
+        pub fn analyze_id_model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.analyze_id_model_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
+        pub fn set_analyze_id_model_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.analyze_id_model_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
+        pub fn build(self) -> crate::output::AnalyzeIdOutput {
+            crate::output::AnalyzeIdOutput {
+                identity_documents: self.identity_documents,
+                document_metadata: self.document_metadata,
+                analyze_id_model_version: self.analyze_id_model_version,
+            }
+        }
+    }
+}
+impl AnalyzeIdOutput {
+    /// Creates a new builder-style object to manufacture [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
+    pub fn builder() -> crate::output::analyze_id_output::Builder {
+        crate::output::analyze_id_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeExpenseOutput {
     /// <p>Information about the input document.</p>
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,

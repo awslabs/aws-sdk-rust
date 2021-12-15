@@ -25,13 +25,13 @@ pub mod add_role_to_db_cluster_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB
-        /// cluster, for example, <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
+        /// cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB
-        /// cluster, for example, <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
+        /// cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4017,28 +4017,41 @@ pub mod create_db_cluster_input {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
         pub(crate) enable_global_write_forwarding: std::option::Option<bool>,
+        pub(crate) db_cluster_instance_class: std::option::Option<std::string::String>,
+        pub(crate) allocated_storage: std::option::Option<i32>,
+        pub(crate) storage_type: std::option::Option<std::string::String>,
+        pub(crate) iops: std::option::Option<i32>,
+        pub(crate) publicly_accessible: std::option::Option<bool>,
+        pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
+        pub(crate) monitoring_interval: std::option::Option<i32>,
+        pub(crate) monitoring_role_arn: std::option::Option<std::string::String>,
+        pub(crate) enable_performance_insights: std::option::Option<bool>,
+        pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) performance_insights_retention_period: std::option::Option<i32>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created. For information on
-        /// Amazon Web Services Regions and Availability Zones, see
+        /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.
+        /// </p>     
+        /// <p>For information on Amazon Web Services Regions and Availability Zones, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing the Regions and
-        /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
-        /// </p>
+        /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
-        /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created. For information on
-        /// Amazon Web Services Regions and Availability Zones, see
+        /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.
+        /// </p>     
+        /// <p>For information on Amazon Web Services Regions and Availability Zones, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing the Regions and
-        /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
-        /// </p>
+        /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4046,7 +4059,7 @@ pub mod create_db_cluster_input {
             self.availability_zones = input;
             self
         }
-        /// <p>The number of days for which automated backups are retained.</p>
+        /// <p>The number of days for which automated backups are retained.</p>     
         /// <p>Default: 1</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -4054,11 +4067,12 @@ pub mod create_db_cluster_input {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn backup_retention_period(mut self, input: i32) -> Self {
             self.backup_retention_period = Some(input);
             self
         }
-        /// <p>The number of days for which automated backups are retained.</p>
+        /// <p>The number of days for which automated backups are retained.</p>     
         /// <p>Default: 1</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -4066,16 +4080,19 @@ pub mod create_db_cluster_input {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
             self.backup_retention_period = input;
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.character_set_name = Some(input.into());
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_character_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4086,6 +4103,7 @@ pub mod create_db_cluster_input {
         /// <p>The name for your database of up to 64 alphanumeric characters. If you do not
         /// provide a name, Amazon RDS doesn't create a database in the DB cluster you are
         /// creating.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
@@ -4093,6 +4111,7 @@ pub mod create_db_cluster_input {
         /// <p>The name for your database of up to 64 alphanumeric characters. If you do not
         /// provide a name, Amazon RDS doesn't create a database in the DB cluster you are
         /// creating.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4100,7 +4119,7 @@ pub mod create_db_cluster_input {
             self.database_name = input;
             self
         }
-        /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+        /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -4115,11 +4134,12 @@ pub mod create_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+        /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -4134,6 +4154,7 @@ pub mod create_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4145,13 +4166,14 @@ pub mod create_db_cluster_input {
         /// The name of the DB cluster parameter group to associate
         /// with this DB cluster. If you do not specify a value, then
         /// the default DB cluster parameter group for the specified DB engine and version is used.
-        /// </p>
+        /// </p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>If supplied, must match the name of an existing DB cluster parameter group.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -4163,13 +4185,14 @@ pub mod create_db_cluster_input {
         /// The name of the DB cluster parameter group to associate
         /// with this DB cluster. If you do not specify a value, then
         /// the default DB cluster parameter group for the specified DB engine and version is used.
-        /// </p>
+        /// </p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>If supplied, must match the name of an existing DB cluster parameter group.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_cluster_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4182,6 +4205,7 @@ pub mod create_db_cluster_input {
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
         /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
             v.push(input.into());
@@ -4189,6 +4213,7 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_vpc_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4197,17 +4222,21 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>A DB subnet group to associate with this DB cluster.</p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>     
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
         /// <p>A DB subnet group to associate with this DB cluster.</p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>     
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4215,70 +4244,166 @@ pub mod create_db_cluster_input {
             self.db_subnet_group_name = input;
             self
         }
-        /// <p>The name of the database engine to be used for this DB cluster.</p>
-        /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
+        /// <p>The name of the database engine to be used for this DB cluster.</p>     
+        /// <p>Valid Values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>aurora-postgresql</code>
         /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mysql</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>postgres</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine = Some(input.into());
             self
         }
-        /// <p>The name of the database engine to be used for this DB cluster.</p>
-        /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
+        /// <p>The name of the database engine to be used for this DB cluster.</p>     
+        /// <p>Valid Values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>aurora-postgresql</code>
         /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mysql</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>postgres</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
         /// <p>The version number of the database engine to use.</p>
-        /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+        /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
+        /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>
+        /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>      
         /// <p>
         /// <b>Aurora MySQL</b>
         /// </p>
-        /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the
+        /// <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// <p>
         /// <b>Aurora PostgreSQL</b>
         /// </p>
-        /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the
+        /// <i>Amazon Aurora User Guide.</i>
+        /// </p>  
+        /// <p>
+        /// <b>MySQL</b>
+        /// </p>      
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+        /// <i>Amazon RDS User Guide.</i>
+        /// </p>  
+        /// <p>
+        /// <b>PostgreSQL</b>
+        /// </p>   
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+        /// <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
         }
         /// <p>The version number of the database engine to use.</p>
-        /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+        /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
+        /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>
+        /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>      
         /// <p>
         /// <b>Aurora MySQL</b>
         /// </p>
-        /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the
+        /// <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// <p>
         /// <b>Aurora PostgreSQL</b>
         /// </p>
-        /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the
+        /// <i>Amazon Aurora User Guide.</i>
+        /// </p>  
+        /// <p>
+        /// <b>MySQL</b>
+        /// </p>      
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+        /// <i>Amazon RDS User Guide.</i>
+        /// </p>  
+        /// <p>
+        /// <b>PostgreSQL</b>
+        /// </p>   
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+        /// <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4286,23 +4411,55 @@ pub mod create_db_cluster_input {
             self.engine_version = input;
             self
         }
-        /// <p>The port number on which the instances in the DB cluster accept connections.</p>
+        /// <p>The port number on which the instances in the DB cluster accept connections.</p>     
         /// <p>
-        /// Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
+        /// <b>RDS for MySQL and Aurora MySQL</b>
         /// </p>
+        /// <p>
+        /// Default: <code>3306</code>
+        /// </p>
+        /// <p>
+        /// Valid values: <code>1150-65535</code>
+        /// </p>
+        /// <p>
+        /// <b>RDS for PostgreSQL and Aurora PostgreSQL</b>
+        /// </p>
+        /// <p>
+        /// Default: <code>5432</code>
+        /// </p>
+        /// <p>
+        /// Valid values: <code>1150-65535</code>
+        /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port number on which the instances in the DB cluster accept connections.</p>
+        /// <p>The port number on which the instances in the DB cluster accept connections.</p>     
         /// <p>
-        /// Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
+        /// <b>RDS for MySQL and Aurora MySQL</b>
         /// </p>
+        /// <p>
+        /// Default: <code>3306</code>
+        /// </p>
+        /// <p>
+        /// Valid values: <code>1150-65535</code>
+        /// </p>
+        /// <p>
+        /// <b>RDS for PostgreSQL and Aurora PostgreSQL</b>
+        /// </p>
+        /// <p>
+        /// Default: <code>5432</code>
+        /// </p>
+        /// <p>
+        /// Valid values: <code>1150-65535</code>
+        /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>The name of the master user for the DB cluster.</p>
+        /// <p>The name of the master user for the DB cluster.</p>   
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -4315,11 +4472,12 @@ pub mod create_db_cluster_input {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_username = Some(input.into());
             self
         }
-        /// <p>The name of the master user for the DB cluster.</p>
+        /// <p>The name of the master user for the DB cluster.</p>   
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -4332,6 +4490,7 @@ pub mod create_db_cluster_input {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_master_username(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4339,14 +4498,16 @@ pub mod create_db_cluster_input {
             self.master_username = input;
             self
         }
-        /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+        /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>   
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
             self
         }
-        /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+        /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>   
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_master_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4355,13 +4516,13 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
-        /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
+        /// <p>DB clusters are associated with a default option group that can't be modified.</p>
         pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.option_group_name = Some(input.into());
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
-        /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
+        /// <p>DB clusters are associated with a default option group that can't be modified.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4378,7 +4539,7 @@ pub mod create_db_cluster_input {
         /// To view the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
         /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>  
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -4394,6 +4555,7 @@ pub mod create_db_cluster_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_backup_window = Some(input.into());
             self
@@ -4407,7 +4569,7 @@ pub mod create_db_cluster_input {
         /// To view the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
         /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>  
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -4423,6 +4585,7 @@ pub mod create_db_cluster_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4438,9 +4601,10 @@ pub mod create_db_cluster_input {
         /// week. To see the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>     
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -4456,9 +4620,10 @@ pub mod create_db_cluster_input {
         /// week. To see the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>     
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4468,6 +4633,7 @@ pub mod create_db_cluster_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
         /// cluster is created as a read replica.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn replication_source_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -4477,6 +4643,7 @@ pub mod create_db_cluster_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
         /// cluster is created as a read replica.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_replication_source_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4489,6 +4656,7 @@ pub mod create_db_cluster_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to assign to the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
@@ -4496,6 +4664,7 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>Tags to assign to the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4504,16 +4673,18 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>A value that indicates whether the DB cluster is encrypted.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn storage_encrypted(mut self, input: bool) -> Self {
             self.storage_encrypted = Some(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster is encrypted.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.storage_encrypted = input;
             self
         }
-        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>       
         /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
         /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>When a KMS key isn't specified in <code>KmsKeyId</code>:</p>
@@ -4534,11 +4705,12 @@ pub mod create_db_cluster_input {
         /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you
         /// must set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services
         /// Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>       
         /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
         /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>When a KMS key isn't specified in <code>KmsKeyId</code>:</p>
@@ -4559,14 +4731,14 @@ pub mod create_db_cluster_input {
         /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you
         /// must set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services
         /// Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for
         /// the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from.
-        /// You only need to specify <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.</p>
-        ///
+        /// Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>      
         /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action
         /// that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
         /// <p>The pre-signed URL request must contain the following parameter values:</p>
@@ -4589,8 +4761,7 @@ pub mod create_db_cluster_input {
         /// encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like
         /// Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
         /// </li>
-        /// </ul>
-        ///
+        /// </ul>        
         /// <p>To learn how to generate a Signature Version 4 signed request, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
         /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
@@ -4601,14 +4772,14 @@ pub mod create_db_cluster_input {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// </note>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for
         /// the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from.
-        /// You only need to specify <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.</p>
-        ///
+        /// Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>      
         /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action
         /// that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
         /// <p>The pre-signed URL request must contain the following parameter values:</p>
@@ -4631,8 +4802,7 @@ pub mod create_db_cluster_input {
         /// encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like
         /// Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
         /// </li>
-        /// </ul>
-        ///
+        /// </ul>        
         /// <p>To learn how to generate a Signature Version 4 signed request, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
         /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
@@ -4643,6 +4813,7 @@ pub mod create_db_cluster_input {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// </note>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_pre_signed_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4651,23 +4822,25 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>      
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
             self.enable_iam_database_authentication = Some(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>      
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
             input: std::option::Option<bool>,
@@ -4677,9 +4850,7 @@ pub mod create_db_cluster_input {
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
         /// 0. </p>
-        /// <note>
-        /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-        /// </note>
+        ///
         /// <p>Default: 0</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -4687,15 +4858,14 @@ pub mod create_db_cluster_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora MySQL DB clusters only</p>
         pub fn backtrack_window(mut self, input: i64) -> Self {
             self.backtrack_window = Some(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
         /// 0. </p>
-        /// <note>
-        /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-        /// </note>
+        ///
         /// <p>Default: 0</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -4703,6 +4873,7 @@ pub mod create_db_cluster_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora MySQL DB clusters only</p>
         pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
             self.backtrack_window = input;
             self
@@ -4717,13 +4888,12 @@ pub mod create_db_cluster_input {
         /// <p>
         /// <b>Aurora MySQL</b>
         /// </p>
-        /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
-        /// </p>
+        /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
         /// <p>
         /// <b>Aurora PostgreSQL</b>
         /// </p>
-        /// <p>Possible value is <code>postgresql</code>.
-        /// </p>
+        /// <p>Possible value is <code>postgresql</code>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
             input: impl Into<std::string::String>,
@@ -4739,13 +4909,12 @@ pub mod create_db_cluster_input {
         /// <p>
         /// <b>Aurora MySQL</b>
         /// </p>
-        /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
-        /// </p>
+        /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
         /// <p>
         /// <b>Aurora PostgreSQL</b>
         /// </p>
-        /// <p>Possible value is <code>postgresql</code>.
-        /// </p>
+        /// <p>Possible value is <code>postgresql</code>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4761,7 +4930,7 @@ pub mod create_db_cluster_input {
         /// and <code>global</code> engine mode isn't required for any 2.x versions.</p>
         /// <p>The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.</p>
         /// <p>For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the <code>parallelquery</code>
-        /// and the <code>multimaster</code> engine modes currently aren't supported.</p>
+        /// and the <code>multimaster</code> engine modes currently aren't supported.</p>        
         /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the
         /// following sections in the <i>Amazon Aurora User Guide</i>:</p>
         /// <ul>
@@ -4790,6 +4959,7 @@ pub mod create_db_cluster_input {
         /// </p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_mode = Some(input.into());
             self
@@ -4802,7 +4972,7 @@ pub mod create_db_cluster_input {
         /// and <code>global</code> engine mode isn't required for any 2.x versions.</p>
         /// <p>The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.</p>
         /// <p>For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the <code>parallelquery</code>
-        /// and the <code>multimaster</code> engine modes currently aren't supported.</p>
+        /// and the <code>multimaster</code> engine modes currently aren't supported.</p>        
         /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the
         /// following sections in the <i>Amazon Aurora User Guide</i>:</p>
         /// <ul>
@@ -4831,16 +5001,19 @@ pub mod create_db_cluster_input {
         /// </p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_mode = input;
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
             self.scaling_configuration = Some(input);
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_scaling_configuration(
             mut self,
             input: std::option::Option<crate::model::ScalingConfiguration>,
@@ -4850,14 +5023,16 @@ pub mod create_db_cluster_input {
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.</p>
+        /// deletion protection isn't enabled.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.</p>
+        /// deletion protection isn't enabled.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
@@ -4866,6 +5041,7 @@ pub mod create_db_cluster_input {
         /// The global cluster ID of an Aurora cluster that becomes the primary cluster
         /// in the new global database cluster.
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_cluster_identifier = Some(input.into());
             self
@@ -4874,6 +5050,7 @@ pub mod create_db_cluster_input {
         /// The global cluster ID of an Aurora cluster that becomes the primary cluster
         /// in the new global database cluster.
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_global_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4885,9 +5062,10 @@ pub mod create_db_cluster_input {
         /// is disabled.</p>
         /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running
         /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
-        /// from inside the RDS console with the query editor.</p>
+        /// from inside the RDS console with the query editor.</p>      
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_http_endpoint(mut self, input: bool) -> Self {
             self.enable_http_endpoint = Some(input);
             self
@@ -4896,51 +5074,56 @@ pub mod create_db_cluster_input {
         /// is disabled.</p>
         /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running
         /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
-        /// from inside the RDS console with the query editor.</p>
+        /// from inside the RDS console with the query editor.</p>      
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_http_endpoint(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_http_endpoint = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
             self.copy_tags_to_snapshot = Some(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>The Active Directory directory ID to create the DB cluster in.</p>
         /// <p>
-        /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
-        /// in the <i>Amazon Aurora User Guide</i>.
-        /// </p>
+        /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>    
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a>
+        /// in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
         /// <p>The Active Directory directory ID to create the DB cluster in.</p>
         /// <p>
-        /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
-        /// in the <i>Amazon Aurora User Guide</i>.
-        /// </p>
+        /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>    
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a>
+        /// in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_iam_role_name = Some(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4955,7 +5138,8 @@ pub mod create_db_cluster_input {
         /// enabled, a secondary cluster can forward writes to the current primary cluster and the resulting changes are replicated back to
         /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the
         /// primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
-        /// </p>
+        /// </p>   
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
             self.enable_global_write_forwarding = Some(input);
             self
@@ -4967,12 +5151,292 @@ pub mod create_db_cluster_input {
         /// enabled, a secondary cluster can forward writes to the current primary cluster and the resulting changes are replicated back to
         /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the
         /// primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
-        /// </p>
+        /// </p>   
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_global_write_forwarding(
             mut self,
             input: std::option::Option<bool>,
         ) -> Self {
             self.enable_global_write_forwarding = input;
+            self
+        }
+        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>      
+        /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_instance_class = Some(input.into());
+            self
+        }
+        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>      
+        /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_db_cluster_instance_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_instance_class = input;
+            self
+        }
+        /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
+            self
+        }
+        /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
+            self
+        }
+        /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
+        /// <p>
+        /// Valid values: <code>standard | gp2 | io1</code>
+        /// </p>
+        /// <p>
+        /// If you specify <code>io1</code>, also include a value for the
+        /// <code>Iops</code> parameter.
+        /// </p>
+        /// <p>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter
+        /// is specified, otherwise <code>gp2</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
+            self
+        }
+        /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
+        /// <p>
+        /// Valid values: <code>standard | gp2 | io1</code>
+        /// </p>
+        /// <p>
+        /// If you specify <code>io1</code>, also include a value for the
+        /// <code>Iops</code> parameter.
+        /// </p>
+        /// <p>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter
+        /// is specified, otherwise <code>gp2</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
+            self
+        }
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
+        /// for each DB instance in the Multi-AZ DB cluster.</p>     
+        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
+        /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>   
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
+        /// for each DB instance in the Multi-AZ DB cluster.</p>     
+        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
+        /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>   
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
+            self
+        }
+        /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
+        /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+        /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+        /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
+        /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+        /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+        /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
+            self
+        }
+        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
+        /// By default, minor engine upgrades are applied automatically.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
+        /// By default, minor engine upgrades are applied automatically.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
+            self
+        }
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off
+        /// collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+        /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
+        /// to a value other than 0.</p>       
+        /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.monitoring_interval = Some(input);
+            self
+        }
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off
+        /// collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+        /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
+        /// to a value other than 0.</p>       
+        /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_interval = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
+        /// An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+        /// up and enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
+        /// An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+        /// up and enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_monitoring_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_role_arn = input;
+            self
+        }
+        /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.
+        /// </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+        /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.enable_performance_insights = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.
+        /// </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+        /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_performance_insights = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn performance_insights_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_performance_insights_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = input;
+            self
+        }
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.performance_insights_retention_period = Some(input);
+            self
+        }
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_performance_insights_retention_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.performance_insights_retention_period = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::input::CreateDbClusterInput)
@@ -5016,6 +5480,17 @@ pub mod create_db_cluster_input {
                 domain: self.domain,
                 domain_iam_role_name: self.domain_iam_role_name,
                 enable_global_write_forwarding: self.enable_global_write_forwarding,
+                db_cluster_instance_class: self.db_cluster_instance_class,
+                allocated_storage: self.allocated_storage,
+                storage_type: self.storage_type,
+                iops: self.iops,
+                publicly_accessible: self.publicly_accessible,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+                monitoring_interval: self.monitoring_interval,
+                monitoring_role_arn: self.monitoring_role_arn,
+                enable_performance_insights: self.enable_performance_insights,
+                performance_insights_kms_key_id: self.performance_insights_kms_key_id,
+                performance_insights_retention_period: self.performance_insights_retention_period,
             })
         }
     }
@@ -5182,12 +5657,12 @@ pub mod create_db_cluster_endpoint_input {
             self.db_cluster_endpoint_identifier = input;
             self
         }
-        /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+        /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_type = Some(input.into());
             self
         }
-        /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+        /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5220,7 +5695,7 @@ pub mod create_db_cluster_endpoint_input {
         ///
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
         /// All other eligible instances are reachable through the custom endpoint.
-        /// Only relevant if the list of static members is empty.</p>
+        /// This parameter is relevant only if the list of static members is empty.</p>
         pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
             v.push(input.into());
@@ -5229,7 +5704,7 @@ pub mod create_db_cluster_endpoint_input {
         }
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
         /// All other eligible instances are reachable through the custom endpoint.
-        /// Only relevant if the list of static members is empty.</p>
+        /// This parameter is relevant only if the list of static members is empty.</p>
         pub fn set_excluded_members(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5410,7 +5885,7 @@ pub mod create_db_cluster_parameter_group_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
-        /// <p>Must match the name of an existing DB cluster parameter group.</p>
+        /// <p>Must not match the name of an existing DB cluster parameter group.</p>
         /// </li>
         /// </ul>
         /// <note>
@@ -5427,7 +5902,7 @@ pub mod create_db_cluster_parameter_group_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
-        /// <p>Must match the name of an existing DB cluster parameter group.</p>
+        /// <p>Must not match the name of an existing DB cluster parameter group.</p>
         /// </li>
         /// </ul>
         /// <note>
@@ -5452,6 +5927,16 @@ pub mod create_db_cluster_parameter_group_input {
         /// </p>
         /// <p>Example: <code>aurora-postgresql9.6</code>
         /// </p>
+        /// <p>
+        /// <b>RDS for MySQL</b>
+        /// </p>
+        /// <p>Example: <code>mysql8.0</code>
+        /// </p>
+        /// <p>
+        /// <b>RDS for PostgreSQL</b>
+        /// </p>
+        /// <p>Example: <code>postgres12</code>
+        /// </p>
         /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></code>
@@ -5476,6 +5961,16 @@ pub mod create_db_cluster_parameter_group_input {
         /// <li>
         /// <p>
         /// <code>aurora-postgresql</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mysql</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>postgres</code>
         /// </p>
         /// </li>
         /// </ul>
@@ -5495,6 +5990,16 @@ pub mod create_db_cluster_parameter_group_input {
         /// </p>
         /// <p>Example: <code>aurora-postgresql9.6</code>
         /// </p>
+        /// <p>
+        /// <b>RDS for MySQL</b>
+        /// </p>
+        /// <p>Example: <code>mysql8.0</code>
+        /// </p>
+        /// <p>
+        /// <b>RDS for PostgreSQL</b>
+        /// </p>
+        /// <p>Example: <code>postgres12</code>
+        /// </p>
         /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></code>
@@ -5519,6 +6024,16 @@ pub mod create_db_cluster_parameter_group_input {
         /// <li>
         /// <p>
         /// <code>aurora-postgresql</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mysql</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>postgres</code>
         /// </p>
         /// </li>
         /// </ul>
@@ -5988,6 +6503,7 @@ pub mod create_db_instance_input {
         pub(crate) max_allocated_storage: std::option::Option<i32>,
         pub(crate) enable_customer_owned_ip: std::option::Option<bool>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
+        pub(crate) backup_target: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -6557,7 +7073,7 @@ pub mod create_db_instance_input {
             self.allocated_storage = input;
             self
         }
-        /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+        /// <p>The compute and memory capacity of the DB instance, for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
@@ -6567,7 +7083,7 @@ pub mod create_db_instance_input {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+        /// <p>The compute and memory capacity of the DB instance, for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
@@ -6763,88 +7279,15 @@ pub mod create_db_instance_input {
         /// </p>
         ///
         /// <p>
-        /// <b>MariaDB</b>
+        /// <b>Amazon RDS</b>
         /// </p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
-        /// <p>Required for MariaDB.</p>
+        /// <p>Required.</p>
         /// </li>
         /// <li>
-        /// <p>Must be 1 to 16 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>
-        /// <b>Microsoft SQL Server</b>
-        /// </p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li>
-        /// <p>Required for SQL Server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 128 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>
-        /// <b>MySQL</b>
-        /// </p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li>
-        /// <p>Required for MySQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 16 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>
-        /// <b>Oracle</b>
-        /// </p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li>
-        /// <p>Required for Oracle.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 30 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li>
-        /// <p>Required for PostgreSQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 63 letters or numbers.</p>
+        /// <p>Must be 1 to 16 letters, numbers, or underscores.</p>
         /// </li>
         /// <li>
         /// <p>First character must be a letter.</p>
@@ -6866,88 +7309,15 @@ pub mod create_db_instance_input {
         /// </p>
         ///
         /// <p>
-        /// <b>MariaDB</b>
+        /// <b>Amazon RDS</b>
         /// </p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
-        /// <p>Required for MariaDB.</p>
+        /// <p>Required.</p>
         /// </li>
         /// <li>
-        /// <p>Must be 1 to 16 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>
-        /// <b>Microsoft SQL Server</b>
-        /// </p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li>
-        /// <p>Required for SQL Server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 128 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>
-        /// <b>MySQL</b>
-        /// </p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li>
-        /// <p>Required for MySQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 16 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>
-        /// <b>Oracle</b>
-        /// </p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li>
-        /// <p>Required for Oracle.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 30 letters or numbers.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't be a reserved word for the chosen database engine.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <p>
-        /// <b>PostgreSQL</b>
-        /// </p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li>
-        /// <p>Required for PostgreSQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be 1 to 63 letters or numbers.</p>
+        /// <p>Must be 1 to 16 letters, numbers, or underscores.</p>
         /// </li>
         /// <li>
         /// <p>First character must be a letter.</p>
@@ -7516,7 +7886,7 @@ pub mod create_db_instance_input {
         /// <b>MariaDB</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         ///
@@ -7524,7 +7894,7 @@ pub mod create_db_instance_input {
         /// <b>Microsoft SQL Server</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         ///
@@ -7532,7 +7902,7 @@ pub mod create_db_instance_input {
         /// <b>MySQL</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>     
         ///
@@ -7540,7 +7910,7 @@ pub mod create_db_instance_input {
         /// <b>Oracle</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         ///
@@ -7548,7 +7918,7 @@ pub mod create_db_instance_input {
         /// <b>PostgreSQL</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7579,7 +7949,7 @@ pub mod create_db_instance_input {
         /// <b>MariaDB</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         ///
@@ -7587,7 +7957,7 @@ pub mod create_db_instance_input {
         /// <b>Microsoft SQL Server</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         ///
@@ -7595,7 +7965,7 @@ pub mod create_db_instance_input {
         /// <b>MySQL</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>     
         ///
@@ -7603,7 +7973,7 @@ pub mod create_db_instance_input {
         /// <b>Oracle</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         ///
@@ -7611,7 +7981,7 @@ pub mod create_db_instance_input {
         /// <b>PostgreSQL</b>
         /// </p>
         ///
-        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+        /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         pub fn set_engine_version(
@@ -7659,20 +8029,22 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
-        /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
-        /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance.
-        /// For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.
+        /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50
+        /// of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50
+        /// of the storage amount for the DB instance.
         /// </p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
-        /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
-        /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance.
-        /// For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.
+        /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50
+        /// of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50
+        /// of the storage amount for the DB instance.
         /// </p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
@@ -7744,27 +8116,28 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from
+        /// within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
         /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
         /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
         /// <ul>
         /// <li>
-        /// <p>If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is private.</p>
+        /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p>
         /// </li>
         /// <li>
-        /// <p>If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.</p>
+        /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p>
         /// </li>
         /// </ul>
         /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
         /// <ul>
         /// <li>
-        /// <p>If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is private.</p>
+        /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p>
         /// </li>
         /// <li>
-        /// <p>If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.</p>
+        /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p>
         /// </li>
         /// </ul>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -7772,27 +8145,28 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from
+        /// within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
         /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
         /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
         /// <ul>
         /// <li>
-        /// <p>If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is private.</p>
+        /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p>
         /// </li>
         /// <li>
-        /// <p>If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.</p>
+        /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p>
         /// </li>
         /// </ul>
         /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
         /// <ul>
         /// <li>
-        /// <p>If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is private.</p>
+        /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p>
         /// </li>
         /// <li>
-        /// <p>If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.</p>
+        /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p>
         /// </li>
         /// </ul>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
@@ -8101,8 +8475,8 @@ pub mod create_db_instance_input {
             self.timezone = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>      
         /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts
         /// to database accounts is managed by the DB cluster.</p>
         /// <p>For more information, see
@@ -8113,8 +8487,8 @@ pub mod create_db_instance_input {
             self.enable_iam_database_authentication = Some(input);
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>      
         /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts
         /// to database accounts is managed by the DB cluster.</p>
         /// <p>For more information, see
@@ -8313,7 +8687,7 @@ pub mod create_db_instance_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -8330,7 +8704,7 @@ pub mod create_db_instance_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -8443,6 +8817,25 @@ pub mod create_db_instance_input {
             self.custom_iam_instance_profile = input;
             self
         }
+        /// <p>Specifies where automated backups and manual snapshots are stored.</p>
+        /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_target = Some(input.into());
+            self
+        }
+        /// <p>Specifies where automated backups and manual snapshots are stored.</p>
+        /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        pub fn set_backup_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_target = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput)
         pub fn build(
             self,
@@ -8500,6 +8893,7 @@ pub mod create_db_instance_input {
                 max_allocated_storage: self.max_allocated_storage,
                 enable_customer_owned_ip: self.enable_customer_owned_ip,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
+                backup_target: self.backup_target,
             })
         }
     }
@@ -8701,7 +9095,7 @@ pub mod create_db_instance_read_replica_input {
         /// </li>
         /// <li>
         /// <p>Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or
-        /// later (9.4.7 and higher for cross-region replication).</p>
+        /// later (9.4.7 and higher for cross-Region replication).</p>
         /// </li>
         /// <li>
         /// <p>The specified DB instance must have automatic backups enabled, that is, its backup
@@ -8747,7 +9141,7 @@ pub mod create_db_instance_read_replica_input {
         /// </li>
         /// <li>
         /// <p>Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or
-        /// later (9.4.7 and higher for cross-region replication).</p>
+        /// later (9.4.7 and higher for cross-Region replication).</p>
         /// </li>
         /// <li>
         /// <p>The specified DB instance must have automatic backups enabled, that is, its backup
@@ -8771,8 +9165,8 @@ pub mod create_db_instance_read_replica_input {
             self.source_db_instance_identifier = input;
             self
         }
-        /// <p>The compute and memory capacity of the read replica, for example,
-        /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services
+        /// <p>The compute and memory capacity of the read replica, for example
+        /// db.m4.large. Not all DB instance classes are available in all Amazon Web Services
         /// Regions, or for all database engines. For the full list of DB instance classes, and
         /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
         /// Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -8782,8 +9176,8 @@ pub mod create_db_instance_read_replica_input {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the read replica, for example,
-        /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services
+        /// <p>The compute and memory capacity of the read replica, for example
+        /// db.m4.large. Not all DB instance classes are available in all Amazon Web Services
         /// Regions, or for all database engines. For the full list of DB instance classes, and
         /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
         /// Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -8906,9 +9300,9 @@ pub mod create_db_instance_read_replica_input {
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
-        /// uses the <code>DBParameterGroup</code> of source DB instance for a same region read
+        /// uses the <code>DBParameterGroup</code> of source DB instance for a same Region read
         /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a
-        /// cross region read replica.</p>
+        /// cross-Region read replica.</p>
         /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It
         /// isn't supported for RDS Custom.</p>
         /// <p>Constraints:</p>
@@ -8929,9 +9323,9 @@ pub mod create_db_instance_read_replica_input {
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
-        /// uses the <code>DBParameterGroup</code> of source DB instance for a same region read
+        /// uses the <code>DBParameterGroup</code> of source DB instance for a same Region read
         /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a
-        /// cross region read replica.</p>
+        /// cross-Region read replica.</p>
         /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It
         /// isn't supported for RDS Custom.</p>
         /// <p>Constraints:</p>
@@ -8954,9 +9348,12 @@ pub mod create_db_instance_read_replica_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -8964,9 +9361,12 @@ pub mod create_db_instance_read_replica_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
@@ -9280,7 +9680,7 @@ pub mod create_db_instance_read_replica_input {
         /// for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// <p>
         /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
-        /// doesn't support cross-region read replicas.</p>
+        /// doesn't support cross-Region read replicas.</p>
         /// </note>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9350,7 +9750,7 @@ pub mod create_db_instance_read_replica_input {
         /// for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// <p>
         /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
-        /// doesn't support cross-region read replicas.</p>
+        /// doesn't support cross-Region read replicas.</p>
         /// </note>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_pre_signed_url(
@@ -9360,8 +9760,8 @@ pub mod create_db_instance_read_replica_input {
             self.pre_signed_url = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
         ///
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -9372,8 +9772,8 @@ pub mod create_db_instance_read_replica_input {
             self.enable_iam_database_authentication = Some(input);
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
         ///
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -9519,7 +9919,7 @@ pub mod create_db_instance_read_replica_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -9529,7 +9929,7 @@ pub mod create_db_instance_read_replica_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -23525,6 +23925,11 @@ pub mod describe_export_tasks_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>in_progress</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>starting</code>
         /// </p>
         /// </li>
@@ -23575,6 +23980,11 @@ pub mod describe_export_tasks_input {
         /// <li>
         /// <p>
         /// <code>failed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>in_progress</code>
         /// </p>
         /// </li>
         /// <li>
@@ -26979,9 +27389,10 @@ pub mod failover_db_cluster_input {
             self.db_cluster_identifier = input;
             self
         }
-        /// <p>The name of the instance to promote to the primary instance.</p>
-        /// <p>You must specify the instance identifier for an Aurora Replica in the DB cluster.
-        /// For example, <code>mydbcluster-replica1</code>.</p>
+        /// <p>The name of the DB instance to promote to the primary DB instance.</p>
+        /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster,
+        /// for example <code>mydbcluster-replica1</code>.</p>
+        /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
         pub fn target_db_instance_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -26989,9 +27400,10 @@ pub mod failover_db_cluster_input {
             self.target_db_instance_identifier = Some(input.into());
             self
         }
-        /// <p>The name of the instance to promote to the primary instance.</p>
-        /// <p>You must specify the instance identifier for an Aurora Replica in the DB cluster.
-        /// For example, <code>mydbcluster-replica1</code>.</p>
+        /// <p>The name of the DB instance to promote to the primary DB instance.</p>
+        /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster,
+        /// for example <code>mydbcluster-replica1</code>.</p>
+        /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
         pub fn set_target_db_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28492,18 +28904,30 @@ pub mod modify_db_cluster_input {
         pub(crate) enable_http_endpoint: std::option::Option<bool>,
         pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
         pub(crate) enable_global_write_forwarding: std::option::Option<bool>,
+        pub(crate) db_cluster_instance_class: std::option::Option<std::string::String>,
+        pub(crate) allocated_storage: std::option::Option<i32>,
+        pub(crate) storage_type: std::option::Option<std::string::String>,
+        pub(crate) iops: std::option::Option<i32>,
+        pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
+        pub(crate) monitoring_interval: std::option::Option<i32>,
+        pub(crate) monitoring_role_arn: std::option::Option<std::string::String>,
+        pub(crate) enable_performance_insights: std::option::Option<bool>,
+        pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) performance_insights_retention_period: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
+        /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>    
         /// <p>Constraints: This identifier must match the identifier of an existing DB
         /// cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
+        /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>    
         /// <p>Constraints: This identifier must match the identifier of an existing DB
         /// cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28511,7 +28935,7 @@ pub mod modify_db_cluster_input {
             self.db_cluster_identifier = input;
             self
         }
-        /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
+        /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>    
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -28526,11 +28950,12 @@ pub mod modify_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>my-cluster2</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn new_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.new_db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
+        /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>    
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -28545,6 +28970,7 @@ pub mod modify_db_cluster_input {
         /// </ul>
         /// <p>Example: <code>my-cluster2</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_new_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28564,6 +28990,7 @@ pub mod modify_db_cluster_input {
         /// and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
         /// applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
         /// <p>By default, this parameter is disabled.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn apply_immediately(mut self, input: bool) -> Self {
             self.apply_immediately = Some(input);
             self
@@ -28580,11 +29007,12 @@ pub mod modify_db_cluster_input {
         /// and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
         /// applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
         /// <p>By default, this parameter is disabled.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
         }
-        /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
+        /// <p>The number of days for which automated backups are retained. Specify a minimum value of 1.</p>     
         /// <p>Default: 1</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -28592,11 +29020,12 @@ pub mod modify_db_cluster_input {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn backup_retention_period(mut self, input: i32) -> Self {
             self.backup_retention_period = Some(input);
             self
         }
-        /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
+        /// <p>The number of days for which automated backups are retained. Specify a minimum value of 1.</p>     
         /// <p>Default: 1</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -28604,11 +29033,13 @@ pub mod modify_db_cluster_input {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
             self.backup_retention_period = input;
             self
         }
         /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -28617,6 +29048,7 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_cluster_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28629,6 +29061,7 @@ pub mod modify_db_cluster_input {
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
         /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
             v.push(input.into());
@@ -28636,6 +29069,7 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_vpc_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -28643,30 +29077,34 @@ pub mod modify_db_cluster_input {
             self.vpc_security_group_ids = input;
             self
         }
-        /// <p>The port number on which the DB cluster accepts connections.</p>
+        /// <p>The port number on which the DB cluster accepts connections.</p>   
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port number on which the DB cluster accepts connections.</p>
+        /// <p>The port number on which the DB cluster accepts connections.</p>   
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+        /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>     
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
             self
         }
-        /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+        /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>     
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_master_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28674,26 +29112,14 @@ pub mod modify_db_cluster_input {
             self.master_user_password = input;
             self
         }
-        /// <p>A value that indicates that the DB cluster should be associated with the specified option group.
-        /// Changing this parameter doesn't result in an outage except in the following case, and the change
-        /// is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> is enabled for this request. If the parameter change results in an option group that
-        /// enables OEM, this change can cause a brief (sub-second) period during which new connections
-        /// are rejected but existing connections are not interrupted.
-        /// </p>
-        /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
+        /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
+        /// <p>DB clusters are associated with a default option group that can't be modified.</p>
         pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.option_group_name = Some(input.into());
             self
         }
-        /// <p>A value that indicates that the DB cluster should be associated with the specified option group.
-        /// Changing this parameter doesn't result in an outage except in the following case, and the change
-        /// is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> is enabled for this request. If the parameter change results in an option group that
-        /// enables OEM, this change can cause a brief (sub-second) period during which new connections
-        /// are rejected but existing connections are not interrupted.
-        /// </p>
-        /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
+        /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
+        /// <p>DB clusters are associated with a default option group that can't be modified.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28710,7 +29136,7 @@ pub mod modify_db_cluster_input {
         /// To view the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
         /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -28726,6 +29152,7 @@ pub mod modify_db_cluster_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_backup_window = Some(input.into());
             self
@@ -28739,7 +29166,7 @@ pub mod modify_db_cluster_input {
         /// To view the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
         /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -28755,6 +29182,7 @@ pub mod modify_db_cluster_input {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28770,9 +29198,10 @@ pub mod modify_db_cluster_input {
         /// week. To see the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>     
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -28788,9 +29217,10 @@ pub mod modify_db_cluster_input {
         /// week. To see the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>     
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28799,23 +29229,25 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>        
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
             self.enable_iam_database_authentication = Some(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>        
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
             input: std::option::Option<bool>,
@@ -28824,10 +29256,7 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
-        /// 0.</p>
-        /// <note>
-        /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-        /// </note>
+        /// 0.</p>     
         /// <p>Default: 0</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -28835,15 +29264,13 @@ pub mod modify_db_cluster_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora MySQL DB clusters only</p>
         pub fn backtrack_window(mut self, input: i64) -> Self {
             self.backtrack_window = Some(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
-        /// 0.</p>
-        /// <note>
-        /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-        /// </note>
+        /// 0.</p>     
         /// <p>Default: 0</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -28851,11 +29278,13 @@ pub mod modify_db_cluster_input {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora MySQL DB clusters only</p>
         pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
             self.backtrack_window = input;
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
             input: crate::model::CloudwatchLogsExportConfiguration,
@@ -28864,6 +29293,7 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_cloudwatch_logs_export_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
@@ -28874,18 +29304,27 @@ pub mod modify_db_cluster_input {
         /// <p>The version number of the database engine to which you want to upgrade.
         /// Changing this parameter results in an outage. The change is applied during
         /// the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-        /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+        /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
+        /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>
+        /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
@@ -28893,18 +29332,27 @@ pub mod modify_db_cluster_input {
         /// <p>The version number of the database engine to which you want to upgrade.
         /// Changing this parameter results in an outage. The change is applied during
         /// the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-        /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+        /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
+        /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>
+        /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28912,18 +29360,20 @@ pub mod modify_db_cluster_input {
             self.engine_version = input;
             self
         }
-        /// <p>A value that indicates whether major version upgrades are allowed.</p>
+        /// <p>A value that indicates whether major version upgrades are allowed.</p>     
         /// <p>Constraints: You must allow major version upgrades when specifying a value for the
         /// <code>EngineVersion</code> parameter that is a different major version than the DB
         /// cluster's current version.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
             self.allow_major_version_upgrade = Some(input);
             self
         }
-        /// <p>A value that indicates whether major version upgrades are allowed.</p>
+        /// <p>A value that indicates whether major version upgrades are allowed.</p>     
         /// <p>Constraints: You must allow major version upgrades when specifying a value for the
         /// <code>EngineVersion</code> parameter that is a different major version than the DB
         /// cluster's current version.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_major_version_upgrade = input;
             self
@@ -28933,7 +29383,7 @@ pub mod modify_db_cluster_input {
         /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB
         /// cluster isn't rebooted automatically. Also, parameter changes aren't
         /// applied during the next maintenance window but instead are applied immediately.</p>
-        /// </note>
+        /// </note>  
         /// <p>Default: The existing name setting</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -28945,6 +29395,7 @@ pub mod modify_db_cluster_input {
         /// the <code>AllowMajorVersionUpgrade</code> parameter.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn db_instance_parameter_group_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -28957,7 +29408,7 @@ pub mod modify_db_cluster_input {
         /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB
         /// cluster isn't rebooted automatically. Also, parameter changes aren't
         /// applied during the next maintenance window but instead are applied immediately.</p>
-        /// </note>
+        /// </note>  
         /// <p>Default: The existing name setting</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -28969,6 +29420,7 @@ pub mod modify_db_cluster_input {
         /// the <code>AllowMajorVersionUpgrade</code> parameter.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_db_instance_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28979,10 +29431,11 @@ pub mod modify_db_cluster_input {
         /// <p>The Active Directory directory ID to move the DB cluster to.  
         /// Specify <code>none</code> to remove the cluster from its current domain.
         /// The domain must be created prior to this operation.
-        /// </p>
+        /// </p>      
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
@@ -28990,20 +29443,23 @@ pub mod modify_db_cluster_input {
         /// <p>The Active Directory directory ID to move the DB cluster to.  
         /// Specify <code>none</code> to remove the cluster from its current domain.
         /// The domain must be created prior to this operation.
-        /// </p>
+        /// </p>      
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_iam_role_name = Some(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29012,11 +29468,13 @@ pub mod modify_db_cluster_input {
             self
         }
         /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
             self.scaling_configuration = Some(input);
             self
         }
         /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_scaling_configuration(
             mut self,
             input: std::option::Option<crate::model::ScalingConfiguration>,
@@ -29026,16 +29484,16 @@ pub mod modify_db_cluster_input {
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.
-        /// </p>
+        /// deletion protection isn't enabled.</p>       
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.
-        /// </p>
+        /// deletion protection isn't enabled.</p>       
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
@@ -29044,9 +29502,10 @@ pub mod modify_db_cluster_input {
         /// is disabled.</p>
         /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running
         /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
-        /// from inside the RDS console with the query editor.</p>
+        /// from inside the RDS console with the query editor.</p>      
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_http_endpoint(mut self, input: bool) -> Self {
             self.enable_http_endpoint = Some(input);
             self
@@ -29055,21 +29514,24 @@ pub mod modify_db_cluster_input {
         /// is disabled.</p>
         /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running
         /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
-        /// from inside the RDS console with the query editor.</p>
+        /// from inside the RDS console with the query editor.</p>      
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_http_endpoint(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_http_endpoint = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
             self.copy_tags_to_snapshot = Some(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_snapshot = input;
             self
@@ -29082,6 +29544,7 @@ pub mod modify_db_cluster_input {
         /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is
         /// demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
             self.enable_global_write_forwarding = Some(input);
             self
@@ -29094,11 +29557,221 @@ pub mod modify_db_cluster_input {
         /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is
         /// demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_global_write_forwarding(
             mut self,
             input: std::option::Option<bool>,
         ) -> Self {
             self.enable_global_write_forwarding = input;
+            self
+        }
+        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>        
+        /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_instance_class = Some(input.into());
+            self
+        }
+        /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>        
+        /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_db_cluster_instance_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_instance_class = input;
+            self
+        }
+        /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>      
+        /// <p>Type: Integer</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
+            self
+        }
+        /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>      
+        /// <p>Type: Integer</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
+            self
+        }
+        /// <p>Specifies the storage type to be associated with the DB cluster.</p>       
+        /// <p>
+        /// Valid values: <code>standard | gp2 | io1</code>
+        /// </p>
+        /// <p>
+        /// If you specify <code>io1</code>, you must also include a value for the
+        /// <code>Iops</code> parameter.
+        /// </p>
+        /// <p>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter
+        /// is specified, otherwise <code>gp2</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
+            self
+        }
+        /// <p>Specifies the storage type to be associated with the DB cluster.</p>       
+        /// <p>
+        /// Valid values: <code>standard | gp2 | io1</code>
+        /// </p>
+        /// <p>
+        /// If you specify <code>io1</code>, you must also include a value for the
+        /// <code>Iops</code> parameter.
+        /// </p>
+        /// <p>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter
+        /// is specified, otherwise <code>gp2</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
+            self
+        }
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
+        /// for each DB instance in the Multi-AZ DB cluster.</p>      
+        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
+        /// for each DB instance in the Multi-AZ DB cluster.</p>      
+        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
+            self
+        }
+        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
+        /// By default, minor engine upgrades are applied automatically.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
+        /// By default, minor engine upgrades are applied automatically.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
+            self
+        }
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.
+        /// To turn off collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+        /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
+        /// to a value other than 0.</p>       
+        /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.monitoring_interval = Some(input);
+            self
+        }
+        /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.
+        /// To turn off collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+        /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
+        /// to a value other than 0.</p>       
+        /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_interval = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An
+        /// example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An
+        /// example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_monitoring_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.monitoring_role_arn = input;
+            self
+        }
+        /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+        /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.enable_performance_insights = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+        /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_performance_insights = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn performance_insights_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+        /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_performance_insights_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.performance_insights_kms_key_id = input;
+            self
+        }
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.performance_insights_retention_period = Some(input);
+            self
+        }
+        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_performance_insights_retention_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.performance_insights_retention_period = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput)
@@ -29133,6 +29806,16 @@ pub mod modify_db_cluster_input {
                 enable_http_endpoint: self.enable_http_endpoint,
                 copy_tags_to_snapshot: self.copy_tags_to_snapshot,
                 enable_global_write_forwarding: self.enable_global_write_forwarding,
+                db_cluster_instance_class: self.db_cluster_instance_class,
+                allocated_storage: self.allocated_storage,
+                storage_type: self.storage_type,
+                iops: self.iops,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+                monitoring_interval: self.monitoring_interval,
+                monitoring_role_arn: self.monitoring_role_arn,
+                enable_performance_insights: self.enable_performance_insights,
+                performance_insights_kms_key_id: self.performance_insights_kms_key_id,
+                performance_insights_retention_period: self.performance_insights_retention_period,
             })
         }
     }
@@ -30033,7 +30716,7 @@ pub mod modify_db_instance_input {
             self.allocated_storage = input;
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
@@ -30049,7 +30732,7 @@ pub mod modify_db_instance_input {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
@@ -31105,9 +31788,12 @@ pub mod modify_db_instance_input {
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.
         /// </p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>
         /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance must be part of a
@@ -31122,9 +31808,12 @@ pub mod modify_db_instance_input {
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.
         /// </p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>
         /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance must be part of a
@@ -31203,8 +31892,8 @@ pub mod modify_db_instance_input {
             self.promotion_tier = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>      
         /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
         /// cluster.</p>      
         /// <p>For more information about IAM database authentication, see
@@ -31216,8 +31905,8 @@ pub mod modify_db_instance_input {
             self.enable_iam_database_authentication = Some(input);
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>      
         /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
         /// cluster.</p>      
         /// <p>For more information about IAM database authentication, see
@@ -31360,7 +32049,7 @@ pub mod modify_db_instance_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -31370,7 +32059,7 @@ pub mod modify_db_instance_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -34765,6 +35454,170 @@ impl PurchaseReservedDbInstancesOfferingInput {
     }
 }
 
+/// See [`RebootDbClusterInput`](crate::input::RebootDbClusterInput)
+pub mod reboot_db_cluster_input {
+    /// A builder for [`RebootDbClusterInput`](crate::input::RebootDbClusterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must match the identifier of an existing DBCluster.</p>
+        /// </li>
+        /// </ul>
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
+            self
+        }
+        /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must match the identifier of an existing DBCluster.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_db_cluster_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RebootDbClusterInput`](crate::input::RebootDbClusterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RebootDbClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RebootDbClusterInput {
+                db_cluster_identifier: self.db_cluster_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RebootDbClusterInputOperationOutputAlias = crate::operation::RebootDBCluster;
+#[doc(hidden)]
+pub type RebootDbClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl RebootDbClusterInput {
+    /// Consumes the builder and constructs an Operation<[`RebootDBCluster`](crate::operation::RebootDBCluster)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RebootDBCluster,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::RebootDbClusterInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RebootDbClusterInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RebootDbClusterInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-www-form-urlencoded",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_reboot_db_cluster(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RebootDBCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RebootDBCluster",
+            "rds",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`RebootDbClusterInput`](crate::input::RebootDbClusterInput)
+    pub fn builder() -> crate::input::reboot_db_cluster_input::Builder {
+        crate::input::reboot_db_cluster_input::Builder::default()
+    }
+}
+
 /// See [`RebootDbInstanceInput`](crate::input::RebootDbInstanceInput)
 pub mod reboot_db_instance_input {
     /// A builder for [`RebootDbInstanceInput`](crate::input::RebootDbInstanceInput)
@@ -37047,7 +37900,8 @@ pub mod restore_db_cluster_from_s3_input {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>
         ///
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -37058,7 +37912,8 @@ pub mod restore_db_cluster_from_s3_input {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>
         ///
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -37215,7 +38070,7 @@ pub mod restore_db_cluster_from_s3_input {
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.
+        /// deletion protection isn't enabled.
         /// </p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
@@ -37223,7 +38078,7 @@ pub mod restore_db_cluster_from_s3_input {
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.
+        /// deletion protection isn't enabled.
         /// </p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
@@ -37467,6 +38322,10 @@ pub mod restore_db_cluster_from_snapshot_input {
         pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
+        pub(crate) db_cluster_instance_class: std::option::Option<std::string::String>,
+        pub(crate) storage_type: std::option::Option<std::string::String>,
+        pub(crate) iops: std::option::Option<i32>,
+        pub(crate) publicly_accessible: std::option::Option<bool>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -37475,6 +38334,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         ///
         /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB
         /// cluster can be created.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
@@ -37483,6 +38343,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         }
         /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB
         /// cluster can be created.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37491,7 +38352,7 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
-        /// This parameter isn't case-sensitive.</p>
+        /// This parameter isn't case-sensitive.</p>      
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -37506,12 +38367,13 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
         /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
-        /// This parameter isn't case-sensitive.</p>
+        /// This parameter isn't case-sensitive.</p>      
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -37526,6 +38388,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37535,26 +38398,28 @@ pub mod restore_db_cluster_from_snapshot_input {
         }
         /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
         /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB
-        /// cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
+        /// cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>Must match the identifier of an existing Snapshot.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_identifier = Some(input.into());
             self
         }
         /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
         /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB
-        /// cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
+        /// cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>Must match the identifier of an existing Snapshot.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_snapshot_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37563,75 +38428,117 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The database engine to use for the new DB cluster.</p>
-        /// <p>Default: The same as source</p>
+        /// <p>Default: The same as source</p>      
         /// <p>Constraint: Must be compatible with the engine of the source</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine = Some(input.into());
             self
         }
         /// <p>The database engine to use for the new DB cluster.</p>
-        /// <p>Default: The same as source</p>
+        /// <p>Default: The same as source</p>      
         /// <p>Constraint: Must be compatible with the engine of the source</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
         /// <p>The version of the database engine to use for the new DB cluster.</p>
-        /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+        /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <note>
-        /// <p>If you aren't using the default engine version, then you must specify the engine version.</p>
-        /// </note>
+        /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>
+        /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>      
         /// <p>
         /// <b>Aurora MySQL</b>
         /// </p>
-        /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the
+        /// <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// <p>
         /// <b>Aurora PostgreSQL</b>
         /// </p>
-        /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the
+        /// <i>Amazon Aurora User Guide.</i>
+        /// </p>  
+        /// <p>
+        /// <b>MySQL</b>
+        /// </p>      
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+        /// <i>Amazon RDS User Guide.</i>
+        /// </p>  
+        /// <p>
+        /// <b>PostgreSQL</b>
+        /// </p>   
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+        /// <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
         }
         /// <p>The version of the database engine to use for the new DB cluster.</p>
-        /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+        /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+        /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
-        /// <note>
-        /// <p>If you aren't using the default engine version, then you must specify the engine version.</p>
-        /// </note>
+        /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>
+        /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+        /// <p>
+        /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+        /// </p>      
         /// <p>
         /// <b>Aurora MySQL</b>
         /// </p>
-        /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the
+        /// <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// <p>
         /// <b>Aurora PostgreSQL</b>
         /// </p>
-        /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the
+        /// <i>Amazon Aurora User Guide.</i>
+        /// </p>  
+        /// <p>
+        /// <b>MySQL</b>
+        /// </p>      
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+        /// <i>Amazon RDS User Guide.</i>
+        /// </p>  
+        /// <p>
+        /// <b>PostgreSQL</b>
+        /// </p>   
+        /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+        /// <i>Amazon RDS User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37639,34 +38546,38 @@ pub mod restore_db_cluster_from_snapshot_input {
             self.engine_version = input;
             self
         }
-        /// <p>The port number on which the new DB cluster accepts connections.</p>
+        /// <p>The port number on which the new DB cluster accepts connections.</p>   
         /// <p>Constraints: This value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port number on which the new DB cluster accepts connections.</p>
+        /// <p>The port number on which the new DB cluster accepts connections.</p>   
         /// <p>Constraints: This value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
+        /// <p>The name of the DB subnet group to use for the new DB cluster.</p>    
         /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
+        /// <p>The name of the DB subnet group to use for the new DB cluster.</p>    
         /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37675,11 +38586,13 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37688,11 +38601,13 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The name of the option group to use for the restored DB cluster.</p>
+        /// <p>DB clusters are associated with a default option group that can't be modified.</p>
         pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.option_group_name = Some(input.into());
             self
         }
         /// <p>The name of the option group to use for the restored DB cluster.</p>
+        /// <p>DB clusters are associated with a default option group that can't be modified.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37705,6 +38620,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
         /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
             v.push(input.into());
@@ -37712,6 +38628,7 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_vpc_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37724,6 +38641,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the restored DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
@@ -37731,6 +38649,7 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The tags to be assigned to the restored DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -37757,6 +38676,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// isn't encrypted.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -37780,28 +38700,31 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// isn't encrypted.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>        
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
             self.enable_iam_database_authentication = Some(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>        
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
             input: std::option::Option<bool>,
@@ -37814,13 +38737,14 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <note>
         /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
         /// </note>
-        /// <p>Default: 0</p>
+        /// <p>Default: 0</p>      
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn backtrack_window(mut self, input: i64) -> Self {
             self.backtrack_window = Some(input);
             self
@@ -37830,13 +38754,14 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <note>
         /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
         /// </note>
-        /// <p>Default: 0</p>
+        /// <p>Default: 0</p>      
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
             self.backtrack_window = input;
             self
@@ -37846,9 +38771,10 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
         ///
         /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.
-        /// The values in the list depend on the DB engine being used. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon
+        /// The values in the list depend on the DB engine being used.</p>       
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon
         /// Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
             input: impl Into<std::string::String>,
@@ -37859,9 +38785,10 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.
-        /// The values in the list depend on the DB engine being used. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon
+        /// The values in the list depend on the DB engine being used.</p>       
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon
         /// Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37870,27 +38797,31 @@ pub mod restore_db_cluster_from_snapshot_input {
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-        /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+        /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>      
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
         /// CreateDBCluster</a>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_mode = Some(input.into());
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-        /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+        /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>      
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
         /// CreateDBCluster</a>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_mode = input;
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
             self.scaling_configuration = Some(input);
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_scaling_configuration(
             mut self,
             input: std::option::Option<crate::model::ScalingConfiguration>,
@@ -37900,7 +38831,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this
         /// argument is omitted, the default DB cluster parameter group for the specified engine is
-        /// used.</p>
+        /// used.</p>       
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -37916,6 +38847,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -37925,7 +38857,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this
         /// argument is omitted, the default DB cluster parameter group for the specified engine is
-        /// used.</p>
+        /// used.</p>       
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -37941,6 +38873,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_cluster_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37950,61 +38883,202 @@ pub mod restore_db_cluster_from_snapshot_input {
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.
-        /// </p>
+        /// deletion protection isn't enabled.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.
-        /// </p>
+        /// deletion protection isn't enabled.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
             self.copy_tags_to_snapshot = Some(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
         /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>        
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-        /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
-        /// </p>
+        /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
         /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+        /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>        
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-        /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
-        /// </p>
+        /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_iam_role_name = Some(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.domain_iam_role_name = input;
+            self
+        }
+        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>      
+        /// <p>For the full list of DB instance classes, and availability for your engine, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_instance_class = Some(input.into());
+            self
+        }
+        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>      
+        /// <p>For the full list of DB instance classes, and availability for your engine, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_db_cluster_instance_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_instance_class = input;
+            self
+        }
+        /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>       
+        /// <p>
+        /// Valid values: <code>standard | gp2 | io1</code>
+        /// </p>
+        /// <p>
+        /// If you specify <code>io1</code>, you must also include a value for the
+        /// <code>Iops</code> parameter.
+        /// </p>
+        /// <p>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter
+        /// is specified, otherwise <code>gp2</code>
+        /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
+            self
+        }
+        /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>       
+        /// <p>
+        /// Valid values: <code>standard | gp2 | io1</code>
+        /// </p>
+        /// <p>
+        /// If you specify <code>io1</code>, you must also include a value for the
+        /// <code>Iops</code> parameter.
+        /// </p>
+        /// <p>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter
+        /// is specified, otherwise <code>gp2</code>
+        /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
+            self
+        }
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
+        /// each DB instance in the Multi-AZ DB cluster.</p>            
+        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
+        /// each DB instance in the Multi-AZ DB cluster.</p>            
+        /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
+            self
+        }
+        /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+        /// from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
+        /// Access to the DB cluster is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+        /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+        /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+        /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+        /// from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
+        /// Access to the DB cluster is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+        /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+        /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+        /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput)
@@ -38037,6 +39111,10 @@ pub mod restore_db_cluster_from_snapshot_input {
                 copy_tags_to_snapshot: self.copy_tags_to_snapshot,
                 domain: self.domain,
                 domain_iam_role_name: self.domain_iam_role_name,
+                db_cluster_instance_class: self.db_cluster_instance_class,
+                storage_type: self.storage_type,
+                iops: self.iops,
+                publicly_accessible: self.publicly_accessible,
             })
         }
     }
@@ -38188,9 +39266,13 @@ pub mod restore_db_cluster_to_point_in_time_input {
         pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
         pub(crate) scaling_configuration: std::option::Option<crate::model::ScalingConfiguration>,
         pub(crate) engine_mode: std::option::Option<std::string::String>,
+        pub(crate) db_cluster_instance_class: std::option::Option<std::string::String>,
+        pub(crate) storage_type: std::option::Option<std::string::String>,
+        pub(crate) publicly_accessible: std::option::Option<bool>,
+        pub(crate) iops: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the new DB cluster to be created.</p>
+        /// <p>The name of the new DB cluster to be created.</p>    
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -38203,11 +39285,12 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The name of the new DB cluster to be created.</p>
+        /// <p>The name of the new DB cluster to be created.</p>    
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -38220,6 +39303,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38239,10 +39323,11 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
         /// source DB cluster.</p>
         /// </li>
-        /// </ul>
+        /// </ul>      
         /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
         /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn restore_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.restore_type = Some(input.into());
             self
@@ -38259,21 +39344,23 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
         /// source DB cluster.</p>
         /// </li>
-        /// </ul>
+        /// </ul>      
         /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
         /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_restore_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.restore_type = input;
             self
         }
-        /// <p>The identifier of the source DB cluster from which to restore.</p>
+        /// <p>The identifier of the source DB cluster from which to restore.</p>    
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn source_db_cluster_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -38281,13 +39368,14 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.source_db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the source DB cluster from which to restore.</p>
+        /// <p>The identifier of the source DB cluster from which to restore.</p>    
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_source_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38295,7 +39383,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.source_db_cluster_identifier = input;
             self
         }
-        /// <p>The date and time to restore the DB cluster to.</p>
+        /// <p>The date and time to restore the DB cluster to.</p>      
         /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -38315,11 +39403,12 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// </ul>
         /// <p>Example: <code>2015-03-07T23:45:00Z</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn restore_to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.restore_to_time = Some(input);
             self
         }
-        /// <p>The date and time to restore the DB cluster to.</p>
+        /// <p>The date and time to restore the DB cluster to.</p>      
         /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -38339,6 +39428,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// </ul>
         /// <p>Example: <code>2015-03-07T23:45:00Z</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_restore_to_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -38349,8 +39439,9 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>A value that indicates whether to restore the DB cluster to the latest
         /// restorable backup time. By default, the DB cluster isn't restored to the latest
         /// restorable backup time.
-        /// </p>
+        /// </p>    
         /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
             self.use_latest_restorable_time = Some(input);
             self
@@ -38358,40 +39449,45 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>A value that indicates whether to restore the DB cluster to the latest
         /// restorable backup time. By default, the DB cluster isn't restored to the latest
         /// restorable backup time.
-        /// </p>
+        /// </p>    
         /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
             self.use_latest_restorable_time = input;
             self
         }
-        /// <p>The port number on which the new DB cluster accepts connections.</p>
+        /// <p>The port number on which the new DB cluster accepts connections.</p>   
         /// <p>Constraints: A value from <code>1150-65535</code>.
         /// </p>
         /// <p>Default: The default port for the engine.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port number on which the new DB cluster accepts connections.</p>
+        /// <p>The port number on which the new DB cluster accepts connections.</p>   
         /// <p>Constraints: A value from <code>1150-65535</code>.
         /// </p>
         /// <p>Default: The default port for the engine.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>The DB subnet group name to use for the new DB cluster.</p>
+        /// <p>The DB subnet group name to use for the new DB cluster.</p>   
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_subnet_group_name = Some(input.into());
             self
         }
-        /// <p>The DB subnet group name to use for the new DB cluster.</p>
+        /// <p>The DB subnet group name to use for the new DB cluster.</p>   
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38400,11 +39496,13 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>The name of the option group for the new DB cluster.</p>
+        /// <p>DB clusters are associated with a default option group that can't be modified.</p>
         pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.option_group_name = Some(input.into());
             self
         }
         /// <p>The name of the option group for the new DB cluster.</p>
+        /// <p>DB clusters are associated with a default option group that can't be modified.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38417,6 +39515,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
         /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
             v.push(input.into());
@@ -38424,6 +39523,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_vpc_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38469,9 +39569,9 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p>
         /// </li>
         /// </ul>
-        ///
         /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
-        /// is rejected.</p>
+        /// is rejected.</p>   
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -38491,31 +39591,33 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p>
         /// </li>
         /// </ul>
-        ///
         /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
-        /// is rejected.</p>
+        /// is rejected.</p>   
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>       
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>   
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
             self.enable_iam_database_authentication = Some(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        ///
+        /// Management (IAM) accounts to database accounts. By default, mapping isn't
+        /// enabled.</p>       
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
-        /// </p>
+        /// </p>   
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
             input: std::option::Option<bool>,
@@ -38525,32 +39627,28 @@ pub mod restore_db_cluster_to_point_in_time_input {
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
         /// 0.</p>
-        /// <note>
-        /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-        /// </note>
-        /// <p>Default: 0</p>
+        /// <p>Default: 0</p>       
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora MySQL DB clusters only</p>
         pub fn backtrack_window(mut self, input: i64) -> Self {
             self.backtrack_window = Some(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
         /// 0.</p>
-        /// <note>
-        /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-        /// </note>
-        /// <p>Default: 0</p>
+        /// <p>Default: 0</p>       
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora MySQL DB clusters only</p>
         pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
             self.backtrack_window = input;
             self
@@ -38560,8 +39658,9 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
         ///
         /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values
-        /// in the list depend on the DB engine being used. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// in the list depend on the DB engine being used.</p>       
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_cloudwatch_logs_exports(
             mut self,
             input: impl Into<std::string::String>,
@@ -38572,8 +39671,9 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values
-        /// in the list depend on the DB engine being used. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// in the list depend on the DB engine being used.</p>       
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_cloudwatch_logs_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38582,7 +39682,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster.
-        /// If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+        /// If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -38598,6 +39698,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -38606,7 +39707,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster.
-        /// If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+        /// If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>     
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -38622,6 +39723,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_db_cluster_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38631,26 +39733,28 @@ pub mod restore_db_cluster_to_point_in_time_input {
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.
-        /// </p>
+        /// deletion protection isn't enabled.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled.
-        /// </p>
+        /// deletion protection isn't enabled.</p>
+        /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
             self.copy_tags_to_snapshot = Some(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_snapshot = input;
             self
@@ -38663,6 +39767,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
@@ -38675,16 +39780,19 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_iam_role_name = Some(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38693,11 +39801,13 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
             self.scaling_configuration = Some(input);
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_scaling_configuration(
             mut self,
             input: std::option::Option<crate::model::ScalingConfiguration>,
@@ -38710,6 +39820,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// from a provisioned cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone
         /// that is an Aurora Serverless cluster, the original cluster must be an Aurora Serverless cluster or
         /// an encrypted provisioned cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_mode = Some(input.into());
             self
@@ -38719,8 +39830,150 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// from a provisioned cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone
         /// that is an Aurora Serverless cluster, the original cluster must be an Aurora Serverless cluster or
         /// an encrypted provisioned cluster.</p>
+        /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_mode = input;
+            self
+        }
+        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster,
+        /// for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services
+        /// Regions, or for all database engines.</p>      
+        /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_instance_class = Some(input.into());
+            self
+        }
+        /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster,
+        /// for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services
+        /// Regions, or for all database engines.</p>      
+        /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_db_cluster_instance_class(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_instance_class = input;
+            self
+        }
+        /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>        
+        /// <p>
+        /// Valid values: <code>standard | gp2 | io1</code>
+        /// </p>
+        /// <p>
+        /// If you specify <code>io1</code>, also include a value for the
+        /// <code>Iops</code> parameter.
+        /// </p>
+        /// <p>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter
+        /// is specified, otherwise <code>gp2</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
+            self
+        }
+        /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>        
+        /// <p>
+        /// Valid values: <code>standard | gp2 | io1</code>
+        /// </p>
+        /// <p>
+        /// If you specify <code>io1</code>, also include a value for the
+        /// <code>Iops</code> parameter.
+        /// </p>
+        /// <p>
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter
+        /// is specified, otherwise <code>gp2</code>
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
+            self
+        }
+        /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+        /// from within the DB cluster's virtual private cloud (VPC). It resolves
+        /// to the public IP address from outside of the DB cluster's VPC.
+        /// Access to the DB cluster is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+        /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+        /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+        /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+        /// from within the DB cluster's virtual private cloud (VPC). It resolves
+        /// to the public IP address from outside of the DB cluster's VPC.
+        /// Access to the DB cluster is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+        /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+        /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+        /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
+            self
+        }
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
+        /// each DB instance in the Multi-AZ DB cluster.</p>      
+        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
+        /// each DB instance in the Multi-AZ DB cluster.</p>      
+        /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </p>
+        /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
+        /// </p>
+        /// <p>Valid for: Multi-AZ DB clusters only</p>
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput)
@@ -38752,6 +40005,10 @@ pub mod restore_db_cluster_to_point_in_time_input {
                 domain_iam_role_name: self.domain_iam_role_name,
                 scaling_configuration: self.scaling_configuration,
                 engine_mode: self.engine_mode,
+                db_cluster_instance_class: self.db_cluster_instance_class,
+                storage_type: self.storage_type,
+                publicly_accessible: self.publicly_accessible,
+                iops: self.iops,
             })
         }
     }
@@ -38913,6 +40170,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) enable_customer_owned_ip: std::option::Option<bool>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
+        pub(crate) backup_target: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -38989,7 +40247,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self.db_snapshot_identifier = input;
             self
         }
-        /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
+        /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
@@ -39000,7 +40258,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
+        /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
@@ -39085,9 +40343,10 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+        /// from within the DB instance's virtual private cloud (VPC).
+        /// It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled
+        /// by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -39095,9 +40354,10 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+        /// from within the DB instance's virtual private cloud (VPC).
+        /// It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled
+        /// by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
@@ -39648,7 +40908,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -39658,7 +40918,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -39744,6 +41004,25 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self.custom_iam_instance_profile = input;
             self
         }
+        /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+        /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_target = Some(input.into());
+            self
+        }
+        /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+        /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        pub fn set_backup_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_target = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbInstanceFromDbSnapshotInput`](crate::input::RestoreDbInstanceFromDbSnapshotInput)
         pub fn build(
             self,
@@ -39782,6 +41061,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
                 deletion_protection: self.deletion_protection,
                 enable_customer_owned_ip: self.enable_customer_owned_ip,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
+                backup_target: self.backup_target,
             })
         }
     }
@@ -40051,7 +41331,7 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>The compute and memory capacity of the DB instance,
-        /// for example, <code>db.m4.large</code>.
+        /// for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions,
         /// or for all database engines.
         /// For the full list of DB instance classes,
@@ -40064,7 +41344,7 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>The compute and memory capacity of the DB instance,
-        /// for example, <code>db.m4.large</code>.
+        /// for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions,
         /// or for all database engines.
         /// For the full list of DB instance classes,
@@ -40521,9 +41801,11 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+        /// from within the DB instance's virtual private cloud (VPC).
+        /// It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -40531,9 +41813,11 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+        /// from within the DB instance's virtual private cloud (VPC).
+        /// It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
@@ -40708,8 +41992,8 @@ pub mod restore_db_instance_from_s3_input {
             self.monitoring_role_arn = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
         ///
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -40719,8 +42003,8 @@ pub mod restore_db_instance_from_s3_input {
             self.enable_iam_database_authentication = Some(input);
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
         ///
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -40941,7 +42225,7 @@ pub mod restore_db_instance_from_s3_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -40951,7 +42235,7 @@ pub mod restore_db_instance_from_s3_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -41197,6 +42481,7 @@ pub mod restore_db_instance_to_point_in_time_input {
             std::option::Option<std::string::String>,
         pub(crate) enable_customer_owned_ip: std::option::Option<bool>,
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
+        pub(crate) backup_target: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -41322,22 +42607,22 @@ pub mod restore_db_instance_to_point_in_time_input {
             self.use_latest_restorable_time = input;
             self
         }
-        /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
-        /// For the full list of DB instance classes,
-        /// and availability for your engine, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+        /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example
+        /// db.m4.large. Not all DB instance classes are available in all Amazon Web Services
+        /// Regions, or for all database engines. For the full list of DB instance classes, and
+        /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+        /// Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
         pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
-        /// For the full list of DB instance classes,
-        /// and availability for your engine, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+        /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example
+        /// db.m4.large. Not all DB instance classes are available in all Amazon Web Services
+        /// Regions, or for all database engines. For the full list of DB instance classes, and
+        /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+        /// Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
         pub fn set_db_instance_class(
@@ -41420,9 +42705,12 @@ pub mod restore_db_instance_to_point_in_time_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -41430,9 +42718,12 @@ pub mod restore_db_instance_to_point_in_time_input {
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-        /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-        /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-        /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+        /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+        /// to the DB cluster is ultimately controlled by the security group it uses. That public
+        /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+        /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
@@ -41828,8 +43119,8 @@ pub mod restore_db_instance_to_point_in_time_input {
             self.domain_iam_role_name = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
         ///
         /// <p>This setting doesn't apply to RDS Custom.</p>
         ///
@@ -41841,8 +43132,8 @@ pub mod restore_db_instance_to_point_in_time_input {
             self.enable_iam_database_authentication = Some(input);
             self
         }
-        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-        /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
         ///
         /// <p>This setting doesn't apply to RDS Custom.</p>
         ///
@@ -41975,7 +43266,7 @@ pub mod restore_db_instance_to_point_in_time_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -41985,7 +43276,7 @@ pub mod restore_db_instance_to_point_in_time_input {
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
-        /// deletion protection is disabled. For more information, see
+        /// deletion protection isn't enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
@@ -42124,6 +43415,25 @@ pub mod restore_db_instance_to_point_in_time_input {
             self.custom_iam_instance_profile = input;
             self
         }
+        /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+        /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_target = Some(input.into());
+            self
+        }
+        /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+        /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+        pub fn set_backup_target(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_target = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbInstanceToPointInTimeInput`](crate::input::RestoreDbInstanceToPointInTimeInput)
         pub fn build(
             self,
@@ -42168,6 +43478,7 @@ pub mod restore_db_instance_to_point_in_time_input {
                     .source_db_instance_automated_backups_arn,
                 enable_customer_owned_ip: self.enable_customer_owned_ip,
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
+                backup_target: self.backup_target,
             })
         }
     }
@@ -44894,11 +46205,11 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// </p>
     /// <p>Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.</p>
     pub use_latest_restorable_time: bool,
-    /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
-    /// For the full list of DB instance classes,
-    /// and availability for your engine, see
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+    /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example
+    /// db.m4.large. Not all DB instance classes are available in all Amazon Web Services
+    /// Regions, or for all database engines. For the full list of DB instance classes, and
+    /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+    /// Class</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
     /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
     pub db_instance_class: std::option::Option<std::string::String>,
@@ -44924,9 +46235,12 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// Multi-AZ deployment.</p>
     pub multi_az: std::option::Option<bool>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub publicly_accessible: std::option::Option<bool>,
@@ -45066,8 +46380,8 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     ///
     /// <p>This setting doesn't apply to RDS Custom.</p>
     ///
@@ -45109,7 +46423,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -45157,6 +46471,11 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub custom_iam_instance_profile: std::option::Option<std::string::String>,
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+    /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub backup_target: std::option::Option<std::string::String>,
 }
 impl RestoreDbInstanceToPointInTimeInput {
     /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -45209,11 +46528,11 @@ impl RestoreDbInstanceToPointInTimeInput {
     pub fn use_latest_restorable_time(&self) -> bool {
         self.use_latest_restorable_time
     }
-    /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
-    /// For the full list of DB instance classes,
-    /// and availability for your engine, see
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+    /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example
+    /// db.m4.large. Not all DB instance classes are available in all Amazon Web Services
+    /// Regions, or for all database engines. For the full list of DB instance classes, and
+    /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+    /// Class</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
     /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
     pub fn db_instance_class(&self) -> std::option::Option<&str> {
@@ -45249,9 +46568,12 @@ impl RestoreDbInstanceToPointInTimeInput {
         self.multi_az
     }
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
@@ -45421,8 +46743,8 @@ impl RestoreDbInstanceToPointInTimeInput {
     pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     ///
     /// <p>This setting doesn't apply to RDS Custom.</p>
     ///
@@ -45474,7 +46796,7 @@ impl RestoreDbInstanceToPointInTimeInput {
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -45533,6 +46855,13 @@ impl RestoreDbInstanceToPointInTimeInput {
     /// <p>This setting is required for RDS Custom.</p>
     pub fn custom_iam_instance_profile(&self) -> std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
+    }
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+    /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn backup_target(&self) -> std::option::Option<&str> {
+        self.backup_target.as_deref()
     }
 }
 impl std::fmt::Debug for RestoreDbInstanceToPointInTimeInput {
@@ -45600,6 +46929,7 @@ impl std::fmt::Debug for RestoreDbInstanceToPointInTimeInput {
             "custom_iam_instance_profile",
             &self.custom_iam_instance_profile,
         );
+        formatter.field("backup_target", &self.backup_target);
         formatter.finish()
     }
 }
@@ -45644,7 +46974,7 @@ pub struct RestoreDbInstanceFromS3Input {
     /// </note>
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The compute and memory capacity of the DB instance,
-    /// for example, <code>db.m4.large</code>.
+    /// for example db.m4.large.
     /// Not all DB instance classes are available in all Amazon Web Services Regions,
     /// or for all database engines.
     /// For the full list of DB instance classes,
@@ -45795,9 +47125,11 @@ pub struct RestoreDbInstanceFromS3Input {
     /// </p>
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+    /// from within the DB instance's virtual private cloud (VPC).
+    /// It resolves to the public IP address from outside of the DB instance's VPC.
+    /// Access to the DB instance is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub publicly_accessible: std::option::Option<bool>,
@@ -45858,8 +47190,8 @@ pub struct RestoreDbInstanceFromS3Input {
     /// then you must supply a <code>MonitoringRoleArn</code> value.
     /// </p>
     pub monitoring_role_arn: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     ///
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -45914,7 +47246,7 @@ pub struct RestoreDbInstanceFromS3Input {
     pub use_default_processor_features: std::option::Option<bool>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -45969,7 +47301,7 @@ impl RestoreDbInstanceFromS3Input {
         self.allocated_storage
     }
     /// <p>The compute and memory capacity of the DB instance,
-    /// for example, <code>db.m4.large</code>.
+    /// for example db.m4.large.
     /// Not all DB instance classes are available in all Amazon Web Services Regions,
     /// or for all database engines.
     /// For the full list of DB instance classes,
@@ -46158,9 +47490,11 @@ impl RestoreDbInstanceFromS3Input {
         self.option_group_name.as_deref()
     }
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+    /// from within the DB instance's virtual private cloud (VPC).
+    /// It resolves to the public IP address from outside of the DB instance's VPC.
+    /// Access to the DB instance is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
@@ -46237,8 +47571,8 @@ impl RestoreDbInstanceFromS3Input {
     pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
         self.monitoring_role_arn.as_deref()
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     ///
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -46317,7 +47651,7 @@ impl RestoreDbInstanceFromS3Input {
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -46440,7 +47774,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// </li>
     /// </ul>
     pub db_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
+    /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large.
     /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
@@ -46469,9 +47803,10 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     pub multi_az: std::option::Option<bool>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+    /// from within the DB instance's virtual private cloud (VPC).
+    /// It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled
+    /// by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub publicly_accessible: std::option::Option<bool>,
@@ -46658,7 +47993,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -46693,6 +48028,11 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub custom_iam_instance_profile: std::option::Option<std::string::String>,
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+    /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub backup_target: std::option::Option<std::string::String>,
 }
 impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -46727,7 +48067,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn db_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.db_snapshot_identifier.as_deref()
     }
-    /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
+    /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large.
     /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
@@ -46766,9 +48106,10 @@ impl RestoreDbInstanceFromDbSnapshotInput {
         self.multi_az
     }
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+    /// from within the DB instance's virtual private cloud (VPC).
+    /// It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled
+    /// by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
@@ -46995,7 +48336,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -47035,6 +48376,13 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>This setting is required for RDS Custom.</p>
     pub fn custom_iam_instance_profile(&self) -> std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
+    }
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+    /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn backup_target(&self) -> std::option::Option<&str> {
+        self.backup_target.as_deref()
     }
 }
 impl std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
@@ -47085,6 +48433,7 @@ impl std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
             "custom_iam_instance_profile",
             &self.custom_iam_instance_profile,
         );
+        formatter.field("backup_target", &self.backup_target);
         formatter.finish()
     }
 }
@@ -47093,7 +48442,7 @@ impl std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreDbClusterToPointInTimeInput {
-    /// <p>The name of the new DB cluster to be created.</p>
+    /// <p>The name of the new DB cluster to be created.</p>    
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -47106,6 +48455,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
@@ -47119,20 +48469,22 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
     /// source DB cluster.</p>
     /// </li>
-    /// </ul>
+    /// </ul>      
     /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
     /// restored as a full copy of the source DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub restore_type: std::option::Option<std::string::String>,
-    /// <p>The identifier of the source DB cluster from which to restore.</p>
+    /// <p>The identifier of the source DB cluster from which to restore.</p>    
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing DBCluster.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub source_db_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The date and time to restore the DB cluster to.</p>
+    /// <p>The date and time to restore the DB cluster to.</p>      
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -47152,26 +48504,32 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub restore_to_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether to restore the DB cluster to the latest
     /// restorable backup time. By default, the DB cluster isn't restored to the latest
     /// restorable backup time.
-    /// </p>
+    /// </p>    
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub use_latest_restorable_time: bool,
-    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>The port number on which the new DB cluster accepts connections.</p>   
     /// <p>Constraints: A value from <code>1150-65535</code>.
     /// </p>
     /// <p>Default: The default port for the engine.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub port: std::option::Option<i32>,
-    /// <p>The DB subnet group name to use for the new DB cluster.</p>
+    /// <p>The DB subnet group name to use for the new DB cluster.</p>   
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetgroup</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the option group for the new DB cluster.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of tags.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
@@ -47192,37 +48550,37 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p>
     /// </li>
     /// </ul>
-    ///
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
-    /// is rejected.</p>
+    /// is rejected.</p>   
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    ///
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>       
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
     /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>   
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
     /// 0.</p>
-    /// <note>
-    /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-    /// </note>
-    /// <p>Default: 0</p>
+    /// <p>Default: 0</p>       
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub backtrack_window: std::option::Option<i64>,
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values
-    /// in the list depend on the DB engine being used. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// in the list depend on the DB engine being used.</p>       
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster.
-    /// If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+    /// If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -47238,13 +48596,15 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.
-    /// </p>
+    /// deletion protection isn't enabled.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub deletion_protection: std::option::Option<bool>,
     /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
     /// The domain must be created prior to this operation.
@@ -47254,20 +48614,81 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
     /// in the <i>Amazon Aurora User Guide</i>.
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub scaling_configuration: std::option::Option<crate::model::ScalingConfiguration>,
     /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>,
     /// depending on the type of the cluster you are creating. You can create an Aurora Serverless clone
     /// from a provisioned cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone
     /// that is an Aurora Serverless cluster, the original cluster must be an Aurora Serverless cluster or
     /// an encrypted provisioned cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub engine_mode: std::option::Option<std::string::String>,
+    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster,
+    /// for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services
+    /// Regions, or for all database engines.</p>      
+    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub db_cluster_instance_class: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>        
+    /// <p>
+    /// Valid values: <code>standard | gp2 | io1</code>
+    /// </p>
+    /// <p>
+    /// If you specify <code>io1</code>, also include a value for the
+    /// <code>Iops</code> parameter.
+    /// </p>
+    /// <p>
+    /// Default: <code>io1</code> if the <code>Iops</code> parameter
+    /// is specified, otherwise <code>gp2</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub storage_type: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+    /// from within the DB cluster's virtual private cloud (VPC). It resolves
+    /// to the public IP address from outside of the DB cluster's VPC.
+    /// Access to the DB cluster is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub publicly_accessible: std::option::Option<bool>,
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
+    /// each DB instance in the Multi-AZ DB cluster.</p>      
+    /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub iops: std::option::Option<i32>,
 }
 impl RestoreDbClusterToPointInTimeInput {
-    /// <p>The name of the new DB cluster to be created.</p>
+    /// <p>The name of the new DB cluster to be created.</p>    
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -47280,6 +48701,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
@@ -47295,24 +48717,26 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
     /// source DB cluster.</p>
     /// </li>
-    /// </ul>
+    /// </ul>      
     /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
     /// restored as a full copy of the source DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn restore_type(&self) -> std::option::Option<&str> {
         self.restore_type.as_deref()
     }
-    /// <p>The identifier of the source DB cluster from which to restore.</p>
+    /// <p>The identifier of the source DB cluster from which to restore.</p>    
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing DBCluster.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn source_db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.source_db_cluster_identifier.as_deref()
     }
-    /// <p>The date and time to restore the DB cluster to.</p>
+    /// <p>The date and time to restore the DB cluster to.</p>      
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -47332,36 +48756,42 @@ impl RestoreDbClusterToPointInTimeInput {
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn restore_to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.restore_to_time.as_ref()
     }
     /// <p>A value that indicates whether to restore the DB cluster to the latest
     /// restorable backup time. By default, the DB cluster isn't restored to the latest
     /// restorable backup time.
-    /// </p>
+    /// </p>    
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn use_latest_restorable_time(&self) -> bool {
         self.use_latest_restorable_time
     }
-    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>The port number on which the new DB cluster accepts connections.</p>   
     /// <p>Constraints: A value from <code>1150-65535</code>.
     /// </p>
     /// <p>Default: The default port for the engine.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>The DB subnet group name to use for the new DB cluster.</p>
+    /// <p>The DB subnet group name to use for the new DB cluster.</p>   
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetgroup</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The name of the option group for the new DB cluster.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub fn option_group_name(&self) -> std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
     /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
@@ -47386,45 +48816,45 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p>
     /// </li>
     /// </ul>
-    ///
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
-    /// is rejected.</p>
+    /// is rejected.</p>   
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    ///
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>       
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
     /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>   
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
     /// 0.</p>
-    /// <note>
-    /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-    /// </note>
-    /// <p>Default: 0</p>
+    /// <p>Default: 0</p>       
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn backtrack_window(&self) -> std::option::Option<i64> {
         self.backtrack_window
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values
-    /// in the list depend on the DB engine being used. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// in the list depend on the DB engine being used.</p>       
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
     }
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster.
-    /// If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+    /// If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -47440,17 +48870,19 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.
-    /// </p>
+    /// deletion protection isn't enabled.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
     /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
@@ -47462,14 +48894,17 @@ impl RestoreDbClusterToPointInTimeInput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
     /// in the <i>Amazon Aurora User Guide</i>.
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn scaling_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ScalingConfiguration> {
@@ -47480,8 +48915,74 @@ impl RestoreDbClusterToPointInTimeInput {
     /// from a provisioned cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone
     /// that is an Aurora Serverless cluster, the original cluster must be an Aurora Serverless cluster or
     /// an encrypted provisioned cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn engine_mode(&self) -> std::option::Option<&str> {
         self.engine_mode.as_deref()
+    }
+    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster,
+    /// for example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services
+    /// Regions, or for all database engines.</p>      
+    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
+        self.db_cluster_instance_class.as_deref()
+    }
+    /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>        
+    /// <p>
+    /// Valid values: <code>standard | gp2 | io1</code>
+    /// </p>
+    /// <p>
+    /// If you specify <code>io1</code>, also include a value for the
+    /// <code>Iops</code> parameter.
+    /// </p>
+    /// <p>
+    /// Default: <code>io1</code> if the <code>Iops</code> parameter
+    /// is specified, otherwise <code>gp2</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+    /// from within the DB cluster's virtual private cloud (VPC). It resolves
+    /// to the public IP address from outside of the DB cluster's VPC.
+    /// Access to the DB cluster is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
+    /// each DB instance in the Multi-AZ DB cluster.</p>      
+    /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
     }
 }
 impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
@@ -47523,6 +49024,10 @@ impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
         formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
         formatter.field("scaling_configuration", &self.scaling_configuration);
         formatter.field("engine_mode", &self.engine_mode);
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("iops", &self.iops);
         formatter.finish()
     }
 }
@@ -47533,9 +49038,10 @@ impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
 pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB
     /// cluster can be created.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
-    /// This parameter isn't case-sensitive.</p>
+    /// This parameter isn't case-sensitive.</p>      
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -47550,65 +49056,94 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB
-    /// cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
+    /// cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing Snapshot.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The database engine to use for the new DB cluster.</p>
-    /// <p>Default: The same as source</p>
+    /// <p>Default: The same as source</p>      
     /// <p>Constraint: Must be compatible with the engine of the source</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version of the database engine to use for the new DB cluster.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+    /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <note>
-    /// <p>If you aren't using the default engine version, then you must specify the engine version.</p>
-    /// </note>
+    /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>
+    /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>      
     /// <p>
     /// <b>Aurora MySQL</b>
     /// </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the
+    /// <i>Amazon Aurora User Guide.</i>
     /// </p>
     /// <p>
     /// <b>Aurora PostgreSQL</b>
     /// </p>
-    /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the
+    /// <i>Amazon Aurora User Guide.</i>
+    /// </p>  
+    /// <p>
+    /// <b>MySQL</b>
+    /// </p>      
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+    /// <i>Amazon RDS User Guide.</i>
+    /// </p>  
+    /// <p>
+    /// <b>PostgreSQL</b>
+    /// </p>   
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+    /// <i>Amazon RDS User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>The port number on which the new DB cluster accepts connections.</p>   
     /// <p>Constraints: This value must be <code>1150-65535</code>
     /// </p>
     /// <p>Default: The same port as the original DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub port: std::option::Option<i32>,
-    /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
+    /// <p>The name of the DB subnet group to use for the new DB cluster.</p>    
     /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
     /// <p>Example: <code>mySubnetgroup</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The database name for the restored DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the option group to use for the restored DB cluster.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be assigned to the restored DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB
     /// snapshot or DB cluster snapshot.</p>
@@ -47629,43 +49164,49 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// isn't encrypted.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    ///
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>        
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
     /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
     /// 0.</p>
     /// <note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
-    /// <p>Default: 0</p>
+    /// <p>Default: 0</p>      
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub backtrack_window: std::option::Option<i64>,
     /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.
-    /// The values in the list depend on the DB engine being used. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon
+    /// The values in the list depend on the DB engine being used.</p>       
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon
     /// Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-    /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+    /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>      
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
     /// CreateDBCluster</a>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub engine_mode: std::option::Option<std::string::String>,
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub scaling_configuration: std::option::Option<crate::model::ScalingConfiguration>,
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this
     /// argument is omitted, the default DB cluster parameter group for the specified engine is
-    /// used.</p>
+    /// used.</p>       
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -47681,32 +49222,91 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.
-    /// </p>
+    /// deletion protection isn't enabled.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub deletion_protection: std::option::Option<bool>,
     /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
     /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-    /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+    /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>        
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-    /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
-    /// </p>
+    /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
+    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>      
+    /// <p>For the full list of DB instance classes, and availability for your engine, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub db_cluster_instance_class: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>       
+    /// <p>
+    /// Valid values: <code>standard | gp2 | io1</code>
+    /// </p>
+    /// <p>
+    /// If you specify <code>io1</code>, you must also include a value for the
+    /// <code>Iops</code> parameter.
+    /// </p>
+    /// <p>
+    /// Default: <code>io1</code> if the <code>Iops</code> parameter
+    /// is specified, otherwise <code>gp2</code>
+    /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub storage_type: std::option::Option<std::string::String>,
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
+    /// each DB instance in the Multi-AZ DB cluster.</p>            
+    /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub iops: std::option::Option<i32>,
+    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+    /// from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
+    /// Access to the DB cluster is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub publicly_accessible: std::option::Option<bool>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB
     /// cluster can be created.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
-    /// This parameter isn't case-sensitive.</p>
+    /// This parameter isn't case-sensitive.</p>      
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -47721,83 +49321,112 @@ impl RestoreDbClusterFromSnapshotInput {
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB
-    /// cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
+    /// cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing Snapshot.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The database engine to use for the new DB cluster.</p>
-    /// <p>Default: The same as source</p>
+    /// <p>Default: The same as source</p>      
     /// <p>Constraint: Must be compatible with the engine of the source</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The version of the database engine to use for the new DB cluster.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+    /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <note>
-    /// <p>If you aren't using the default engine version, then you must specify the engine version.</p>
-    /// </note>
+    /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>
+    /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>      
     /// <p>
     /// <b>Aurora MySQL</b>
     /// </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the
+    /// <i>Amazon Aurora User Guide.</i>
     /// </p>
     /// <p>
     /// <b>Aurora PostgreSQL</b>
     /// </p>
-    /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the
+    /// <i>Amazon Aurora User Guide.</i>
+    /// </p>  
+    /// <p>
+    /// <b>MySQL</b>
+    /// </p>      
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+    /// <i>Amazon RDS User Guide.</i>
+    /// </p>  
+    /// <p>
+    /// <b>PostgreSQL</b>
+    /// </p>   
+    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+    /// <i>Amazon RDS User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>The port number on which the new DB cluster accepts connections.</p>   
     /// <p>Constraints: This value must be <code>1150-65535</code>
     /// </p>
     /// <p>Default: The same port as the original DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
+    /// <p>The name of the DB subnet group to use for the new DB cluster.</p>    
     /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
     /// <p>Example: <code>mySubnetgroup</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The database name for the restored DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the option group to use for the restored DB cluster.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub fn option_group_name(&self) -> std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>The tags to be assigned to the restored DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -47820,16 +49449,18 @@ impl RestoreDbClusterFromSnapshotInput {
     /// isn't encrypted.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    ///
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>        
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
     /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
@@ -47838,31 +49469,35 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
-    /// <p>Default: 0</p>
+    /// <p>Default: 0</p>      
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn backtrack_window(&self) -> std::option::Option<i64> {
         self.backtrack_window
     }
     /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.
-    /// The values in the list depend on the DB engine being used. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon
+    /// The values in the list depend on the DB engine being used.</p>       
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon
     /// Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-    /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+    /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>      
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
     /// CreateDBCluster</a>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn engine_mode(&self) -> std::option::Option<&str> {
         self.engine_mode.as_deref()
     }
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn scaling_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ScalingConfiguration> {
@@ -47870,7 +49505,7 @@ impl RestoreDbClusterFromSnapshotInput {
     }
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this
     /// argument is omitted, the default DB cluster parameter group for the specified engine is
-    /// used.</p>
+    /// used.</p>       
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -47886,32 +49521,98 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.
-    /// </p>
+    /// deletion protection isn't enabled.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
     /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
     /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
     /// The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
-    /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+    /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>        
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-    /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
-    /// </p>
+    /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
+    }
+    /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>      
+    /// <p>For the full list of DB instance classes, and availability for your engine, see
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
+        self.db_cluster_instance_class.as_deref()
+    }
+    /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>       
+    /// <p>
+    /// Valid values: <code>standard | gp2 | io1</code>
+    /// </p>
+    /// <p>
+    /// If you specify <code>io1</code>, you must also include a value for the
+    /// <code>Iops</code> parameter.
+    /// </p>
+    /// <p>
+    /// Default: <code>io1</code> if the <code>Iops</code> parameter
+    /// is specified, otherwise <code>gp2</code>
+    /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
+    /// each DB instance in the Multi-AZ DB cluster.</p>            
+    /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address
+    /// from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
+    /// Access to the DB cluster is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
     }
 }
 impl std::fmt::Debug for RestoreDbClusterFromSnapshotInput {
@@ -47948,6 +49649,10 @@ impl std::fmt::Debug for RestoreDbClusterFromSnapshotInput {
         formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
         formatter.field("domain", &self.domain);
         formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("iops", &self.iops);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
         formatter.finish()
     }
 }
@@ -48113,7 +49818,8 @@ pub struct RestoreDbClusterFromS3Input {
     /// default KMS key for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>
     ///
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -48160,7 +49866,7 @@ pub struct RestoreDbClusterFromS3Input {
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.
+    /// deletion protection isn't enabled.
     /// </p>
     pub deletion_protection: std::option::Option<bool>,
     /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
@@ -48373,7 +50079,8 @@ impl RestoreDbClusterFromS3Input {
         self.kms_key_id.as_deref()
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>
     ///
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -48436,7 +50143,7 @@ impl RestoreDbClusterFromS3Input {
     }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.
+    /// deletion protection isn't enabled.
     /// </p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
@@ -48928,6 +50635,39 @@ impl std::fmt::Debug for RebootDbInstanceInput {
         let mut formatter = f.debug_struct("RebootDbInstanceInput");
         formatter.field("db_instance_identifier", &self.db_instance_identifier);
         formatter.field("force_failover", &self.force_failover);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RebootDbClusterInput {
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p>
+    /// </li>
+    /// </ul>
+    pub db_cluster_identifier: std::option::Option<std::string::String>,
+}
+impl RebootDbClusterInput {
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p>
+    /// </li>
+    /// </ul>
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+        self.db_cluster_identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for RebootDbClusterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RebootDbClusterInput");
+        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
         formatter.finish()
     }
 }
@@ -49935,7 +51675,7 @@ pub struct ModifyDbInstanceInput {
     /// see <code>CreateDBInstance</code>.
     /// </p>
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large.
     /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
@@ -50364,9 +52104,12 @@ pub struct ModifyDbInstanceInput {
     pub db_port_number: std::option::Option<i32>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.
     /// </p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>
     /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance must be part of a
@@ -50397,8 +52140,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub promotion_tier: std::option::Option<i32>,
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>      
     /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
     /// cluster.</p>      
     /// <p>For more information about IAM database authentication, see
@@ -50440,7 +52183,7 @@ pub struct ModifyDbInstanceInput {
     pub use_default_processor_features: std::option::Option<bool>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -50538,7 +52281,7 @@ impl ModifyDbInstanceInput {
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large.
     /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
@@ -51019,9 +52762,12 @@ impl ModifyDbInstanceInput {
     }
     /// <p>A value that indicates whether the DB instance is publicly accessible.
     /// </p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>
     /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance must be part of a
@@ -51060,8 +52806,8 @@ impl ModifyDbInstanceInput {
     pub fn promotion_tier(&self) -> std::option::Option<i32> {
         self.promotion_tier
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>      
     /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
     /// cluster.</p>      
     /// <p>For more information about IAM database authentication, see
@@ -51118,7 +52864,7 @@ impl ModifyDbInstanceInput {
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -51482,11 +53228,12 @@ impl std::fmt::Debug for ModifyDbClusterEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbClusterInput {
-    /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
+    /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>    
     /// <p>Constraints: This identifier must match the identifier of an existing DB
     /// cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
+    /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>    
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -51501,6 +53248,7 @@ pub struct ModifyDbClusterInput {
     /// </ul>
     /// <p>Example: <code>my-cluster2</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub new_db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the modifications in this request and
     /// any pending modifications are asynchronously applied
@@ -51514,8 +53262,9 @@ pub struct ModifyDbClusterInput {
     /// and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
     /// applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>By default, this parameter is disabled.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub apply_immediately: bool,
-    /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
+    /// <p>The number of days for which automated backups are retained. Specify a minimum value of 1.</p>     
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -51523,27 +53272,26 @@ pub struct ModifyDbClusterInput {
     /// <p>Must be a value from 1 to 35</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub backup_retention_period: std::option::Option<i32>,
     /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The port number on which the DB cluster accepts connections.</p>
+    /// <p>The port number on which the DB cluster accepts connections.</p>   
     /// <p>Constraints: Value must be <code>1150-65535</code>
     /// </p>
     /// <p>Default: The same port as the original DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub port: std::option::Option<i32>,
-    /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+    /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>     
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub master_user_password: std::option::Option<std::string::String>,
-    /// <p>A value that indicates that the DB cluster should be associated with the specified option group.
-    /// Changing this parameter doesn't result in an outage except in the following case, and the change
-    /// is applied during the next maintenance window
-    /// unless the <code>ApplyImmediately</code> is enabled for this request. If the parameter change results in an option group that
-    /// enables OEM, this change can cause a brief (sub-second) period during which new connections
-    /// are rejected but existing connections are not interrupted.
-    /// </p>
-    /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
+    /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>The daily time range during which automated backups are created
     /// if automated backups are enabled,
@@ -51554,7 +53302,7 @@ pub struct ModifyDbClusterInput {
     /// To view the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
     /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -51570,6 +53318,7 @@ pub struct ModifyDbClusterInput {
     /// <p>Must be at least 30 minutes.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
@@ -51579,23 +53328,22 @@ pub struct ModifyDbClusterInput {
     /// week. To see the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
     /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>     
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    ///
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>        
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
     /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
-    /// 0.</p>
-    /// <note>
-    /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-    /// </note>
+    /// 0.</p>     
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -51603,37 +53351,49 @@ pub struct ModifyDbClusterInput {
     /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub backtrack_window: std::option::Option<i64>,
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub cloudwatch_logs_export_configuration:
         std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
     /// <p>The version number of the database engine to which you want to upgrade.
     /// Changing this parameter results in an outage. The change is applied during
     /// the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+    /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
+    /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>
+    /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>     
     /// <p>Constraints: You must allow major version upgrades when specifying a value for the
     /// <code>EngineVersion</code> parameter that is a different major version than the DB
     /// cluster's current version.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub allow_major_version_upgrade: bool,
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
     /// <note>
     /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB
     /// cluster isn't rebooted automatically. Also, parameter changes aren't
     /// applied during the next maintenance window but instead are applied immediately.</p>
-    /// </note>
+    /// </note>  
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -51645,34 +53405,40 @@ pub struct ModifyDbClusterInput {
     /// the <code>AllowMajorVersionUpgrade</code> parameter.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub db_instance_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The Active Directory directory ID to move the DB cluster to.  
     /// Specify <code>none</code> to remove the cluster from its current domain.
     /// The domain must be created prior to this operation.
-    /// </p>
+    /// </p>      
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
     /// in the <i>Amazon Aurora User Guide</i>.
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
     /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub scaling_configuration: std::option::Option<crate::model::ScalingConfiguration>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.
-    /// </p>
+    /// deletion protection isn't enabled.</p>       
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub deletion_protection: std::option::Option<bool>,
     /// <p>A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
     /// is disabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running
     /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
-    /// from inside the RDS console with the query editor.</p>
+    /// from inside the RDS console with the query editor.</p>      
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
     /// <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_http_endpoint: std::option::Option<bool>,
     /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
     /// The default is not to copy them.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
     /// Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters that
@@ -51682,16 +53448,85 @@ pub struct ModifyDbClusterInput {
     /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is
     /// demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_global_write_forwarding: std::option::Option<bool>,
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>        
+    /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub db_cluster_instance_class: std::option::Option<std::string::String>,
+    /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>      
+    /// <p>Type: Integer</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub allocated_storage: std::option::Option<i32>,
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>       
+    /// <p>
+    /// Valid values: <code>standard | gp2 | io1</code>
+    /// </p>
+    /// <p>
+    /// If you specify <code>io1</code>, you must also include a value for the
+    /// <code>Iops</code> parameter.
+    /// </p>
+    /// <p>
+    /// Default: <code>io1</code> if the <code>Iops</code> parameter
+    /// is specified, otherwise <code>gp2</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub storage_type: std::option::Option<std::string::String>,
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
+    /// for each DB instance in the Multi-AZ DB cluster.</p>      
+    /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub iops: std::option::Option<i32>,
+    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
+    /// By default, minor engine upgrades are applied automatically.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub auto_minor_version_upgrade: std::option::Option<bool>,
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.
+    /// To turn off collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
+    /// to a value other than 0.</p>       
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub monitoring_interval: std::option::Option<i32>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An
+    /// example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
+    /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+    /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub monitoring_role_arn: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+    /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub enable_performance_insights: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
+    /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub performance_insights_retention_period: std::option::Option<i32>,
 }
 impl ModifyDbClusterInput {
-    /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
+    /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>    
     /// <p>Constraints: This identifier must match the identifier of an existing DB
     /// cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
-    /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
+    /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>    
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -51706,6 +53541,7 @@ impl ModifyDbClusterInput {
     /// </ul>
     /// <p>Example: <code>my-cluster2</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn new_db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.new_db_cluster_identifier.as_deref()
     }
@@ -51721,10 +53557,11 @@ impl ModifyDbClusterInput {
     /// and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
     /// applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>By default, this parameter is disabled.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn apply_immediately(&self) -> bool {
         self.apply_immediately
     }
-    /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
+    /// <p>The number of days for which automated backups are retained. Specify a minimum value of 1.</p>     
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -51732,37 +53569,36 @@ impl ModifyDbClusterInput {
     /// <p>Must be a value from 1 to 35</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn backup_retention_period(&self) -> std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
-    /// <p>The port number on which the DB cluster accepts connections.</p>
+    /// <p>The port number on which the DB cluster accepts connections.</p>   
     /// <p>Constraints: Value must be <code>1150-65535</code>
     /// </p>
     /// <p>Default: The same port as the original DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+    /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>     
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
-    /// <p>A value that indicates that the DB cluster should be associated with the specified option group.
-    /// Changing this parameter doesn't result in an outage except in the following case, and the change
-    /// is applied during the next maintenance window
-    /// unless the <code>ApplyImmediately</code> is enabled for this request. If the parameter change results in an option group that
-    /// enables OEM, this change can cause a brief (sub-second) period during which new connections
-    /// are rejected but existing connections are not interrupted.
-    /// </p>
-    /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
+    /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub fn option_group_name(&self) -> std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
@@ -51775,7 +53611,7 @@ impl ModifyDbClusterInput {
     /// To view the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
     /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -51791,6 +53627,7 @@ impl ModifyDbClusterInput {
     /// <p>Must be at least 30 minutes.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
@@ -51802,27 +53639,26 @@ impl ModifyDbClusterInput {
     /// week. To see the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
     /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>     
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    ///
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>        
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
     /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
-    /// 0.</p>
-    /// <note>
-    /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-    /// </note>
+    /// 0.</p>     
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -51830,10 +53666,12 @@ impl ModifyDbClusterInput {
     /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn backtrack_window(&self) -> std::option::Option<i64> {
         self.backtrack_window
     }
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn cloudwatch_logs_export_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CloudwatchLogsExportConfiguration> {
@@ -51842,25 +53680,35 @@ impl ModifyDbClusterInput {
     /// <p>The version number of the database engine to which you want to upgrade.
     /// Changing this parameter results in an outage. The change is applied during
     /// the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+    /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
+    /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>
+    /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>     
     /// <p>Constraints: You must allow major version upgrades when specifying a value for the
     /// <code>EngineVersion</code> parameter that is a different major version than the DB
     /// cluster's current version.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn allow_major_version_upgrade(&self) -> bool {
         self.allow_major_version_upgrade
     }
@@ -51869,7 +53717,7 @@ impl ModifyDbClusterInput {
     /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB
     /// cluster isn't rebooted automatically. Also, parameter changes aren't
     /// applied during the next maintenance window but instead are applied immediately.</p>
-    /// </note>
+    /// </note>  
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -51881,24 +53729,28 @@ impl ModifyDbClusterInput {
     /// the <code>AllowMajorVersionUpgrade</code> parameter.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn db_instance_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_instance_parameter_group_name.as_deref()
     }
     /// <p>The Active Directory directory ID to move the DB cluster to.  
     /// Specify <code>none</code> to remove the cluster from its current domain.
     /// The domain must be created prior to this operation.
-    /// </p>
+    /// </p>      
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
     /// in the <i>Amazon Aurora User Guide</i>.
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
     /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn scaling_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ScalingConfiguration> {
@@ -51906,8 +53758,8 @@ impl ModifyDbClusterInput {
     }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.
-    /// </p>
+    /// deletion protection isn't enabled.</p>       
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
@@ -51915,14 +53767,16 @@ impl ModifyDbClusterInput {
     /// is disabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running
     /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
-    /// from inside the RDS console with the query editor.</p>
+    /// from inside the RDS console with the query editor.</p>      
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
     /// <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_http_endpoint(&self) -> std::option::Option<bool> {
         self.enable_http_endpoint
     }
     /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
     /// The default is not to copy them.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
@@ -51934,8 +53788,96 @@ impl ModifyDbClusterInput {
     /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is
     /// demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_global_write_forwarding(&self) -> std::option::Option<bool> {
         self.enable_global_write_forwarding
+    }
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>        
+    /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
+        self.db_cluster_instance_class.as_deref()
+    }
+    /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>      
+    /// <p>Type: Integer</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>       
+    /// <p>
+    /// Valid values: <code>standard | gp2 | io1</code>
+    /// </p>
+    /// <p>
+    /// If you specify <code>io1</code>, you must also include a value for the
+    /// <code>Iops</code> parameter.
+    /// </p>
+    /// <p>
+    /// Default: <code>io1</code> if the <code>Iops</code> parameter
+    /// is specified, otherwise <code>gp2</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
+    /// for each DB instance in the Multi-AZ DB cluster.</p>      
+    /// <p>For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
+    /// By default, minor engine upgrades are applied automatically.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.
+    /// To turn off collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
+    /// to a value other than 0.</p>       
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn monitoring_interval(&self) -> std::option::Option<i32> {
+        self.monitoring_interval
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An
+    /// example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
+    /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+    /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_role_arn.as_deref()
+    }
+    /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+    /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
+        self.enable_performance_insights
+    }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
+    /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
+    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
+        self.performance_insights_retention_period
     }
 }
 impl std::fmt::Debug for ModifyDbClusterInput {
@@ -51985,6 +53927,28 @@ impl std::fmt::Debug for ModifyDbClusterInput {
         formatter.field(
             "enable_global_write_forwarding",
             &self.enable_global_write_forwarding,
+        );
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("iops", &self.iops);
+        formatter.field(
+            "auto_minor_version_upgrade",
+            &self.auto_minor_version_upgrade,
+        );
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field(
+            "enable_performance_insights",
+            &self.enable_performance_insights,
+        );
+        formatter.field(
+            "performance_insights_kms_key_id",
+            &self.performance_insights_kms_key_id,
+        );
+        formatter.field(
+            "performance_insights_retention_period",
+            &self.performance_insights_retention_period,
         );
         formatter.finish()
     }
@@ -52447,9 +54411,10 @@ pub struct FailoverDbClusterInput {
     /// </li>
     /// </ul>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The name of the instance to promote to the primary instance.</p>
-    /// <p>You must specify the instance identifier for an Aurora Replica in the DB cluster.
-    /// For example, <code>mydbcluster-replica1</code>.</p>
+    /// <p>The name of the DB instance to promote to the primary DB instance.</p>
+    /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster,
+    /// for example <code>mydbcluster-replica1</code>.</p>
+    /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
     pub target_db_instance_identifier: std::option::Option<std::string::String>,
 }
 impl FailoverDbClusterInput {
@@ -52463,9 +54428,10 @@ impl FailoverDbClusterInput {
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
-    /// <p>The name of the instance to promote to the primary instance.</p>
-    /// <p>You must specify the instance identifier for an Aurora Replica in the DB cluster.
-    /// For example, <code>mydbcluster-replica1</code>.</p>
+    /// <p>The name of the DB instance to promote to the primary DB instance.</p>
+    /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster,
+    /// for example <code>mydbcluster-replica1</code>.</p>
+    /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
     pub fn target_db_instance_identifier(&self) -> std::option::Option<&str> {
         self.target_db_instance_identifier.as_deref()
     }
@@ -53877,6 +55843,11 @@ pub struct DescribeExportTasksInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>in_progress</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>starting</code>
     /// </p>
     /// </li>
@@ -53947,6 +55918,11 @@ impl DescribeExportTasksInput {
     /// <li>
     /// <p>
     /// <code>failed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>in_progress</code>
     /// </p>
     /// </li>
     /// <li>
@@ -58779,7 +60755,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// </li>
     /// <li>
     /// <p>Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or
-    /// later (9.4.7 and higher for cross-region replication).</p>
+    /// later (9.4.7 and higher for cross-Region replication).</p>
     /// </li>
     /// <li>
     /// <p>The specified DB instance must have automatic backups enabled, that is, its backup
@@ -58797,8 +60773,8 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// </li>
     /// </ul>
     pub source_db_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>The compute and memory capacity of the read replica, for example,
-    /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services
+    /// <p>The compute and memory capacity of the read replica, for example
+    /// db.m4.large. Not all DB instance classes are available in all Amazon Web Services
     /// Regions, or for all database engines. For the full list of DB instance classes, and
     /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
     /// Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -58840,9 +60816,9 @@ pub struct CreateDbInstanceReadReplicaInput {
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
-    /// uses the <code>DBParameterGroup</code> of source DB instance for a same region read
+    /// uses the <code>DBParameterGroup</code> of source DB instance for a same Region read
     /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a
-    /// cross region read replica.</p>
+    /// cross-Region read replica.</p>
     /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It
     /// isn't supported for RDS Custom.</p>
     /// <p>Constraints:</p>
@@ -58859,9 +60835,12 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// </ul>
     pub db_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub publicly_accessible: std::option::Option<bool>,
@@ -59014,12 +60993,12 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// <p>
     /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
-    /// doesn't support cross-region read replicas.</p>
+    /// doesn't support cross-Region read replicas.</p>
     /// </note>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub pre_signed_url: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     ///
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -59058,7 +61037,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     pub use_default_processor_features: std::option::Option<bool>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -59140,7 +61119,7 @@ impl CreateDbInstanceReadReplicaInput {
     /// </li>
     /// <li>
     /// <p>Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or
-    /// later (9.4.7 and higher for cross-region replication).</p>
+    /// later (9.4.7 and higher for cross-Region replication).</p>
     /// </li>
     /// <li>
     /// <p>The specified DB instance must have automatic backups enabled, that is, its backup
@@ -59160,8 +61139,8 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn source_db_instance_identifier(&self) -> std::option::Option<&str> {
         self.source_db_instance_identifier.as_deref()
     }
-    /// <p>The compute and memory capacity of the read replica, for example,
-    /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services
+    /// <p>The compute and memory capacity of the read replica, for example
+    /// db.m4.large. Not all DB instance classes are available in all Amazon Web Services
     /// Regions, or for all database engines. For the full list of DB instance classes, and
     /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
     /// Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -59217,9 +61196,9 @@ impl CreateDbInstanceReadReplicaInput {
     }
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
-    /// uses the <code>DBParameterGroup</code> of source DB instance for a same region read
+    /// uses the <code>DBParameterGroup</code> of source DB instance for a same Region read
     /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a
-    /// cross region read replica.</p>
+    /// cross-Region read replica.</p>
     /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It
     /// isn't supported for RDS Custom.</p>
     /// <p>Constraints:</p>
@@ -59238,9 +61217,12 @@ impl CreateDbInstanceReadReplicaInput {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
     /// <p>For more information, see <a>CreateDBInstance</a>.</p>
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
@@ -59411,14 +61393,14 @@ impl CreateDbInstanceReadReplicaInput {
     /// for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// <p>
     /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
-    /// doesn't support cross-region read replicas.</p>
+    /// doesn't support cross-Region read replicas.</p>
     /// </note>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn pre_signed_url(&self) -> std::option::Option<&str> {
         self.pre_signed_url.as_deref()
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     ///
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -59471,7 +61453,7 @@ impl CreateDbInstanceReadReplicaInput {
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -59881,7 +61863,7 @@ pub struct CreateDbInstanceInput {
     /// </li>
     /// </ul>
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large.
     /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
@@ -59981,88 +61963,15 @@ pub struct CreateDbInstanceInput {
     /// </p>
     ///
     /// <p>
-    /// <b>MariaDB</b>
+    /// <b>Amazon RDS</b>
     /// </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Required for MariaDB.</p>
+    /// <p>Required.</p>
     /// </li>
     /// <li>
-    /// <p>Must be 1 to 16 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>
-    /// <b>Microsoft SQL Server</b>
-    /// </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Required for SQL Server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be 1 to 128 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>The first character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>
-    /// <b>MySQL</b>
-    /// </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Required for MySQL.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be 1 to 16 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>
-    /// <b>Oracle</b>
-    /// </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Required for Oracle.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be 1 to 30 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>
-    /// <b>PostgreSQL</b>
-    /// </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Required for PostgreSQL.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be 1 to 63 letters or numbers.</p>
+    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p>
     /// </li>
     /// <li>
     /// <p>First character must be a letter.</p>
@@ -60308,7 +62217,7 @@ pub struct CreateDbInstanceInput {
     /// <b>MariaDB</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
     ///
@@ -60316,7 +62225,7 @@ pub struct CreateDbInstanceInput {
     /// <b>Microsoft SQL Server</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
     ///
@@ -60324,7 +62233,7 @@ pub struct CreateDbInstanceInput {
     /// <b>MySQL</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>     
     ///
@@ -60332,7 +62241,7 @@ pub struct CreateDbInstanceInput {
     /// <b>Oracle</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
     ///
@@ -60340,7 +62249,7 @@ pub struct CreateDbInstanceInput {
     /// <b>PostgreSQL</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
     pub engine_version: std::option::Option<std::string::String>,
@@ -60356,10 +62265,11 @@ pub struct CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub license_model: std::option::Option<std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
-    /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
     /// </p>
-    /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance.
-    /// For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.
+    /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50
+    /// of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50
+    /// of the storage amount for the DB instance.
     /// </p>
     pub iops: std::option::Option<i32>,
     /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
@@ -60382,27 +62292,28 @@ pub struct CreateDbInstanceInput {
     /// <p>This parameter doesn't apply to RDS Custom.</p>
     pub nchar_character_set_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from
+    /// within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC.
+    /// Access to the DB instance is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
     /// <li>
-    /// <p>If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is private.</p>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p>
     /// </li>
     /// <li>
-    /// <p>If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.</p>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p>
     /// </li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
     /// <li>
-    /// <p>If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is private.</p>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p>
     /// </li>
     /// <li>
-    /// <p>If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.</p>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p>
     /// </li>
     /// </ul>
     pub publicly_accessible: std::option::Option<bool>,
@@ -60503,8 +62414,8 @@ pub struct CreateDbInstanceInput {
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.
     /// </p>
     pub timezone: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>      
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts
     /// to database accounts is managed by the DB cluster.</p>
     /// <p>For more information, see
@@ -60574,7 +62485,7 @@ pub struct CreateDbInstanceInput {
     pub processor_features: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -60623,6 +62534,11 @@ pub struct CreateDbInstanceInput {
     /// User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub custom_iam_instance_profile: std::option::Option<std::string::String>,
+    /// <p>Specifies where automated backups and manual snapshots are stored.</p>
+    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+    /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub backup_target: std::option::Option<std::string::String>,
 }
 impl CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -60904,7 +62820,7 @@ impl CreateDbInstanceInput {
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
+    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large.
     /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
@@ -61008,88 +62924,15 @@ impl CreateDbInstanceInput {
     /// </p>
     ///
     /// <p>
-    /// <b>MariaDB</b>
+    /// <b>Amazon RDS</b>
     /// </p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Required for MariaDB.</p>
+    /// <p>Required.</p>
     /// </li>
     /// <li>
-    /// <p>Must be 1 to 16 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>
-    /// <b>Microsoft SQL Server</b>
-    /// </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Required for SQL Server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be 1 to 128 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>The first character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>
-    /// <b>MySQL</b>
-    /// </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Required for MySQL.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be 1 to 16 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>
-    /// <b>Oracle</b>
-    /// </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Required for Oracle.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be 1 to 30 letters or numbers.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't be a reserved word for the chosen database engine.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p>
-    /// <b>PostgreSQL</b>
-    /// </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Required for PostgreSQL.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be 1 to 63 letters or numbers.</p>
+    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p>
     /// </li>
     /// <li>
     /// <p>First character must be a letter.</p>
@@ -61359,7 +63202,7 @@ impl CreateDbInstanceInput {
     /// <b>MariaDB</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB on Amazon RDS Versions</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
     ///
@@ -61367,7 +63210,7 @@ impl CreateDbInstanceInput {
     /// <b>Microsoft SQL Server</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft SQL Server Versions on Amazon RDS</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
     ///
@@ -61375,7 +63218,7 @@ impl CreateDbInstanceInput {
     /// <b>MySQL</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>     
     ///
@@ -61383,7 +63226,7 @@ impl CreateDbInstanceInput {
     /// <b>Oracle</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
     ///
@@ -61391,7 +63234,7 @@ impl CreateDbInstanceInput {
     /// <b>PostgreSQL</b>
     /// </p>
     ///
-    /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
     /// <i>Amazon RDS User Guide.</i>
     /// </p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
@@ -61413,10 +63256,11 @@ impl CreateDbInstanceInput {
         self.license_model.as_deref()
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
-    /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
     /// </p>
-    /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance.
-    /// For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.
+    /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50
+    /// of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50
+    /// of the storage amount for the DB instance.
     /// </p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
@@ -61447,27 +63291,28 @@ impl CreateDbInstanceInput {
         self.nchar_character_set_name.as_deref()
     }
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
-    /// <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the DB instance's VPC,
-    /// and to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses,
-    /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
+    /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from
+    /// within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC.
+    /// Access to the DB instance is ultimately controlled by the security group it uses.
+    /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
     /// <li>
-    /// <p>If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is private.</p>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p>
     /// </li>
     /// <li>
-    /// <p>If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.</p>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p>
     /// </li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
     /// <li>
-    /// <p>If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is private.</p>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p>
     /// </li>
     /// <li>
-    /// <p>If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.</p>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p>
     /// </li>
     /// </ul>
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
@@ -61598,8 +63443,8 @@ impl CreateDbInstanceInput {
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>      
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+    /// (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>      
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts
     /// to database accounts is managed by the DB cluster.</p>
     /// <p>For more information, see
@@ -61681,7 +63526,7 @@ impl CreateDbInstanceInput {
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled. For more information, see
+    /// deletion protection isn't enabled. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
     /// Deleting a DB Instance</a>.
     /// </p>
@@ -61737,6 +63582,13 @@ impl CreateDbInstanceInput {
     /// <p>This setting is required for RDS Custom.</p>
     pub fn custom_iam_instance_profile(&self) -> std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
+    }
+    /// <p>Specifies where automated backups and manual snapshots are stored.</p>
+    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+    /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn backup_target(&self) -> std::option::Option<&str> {
+        self.backup_target.as_deref()
     }
 }
 impl std::fmt::Debug for CreateDbInstanceInput {
@@ -61815,6 +63667,7 @@ impl std::fmt::Debug for CreateDbInstanceInput {
             "custom_iam_instance_profile",
             &self.custom_iam_instance_profile,
         );
+        formatter.field("backup_target", &self.backup_target);
         formatter.finish()
     }
 }
@@ -61909,7 +63762,7 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must match the name of an existing DB cluster parameter group.</p>
+    /// <p>Must not match the name of an existing DB cluster parameter group.</p>
     /// </li>
     /// </ul>
     /// <note>
@@ -61927,6 +63780,16 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <b>Aurora PostgreSQL</b>
     /// </p>
     /// <p>Example: <code>aurora-postgresql9.6</code>
+    /// </p>
+    /// <p>
+    /// <b>RDS for MySQL</b>
+    /// </p>
+    /// <p>Example: <code>mysql8.0</code>
+    /// </p>
+    /// <p>
+    /// <b>RDS for PostgreSQL</b>
+    /// </p>
+    /// <p>Example: <code>postgres12</code>
     /// </p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
     /// <p>
@@ -61954,6 +63817,16 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <code>aurora-postgresql</code>
     /// </p>
     /// </li>
+    /// <li>
+    /// <p>
+    /// <code>mysql</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>postgres</code>
+    /// </p>
+    /// </li>
     /// </ul>
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description for the DB cluster parameter group.</p>
@@ -61966,7 +63839,7 @@ impl CreateDbClusterParameterGroupInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must match the name of an existing DB cluster parameter group.</p>
+    /// <p>Must not match the name of an existing DB cluster parameter group.</p>
     /// </li>
     /// </ul>
     /// <note>
@@ -61987,6 +63860,16 @@ impl CreateDbClusterParameterGroupInput {
     /// </p>
     /// <p>Example: <code>aurora-postgresql9.6</code>
     /// </p>
+    /// <p>
+    /// <b>RDS for MySQL</b>
+    /// </p>
+    /// <p>Example: <code>mysql8.0</code>
+    /// </p>
+    /// <p>
+    /// <b>RDS for PostgreSQL</b>
+    /// </p>
+    /// <p>Example: <code>postgres12</code>
+    /// </p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></code>
@@ -62011,6 +63894,16 @@ impl CreateDbClusterParameterGroupInput {
     /// <li>
     /// <p>
     /// <code>aurora-postgresql</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>mysql</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>postgres</code>
     /// </p>
     /// </li>
     /// </ul>
@@ -62049,13 +63942,13 @@ pub struct CreateDbClusterEndpointInput {
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
-    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub endpoint_type: std::option::Option<std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
     pub static_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
     /// All other eligible instances are reachable through the custom endpoint.
-    /// Only relevant if the list of static members is empty.</p>
+    /// This parameter is relevant only if the list of static members is empty.</p>
     pub excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be assigned to the Amazon RDS resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -62070,7 +63963,7 @@ impl CreateDbClusterEndpointInput {
     pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
-    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn endpoint_type(&self) -> std::option::Option<&str> {
         self.endpoint_type.as_deref()
     }
@@ -62080,7 +63973,7 @@ impl CreateDbClusterEndpointInput {
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group.
     /// All other eligible instances are reachable through the custom endpoint.
-    /// Only relevant if the list of static members is empty.</p>
+    /// This parameter is relevant only if the list of static members is empty.</p>
     pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_members.as_deref()
     }
@@ -62109,13 +64002,14 @@ impl std::fmt::Debug for CreateDbClusterEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterInput {
-    /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created. For information on
-    /// Amazon Web Services Regions and Availability Zones, see
+    /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.
+    /// </p>     
+    /// <p>For information on Amazon Web Services Regions and Availability Zones, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing the Regions and
-    /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
-    /// </p>
+    /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of days for which automated backups are retained.</p>
+    /// <p>The number of days for which automated backups are retained.</p>     
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -62123,14 +64017,17 @@ pub struct CreateDbClusterInput {
     /// <p>Must be a value from 1 to 35</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub backup_retention_period: std::option::Option<i32>,
     /// <p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub character_set_name: std::option::Option<std::string::String>,
     /// <p>The name for your database of up to 64 alphanumeric characters. If you do not
     /// provide a name, Amazon RDS doesn't create a database in the DB cluster you are
     /// creating.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -62145,60 +64042,129 @@ pub struct CreateDbClusterInput {
     /// </ul>
     /// <p>Example: <code>my-cluster1</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>
     /// The name of the DB cluster parameter group to associate
     /// with this DB cluster. If you do not specify a value, then
     /// the default DB cluster parameter group for the specified DB engine and version is used.
-    /// </p>
+    /// </p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If supplied, must match the name of an existing DB cluster parameter group.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A DB subnet group to associate with this DB cluster.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>     
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
-    /// <p>The name of the database engine to be used for this DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
+    /// <p>The name of the database engine to be used for this DB cluster.</p>     
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>aurora-postgresql</code>
     /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>mysql</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>postgres</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine to use.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+    /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
+    /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>
+    /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>      
     /// <p>
     /// <b>Aurora MySQL</b>
     /// </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the
+    /// <i>Amazon Aurora User Guide.</i>
     /// </p>
     /// <p>
     /// <b>Aurora PostgreSQL</b>
     /// </p>
-    /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
-    /// </p>
-    pub engine_version: std::option::Option<std::string::String>,
-    /// <p>The port number on which the instances in the DB cluster accept connections.</p>
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the
+    /// <i>Amazon Aurora User Guide.</i>
+    /// </p>  
     /// <p>
-    /// Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
+    /// <b>MySQL</b>
+    /// </p>      
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+    /// <i>Amazon RDS User Guide.</i>
+    /// </p>  
+    /// <p>
+    /// <b>PostgreSQL</b>
+    /// </p>   
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+    /// <i>Amazon RDS User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub engine_version: std::option::Option<std::string::String>,
+    /// <p>The port number on which the instances in the DB cluster accept connections.</p>     
+    /// <p>
+    /// <b>RDS for MySQL and Aurora MySQL</b>
+    /// </p>
+    /// <p>
+    /// Default: <code>3306</code>
+    /// </p>
+    /// <p>
+    /// Valid values: <code>1150-65535</code>
+    /// </p>
+    /// <p>
+    /// <b>RDS for PostgreSQL and Aurora PostgreSQL</b>
+    /// </p>
+    /// <p>
+    /// Default: <code>5432</code>
+    /// </p>
+    /// <p>
+    /// Valid values: <code>1150-65535</code>
+    /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub port: std::option::Option<i32>,
-    /// <p>The name of the master user for the DB cluster.</p>
+    /// <p>The name of the master user for the DB cluster.</p>   
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -62211,12 +64177,14 @@ pub struct CreateDbClusterInput {
     /// <p>Can't be a reserved word for the chosen database engine.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub master_username: std::option::Option<std::string::String>,
-    /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+    /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>   
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
-    /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>The daily time range during which automated backups are created
     /// if automated backups are enabled
@@ -62227,7 +64195,7 @@ pub struct CreateDbClusterInput {
     /// To view the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
     /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>  
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -62243,6 +64211,7 @@ pub struct CreateDbClusterInput {
     /// <p>Must be at least 30 minutes.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
@@ -62252,18 +64221,22 @@ pub struct CreateDbClusterInput {
     /// week. To see the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
     /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>     
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
     /// cluster is created as a read replica.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub replication_source_identifier: std::option::Option<std::string::String>,
     /// <p>Tags to assign to the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A value that indicates whether the DB cluster is encrypted.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub storage_encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>       
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
     /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When a KMS key isn't specified in <code>KmsKeyId</code>:</p>
@@ -62284,11 +64257,11 @@ pub struct CreateDbClusterInput {
     /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you
     /// must set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services
     /// Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A URL that contains a Signature Version 4 signed request for
     /// the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from.
-    /// You only need to specify <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.</p>
-    ///
+    /// Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>      
     /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action
     /// that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
     /// <p>The pre-signed URL request must contain the following parameter values:</p>
@@ -62311,8 +64284,7 @@ pub struct CreateDbClusterInput {
     /// encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like
     /// Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
     /// </li>
-    /// </ul>
-    ///
+    /// </ul>        
     /// <p>To learn how to generate a Signature Version 4 signed request, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
     /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
@@ -62323,20 +64295,20 @@ pub struct CreateDbClusterInput {
     /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
     /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// </note>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub pre_signed_url: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    ///
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>      
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
     /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
     /// 0. </p>
-    /// <note>
-    /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-    /// </note>
+    ///
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -62344,6 +64316,7 @@ pub struct CreateDbClusterInput {
     /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub backtrack_window: std::option::Option<i64>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values
     /// in the list depend on the DB engine being used. For more information, see
@@ -62351,13 +64324,12 @@ pub struct CreateDbClusterInput {
     /// <p>
     /// <b>Aurora MySQL</b>
     /// </p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
-    /// </p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>
     /// <b>Aurora PostgreSQL</b>
     /// </p>
-    /// <p>Possible value is <code>postgresql</code>.
-    /// </p>
+    /// <p>Possible value is <code>postgresql</code>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
     /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
@@ -62367,7 +64339,7 @@ pub struct CreateDbClusterInput {
     /// and <code>global</code> engine mode isn't required for any 2.x versions.</p>
     /// <p>The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.</p>
     /// <p>For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the <code>parallelquery</code>
-    /// and the <code>multimaster</code> engine modes currently aren't supported.</p>
+    /// and the <code>multimaster</code> engine modes currently aren't supported.</p>        
     /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the
     /// following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
@@ -62396,37 +64368,44 @@ pub struct CreateDbClusterInput {
     /// </p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub engine_mode: std::option::Option<std::string::String>,
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub scaling_configuration: std::option::Option<crate::model::ScalingConfiguration>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.</p>
+    /// deletion protection isn't enabled.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub deletion_protection: std::option::Option<bool>,
     /// <p>
     /// The global cluster ID of an Aurora cluster that becomes the primary cluster
     /// in the new global database cluster.
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
     /// is disabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running
     /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
-    /// from inside the RDS console with the query editor.</p>
+    /// from inside the RDS console with the query editor.</p>      
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
     /// <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_http_endpoint: std::option::Option<bool>,
     /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
     /// The default is not to copy them.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>The Active Directory directory ID to create the DB cluster in.</p>
     /// <p>
-    /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
-    /// in the <i>Amazon Aurora User Guide</i>.
-    /// </p>
+    /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>    
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a>
+    /// in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
     /// Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters that
@@ -62435,19 +64414,120 @@ pub struct CreateDbClusterInput {
     /// enabled, a secondary cluster can forward writes to the current primary cluster and the resulting changes are replicated back to
     /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the
     /// primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
-    /// </p>
+    /// </p>   
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_global_write_forwarding: std::option::Option<bool>,
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>      
+    /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub db_cluster_instance_class: std::option::Option<std::string::String>,
+    /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub allocated_storage: std::option::Option<i32>,
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
+    /// <p>
+    /// Valid values: <code>standard | gp2 | io1</code>
+    /// </p>
+    /// <p>
+    /// If you specify <code>io1</code>, also include a value for the
+    /// <code>Iops</code> parameter.
+    /// </p>
+    /// <p>
+    /// Default: <code>io1</code> if the <code>Iops</code> parameter
+    /// is specified, otherwise <code>gp2</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub storage_type: std::option::Option<std::string::String>,
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
+    /// for each DB instance in the Multi-AZ DB cluster.</p>     
+    /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
+    /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>   
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub iops: std::option::Option<i32>,
+    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub publicly_accessible: std::option::Option<bool>,
+    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
+    /// By default, minor engine upgrades are applied automatically.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub auto_minor_version_upgrade: std::option::Option<bool>,
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off
+    /// collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
+    /// to a value other than 0.</p>       
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub monitoring_interval: std::option::Option<i32>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
+    /// An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
+    /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+    /// up and enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub monitoring_role_arn: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.
+    /// </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+    /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub enable_performance_insights: std::option::Option<bool>,
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
+    /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub performance_insights_retention_period: std::option::Option<i32>,
 }
 impl CreateDbClusterInput {
-    /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created. For information on
-    /// Amazon Web Services Regions and Availability Zones, see
+    /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.
+    /// </p>     
+    /// <p>For information on Amazon Web Services Regions and Availability Zones, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing the Regions and
-    /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
-    /// </p>
+    /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
-    /// <p>The number of days for which automated backups are retained.</p>
+    /// <p>The number of days for which automated backups are retained.</p>     
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -62455,20 +64535,23 @@ impl CreateDbClusterInput {
     /// <p>Must be a value from 1 to 35</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn backup_retention_period(&self) -> std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn character_set_name(&self) -> std::option::Option<&str> {
         self.character_set_name.as_deref()
     }
     /// <p>The name for your database of up to 64 alphanumeric characters. If you do not
     /// provide a name, Amazon RDS doesn't create a database in the DB cluster you are
     /// creating.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -62483,6 +64566,7 @@ impl CreateDbClusterInput {
     /// </ul>
     /// <p>Example: <code>my-cluster1</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
@@ -62490,67 +64574,135 @@ impl CreateDbClusterInput {
     /// The name of the DB cluster parameter group to associate
     /// with this DB cluster. If you do not specify a value, then
     /// the default DB cluster parameter group for the specified DB engine and version is used.
-    /// </p>
+    /// </p>     
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If supplied, must match the name of an existing DB cluster parameter group.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>     
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
-    /// <p>The name of the database engine to be used for this DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
+    /// <p>The name of the database engine to be used for this DB cluster.</p>     
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>aurora-postgresql</code>
     /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>mysql</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>postgres</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the database engine to use.</p>
-    /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use the following command:</p>
+    /// <p>To list all of the available engine versions for MySQL 5.7-compatible Aurora, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
-    /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
+    /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
     /// <p>
     /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
     /// </p>
+    /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>
+    /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
+    /// <p>
+    /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+    /// </p>      
     /// <p>
     /// <b>Aurora MySQL</b>
     /// </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL on Amazon RDS Versions</a> in the
+    /// <i>Amazon Aurora User Guide.</i>
     /// </p>
     /// <p>
     /// <b>Aurora PostgreSQL</b>
     /// </p>
-    /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon Aurora PostgreSQL releases and engine versions</a> in the
+    /// <i>Amazon Aurora User Guide.</i>
+    /// </p>  
+    /// <p>
+    /// <b>MySQL</b>
+    /// </p>      
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL on Amazon RDS Versions</a> in the
+    /// <i>Amazon RDS User Guide.</i>
+    /// </p>  
+    /// <p>
+    /// <b>PostgreSQL</b>
+    /// </p>   
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
+    /// <i>Amazon RDS User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The port number on which the instances in the DB cluster accept connections.</p>
+    /// <p>The port number on which the instances in the DB cluster accept connections.</p>     
     /// <p>
-    /// Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
+    /// <b>RDS for MySQL and Aurora MySQL</b>
     /// </p>
+    /// <p>
+    /// Default: <code>3306</code>
+    /// </p>
+    /// <p>
+    /// Valid values: <code>1150-65535</code>
+    /// </p>
+    /// <p>
+    /// <b>RDS for PostgreSQL and Aurora PostgreSQL</b>
+    /// </p>
+    /// <p>
+    /// Default: <code>5432</code>
+    /// </p>
+    /// <p>
+    /// Valid values: <code>1150-65535</code>
+    /// </p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>The name of the master user for the DB cluster.</p>
+    /// <p>The name of the master user for the DB cluster.</p>   
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -62563,16 +64715,18 @@ impl CreateDbClusterInput {
     /// <p>Can't be a reserved word for the chosen database engine.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn master_username(&self) -> std::option::Option<&str> {
         self.master_username.as_deref()
     }
-    /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+    /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>   
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
     /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
-    /// <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
+    /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub fn option_group_name(&self) -> std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
@@ -62585,7 +64739,7 @@ impl CreateDbClusterInput {
     /// To view the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
     /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>  
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -62601,6 +64755,7 @@ impl CreateDbClusterInput {
     /// <p>Must be at least 30 minutes.</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
@@ -62612,26 +64767,30 @@ impl CreateDbClusterInput {
     /// week. To see the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
     /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-    /// </p>
+    /// </p>     
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
     /// cluster is created as a read replica.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn replication_source_identifier(&self) -> std::option::Option<&str> {
         self.replication_source_identifier.as_deref()
     }
     /// <p>Tags to assign to the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A value that indicates whether the DB cluster is encrypted.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn storage_encrypted(&self) -> std::option::Option<bool> {
         self.storage_encrypted
     }
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>       
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
     /// To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When a KMS key isn't specified in <code>KmsKeyId</code>:</p>
@@ -62652,13 +64811,13 @@ impl CreateDbClusterInput {
     /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you
     /// must set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services
     /// Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A URL that contains a Signature Version 4 signed request for
     /// the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from.
-    /// You only need to specify <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.</p>
-    ///
+    /// Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>      
     /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action
     /// that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
     /// <p>The pre-signed URL request must contain the following parameter values:</p>
@@ -62681,8 +64840,7 @@ impl CreateDbClusterInput {
     /// encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like
     /// Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
     /// </li>
-    /// </ul>
-    ///
+    /// </ul>        
     /// <p>To learn how to generate a Signature Version 4 signed request, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
     /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
@@ -62693,24 +64851,24 @@ impl CreateDbClusterInput {
     /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
     /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// </note>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn pre_signed_url(&self) -> std::option::Option<&str> {
         self.pre_signed_url.as_deref()
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
-    /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    ///
+    /// Management (IAM) accounts to database accounts. By default, mapping isn't
+    /// enabled.</p>      
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
     /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
     /// 0. </p>
-    /// <note>
-    /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
-    /// </note>
+    ///
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -62718,6 +64876,7 @@ impl CreateDbClusterInput {
     /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn backtrack_window(&self) -> std::option::Option<i64> {
         self.backtrack_window
     }
@@ -62727,13 +64886,12 @@ impl CreateDbClusterInput {
     /// <p>
     /// <b>Aurora MySQL</b>
     /// </p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
-    /// </p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>
     /// <b>Aurora PostgreSQL</b>
     /// </p>
-    /// <p>Possible value is <code>postgresql</code>.
-    /// </p>
+    /// <p>Possible value is <code>postgresql</code>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
     }
@@ -62745,7 +64903,7 @@ impl CreateDbClusterInput {
     /// and <code>global</code> engine mode isn't required for any 2.x versions.</p>
     /// <p>The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.</p>
     /// <p>For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the <code>parallelquery</code>
-    /// and the <code>multimaster</code> engine modes currently aren't supported.</p>
+    /// and the <code>multimaster</code> engine modes currently aren't supported.</p>        
     /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the
     /// following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
@@ -62774,10 +64932,12 @@ impl CreateDbClusterInput {
     /// </p>
     /// </li>
     /// </ul>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn engine_mode(&self) -> std::option::Option<&str> {
         self.engine_mode.as_deref()
     }
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn scaling_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ScalingConfiguration> {
@@ -62785,7 +64945,8 @@ impl CreateDbClusterInput {
     }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
-    /// deletion protection is disabled.</p>
+    /// deletion protection isn't enabled.</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
@@ -62793,6 +64954,7 @@ impl CreateDbClusterInput {
     /// The global cluster ID of an Aurora cluster that becomes the primary cluster
     /// in the new global database cluster.
     /// </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
@@ -62800,27 +64962,30 @@ impl CreateDbClusterInput {
     /// is disabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running
     /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
-    /// from inside the RDS console with the query editor.</p>
+    /// from inside the RDS console with the query editor.</p>      
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
     /// <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_http_endpoint(&self) -> std::option::Option<bool> {
         self.enable_http_endpoint
     }
     /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
     /// The default is not to copy them.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
     /// <p>The Active Directory directory ID to create the DB cluster in.</p>
     /// <p>
-    /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
-    /// in the <i>Amazon Aurora User Guide</i>.
-    /// </p>
+    /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>    
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a>
+    /// in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
@@ -62831,9 +64996,131 @@ impl CreateDbClusterInput {
     /// enabled, a secondary cluster can forward writes to the current primary cluster and the resulting changes are replicated back to
     /// this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the
     /// primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
-    /// </p>
+    /// </p>   
+    /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_global_write_forwarding(&self) -> std::option::Option<bool> {
         self.enable_global_write_forwarding
+    }
+    /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>      
+    /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
+    /// </p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
+        self.db_cluster_instance_class.as_deref()
+    }
+    /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+        self.allocated_storage
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
+    /// <p>
+    /// Valid values: <code>standard | gp2 | io1</code>
+    /// </p>
+    /// <p>
+    /// If you specify <code>io1</code>, also include a value for the
+    /// <code>Iops</code> parameter.
+    /// </p>
+    /// <p>
+    /// Default: <code>io1</code> if the <code>Iops</code> parameter
+    /// is specified, otherwise <code>gp2</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
+    /// for each DB instance in the Multi-AZ DB cluster.</p>     
+    /// <p>For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
+    /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>   
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn iops(&self) -> std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
+    /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+    /// resolves to the private IP address from within the DB cluster's virtual private cloud
+    /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access
+    /// to the DB cluster is ultimately controlled by the security group it uses. That public
+    /// access isn't permitted if the security group assigned to the DB cluster doesn't permit
+    /// it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+    /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
+    /// By default, minor engine upgrades are applied automatically.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+        self.auto_minor_version_upgrade
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off
+    /// collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+    /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
+    /// to a value other than 0.</p>       
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn monitoring_interval(&self) -> std::option::Option<i32> {
+        self.monitoring_interval
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
+    /// An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role,
+    /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+    /// up and enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
+        self.monitoring_role_arn.as_deref()
+    }
+    /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.
+    /// </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+    /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+    /// </p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
+        self.enable_performance_insights
+    }
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
+    /// uses your default KMS key. There is a default KMS key for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
+    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
+        self.performance_insights_retention_period
     }
 }
 impl std::fmt::Debug for CreateDbClusterInput {
@@ -62889,6 +65176,29 @@ impl std::fmt::Debug for CreateDbClusterInput {
         formatter.field(
             "enable_global_write_forwarding",
             &self.enable_global_write_forwarding,
+        );
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("iops", &self.iops);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field(
+            "auto_minor_version_upgrade",
+            &self.auto_minor_version_upgrade,
+        );
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field(
+            "enable_performance_insights",
+            &self.enable_performance_insights,
+        );
+        formatter.field(
+            "performance_insights_kms_key_id",
+            &self.performance_insights_kms_key_id,
+        );
+        formatter.field(
+            "performance_insights_retention_period",
+            &self.performance_insights_retention_period,
         );
         formatter.finish()
     }
@@ -64487,7 +66797,7 @@ pub struct AddRoleToDbClusterInput {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB
-    /// cluster, for example, <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
+    /// cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with.
     /// For information about supported feature names, see <a>DBEngineVersion</a>.</p>
@@ -64499,7 +66809,7 @@ impl AddRoleToDbClusterInput {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB
-    /// cluster, for example, <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
+    /// cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }

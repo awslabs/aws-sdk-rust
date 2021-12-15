@@ -10135,6 +10135,14 @@ where
                                     crate::json_deser::deser_structure_crate_model_network_input_settings(tokens)?
                                 );
                             }
+                            "scte35Pid" => {
+                                builder = builder.set_scte35_pid(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             "smpte2038DataPreference" => {
                                 builder = builder.set_smpte2038_data_preference(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(

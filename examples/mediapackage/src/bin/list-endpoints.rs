@@ -5,7 +5,7 @@
 
 /// Lists your AWS Elemental MediaPackage endpoint URLs.
 use aws_config::meta::region::RegionProviderChain;
-use mediapackage::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_mediapackage::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]

@@ -34,12 +34,12 @@ pub mod batch_execute_statement_input {
             self.sqls = input;
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -57,12 +57,12 @@ pub mod batch_execute_statement_input {
             self.secret_arn = input;
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_user = Some(input.into());
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -572,12 +572,12 @@ pub mod describe_table_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -595,12 +595,12 @@ pub mod describe_table_input {
             self.secret_arn = input;
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_user = Some(input.into());
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -842,12 +842,12 @@ pub mod execute_statement_input {
             self.sql = input;
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -865,12 +865,12 @@ pub mod execute_statement_input {
             self.secret_arn = input;
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_user = Some(input.into());
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -1255,12 +1255,12 @@ pub mod list_databases_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1288,12 +1288,12 @@ pub mod list_databases_input {
             self.secret_arn = input;
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_user = Some(input.into());
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -1475,12 +1475,12 @@ pub mod list_schemas_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1498,12 +1498,12 @@ pub mod list_schemas_input {
             self.secret_arn = input;
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_user = Some(input.into());
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -1994,12 +1994,12 @@ pub mod list_tables_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+        /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2017,12 +2017,12 @@ pub mod list_tables_input {
             self.secret_arn = input;
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_user = Some(input.into());
             self
         }
-        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+        /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -2262,11 +2262,11 @@ impl ListTablesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTablesInput {
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the tables to list.
     /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
@@ -2292,7 +2292,7 @@ pub struct ListTablesInput {
     pub max_results: i32,
 }
 impl ListTablesInput {
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -2300,7 +2300,7 @@ impl ListTablesInput {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
@@ -2464,11 +2464,11 @@ impl std::fmt::Debug for ListStatementsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasInput {
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the schemas to list.
     /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
@@ -2486,7 +2486,7 @@ pub struct ListSchemasInput {
     pub max_results: i32,
 }
 impl ListSchemasInput {
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -2494,7 +2494,7 @@ impl ListSchemasInput {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
@@ -2542,13 +2542,13 @@ impl std::fmt::Debug for ListSchemasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatabasesInput {
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub database: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub db_user: std::option::Option<std::string::String>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -2557,7 +2557,7 @@ pub struct ListDatabasesInput {
     pub max_results: i32,
 }
 impl ListDatabasesInput {
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -2569,7 +2569,7 @@ impl ListDatabasesInput {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
@@ -2636,11 +2636,11 @@ impl std::fmt::Debug for GetStatementResultInput {
 pub struct ExecuteStatementInput {
     /// <p>The SQL statement text to run. </p>
     pub sql: std::option::Option<std::string::String>,
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub database: std::option::Option<std::string::String>,
@@ -2656,7 +2656,7 @@ impl ExecuteStatementInput {
     pub fn sql(&self) -> std::option::Option<&str> {
         self.sql.as_deref()
     }
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -2664,7 +2664,7 @@ impl ExecuteStatementInput {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
@@ -2704,11 +2704,11 @@ impl std::fmt::Debug for ExecuteStatementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableInput {
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the tables to be described.  
     /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
@@ -2727,7 +2727,7 @@ pub struct DescribeTableInput {
     pub max_results: i32,
 }
 impl DescribeTableInput {
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -2735,7 +2735,7 @@ impl DescribeTableInput {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
@@ -2839,11 +2839,11 @@ impl std::fmt::Debug for CancelStatementInput {
 pub struct BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. </p>
     pub sqls: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub database: std::option::Option<std::string::String>,
@@ -2857,7 +2857,7 @@ impl BatchExecuteStatementInput {
     pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
         self.sqls.as_deref()
     }
-    /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -2865,7 +2865,7 @@ impl BatchExecuteStatementInput {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
+    /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }

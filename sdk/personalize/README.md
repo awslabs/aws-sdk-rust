@@ -1,6 +1,6 @@
 # aws-sdk-personalize
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Personalize is a machine learning service that makes it easy to add individualized recommendations to customers.
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-personalize = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-personalize = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

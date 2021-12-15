@@ -1758,6 +1758,9 @@ pub struct UpdateEventSourceMappingOutput {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
@@ -1829,6 +1832,11 @@ impl UpdateEventSourceMappingOutput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
+    }
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+        self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn function_arn(&self) -> std::option::Option<&str> {
@@ -1917,6 +1925,7 @@ impl std::fmt::Debug for UpdateEventSourceMappingOutput {
         );
         formatter.field("parallelization_factor", &self.parallelization_factor);
         formatter.field("event_source_arn", &self.event_source_arn);
+        formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field("function_arn", &self.function_arn);
         formatter.field("last_modified", &self.last_modified);
         formatter.field("last_processing_result", &self.last_processing_result);
@@ -1960,6 +1969,7 @@ pub mod update_event_source_mapping_output {
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
+        pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
@@ -2072,6 +2082,21 @@ pub mod update_event_source_mapping_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.event_source_arn = input;
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.filter_criteria = Some(input);
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.filter_criteria = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
@@ -2308,6 +2333,7 @@ pub mod update_event_source_mapping_output {
                 maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
                 parallelization_factor: self.parallelization_factor,
                 event_source_arn: self.event_source_arn,
+                filter_criteria: self.filter_criteria,
                 function_arn: self.function_arn,
                 last_modified: self.last_modified,
                 last_processing_result: self.last_processing_result,
@@ -7585,6 +7611,9 @@ pub struct GetEventSourceMappingOutput {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
@@ -7656,6 +7685,11 @@ impl GetEventSourceMappingOutput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
+    }
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+        self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn function_arn(&self) -> std::option::Option<&str> {
@@ -7744,6 +7778,7 @@ impl std::fmt::Debug for GetEventSourceMappingOutput {
         );
         formatter.field("parallelization_factor", &self.parallelization_factor);
         formatter.field("event_source_arn", &self.event_source_arn);
+        formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field("function_arn", &self.function_arn);
         formatter.field("last_modified", &self.last_modified);
         formatter.field("last_processing_result", &self.last_processing_result);
@@ -7787,6 +7822,7 @@ pub mod get_event_source_mapping_output {
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
+        pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
@@ -7899,6 +7935,21 @@ pub mod get_event_source_mapping_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.event_source_arn = input;
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.filter_criteria = Some(input);
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.filter_criteria = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
@@ -8135,6 +8186,7 @@ pub mod get_event_source_mapping_output {
                 maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
                 parallelization_factor: self.parallelization_factor,
                 event_source_arn: self.event_source_arn,
+                filter_criteria: self.filter_criteria,
                 function_arn: self.function_arn,
                 last_modified: self.last_modified,
                 last_processing_result: self.last_processing_result,
@@ -8660,6 +8712,9 @@ pub struct DeleteEventSourceMappingOutput {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
@@ -8731,6 +8786,11 @@ impl DeleteEventSourceMappingOutput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
+    }
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+        self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn function_arn(&self) -> std::option::Option<&str> {
@@ -8819,6 +8879,7 @@ impl std::fmt::Debug for DeleteEventSourceMappingOutput {
         );
         formatter.field("parallelization_factor", &self.parallelization_factor);
         formatter.field("event_source_arn", &self.event_source_arn);
+        formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field("function_arn", &self.function_arn);
         formatter.field("last_modified", &self.last_modified);
         formatter.field("last_processing_result", &self.last_processing_result);
@@ -8862,6 +8923,7 @@ pub mod delete_event_source_mapping_output {
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
+        pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
@@ -8974,6 +9036,21 @@ pub mod delete_event_source_mapping_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.event_source_arn = input;
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.filter_criteria = Some(input);
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.filter_criteria = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
@@ -9210,6 +9287,7 @@ pub mod delete_event_source_mapping_output {
                 maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
                 parallelization_factor: self.parallelization_factor,
                 event_source_arn: self.event_source_arn,
+                filter_criteria: self.filter_criteria,
                 function_arn: self.function_arn,
                 last_modified: self.last_modified,
                 last_processing_result: self.last_processing_result,
@@ -10076,6 +10154,9 @@ pub struct CreateEventSourceMappingOutput {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
@@ -10147,6 +10228,11 @@ impl CreateEventSourceMappingOutput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
+    }
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+        self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn function_arn(&self) -> std::option::Option<&str> {
@@ -10235,6 +10321,7 @@ impl std::fmt::Debug for CreateEventSourceMappingOutput {
         );
         formatter.field("parallelization_factor", &self.parallelization_factor);
         formatter.field("event_source_arn", &self.event_source_arn);
+        formatter.field("filter_criteria", &self.filter_criteria);
         formatter.field("function_arn", &self.function_arn);
         formatter.field("last_modified", &self.last_modified);
         formatter.field("last_processing_result", &self.last_processing_result);
@@ -10278,6 +10365,7 @@ pub mod create_event_source_mapping_output {
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
+        pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_processing_result: std::option::Option<std::string::String>,
@@ -10390,6 +10478,21 @@ pub mod create_event_source_mapping_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.event_source_arn = input;
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.filter_criteria = Some(input);
+            self
+        }
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
+        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.filter_criteria = input;
             self
         }
         /// <p>The ARN of the Lambda function.</p>
@@ -10626,6 +10729,7 @@ pub mod create_event_source_mapping_output {
                 maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
                 parallelization_factor: self.parallelization_factor,
                 event_source_arn: self.event_source_arn,
+                filter_criteria: self.filter_criteria,
                 function_arn: self.function_arn,
                 last_modified: self.last_modified,
                 last_processing_result: self.last_processing_result,

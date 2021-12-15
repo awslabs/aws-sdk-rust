@@ -112,15 +112,15 @@ impl UpdateJobQueueOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateComputeEnvironmentOutput {
-    /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-    /// underscores are allowed.</p>
+    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment_arn: std::option::Option<std::string::String>,
 }
 impl UpdateComputeEnvironmentOutput {
-    /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-    /// underscores are allowed.</p>
+    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
@@ -147,14 +147,14 @@ pub mod update_compute_environment_output {
         pub(crate) compute_environment_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.compute_environment_name = Some(input.into());
             self
         }
-        /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_compute_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -548,8 +548,7 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchedulingPoliciesOutput {
-    /// <p>A list of scheduling policies that match
-    /// the request.</p>
+    /// <p>A list of scheduling policies that match the request.</p>
     pub scheduling_policies:
         std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the
@@ -558,8 +557,7 @@ pub struct ListSchedulingPoliciesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchedulingPoliciesOutput {
-    /// <p>A list of scheduling policies that match
-    /// the request.</p>
+    /// <p>A list of scheduling policies that match the request.</p>
     pub fn scheduling_policies(
         &self,
     ) -> std::option::Option<&[crate::model::SchedulingPolicyListingDetail]> {
@@ -595,8 +593,7 @@ pub mod list_scheduling_policies_output {
         ///
         /// To override the contents of this collection use [`set_scheduling_policies`](Self::set_scheduling_policies).
         ///
-        /// <p>A list of scheduling policies that match
-        /// the request.</p>
+        /// <p>A list of scheduling policies that match the request.</p>
         pub fn scheduling_policies(
             mut self,
             input: impl Into<crate::model::SchedulingPolicyListingDetail>,
@@ -606,8 +603,7 @@ pub mod list_scheduling_policies_output {
             self.scheduling_policies = Some(v);
             self
         }
-        /// <p>A list of scheduling policies that match
-        /// the request.</p>
+        /// <p>A list of scheduling policies that match the request.</p>
         pub fn set_scheduling_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
@@ -739,14 +735,12 @@ impl ListJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchedulingPoliciesOutput {
-    /// <p>The list of scheduling
-    /// policies.</p>
+    /// <p>The list of scheduling policies.</p>
     pub scheduling_policies:
         std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyDetail>>,
 }
 impl DescribeSchedulingPoliciesOutput {
-    /// <p>The list of scheduling
-    /// policies.</p>
+    /// <p>The list of scheduling policies.</p>
     pub fn scheduling_policies(
         &self,
     ) -> std::option::Option<&[crate::model::SchedulingPolicyDetail]> {
@@ -774,8 +768,7 @@ pub mod describe_scheduling_policies_output {
         ///
         /// To override the contents of this collection use [`set_scheduling_policies`](Self::set_scheduling_policies).
         ///
-        /// <p>The list of scheduling
-        /// policies.</p>
+        /// <p>The list of scheduling policies.</p>
         pub fn scheduling_policies(
             mut self,
             input: impl Into<crate::model::SchedulingPolicyDetail>,
@@ -785,8 +778,7 @@ pub mod describe_scheduling_policies_output {
             self.scheduling_policies = Some(v);
             self
         }
-        /// <p>The list of scheduling
-        /// policies.</p>
+        /// <p>The list of scheduling policies.</p>
         pub fn set_scheduling_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyDetail>>,
@@ -1275,11 +1267,9 @@ impl DeleteComputeEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchedulingPolicyOutput {
-    /// <p>The name of the scheduling
-    /// policy.</p>
+    /// <p>The name of the scheduling policy.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the scheduling policy.
-    /// The format is
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
     /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
     /// </code>.
     /// For example,
@@ -1287,13 +1277,11 @@ pub struct CreateSchedulingPolicyOutput {
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateSchedulingPolicyOutput {
-    /// <p>The name of the scheduling
-    /// policy.</p>
+    /// <p>The name of the scheduling policy.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the scheduling policy.
-    /// The format is
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
     /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
     /// </code>.
     /// For example,
@@ -1320,20 +1308,17 @@ pub mod create_scheduling_policy_output {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the scheduling
-        /// policy.</p>
+        /// <p>The name of the scheduling policy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the scheduling
-        /// policy.</p>
+        /// <p>The name of the scheduling policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy.
-        /// The format is
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
         /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
         /// </code>.
         /// For example,
@@ -1342,8 +1327,7 @@ pub mod create_scheduling_policy_output {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the scheduling policy.
-        /// The format is
+        /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
         /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
         /// </code>.
         /// For example,
@@ -1451,15 +1435,15 @@ impl CreateJobQueueOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputeEnvironmentOutput {
-    /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-    /// underscores are allowed.</p>
+    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub compute_environment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub compute_environment_arn: std::option::Option<std::string::String>,
 }
 impl CreateComputeEnvironmentOutput {
-    /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-    /// underscores are allowed.</p>
+    /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
@@ -1486,14 +1470,14 @@ pub mod create_compute_environment_output {
         pub(crate) compute_environment_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.compute_environment_name = Some(input.into());
             self
         }
-        /// <p>The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
-        /// underscores are allowed.</p>
+        /// <p>The name of the compute environment. It can be up to 128 letters long. It can contain uppercase and
+        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_compute_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,

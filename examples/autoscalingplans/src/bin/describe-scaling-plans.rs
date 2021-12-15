@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use autoscalingplans::{Client, Error, Region};
 use aws_config::meta::region::RegionProviderChain;
+use aws_sdk_autoscalingplans::{Client, Error, Region};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -39,7 +39,7 @@ async fn main() -> Result<(), Error> {
     if verbose {
         println!(
             "Auto Scaling Plans client version: {}",
-            autoscalingplans::PKG_VERSION
+            aws_sdk_autoscalingplans::PKG_VERSION
         );
         println!(
             "Region:                            {:?}",

@@ -2489,6 +2489,136 @@ impl std::error::Error for ListTagsForResourceError {
     }
 }
 
+/// Error type for the `SendApiAsset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SendApiAssetError {
+    /// Kind of error that occurred.
+    pub kind: SendApiAssetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SendApiAsset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SendApiAssetErrorKind {
+    /// <p>Access to the resource is denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// An exception occurred with the service.
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource couldn't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The limit on the number of requests per second was exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The request was invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SendApiAssetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SendApiAssetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SendApiAssetErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            SendApiAssetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SendApiAssetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SendApiAssetErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            SendApiAssetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SendApiAssetError {
+    fn code(&self) -> Option<&str> {
+        SendApiAssetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SendApiAssetError {
+    /// Creates a new `SendApiAssetError`.
+    pub fn new(kind: SendApiAssetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SendApiAssetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SendApiAssetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SendApiAssetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SendApiAssetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SendApiAssetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, SendApiAssetErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `SendApiAssetErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendApiAssetErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendApiAssetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendApiAssetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SendApiAssetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, SendApiAssetErrorKind::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `SendApiAssetErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, SendApiAssetErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for SendApiAssetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SendApiAssetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SendApiAssetErrorKind::InternalServerException(_inner) => Some(_inner),
+            SendApiAssetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SendApiAssetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SendApiAssetErrorKind::ValidationException(_inner) => Some(_inner),
+            SendApiAssetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartJob` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

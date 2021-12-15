@@ -205,25 +205,35 @@ impl AsRef<str> for ShippingOption {
     }
 }
 
-/// <p>An object that represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+/// <p>An object that represents the metadata and configuration settings for services on an Amazon Web Services
+/// Snow Family device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnDeviceServiceConfiguration {
-    /// <p>Represents the NFS service on a Snow Family device.</p>
+    /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
     pub nfs_on_device_service: std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
+    /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
+    pub tgw_on_device_service: std::option::Option<crate::model::TgwOnDeviceServiceConfiguration>,
 }
 impl OnDeviceServiceConfiguration {
-    /// <p>Represents the NFS service on a Snow Family device.</p>
+    /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
     pub fn nfs_on_device_service(
         &self,
     ) -> std::option::Option<&crate::model::NfsOnDeviceServiceConfiguration> {
         self.nfs_on_device_service.as_ref()
+    }
+    /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
+    pub fn tgw_on_device_service(
+        &self,
+    ) -> std::option::Option<&crate::model::TgwOnDeviceServiceConfiguration> {
+        self.tgw_on_device_service.as_ref()
     }
 }
 impl std::fmt::Debug for OnDeviceServiceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OnDeviceServiceConfiguration");
         formatter.field("nfs_on_device_service", &self.nfs_on_device_service);
+        formatter.field("tgw_on_device_service", &self.tgw_on_device_service);
         formatter.finish()
     }
 }
@@ -235,9 +245,11 @@ pub mod on_device_service_configuration {
     pub struct Builder {
         pub(crate) nfs_on_device_service:
             std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
+        pub(crate) tgw_on_device_service:
+            std::option::Option<crate::model::TgwOnDeviceServiceConfiguration>,
     }
     impl Builder {
-        /// <p>Represents the NFS service on a Snow Family device.</p>
+        /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
         pub fn nfs_on_device_service(
             mut self,
             input: crate::model::NfsOnDeviceServiceConfiguration,
@@ -245,7 +257,7 @@ pub mod on_device_service_configuration {
             self.nfs_on_device_service = Some(input);
             self
         }
-        /// <p>Represents the NFS service on a Snow Family device.</p>
+        /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
         pub fn set_nfs_on_device_service(
             mut self,
             input: std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
@@ -253,10 +265,27 @@ pub mod on_device_service_configuration {
             self.nfs_on_device_service = input;
             self
         }
+        /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
+        pub fn tgw_on_device_service(
+            mut self,
+            input: crate::model::TgwOnDeviceServiceConfiguration,
+        ) -> Self {
+            self.tgw_on_device_service = Some(input);
+            self
+        }
+        /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
+        pub fn set_tgw_on_device_service(
+            mut self,
+            input: std::option::Option<crate::model::TgwOnDeviceServiceConfiguration>,
+        ) -> Self {
+            self.tgw_on_device_service = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration)
         pub fn build(self) -> crate::model::OnDeviceServiceConfiguration {
             crate::model::OnDeviceServiceConfiguration {
                 nfs_on_device_service: self.nfs_on_device_service,
+                tgw_on_device_service: self.tgw_on_device_service,
             }
         }
     }
@@ -268,38 +297,39 @@ impl OnDeviceServiceConfiguration {
     }
 }
 
-/// <p>An object that represents metadata and configuration settings for NFS service on an AWS Snow Family device.</p>
+/// <p>An object that represents the metadata and configuration settings for the Storage Gateway
+/// service Tape Gateway type on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NfsOnDeviceServiceConfiguration {
-    /// <p>The maximum NFS storage for one Snowball Family device.</p>
+pub struct TgwOnDeviceServiceConfiguration {
+    /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical
+    /// resource limitations, this value must be set to 80 for Snowball Edge.</p>
     pub storage_limit: i32,
-    /// <p>The scale unit of the NFS storage on the device.</p>
-    /// <p>Valid values: TB.</p>
+    /// <p>The scale unit of the virtual tapes on the device.</p>
     pub storage_unit: std::option::Option<crate::model::StorageUnit>,
 }
-impl NfsOnDeviceServiceConfiguration {
-    /// <p>The maximum NFS storage for one Snowball Family device.</p>
+impl TgwOnDeviceServiceConfiguration {
+    /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical
+    /// resource limitations, this value must be set to 80 for Snowball Edge.</p>
     pub fn storage_limit(&self) -> i32 {
         self.storage_limit
     }
-    /// <p>The scale unit of the NFS storage on the device.</p>
-    /// <p>Valid values: TB.</p>
+    /// <p>The scale unit of the virtual tapes on the device.</p>
     pub fn storage_unit(&self) -> std::option::Option<&crate::model::StorageUnit> {
         self.storage_unit.as_ref()
     }
 }
-impl std::fmt::Debug for NfsOnDeviceServiceConfiguration {
+impl std::fmt::Debug for TgwOnDeviceServiceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NfsOnDeviceServiceConfiguration");
+        let mut formatter = f.debug_struct("TgwOnDeviceServiceConfiguration");
         formatter.field("storage_limit", &self.storage_limit);
         formatter.field("storage_unit", &self.storage_unit);
         formatter.finish()
     }
 }
-/// See [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
-pub mod nfs_on_device_service_configuration {
-    /// A builder for [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
+/// See [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration)
+pub mod tgw_on_device_service_configuration {
+    /// A builder for [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -307,24 +337,24 @@ pub mod nfs_on_device_service_configuration {
         pub(crate) storage_unit: std::option::Option<crate::model::StorageUnit>,
     }
     impl Builder {
-        /// <p>The maximum NFS storage for one Snowball Family device.</p>
+        /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical
+        /// resource limitations, this value must be set to 80 for Snowball Edge.</p>
         pub fn storage_limit(mut self, input: i32) -> Self {
             self.storage_limit = Some(input);
             self
         }
-        /// <p>The maximum NFS storage for one Snowball Family device.</p>
+        /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical
+        /// resource limitations, this value must be set to 80 for Snowball Edge.</p>
         pub fn set_storage_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_limit = input;
             self
         }
-        /// <p>The scale unit of the NFS storage on the device.</p>
-        /// <p>Valid values: TB.</p>
+        /// <p>The scale unit of the virtual tapes on the device.</p>
         pub fn storage_unit(mut self, input: crate::model::StorageUnit) -> Self {
             self.storage_unit = Some(input);
             self
         }
-        /// <p>The scale unit of the NFS storage on the device.</p>
-        /// <p>Valid values: TB.</p>
+        /// <p>The scale unit of the virtual tapes on the device.</p>
         pub fn set_storage_unit(
             mut self,
             input: std::option::Option<crate::model::StorageUnit>,
@@ -332,19 +362,19 @@ pub mod nfs_on_device_service_configuration {
             self.storage_unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
-        pub fn build(self) -> crate::model::NfsOnDeviceServiceConfiguration {
-            crate::model::NfsOnDeviceServiceConfiguration {
+        /// Consumes the builder and constructs a [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration)
+        pub fn build(self) -> crate::model::TgwOnDeviceServiceConfiguration {
+            crate::model::TgwOnDeviceServiceConfiguration {
                 storage_limit: self.storage_limit.unwrap_or_default(),
                 storage_unit: self.storage_unit,
             }
         }
     }
 }
-impl NfsOnDeviceServiceConfiguration {
-    /// Creates a new builder-style object to manufacture [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
-    pub fn builder() -> crate::model::nfs_on_device_service_configuration::Builder {
-        crate::model::nfs_on_device_service_configuration::Builder::default()
+impl TgwOnDeviceServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration)
+    pub fn builder() -> crate::model::tgw_on_device_service_configuration::Builder {
+        crate::model::tgw_on_device_service_configuration::Builder::default()
     }
 }
 
@@ -399,9 +429,90 @@ impl AsRef<str> for StorageUnit {
     }
 }
 
-/// <p>Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket,
-/// an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is
-/// associated with a particular job.</p>
+/// <p>An object that represents the metadata and configuration settings for the NFS (Network
+/// File System) service on an Amazon Web Services Snow Family device.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NfsOnDeviceServiceConfiguration {
+    /// <p>The maximum NFS storage for one Snow Family device.</p>
+    pub storage_limit: i32,
+    /// <p>The scale unit of the NFS storage on the device.</p>
+    /// <p>Valid values: TB.</p>
+    pub storage_unit: std::option::Option<crate::model::StorageUnit>,
+}
+impl NfsOnDeviceServiceConfiguration {
+    /// <p>The maximum NFS storage for one Snow Family device.</p>
+    pub fn storage_limit(&self) -> i32 {
+        self.storage_limit
+    }
+    /// <p>The scale unit of the NFS storage on the device.</p>
+    /// <p>Valid values: TB.</p>
+    pub fn storage_unit(&self) -> std::option::Option<&crate::model::StorageUnit> {
+        self.storage_unit.as_ref()
+    }
+}
+impl std::fmt::Debug for NfsOnDeviceServiceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NfsOnDeviceServiceConfiguration");
+        formatter.field("storage_limit", &self.storage_limit);
+        formatter.field("storage_unit", &self.storage_unit);
+        formatter.finish()
+    }
+}
+/// See [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
+pub mod nfs_on_device_service_configuration {
+    /// A builder for [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) storage_limit: std::option::Option<i32>,
+        pub(crate) storage_unit: std::option::Option<crate::model::StorageUnit>,
+    }
+    impl Builder {
+        /// <p>The maximum NFS storage for one Snow Family device.</p>
+        pub fn storage_limit(mut self, input: i32) -> Self {
+            self.storage_limit = Some(input);
+            self
+        }
+        /// <p>The maximum NFS storage for one Snow Family device.</p>
+        pub fn set_storage_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.storage_limit = input;
+            self
+        }
+        /// <p>The scale unit of the NFS storage on the device.</p>
+        /// <p>Valid values: TB.</p>
+        pub fn storage_unit(mut self, input: crate::model::StorageUnit) -> Self {
+            self.storage_unit = Some(input);
+            self
+        }
+        /// <p>The scale unit of the NFS storage on the device.</p>
+        /// <p>Valid values: TB.</p>
+        pub fn set_storage_unit(
+            mut self,
+            input: std::option::Option<crate::model::StorageUnit>,
+        ) -> Self {
+            self.storage_unit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
+        pub fn build(self) -> crate::model::NfsOnDeviceServiceConfiguration {
+            crate::model::NfsOnDeviceServiceConfiguration {
+                storage_limit: self.storage_limit.unwrap_or_default(),
+                storage_unit: self.storage_unit,
+            }
+        }
+    }
+}
+impl NfsOnDeviceServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration)
+    pub fn builder() -> crate::model::nfs_on_device_service_configuration::Builder {
+        crate::model::nfs_on_device_service_configuration::Builder::default()
+    }
+}
+
+/// <p>Contains an array of Amazon Web Services resource objects. Each object represents an
+/// Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based
+/// on Amazon EC2 that is associated with a particular job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobResource {
@@ -524,7 +635,7 @@ impl JobResource {
 
 /// <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI),
 /// including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to
-/// simplify identifying the AMI in both the AWS Cloud and on the device.</p>
+/// simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2AmiResource {
@@ -604,15 +715,15 @@ impl Ec2AmiResource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaResource {
-    /// <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be triggered by
-    /// PUT object actions on the associated local Amazon S3 resource.</p>
+    /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
+    /// triggered by PUT object actions on the associated local Amazon S3 resource.</p>
     pub lambda_arn: std::option::Option<std::string::String>,
     /// <p>The array of ARNs for <a>S3Resource</a> objects to trigger the <a>LambdaResource</a> objects associated with this job.</p>
     pub event_triggers: std::option::Option<std::vec::Vec<crate::model::EventTriggerDefinition>>,
 }
 impl LambdaResource {
-    /// <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be triggered by
-    /// PUT object actions on the associated local Amazon S3 resource.</p>
+    /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
+    /// triggered by PUT object actions on the associated local Amazon S3 resource.</p>
     pub fn lambda_arn(&self) -> std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
@@ -640,14 +751,14 @@ pub mod lambda_resource {
             std::option::Option<std::vec::Vec<crate::model::EventTriggerDefinition>>,
     }
     impl Builder {
-        /// <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be triggered by
-        /// PUT object actions on the associated local Amazon S3 resource.</p>
+        /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
+        /// triggered by PUT object actions on the associated local Amazon S3 resource.</p>
         pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be triggered by
-        /// PUT object actions on the associated local Amazon S3 resource.</p>
+        /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
+        /// triggered by PUT object actions on the associated local Amazon S3 resource.</p>
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_arn = input;
             self
@@ -694,13 +805,11 @@ impl LambdaResource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTriggerDefinition {
-    /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an AWS Lambda
-    /// function's event trigger associated with this job.</p>
+    /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
     pub event_resource_arn: std::option::Option<std::string::String>,
 }
 impl EventTriggerDefinition {
-    /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an AWS Lambda
-    /// function's event trigger associated with this job.</p>
+    /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
     pub fn event_resource_arn(&self) -> std::option::Option<&str> {
         self.event_resource_arn.as_deref()
     }
@@ -721,14 +830,12 @@ pub mod event_trigger_definition {
         pub(crate) event_resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an AWS Lambda
-        /// function's event trigger associated with this job.</p>
+        /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
         pub fn event_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an AWS Lambda
-        /// function's event trigger associated with this job.</p>
+        /// <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda function's event trigger associated with this job.</p>
         pub fn set_event_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -766,8 +873,9 @@ pub struct S3Resource {
     /// inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are
     /// UTF-8 binary sorted.</p>
     pub key_range: std::option::Option<crate::model::KeyRange>,
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+    /// System).</p>
     pub target_on_device_services:
         std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
 }
@@ -783,8 +891,9 @@ impl S3Resource {
     pub fn key_range(&self) -> std::option::Option<&crate::model::KeyRange> {
         self.key_range.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+    /// System).</p>
     pub fn target_on_device_services(
         &self,
     ) -> std::option::Option<&[crate::model::TargetOnDeviceService]> {
@@ -842,8 +951,9 @@ pub mod s3_resource {
         ///
         /// To override the contents of this collection use [`set_target_on_device_services`](Self::set_target_on_device_services).
         ///
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System).</p>
         pub fn target_on_device_services(
             mut self,
             input: impl Into<crate::model::TargetOnDeviceService>,
@@ -853,8 +963,9 @@ pub mod s3_resource {
             self.target_on_device_services = Some(v);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System).</p>
         pub fn set_target_on_device_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
@@ -880,23 +991,26 @@ impl S3Resource {
 }
 
 /// <p>An object that represents the service or services on the Snow Family device that your
-/// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+/// transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and
+/// NFS (Network File System).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetOnDeviceService {
-    /// <p>Specifies the name of the service on the Snow Family device that your
-    /// transferred data will be exported from or imported into.</p>
+    /// <p>Specifies the name of the service on the Snow Family device that your transferred data
+    /// will be exported from or imported into.</p>
     pub service_name: std::option::Option<crate::model::DeviceServiceName>,
-    /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
+    /// <p>Specifies whether the data is being imported or exported. You can import or export the
+    /// data, or use it locally on the device.</p>
     pub transfer_option: std::option::Option<crate::model::TransferOption>,
 }
 impl TargetOnDeviceService {
-    /// <p>Specifies the name of the service on the Snow Family device that your
-    /// transferred data will be exported from or imported into.</p>
+    /// <p>Specifies the name of the service on the Snow Family device that your transferred data
+    /// will be exported from or imported into.</p>
     pub fn service_name(&self) -> std::option::Option<&crate::model::DeviceServiceName> {
         self.service_name.as_ref()
     }
-    /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
+    /// <p>Specifies whether the data is being imported or exported. You can import or export the
+    /// data, or use it locally on the device.</p>
     pub fn transfer_option(&self) -> std::option::Option<&crate::model::TransferOption> {
         self.transfer_option.as_ref()
     }
@@ -919,14 +1033,14 @@ pub mod target_on_device_service {
         pub(crate) transfer_option: std::option::Option<crate::model::TransferOption>,
     }
     impl Builder {
-        /// <p>Specifies the name of the service on the Snow Family device that your
-        /// transferred data will be exported from or imported into.</p>
+        /// <p>Specifies the name of the service on the Snow Family device that your transferred data
+        /// will be exported from or imported into.</p>
         pub fn service_name(mut self, input: crate::model::DeviceServiceName) -> Self {
             self.service_name = Some(input);
             self
         }
-        /// <p>Specifies the name of the service on the Snow Family device that your
-        /// transferred data will be exported from or imported into.</p>
+        /// <p>Specifies the name of the service on the Snow Family device that your transferred data
+        /// will be exported from or imported into.</p>
         pub fn set_service_name(
             mut self,
             input: std::option::Option<crate::model::DeviceServiceName>,
@@ -934,12 +1048,14 @@ pub mod target_on_device_service {
             self.service_name = input;
             self
         }
-        /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
+        /// <p>Specifies whether the data is being imported or exported. You can import or export the
+        /// data, or use it locally on the device.</p>
         pub fn transfer_option(mut self, input: crate::model::TransferOption) -> Self {
             self.transfer_option = Some(input);
             self
         }
-        /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
+        /// <p>Specifies whether the data is being imported or exported. You can import or export the
+        /// data, or use it locally on the device.</p>
         pub fn set_transfer_option(
             mut self,
             input: std::option::Option<crate::model::TransferOption>,
@@ -1177,8 +1293,8 @@ pub struct Notification {
     /// create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API
     /// action.</p>
     ///
-    /// <p>You can subscribe email addresses to an Amazon SNS topic through the AWS Management
-    /// Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+    /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification
+    /// Service (Amazon SNS) API action.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The list of job states that will trigger a notification for this job.</p>
     pub job_states_to_notify: std::option::Option<std::vec::Vec<crate::model::JobState>>,
@@ -1190,8 +1306,8 @@ impl Notification {
     /// create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API
     /// action.</p>
     ///
-    /// <p>You can subscribe email addresses to an Amazon SNS topic through the AWS Management
-    /// Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+    /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification
+    /// Service (Amazon SNS) API action.</p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -1228,8 +1344,8 @@ pub mod notification {
         /// create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API
         /// action.</p>
         ///
-        /// <p>You can subscribe email addresses to an Amazon SNS topic through the AWS Management
-        /// Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+        /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification
+        /// Service (Amazon SNS) API action.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
@@ -1238,8 +1354,8 @@ pub mod notification {
         /// create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API
         /// action.</p>
         ///
-        /// <p>You can subscribe email addresses to an Amazon SNS topic through the AWS Management
-        /// Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
+        /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification
+        /// Service (Amazon SNS) API action.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1406,7 +1522,8 @@ impl AsRef<str> for JobState {
     }
 }
 
-/// <p>Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.</p>
+/// <p>Each <code>LongTermPricingListEntry</code> object contains information about a long-term
+/// pricing type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LongTermPricingListEntry {
@@ -1427,7 +1544,7 @@ pub struct LongTermPricingListEntry {
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
     /// <p>The status of the long-term pricing type.</p>
     pub long_term_pricing_status: std::option::Option<std::string::String>,
-    /// <p>The type of AWS Snow Family device associated with this long-term pricing job.</p>
+    /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
     pub job_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1468,7 +1585,7 @@ impl LongTermPricingListEntry {
     pub fn long_term_pricing_status(&self) -> std::option::Option<&str> {
         self.long_term_pricing_status.as_deref()
     }
-    /// <p>The type of AWS Snow Family device associated with this long-term pricing job.</p>
+    /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
     pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
@@ -1626,12 +1743,12 @@ pub mod long_term_pricing_list_entry {
             self.long_term_pricing_status = input;
             self
         }
-        /// <p>The type of AWS Snow Family device associated with this long-term pricing job.</p>
+        /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of AWS Snow Family device associated with this long-term pricing job.</p>
+        /// <p>The type of Snow Family Devices associated with this long-term pricing job.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1824,11 +1941,11 @@ pub struct JobListEntry {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current state of this job.</p>
     pub job_state: std::option::Option<crate::model::JobState>,
-    /// <p>A value that indicates that this job is a main job. A main job represents a
-    /// successful request to create an export job. Main jobs aren't associated with any Snowballs.
-    /// Instead, each main job will have at least one job part, and each job part is associated with
-    /// a Snowball. It might take some time before the job parts associated with a particular main
-    /// job are listed, because they are created after the main job is created.</p>
+    /// <p>A value that indicates that this job is a main job. A main job represents a successful
+    /// request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each
+    /// main job will have at least one job part, and each job part is associated with a Snowball. It
+    /// might take some time before the job parts associated with a particular main job are listed,
+    /// because they are created after the main job is created.</p>
     pub is_master: bool,
     /// <p>The type of job.</p>
     pub job_type: std::option::Option<crate::model::JobType>,
@@ -1850,11 +1967,11 @@ impl JobListEntry {
     pub fn job_state(&self) -> std::option::Option<&crate::model::JobState> {
         self.job_state.as_ref()
     }
-    /// <p>A value that indicates that this job is a main job. A main job represents a
-    /// successful request to create an export job. Main jobs aren't associated with any Snowballs.
-    /// Instead, each main job will have at least one job part, and each job part is associated with
-    /// a Snowball. It might take some time before the job parts associated with a particular main
-    /// job are listed, because they are created after the main job is created.</p>
+    /// <p>A value that indicates that this job is a main job. A main job represents a successful
+    /// request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each
+    /// main job will have at least one job part, and each job part is associated with a Snowball. It
+    /// might take some time before the job parts associated with a particular main job are listed,
+    /// because they are created after the main job is created.</p>
     pub fn is_master(&self) -> bool {
         self.is_master
     }
@@ -1926,20 +2043,20 @@ pub mod job_list_entry {
             self.job_state = input;
             self
         }
-        /// <p>A value that indicates that this job is a main job. A main job represents a
-        /// successful request to create an export job. Main jobs aren't associated with any Snowballs.
-        /// Instead, each main job will have at least one job part, and each job part is associated with
-        /// a Snowball. It might take some time before the job parts associated with a particular main
-        /// job are listed, because they are created after the main job is created.</p>
+        /// <p>A value that indicates that this job is a main job. A main job represents a successful
+        /// request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each
+        /// main job will have at least one job part, and each job part is associated with a Snowball. It
+        /// might take some time before the job parts associated with a particular main job are listed,
+        /// because they are created after the main job is created.</p>
         pub fn is_master(mut self, input: bool) -> Self {
             self.is_master = Some(input);
             self
         }
-        /// <p>A value that indicates that this job is a main job. A main job represents a
-        /// successful request to create an export job. Main jobs aren't associated with any Snowballs.
-        /// Instead, each main job will have at least one job part, and each job part is associated with
-        /// a Snowball. It might take some time before the job parts associated with a particular main
-        /// job are listed, because they are created after the main job is created.</p>
+        /// <p>A value that indicates that this job is a main job. A main job represents a successful
+        /// request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each
+        /// main job will have at least one job part, and each job part is associated with a Snowball. It
+        /// might take some time before the job parts associated with a particular main job are listed,
+        /// because they are created after the main job is created.</p>
         pub fn set_is_master(mut self, input: std::option::Option<bool>) -> Self {
             self.is_master = input;
             self
@@ -2436,12 +2553,11 @@ pub struct JobMetadata {
     pub resources: std::option::Option<crate::model::JobResource>,
     /// <p>The description of the job, provided at job creation.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key
-    /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
-    /// KMS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+    /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-    /// API action in AWS Identity and Access Management (IAM).</p>
+    /// API action in Identity and Access Management.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
     pub address_id: std::option::Option<std::string::String>,
@@ -2464,13 +2580,14 @@ pub struct JobMetadata {
     /// type.</p>
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>A value that defines the real-time status of a Snow device's data transfer while the
-    /// device is at AWS. This data is only available while a job has a <code>JobState</code> value of
-    /// <code>InProgress</code>, for both import and export jobs.</p>
+    /// device is at Amazon Web Services. This data is only available while a job has a
+    /// <code>JobState</code> value of <code>InProgress</code>, for both import and export
+    /// jobs.</p>
     pub data_transfer_progress: std::option::Option<crate::model::DataTransfer>,
     /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF
     /// job report becomes available at the end of the import process. For export jobs, your job
-    /// report typically becomes available while the Snow device for your job part is being delivered to
-    /// you.</p>
+    /// report typically becomes available while the Snow device for your job part is being delivered
+    /// to you.</p>
     pub job_log_info: std::option::Option<crate::model::JobLogs>,
     /// <p>The 39-character ID for the cluster, for example
     /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -2478,7 +2595,7 @@ pub struct JobMetadata {
     /// <p>The ID of the address that you want a job shipped to, after it will be
     /// shipped to its primary address. This field is not supported in most regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
-    /// <p>The metadata associated with the tax documents required in your AWS Region.</p>
+    /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
     /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
     pub device_configuration: std::option::Option<crate::model::DeviceConfiguration>,
@@ -2489,7 +2606,8 @@ pub struct JobMetadata {
     pub remote_management: std::option::Option<crate::model::RemoteManagement>,
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: std::option::Option<std::string::String>,
-    /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+    /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family
+    /// device.</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
 }
@@ -2525,14 +2643,13 @@ impl JobMetadata {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key
-    /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
-    /// KMS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+    /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-    /// API action in AWS Identity and Access Management (IAM).</p>
+    /// API action in Identity and Access Management.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -2567,15 +2684,16 @@ impl JobMetadata {
         self.notification.as_ref()
     }
     /// <p>A value that defines the real-time status of a Snow device's data transfer while the
-    /// device is at AWS. This data is only available while a job has a <code>JobState</code> value of
-    /// <code>InProgress</code>, for both import and export jobs.</p>
+    /// device is at Amazon Web Services. This data is only available while a job has a
+    /// <code>JobState</code> value of <code>InProgress</code>, for both import and export
+    /// jobs.</p>
     pub fn data_transfer_progress(&self) -> std::option::Option<&crate::model::DataTransfer> {
         self.data_transfer_progress.as_ref()
     }
     /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF
     /// job report becomes available at the end of the import process. For export jobs, your job
-    /// report typically becomes available while the Snow device for your job part is being delivered to
-    /// you.</p>
+    /// report typically becomes available while the Snow device for your job part is being delivered
+    /// to you.</p>
     pub fn job_log_info(&self) -> std::option::Option<&crate::model::JobLogs> {
         self.job_log_info.as_ref()
     }
@@ -2589,7 +2707,7 @@ impl JobMetadata {
     pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
-    /// <p>The metadata associated with the tax documents required in your AWS Region.</p>
+    /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
     pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }
@@ -2608,7 +2726,8 @@ impl JobMetadata {
     pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
         self.long_term_pricing_id.as_deref()
     }
-    /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+    /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family
+    /// device.</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
@@ -2766,28 +2885,26 @@ pub mod job_metadata {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key
-        /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+        /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key
-        /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+        /// associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
         /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// API action in AWS Identity and Access Management (IAM).</p>
+        /// API action in Identity and Access Management.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// API action in AWS Identity and Access Management (IAM).</p>
+        /// API action in Identity and Access Management.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2869,15 +2986,17 @@ pub mod job_metadata {
             self
         }
         /// <p>A value that defines the real-time status of a Snow device's data transfer while the
-        /// device is at AWS. This data is only available while a job has a <code>JobState</code> value of
-        /// <code>InProgress</code>, for both import and export jobs.</p>
+        /// device is at Amazon Web Services. This data is only available while a job has a
+        /// <code>JobState</code> value of <code>InProgress</code>, for both import and export
+        /// jobs.</p>
         pub fn data_transfer_progress(mut self, input: crate::model::DataTransfer) -> Self {
             self.data_transfer_progress = Some(input);
             self
         }
         /// <p>A value that defines the real-time status of a Snow device's data transfer while the
-        /// device is at AWS. This data is only available while a job has a <code>JobState</code> value of
-        /// <code>InProgress</code>, for both import and export jobs.</p>
+        /// device is at Amazon Web Services. This data is only available while a job has a
+        /// <code>JobState</code> value of <code>InProgress</code>, for both import and export
+        /// jobs.</p>
         pub fn set_data_transfer_progress(
             mut self,
             input: std::option::Option<crate::model::DataTransfer>,
@@ -2887,16 +3006,16 @@ pub mod job_metadata {
         }
         /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF
         /// job report becomes available at the end of the import process. For export jobs, your job
-        /// report typically becomes available while the Snow device for your job part is being delivered to
-        /// you.</p>
+        /// report typically becomes available while the Snow device for your job part is being delivered
+        /// to you.</p>
         pub fn job_log_info(mut self, input: crate::model::JobLogs) -> Self {
             self.job_log_info = Some(input);
             self
         }
         /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF
         /// job report becomes available at the end of the import process. For export jobs, your job
-        /// report typically becomes available while the Snow device for your job part is being delivered to
-        /// you.</p>
+        /// report typically becomes available while the Snow device for your job part is being delivered
+        /// to you.</p>
         pub fn set_job_log_info(
             mut self,
             input: std::option::Option<crate::model::JobLogs>,
@@ -2931,12 +3050,12 @@ pub mod job_metadata {
             self.forwarding_address_id = input;
             self
         }
-        /// <p>The metadata associated with the tax documents required in your AWS Region.</p>
+        /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
             self.tax_documents = Some(input);
             self
         }
-        /// <p>The metadata associated with the tax documents required in your AWS Region.</p>
+        /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
         pub fn set_tax_documents(
             mut self,
             input: std::option::Option<crate::model::TaxDocuments>,
@@ -2989,7 +3108,8 @@ pub mod job_metadata {
             self.long_term_pricing_id = input;
             self
         }
-        /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+        /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family
+        /// device.</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -2997,7 +3117,8 @@ pub mod job_metadata {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+        /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family
+        /// device.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -3100,12 +3221,14 @@ impl AsRef<str> for RemoteManagement {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceConfiguration {
-    /// <p>Returns information about the device configuration for an AWS Snowcone job.</p>
+    /// <p>Returns information about the device configuration for an Snowcone
+    /// job.</p>
     pub snowcone_device_configuration:
         std::option::Option<crate::model::SnowconeDeviceConfiguration>,
 }
 impl DeviceConfiguration {
-    /// <p>Returns information about the device configuration for an AWS Snowcone job.</p>
+    /// <p>Returns information about the device configuration for an Snowcone
+    /// job.</p>
     pub fn snowcone_device_configuration(
         &self,
     ) -> std::option::Option<&crate::model::SnowconeDeviceConfiguration> {
@@ -3132,7 +3255,8 @@ pub mod device_configuration {
             std::option::Option<crate::model::SnowconeDeviceConfiguration>,
     }
     impl Builder {
-        /// <p>Returns information about the device configuration for an AWS Snowcone job.</p>
+        /// <p>Returns information about the device configuration for an Snowcone
+        /// job.</p>
         pub fn snowcone_device_configuration(
             mut self,
             input: crate::model::SnowconeDeviceConfiguration,
@@ -3140,7 +3264,8 @@ pub mod device_configuration {
             self.snowcone_device_configuration = Some(input);
             self
         }
-        /// <p>Returns information about the device configuration for an AWS Snowcone job.</p>
+        /// <p>Returns information about the device configuration for an Snowcone
+        /// job.</p>
         pub fn set_snowcone_device_configuration(
             mut self,
             input: std::option::Option<crate::model::SnowconeDeviceConfiguration>,
@@ -3163,15 +3288,15 @@ impl DeviceConfiguration {
     }
 }
 
-/// <p>Specifies the device configuration for an AWS Snowcone job. </p>
+/// <p>Specifies the device configuration for an Snowcone job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnowconeDeviceConfiguration {
-    /// <p>Configures the wireless connection for the AWS Snowcone device.</p>
+    /// <p>Configures the wireless connection for the Snowcone device.</p>
     pub wireless_connection: std::option::Option<crate::model::WirelessConnection>,
 }
 impl SnowconeDeviceConfiguration {
-    /// <p>Configures the wireless connection for the AWS Snowcone device.</p>
+    /// <p>Configures the wireless connection for the Snowcone device.</p>
     pub fn wireless_connection(&self) -> std::option::Option<&crate::model::WirelessConnection> {
         self.wireless_connection.as_ref()
     }
@@ -3192,12 +3317,12 @@ pub mod snowcone_device_configuration {
         pub(crate) wireless_connection: std::option::Option<crate::model::WirelessConnection>,
     }
     impl Builder {
-        /// <p>Configures the wireless connection for the AWS Snowcone device.</p>
+        /// <p>Configures the wireless connection for the Snowcone device.</p>
         pub fn wireless_connection(mut self, input: crate::model::WirelessConnection) -> Self {
             self.wireless_connection = Some(input);
             self
         }
-        /// <p>Configures the wireless connection for the AWS Snowcone device.</p>
+        /// <p>Configures the wireless connection for the Snowcone device.</p>
         pub fn set_wireless_connection(
             mut self,
             input: std::option::Option<crate::model::WirelessConnection>,
@@ -3220,15 +3345,15 @@ impl SnowconeDeviceConfiguration {
     }
 }
 
-/// <p>Configures the wireless connection on an AWS Snowcone device.</p>
+/// <p>Configures the wireless connection on an Snowcone device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessConnection {
-    /// <p>Enables the Wi-Fi adapter on an AWS Snowcone device.</p>
+    /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
     pub is_wifi_enabled: bool,
 }
 impl WirelessConnection {
-    /// <p>Enables the Wi-Fi adapter on an AWS Snowcone device.</p>
+    /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
     pub fn is_wifi_enabled(&self) -> bool {
         self.is_wifi_enabled
     }
@@ -3249,12 +3374,12 @@ pub mod wireless_connection {
         pub(crate) is_wifi_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Enables the Wi-Fi adapter on an AWS Snowcone device.</p>
+        /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
         pub fn is_wifi_enabled(mut self, input: bool) -> Self {
             self.is_wifi_enabled = Some(input);
             self
         }
-        /// <p>Enables the Wi-Fi adapter on an AWS Snowcone device.</p>
+        /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
         pub fn set_is_wifi_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.is_wifi_enabled = input;
             self
@@ -3274,15 +3399,15 @@ impl WirelessConnection {
     }
 }
 
-/// <p>The tax documents required in your AWS Region.</p>
+/// <p>The tax documents required in your Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaxDocuments {
-    /// <p>The tax documents required in AWS Regions in India.</p>
+    /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     pub ind: std::option::Option<crate::model::IndTaxDocuments>,
 }
 impl TaxDocuments {
-    /// <p>The tax documents required in AWS Regions in India.</p>
+    /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     pub fn ind(&self) -> std::option::Option<&crate::model::IndTaxDocuments> {
         self.ind.as_ref()
     }
@@ -3303,12 +3428,12 @@ pub mod tax_documents {
         pub(crate) ind: std::option::Option<crate::model::IndTaxDocuments>,
     }
     impl Builder {
-        /// <p>The tax documents required in AWS Regions in India.</p>
+        /// <p>The tax documents required in Amazon Web Services Region in India.</p>
         pub fn ind(mut self, input: crate::model::IndTaxDocuments) -> Self {
             self.ind = Some(input);
             self
         }
-        /// <p>The tax documents required in AWS Regions in India.</p>
+        /// <p>The tax documents required in Amazon Web Services Region in India.</p>
         pub fn set_ind(
             mut self,
             input: std::option::Option<crate::model::IndTaxDocuments>,
@@ -3329,15 +3454,17 @@ impl TaxDocuments {
     }
 }
 
-/// <p>The tax documents required in AWS Regions in India.</p>
+/// <p>The tax documents required in Amazon Web Services Region in India.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndTaxDocuments {
-    /// <p>The Goods and Services Tax (GST) documents required in AWS Regions in India.</p>
+    /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in
+    /// India.</p>
     pub gstin: std::option::Option<std::string::String>,
 }
 impl IndTaxDocuments {
-    /// <p>The Goods and Services Tax (GST) documents required in AWS Regions in India.</p>
+    /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in
+    /// India.</p>
     pub fn gstin(&self) -> std::option::Option<&str> {
         self.gstin.as_deref()
     }
@@ -3358,12 +3485,14 @@ pub mod ind_tax_documents {
         pub(crate) gstin: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Goods and Services Tax (GST) documents required in AWS Regions in India.</p>
+        /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in
+        /// India.</p>
         pub fn gstin(mut self, input: impl Into<std::string::String>) -> Self {
             self.gstin = Some(input.into());
             self
         }
-        /// <p>The Goods and Services Tax (GST) documents required in AWS Regions in India.</p>
+        /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in
+        /// India.</p>
         pub fn set_gstin(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gstin = input;
             self
@@ -3381,16 +3510,16 @@ impl IndTaxDocuments {
     }
 }
 
-/// <p>Contains job logs. Whenever a Snow device is used to import data into or export data out of
-/// Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a
-/// part of the response syntax of the <code>DescribeJob</code> action in the
+/// <p>Contains job logs. Whenever a Snow device is used to import data into or export data
+/// out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are
+/// returned as a part of the response syntax of the <code>DescribeJob</code> action in the
 /// <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after
 /// this request has been made. To access any of the job logs after 60 minutes have passed, you'll
 /// have to make another call to the <code>DescribeJob</code> action.</p>
 ///
 /// <p>For import jobs, the PDF job report becomes available at the end of the import process.
-/// For export jobs, your job report typically becomes available while the Snow device for your job
-/// part is being delivered to you.</p>
+/// For export jobs, your job report typically becomes available while the Snow device for your
+/// job part is being delivered to you.</p>
 ///
 /// <p>The job report provides you insight into the state of your Amazon S3 data transfer. The
 /// report includes details about your job or job part for your records.</p>
@@ -3503,9 +3632,9 @@ impl JobLogs {
     }
 }
 
-/// <p>Defines the real-time status of a Snow device's data transfer while the device is at AWS.
-/// This data is only available while a job has a <code>JobState</code> value of
-/// <code>InProgress</code>, for both import and export jobs.</p>
+/// <p>Defines the real-time status of a Snow device's data transfer while the device is at
+/// Amazon Web Services. This data is only available while a job has a <code>JobState</code>
+/// value of <code>InProgress</code>, for both import and export jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataTransfer {
@@ -3513,11 +3642,12 @@ pub struct DataTransfer {
     pub bytes_transferred: i64,
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
     pub objects_transferred: i64,
-    /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is
-    /// set to 0 (zero) until all the keys that will be transferred have been listed.</p>
-    pub total_bytes: i64,
-    /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value
+    /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value
     /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    pub total_bytes: i64,
+    /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This
+    /// value is set to 0 (zero) until all the keys that will be transferred have been
+    /// listed.</p>
     pub total_objects: i64,
 }
 impl DataTransfer {
@@ -3529,13 +3659,14 @@ impl DataTransfer {
     pub fn objects_transferred(&self) -> i64 {
         self.objects_transferred
     }
-    /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is
-    /// set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value
+    /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn total_bytes(&self) -> i64 {
         self.total_bytes
     }
-    /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value
-    /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This
+    /// value is set to 0 (zero) until all the keys that will be transferred have been
+    /// listed.</p>
     pub fn total_objects(&self) -> i64 {
         self.total_objects
     }
@@ -3582,26 +3713,28 @@ pub mod data_transfer {
             self.objects_transferred = input;
             self
         }
-        /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is
-        /// set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+        /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value
+        /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
         pub fn total_bytes(mut self, input: i64) -> Self {
             self.total_bytes = Some(input);
             self
         }
-        /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is
-        /// set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+        /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value
+        /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
         pub fn set_total_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.total_bytes = input;
             self
         }
-        /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value
-        /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+        /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This
+        /// value is set to 0 (zero) until all the keys that will be transferred have been
+        /// listed.</p>
         pub fn total_objects(mut self, input: i64) -> Self {
             self.total_objects = Some(input);
             self
         }
-        /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value
-        /// is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+        /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This
+        /// value is set to 0 (zero) until all the keys that will be transferred have been
+        /// listed.</p>
         pub fn set_total_objects(mut self, input: std::option::Option<i64>) -> Self {
             self.total_objects = input;
             self
@@ -3630,8 +3763,8 @@ impl DataTransfer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShippingDetails {
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get
-    /// the Snow device from the job's creation date. This speed represents how quickly it moves to its
-    /// destination while in transit. Regional shipping speeds are as follows:</p>
+    /// the Snow device from the job's creation date. This speed represents how quickly it moves to
+    /// its destination while in transit. Regional shipping speeds are as follows:</p>
     ///
     /// <ul>
     /// <li>
@@ -3639,8 +3772,8 @@ pub struct ShippingDetails {
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
     /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
@@ -3654,7 +3787,7 @@ pub struct ShippingDetails {
     /// </ul>
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
-    /// returned to AWS for a particular job.</p>
+    /// returned to Amazon Web Services for a particular job.</p>
     pub inbound_shipment: std::option::Option<crate::model::Shipment>,
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
     /// delivered to the address that you specified for a particular job.</p>
@@ -3662,8 +3795,8 @@ pub struct ShippingDetails {
 }
 impl ShippingDetails {
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get
-    /// the Snow device from the job's creation date. This speed represents how quickly it moves to its
-    /// destination while in transit. Regional shipping speeds are as follows:</p>
+    /// the Snow device from the job's creation date. This speed represents how quickly it moves to
+    /// its destination while in transit. Regional shipping speeds are as follows:</p>
     ///
     /// <ul>
     /// <li>
@@ -3671,8 +3804,8 @@ impl ShippingDetails {
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
     /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
@@ -3688,7 +3821,7 @@ impl ShippingDetails {
         self.shipping_option.as_ref()
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
-    /// returned to AWS for a particular job.</p>
+    /// returned to Amazon Web Services for a particular job.</p>
     pub fn inbound_shipment(&self) -> std::option::Option<&crate::model::Shipment> {
         self.inbound_shipment.as_ref()
     }
@@ -3719,8 +3852,8 @@ pub mod shipping_details {
     }
     impl Builder {
         /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get
-        /// the Snow device from the job's creation date. This speed represents how quickly it moves to its
-        /// destination while in transit. Regional shipping speeds are as follows:</p>
+        /// the Snow device from the job's creation date. This speed represents how quickly it moves to
+        /// its destination while in transit. Regional shipping speeds are as follows:</p>
         ///
         /// <ul>
         /// <li>
@@ -3728,8 +3861,8 @@ pub mod shipping_details {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -3746,8 +3879,8 @@ pub mod shipping_details {
             self
         }
         /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get
-        /// the Snow device from the job's creation date. This speed represents how quickly it moves to its
-        /// destination while in transit. Regional shipping speeds are as follows:</p>
+        /// the Snow device from the job's creation date. This speed represents how quickly it moves to
+        /// its destination while in transit. Regional shipping speeds are as follows:</p>
         ///
         /// <ul>
         /// <li>
@@ -3755,8 +3888,8 @@ pub mod shipping_details {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -3776,13 +3909,13 @@ pub mod shipping_details {
             self
         }
         /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
-        /// returned to AWS for a particular job.</p>
+        /// returned to Amazon Web Services for a particular job.</p>
         pub fn inbound_shipment(mut self, input: crate::model::Shipment) -> Self {
             self.inbound_shipment = Some(input);
             self
         }
         /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
-        /// returned to AWS for a particular job.</p>
+        /// returned to Amazon Web Services for a particular job.</p>
         pub fn set_inbound_shipment(
             mut self,
             input: std::option::Option<crate::model::Shipment>,
@@ -3920,21 +4053,21 @@ pub struct ClusterMetadata {
     /// <p>The optional description of the cluster.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster.
-    /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-    /// Management Service (AWS KMS).</p>
+    /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-    /// API action in AWS Identity and Access Management (IAM).</p>
+    /// API action in Identity and Access Management (IAM).</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the cluster.</p>
     pub cluster_state: std::option::Option<crate::model::ClusterState>,
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
     /// is <code>LOCAL_USE</code>.</p>
     pub job_type: std::option::Option<crate::model::JobType>,
-    /// <p>The type of AWS Snow device to use for this cluster.
+    /// <p>The type of Snowcone device to use for this cluster.
     /// </p>
     /// <note>
-    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+    /// <code>EDGE</code> device type.</p>
     /// </note>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The creation date for this cluster.</p>
@@ -3944,8 +4077,8 @@ pub struct ClusterMetadata {
     /// <p>The automatically generated ID for a specific address.</p>
     pub address_id: std::option::Option<std::string::String>,
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-    /// you'll get each device, rather it represents how quickly each device moves to
-    /// its destination while in transit. Regional shipping speeds are as follows:</p>
+    /// you'll get each device, rather it represents how quickly each device moves to its destination
+    /// while in transit. Regional shipping speeds are as follows:</p>
     ///
     /// <ul>
     /// <li>
@@ -3953,9 +4086,9 @@ pub struct ClusterMetadata {
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries
-    /// in the EU have access to standard shipping, which typically takes less than a week, one
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
+    /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
     /// <li>
@@ -3972,9 +4105,10 @@ pub struct ClusterMetadata {
     /// <p>The ID of the address that you want a cluster shipped to, after it will be
     /// shipped to its primary address. This field is not supported in most regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
-    /// <p>The tax documents required in your AWS Region.</p>
+    /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
-    /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+    /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family
+    /// device.</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
 }
@@ -3988,13 +4122,12 @@ impl ClusterMetadata {
         self.description.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster.
-    /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-    /// Management Service (AWS KMS).</p>
+    /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-    /// API action in AWS Identity and Access Management (IAM).</p>
+    /// API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -4007,10 +4140,11 @@ impl ClusterMetadata {
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
     }
-    /// <p>The type of AWS Snow device to use for this cluster.
+    /// <p>The type of Snowcone device to use for this cluster.
     /// </p>
     /// <note>
-    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+    /// <code>EDGE</code> device type.</p>
     /// </note>
     pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
         self.snowball_type.as_ref()
@@ -4028,8 +4162,8 @@ impl ClusterMetadata {
         self.address_id.as_deref()
     }
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-    /// you'll get each device, rather it represents how quickly each device moves to
-    /// its destination while in transit. Regional shipping speeds are as follows:</p>
+    /// you'll get each device, rather it represents how quickly each device moves to its destination
+    /// while in transit. Regional shipping speeds are as follows:</p>
     ///
     /// <ul>
     /// <li>
@@ -4037,9 +4171,9 @@ impl ClusterMetadata {
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries
-    /// in the EU have access to standard shipping, which typically takes less than a week, one
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
+    /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
     /// <li>
@@ -4062,11 +4196,12 @@ impl ClusterMetadata {
     pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
-    /// <p>The tax documents required in your AWS Region.</p>
+    /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }
-    /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+    /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family
+    /// device.</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
@@ -4142,27 +4277,25 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster.
-        /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-        /// Management Service (AWS KMS).</p>
+        /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
         /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster.
-        /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-        /// Management Service (AWS KMS).</p>
+        /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
         /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// API action in AWS Identity and Access Management (IAM).</p>
+        /// API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// API action in AWS Identity and Access Management (IAM).</p>
+        /// API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4192,19 +4325,21 @@ pub mod cluster_metadata {
             self.job_type = input;
             self
         }
-        /// <p>The type of AWS Snow device to use for this cluster.
+        /// <p>The type of Snowcone device to use for this cluster.
         /// </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of AWS Snow device to use for this cluster.
+        /// <p>The type of Snowcone device to use for this cluster.
         /// </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
         pub fn set_snowball_type(
             mut self,
@@ -4250,8 +4385,8 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows:</p>
+        /// you'll get each device, rather it represents how quickly each device moves to its destination
+        /// while in transit. Regional shipping speeds are as follows:</p>
         ///
         /// <ul>
         /// <li>
@@ -4259,9 +4394,9 @@ pub mod cluster_metadata {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries
-        /// in the EU have access to standard shipping, which typically takes less than a week, one
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
+        /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
         /// <li>
@@ -4276,8 +4411,8 @@ pub mod cluster_metadata {
             self
         }
         /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows:</p>
+        /// you'll get each device, rather it represents how quickly each device moves to its destination
+        /// while in transit. Regional shipping speeds are as follows:</p>
         ///
         /// <ul>
         /// <li>
@@ -4285,9 +4420,9 @@ pub mod cluster_metadata {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries
-        /// in the EU have access to standard shipping, which typically takes less than a week, one
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
+        /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
         /// <li>
@@ -4334,12 +4469,12 @@ pub mod cluster_metadata {
             self.forwarding_address_id = input;
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
             self.tax_documents = Some(input);
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn set_tax_documents(
             mut self,
             input: std::option::Option<crate::model::TaxDocuments>,
@@ -4347,7 +4482,8 @@ pub mod cluster_metadata {
             self.tax_documents = input;
             self
         }
-        /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+        /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family
+        /// device.</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -4355,7 +4491,8 @@ pub mod cluster_metadata {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Represents metadata and configuration settings for services on an AWS Snow Family device.</p>
+        /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family
+        /// device.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -4392,9 +4529,9 @@ impl ClusterMetadata {
     }
 }
 
-/// <p>The address that you want the Snow device(s) associated with a specific job to
-/// be shipped to. Addresses are validated at the time of creation. The address you provide must
-/// be located within the serviceable area of your region. Although no individual elements of the
+/// <p>The address that you want the Snow device(s) associated with a specific job to be
+/// shipped to. Addresses are validated at the time of creation. The address you provide must be
+/// located within the serviceable area of your region. Although no individual elements of the
 /// <code>Address</code> are required, if the address is invalid or unsupported, then an
 /// exception is thrown.</p>
 #[non_exhaustive]

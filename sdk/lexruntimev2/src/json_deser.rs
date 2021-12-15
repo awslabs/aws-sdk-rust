@@ -886,6 +886,18 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "slotElicitationStyle" => {
+                                builder = builder.set_slot_elicitation_style(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::StyleType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

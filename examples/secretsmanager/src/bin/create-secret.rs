@@ -3,12 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use secretsmanager::{Client, Region};
-
 use aws_config::meta::region::RegionProviderChain;
-
+use aws_sdk_secretsmanager::{Client, Region};
 use structopt::StructOpt;
-
 use tracing_subscriber::fmt::format::FmtSpan;
 use tracing_subscriber::fmt::SubscriberBuilder;
 
@@ -58,7 +55,7 @@ async fn main() {
     if verbose {
         println!(
             "SecretsManager client version: {}\n",
-            secretsmanager::PKG_VERSION
+            aws_sdk_secretsmanager::PKG_VERSION
         );
         println!("Region:       {:?}", shared_config.region().unwrap());
         println!("Secret name:  {}", name);

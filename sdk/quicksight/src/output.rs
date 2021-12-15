@@ -869,23 +869,23 @@ impl UpdateTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpRestrictionOutput {
-    /// <p>Your AWS account ID.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the update request.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The status of the updated IP rules. A successful request returns a 200 code.</p>
+    /// <p>The HTTP status of the request. </p>
     pub status: i32,
 }
 impl UpdateIpRestrictionOutput {
-    /// <p>Your AWS account ID.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID of the update request.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The status of the updated IP rules. A successful request returns a 200 code.</p>
+    /// <p>The HTTP status of the request. </p>
     pub fn status(&self) -> i32 {
         self.status
     }
@@ -910,12 +910,12 @@ pub mod update_ip_restriction_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Your AWS account ID.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>Your AWS account ID.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -923,22 +923,22 @@ pub mod update_ip_restriction_output {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the update request.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The ID of the update request.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
         }
-        /// <p>The status of the updated IP rules. A successful request returns a 200 code.</p>
+        /// <p>The HTTP status of the request. </p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the updated IP rules. A successful request returns a 200 code.</p>
+        /// <p>The HTTP status of the request. </p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -968,10 +968,10 @@ pub struct UpdateIamPolicyAssignmentOutput {
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID of the assignment.</p>
     pub assignment_id: std::option::Option<std::string::String>,
-    /// <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups specified in this
+    /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this
     /// assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+    /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -1007,12 +1007,12 @@ impl UpdateIamPolicyAssignmentOutput {
     pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
-    /// <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups specified in this
+    /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this
     /// assignment.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+    /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     pub fn identities(
         &self,
     ) -> std::option::Option<
@@ -1105,13 +1105,13 @@ pub mod update_iam_policy_assignment_output {
             self.assignment_id = input;
             self
         }
-        /// <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups specified in this
+        /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this
         /// assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups specified in this
+        /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this
         /// assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
@@ -1121,7 +1121,7 @@ pub mod update_iam_policy_assignment_output {
         ///
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
-        /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+        /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
@@ -1132,7 +1132,7 @@ pub mod update_iam_policy_assignment_output {
             self.identities = Some(hash_map);
             self
         }
-        /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+        /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
         pub fn set_identities(
             mut self,
             input: std::option::Option<
@@ -1324,35 +1324,35 @@ impl UpdateGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFolderPermissionsOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
-    /// <p>Information about the permissions on the dashboard.</p>
+    /// <p>Information about the permissions for the folder.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateFolderPermissionsOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>The Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
-    /// <p>Information about the permissions on the dashboard.</p>
+    /// <p>Information about the permissions for the folder.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -1382,32 +1382,32 @@ pub mod update_folder_permissions_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.folder_id = Some(input.into());
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.folder_id = input;
             self
@@ -1416,14 +1416,14 @@ pub mod update_folder_permissions_output {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>Information about the permissions on the dashboard.</p>
+        /// <p>Information about the permissions for the folder.</p>
         pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
-        /// <p>Information about the permissions on the dashboard.</p>
+        /// <p>Information about the permissions for the folder.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -1431,12 +1431,12 @@ pub mod update_folder_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -1464,29 +1464,29 @@ impl UpdateFolderPermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFolderOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl UpdateFolderOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>The Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -1513,42 +1513,42 @@ pub mod update_folder_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.folder_id = Some(input.into());
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.folder_id = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -2227,6 +2227,8 @@ pub struct UpdateDashboardPermissionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
+    /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    pub link_sharing_configuration: std::option::Option<crate::model::LinkSharingConfiguration>,
 }
 impl UpdateDashboardPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
@@ -2249,6 +2251,12 @@ impl UpdateDashboardPermissionsOutput {
     pub fn status(&self) -> i32 {
         self.status
     }
+    /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    pub fn link_sharing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LinkSharingConfiguration> {
+        self.link_sharing_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateDashboardPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2258,6 +2266,10 @@ impl std::fmt::Debug for UpdateDashboardPermissionsOutput {
         formatter.field("permissions", &self.permissions);
         formatter.field("request_id", &self.request_id);
         formatter.field("status", &self.status);
+        formatter.field(
+            "link_sharing_configuration",
+            &self.link_sharing_configuration,
+        );
         formatter.finish()
     }
 }
@@ -2273,6 +2285,8 @@ pub mod update_dashboard_permissions_output {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<i32>,
+        pub(crate) link_sharing_configuration:
+            std::option::Option<crate::model::LinkSharingConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
@@ -2337,6 +2351,22 @@ pub mod update_dashboard_permissions_output {
             self.status = input;
             self
         }
+        /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+        pub fn link_sharing_configuration(
+            mut self,
+            input: crate::model::LinkSharingConfiguration,
+        ) -> Self {
+            self.link_sharing_configuration = Some(input);
+            self
+        }
+        /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+        pub fn set_link_sharing_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LinkSharingConfiguration>,
+        ) -> Self {
+            self.link_sharing_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDashboardPermissionsOutput`](crate::output::UpdateDashboardPermissionsOutput)
         pub fn build(self) -> crate::output::UpdateDashboardPermissionsOutput {
             crate::output::UpdateDashboardPermissionsOutput {
@@ -2345,6 +2375,7 @@ pub mod update_dashboard_permissions_output {
                 permissions: self.permissions,
                 request_id: self.request_id,
                 status: self.status.unwrap_or_default(),
+                link_sharing_configuration: self.link_sharing_configuration,
             }
         }
     }
@@ -3169,21 +3200,21 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFoldersOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+    /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
     pub folder_summary_list: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl SearchFoldersOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+    /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
     pub fn folder_summary_list(&self) -> std::option::Option<&[crate::model::FolderSummary]> {
         self.folder_summary_list.as_deref()
     }
@@ -3191,7 +3222,7 @@ impl SearchFoldersOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -3219,12 +3250,12 @@ pub mod search_folders_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -3233,7 +3264,7 @@ pub mod search_folders_output {
         ///
         /// To override the contents of this collection use [`set_folder_summary_list`](Self::set_folder_summary_list).
         ///
-        /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+        /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
         pub fn folder_summary_list(
             mut self,
             input: impl Into<crate::model::FolderSummary>,
@@ -3243,7 +3274,7 @@ pub mod search_folders_output {
             self.folder_summary_list = Some(v);
             self
         }
-        /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+        /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
         pub fn set_folder_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
@@ -3261,12 +3292,12 @@ pub mod search_folders_output {
             self.next_token = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -5251,7 +5282,7 @@ impl ListIamPolicyAssignmentsForUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIamPolicyAssignmentsOutput {
-    /// <p>Information describing the IAMpolicy assignments.</p>
+    /// <p>Information describing the IAM policy assignments.</p>
     pub iam_policy_assignments:
         std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -5262,7 +5293,7 @@ pub struct ListIamPolicyAssignmentsOutput {
     pub status: i32,
 }
 impl ListIamPolicyAssignmentsOutput {
-    /// <p>Information describing the IAMpolicy assignments.</p>
+    /// <p>Information describing the IAM policy assignments.</p>
     pub fn iam_policy_assignments(
         &self,
     ) -> std::option::Option<&[crate::model::IamPolicyAssignmentSummary]> {
@@ -5308,7 +5339,7 @@ pub mod list_iam_policy_assignments_output {
         ///
         /// To override the contents of this collection use [`set_iam_policy_assignments`](Self::set_iam_policy_assignments).
         ///
-        /// <p>Information describing the IAMpolicy assignments.</p>
+        /// <p>Information describing the IAM policy assignments.</p>
         pub fn iam_policy_assignments(
             mut self,
             input: impl Into<crate::model::IamPolicyAssignmentSummary>,
@@ -5318,7 +5349,7 @@ pub mod list_iam_policy_assignments_output {
             self.iam_policy_assignments = Some(v);
             self
         }
-        /// <p>Information describing the IAMpolicy assignments.</p>
+        /// <p>Information describing the IAM policy assignments.</p>
         pub fn set_iam_policy_assignments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
@@ -5618,23 +5649,21 @@ impl ListGroupMembershipsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFoldersOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-    /// </p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+    /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
     pub folder_summary_list: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListFoldersOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-    /// </p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+    /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
     pub fn folder_summary_list(&self) -> std::option::Option<&[crate::model::FolderSummary]> {
         self.folder_summary_list.as_deref()
     }
@@ -5642,7 +5671,7 @@ impl ListFoldersOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -5670,14 +5699,12 @@ pub mod list_folders_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-        /// </p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-        /// </p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -5686,7 +5713,7 @@ pub mod list_folders_output {
         ///
         /// To override the contents of this collection use [`set_folder_summary_list`](Self::set_folder_summary_list).
         ///
-        /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+        /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
         pub fn folder_summary_list(
             mut self,
             input: impl Into<crate::model::FolderSummary>,
@@ -5696,7 +5723,7 @@ pub mod list_folders_output {
             self.folder_summary_list = Some(v);
             self
         }
-        /// <p>A structure that contains all of the folders in your AWS account. This structure provides basic information about the folders.</p>
+        /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
         pub fn set_folder_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FolderSummary>>,
@@ -5714,12 +5741,12 @@ pub mod list_folders_output {
             self.next_token = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -5746,19 +5773,17 @@ impl ListFoldersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFolderMembersOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-    /// </p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
     pub folder_member_list: std::option::Option<std::vec::Vec<crate::model::MemberIdArnPair>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListFolderMembersOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-    /// </p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
@@ -5770,7 +5795,7 @@ impl ListFolderMembersOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -5798,14 +5823,12 @@ pub mod list_folder_members_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-        /// </p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-        /// </p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -5842,12 +5865,12 @@ pub mod list_folder_members_output {
             self.next_token = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -6708,7 +6731,7 @@ impl GetDashboardEmbedUrlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateEmbedUrlForRegisteredUserOutput {
-    /// <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search bar.</p>
+    /// <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -6716,7 +6739,7 @@ pub struct GenerateEmbedUrlForRegisteredUserOutput {
     pub request_id: std::option::Option<std::string::String>,
 }
 impl GenerateEmbedUrlForRegisteredUserOutput {
-    /// <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search bar.</p>
+    /// <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
     pub fn embed_url(&self) -> std::option::Option<&str> {
         self.embed_url.as_deref()
     }
@@ -6749,12 +6772,12 @@ pub mod generate_embed_url_for_registered_user_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search bar.</p>
+        /// <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
         pub fn embed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.embed_url = Some(input.into());
             self
         }
-        /// <p>The embed URL for the Amazon QuickSight dashboard, console, or Q search bar.</p>
+        /// <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
         pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.embed_url = input;
             self
@@ -7745,39 +7768,39 @@ impl DescribeNamespaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIpRestrictionOutput {
-    /// <p>Your AWS account ID.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>Describes the IP rules with CIDR range and description.</p>
+    /// <p>A map that describes the IP rules with CIDR range and description.</p>
     pub ip_restriction_rule_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Whether or not IP rules are enabled.</p>
+    /// <p>A value that specifies whether IP rules are turned on.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The ID of the describe request.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The status of a set of IP restrictions. A successful request returns a 200 status code.</p>
+    /// <p>The HTTP status of the request. </p>
     pub status: i32,
 }
 impl DescribeIpRestrictionOutput {
-    /// <p>Your AWS account ID.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>Describes the IP rules with CIDR range and description.</p>
+    /// <p>A map that describes the IP rules with CIDR range and description.</p>
     pub fn ip_restriction_rule_map(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.ip_restriction_rule_map.as_ref()
     }
-    /// <p>Whether or not IP rules are enabled.</p>
+    /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>The ID of the describe request.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The status of a set of IP restrictions. A successful request returns a 200 status code.</p>
+    /// <p>The HTTP status of the request. </p>
     pub fn status(&self) -> i32 {
         self.status
     }
@@ -7808,12 +7831,12 @@ pub mod describe_ip_restriction_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Your AWS account ID.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>Your AWS account ID.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7825,7 +7848,7 @@ pub mod describe_ip_restriction_output {
         ///
         /// To override the contents of this collection use [`set_ip_restriction_rule_map`](Self::set_ip_restriction_rule_map).
         ///
-        /// <p>Describes the IP rules with CIDR range and description.</p>
+        /// <p>A map that describes the IP rules with CIDR range and description.</p>
         pub fn ip_restriction_rule_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -7836,7 +7859,7 @@ pub mod describe_ip_restriction_output {
             self.ip_restriction_rule_map = Some(hash_map);
             self
         }
-        /// <p>Describes the IP rules with CIDR range and description.</p>
+        /// <p>A map that describes the IP rules with CIDR range and description.</p>
         pub fn set_ip_restriction_rule_map(
             mut self,
             input: std::option::Option<
@@ -7846,32 +7869,32 @@ pub mod describe_ip_restriction_output {
             self.ip_restriction_rule_map = input;
             self
         }
-        /// <p>Whether or not IP rules are enabled.</p>
+        /// <p>A value that specifies whether IP rules are turned on.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Whether or not IP rules are enabled.</p>
+        /// <p>A value that specifies whether IP rules are turned on.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
-        /// <p>The ID of the describe request.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The ID of the describe request.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
         }
-        /// <p>The status of a set of IP restrictions. A successful request returns a 200 status code.</p>
+        /// <p>The HTTP status of the request. </p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of a set of IP restrictions. A successful request returns a 200 status code.</p>
+        /// <p>The HTTP status of the request. </p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -7994,7 +8017,7 @@ impl DescribeIngestionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIamPolicyAssignmentOutput {
-    /// <p>Information describing the IAMpolicy assignment.</p>
+    /// <p>Information describing the IAM policy assignment.</p>
     pub iam_policy_assignment: std::option::Option<crate::model::IamPolicyAssignment>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -8002,7 +8025,7 @@ pub struct DescribeIamPolicyAssignmentOutput {
     pub status: i32,
 }
 impl DescribeIamPolicyAssignmentOutput {
-    /// <p>Information describing the IAMpolicy assignment.</p>
+    /// <p>Information describing the IAM policy assignment.</p>
     pub fn iam_policy_assignment(&self) -> std::option::Option<&crate::model::IamPolicyAssignment> {
         self.iam_policy_assignment.as_ref()
     }
@@ -8035,12 +8058,12 @@ pub mod describe_iam_policy_assignment_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Information describing the IAMpolicy assignment.</p>
+        /// <p>Information describing the IAM policy assignment.</p>
         pub fn iam_policy_assignment(mut self, input: crate::model::IamPolicyAssignment) -> Self {
             self.iam_policy_assignment = Some(input);
             self
         }
-        /// <p>Information describing the IAMpolicy assignment.</p>
+        /// <p>Information describing the IAM policy assignment.</p>
         pub fn set_iam_policy_assignment(
             mut self,
             input: std::option::Option<crate::model::IamPolicyAssignment>,
@@ -8181,37 +8204,35 @@ impl DescribeGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFolderResolvedPermissionsOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-    /// </p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Information about the permissions on the dashboard.</p>
+    /// <p>Information about the permissions for the folder.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeFolderResolvedPermissionsOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-    /// </p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Information about the permissions on the dashboard.</p>
+    /// <p>Information about the permissions for the folder.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -8241,34 +8262,32 @@ pub mod describe_folder_resolved_permissions_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-        /// </p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>
-        /// </p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.folder_id = Some(input.into());
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.folder_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8277,14 +8296,14 @@ pub mod describe_folder_resolved_permissions_output {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>Information about the permissions on the dashboard.</p>
+        /// <p>Information about the permissions for the folder.</p>
         pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
-        /// <p>Information about the permissions on the dashboard.</p>
+        /// <p>Information about the permissions for the folder.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -8292,12 +8311,12 @@ pub mod describe_folder_resolved_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -8325,23 +8344,23 @@ impl DescribeFolderResolvedPermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFolderPermissionsOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the permissions on the folder.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeFolderPermissionsOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
@@ -8353,7 +8372,7 @@ impl DescribeFolderPermissionsOutput {
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -8383,22 +8402,22 @@ pub mod describe_folder_permissions_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status. If succeeded, the status is <code>SC_OK</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.folder_id = Some(input.into());
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.folder_id = input;
             self
@@ -8432,12 +8451,12 @@ pub mod describe_folder_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -8465,15 +8484,15 @@ impl DescribeFolderPermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFolderOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>Information about the folder.</p>
     pub folder: std::option::Option<crate::model::Folder>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeFolderOutput {
-    /// <p>The status. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
@@ -8481,7 +8500,7 @@ impl DescribeFolderOutput {
     pub fn folder(&self) -> std::option::Option<&crate::model::Folder> {
         self.folder.as_ref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -8506,12 +8525,12 @@ pub mod describe_folder_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -8526,12 +8545,12 @@ pub mod describe_folder_output {
             self.folder = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -9040,6 +9059,11 @@ pub struct DescribeDashboardPermissionsOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
+    /// <p>A structure that contains the configuration of a shareable link that grants access to
+    /// the dashboard. Your users can use the link to view and interact with the dashboard, if
+    /// the dashboard has been shared with them. For more information about sharing dashboards,
+    /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+    pub link_sharing_configuration: std::option::Option<crate::model::LinkSharingConfiguration>,
 }
 impl DescribeDashboardPermissionsOutput {
     /// <p>The ID for the dashboard.</p>
@@ -9062,6 +9086,15 @@ impl DescribeDashboardPermissionsOutput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
+    /// <p>A structure that contains the configuration of a shareable link that grants access to
+    /// the dashboard. Your users can use the link to view and interact with the dashboard, if
+    /// the dashboard has been shared with them. For more information about sharing dashboards,
+    /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+    pub fn link_sharing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LinkSharingConfiguration> {
+        self.link_sharing_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for DescribeDashboardPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9071,6 +9104,10 @@ impl std::fmt::Debug for DescribeDashboardPermissionsOutput {
         formatter.field("permissions", &self.permissions);
         formatter.field("status", &self.status);
         formatter.field("request_id", &self.request_id);
+        formatter.field(
+            "link_sharing_configuration",
+            &self.link_sharing_configuration,
+        );
         formatter.finish()
     }
 }
@@ -9086,6 +9123,8 @@ pub mod describe_dashboard_permissions_output {
             std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
         pub(crate) status: std::option::Option<i32>,
         pub(crate) request_id: std::option::Option<std::string::String>,
+        pub(crate) link_sharing_configuration:
+            std::option::Option<crate::model::LinkSharingConfiguration>,
     }
     impl Builder {
         /// <p>The ID for the dashboard.</p>
@@ -9150,6 +9189,28 @@ pub mod describe_dashboard_permissions_output {
             self.request_id = input;
             self
         }
+        /// <p>A structure that contains the configuration of a shareable link that grants access to
+        /// the dashboard. Your users can use the link to view and interact with the dashboard, if
+        /// the dashboard has been shared with them. For more information about sharing dashboards,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+        pub fn link_sharing_configuration(
+            mut self,
+            input: crate::model::LinkSharingConfiguration,
+        ) -> Self {
+            self.link_sharing_configuration = Some(input);
+            self
+        }
+        /// <p>A structure that contains the configuration of a shareable link that grants access to
+        /// the dashboard. Your users can use the link to view and interact with the dashboard, if
+        /// the dashboard has been shared with them. For more information about sharing dashboards,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+        pub fn set_link_sharing_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LinkSharingConfiguration>,
+        ) -> Self {
+            self.link_sharing_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDashboardPermissionsOutput`](crate::output::DescribeDashboardPermissionsOutput)
         pub fn build(self) -> crate::output::DescribeDashboardPermissionsOutput {
             crate::output::DescribeDashboardPermissionsOutput {
@@ -9158,6 +9219,7 @@ pub mod describe_dashboard_permissions_output {
                 permissions: self.permissions,
                 status: self.status.unwrap_or_default(),
                 request_id: self.request_id,
+                link_sharing_configuration: self.link_sharing_configuration,
             }
         }
     }
@@ -9514,8 +9576,8 @@ impl DescribeAnalysisOutput {
 pub struct DescribeAccountSettingsOutput {
     /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
     /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-    /// Amazon QuickSight subscription. In the Amazon QuickSight console, the Amazon QuickSight subscription is sometimes
-    /// referred to as a Amazon QuickSight "account" even though it's technically not an account
+    /// Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes
+    /// referred to as a QuickSight "account" even though it's technically not an account
     /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
     /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
@@ -9527,8 +9589,8 @@ pub struct DescribeAccountSettingsOutput {
 impl DescribeAccountSettingsOutput {
     /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
     /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-    /// Amazon QuickSight subscription. In the Amazon QuickSight console, the Amazon QuickSight subscription is sometimes
-    /// referred to as a Amazon QuickSight "account" even though it's technically not an account
+    /// Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes
+    /// referred to as a QuickSight "account" even though it's technically not an account
     /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
     /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
@@ -9565,8 +9627,8 @@ pub mod describe_account_settings_output {
     impl Builder {
         /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
         /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-        /// Amazon QuickSight subscription. In the Amazon QuickSight console, the Amazon QuickSight subscription is sometimes
-        /// referred to as a Amazon QuickSight "account" even though it's technically not an account
+        /// Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes
+        /// referred to as a QuickSight "account" even though it's technically not an account
         /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
         /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
         pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
@@ -9575,8 +9637,8 @@ pub mod describe_account_settings_output {
         }
         /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
         /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-        /// Amazon QuickSight subscription. In the Amazon QuickSight console, the Amazon QuickSight subscription is sometimes
-        /// referred to as a Amazon QuickSight "account" even though it's technically not an account
+        /// Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes
+        /// referred to as a QuickSight "account" even though it's technically not an account
         /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
         /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
         pub fn set_account_settings(
@@ -10726,17 +10788,17 @@ impl DeleteGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFolderMembershipOutput {
-    /// <p>The status of deleting the asset. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DeleteFolderMembershipOutput {
-    /// <p>The status of deleting the asset. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -10759,22 +10821,22 @@ pub mod delete_folder_membership_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of deleting the asset. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of deleting the asset. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -10799,17 +10861,17 @@ impl DeleteFolderMembershipOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFolderOutput {
-    /// <p>The status of deleting the folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>The Amazon Resource Name of the deleted folder.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DeleteFolderOutput {
-    /// <p>The status of deleting the folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
@@ -10817,11 +10879,11 @@ impl DeleteFolderOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -10848,12 +10910,12 @@ pub mod delete_folder_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of deleting the folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of deleting the folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -10868,22 +10930,22 @@ pub mod delete_folder_output {
             self.arn = input;
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.folder_id = Some(input.into());
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.folder_id = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -12306,9 +12368,9 @@ pub struct CreateIamPolicyAssignmentOutput {
     /// </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-    /// <p>The ARN for the IAMpolicy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+    /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     pub identities: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -12346,11 +12408,11 @@ impl CreateIamPolicyAssignmentOutput {
     pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
-    /// <p>The ARN for the IAMpolicy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+    /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     pub fn identities(
         &self,
     ) -> std::option::Option<
@@ -12468,12 +12530,12 @@ pub mod create_iam_policy_assignment_output {
             self.assignment_status = input;
             self
         }
-        /// <p>The ARN for the IAMpolicy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
+        /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the IAMpolicy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
+        /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -12482,7 +12544,7 @@ pub mod create_iam_policy_assignment_output {
         ///
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
-        /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+        /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
@@ -12493,7 +12555,7 @@ pub mod create_iam_policy_assignment_output {
             self.identities = Some(hash_map);
             self
         }
-        /// <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned to.</p>
+        /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
         pub fn set_identities(
             mut self,
             input: std::option::Option<
@@ -12735,15 +12797,15 @@ impl CreateGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFolderMembershipOutput {
-    /// <p>The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>Information about the member in the folder.</p>
     pub folder_member: std::option::Option<crate::model::FolderMember>,
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateFolderMembershipOutput {
-    /// <p>The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
@@ -12751,7 +12813,7 @@ impl CreateFolderMembershipOutput {
     pub fn folder_member(&self) -> std::option::Option<&crate::model::FolderMember> {
         self.folder_member.as_ref()
     }
-    /// <p>The request ID.</p>
+    /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -12776,12 +12838,12 @@ pub mod create_folder_membership_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the folder membership. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -12799,12 +12861,12 @@ pub mod create_folder_membership_output {
             self.folder_member = input;
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// <p>The request ID.</p>
+        /// <p>The Amazon Web Services request ID for this operation.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -12830,7 +12892,7 @@ impl CreateFolderMembershipOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFolderOutput {
-    /// <p>The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -12840,7 +12902,7 @@ pub struct CreateFolderOutput {
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateFolderOutput {
-    /// <p>The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+    /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
@@ -12879,12 +12941,12 @@ pub mod create_folder_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn status(mut self, input: i32) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.</p>
+        /// <p>The HTTP status of the request.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self

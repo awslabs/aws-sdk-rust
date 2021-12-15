@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_sagemakerruntime::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -115,9 +115,9 @@ pub mod fluent_builders {
     /// <p>Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add
     /// additional headers. You should not rely on the behavior of headers outside those
     /// enumerated in the request syntax. </p>
-    /// <p>Calls to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
+    /// <p>Calls to <code>InvokeEndpoint</code> are authenticated by using Amazon Web Services Signature Version
     /// 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-    /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+    /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
     /// Reference</i>.</p>
     /// <p>A customer's model containers must respond to requests within 60 seconds. The model
     /// itself can have a maximum processing time of 60 seconds before responding to
@@ -131,7 +131,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct InvokeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -248,7 +248,7 @@ pub mod fluent_builders {
         /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
         /// function.</p>
         ///
-        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
+        /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
         pub fn custom_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_attributes(inp);
@@ -267,7 +267,7 @@ pub mod fluent_builders {
         /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
         /// function.</p>
         ///
-        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
+        /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
         pub fn set_custom_attributes(
             mut self,
@@ -357,13 +357,13 @@ pub mod fluent_builders {
     /// Amazon SageMaker might add additional headers. You should not rely on the behavior
     /// of headers outside those enumerated in the request syntax.</p>
     ///
-    /// <p>Calls to <code>InvokeEndpointAsync</code> are authenticated by using AWS Signature
-    /// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+    /// <p>Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature
+    /// Version 4. For information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
     /// Reference</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct InvokeEndpointAsync<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -469,7 +469,7 @@ pub mod fluent_builders {
         /// value is returned. For example, if a custom attribute represents the trace ID,
         /// your model can prepend the custom attribute with <code>Trace ID</code>: in your post-processing function. </p>
         ///
-        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK. </p>
+        /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK. </p>
         pub fn custom_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_attributes(inp);
             self
@@ -488,7 +488,7 @@ pub mod fluent_builders {
         /// value is returned. For example, if a custom attribute represents the trace ID,
         /// your model can prepend the custom attribute with <code>Trace ID</code>: in your post-processing function. </p>
         ///
-        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK. </p>
+        /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK. </p>
         pub fn set_custom_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -533,17 +533,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -552,7 +556,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -568,11 +572,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

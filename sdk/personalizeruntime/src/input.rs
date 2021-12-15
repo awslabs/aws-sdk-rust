@@ -301,6 +301,7 @@ pub mod get_recommendations_input {
         pub(crate) filter_values: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) recommender_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
@@ -433,6 +434,21 @@ pub mod get_recommendations_input {
             self.filter_values = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you
+        /// created a Domain dataset group with a recommender for a domain use case.</p>
+        pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommender_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you
+        /// created a Domain dataset group with a recommender for a domain use case.</p>
+        pub fn set_recommender_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommender_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::input::GetRecommendationsInput)
         pub fn build(
             self,
@@ -448,6 +464,7 @@ pub mod get_recommendations_input {
                 context: self.context,
                 filter_arn: self.filter_arn,
                 filter_values: self.filter_values,
+                recommender_arn: self.recommender_arn,
             })
         }
     }
@@ -604,6 +621,9 @@ pub struct GetRecommendationsInput {
     /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     pub filter_values:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you
+    /// created a Domain dataset group with a recommender for a domain use case.</p>
+    pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl GetRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
@@ -655,6 +675,11 @@ impl GetRecommendationsInput {
     {
         self.filter_values.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you
+    /// created a Domain dataset group with a recommender for a domain use case.</p>
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+        self.recommender_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for GetRecommendationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -666,6 +691,7 @@ impl std::fmt::Debug for GetRecommendationsInput {
         formatter.field("context", &self.context);
         formatter.field("filter_arn", &self.filter_arn);
         formatter.field("filter_values", &self.filter_values);
+        formatter.field("recommender_arn", &self.recommender_arn);
         formatter.finish()
     }
 }

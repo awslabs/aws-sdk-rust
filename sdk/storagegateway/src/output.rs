@@ -5339,7 +5339,7 @@ pub struct DescribeGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
     /// monitor events in the gateway.</p>
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
-    /// <p>The type of hypervisor environment used by the host.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p>
     pub host_environment: std::option::Option<crate::model::HostEnvironment>,
     /// <p>The type of endpoint for your gateway.</p>
     ///
@@ -5357,6 +5357,10 @@ pub struct DescribeGatewayInformationOutput {
     /// hardware specifications.</p>
     pub supported_gateway_capacities:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapacity>>,
+    /// <p>A unique identifier for the specific instance of the host platform running the gateway.
+    /// This value is only available for certain host environments, and its format depends on the
+    /// host environment type.</p>
+    pub host_environment_id: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
@@ -5428,7 +5432,7 @@ impl DescribeGatewayInformationOutput {
     pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
-    /// <p>The type of hypervisor environment used by the host.</p>
+    /// <p>The type of hardware or software platform on which the gateway is running.</p>
     pub fn host_environment(&self) -> std::option::Option<&crate::model::HostEnvironment> {
         self.host_environment.as_ref()
     }
@@ -5458,6 +5462,12 @@ impl DescribeGatewayInformationOutput {
         &self,
     ) -> std::option::Option<&[crate::model::GatewayCapacity]> {
         self.supported_gateway_capacities.as_deref()
+    }
+    /// <p>A unique identifier for the specific instance of the host platform running the gateway.
+    /// This value is only available for certain host environments, and its format depends on the
+    /// host environment type.</p>
+    pub fn host_environment_id(&self) -> std::option::Option<&str> {
+        self.host_environment_id.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeGatewayInformationOutput {
@@ -5492,6 +5502,7 @@ impl std::fmt::Debug for DescribeGatewayInformationOutput {
             "supported_gateway_capacities",
             &self.supported_gateway_capacities,
         );
+        formatter.field("host_environment_id", &self.host_environment_id);
         formatter.finish()
     }
 }
@@ -5523,6 +5534,7 @@ pub mod describe_gateway_information_output {
         pub(crate) gateway_capacity: std::option::Option<crate::model::GatewayCapacity>,
         pub(crate) supported_gateway_capacities:
             std::option::Option<std::vec::Vec<crate::model::GatewayCapacity>>,
+        pub(crate) host_environment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
@@ -5732,12 +5744,12 @@ pub mod describe_gateway_information_output {
             self.cloud_watch_log_group_arn = input;
             self
         }
-        /// <p>The type of hypervisor environment used by the host.</p>
+        /// <p>The type of hardware or software platform on which the gateway is running.</p>
         pub fn host_environment(mut self, input: crate::model::HostEnvironment) -> Self {
             self.host_environment = Some(input);
             self
         }
-        /// <p>The type of hypervisor environment used by the host.</p>
+        /// <p>The type of hardware or software platform on which the gateway is running.</p>
         pub fn set_host_environment(
             mut self,
             input: std::option::Option<crate::model::HostEnvironment>,
@@ -5829,6 +5841,23 @@ pub mod describe_gateway_information_output {
             self.supported_gateway_capacities = input;
             self
         }
+        /// <p>A unique identifier for the specific instance of the host platform running the gateway.
+        /// This value is only available for certain host environments, and its format depends on the
+        /// host environment type.</p>
+        pub fn host_environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_environment_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the specific instance of the host platform running the gateway.
+        /// This value is only available for certain host environments, and its format depends on the
+        /// host environment type.</p>
+        pub fn set_host_environment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.host_environment_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeGatewayInformationOutput`](crate::output::DescribeGatewayInformationOutput)
         pub fn build(self) -> crate::output::DescribeGatewayInformationOutput {
             crate::output::DescribeGatewayInformationOutput {
@@ -5852,6 +5881,7 @@ pub mod describe_gateway_information_output {
                 deprecation_date: self.deprecation_date,
                 gateway_capacity: self.gateway_capacity,
                 supported_gateway_capacities: self.supported_gateway_capacities,
+                host_environment_id: self.host_environment_id,
             }
         }
     }

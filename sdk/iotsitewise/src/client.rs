@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_iotsitewise::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -89,6 +89,15 @@ where
     /// operation and its arguments.
     pub fn associate_assets(&self) -> fluent_builders::AssociateAssets<C, M, R> {
         fluent_builders::AssociateAssets::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `AssociateTimeSeriesToAssetProperty` operation.
+    ///
+    /// See [`AssociateTimeSeriesToAssetProperty`](crate::client::fluent_builders::AssociateTimeSeriesToAssetProperty) for more information about the
+    /// operation and its arguments.
+    pub fn associate_time_series_to_asset_property(
+        &self,
+    ) -> fluent_builders::AssociateTimeSeriesToAssetProperty<C, M, R> {
+        fluent_builders::AssociateTimeSeriesToAssetProperty::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `BatchAssociateProjectAssets` operation.
     ///
@@ -215,6 +224,13 @@ where
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteTimeSeries` operation.
+    ///
+    /// See [`DeleteTimeSeries`](crate::client::fluent_builders::DeleteTimeSeries) for more information about the
+    /// operation and its arguments.
+    pub fn delete_time_series(&self) -> fluent_builders::DeleteTimeSeries<C, M, R> {
+        fluent_builders::DeleteTimeSeries::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeAccessPolicy` operation.
     ///
     /// See [`DescribeAccessPolicy`](crate::client::fluent_builders::DescribeAccessPolicy) for more information about the
@@ -305,12 +321,28 @@ where
     ) -> fluent_builders::DescribeStorageConfiguration<C, M, R> {
         fluent_builders::DescribeStorageConfiguration::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeTimeSeries` operation.
+    ///
+    /// See [`DescribeTimeSeries`](crate::client::fluent_builders::DescribeTimeSeries) for more information about the
+    /// operation and its arguments.
+    pub fn describe_time_series(&self) -> fluent_builders::DescribeTimeSeries<C, M, R> {
+        fluent_builders::DescribeTimeSeries::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DisassociateAssets` operation.
     ///
     /// See [`DisassociateAssets`](crate::client::fluent_builders::DisassociateAssets) for more information about the
     /// operation and its arguments.
     pub fn disassociate_assets(&self) -> fluent_builders::DisassociateAssets<C, M, R> {
         fluent_builders::DisassociateAssets::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DisassociateTimeSeriesFromAssetProperty` operation.
+    ///
+    /// See [`DisassociateTimeSeriesFromAssetProperty`](crate::client::fluent_builders::DisassociateTimeSeriesFromAssetProperty) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_time_series_from_asset_property(
+        &self,
+    ) -> fluent_builders::DisassociateTimeSeriesFromAssetProperty<C, M, R> {
+        fluent_builders::DisassociateTimeSeriesFromAssetProperty::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetAssetPropertyAggregates` operation.
     ///
@@ -422,6 +454,13 @@ where
     /// operation and its arguments.
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListTimeSeries` operation.
+    ///
+    /// See [`ListTimeSeries`](crate::client::fluent_builders::ListTimeSeries) for more information about the
+    /// operation and its arguments.
+    pub fn list_time_series(&self) -> fluent_builders::ListTimeSeries<C, M, R> {
+        fluent_builders::ListTimeSeries::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `PutDefaultEncryptionConfiguration` operation.
     ///
@@ -542,7 +581,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateAssets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -643,13 +682,115 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `AssociateTimeSeriesToAssetProperty`.
+    ///
+    /// <p>Associates a time series (data stream) with an asset property.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateTimeSeriesToAssetProperty<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_time_series_to_asset_property_input::Builder,
+    }
+    impl<C, M, R> AssociateTimeSeriesToAssetProperty<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateTimeSeriesToAssetProperty`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateTimeSeriesToAssetPropertyOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::AssociateTimeSeriesToAssetPropertyError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateTimeSeriesToAssetPropertyInputOperationOutputAlias,
+                crate::output::AssociateTimeSeriesToAssetPropertyOutput,
+                crate::error::AssociateTimeSeriesToAssetPropertyError,
+                crate::input::AssociateTimeSeriesToAssetPropertyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(inp);
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(inp);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_asset_id(input);
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(inp);
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_property_id(input);
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `BatchAssociateProjectAssets`.
     ///
     /// <p>Associates a group (batch) of assets with an IoT SiteWise Monitor project.</p>
     #[derive(std::fmt::Debug)]
     pub struct BatchAssociateProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -746,7 +887,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchDisassociateProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -867,7 +1008,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchPutAssetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -947,7 +1088,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1084,7 +1225,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateAsset<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1208,7 +1349,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateAssetModel<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1413,7 +1554,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDashboard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1563,7 +1704,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1679,7 +1820,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreatePortal<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1848,7 +1989,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-        /// user permissions. This option is only available in the China Regions.</p>
+        /// user permissions.</p>
         /// </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
@@ -1872,7 +2013,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-        /// user permissions. This option is only available in the China Regions.</p>
+        /// user permissions.</p>
         /// </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
@@ -1926,10 +2067,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProject`.
     ///
     /// <p>Creates a project in the specified portal.</p>
+    /// <note>
+    /// <p>Make sure that the project name and description don't contain confidential
+    /// information.</p>
+    /// </note>
     #[derive(std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2061,7 +2206,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2149,7 +2294,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteAsset<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2233,7 +2378,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteAssetModel<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2316,7 +2461,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDashboard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2397,7 +2542,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2467,7 +2612,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeletePortal<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2547,7 +2692,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2621,6 +2766,127 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteTimeSeries`.
+    ///
+    /// <p>Deletes a time series (data stream). If you delete a time series that's associated with an
+    /// asset property, the asset property still exists, but the time series will no longer be
+    /// associated with this asset property.</p>
+    /// <p>To identify a time series, do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the time series isn't associated with an asset property,
+    /// specify the <code>alias</code> of the time series.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the time series is associated with an asset property,
+    /// specify one of the following: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>alias</code> of the time series.</p>
+    /// </li>
+    /// <li>
+    /// <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteTimeSeries<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_time_series_input::Builder,
+    }
+    impl<C, M, R> DeleteTimeSeries<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteTimeSeries`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteTimeSeriesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteTimeSeriesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteTimeSeriesInputOperationOutputAlias,
+                crate::output::DeleteTimeSeriesOutput,
+                crate::error::DeleteTimeSeriesError,
+                crate::input::DeleteTimeSeriesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(inp);
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(inp);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_asset_id(input);
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(inp);
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_property_id(input);
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeAccessPolicy`.
     ///
     /// <p>Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or
@@ -2628,7 +2894,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2701,7 +2967,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAsset<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2771,7 +3037,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAssetModel<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2851,7 +3117,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2931,7 +3197,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDashboard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3003,7 +3269,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDefaultEncryptionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3065,7 +3331,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3139,7 +3405,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeGatewayCapabilityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3232,7 +3498,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3292,7 +3558,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePortal<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3362,7 +3628,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3432,7 +3698,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeStorageConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3486,6 +3752,115 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
     }
+    /// Fluent builder constructing a request to `DescribeTimeSeries`.
+    ///
+    /// <p>Retrieves information about a time series (data stream).</p>
+    /// <p>To identify a time series, do one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the time series isn't associated with an asset property,
+    /// specify the <code>alias</code> of the time series.</p>
+    /// </li>
+    /// <li>
+    /// <p>If the time series is associated with an asset property,
+    /// specify one of the following: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>alias</code> of the time series.</p>
+    /// </li>
+    /// <li>
+    /// <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// </ul>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeTimeSeries<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_time_series_input::Builder,
+    }
+    impl<C, M, R> DescribeTimeSeries<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeTimeSeries`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeTimeSeriesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeTimeSeriesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeTimeSeriesInputOperationOutputAlias,
+                crate::output::DescribeTimeSeriesOutput,
+                crate::error::DescribeTimeSeriesError,
+                crate::input::DescribeTimeSeriesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(inp);
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(inp);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_asset_id(input);
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(inp);
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_property_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DisassociateAssets`.
     ///
     /// <p>Disassociates a child asset from the given parent asset through a hierarchy defined in the
@@ -3493,7 +3868,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateAssets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3596,6 +3971,108 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateTimeSeriesFromAssetProperty`.
+    ///
+    /// <p>Disassociates a time series (data stream) from an asset property.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DisassociateTimeSeriesFromAssetProperty<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_time_series_from_asset_property_input::Builder,
+    }
+    impl<C, M, R> DisassociateTimeSeriesFromAssetProperty<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociateTimeSeriesFromAssetProperty`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateTimeSeriesFromAssetPropertyOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateTimeSeriesFromAssetPropertyError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociateTimeSeriesFromAssetPropertyInputOperationOutputAlias,
+                crate::output::DisassociateTimeSeriesFromAssetPropertyOutput,
+                crate::error::DisassociateTimeSeriesFromAssetPropertyError,
+                crate::input::DisassociateTimeSeriesFromAssetPropertyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(inp);
+            self
+        }
+        /// <p>The alias that identifies the time series.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(inp);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_asset_id(input);
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(inp);
+            self
+        }
+        /// <p>The ID of the asset property.</p>
+        pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_property_id(input);
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetAssetPropertyAggregates`.
     ///
     /// <p>Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
@@ -3613,7 +4090,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAssetPropertyAggregates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3832,7 +4309,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAssetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3942,7 +4419,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAssetPropertyValueHistory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4122,8 +4599,8 @@ pub mod fluent_builders {
     /// <p>Get interpolated values for an asset property for a specified time interval, during a
     /// period of time. If your time series is missing data points during the specified time interval,
     /// you can use interpolation to estimate the missing data.</p>
-    /// <p>For example, you can use this operation to return the interpolated
-    /// temperature values for a wind turbine every 24 hours over a duration of 7 days.</p>
+    /// <p>For example, you can use this operation to return the interpolated temperature values for
+    /// a wind turbine every 24 hours over a duration of 7 days.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
     /// <li>
@@ -4137,7 +4614,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetInterpolatedAssetPropertyValues<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4325,21 +4802,25 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p>
-        /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
-        /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value
-        /// on July 3, 2021, at 9 AM, and so on.</p>
+        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
+        /// interpolation</a>.</p>
+        /// <p>For example, you can use this operation to return the interpolated temperature values
+        /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
+        /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
+        /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p>
-        /// <p>If no data point is found for an interval,
-        /// IoT SiteWise returns the last observed data point for the previous interval
-        /// and carries forward this interpolated value until a new data point is found.</p>
-        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days.
-        /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021,
-        /// at 9 AM and July 2, 2021, at 9 AM as the first interpolated value.
-        /// If no data point is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
+        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
+        /// carried forward interpolation</p>
+        /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
+        /// for the previous interval and carries forward this interpolated value until a new data
+        /// point is found.</p>
+        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
+        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
+        /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
+        /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
+        /// same interpolated value for the rest of the days.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -4352,75 +4833,83 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p>
-        /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
-        /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value
-        /// on July 3, 2021, at 9 AM, and so on.</p>
+        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
+        /// interpolation</a>.</p>
+        /// <p>For example, you can use this operation to return the interpolated temperature values
+        /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
+        /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
+        /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p>
-        /// <p>If no data point is found for an interval,
-        /// IoT SiteWise returns the last observed data point for the previous interval
-        /// and carries forward this interpolated value until a new data point is found.</p>
-        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days.
-        /// If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021,
-        /// at 9 AM and July 2, 2021, at 9 AM as the first interpolated value.
-        /// If no data point is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
+        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
+        /// carried forward interpolation</p>
+        /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
+        /// for the previous interval and carries forward this interpolated value until a new data
+        /// point is found.</p>
+        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
+        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
+        /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
+        /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
+        /// same interpolated value for the rest of the days.</p>
         /// </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
-        /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
-        /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
+        /// using data points from the timestamp of each interval, minus the window to the timestamp of
+        /// each interval plus the window. If not specified, the window ranges between the start time
+        /// minus the interval and the end time plus the interval.</p>
         /// <note>
         /// <ul>
         /// <li>
-        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
-        /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
+        /// value for the <code>type</code> parameter must be
+        /// <code>LINEAR_INTERPOLATION</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If no data point is found during the specified query window,
-        /// IoT SiteWise won't return an interpolated value for the interval.
-        /// This indicates that there's a gap in the ingested data points.</p>
+        /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
+        /// interpolated value for the interval. This indicates that there's a gap in the ingested
+        /// data points.</p>
         /// </li>
         /// </ul>
         /// </note>
-        /// <p>For example, you can get the interpolated temperature values for a wind turbine
-        /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
-        /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-        /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
-        /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
-        /// to compute the second interpolated value, and so on. </p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
+        /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
+        /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
+        /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
+        /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
+        /// compute the second interpolated value, and so on. </p>
         pub fn interval_window_in_seconds(mut self, inp: i64) -> Self {
             self.inner = self.inner.interval_window_in_seconds(inp);
             self
         }
-        /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
-        /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
-        /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
+        /// using data points from the timestamp of each interval, minus the window to the timestamp of
+        /// each interval plus the window. If not specified, the window ranges between the start time
+        /// minus the interval and the end time plus the interval.</p>
         /// <note>
         /// <ul>
         /// <li>
-        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
-        /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
+        /// value for the <code>type</code> parameter must be
+        /// <code>LINEAR_INTERPOLATION</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If no data point is found during the specified query window,
-        /// IoT SiteWise won't return an interpolated value for the interval.
-        /// This indicates that there's a gap in the ingested data points.</p>
+        /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
+        /// interpolated value for the interval. This indicates that there's a gap in the ingested
+        /// data points.</p>
         /// </li>
         /// </ul>
         /// </note>
-        /// <p>For example, you can get the interpolated temperature values for a wind turbine
-        /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
-        /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-        /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
-        /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
-        /// to compute the second interpolated value, and so on. </p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
+        /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
+        /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
+        /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
+        /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
+        /// compute the second interpolated value, and so on. </p>
         pub fn set_interval_window_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_interval_window_in_seconds(input);
             self
@@ -4433,7 +4922,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAccessPolicies<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4583,7 +5072,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAssetModels<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4667,7 +5156,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAssetRelationships<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4800,7 +5289,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAssets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4949,7 +5438,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAssociatedAssets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5100,7 +5589,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDashboards<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5192,7 +5681,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5274,7 +5763,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListPortals<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5356,7 +5845,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5448,7 +5937,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5540,7 +6029,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5604,6 +6093,145 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTimeSeries`.
+    ///
+    /// <p>Retrieves a paginated list of time series (data streams).</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListTimeSeries<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_time_series_input::Builder,
+    }
+    impl<C, M, R> ListTimeSeries<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListTimeSeries`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTimeSeriesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTimeSeriesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListTimeSeriesInputOperationOutputAlias,
+                crate::output::ListTimeSeriesOutput,
+                crate::error::ListTimeSeriesError,
+                crate::input::ListTimeSeriesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(inp);
+            self
+        }
+        /// <p>The ID of the asset in which the asset property was created.</p>
+        pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_asset_id(input);
+            self
+        }
+        /// <p>The alias prefix of the time series.</p>
+        pub fn alias_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_prefix(inp);
+            self
+        }
+        /// <p>The alias prefix of the time series.</p>
+        pub fn set_alias_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias_prefix(input);
+            self
+        }
+        /// <p>The type of the time series. The time series type can be one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ASSOCIATED</code> – The time series is associated with an asset
+        /// property.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
+        /// property.</p>
+        /// </li>
+        /// </ul>
+        pub fn time_series_type(mut self, inp: crate::model::ListTimeSeriesType) -> Self {
+            self.inner = self.inner.time_series_type(inp);
+            self
+        }
+        /// <p>The type of the time series. The time series type can be one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ASSOCIATED</code> – The time series is associated with an asset
+        /// property.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
+        /// property.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_time_series_type(
+            mut self,
+            input: std::option::Option<crate::model::ListTimeSeriesType>,
+        ) -> Self {
+            self.inner = self.inner.set_time_series_type(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutDefaultEncryptionConfiguration`.
     ///
     /// <p>Sets the default encryption configuration for the Amazon Web Services account. For more information, see
@@ -5612,7 +6240,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutDefaultEncryptionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5678,14 +6306,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_type(input);
             self
         }
-        /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
-        /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
+        /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
-        /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
-        /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
+        /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -5697,7 +6325,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5770,7 +6398,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutStorageConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5823,30 +6451,36 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data.
+        /// The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+        /// The hot tier is a service-managed database.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
         pub fn storage_type(mut self, inp: crate::model::StorageType) -> Self {
             self.inner = self.inner.storage_type(inp);
             self
         }
-        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data.
+        /// The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
+        /// The hot tier is a service-managed database.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
+        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
         pub fn set_storage_type(
@@ -5871,6 +6505,67 @@ pub mod fluent_builders {
             self.inner = self.inner.set_multi_layer_storage(input);
             self
         }
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+        /// <important>
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn disassociated_data_storage(
+            mut self,
+            inp: crate::model::DisassociatedDataStorageState,
+        ) -> Self {
+            self.inner = self.inner.disassociated_data_storage(inp);
+            self
+        }
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
+        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
+        /// <important>
+        /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
+        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn set_disassociated_data_storage(
+            mut self,
+            input: std::option::Option<crate::model::DisassociatedDataStorageState>,
+        ) -> Self {
+            self.inner = self.inner.set_disassociated_data_storage(input);
+            self
+        }
+        /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(inp);
+            self
+        }
+        /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+        pub fn set_retention_period(
+            mut self,
+            input: std::option::Option<crate::model::RetentionPeriod>,
+        ) -> Self {
+            self.inner = self.inner.set_retention_period(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
@@ -5879,7 +6574,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5976,7 +6671,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6064,7 +6759,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6187,7 +6882,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAsset<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6289,7 +6984,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssetModel<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6483,7 +7178,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6616,7 +7311,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDashboard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6737,7 +7432,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6821,7 +7516,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateGatewayCapabilityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6929,7 +7624,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdatePortal<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7115,7 +7810,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7213,17 +7908,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -7232,7 +7931,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -7248,11 +7947,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

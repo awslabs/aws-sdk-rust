@@ -1,6 +1,6 @@
 # aws-sdk-opsworks
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Welcome to the _AWS OpsWorks Stacks API Reference_. This guide provides descriptions, syntax, and usage examples for AWS OpsWorks Stacks actions and data types, including common parameters and error codes.
@@ -52,8 +52,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-opsworks = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-opsworks = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

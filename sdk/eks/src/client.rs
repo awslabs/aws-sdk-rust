@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_eks::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -349,7 +349,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -456,7 +456,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateIdentityProviderConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -539,8 +539,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the configuration to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -550,8 +549,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata to apply to the configuration to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -589,7 +587,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateAddon<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -745,7 +743,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. </p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -755,7 +753,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. </p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -771,26 +769,26 @@ pub mod fluent_builders {
     /// <p>Creates an Amazon EKS control plane. </p>
     /// <p>The Amazon EKS control plane consists of control plane instances that run the Kubernetes
     /// software, such as <code>etcd</code> and the API server. The control plane runs in an
-    /// account managed by Amazon Web Services, and the Kubernetes API is exposed via the Amazon EKS API server
-    /// endpoint. Each Amazon EKS cluster control plane is single-tenant and unique and runs on its
+    /// account managed by Amazon Web Services, and the Kubernetes API is exposed by the Amazon EKS API server
+    /// endpoint. Each Amazon EKS cluster control plane is single tenant and unique. It runs on its
     /// own set of Amazon EC2 instances.</p>
     /// <p>The cluster control plane is provisioned across multiple Availability Zones and
     /// fronted by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic network interfaces in your VPC
     /// subnets to provide connectivity from the control plane instances to the nodes (for
     /// example, to support <code>kubectl exec</code>, <code>logs</code>, and <code>proxy</code>
     /// data flows).</p>
-    /// <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's control plane via
+    /// <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's control plane over
     /// the Kubernetes API server endpoint and a certificate file that is created for your
     /// cluster.</p>
     ///
-    /// <p>Cluster creation typically takes several minutes. After you create an Amazon EKS cluster,
+    /// <p>In most cases, it takes several minutes to create a cluster. After you create an Amazon EKS cluster,
     /// you must configure your Kubernetes tooling to communicate with the API server and launch
     /// nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
     /// Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -885,21 +883,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+        /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
         /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
         /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
         /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-        /// security groups, but we recommend that you use a dedicated security group for your
+        /// security groups. However, we recommend that you use a dedicated security group for your
         /// cluster control plane.</p>
         pub fn resources_vpc_config(mut self, inp: crate::model::VpcConfigRequest) -> Self {
             self.inner = self.inner.resources_vpc_config(inp);
             self
         }
-        /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+        /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have
         /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
         /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
         /// <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five
-        /// security groups, but we recommend that you use a dedicated security group for your
+        /// security groups. However, we recommend that you use a dedicated security group for your
         /// cluster control plane.</p>
         pub fn set_resources_vpc_config(
             mut self,
@@ -972,7 +970,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -982,7 +980,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1039,7 +1037,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFargateProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1198,8 +1196,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Fargate profile tags do not propagate to any other resources associated with the
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Fargate profile tags do not propagate to any other resources associated with the
         /// Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn tags(
             mut self,
@@ -1210,8 +1208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata to apply to the Fargate profile to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Fargate profile tags do not propagate to any other resources associated with the
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Fargate profile tags do not propagate to any other resources associated with the
         /// Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn set_tags(
             mut self,
@@ -1238,7 +1236,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateNodegroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1521,8 +1519,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the node group to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Node group tags do not propagate to any other resources associated with the node
+        /// organization. Each tag consists of a key and an optional value. You
+        /// define both. Node group tags do not propagate to any other resources associated with the node
         /// group, such as the Amazon EC2 instances or subnets.</p>
         pub fn tags(
             mut self,
@@ -1533,8 +1531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata to apply to the node group to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Node group tags do not propagate to any other resources associated with the node
+        /// organization. Each tag consists of a key and an optional value. You
+        /// define both. Node group tags do not propagate to any other resources associated with the node
         /// group, such as the Amazon EC2 instances or subnets.</p>
         pub fn set_tags(
             mut self,
@@ -1653,7 +1651,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteAddon<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1754,7 +1752,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1831,7 +1829,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFargateProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1914,7 +1912,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNodegroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1997,7 +1995,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2067,7 +2065,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAddon<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2151,7 +2149,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAddonVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2280,7 +2278,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2350,7 +2348,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFargateProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2433,7 +2431,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeIdentityProviderConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2519,7 +2517,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNodegroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2606,7 +2604,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUpdate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2716,7 +2714,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateIdentityProviderConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2819,7 +2817,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAddons<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2939,7 +2937,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3044,12 +3042,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
+        /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
         pub fn include(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.include(inp);
             self
         }
-        /// <p>Indicates whether connected clusters are included in the returned list. Default value is 'ALL'.</p>
+        /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3065,7 +3063,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListFargateProfiles<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3177,7 +3175,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListIdentityProviderConfigs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3292,7 +3290,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListNodegroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3402,7 +3400,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3475,7 +3473,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListUpdates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3617,7 +3615,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3748,7 +3746,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3843,7 +3841,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3932,7 +3930,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAddon<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4116,7 +4114,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateClusterConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4252,7 +4250,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateClusterVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4351,7 +4349,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateNodegroupConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4522,7 +4520,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateNodegroupVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4693,17 +4691,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4712,7 +4714,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -4728,11 +4730,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

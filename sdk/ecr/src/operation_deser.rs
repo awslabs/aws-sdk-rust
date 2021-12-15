@@ -278,6 +278,103 @@ pub fn parse_batch_get_image_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_repository_scanning_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetRepositoryScanningConfigurationOutput,
+    crate::error::BatchGetRepositoryScanningConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::BatchGetRepositoryScanningConfigurationError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::BatchGetRepositoryScanningConfigurationError { meta: generic, kind: crate::error::BatchGetRepositoryScanningConfigurationErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "RepositoryNotFoundException" => crate::error::BatchGetRepositoryScanningConfigurationError { meta: generic, kind: crate::error::BatchGetRepositoryScanningConfigurationErrorKind::RepositoryNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::repository_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_repository_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServerException" => crate::error::BatchGetRepositoryScanningConfigurationError { meta: generic, kind: crate::error::BatchGetRepositoryScanningConfigurationErrorKind::ServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::BatchGetRepositoryScanningConfigurationError { meta: generic, kind: crate::error::BatchGetRepositoryScanningConfigurationErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::BatchGetRepositoryScanningConfigurationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_repository_scanning_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetRepositoryScanningConfigurationOutput,
+    crate::error::BatchGetRepositoryScanningConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::batch_get_repository_scanning_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_batch_get_repository_scanning_configuration(response.body().as_ref(), output).map_err(crate::error::BatchGetRepositoryScanningConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_complete_layer_upload_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -475,6 +572,134 @@ pub fn parse_complete_layer_upload_response(
             output,
         )
         .map_err(crate::error::CompleteLayerUploadError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_pull_through_cache_rule_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreatePullThroughCacheRuleOutput,
+    crate::error::CreatePullThroughCacheRuleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreatePullThroughCacheRuleError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "LimitExceededException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PullThroughCacheRuleAlreadyExistsException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::PullThroughCacheRuleAlreadyExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::pull_through_cache_rule_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pull_through_cache_rule_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServerException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::ServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedUpstreamRegistryException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::UnsupportedUpstreamRegistryException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_upstream_registry_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_upstream_registry_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::CreatePullThroughCacheRuleError { meta: generic, kind: crate::error::CreatePullThroughCacheRuleErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreatePullThroughCacheRuleError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_pull_through_cache_rule_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreatePullThroughCacheRuleOutput,
+    crate::error::CreatePullThroughCacheRuleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_pull_through_cache_rule_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_pull_through_cache_rule(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreatePullThroughCacheRuleError::unhandled)?;
         output.build()
     })
 }
@@ -750,6 +975,106 @@ pub fn parse_delete_lifecycle_policy_response(
             output,
         )
         .map_err(crate::error::DeleteLifecyclePolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_pull_through_cache_rule_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeletePullThroughCacheRuleOutput,
+    crate::error::DeletePullThroughCacheRuleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeletePullThroughCacheRuleError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::DeletePullThroughCacheRuleError { meta: generic, kind: crate::error::DeletePullThroughCacheRuleErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PullThroughCacheRuleNotFoundException" => crate::error::DeletePullThroughCacheRuleError { meta: generic, kind: crate::error::DeletePullThroughCacheRuleErrorKind::PullThroughCacheRuleNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::pull_through_cache_rule_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pull_through_cache_rule_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServerException" => crate::error::DeletePullThroughCacheRuleError { meta: generic, kind: crate::error::DeletePullThroughCacheRuleErrorKind::ServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::DeletePullThroughCacheRuleError { meta: generic, kind: crate::error::DeletePullThroughCacheRuleErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeletePullThroughCacheRuleError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_pull_through_cache_rule_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeletePullThroughCacheRuleOutput,
+    crate::error::DeletePullThroughCacheRuleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_pull_through_cache_rule_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_delete_pull_through_cache_rule(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeletePullThroughCacheRuleError::unhandled)?;
         output.build()
     })
 }
@@ -1461,6 +1786,23 @@ pub fn parse_describe_image_scan_findings_error(
                 }),
             }
         }
+        "ValidationException" => crate::error::DescribeImageScanFindingsError {
+            meta: generic,
+            kind: crate::error::DescribeImageScanFindingsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageScanFindingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeImageScanFindingsError::generic(generic),
     })
 }
@@ -1481,6 +1823,108 @@ pub fn parse_describe_image_scan_findings_response(
             output,
         )
         .map_err(crate::error::DescribeImageScanFindingsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_pull_through_cache_rules_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribePullThroughCacheRulesOutput,
+    crate::error::DescribePullThroughCacheRulesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribePullThroughCacheRulesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::DescribePullThroughCacheRulesError { meta: generic, kind: crate::error::DescribePullThroughCacheRulesErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PullThroughCacheRuleNotFoundException" => crate::error::DescribePullThroughCacheRulesError { meta: generic, kind: crate::error::DescribePullThroughCacheRulesErrorKind::PullThroughCacheRuleNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::pull_through_cache_rule_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_pull_through_cache_rule_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServerException" => crate::error::DescribePullThroughCacheRulesError { meta: generic, kind: crate::error::DescribePullThroughCacheRulesErrorKind::ServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::DescribePullThroughCacheRulesError { meta: generic, kind: crate::error::DescribePullThroughCacheRulesErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribePullThroughCacheRulesError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_pull_through_cache_rules_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribePullThroughCacheRulesOutput,
+    crate::error::DescribePullThroughCacheRulesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_pull_through_cache_rules_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_pull_through_cache_rules(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribePullThroughCacheRulesError::unhandled)?;
         output.build()
     })
 }
@@ -2196,6 +2640,107 @@ pub fn parse_get_registry_policy_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_registry_scanning_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetRegistryScanningConfigurationOutput,
+    crate::error::GetRegistryScanningConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetRegistryScanningConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetRegistryScanningConfigurationError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::GetRegistryScanningConfigurationError {
+            meta: generic,
+            kind:
+                crate::error::GetRegistryScanningConfigurationErrorKind::InvalidParameterException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_parameter_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegistryScanningConfigurationError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ServerException" => {
+            crate::error::GetRegistryScanningConfigurationError {
+                meta: generic,
+                kind: crate::error::GetRegistryScanningConfigurationErrorKind::ServerException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegistryScanningConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ValidationException" => crate::error::GetRegistryScanningConfigurationError {
+            meta: generic,
+            kind: crate::error::GetRegistryScanningConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegistryScanningConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetRegistryScanningConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_registry_scanning_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetRegistryScanningConfigurationOutput,
+    crate::error::GetRegistryScanningConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_registry_scanning_configuration_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_registry_scanning_configuration(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetRegistryScanningConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_repository_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2898,6 +3443,23 @@ pub fn parse_put_image_scanning_configuration_error(
                 }),
             }
         }
+        "ValidationException" => crate::error::PutImageScanningConfigurationError {
+            meta: generic,
+            kind: crate::error::PutImageScanningConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutImageScanningConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutImageScanningConfigurationError::generic(generic),
     })
 }
@@ -3196,6 +3758,107 @@ pub fn parse_put_registry_policy_response(
             output,
         )
         .map_err(crate::error::PutRegistryPolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_registry_scanning_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutRegistryScanningConfigurationOutput,
+    crate::error::PutRegistryScanningConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutRegistryScanningConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::PutRegistryScanningConfigurationError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::PutRegistryScanningConfigurationError {
+            meta: generic,
+            kind:
+                crate::error::PutRegistryScanningConfigurationErrorKind::InvalidParameterException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_parameter_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRegistryScanningConfigurationError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ServerException" => {
+            crate::error::PutRegistryScanningConfigurationError {
+                meta: generic,
+                kind: crate::error::PutRegistryScanningConfigurationErrorKind::ServerException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRegistryScanningConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ValidationException" => crate::error::PutRegistryScanningConfigurationError {
+            meta: generic,
+            kind: crate::error::PutRegistryScanningConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRegistryScanningConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::PutRegistryScanningConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_registry_scanning_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutRegistryScanningConfigurationOutput,
+    crate::error::PutRegistryScanningConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::put_registry_scanning_configuration_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_put_registry_scanning_configuration(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::PutRegistryScanningConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -3502,6 +4165,23 @@ pub fn parse_start_image_scan_error(
                         crate::error::unsupported_image_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_image_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImageScanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::StartImageScanError {
+            meta: generic,
+            kind: crate::error::StartImageScanErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImageScanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

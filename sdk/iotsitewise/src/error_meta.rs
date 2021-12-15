@@ -84,6 +84,32 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::error::AssociateTimeSeriesToAssetPropertyError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::AssociateTimeSeriesToAssetPropertyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+                crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::AssociateTimeSeriesToAssetPropertyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchAssociateProjectAssetsError, R>>
     for Error
 where
@@ -572,6 +598,38 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTimeSeriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteTimeSeriesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteTimeSeriesErrorKind::ConflictingOperationException(inner) => {
+                    Error::ConflictingOperationException(inner)
+                }
+                crate::error::DeleteTimeSeriesErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::DeleteTimeSeriesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DeleteTimeSeriesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteTimeSeriesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteTimeSeriesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAccessPolicyError, R>>
     for Error
 where
@@ -897,6 +955,35 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTimeSeriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeTimeSeriesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeTimeSeriesErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::DescribeTimeSeriesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeTimeSeriesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeTimeSeriesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeTimeSeriesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateAssetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -925,6 +1012,35 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisassociateTimeSeriesFromAssetPropertyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisassociateTimeSeriesFromAssetPropertyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+                crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DisassociateTimeSeriesFromAssetPropertyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1322,6 +1438,31 @@ where
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTimeSeriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTimeSeriesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListTimeSeriesErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::ListTimeSeriesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListTimeSeriesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListTimeSeriesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListTimeSeriesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

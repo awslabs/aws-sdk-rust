@@ -1,6 +1,6 @@
 # aws-sdk-cloudwatchlogs
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, CloudTrail, and other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console, CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
@@ -21,8 +21,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-cloudwatchlogs = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-cloudwatchlogs = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

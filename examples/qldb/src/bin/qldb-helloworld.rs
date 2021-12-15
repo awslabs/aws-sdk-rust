@@ -4,8 +4,8 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use qldbsession::model::StartSessionRequest;
-use qldbsession::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_qldbsession::model::StartSessionRequest;
+use aws_sdk_qldbsession::{Client, Error, Region, PKG_VERSION};
 
 use structopt::StructOpt;
 

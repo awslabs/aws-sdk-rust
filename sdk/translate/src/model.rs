@@ -205,6 +205,142 @@ impl AsRef<str> for ParallelDataFormat {
     }
 }
 
+/// <p>Settings that configure the translation output.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TranslationSettings {
+    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and
+    /// phrases in your translation output.</p>
+    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string
+    /// “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the
+    /// length or number of words.</p>
+    /// <p>Amazon Translate does not detect profanity in all of its supported languages. For
+    /// languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported
+    /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+    pub profanity: std::option::Option<crate::model::Profanity>,
+}
+impl TranslationSettings {
+    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and
+    /// phrases in your translation output.</p>
+    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string
+    /// “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the
+    /// length or number of words.</p>
+    /// <p>Amazon Translate does not detect profanity in all of its supported languages. For
+    /// languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported
+    /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+    pub fn profanity(&self) -> std::option::Option<&crate::model::Profanity> {
+        self.profanity.as_ref()
+    }
+}
+impl std::fmt::Debug for TranslationSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TranslationSettings");
+        formatter.field("profanity", &self.profanity);
+        formatter.finish()
+    }
+}
+/// See [`TranslationSettings`](crate::model::TranslationSettings)
+pub mod translation_settings {
+    /// A builder for [`TranslationSettings`](crate::model::TranslationSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) profanity: std::option::Option<crate::model::Profanity>,
+    }
+    impl Builder {
+        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and
+        /// phrases in your translation output.</p>
+        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string
+        /// “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the
+        /// length or number of words.</p>
+        /// <p>Amazon Translate does not detect profanity in all of its supported languages. For
+        /// languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported
+        /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+        pub fn profanity(mut self, input: crate::model::Profanity) -> Self {
+            self.profanity = Some(input);
+            self
+        }
+        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and
+        /// phrases in your translation output.</p>
+        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string
+        /// “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the
+        /// length or number of words.</p>
+        /// <p>Amazon Translate does not detect profanity in all of its supported languages. For
+        /// languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported
+        /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+        pub fn set_profanity(
+            mut self,
+            input: std::option::Option<crate::model::Profanity>,
+        ) -> Self {
+            self.profanity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TranslationSettings`](crate::model::TranslationSettings)
+        pub fn build(self) -> crate::model::TranslationSettings {
+            crate::model::TranslationSettings {
+                profanity: self.profanity,
+            }
+        }
+    }
+}
+impl TranslationSettings {
+    /// Creates a new builder-style object to manufacture [`TranslationSettings`](crate::model::TranslationSettings)
+    pub fn builder() -> crate::model::translation_settings::Builder {
+        crate::model::translation_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Profanity {
+    #[allow(missing_docs)] // documentation missing in model
+    Mask,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Profanity {
+    fn from(s: &str) -> Self {
+        match s {
+            "MASK" => Profanity::Mask,
+            other => Profanity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Profanity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Profanity::from(s))
+    }
+}
+impl Profanity {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Profanity::Mask => "MASK",
+            Profanity::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["MASK"]
+    }
+}
+impl AsRef<str> for Profanity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The custom terminology applied to the input text by Amazon Translate for the translated text
 /// response. This is optional in the response and will only be present if you specified
 /// terminology input in the request. Currently, only one terminology can be applied per
@@ -542,19 +678,17 @@ impl OutputDataConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionKey {
-    /// <p>The type of encryption key used by Amazon Translate to encrypt custom terminologies.</p>
+    /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
     pub r#type: std::option::Option<crate::model::EncryptionKeyType>,
-    /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
-    /// terminology.</p>
+    /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl EncryptionKey {
-    /// <p>The type of encryption key used by Amazon Translate to encrypt custom terminologies.</p>
+    /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionKeyType> {
         self.r#type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
-    /// terminology.</p>
+    /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -577,12 +711,12 @@ pub mod encryption_key {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of encryption key used by Amazon Translate to encrypt custom terminologies.</p>
+        /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
         pub fn r#type(mut self, input: crate::model::EncryptionKeyType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of encryption key used by Amazon Translate to encrypt custom terminologies.</p>
+        /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionKeyType>,
@@ -590,14 +724,12 @@ pub mod encryption_key {
             self.r#type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
-        /// terminology.</p>
+        /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
-        /// terminology.</p>
+        /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -949,6 +1081,8 @@ pub struct TextTranslationJobProperties {
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
     /// that granted Amazon Translate read access to the job's input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>Settings that configure the translation output.</p>
+    pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl TextTranslationJobProperties {
     /// <p>The ID of the translation job.</p>
@@ -1014,6 +1148,10 @@ impl TextTranslationJobProperties {
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
+    /// <p>Settings that configure the translation output.</p>
+    pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
+        self.settings.as_ref()
+    }
 }
 impl std::fmt::Debug for TextTranslationJobProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1032,6 +1170,7 @@ impl std::fmt::Debug for TextTranslationJobProperties {
         formatter.field("input_data_config", &self.input_data_config);
         formatter.field("output_data_config", &self.output_data_config);
         formatter.field("data_access_role_arn", &self.data_access_role_arn);
+        formatter.field("settings", &self.settings);
         formatter.finish()
     }
 }
@@ -1055,6 +1194,7 @@ pub mod text_translation_job_properties {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) settings: std::option::Option<crate::model::TranslationSettings>,
     }
     impl Builder {
         /// <p>The ID of the translation job.</p>
@@ -1262,6 +1402,19 @@ pub mod text_translation_job_properties {
             self.data_access_role_arn = input;
             self
         }
+        /// <p>Settings that configure the translation output.</p>
+        pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
+            self.settings = Some(input);
+            self
+        }
+        /// <p>Settings that configure the translation output.</p>
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::TranslationSettings>,
+        ) -> Self {
+            self.settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties)
         pub fn build(self) -> crate::model::TextTranslationJobProperties {
             crate::model::TextTranslationJobProperties {
@@ -1279,6 +1432,7 @@ pub mod text_translation_job_properties {
                 input_data_config: self.input_data_config,
                 output_data_config: self.output_data_config,
                 data_access_role_arn: self.data_access_role_arn,
+                settings: self.settings,
             }
         }
     }
@@ -2462,7 +2616,19 @@ impl ParallelDataProperties {
 pub struct TerminologyDataLocation {
     /// <p>The repository type for the custom terminology data.</p>
     pub repository_type: std::option::Option<std::string::String>,
-    /// <p>The location of the custom terminology data.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was
+    /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
+    /// has a 30 minute expiration.</p>
+    ///
+    /// <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+    /// attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+    /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
+    /// file is opened in a spreadsheet program, the program might interpret the record as a formula
+    /// and run the code within it.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// </important>
     pub location: std::option::Option<std::string::String>,
 }
 impl TerminologyDataLocation {
@@ -2470,7 +2636,19 @@ impl TerminologyDataLocation {
     pub fn repository_type(&self) -> std::option::Option<&str> {
         self.repository_type.as_deref()
     }
-    /// <p>The location of the custom terminology data.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was
+    /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
+    /// has a 30 minute expiration.</p>
+    ///
+    /// <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+    /// attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+    /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
+    /// file is opened in a spreadsheet program, the program might interpret the record as a formula
+    /// and run the code within it.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// </important>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -2506,12 +2684,36 @@ pub mod terminology_data_location {
             self.repository_type = input;
             self
         }
-        /// <p>The location of the custom terminology data.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was
+        /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
+        /// has a 30 minute expiration.</p>
+        ///
+        /// <important>
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+        /// attacks. </p>
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+        /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
+        /// file is opened in a spreadsheet program, the program might interpret the record as a formula
+        /// and run the code within it.</p>
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// </important>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The location of the custom terminology data.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was
+        /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
+        /// has a 30 minute expiration.</p>
+        ///
+        /// <important>
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
+        /// attacks. </p>
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+        /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
+        /// file is opened in a spreadsheet program, the program might interpret the record as a formula
+        /// and run the code within it.</p>
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// </important>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2772,13 +2974,13 @@ pub struct ParallelDataDataLocation {
     /// presigned URL to that has a 30 minute expiration.</p>
     ///
     /// <important>
-    /// <p>Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
     /// attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
     /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
     /// file is opened in a spreadsheet program, the program might interpret the record as a formula
     /// and run the code within it.</p>
-    /// <p>Before you download a parallel data input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub location: std::option::Option<std::string::String>,
 }
@@ -2791,13 +2993,13 @@ impl ParallelDataDataLocation {
     /// presigned URL to that has a 30 minute expiration.</p>
     ///
     /// <important>
-    /// <p>Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
     /// attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
     /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
     /// file is opened in a spreadsheet program, the program might interpret the record as a formula
     /// and run the code within it.</p>
-    /// <p>Before you download a parallel data input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
@@ -2838,13 +3040,13 @@ pub mod parallel_data_data_location {
         /// presigned URL to that has a 30 minute expiration.</p>
         ///
         /// <important>
-        /// <p>Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
         /// attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
         /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
         /// file is opened in a spreadsheet program, the program might interpret the record as a formula
         /// and run the code within it.</p>
-        /// <p>Before you download a parallel data input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
         /// </important>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
@@ -2854,13 +3056,13 @@ pub mod parallel_data_data_location {
         /// presigned URL to that has a 30 minute expiration.</p>
         ///
         /// <important>
-        /// <p>Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
         /// attacks. </p>
         /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
         /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
         /// file is opened in a spreadsheet program, the program might interpret the record as a formula
         /// and run the code within it.</p>
-        /// <p>Before you download a parallel data input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+        /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
         /// </important>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;

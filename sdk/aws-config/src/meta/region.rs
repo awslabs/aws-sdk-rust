@@ -13,7 +13,7 @@ use tracing::Instrument;
 /// Load a region by selecting the first from a series of region providers.
 ///
 /// # Examples
-/// ```rust
+/// ```no_run
 /// use aws_types::region::Region;
 /// use std::env;
 /// use aws_config::meta::region::RegionProviderChain;

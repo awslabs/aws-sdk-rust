@@ -1,6 +1,6 @@
 # aws-sdk-iotfleethub
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications for monitoring the health of your device fleets.
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-iotfleethub = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-iotfleethub = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
