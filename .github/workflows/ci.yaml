@@ -49,7 +49,7 @@ jobs:
           # is merged into aws-sdk-rust.
           rm Cargo.toml
       - name: Cargo Test
-        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} cargo test --all-features
+        run: ./tools/ci/crate-range.py run ${{ matrix.crate_range }} -- cargo test --all-features
 
   # Psuedo-job that depends on the test job so that we don't have to enter
   # the myriad of test range combinations into GitHub's protected branch rules
