@@ -503,14 +503,14 @@ mod tests {
 
     fn format_test<F>(test_cases: &[TestCase], format: F)
     where
-        F: Fn(&DateTime) -> String,
+        F: Fn(&DateTime) -> Result<String, DateTimeFormatError>,
     {
         for test_case in test_cases {
             if let Some(expected) = test_case.smithy_format_value.as_ref() {
-                let actual = format(&test_case.time());
+                let actual = format(&test_case.time()).expect("failed to format");
                 assert_eq!(expected, &actual, "Additional context:\n{:#?}", test_case);
             } else {
-                // TODO: Expand testing to test error cases once formatting is refactored to be fallible
+                format(&test_case.time()).expect_err("date should fail to format");
             }
         }
     }
@@ -545,7 +545,9 @@ mod tests {
 
     #[test]
     fn format_epoch_seconds() {
-        format_test(&TEST_CASES.format_epoch_seconds, epoch_seconds::format);
+        format_test(&TEST_CASES.format_epoch_seconds, |dt| {
+            Ok(epoch_seconds::format(dt))
+        });
     }
 
     #[test]
@@ -555,10 +557,7 @@ mod tests {
 
     #[test]
     fn format_http_date() {
-        fn do_format(date_time: &DateTime) -> String {
-            http_date::format(date_time).unwrap()
-        }
-        format_test(&TEST_CASES.format_http_date, do_format);
+        format_test(&TEST_CASES.format_http_date, http_date::format);
     }
 
     #[test]
@@ -589,10 +588,7 @@ mod tests {
 
     #[test]
     fn format_date_time() {
-        fn do_format(date_time: &DateTime) -> String {
-            rfc3339::format(date_time).unwrap()
-        }
-        format_test(&TEST_CASES.format_date_time, do_format);
+        format_test(&TEST_CASES.format_date_time, rfc3339::format);
     }
 
     #[test]

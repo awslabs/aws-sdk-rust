@@ -766,7 +766,8 @@ pub mod credentials {
         #[tokio::test]
         async fn test_creation_of_retry_config_from_profile() {
             let env = Env::from_slice(&[("AWS_CONFIG_FILE", "config")]);
-            // TODO standard is the default mode; this test would be better if it was setting it to adaptive mode
+            // TODO(https://github.com/awslabs/aws-sdk-rust/issues/247): standard is the default mode;
+            // this test would be better if it was setting it to adaptive mode
             // adaptive mode is currently unsupported so that would panic
             let fs = Fs::from_slice(&[(
                 "config",
@@ -798,7 +799,8 @@ retry_mode = standard
                 ("AWS_MAX_ATTEMPTS", "42"),
                 ("AWS_RETRY_MODE", "standard"),
             ]);
-            // TODO standard is the default mode; this test would be better if it was setting it to adaptive mode
+            // TODO(https://github.com/awslabs/aws-sdk-rust/issues/247) standard is the default mode;
+            // this test would be better if it was setting it to adaptive mode
             // adaptive mode is currently unsupported so that would panic
             let fs = Fs::from_slice(&[(
                 "config",

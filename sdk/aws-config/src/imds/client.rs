@@ -517,7 +517,7 @@ impl Builder {
         self
     }
 
-    /* TODO: Support customizing the port explicitly */
+    /* TODO(https://github.com/awslabs/aws-sdk-rust/issues/339): Support customizing the port explicitly */
     /*
     pub fn port(mut self, port: u32) -> Self {
         self.port_override = Some(port);
