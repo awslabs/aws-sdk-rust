@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_backup::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -598,7 +598,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -696,6 +696,7 @@ pub mod fluent_builders {
         /// <p>Identifies the request and allows failed requests to be retried without the risk of
         /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
         /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(inp);
             self
@@ -703,6 +704,7 @@ pub mod fluent_builders {
         /// <p>Identifies the request and allows failed requests to be retried without the risk of
         /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
         /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -714,50 +716,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackupSelection`.
     ///
     /// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan.
-    /// Resources can be included by specifying patterns for a <code>ListOfTags</code> and selected
-    /// <code>Resources</code>. </p>
-    /// <p>For example, consider the following patterns:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Resources: "arn:aws:ec2:region:account-id:volume/volume-id"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ConditionKey:"department"</code>
-    /// </p>
-    /// <p>
-    /// <code>ConditionValue:"finance"</code>
-    /// </p>
-    /// <p>
-    /// <code>ConditionType:"StringEquals"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ConditionKey:"importance"</code>
-    /// </p>
-    /// <p>
-    /// <code>ConditionValue:"critical"</code>
-    /// </p>
-    /// <p>
-    /// <code>ConditionType:"StringEquals"</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS)
-    /// volumes that are tagged as <code>"department=finance"</code>,
-    /// <code>"importance=critical"</code>, in addition to an EBS volume with the specified
-    /// volume ID.</p>
-    /// <p>Resources and conditions are additive in that all resources that match the pattern are
-    /// selected. This shouldn't be confused with a logical AND, where all conditions must match.
-    /// The matching patterns are logically put together using the OR operator.
-    /// In other words, all patterns that match are selected for backup.</p>
+    /// For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning resources
+    /// programmatically</a>. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -839,13 +803,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(inp);
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -866,7 +832,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateBackupVault<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -977,13 +943,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(inp);
             self
         }
         /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.</p>
+        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1001,7 +969,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFramework<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1158,7 +1126,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateReportPlan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1338,7 +1306,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1412,7 +1380,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1498,7 +1466,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBackupVault<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1577,7 +1545,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBackupVaultAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1661,7 +1629,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBackupVaultLockConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1736,7 +1704,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteBackupVaultNotifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1813,7 +1781,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFramework<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1888,7 +1856,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1982,7 +1950,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteReportPlan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2055,7 +2023,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeBackupJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2128,7 +2096,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeBackupVault<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2207,7 +2175,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCopyJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2277,7 +2245,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFramework<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2353,7 +2321,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2415,7 +2383,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeProtectedResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2488,7 +2456,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2586,7 +2554,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRegionSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2647,7 +2615,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReportJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2722,7 +2690,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReportPlan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2795,7 +2763,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRestoreJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2871,7 +2839,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2959,7 +2927,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExportBackupPlanTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3033,7 +3001,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3118,7 +3086,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBackupPlanFromJSON<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3191,7 +3159,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBackupPlanFromTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3265,7 +3233,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3351,7 +3319,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBackupVaultAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3430,7 +3398,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetBackupVaultNotifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3509,7 +3477,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetRecoveryPointRestoreMetadata<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3603,7 +3571,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSupportedResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3664,7 +3632,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBackupJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3917,7 +3885,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBackupPlans<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4016,7 +3984,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBackupPlanTemplates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4103,7 +4071,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBackupPlanVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4203,7 +4171,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBackupSelections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4303,7 +4271,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListBackupVaults<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4389,7 +4357,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListCopyJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4632,7 +4600,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListFrameworks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4718,7 +4686,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListProtectedResources<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4804,7 +4772,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListRecoveryPointsByBackupVault<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4989,7 +4957,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListRecoveryPointsByResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5093,7 +5061,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListReportJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5241,7 +5209,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListReportPlans<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5326,7 +5294,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListRestoreJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5472,7 +5440,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5574,7 +5542,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBackupVaultAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5664,10 +5632,14 @@ pub mod fluent_builders {
     /// attempts to update the lifecycle policy that controls the retention period of any recovery
     /// point currently stored in a backup vault. If specified, Vault Lock enforces a minimum and
     /// maximum retention period for future backup and copy jobs that target a backup vault.</p>
+    /// <note>
+    /// <p>Backup Vault Lock has yet to receive a third-party assessment for SEC
+    /// 17a-4(f) and CFTC.</p>
+    /// </note>
     #[derive(std::fmt::Debug)]
     pub struct PutBackupVaultLockConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5842,7 +5814,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutBackupVaultNotifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5935,19 +5907,31 @@ pub mod fluent_builders {
         ///
         /// <p>An array of events that indicate the status of jobs to back up resources to the backup
         /// vault.</p>
-        /// <note>
+        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
+        /// track Backup events</a>.</p>
         /// <p>The following events are supported:</p>
+        /// <ul>
+        /// <li>
         /// <p>
-        /// <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p>
+        /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
+        /// </p>
+        /// </li>
+        /// <li>
         /// <p>
-        /// <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-        /// <code>COPY_JOB_FAILED</code>,</p>
+        /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+        /// <code>COPY_JOB_FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
         /// <p>
-        /// <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and
-        /// <code>RECOVERY_POINT_MODIFIED</code>.</p>
-        /// <p>To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
-        /// event metadata.</p>
-        /// <p>Other events in the following list are deprecated.</p>
+        /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+        /// <code>RECOVERY_POINT_MODIFIED</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Ignore the list below because it includes deprecated events. Refer to the list
+        /// above.</p>
         /// </note>
         pub fn backup_vault_events(
             mut self,
@@ -5958,19 +5942,31 @@ pub mod fluent_builders {
         }
         /// <p>An array of events that indicate the status of jobs to back up resources to the backup
         /// vault.</p>
-        /// <note>
+        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
+        /// track Backup events</a>.</p>
         /// <p>The following events are supported:</p>
+        /// <ul>
+        /// <li>
         /// <p>
-        /// <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p>
+        /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
+        /// </p>
+        /// </li>
+        /// <li>
         /// <p>
-        /// <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-        /// <code>COPY_JOB_FAILED</code>,</p>
+        /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+        /// <code>COPY_JOB_FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
         /// <p>
-        /// <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and
-        /// <code>RECOVERY_POINT_MODIFIED</code>.</p>
-        /// <p>To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
-        /// event metadata.</p>
-        /// <p>Other events in the following list are deprecated.</p>
+        /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+        /// <code>RECOVERY_POINT_MODIFIED</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Ignore the list below because it includes deprecated events. Refer to the list
+        /// above.</p>
         /// </note>
         pub fn set_backup_vault_events(
             mut self,
@@ -5986,7 +5982,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartBackupJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6220,7 +6216,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartCopyJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6385,7 +6381,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartReportJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6475,7 +6471,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartRestoreJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6773,7 +6769,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopBackupJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6847,7 +6843,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6917,7 +6913,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-        /// metadata to the resources you create.</p>
+        /// metadata to the resources you create. For clarity, this is the structure to assign tags:
+        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6927,7 +6924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-        /// metadata to the resources you create.</p>
+        /// metadata to the resources you create. For clarity, this is the structure to assign tags:
+        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6945,7 +6943,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7036,7 +7034,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7125,7 +7123,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateFramework<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7254,7 +7252,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7350,7 +7348,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateRecoveryPointLifecycle<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7474,7 +7472,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateRegionSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7548,6 +7546,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type_opt_in_preference(input);
             self
         }
+        /// Adds a key-value pair to `ResourceTypeManagementPreference`.
+        ///
+        /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
+        ///
+        /// <p>Enables or disables
+        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+        /// Backup's advanced DynamoDB backup features</a> for the
+        /// Region.</p>
+        pub fn resource_type_management_preference(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<bool>,
+        ) -> Self {
+            self.inner = self.inner.resource_type_management_preference(k, v);
+            self
+        }
+        /// <p>Enables or disables
+        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+        /// Backup's advanced DynamoDB backup features</a> for the
+        /// Region.</p>
+        pub fn set_resource_type_management_preference(
+            mut self,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type_management_preference(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateReportPlan`.
     ///
@@ -7556,7 +7581,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateReportPlan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7702,17 +7727,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -7721,7 +7750,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -7737,11 +7766,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

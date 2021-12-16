@@ -14,8 +14,7 @@ pub struct AssociateDRTLogBucketError {
 pub enum AssociateDRTLogBucketErrorKind {
     /// <p>In order to grant the necessary access to the Shield Response Team (SRT) the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
     AccessDeniedForDependencyException(crate::error::AccessDeniedForDependencyException),
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -192,8 +191,7 @@ pub struct AssociateDRTRoleError {
 pub enum AssociateDRTRoleErrorKind {
     /// <p>In order to grant the necessary access to the Shield Response Team (SRT) the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
     AccessDeniedForDependencyException(crate::error::AccessDeniedForDependencyException),
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -342,11 +340,12 @@ pub struct AssociateHealthCheckError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateHealthCheckErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
+    InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
     /// <p>Exception that indicates that the resource state has been modified by another
@@ -362,6 +361,7 @@ impl std::fmt::Display for AssociateHealthCheckError {
         match &self.kind {
             AssociateHealthCheckErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             AssociateHealthCheckErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            AssociateHealthCheckErrorKind::InvalidResourceException(_inner) => _inner.fmt(f),
             AssociateHealthCheckErrorKind::LimitsExceededException(_inner) => _inner.fmt(f),
             AssociateHealthCheckErrorKind::OptimisticLockException(_inner) => _inner.fmt(f),
             AssociateHealthCheckErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -435,6 +435,13 @@ impl AssociateHealthCheckError {
             AssociateHealthCheckErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `AssociateHealthCheckErrorKind::InvalidResourceException`.
+    pub fn is_invalid_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateHealthCheckErrorKind::InvalidResourceException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AssociateHealthCheckErrorKind::LimitsExceededException`.
     pub fn is_limits_exceeded_exception(&self) -> bool {
         matches!(
@@ -462,6 +469,7 @@ impl std::error::Error for AssociateHealthCheckError {
         match &self.kind {
             AssociateHealthCheckErrorKind::InternalErrorException(_inner) => Some(_inner),
             AssociateHealthCheckErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            AssociateHealthCheckErrorKind::InvalidResourceException(_inner) => Some(_inner),
             AssociateHealthCheckErrorKind::LimitsExceededException(_inner) => Some(_inner),
             AssociateHealthCheckErrorKind::OptimisticLockException(_inner) => Some(_inner),
             AssociateHealthCheckErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
@@ -483,8 +491,7 @@ pub struct AssociateProactiveEngagementDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateProactiveEngagementDetailsErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -649,8 +656,7 @@ pub struct CreateProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateProtectionErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -823,8 +829,7 @@ pub struct CreateProtectionGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateProtectionGroupErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -975,8 +980,7 @@ pub struct CreateSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSubscriptionErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -1082,8 +1086,7 @@ pub struct DeleteProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProtectionErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the resource state has been modified by another
     /// client. Retrieve the resource and then retry your request.</p>
@@ -1201,8 +1204,7 @@ pub struct DeleteProtectionGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProtectionGroupErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the resource state has been modified by another
     /// client. Retrieve the resource and then retry your request.</p>
@@ -1320,8 +1322,7 @@ pub struct DeleteSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSubscriptionErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>You are trying to update a subscription that has not yet completed the 1-year commitment. You can change the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception indicates that you are attempting to change <code>AutoRenew</code> prior to that period.</p>
     LockedSubscriptionException(crate::error::LockedSubscriptionException),
@@ -1440,8 +1441,7 @@ pub struct DescribeAttackError {
 pub enum DescribeAttackErrorKind {
     /// <p>Exception that indicates the specified <code>AttackId</code> does not exist, or the requester does not have the appropriate permissions to access the <code>AttackId</code>.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1545,8 +1545,7 @@ pub struct DescribeAttackStatisticsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAttackStatisticsErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1641,8 +1640,7 @@ pub struct DescribeDRTAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDRTAccessErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1748,8 +1746,7 @@ pub struct DescribeEmergencyContactSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEmergencyContactSettingsErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1866,8 +1863,7 @@ pub struct DescribeProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeProtectionErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1984,8 +1980,7 @@ pub struct DescribeProtectionGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeProtectionGroupErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2091,8 +2086,7 @@ pub struct DescribeSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSubscriptionErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2185,6 +2179,171 @@ impl std::error::Error for DescribeSubscriptionError {
     }
 }
 
+/// Error type for the `DisableApplicationLayerAutomaticResponse` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisableApplicationLayerAutomaticResponseError {
+    /// Kind of error that occurred.
+    pub kind: DisableApplicationLayerAutomaticResponseErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisableApplicationLayerAutomaticResponse` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisableApplicationLayerAutomaticResponseErrorKind {
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Exception that indicates that the resource state has been modified by another
+    /// client. Retrieve the resource and then retry your request.</p>
+    OptimisticLockException(crate::error::OptimisticLockException),
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisableApplicationLayerAutomaticResponseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisableApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisableApplicationLayerAutomaticResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisableApplicationLayerAutomaticResponseError {
+    fn code(&self) -> Option<&str> {
+        DisableApplicationLayerAutomaticResponseError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisableApplicationLayerAutomaticResponseError {
+    /// Creates a new `DisableApplicationLayerAutomaticResponseError`.
+    pub fn new(
+        kind: DisableApplicationLayerAutomaticResponseErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisableApplicationLayerAutomaticResponseError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisableApplicationLayerAutomaticResponseErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisableApplicationLayerAutomaticResponseError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisableApplicationLayerAutomaticResponseErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisableApplicationLayerAutomaticResponseErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException`.
+    pub fn is_optimistic_lock_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DisableApplicationLayerAutomaticResponseError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisableApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_inner) => {
+                Some(_inner)
+            }
+            DisableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(
+                _inner,
+            ) => Some(_inner),
+            DisableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(
+                _inner,
+            ) => Some(_inner),
+            DisableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_inner) => {
+                Some(_inner)
+            }
+            DisableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            DisableApplicationLayerAutomaticResponseErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DisableProactiveEngagement` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2198,8 +2357,7 @@ pub struct DisableProactiveEngagementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableProactiveEngagementErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -2341,8 +2499,7 @@ pub struct DisassociateDRTLogBucketError {
 pub enum DisassociateDRTLogBucketErrorKind {
     /// <p>In order to grant the necessary access to the Shield Response Team (SRT) the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
     AccessDeniedForDependencyException(crate::error::AccessDeniedForDependencyException),
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -2495,8 +2652,7 @@ pub struct DisassociateDRTRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateDRTRoleErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -2625,11 +2781,12 @@ pub struct DisassociateHealthCheckError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateHealthCheckErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
+    InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception that indicates that the resource state has been modified by another
     /// client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
@@ -2643,6 +2800,7 @@ impl std::fmt::Display for DisassociateHealthCheckError {
         match &self.kind {
             DisassociateHealthCheckErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DisassociateHealthCheckErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DisassociateHealthCheckErrorKind::InvalidResourceException(_inner) => _inner.fmt(f),
             DisassociateHealthCheckErrorKind::OptimisticLockException(_inner) => _inner.fmt(f),
             DisassociateHealthCheckErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DisassociateHealthCheckErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2715,6 +2873,13 @@ impl DisassociateHealthCheckError {
             DisassociateHealthCheckErrorKind::InvalidParameterException(_)
         )
     }
+    /// Returns `true` if the error kind is `DisassociateHealthCheckErrorKind::InvalidResourceException`.
+    pub fn is_invalid_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateHealthCheckErrorKind::InvalidResourceException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DisassociateHealthCheckErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
@@ -2735,9 +2900,190 @@ impl std::error::Error for DisassociateHealthCheckError {
         match &self.kind {
             DisassociateHealthCheckErrorKind::InternalErrorException(_inner) => Some(_inner),
             DisassociateHealthCheckErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DisassociateHealthCheckErrorKind::InvalidResourceException(_inner) => Some(_inner),
             DisassociateHealthCheckErrorKind::OptimisticLockException(_inner) => Some(_inner),
             DisassociateHealthCheckErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateHealthCheckErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `EnableApplicationLayerAutomaticResponse` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct EnableApplicationLayerAutomaticResponseError {
+    /// Kind of error that occurred.
+    pub kind: EnableApplicationLayerAutomaticResponseErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `EnableApplicationLayerAutomaticResponse` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum EnableApplicationLayerAutomaticResponseErrorKind {
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Exception that indicates that the operation would exceed a limit.</p>
+    LimitsExceededException(crate::error::LimitsExceededException),
+    /// <p>Exception that indicates that the resource state has been modified by another
+    /// client. Retrieve the resource and then retry your request.</p>
+    OptimisticLockException(crate::error::OptimisticLockException),
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for EnableApplicationLayerAutomaticResponseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            EnableApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::LimitsExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for EnableApplicationLayerAutomaticResponseError {
+    fn code(&self) -> Option<&str> {
+        EnableApplicationLayerAutomaticResponseError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl EnableApplicationLayerAutomaticResponseError {
+    /// Creates a new `EnableApplicationLayerAutomaticResponseError`.
+    pub fn new(
+        kind: EnableApplicationLayerAutomaticResponseErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `EnableApplicationLayerAutomaticResponseError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: EnableApplicationLayerAutomaticResponseErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `EnableApplicationLayerAutomaticResponseError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: EnableApplicationLayerAutomaticResponseErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `EnableApplicationLayerAutomaticResponseErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EnableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EnableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EnableApplicationLayerAutomaticResponseErrorKind::LimitsExceededException`.
+    pub fn is_limits_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableApplicationLayerAutomaticResponseErrorKind::LimitsExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EnableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException`.
+    pub fn is_optimistic_lock_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EnableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for EnableApplicationLayerAutomaticResponseError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            EnableApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_inner) => {
+                Some(_inner)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(_inner) => {
+                Some(_inner)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::LimitsExceededException(_inner) => {
+                Some(_inner)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_inner) => {
+                Some(_inner)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            EnableApplicationLayerAutomaticResponseErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -2755,8 +3101,7 @@ pub struct EnableProactiveEngagementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableProactiveEngagementErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -2896,8 +3241,7 @@ pub struct GetSubscriptionStateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSubscriptionStateErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2992,8 +3336,7 @@ pub struct ListAttacksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttacksErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -3107,10 +3450,9 @@ pub struct ListProtectionGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProtectionGroupsErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Exception that indicates that the NextToken specified in the request is invalid. Submit the request using the NextToken value that was returned in the response.</p>
+    /// <p>Exception that indicates that the <code>NextToken</code> specified in the request is invalid. Submit the request using the <code>NextToken</code> value that was returned in the prior response.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3225,10 +3567,9 @@ pub struct ListProtectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProtectionsErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Exception that indicates that the NextToken specified in the request is invalid. Submit the request using the NextToken value that was returned in the response.</p>
+    /// <p>Exception that indicates that the <code>NextToken</code> specified in the request is invalid. Submit the request using the <code>NextToken</code> value that was returned in the prior response.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3343,10 +3684,9 @@ pub struct ListResourcesInProtectionGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourcesInProtectionGroupErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Exception that indicates that the NextToken specified in the request is invalid. Submit the request using the NextToken value that was returned in the response.</p>
+    /// <p>Exception that indicates that the <code>NextToken</code> specified in the request is invalid. Submit the request using the <code>NextToken</code> value that was returned in the prior response.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3474,8 +3814,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
@@ -3592,8 +3931,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -3718,8 +4056,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -3834,6 +4171,171 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
+/// Error type for the `UpdateApplicationLayerAutomaticResponse` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateApplicationLayerAutomaticResponseError {
+    /// Kind of error that occurred.
+    pub kind: UpdateApplicationLayerAutomaticResponseErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateApplicationLayerAutomaticResponse` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateApplicationLayerAutomaticResponseErrorKind {
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
+    InternalErrorException(crate::error::InternalErrorException),
+    /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
+    InvalidOperationException(crate::error::InvalidOperationException),
+    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Exception that indicates that the resource state has been modified by another
+    /// client. Retrieve the resource and then retry your request.</p>
+    OptimisticLockException(crate::error::OptimisticLockException),
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateApplicationLayerAutomaticResponseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateApplicationLayerAutomaticResponseError {
+    fn code(&self) -> Option<&str> {
+        UpdateApplicationLayerAutomaticResponseError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateApplicationLayerAutomaticResponseError {
+    /// Creates a new `UpdateApplicationLayerAutomaticResponseError`.
+    pub fn new(
+        kind: UpdateApplicationLayerAutomaticResponseErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateApplicationLayerAutomaticResponseError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateApplicationLayerAutomaticResponseErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateApplicationLayerAutomaticResponseError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateApplicationLayerAutomaticResponseErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateApplicationLayerAutomaticResponseErrorKind::InternalErrorException`.
+    pub fn is_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateApplicationLayerAutomaticResponseErrorKind::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateApplicationLayerAutomaticResponseErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateApplicationLayerAutomaticResponseErrorKind::OptimisticLockException`.
+    pub fn is_optimistic_lock_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateApplicationLayerAutomaticResponseError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateApplicationLayerAutomaticResponseErrorKind::InternalErrorException(_inner) => {
+                Some(_inner)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::InvalidOperationException(_inner) => {
+                Some(_inner)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::OptimisticLockException(_inner) => {
+                Some(_inner)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateApplicationLayerAutomaticResponseErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `UpdateEmergencyContactSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3847,8 +4349,7 @@ pub struct UpdateEmergencyContactSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateEmergencyContactSettingsErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -3994,8 +4495,7 @@ pub struct UpdateProtectionGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateProtectionGroupErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -4124,8 +4624,7 @@ pub struct UpdateSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSubscriptionErrorKind {
-    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-    /// can retry the request.</p>
+    /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -4586,8 +5085,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>Exception that indicates that a problem occurred with the service infrastructure. You
-/// can retry the request.</p>
+/// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
@@ -4651,134 +5149,6 @@ impl InternalErrorException {
     }
 }
 
-/// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidResourceException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResourceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResourceException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InvalidResourceException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidResourceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidResourceException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidResourceException {}
-/// See [`InvalidResourceException`](crate::error::InvalidResourceException)
-pub mod invalid_resource_exception {
-    /// A builder for [`InvalidResourceException`](crate::error::InvalidResourceException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidResourceException`](crate::error::InvalidResourceException)
-        pub fn build(self) -> crate::error::InvalidResourceException {
-            crate::error::InvalidResourceException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidResourceException {
-    /// Creates a new builder-style object to manufacture [`InvalidResourceException`](crate::error::InvalidResourceException)
-    pub fn builder() -> crate::error::invalid_resource_exception::Builder {
-        crate::error::invalid_resource_exception::Builder::default()
-    }
-}
-
-/// <p>Exception that indicates that the NextToken specified in the request is invalid. Submit the request using the NextToken value that was returned in the response.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidPaginationTokenException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPaginationTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPaginationTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InvalidPaginationTokenException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidPaginationTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidPaginationTokenException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidPaginationTokenException {}
-/// See [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
-pub mod invalid_pagination_token_exception {
-    /// A builder for [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
-        pub fn build(self) -> crate::error::InvalidPaginationTokenException {
-            crate::error::InvalidPaginationTokenException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidPaginationTokenException {
-    /// Creates a new builder-style object to manufacture [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
-    pub fn builder() -> crate::error::invalid_pagination_token_exception::Builder {
-        crate::error::invalid_pagination_token_exception::Builder::default()
-    }
-}
-
 /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4802,8 +5172,8 @@ impl InvalidOperationException {
 impl std::fmt::Display for InvalidOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOperationException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -4843,6 +5213,238 @@ impl InvalidOperationException {
     }
 }
 
+/// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidResourceException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidResourceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidResourceException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidResourceException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidResourceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidResourceException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidResourceException {}
+/// See [`InvalidResourceException`](crate::error::InvalidResourceException)
+pub mod invalid_resource_exception {
+    /// A builder for [`InvalidResourceException`](crate::error::InvalidResourceException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidResourceException`](crate::error::InvalidResourceException)
+        pub fn build(self) -> crate::error::InvalidResourceException {
+            crate::error::InvalidResourceException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidResourceException {
+    /// Creates a new builder-style object to manufacture [`InvalidResourceException`](crate::error::InvalidResourceException)
+    pub fn builder() -> crate::error::invalid_resource_exception::Builder {
+        crate::error::invalid_resource_exception::Builder::default()
+    }
+}
+
+/// <p>Exception that indicates that the <code>NextToken</code> specified in the request is invalid. Submit the request using the <code>NextToken</code> value that was returned in the prior response.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidPaginationTokenException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidPaginationTokenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidPaginationTokenException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidPaginationTokenException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidPaginationTokenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidPaginationTokenException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidPaginationTokenException {}
+/// See [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
+pub mod invalid_pagination_token_exception {
+    /// A builder for [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
+        pub fn build(self) -> crate::error::InvalidPaginationTokenException {
+            crate::error::InvalidPaginationTokenException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidPaginationTokenException {
+    /// Creates a new builder-style object to manufacture [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException)
+    pub fn builder() -> crate::error::invalid_pagination_token_exception::Builder {
+        crate::error::invalid_pagination_token_exception::Builder::default()
+    }
+}
+
+/// <p>Exception that indicates that the operation would exceed a limit.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitsExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The type of limit that would be exceeded.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The threshold that would be exceeded.</p>
+    pub limit: i64,
+}
+impl LimitsExceededException {
+    /// <p>The type of limit that would be exceeded.</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The threshold that would be exceeded.</p>
+    pub fn limit(&self) -> i64 {
+        self.limit
+    }
+}
+impl std::fmt::Debug for LimitsExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LimitsExceededException");
+        formatter.field("message", &self.message);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("limit", &self.limit);
+        formatter.finish()
+    }
+}
+impl LimitsExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitsExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitsExceededException")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitsExceededException {}
+/// See [`LimitsExceededException`](crate::error::LimitsExceededException)
+pub mod limits_exceeded_exception {
+    /// A builder for [`LimitsExceededException`](crate::error::LimitsExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i64>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The type of limit that would be exceeded.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of limit that would be exceeded.</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The threshold that would be exceeded.</p>
+        pub fn limit(mut self, input: i64) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        /// <p>The threshold that would be exceeded.</p>
+        pub fn set_limit(mut self, input: std::option::Option<i64>) -> Self {
+            self.limit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitsExceededException`](crate::error::LimitsExceededException)
+        pub fn build(self) -> crate::error::LimitsExceededException {
+            crate::error::LimitsExceededException {
+                message: self.message,
+                r#type: self.r#type,
+                limit: self.limit.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl LimitsExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitsExceededException`](crate::error::LimitsExceededException)
+    pub fn builder() -> crate::error::limits_exceeded_exception::Builder {
+        crate::error::limits_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The ARN of the role that you specifed does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4866,8 +5468,8 @@ impl NoAssociatedRoleException {
 impl std::fmt::Display for NoAssociatedRoleException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoAssociatedRoleException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -4930,8 +5532,8 @@ impl AccessDeniedForDependencyException {
 impl std::fmt::Display for AccessDeniedForDependencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedForDependencyException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -4994,8 +5596,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -5067,8 +5669,8 @@ impl ResourceAlreadyExistsException {
 impl std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceAlreadyExistsException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -5120,109 +5722,5 @@ impl ResourceAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     pub fn builder() -> crate::error::resource_already_exists_exception::Builder {
         crate::error::resource_already_exists_exception::Builder::default()
-    }
-}
-
-/// <p>Exception that indicates that the operation would exceed a limit.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitsExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    /// <p>The type of limit that would be exceeded.</p>
-    pub r#type: std::option::Option<std::string::String>,
-    /// <p>The threshold that would be exceeded.</p>
-    pub limit: i64,
-}
-impl LimitsExceededException {
-    /// <p>The type of limit that would be exceeded.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
-        self.r#type.as_deref()
-    }
-    /// <p>The threshold that would be exceeded.</p>
-    pub fn limit(&self) -> i64 {
-        self.limit
-    }
-}
-impl std::fmt::Debug for LimitsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitsExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
-impl LimitsExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitsExceededException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitsExceededException {}
-/// See [`LimitsExceededException`](crate::error::LimitsExceededException)
-pub mod limits_exceeded_exception {
-    /// A builder for [`LimitsExceededException`](crate::error::LimitsExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) limit: std::option::Option<i64>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p>The type of limit that would be exceeded.</p>
-        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(input.into());
-            self
-        }
-        /// <p>The type of limit that would be exceeded.</p>
-        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// <p>The threshold that would be exceeded.</p>
-        pub fn limit(mut self, input: i64) -> Self {
-            self.limit = Some(input);
-            self
-        }
-        /// <p>The threshold that would be exceeded.</p>
-        pub fn set_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.limit = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LimitsExceededException`](crate::error::LimitsExceededException)
-        pub fn build(self) -> crate::error::LimitsExceededException {
-            crate::error::LimitsExceededException {
-                message: self.message,
-                r#type: self.r#type,
-                limit: self.limit.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl LimitsExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitsExceededException`](crate::error::LimitsExceededException)
-    pub fn builder() -> crate::error::limits_exceeded_exception::Builder {
-        crate::error::limits_exceeded_exception::Builder::default()
     }
 }

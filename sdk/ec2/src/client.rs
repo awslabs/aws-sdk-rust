@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_ec2::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -157,6 +157,13 @@ where
     /// operation and its arguments.
     pub fn allocate_hosts(&self) -> fluent_builders::AllocateHosts<C, M, R> {
         fluent_builders::AllocateHosts::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `AllocateIpamPoolCidr` operation.
+    ///
+    /// See [`AllocateIpamPoolCidr`](crate::client::fluent_builders::AllocateIpamPoolCidr) for more information about the
+    /// operation and its arguments.
+    pub fn allocate_ipam_pool_cidr(&self) -> fluent_builders::AllocateIpamPoolCidr<C, M, R> {
+        fluent_builders::AllocateIpamPoolCidr::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ApplySecurityGroupsToClientVpnTargetNetwork` operation.
     ///
@@ -578,6 +585,27 @@ where
     pub fn create_internet_gateway(&self) -> fluent_builders::CreateInternetGateway<C, M, R> {
         fluent_builders::CreateInternetGateway::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateIpam` operation.
+    ///
+    /// See [`CreateIpam`](crate::client::fluent_builders::CreateIpam) for more information about the
+    /// operation and its arguments.
+    pub fn create_ipam(&self) -> fluent_builders::CreateIpam<C, M, R> {
+        fluent_builders::CreateIpam::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateIpamPool` operation.
+    ///
+    /// See [`CreateIpamPool`](crate::client::fluent_builders::CreateIpamPool) for more information about the
+    /// operation and its arguments.
+    pub fn create_ipam_pool(&self) -> fluent_builders::CreateIpamPool<C, M, R> {
+        fluent_builders::CreateIpamPool::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateIpamScope` operation.
+    ///
+    /// See [`CreateIpamScope`](crate::client::fluent_builders::CreateIpamScope) for more information about the
+    /// operation and its arguments.
+    pub fn create_ipam_scope(&self) -> fluent_builders::CreateIpamScope<C, M, R> {
+        fluent_builders::CreateIpamScope::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateKeyPair` operation.
     ///
     /// See [`CreateKeyPair`](crate::client::fluent_builders::CreateKeyPair) for more information about the
@@ -645,6 +673,15 @@ where
     pub fn create_network_acl_entry(&self) -> fluent_builders::CreateNetworkAclEntry<C, M, R> {
         fluent_builders::CreateNetworkAclEntry::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateNetworkInsightsAccessScope` operation.
+    ///
+    /// See [`CreateNetworkInsightsAccessScope`](crate::client::fluent_builders::CreateNetworkInsightsAccessScope) for more information about the
+    /// operation and its arguments.
+    pub fn create_network_insights_access_scope(
+        &self,
+    ) -> fluent_builders::CreateNetworkInsightsAccessScope<C, M, R> {
+        fluent_builders::CreateNetworkInsightsAccessScope::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateNetworkInsightsPath` operation.
     ///
     /// See [`CreateNetworkInsightsPath`](crate::client::fluent_builders::CreateNetworkInsightsPath) for more information about the
@@ -676,6 +713,13 @@ where
     /// operation and its arguments.
     pub fn create_placement_group(&self) -> fluent_builders::CreatePlacementGroup<C, M, R> {
         fluent_builders::CreatePlacementGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreatePublicIpv4Pool` operation.
+    ///
+    /// See [`CreatePublicIpv4Pool`](crate::client::fluent_builders::CreatePublicIpv4Pool) for more information about the
+    /// operation and its arguments.
+    pub fn create_public_ipv4_pool(&self) -> fluent_builders::CreatePublicIpv4Pool<C, M, R> {
+        fluent_builders::CreatePublicIpv4Pool::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateReplaceRootVolumeTask` operation.
     ///
@@ -1043,6 +1087,27 @@ where
     pub fn delete_internet_gateway(&self) -> fluent_builders::DeleteInternetGateway<C, M, R> {
         fluent_builders::DeleteInternetGateway::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteIpam` operation.
+    ///
+    /// See [`DeleteIpam`](crate::client::fluent_builders::DeleteIpam) for more information about the
+    /// operation and its arguments.
+    pub fn delete_ipam(&self) -> fluent_builders::DeleteIpam<C, M, R> {
+        fluent_builders::DeleteIpam::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteIpamPool` operation.
+    ///
+    /// See [`DeleteIpamPool`](crate::client::fluent_builders::DeleteIpamPool) for more information about the
+    /// operation and its arguments.
+    pub fn delete_ipam_pool(&self) -> fluent_builders::DeleteIpamPool<C, M, R> {
+        fluent_builders::DeleteIpamPool::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteIpamScope` operation.
+    ///
+    /// See [`DeleteIpamScope`](crate::client::fluent_builders::DeleteIpamScope) for more information about the
+    /// operation and its arguments.
+    pub fn delete_ipam_scope(&self) -> fluent_builders::DeleteIpamScope<C, M, R> {
+        fluent_builders::DeleteIpamScope::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteKeyPair` operation.
     ///
     /// See [`DeleteKeyPair`](crate::client::fluent_builders::DeleteKeyPair) for more information about the
@@ -1110,6 +1175,24 @@ where
     pub fn delete_network_acl_entry(&self) -> fluent_builders::DeleteNetworkAclEntry<C, M, R> {
         fluent_builders::DeleteNetworkAclEntry::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteNetworkInsightsAccessScope` operation.
+    ///
+    /// See [`DeleteNetworkInsightsAccessScope`](crate::client::fluent_builders::DeleteNetworkInsightsAccessScope) for more information about the
+    /// operation and its arguments.
+    pub fn delete_network_insights_access_scope(
+        &self,
+    ) -> fluent_builders::DeleteNetworkInsightsAccessScope<C, M, R> {
+        fluent_builders::DeleteNetworkInsightsAccessScope::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteNetworkInsightsAccessScopeAnalysis` operation.
+    ///
+    /// See [`DeleteNetworkInsightsAccessScopeAnalysis`](crate::client::fluent_builders::DeleteNetworkInsightsAccessScopeAnalysis) for more information about the
+    /// operation and its arguments.
+    pub fn delete_network_insights_access_scope_analysis(
+        &self,
+    ) -> fluent_builders::DeleteNetworkInsightsAccessScopeAnalysis<C, M, R> {
+        fluent_builders::DeleteNetworkInsightsAccessScopeAnalysis::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteNetworkInsightsAnalysis` operation.
     ///
     /// See [`DeleteNetworkInsightsAnalysis`](crate::client::fluent_builders::DeleteNetworkInsightsAnalysis) for more information about the
@@ -1150,6 +1233,13 @@ where
     /// operation and its arguments.
     pub fn delete_placement_group(&self) -> fluent_builders::DeletePlacementGroup<C, M, R> {
         fluent_builders::DeletePlacementGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeletePublicIpv4Pool` operation.
+    ///
+    /// See [`DeletePublicIpv4Pool`](crate::client::fluent_builders::DeletePublicIpv4Pool) for more information about the
+    /// operation and its arguments.
+    pub fn delete_public_ipv4_pool(&self) -> fluent_builders::DeletePublicIpv4Pool<C, M, R> {
+        fluent_builders::DeletePublicIpv4Pool::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteQueuedReservedInstances` operation.
     ///
@@ -1412,6 +1502,22 @@ where
     /// operation and its arguments.
     pub fn deprovision_byoip_cidr(&self) -> fluent_builders::DeprovisionByoipCidr<C, M, R> {
         fluent_builders::DeprovisionByoipCidr::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeprovisionIpamPoolCidr` operation.
+    ///
+    /// See [`DeprovisionIpamPoolCidr`](crate::client::fluent_builders::DeprovisionIpamPoolCidr) for more information about the
+    /// operation and its arguments.
+    pub fn deprovision_ipam_pool_cidr(&self) -> fluent_builders::DeprovisionIpamPoolCidr<C, M, R> {
+        fluent_builders::DeprovisionIpamPoolCidr::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeprovisionPublicIpv4PoolCidr` operation.
+    ///
+    /// See [`DeprovisionPublicIpv4PoolCidr`](crate::client::fluent_builders::DeprovisionPublicIpv4PoolCidr) for more information about the
+    /// operation and its arguments.
+    pub fn deprovision_public_ipv4_pool_cidr(
+        &self,
+    ) -> fluent_builders::DeprovisionPublicIpv4PoolCidr<C, M, R> {
+        fluent_builders::DeprovisionPublicIpv4PoolCidr::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeregisterImage` operation.
     ///
@@ -1847,6 +1953,27 @@ where
     pub fn describe_internet_gateways(&self) -> fluent_builders::DescribeInternetGateways<C, M, R> {
         fluent_builders::DescribeInternetGateways::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeIpamPools` operation.
+    ///
+    /// See [`DescribeIpamPools`](crate::client::fluent_builders::DescribeIpamPools) for more information about the
+    /// operation and its arguments.
+    pub fn describe_ipam_pools(&self) -> fluent_builders::DescribeIpamPools<C, M, R> {
+        fluent_builders::DescribeIpamPools::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeIpams` operation.
+    ///
+    /// See [`DescribeIpams`](crate::client::fluent_builders::DescribeIpams) for more information about the
+    /// operation and its arguments.
+    pub fn describe_ipams(&self) -> fluent_builders::DescribeIpams<C, M, R> {
+        fluent_builders::DescribeIpams::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeIpamScopes` operation.
+    ///
+    /// See [`DescribeIpamScopes`](crate::client::fluent_builders::DescribeIpamScopes) for more information about the
+    /// operation and its arguments.
+    pub fn describe_ipam_scopes(&self) -> fluent_builders::DescribeIpamScopes<C, M, R> {
+        fluent_builders::DescribeIpamScopes::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeIpv6Pools` operation.
     ///
     /// See [`DescribeIpv6Pools`](crate::client::fluent_builders::DescribeIpv6Pools) for more information about the
@@ -1961,6 +2088,24 @@ where
     /// operation and its arguments.
     pub fn describe_network_acls(&self) -> fluent_builders::DescribeNetworkAcls<C, M, R> {
         fluent_builders::DescribeNetworkAcls::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeNetworkInsightsAccessScopeAnalyses` operation.
+    ///
+    /// See [`DescribeNetworkInsightsAccessScopeAnalyses`](crate::client::fluent_builders::DescribeNetworkInsightsAccessScopeAnalyses) for more information about the
+    /// operation and its arguments.
+    pub fn describe_network_insights_access_scope_analyses(
+        &self,
+    ) -> fluent_builders::DescribeNetworkInsightsAccessScopeAnalyses<C, M, R> {
+        fluent_builders::DescribeNetworkInsightsAccessScopeAnalyses::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeNetworkInsightsAccessScopes` operation.
+    ///
+    /// See [`DescribeNetworkInsightsAccessScopes`](crate::client::fluent_builders::DescribeNetworkInsightsAccessScopes) for more information about the
+    /// operation and its arguments.
+    pub fn describe_network_insights_access_scopes(
+        &self,
+    ) -> fluent_builders::DescribeNetworkInsightsAccessScopes<C, M, R> {
+        fluent_builders::DescribeNetworkInsightsAccessScopes::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeNetworkInsightsAnalyses` operation.
     ///
@@ -2154,6 +2299,15 @@ where
     /// operation and its arguments.
     pub fn describe_snapshots(&self) -> fluent_builders::DescribeSnapshots<C, M, R> {
         fluent_builders::DescribeSnapshots::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeSnapshotTierStatus` operation.
+    ///
+    /// See [`DescribeSnapshotTierStatus`](crate::client::fluent_builders::DescribeSnapshotTierStatus) for more information about the
+    /// operation and its arguments.
+    pub fn describe_snapshot_tier_status(
+        &self,
+    ) -> fluent_builders::DescribeSnapshotTierStatus<C, M, R> {
+        fluent_builders::DescribeSnapshotTierStatus::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeSpotDatafeedSubscription` operation.
     ///
@@ -2540,6 +2694,15 @@ where
     pub fn disable_image_deprecation(&self) -> fluent_builders::DisableImageDeprecation<C, M, R> {
         fluent_builders::DisableImageDeprecation::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DisableIpamOrganizationAdminAccount` operation.
+    ///
+    /// See [`DisableIpamOrganizationAdminAccount`](crate::client::fluent_builders::DisableIpamOrganizationAdminAccount) for more information about the
+    /// operation and its arguments.
+    pub fn disable_ipam_organization_admin_account(
+        &self,
+    ) -> fluent_builders::DisableIpamOrganizationAdminAccount<C, M, R> {
+        fluent_builders::DisableIpamOrganizationAdminAccount::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DisableSerialConsoleAccess` operation.
     ///
     /// See [`DisableSerialConsoleAccess`](crate::client::fluent_builders::DisableSerialConsoleAccess) for more information about the
@@ -2702,6 +2865,15 @@ where
     /// operation and its arguments.
     pub fn enable_image_deprecation(&self) -> fluent_builders::EnableImageDeprecation<C, M, R> {
         fluent_builders::EnableImageDeprecation::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `EnableIpamOrganizationAdminAccount` operation.
+    ///
+    /// See [`EnableIpamOrganizationAdminAccount`](crate::client::fluent_builders::EnableIpamOrganizationAdminAccount) for more information about the
+    /// operation and its arguments.
+    pub fn enable_ipam_organization_admin_account(
+        &self,
+    ) -> fluent_builders::EnableIpamOrganizationAdminAccount<C, M, R> {
+        fluent_builders::EnableIpamOrganizationAdminAccount::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `EnableSerialConsoleAccess` operation.
     ///
@@ -2896,6 +3068,34 @@ where
     ) -> fluent_builders::GetInstanceTypesFromInstanceRequirements<C, M, R> {
         fluent_builders::GetInstanceTypesFromInstanceRequirements::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetIpamAddressHistory` operation.
+    ///
+    /// See [`GetIpamAddressHistory`](crate::client::fluent_builders::GetIpamAddressHistory) for more information about the
+    /// operation and its arguments.
+    pub fn get_ipam_address_history(&self) -> fluent_builders::GetIpamAddressHistory<C, M, R> {
+        fluent_builders::GetIpamAddressHistory::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetIpamPoolAllocations` operation.
+    ///
+    /// See [`GetIpamPoolAllocations`](crate::client::fluent_builders::GetIpamPoolAllocations) for more information about the
+    /// operation and its arguments.
+    pub fn get_ipam_pool_allocations(&self) -> fluent_builders::GetIpamPoolAllocations<C, M, R> {
+        fluent_builders::GetIpamPoolAllocations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetIpamPoolCidrs` operation.
+    ///
+    /// See [`GetIpamPoolCidrs`](crate::client::fluent_builders::GetIpamPoolCidrs) for more information about the
+    /// operation and its arguments.
+    pub fn get_ipam_pool_cidrs(&self) -> fluent_builders::GetIpamPoolCidrs<C, M, R> {
+        fluent_builders::GetIpamPoolCidrs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetIpamResourceCidrs` operation.
+    ///
+    /// See [`GetIpamResourceCidrs`](crate::client::fluent_builders::GetIpamResourceCidrs) for more information about the
+    /// operation and its arguments.
+    pub fn get_ipam_resource_cidrs(&self) -> fluent_builders::GetIpamResourceCidrs<C, M, R> {
+        fluent_builders::GetIpamResourceCidrs::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetLaunchTemplateData` operation.
     ///
     /// See [`GetLaunchTemplateData`](crate::client::fluent_builders::GetLaunchTemplateData) for more information about the
@@ -2920,6 +3120,24 @@ where
         &self,
     ) -> fluent_builders::GetManagedPrefixListEntries<C, M, R> {
         fluent_builders::GetManagedPrefixListEntries::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetNetworkInsightsAccessScopeAnalysisFindings` operation.
+    ///
+    /// See [`GetNetworkInsightsAccessScopeAnalysisFindings`](crate::client::fluent_builders::GetNetworkInsightsAccessScopeAnalysisFindings) for more information about the
+    /// operation and its arguments.
+    pub fn get_network_insights_access_scope_analysis_findings(
+        &self,
+    ) -> fluent_builders::GetNetworkInsightsAccessScopeAnalysisFindings<C, M, R> {
+        fluent_builders::GetNetworkInsightsAccessScopeAnalysisFindings::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetNetworkInsightsAccessScopeContent` operation.
+    ///
+    /// See [`GetNetworkInsightsAccessScopeContent`](crate::client::fluent_builders::GetNetworkInsightsAccessScopeContent) for more information about the
+    /// operation and its arguments.
+    pub fn get_network_insights_access_scope_content(
+        &self,
+    ) -> fluent_builders::GetNetworkInsightsAccessScopeContent<C, M, R> {
+        fluent_builders::GetNetworkInsightsAccessScopeContent::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetPasswordData` operation.
     ///
@@ -3068,6 +3286,15 @@ where
     /// operation and its arguments.
     pub fn import_volume(&self) -> fluent_builders::ImportVolume<C, M, R> {
         fluent_builders::ImportVolume::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListSnapshotsInRecycleBin` operation.
+    ///
+    /// See [`ListSnapshotsInRecycleBin`](crate::client::fluent_builders::ListSnapshotsInRecycleBin) for more information about the
+    /// operation and its arguments.
+    pub fn list_snapshots_in_recycle_bin(
+        &self,
+    ) -> fluent_builders::ListSnapshotsInRecycleBin<C, M, R> {
+        fluent_builders::ListSnapshotsInRecycleBin::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ModifyAddressAttribute` operation.
     ///
@@ -3231,6 +3458,34 @@ where
     pub fn modify_instance_placement(&self) -> fluent_builders::ModifyInstancePlacement<C, M, R> {
         fluent_builders::ModifyInstancePlacement::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ModifyIpam` operation.
+    ///
+    /// See [`ModifyIpam`](crate::client::fluent_builders::ModifyIpam) for more information about the
+    /// operation and its arguments.
+    pub fn modify_ipam(&self) -> fluent_builders::ModifyIpam<C, M, R> {
+        fluent_builders::ModifyIpam::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ModifyIpamPool` operation.
+    ///
+    /// See [`ModifyIpamPool`](crate::client::fluent_builders::ModifyIpamPool) for more information about the
+    /// operation and its arguments.
+    pub fn modify_ipam_pool(&self) -> fluent_builders::ModifyIpamPool<C, M, R> {
+        fluent_builders::ModifyIpamPool::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ModifyIpamResourceCidr` operation.
+    ///
+    /// See [`ModifyIpamResourceCidr`](crate::client::fluent_builders::ModifyIpamResourceCidr) for more information about the
+    /// operation and its arguments.
+    pub fn modify_ipam_resource_cidr(&self) -> fluent_builders::ModifyIpamResourceCidr<C, M, R> {
+        fluent_builders::ModifyIpamResourceCidr::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ModifyIpamScope` operation.
+    ///
+    /// See [`ModifyIpamScope`](crate::client::fluent_builders::ModifyIpamScope) for more information about the
+    /// operation and its arguments.
+    pub fn modify_ipam_scope(&self) -> fluent_builders::ModifyIpamScope<C, M, R> {
+        fluent_builders::ModifyIpamScope::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ModifyLaunchTemplate` operation.
     ///
     /// See [`ModifyLaunchTemplate`](crate::client::fluent_builders::ModifyLaunchTemplate) for more information about the
@@ -3254,6 +3509,15 @@ where
     ) -> fluent_builders::ModifyNetworkInterfaceAttribute<C, M, R> {
         fluent_builders::ModifyNetworkInterfaceAttribute::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ModifyPrivateDnsNameOptions` operation.
+    ///
+    /// See [`ModifyPrivateDnsNameOptions`](crate::client::fluent_builders::ModifyPrivateDnsNameOptions) for more information about the
+    /// operation and its arguments.
+    pub fn modify_private_dns_name_options(
+        &self,
+    ) -> fluent_builders::ModifyPrivateDnsNameOptions<C, M, R> {
+        fluent_builders::ModifyPrivateDnsNameOptions::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ModifyReservedInstances` operation.
     ///
     /// See [`ModifyReservedInstances`](crate::client::fluent_builders::ModifyReservedInstances) for more information about the
@@ -3276,6 +3540,13 @@ where
     /// operation and its arguments.
     pub fn modify_snapshot_attribute(&self) -> fluent_builders::ModifySnapshotAttribute<C, M, R> {
         fluent_builders::ModifySnapshotAttribute::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ModifySnapshotTier` operation.
+    ///
+    /// See [`ModifySnapshotTier`](crate::client::fluent_builders::ModifySnapshotTier) for more information about the
+    /// operation and its arguments.
+    pub fn modify_snapshot_tier(&self) -> fluent_builders::ModifySnapshotTier<C, M, R> {
+        fluent_builders::ModifySnapshotTier::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ModifySpotFleetRequest` operation.
     ///
@@ -3460,12 +3731,35 @@ where
     pub fn move_address_to_vpc(&self) -> fluent_builders::MoveAddressToVpc<C, M, R> {
         fluent_builders::MoveAddressToVpc::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `MoveByoipCidrToIpam` operation.
+    ///
+    /// See [`MoveByoipCidrToIpam`](crate::client::fluent_builders::MoveByoipCidrToIpam) for more information about the
+    /// operation and its arguments.
+    pub fn move_byoip_cidr_to_ipam(&self) -> fluent_builders::MoveByoipCidrToIpam<C, M, R> {
+        fluent_builders::MoveByoipCidrToIpam::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ProvisionByoipCidr` operation.
     ///
     /// See [`ProvisionByoipCidr`](crate::client::fluent_builders::ProvisionByoipCidr) for more information about the
     /// operation and its arguments.
     pub fn provision_byoip_cidr(&self) -> fluent_builders::ProvisionByoipCidr<C, M, R> {
         fluent_builders::ProvisionByoipCidr::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ProvisionIpamPoolCidr` operation.
+    ///
+    /// See [`ProvisionIpamPoolCidr`](crate::client::fluent_builders::ProvisionIpamPoolCidr) for more information about the
+    /// operation and its arguments.
+    pub fn provision_ipam_pool_cidr(&self) -> fluent_builders::ProvisionIpamPoolCidr<C, M, R> {
+        fluent_builders::ProvisionIpamPoolCidr::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ProvisionPublicIpv4PoolCidr` operation.
+    ///
+    /// See [`ProvisionPublicIpv4PoolCidr`](crate::client::fluent_builders::ProvisionPublicIpv4PoolCidr) for more information about the
+    /// operation and its arguments.
+    pub fn provision_public_ipv4_pool_cidr(
+        &self,
+    ) -> fluent_builders::ProvisionPublicIpv4PoolCidr<C, M, R> {
+        fluent_builders::ProvisionPublicIpv4PoolCidr::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `PurchaseHostReservation` operation.
     ///
@@ -3591,6 +3885,15 @@ where
     /// operation and its arguments.
     pub fn release_hosts(&self) -> fluent_builders::ReleaseHosts<C, M, R> {
         fluent_builders::ReleaseHosts::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ReleaseIpamPoolAllocation` operation.
+    ///
+    /// See [`ReleaseIpamPoolAllocation`](crate::client::fluent_builders::ReleaseIpamPoolAllocation) for more information about the
+    /// operation and its arguments.
+    pub fn release_ipam_pool_allocation(
+        &self,
+    ) -> fluent_builders::ReleaseIpamPoolAllocation<C, M, R> {
+        fluent_builders::ReleaseIpamPoolAllocation::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ReplaceIamInstanceProfileAssociation` operation.
     ///
@@ -3732,6 +4035,22 @@ where
     ) -> fluent_builders::RestoreManagedPrefixListVersion<C, M, R> {
         fluent_builders::RestoreManagedPrefixListVersion::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `RestoreSnapshotFromRecycleBin` operation.
+    ///
+    /// See [`RestoreSnapshotFromRecycleBin`](crate::client::fluent_builders::RestoreSnapshotFromRecycleBin) for more information about the
+    /// operation and its arguments.
+    pub fn restore_snapshot_from_recycle_bin(
+        &self,
+    ) -> fluent_builders::RestoreSnapshotFromRecycleBin<C, M, R> {
+        fluent_builders::RestoreSnapshotFromRecycleBin::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `RestoreSnapshotTier` operation.
+    ///
+    /// See [`RestoreSnapshotTier`](crate::client::fluent_builders::RestoreSnapshotTier) for more information about the
+    /// operation and its arguments.
+    pub fn restore_snapshot_tier(&self) -> fluent_builders::RestoreSnapshotTier<C, M, R> {
+        fluent_builders::RestoreSnapshotTier::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `RevokeClientVpnIngress` operation.
     ///
     /// See [`RevokeClientVpnIngress`](crate::client::fluent_builders::RevokeClientVpnIngress) for more information about the
@@ -3811,6 +4130,15 @@ where
     /// operation and its arguments.
     pub fn start_instances(&self) -> fluent_builders::StartInstances<C, M, R> {
         fluent_builders::StartInstances::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StartNetworkInsightsAccessScopeAnalysis` operation.
+    ///
+    /// See [`StartNetworkInsightsAccessScopeAnalysis`](crate::client::fluent_builders::StartNetworkInsightsAccessScopeAnalysis) for more information about the
+    /// operation and its arguments.
+    pub fn start_network_insights_access_scope_analysis(
+        &self,
+    ) -> fluent_builders::StartNetworkInsightsAccessScopeAnalysis<C, M, R> {
+        fluent_builders::StartNetworkInsightsAccessScopeAnalysis::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `StartNetworkInsightsAnalysis` operation.
     ///
@@ -3916,7 +4244,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AcceptReservedInstancesExchangeQuote<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4033,7 +4361,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AcceptTransitGatewayMulticastDomainAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4150,7 +4478,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AcceptTransitGatewayPeeringAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4245,7 +4573,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AcceptTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4336,7 +4664,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AcceptVpcEndpointConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4442,7 +4770,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AcceptVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4541,7 +4869,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AdvertiseByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4639,7 +4967,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AllocateAddress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4816,7 +5144,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AllocateHosts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5027,6 +5355,194 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `AllocateIpamPoolCidr`.
+    ///
+    /// <p>Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from an IPAM pool to another resource or IPAM pool. For more information, see <a href="/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct AllocateIpamPoolCidr<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::allocate_ipam_pool_cidr_input::Builder,
+    }
+    impl<C, M, R> AllocateIpamPoolCidr<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AllocateIpamPoolCidr`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AllocateIpamPoolCidrOutput,
+            aws_smithy_http::result::SdkError<crate::error::AllocateIpamPoolCidrError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AllocateIpamPoolCidrInputOperationOutputAlias,
+                crate::output::AllocateIpamPoolCidrOutput,
+                crate::error::AllocateIpamPoolCidrError,
+                crate::input::AllocateIpamPoolCidrInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM pool from which you would like to allocate a CIDR.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM pool from which you would like to allocate a CIDR.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The CIDR you would like to allocate from the IPAM pool. Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Possible values: Any available IPv4 or IPv6 CIDR.</p>
+        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(inp);
+            self
+        }
+        /// <p>The CIDR you would like to allocate from the IPAM pool. Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Possible values: Any available IPv4 or IPv6 CIDR.</p>
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr(input);
+            self
+        }
+        /// <p>The netmask length of the CIDR you would like to allocate from the IPAM pool. Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
+        pub fn netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.netmask_length(inp);
+            self
+        }
+        /// <p>The netmask length of the CIDR you would like to allocate from the IPAM pool. Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
+        pub fn set_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_netmask_length(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>A description for the allocation.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>A description for the allocation.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>A preview of the next available CIDR in a pool.</p>
+        pub fn preview_next_cidr(mut self, inp: bool) -> Self {
+            self.inner = self.inner.preview_next_cidr(inp);
+            self
+        }
+        /// <p>A preview of the next available CIDR in a pool.</p>
+        pub fn set_preview_next_cidr(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_preview_next_cidr(input);
+            self
+        }
+        /// Appends an item to `DisallowedCidrs`.
+        ///
+        /// To override the contents of this collection use [`set_disallowed_cidrs`](Self::set_disallowed_cidrs).
+        ///
+        /// <p>Exclude a particular CIDR range from being returned by the pool.</p>
+        pub fn disallowed_cidrs(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disallowed_cidrs(inp);
+            self
+        }
+        /// <p>Exclude a particular CIDR range from being returned by the pool.</p>
+        pub fn set_disallowed_cidrs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_disallowed_cidrs(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ApplySecurityGroupsToClientVpnTargetNetwork`.
     ///
     /// <p>Applies a security group to the association between the target network and the Client VPN endpoint. This action replaces the existing
@@ -5034,7 +5550,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ApplySecurityGroupsToClientVpnTargetNetwork<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5158,7 +5674,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssignIpv6Addresses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5312,7 +5828,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssignPrivateIpAddresses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5478,7 +5994,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateAddress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5632,7 +6148,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateClientVpnTargetNetwork<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5738,7 +6254,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateDhcpOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5851,7 +6367,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateEnclaveCertificateIamRole<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5949,7 +6465,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateIamInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6038,7 +6554,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6147,7 +6663,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateRouteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6255,7 +6771,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateSubnetCidrBlock<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6342,7 +6858,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateTransitGatewayMulticastDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6468,7 +6984,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateTransitGatewayRouteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6581,7 +7097,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateTrunkInterface<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6723,7 +7239,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AssociateVpcCidrBlock<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6856,6 +7372,54 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ipv6_cidr_block(input);
             self
         }
+        /// <p>Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn ipv4_ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipv4_ipam_pool_id(inp);
+            self
+        }
+        /// <p>Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn set_ipv4_ipam_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv4_ipam_pool_id(input);
+            self
+        }
+        /// <p>The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </p>
+        pub fn ipv4_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.ipv4_netmask_length(inp);
+            self
+        }
+        /// <p>The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </p>
+        pub fn set_ipv4_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_ipv4_netmask_length(input);
+            self
+        }
+        /// <p>Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn ipv6_ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipv6_ipam_pool_id(inp);
+            self
+        }
+        /// <p>Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn set_ipv6_ipam_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv6_ipam_pool_id(input);
+            self
+        }
+        /// <p>The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+        pub fn ipv6_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.ipv6_netmask_length(inp);
+            self
+        }
+        /// <p>The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+        pub fn set_ipv6_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_ipv6_netmask_length(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `AttachClassicLinkVpc`.
     ///
@@ -6869,7 +7433,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AttachClassicLinkVpc<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6981,7 +7545,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AttachInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7078,7 +7642,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AttachNetworkInterface<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7223,7 +7787,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AttachVolume<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7332,7 +7896,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AttachVpnGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7433,7 +7997,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AuthorizeClientVpnIngress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7574,7 +8138,7 @@ pub mod fluent_builders {
     ///
     /// <p>[VPC only] Adds the specified outbound (egress) rules to a security group for use with a VPC.</p>
     /// <p>An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address
-    /// ranges, or to the instances that are associated with the specified destination security groups.</p>
+    /// ranges, or to the instances that are associated with the specified source security groups.</p>
     /// <p>You specify a protocol for each rule (for example, TCP).
     /// For the TCP and UDP protocols, you must also specify the destination port or port range.
     /// For the ICMP protocol, you must also specify the ICMP type and code.
@@ -7584,7 +8148,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AuthorizeSecurityGroupEgress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7792,7 +8356,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AuthorizeSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8044,7 +8608,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BundleInstance<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8144,7 +8708,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelBundleTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8233,7 +8797,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelCapacityReservation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8330,7 +8894,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelCapacityReservationFleets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8424,7 +8988,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelConversionTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8526,7 +9090,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelExportTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8599,7 +9163,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelImportTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8702,7 +9266,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelReservedInstancesListing<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8784,7 +9348,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelSpotFleetRequests<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8893,7 +9457,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelSpotInstanceRequests<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8988,7 +9552,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ConfirmProductInstance<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9082,7 +9646,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CopyFpgaImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9235,7 +9799,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CopyImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9488,7 +10052,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CopySnapshot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9791,7 +10355,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCapacityReservation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10149,7 +10713,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCapacityReservationFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10408,7 +10972,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCarrierGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10528,7 +11092,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateClientVpnEndpoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10859,7 +11423,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateClientVpnRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11057,7 +11621,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCustomerGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11217,7 +11781,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDefaultSubnet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11297,6 +11861,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
+        /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet
+        /// for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
+        pub fn ipv6_native(mut self, inp: bool) -> Self {
+            self.inner = self.inner.ipv6_native(inp);
+            self
+        }
+        /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet
+        /// for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
+        pub fn set_ipv6_native(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_ipv6_native(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateDefaultVpc`.
     ///
@@ -11315,7 +11891,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDefaultVpc<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11441,7 +12017,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDhcpOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11558,7 +12134,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateEgressOnlyInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11679,7 +12255,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12021,7 +12597,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFlowLogs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12332,7 +12908,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFpgaImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12494,7 +13070,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12716,7 +13292,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12918,7 +13494,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateInstanceExportTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13046,7 +13622,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13134,6 +13710,558 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateIpam`.
+    ///
+    /// <p>Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that you can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services Organization.</p>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateIpam<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_ipam_input::Builder,
+    }
+    impl<C, M, R> CreateIpam<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateIpam`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateIpamOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateIpamError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateIpamInputOperationOutputAlias,
+                crate::output::CreateIpamOutput,
+                crate::error::CreateIpamError,
+                crate::input::CreateIpamInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>A description for the IPAM.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>A description for the IPAM.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `OperatingRegions`.
+        ///
+        /// To override the contents of this collection use [`set_operating_regions`](Self::set_operating_regions).
+        ///
+        /// <p>The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
+        /// discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+        /// <p>For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </p>
+        pub fn operating_regions(
+            mut self,
+            inp: impl Into<crate::model::AddIpamOperatingRegion>,
+        ) -> Self {
+            self.inner = self.inner.operating_regions(inp);
+            self
+        }
+        /// <p>The operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
+        /// discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+        /// <p>For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </p>
+        pub fn set_operating_regions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AddIpamOperatingRegion>>,
+        ) -> Self {
+            self.inner = self.inner.set_operating_regions(input);
+            self
+        }
+        /// Appends an item to `TagSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+        ///
+        /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateIpamPool`.
+    ///
+    /// <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM, a pool is a collection of contiguous IP addresses CIDRs. Pools enable you to organize your IP addresses according to your routing and security needs. For example, if you have separate routing and security needs for development and production applications, you can create a pool for each.</p>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateIpamPool<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_ipam_pool_input::Builder,
+    }
+    impl<C, M, R> CreateIpamPool<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateIpamPool`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateIpamPoolOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateIpamPoolError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateIpamPoolInputOperationOutputAlias,
+                crate::output::CreateIpamPoolOutput,
+                crate::error::CreateIpamPoolError,
+                crate::input::CreateIpamPoolInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the scope in which you would like to create the IPAM pool.</p>
+        pub fn ipam_scope_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the scope in which you would like to create the IPAM pool.</p>
+        pub fn set_ipam_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_scope_id(input);
+            self
+        }
+        /// <p>In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM pool available for allocations. Only resources in the same Region as the locale of the pool can get IP address allocations from the pool. You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you cannot modify it. If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
+        /// <p>Possible values: Any Amazon Web Services Region, such as us-east-1.</p>
+        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(inp);
+            self
+        }
+        /// <p>In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM pool available for allocations. Only resources in the same Region as the locale of the pool can get IP address allocations from the pool. You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you cannot modify it. If you do not choose a locale, resources in Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
+        /// <p>Possible values: Any Amazon Web Services Region, such as us-east-1.</p>
+        pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale(input);
+            self
+        }
+        /// <p>The ID of the source IPAM pool. Use this option to create a pool within an existing pool. Note that the CIDR you provision for the pool within the source pool must be available in the source pool's CIDR range.</p>
+        pub fn source_ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the source IPAM pool. Use this option to create a pool within an existing pool. Note that the CIDR you provision for the pool within the source pool must be available in the source pool's CIDR range.</p>
+        pub fn set_source_ipam_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_ipam_pool_id(input);
+            self
+        }
+        /// <p>A description for the IPAM pool.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>A description for the IPAM pool.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The IP protocol assigned to this IPAM pool. You must choose either IPv4 or IPv6 protocol for a pool.</p>
+        pub fn address_family(mut self, inp: crate::model::AddressFamily) -> Self {
+            self.inner = self.inner.address_family(inp);
+            self
+        }
+        /// <p>The IP protocol assigned to this IPAM pool. You must choose either IPv4 or IPv6 protocol for a pool.</p>
+        pub fn set_address_family(
+            mut self,
+            input: std::option::Option<crate::model::AddressFamily>,
+        ) -> Self {
+            self.inner = self.inner.set_address_family(input);
+            self
+        }
+        /// <p>If selected, IPAM will continuously look for resources within the CIDR range of this pool
+        /// and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for
+        /// these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import
+        /// a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently
+        /// marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM
+        /// discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only.
+        /// </p>
+        /// <p>A locale must be set on the pool for this feature to work.</p>
+        pub fn auto_import(mut self, inp: bool) -> Self {
+            self.inner = self.inner.auto_import(inp);
+            self
+        }
+        /// <p>If selected, IPAM will continuously look for resources within the CIDR range of this pool
+        /// and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for
+        /// these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import
+        /// a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently
+        /// marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM
+        /// discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only.
+        /// </p>
+        /// <p>A locale must be set on the pool for this feature to work.</p>
+        pub fn set_auto_import(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_import(input);
+            self
+        }
+        /// <p>Determines if the pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
+        pub fn publicly_advertisable(mut self, inp: bool) -> Self {
+            self.inner = self.inner.publicly_advertisable(inp);
+            self
+        }
+        /// <p>Determines if the pool is publicly advertisable. This option is not available for pools with AddressFamily set to <code>ipv4</code>.</p>
+        pub fn set_publicly_advertisable(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_publicly_advertisable(input);
+            self
+        }
+        /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. The minimum netmask length must be
+        /// less than the maximum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are  0 - 128.</p>
+        pub fn allocation_min_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.allocation_min_netmask_length(inp);
+            self
+        }
+        /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. The minimum netmask length must be
+        /// less than the maximum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are  0 - 128.</p>
+        pub fn set_allocation_min_netmask_length(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_allocation_min_netmask_length(input);
+            self
+        }
+        /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. The maximum netmask length must be
+        /// greater than the minimum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are  0 - 128.</p>
+        pub fn allocation_max_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.allocation_max_netmask_length(inp);
+            self
+        }
+        /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. The maximum netmask length must be
+        /// greater than the minimum netmask length. Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are  0 - 128.</p>
+        pub fn set_allocation_max_netmask_length(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_allocation_max_netmask_length(input);
+            self
+        }
+        /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here,
+        /// new allocations will default to 10.0.0.0/16.</p>
+        pub fn allocation_default_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.allocation_default_netmask_length(inp);
+            self
+        }
+        /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here,
+        /// new allocations will default to 10.0.0.0/16.</p>
+        pub fn set_allocation_default_netmask_length(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_allocation_default_netmask_length(input);
+            self
+        }
+        /// Appends an item to `AllocationResourceTags`.
+        ///
+        /// To override the contents of this collection use [`set_allocation_resource_tags`](Self::set_allocation_resource_tags).
+        ///
+        /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
+        pub fn allocation_resource_tags(
+            mut self,
+            inp: impl Into<crate::model::RequestIpamResourceTag>,
+        ) -> Self {
+            self.inner = self.inner.allocation_resource_tags(inp);
+            self
+        }
+        /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
+        pub fn set_allocation_resource_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RequestIpamResourceTag>>,
+        ) -> Self {
+            self.inner = self.inner.set_allocation_resource_tags(input);
+            self
+        }
+        /// Appends an item to `TagSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+        ///
+        /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
+        pub fn aws_service(mut self, inp: crate::model::IpamPoolAwsService) -> Self {
+            self.inner = self.inner.aws_service(inp);
+            self
+        }
+        /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
+        pub fn set_aws_service(
+            mut self,
+            input: std::option::Option<crate::model::IpamPoolAwsService>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_service(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateIpamScope`.
+    ///
+    /// <p>Create an IPAM scope. In IPAM, a scope is the highest-level container within IPAM. An IPAM contains two default scopes. Each scope represents the IP space for a single network. The private scope is intended for all private IP address space. The public scope is intended for all public IP address space. Scopes enable you to reuse IP addresses across multiple unconnected networks without causing IP address overlap or conflict.</p>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/add-scope-ipam.html">Add a scope</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateIpamScope<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_ipam_scope_input::Builder,
+    }
+    impl<C, M, R> CreateIpamScope<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateIpamScope`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateIpamScopeOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateIpamScopeError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateIpamScopeInputOperationOutputAlias,
+                crate::output::CreateIpamScopeOutput,
+                crate::error::CreateIpamScopeError,
+                crate::input::CreateIpamScopeInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM for which you're creating this scope.</p>
+        pub fn ipam_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM for which you're creating this scope.</p>
+        pub fn set_ipam_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_id(input);
+            self
+        }
+        /// <p>A description for the scope you're creating.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>A description for the scope you're creating.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `TagSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+        ///
+        /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateKeyPair`.
     ///
     /// <p>Creates an ED25519 or 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
@@ -13149,7 +14277,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateKeyPair<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13273,7 +14401,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateLaunchTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13432,7 +14560,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateLaunchTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13604,7 +14732,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateLocalGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13724,7 +14852,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateLocalGatewayRouteTableVpcAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13844,7 +14972,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateManagedPrefixList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14022,7 +15150,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateNatGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14176,7 +15304,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateNetworkAcl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14287,7 +15415,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateNetworkAclEntry<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14480,6 +15608,152 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateNetworkInsightsAccessScope`.
+    ///
+    /// <p>Creates a Network Access Scope.</p>
+    /// <p>Amazon Web Services Network Access Analyzer enables cloud networking and cloud operations teams
+    /// to verify that their networks on Amazon Web Services conform to their network security and governance
+    /// objectives. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/">Amazon Web Services Network Access Analyzer Guide</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateNetworkInsightsAccessScope<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_network_insights_access_scope_input::Builder,
+    }
+    impl<C, M, R> CreateNetworkInsightsAccessScope<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateNetworkInsightsAccessScope`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateNetworkInsightsAccessScopeOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateNetworkInsightsAccessScopeError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateNetworkInsightsAccessScopeInputOperationOutputAlias,
+                crate::output::CreateNetworkInsightsAccessScopeOutput,
+                crate::error::CreateNetworkInsightsAccessScopeError,
+                crate::input::CreateNetworkInsightsAccessScopeInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `MatchPaths`.
+        ///
+        /// To override the contents of this collection use [`set_match_paths`](Self::set_match_paths).
+        ///
+        /// <p>The paths to match.</p>
+        pub fn match_paths(mut self, inp: impl Into<crate::model::AccessScopePathRequest>) -> Self {
+            self.inner = self.inner.match_paths(inp);
+            self
+        }
+        /// <p>The paths to match.</p>
+        pub fn set_match_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AccessScopePathRequest>>,
+        ) -> Self {
+            self.inner = self.inner.set_match_paths(input);
+            self
+        }
+        /// Appends an item to `ExcludePaths`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_paths`](Self::set_exclude_paths).
+        ///
+        /// <p>The paths to exclude.</p>
+        pub fn exclude_paths(
+            mut self,
+            inp: impl Into<crate::model::AccessScopePathRequest>,
+        ) -> Self {
+            self.inner = self.inner.exclude_paths(inp);
+            self
+        }
+        /// <p>The paths to exclude.</p>
+        pub fn set_exclude_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AccessScopePathRequest>>,
+        ) -> Self {
+            self.inner = self.inner.set_exclude_paths(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// Appends an item to `TagSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+        ///
+        /// <p>The tags to apply.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        /// <p>The tags to apply.</p>
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateNetworkInsightsPath`.
     ///
     /// <p>Creates a path to analyze for reachability.</p>
@@ -14489,7 +15763,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateNetworkInsightsPath<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14660,7 +15934,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateNetworkInterface<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14985,7 +16259,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateNetworkInterfacePermission<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15117,7 +16391,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreatePlacementGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15244,6 +16518,102 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreatePublicIpv4Pool`.
+    ///
+    /// <p>Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address pool required for the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools only. To monitor the status of pool creation, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html">DescribePublicIpv4Pools</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreatePublicIpv4Pool<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_public_ipv4_pool_input::Builder,
+    }
+    impl<C, M, R> CreatePublicIpv4Pool<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreatePublicIpv4Pool`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreatePublicIpv4PoolOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreatePublicIpv4PoolError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreatePublicIpv4PoolInputOperationOutputAlias,
+                crate::output::CreatePublicIpv4PoolOutput,
+                crate::error::CreatePublicIpv4PoolError,
+                crate::input::CreatePublicIpv4PoolInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// Appends an item to `TagSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+        ///
+        /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
+        /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateReplaceRootVolumeTask`.
     ///
     /// <p>Creates a root volume replacement task for an Amazon EC2 instance. The root volume
@@ -15254,7 +16624,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateReplaceRootVolumeTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15399,7 +16769,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateReservedInstancesListing<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15521,7 +16891,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateRestoreImageTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15691,7 +17061,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -15941,12 +17311,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_peering_connection_id(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the core network.</p>
         pub fn core_network_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_network_arn(inp);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the core network.</p>
         pub fn set_core_network_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15963,7 +17333,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateRouteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16081,7 +17451,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16246,7 +17616,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16415,7 +17785,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSnapshots<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16598,7 +17968,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSpotDatafeedSubscription<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16702,7 +18072,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateStoreImageTask<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16834,7 +18204,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSubnet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -16947,24 +18317,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone_id(input);
             self
         }
-        /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+        /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+        /// We modify the specified CIDR block to its canonical form; for example, if you specify
+        /// <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+        /// <p>This parameter is not supported for an IPv6 only subnet.</p>
         pub fn cidr_block(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cidr_block(inp);
             self
         }
-        /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+        /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+        /// We modify the specified CIDR block to its canonical form; for example, if you specify
+        /// <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+        /// <p>This parameter is not supported for an IPv6 only subnet.</p>
         pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cidr_block(input);
             self
         }
         /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a
         /// /64 prefix length.</p>
+        /// <p>This parameter is required for an IPv6 only subnet.</p>
         pub fn ipv6_cidr_block(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ipv6_cidr_block(inp);
             self
         }
         /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a
         /// /64 prefix length.</p>
+        /// <p>This parameter is required for an IPv6 only subnet.</p>
         pub fn set_ipv6_cidr_block(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17008,6 +18386,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
+        /// <p>Indicates whether to create an IPv6 only subnet.</p>
+        pub fn ipv6_native(mut self, inp: bool) -> Self {
+            self.inner = self.inner.ipv6_native(inp);
+            self
+        }
+        /// <p>Indicates whether to create an IPv6 only subnet.</p>
+        pub fn set_ipv6_native(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_ipv6_native(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateSubnetCidrReservation`.
     ///
@@ -17015,7 +18403,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSubnetCidrReservation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17203,7 +18591,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17318,7 +18706,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTrafficMirrorFilter<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17434,7 +18822,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTrafficMirrorFilterRule<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17655,7 +19043,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTrafficMirrorSession<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -17861,7 +19249,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTrafficMirrorTarget<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18013,7 +19401,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18131,7 +19519,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGatewayConnect<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18262,7 +19650,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGatewayConnectPeer<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18441,7 +19829,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGatewayMulticastDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18573,7 +19961,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGatewayPeeringAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18718,7 +20106,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGatewayPrefixListReference<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18849,7 +20237,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -18980,7 +20368,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGatewayRouteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -19090,7 +20478,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -19256,7 +20644,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVolume<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -19688,7 +21076,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVpc<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -19791,6 +21179,56 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_ipv6_cidr_block(input);
+            self
+        }
+        /// <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        ///
+        /// </p>
+        pub fn ipv4_ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipv4_ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        ///
+        /// </p>
+        pub fn set_ipv4_ipam_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv4_ipam_pool_id(input);
+            self
+        }
+        /// <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn ipv4_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.ipv4_netmask_length(inp);
+            self
+        }
+        /// <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn set_ipv4_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_ipv4_netmask_length(input);
+            self
+        }
+        /// <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature that you can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services Organization. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn ipv6_ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipv6_ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR. IPAM is a VPC feature that you can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services Organization. For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn set_ipv6_ipam_pool_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipv6_ipam_pool_id(input);
+            self
+        }
+        /// <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn ipv6_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.ipv6_netmask_length(inp);
+            self
+        }
+        /// <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn set_ipv6_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_ipv6_netmask_length(input);
             self
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request,
@@ -19896,7 +21334,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVpcEndpoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20151,7 +21589,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVpcEndpointConnectionNotification<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20317,7 +21755,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVpcEndpointServiceConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20500,7 +21938,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20663,7 +22101,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVpnConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20829,7 +22267,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVpnConnectionRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -20919,7 +22357,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateVpnGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21059,7 +22497,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCarrierGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21147,7 +22585,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteClientVpnEndpoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21233,7 +22671,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteClientVpnRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21343,7 +22781,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCustomerGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21432,7 +22870,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDhcpOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21519,7 +22957,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteEgressOnlyInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21635,7 +23073,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFleets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21748,7 +23186,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFlowLogs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21841,7 +23279,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFpgaImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -21930,7 +23368,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22030,7 +23468,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22111,13 +23549,284 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteIpam`.
+    ///
+    /// <p>Delete an IPAM. Deleting an IPAM removes all monitored data associated with the IPAM including the historical data for CIDRs.</p>
+    /// <note>
+    /// <p>You cannot delete an IPAM if there are CIDRs provisioned to pools or if there are allocations in the pools within the IPAM. To deprovision pool
+    /// CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>. To release allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+    /// </p>
+    /// </note>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteIpam<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_ipam_input::Builder,
+    }
+    impl<C, M, R> DeleteIpam<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteIpam`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteIpamOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteIpamError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteIpamInputOperationOutputAlias,
+                crate::output::DeleteIpamOutput,
+                crate::error::DeleteIpamError,
+                crate::input::DeleteIpamInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM to delete.</p>
+        pub fn ipam_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM to delete.</p>
+        pub fn set_ipam_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteIpamPool`.
+    ///
+    /// <p>Delete an IPAM pool.</p>
+    /// <note>
+    /// <p>You cannot delete an IPAM pool if there are allocations in it or CIDRs provisioned to it. To release
+    /// allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>. To deprovision pool
+    /// CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.</p>
+    /// </note>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/delete-pool-ipam.html">Delete a pool</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteIpamPool<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_ipam_pool_input::Builder,
+    }
+    impl<C, M, R> DeleteIpamPool<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteIpamPool`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteIpamPoolOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteIpamPoolError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteIpamPoolInputOperationOutputAlias,
+                crate::output::DeleteIpamPoolOutput,
+                crate::error::DeleteIpamPoolError,
+                crate::input::DeleteIpamPoolInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the pool to delete.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the pool to delete.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteIpamScope`.
+    ///
+    /// <p>Delete the scope for an IPAM. You cannot delete the default scopes.</p>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/delete-scope-ipam.html">Delete a scope</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteIpamScope<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_ipam_scope_input::Builder,
+    }
+    impl<C, M, R> DeleteIpamScope<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteIpamScope`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteIpamScopeOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteIpamScopeError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteIpamScopeInputOperationOutputAlias,
+                crate::output::DeleteIpamScopeOutput,
+                crate::error::DeleteIpamScopeError,
+                crate::input::DeleteIpamScopeInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the scope to delete.</p>
+        pub fn ipam_scope_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the scope to delete.</p>
+        pub fn set_ipam_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_scope_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteKeyPair`.
     ///
     /// <p>Deletes the specified key pair, by removing the public key from Amazon EC2.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteKeyPair<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22211,7 +23920,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteLaunchTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22320,7 +24029,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteLaunchTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22443,7 +24152,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteLocalGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22543,7 +24252,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteLocalGatewayRouteTableVpcAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22637,7 +24346,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteManagedPrefixList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22726,7 +24435,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNatGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22813,7 +24522,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNetworkAcl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -22900,7 +24609,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNetworkAclEntry<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23001,13 +24710,197 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteNetworkInsightsAccessScope`.
+    ///
+    /// <p>Deletes the specified Network Access Scope.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteNetworkInsightsAccessScope<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_network_insights_access_scope_input::Builder,
+    }
+    impl<C, M, R> DeleteNetworkInsightsAccessScope<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteNetworkInsightsAccessScope`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteNetworkInsightsAccessScopeOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteNetworkInsightsAccessScopeError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteNetworkInsightsAccessScopeInputOperationOutputAlias,
+                crate::output::DeleteNetworkInsightsAccessScopeOutput,
+                crate::error::DeleteNetworkInsightsAccessScopeError,
+                crate::input::DeleteNetworkInsightsAccessScopeInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn network_insights_access_scope_id(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.network_insights_access_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn set_network_insights_access_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_network_insights_access_scope_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteNetworkInsightsAccessScopeAnalysis`.
+    ///
+    /// <p>Deletes the specified Network Access Scope analysis.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteNetworkInsightsAccessScopeAnalysis<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_network_insights_access_scope_analysis_input::Builder,
+    }
+    impl<C, M, R> DeleteNetworkInsightsAccessScopeAnalysis<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteNetworkInsightsAccessScopeAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DeleteNetworkInsightsAccessScopeAnalysisError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteNetworkInsightsAccessScopeAnalysisInputOperationOutputAlias,
+                crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput,
+                crate::error::DeleteNetworkInsightsAccessScopeAnalysisError,
+                crate::input::DeleteNetworkInsightsAccessScopeAnalysisInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Network Access Scope analysis.</p>
+        pub fn network_insights_access_scope_analysis_id(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.network_insights_access_scope_analysis_id(inp);
+            self
+        }
+        /// <p>The ID of the Network Access Scope analysis.</p>
+        pub fn set_network_insights_access_scope_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_network_insights_access_scope_analysis_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteNetworkInsightsAnalysis`.
     ///
     /// <p>Deletes the specified network insights analysis.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteNetworkInsightsAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23094,7 +24987,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNetworkInsightsPath<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23181,7 +25074,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNetworkInterface<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23271,7 +25164,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNetworkInterfacePermission<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23375,7 +25268,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeletePlacementGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23453,13 +25346,97 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeletePublicIpv4Pool`.
+    ///
+    /// <p>Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool required for the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools only.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeletePublicIpv4Pool<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_public_ipv4_pool_input::Builder,
+    }
+    impl<C, M, R> DeletePublicIpv4Pool<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeletePublicIpv4Pool`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeletePublicIpv4PoolOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeletePublicIpv4PoolError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeletePublicIpv4PoolInputOperationOutputAlias,
+                crate::output::DeletePublicIpv4PoolOutput,
+                crate::error::DeletePublicIpv4PoolError,
+                crate::input::DeletePublicIpv4PoolInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the public IPv4 pool you want to delete.</p>
+        pub fn pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_id(inp);
+            self
+        }
+        /// <p>The ID of the public IPv4 pool you want to delete.</p>
+        pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pool_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteQueuedReservedInstances`.
     ///
     /// <p>Deletes the queued purchases for the specified Reserved Instances.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteQueuedReservedInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23550,7 +25527,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23676,7 +25653,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteRouteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23767,7 +25744,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23870,7 +25847,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -23954,7 +25931,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSpotDatafeedSubscription<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24030,7 +26007,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSubnet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24114,7 +26091,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSubnetCidrReservation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24204,7 +26181,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24301,6 +26278,7 @@ pub mod fluent_builders {
         /// <p>If you omit this parameter, we delete all user-defined tags for the specified
         /// resources. We do not delete Amazon Web Services-generated tags (tags that have the <code>aws:</code>
         /// prefix).</p>
+        /// <p>Constraints: Up to 1000 tags.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -24312,6 +26290,7 @@ pub mod fluent_builders {
         /// <p>If you omit this parameter, we delete all user-defined tags for the specified
         /// resources. We do not delete Amazon Web Services-generated tags (tags that have the <code>aws:</code>
         /// prefix).</p>
+        /// <p>Constraints: Up to 1000 tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -24327,7 +26306,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTrafficMirrorFilter<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24414,7 +26393,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTrafficMirrorFilterRule<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24504,7 +26483,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTrafficMirrorSession<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24592,7 +26571,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTrafficMirrorTarget<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24679,7 +26658,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24767,7 +26746,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGatewayConnect<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24857,7 +26836,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGatewayConnectPeer<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -24947,7 +26926,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGatewayMulticastDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25039,7 +27018,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGatewayPeeringAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25131,7 +27110,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGatewayPrefixListReference<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25236,7 +27215,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25340,7 +27319,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGatewayRouteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25430,7 +27409,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25524,7 +27503,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVolume<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25608,7 +27587,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVpc<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25692,7 +27671,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVpcEndpointConnectionNotifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25809,7 +27788,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVpcEndpoints<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -25903,7 +27882,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVpcEndpointServiceConfigurations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26000,7 +27979,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26097,7 +28076,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVpnConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26189,7 +28168,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVpnConnectionRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26278,7 +28257,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteVpnGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26370,7 +28349,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeprovisionByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26450,6 +28429,194 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeprovisionIpamPoolCidr`.
+    ///
+    /// <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR from a pool that has a source pool, the CIDR is recycled back into the source pool. For more information, see <a href="/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision pool CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeprovisionIpamPoolCidr<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::deprovision_ipam_pool_cidr_input::Builder,
+    }
+    impl<C, M, R> DeprovisionIpamPoolCidr<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeprovisionIpamPoolCidr`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeprovisionIpamPoolCidrOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeprovisionIpamPoolCidrError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeprovisionIpamPoolCidrInputOperationOutputAlias,
+                crate::output::DeprovisionIpamPoolCidrOutput,
+                crate::error::DeprovisionIpamPoolCidrError,
+                crate::input::DeprovisionIpamPoolCidrInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The CIDR which you want to deprovision from the pool.</p>
+        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(inp);
+            self
+        }
+        /// <p>The CIDR which you want to deprovision from the pool.</p>
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeprovisionPublicIpv4PoolCidr`.
+    ///
+    /// <p>Deprovision a CIDR from a public IPv4 pool.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeprovisionPublicIpv4PoolCidr<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::deprovision_public_ipv4_pool_cidr_input::Builder,
+    }
+    impl<C, M, R> DeprovisionPublicIpv4PoolCidr<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeprovisionPublicIpv4PoolCidr`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeprovisionPublicIpv4PoolCidrOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeprovisionPublicIpv4PoolCidrError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeprovisionPublicIpv4PoolCidrInputOperationOutputAlias,
+                crate::output::DeprovisionPublicIpv4PoolCidrOutput,
+                crate::error::DeprovisionPublicIpv4PoolCidrError,
+                crate::input::DeprovisionPublicIpv4PoolCidrInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the pool that you want to deprovision the CIDR from.</p>
+        pub fn pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_id(inp);
+            self
+        }
+        /// <p>The ID of the pool that you want to deprovision the CIDR from.</p>
+        pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pool_id(input);
+            self
+        }
+        /// <p>The CIDR you want to deprovision from the pool.</p>
+        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(inp);
+            self
+        }
+        /// <p>The CIDR you want to deprovision from the pool.</p>
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeregisterImage`.
     ///
     /// <p>Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch
@@ -26463,7 +28630,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26549,7 +28716,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterInstanceEventNotificationAttributes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26632,7 +28799,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterTransitGatewayMulticastGroupMembers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26745,7 +28912,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeregisterTransitGatewayMulticastGroupSources<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26892,7 +29059,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAccountAttributes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -26988,7 +29155,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAddresses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -27213,7 +29380,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAddressesAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -27354,7 +29521,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAggregateIdFormat<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -27433,7 +29600,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAvailabilityZones<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -27693,7 +29860,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeBundleTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -27891,7 +30058,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeByoipCidrs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -27987,7 +30154,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCapacityReservationFleets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -28155,7 +30322,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCapacityReservations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -28503,7 +30670,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCarrierGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -28691,7 +30858,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeClassicLinkInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -28881,7 +31048,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeClientVpnAuthorizationRules<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -29034,7 +31201,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeClientVpnConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -29176,7 +31343,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeClientVpnEndpoints<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -29322,7 +31489,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeClientVpnRoutes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -29470,7 +31637,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeClientVpnTargetNetworks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -29635,7 +31802,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCoipPools<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -29795,7 +31962,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeConversionTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -29888,7 +32055,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCustomerGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -30074,7 +32241,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDhcpOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -30260,7 +32427,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeEgressOnlyInternetGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -30418,7 +32585,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeElasticGpus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -30604,7 +32771,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeExportImageTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -30734,7 +32901,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeExportTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -30828,7 +32995,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFastSnapshotRestores<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -30992,7 +33159,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFleetHistory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -31129,7 +33296,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFleetInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -31267,7 +33434,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFleets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -31463,7 +33630,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFlowLogs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -31673,7 +33840,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFpgaImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -31775,7 +33942,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFpgaImages<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -32024,7 +34191,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeHostReservationOfferings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -32188,7 +34355,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeHostReservations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -32359,7 +34526,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeHosts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -32553,7 +34720,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeIamInstanceProfileAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -32711,7 +34878,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeIdentityIdFormat<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -32839,7 +35006,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeIdFormat<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -32935,7 +35102,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -33046,7 +35213,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImages<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -33544,7 +35711,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImportImageTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -33674,7 +35841,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImportSnapshotTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -33811,7 +35978,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -33929,7 +36096,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceCreditSpecifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -34082,7 +36249,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceEventNotificationAttributes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -34166,7 +36333,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceEventWindows<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -34418,7 +36585,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -35477,8 +37644,9 @@ pub mod fluent_builders {
     /// <p>
     /// <b>Status checks</b> - Amazon EC2 performs status
     /// checks on running EC2 instances to identify hardware and software issues. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-    /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
+    /// instances with failed status checks</a> in the <i>Amazon EC2 User
+    /// Guide</i>.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -35498,7 +37666,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -35805,7 +37973,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceTypeOfferings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -35956,7 +38124,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInstanceTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -36522,7 +38690,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeInternetGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -36704,13 +38872,399 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeIpamPools`.
+    ///
+    /// <p>Get information about your IPAM pools.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeIpamPools<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_ipam_pools_input::Builder,
+    }
+    impl<C, M, R> DescribeIpamPools<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeIpamPools`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeIpamPoolsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeIpamPoolsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeIpamPoolsInputOperationOutputAlias,
+                crate::output::DescribeIpamPoolsOutput,
+                crate::error::DescribeIpamPoolsError,
+                crate::input::DescribeIpamPoolsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// Appends an item to `IpamPoolIds`.
+        ///
+        /// To override the contents of this collection use [`set_ipam_pool_ids`](Self::set_ipam_pool_ids).
+        ///
+        /// <p>The IDs of the IPAM pools you would like information on.</p>
+        pub fn ipam_pool_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_ids(inp);
+            self
+        }
+        /// <p>The IDs of the IPAM pools you would like information on.</p>
+        pub fn set_ipam_pool_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_pool_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeIpams`.
+    ///
+    /// <p>Get information about your IPAM pools.</p>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeIpams<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_ipams_input::Builder,
+    }
+    impl<C, M, R> DescribeIpams<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeIpams`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeIpamsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeIpamsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeIpamsInputOperationOutputAlias,
+                crate::output::DescribeIpamsOutput,
+                crate::error::DescribeIpamsError,
+                crate::input::DescribeIpamsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// Appends an item to `IpamIds`.
+        ///
+        /// To override the contents of this collection use [`set_ipam_ids`](Self::set_ipam_ids).
+        ///
+        /// <p>The IDs of the IPAMs you want information on.</p>
+        pub fn ipam_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_ids(inp);
+            self
+        }
+        /// <p>The IDs of the IPAMs you want information on.</p>
+        pub fn set_ipam_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeIpamScopes`.
+    ///
+    /// <p>Get information about your IPAM scopes.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeIpamScopes<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_ipam_scopes_input::Builder,
+    }
+    impl<C, M, R> DescribeIpamScopes<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeIpamScopes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeIpamScopesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeIpamScopesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeIpamScopesInputOperationOutputAlias,
+                crate::output::DescribeIpamScopesOutput,
+                crate::error::DescribeIpamScopesError,
+                crate::input::DescribeIpamScopesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// Appends an item to `IpamScopeIds`.
+        ///
+        /// To override the contents of this collection use [`set_ipam_scope_ids`](Self::set_ipam_scope_ids).
+        ///
+        /// <p>The IDs of the scopes you want information on.</p>
+        pub fn ipam_scope_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_scope_ids(inp);
+            self
+        }
+        /// <p>The IDs of the scopes you want information on.</p>
+        pub fn set_ipam_scope_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_scope_ids(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeIpv6Pools`.
     ///
     /// <p>Describes your IPv6 address pools.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeIpv6Pools<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -36864,7 +39418,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeKeyPairs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -37037,7 +39591,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLaunchTemplates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -37229,7 +39783,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLaunchTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -37508,7 +40062,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLocalGatewayRouteTables<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -37675,7 +40229,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the associations between virtual interface groups and local gateway route tables.</p>
     #[derive(std::fmt::Debug)]
-    pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations<C= aws_smithy_client::erase::DynConnector, M= aws_hyper::AwsMiddleware, R= aws_smithy_client::retry::Standard> {
+    pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations<C = aws_smithy_client::erase::DynConnector, M= crate::middleware::DefaultMiddleware, R= aws_smithy_client::retry::Standard> {
                             handle: std::sync::Arc<super::Handle<C, M, R>>,
                             inner: crate::input::describe_local_gateway_route_table_virtual_interface_group_associations_input::Builder
                         }
@@ -37847,7 +40401,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLocalGatewayRouteTableVpcAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -38022,7 +40576,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLocalGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -38204,7 +40758,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLocalGatewayVirtualInterfaceGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -38369,7 +40923,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeLocalGatewayVirtualInterfaces<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -38505,7 +41059,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeManagedPrefixLists<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -38663,7 +41217,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeMovingAddresses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -38813,7 +41367,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNatGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -39001,7 +41555,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNetworkAcls<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -39279,13 +41833,327 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeNetworkInsightsAccessScopeAnalyses`.
+    ///
+    /// <p>Describes the specified Network Access Scope analyses.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeNetworkInsightsAccessScopeAnalyses<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_network_insights_access_scope_analyses_input::Builder,
+    }
+    impl<C, M, R> DescribeNetworkInsightsAccessScopeAnalyses<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeNetworkInsightsAccessScopeAnalyses`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeNetworkInsightsAccessScopeAnalysesError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeNetworkInsightsAccessScopeAnalysesInputOperationOutputAlias,
+                crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput,
+                crate::error::DescribeNetworkInsightsAccessScopeAnalysesError,
+                crate::input::DescribeNetworkInsightsAccessScopeAnalysesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `NetworkInsightsAccessScopeAnalysisIds`.
+        ///
+        /// To override the contents of this collection use [`set_network_insights_access_scope_analysis_ids`](Self::set_network_insights_access_scope_analysis_ids).
+        ///
+        /// <p>The IDs of the Network Access Scope analyses.</p>
+        pub fn network_insights_access_scope_analysis_ids(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.network_insights_access_scope_analysis_ids(inp);
+            self
+        }
+        /// <p>The IDs of the Network Access Scope analyses.</p>
+        pub fn set_network_insights_access_scope_analysis_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_network_insights_access_scope_analysis_ids(input);
+            self
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn network_insights_access_scope_id(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.network_insights_access_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn set_network_insights_access_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_network_insights_access_scope_id(input);
+            self
+        }
+        /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
+        pub fn analysis_start_time_begin(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.analysis_start_time_begin(inp);
+            self
+        }
+        /// <p>Filters the results based on the start time. The analysis must have started on or after this time.</p>
+        pub fn set_analysis_start_time_begin(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_analysis_start_time_begin(input);
+            self
+        }
+        /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
+        pub fn analysis_start_time_end(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.analysis_start_time_end(inp);
+            self
+        }
+        /// <p>Filters the results based on the start time. The analysis must have started on or before this time.</p>
+        pub fn set_analysis_start_time_end(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_analysis_start_time_end(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>There are no supported filters.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>There are no supported filters.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeNetworkInsightsAccessScopes`.
+    ///
+    /// <p>Describes the specified Network Access Scopes.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeNetworkInsightsAccessScopes<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_network_insights_access_scopes_input::Builder,
+    }
+    impl<C, M, R> DescribeNetworkInsightsAccessScopes<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeNetworkInsightsAccessScopes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeNetworkInsightsAccessScopesOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeNetworkInsightsAccessScopesError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeNetworkInsightsAccessScopesInputOperationOutputAlias,
+                crate::output::DescribeNetworkInsightsAccessScopesOutput,
+                crate::error::DescribeNetworkInsightsAccessScopesError,
+                crate::input::DescribeNetworkInsightsAccessScopesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `NetworkInsightsAccessScopeIds`.
+        ///
+        /// To override the contents of this collection use [`set_network_insights_access_scope_ids`](Self::set_network_insights_access_scope_ids).
+        ///
+        /// <p>The IDs of the Network Access Scopes.</p>
+        pub fn network_insights_access_scope_ids(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.network_insights_access_scope_ids(inp);
+            self
+        }
+        /// <p>The IDs of the Network Access Scopes.</p>
+        pub fn set_network_insights_access_scope_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_network_insights_access_scope_ids(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>There are no supported filters.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>There are no supported filters.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeNetworkInsightsAnalyses`.
     ///
     /// <p>Describes one or more of your network insights analyses.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeNetworkInsightsAnalyses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -39473,7 +42341,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNetworkInsightsPaths<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -39637,7 +42505,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNetworkInterfaceAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -39737,7 +42605,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNetworkInterfacePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -39910,7 +42778,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNetworkInterfaces<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -40354,7 +43222,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePlacementGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -40539,7 +43407,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePrefixLists<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -40706,7 +43574,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePrincipalIdFormat<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -40845,7 +43713,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribePublicIpv4Pools<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -40986,7 +43854,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRegions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -41135,7 +44003,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReplaceRootVolumeTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -41279,7 +44147,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReservedInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -41556,7 +44424,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReservedInstancesListings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -41701,7 +44569,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReservedInstancesModifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -41923,7 +44791,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReservedInstancesOfferings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -42325,7 +45193,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRouteTables<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -42662,7 +45530,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeScheduledInstanceAvailability<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -42868,7 +45736,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeScheduledInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -43054,7 +45922,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSecurityGroupReferences<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -43145,7 +46013,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSecurityGroupRules<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -43315,7 +46183,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -43720,7 +46588,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSnapshotAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -43863,7 +46731,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -43963,6 +46831,11 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> |
+        /// <code>standard</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>tag</code>:<key> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.
         /// For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
         /// </li>
@@ -44023,6 +46896,11 @@ pub mod fluent_builders {
         /// <p>
         /// <code>status</code> - The status of the snapshot (<code>pending</code> |
         /// <code>completed</code> | <code>error</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code> |
+        /// <code>standard</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -44163,6 +47041,149 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeSnapshotTierStatus`.
+    ///
+    /// <p>Describes the storage tier status of one or more Amazon EBS snapshots.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeSnapshotTierStatus<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_snapshot_tier_status_input::Builder,
+    }
+    impl<C, M, R> DescribeSnapshotTierStatus<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeSnapshotTierStatus`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeSnapshotTierStatusOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotTierStatusError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeSnapshotTierStatusInputOperationOutputAlias,
+                crate::output::DescribeSnapshotTierStatusOutput,
+                crate::error::DescribeSnapshotTierStatusError,
+                crate::input::DescribeSnapshotTierStatusInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>snapshot-id</code> - The snapshot ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>volume-id</code> - The ID of the volume the snapshot is for.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archiving</code> | <code>archival_error</code> |
+        /// <code>archival_complete</code> | <code>restoring</code> | <code>restore_error</code> | <code>restore_complete</code>)</p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>The filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>snapshot-id</code> - The snapshot ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>volume-id</code> - The ID of the volume the snapshot is for.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archiving</code> | <code>archival_error</code> |
+        /// <code>archival_complete</code> | <code>restoring</code> | <code>restore_error</code> | <code>restore_complete</code>)</p>
+        /// </li>
+        /// </ul>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeSpotDatafeedSubscription`.
     ///
     /// <p>Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
@@ -44170,7 +47191,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSpotDatafeedSubscription<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -44246,7 +47267,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSpotFleetInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -44365,7 +47386,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSpotFleetRequestHistory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -44508,7 +47529,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSpotFleetRequests<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -44640,7 +47661,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSpotInstanceRequests<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -45166,7 +48187,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSpotPriceHistory<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -45432,7 +48453,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeStaleSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -45547,7 +48568,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeStoreImageTasks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -45707,7 +48728,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSubnets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -45791,7 +48812,8 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>default-for-az</code> - Indicates whether this is the default subnet for the
-        /// Availability Zone. You can also use <code>defaultForAz</code> as the filter name.</p>
+        /// Availability Zone (<code>true</code> | <code>false</code>). You can also use
+        /// <code>defaultForAz</code> as the filter name.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -45807,6 +48829,10 @@ pub mod fluent_builders {
         /// <p>
         /// <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR
         /// block associated with the subnet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ipv6-native</code> - Indicates whether this is an IPv6 only subnet (<code>true</code> | <code>false</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -45873,7 +48899,8 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>default-for-az</code> - Indicates whether this is the default subnet for the
-        /// Availability Zone. You can also use <code>defaultForAz</code> as the filter name.</p>
+        /// Availability Zone (<code>true</code> | <code>false</code>). You can also use
+        /// <code>defaultForAz</code> as the filter name.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -45889,6 +48916,10 @@ pub mod fluent_builders {
         /// <p>
         /// <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR
         /// block associated with the subnet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ipv6-native</code> - Indicates whether this is an IPv6 only subnet (<code>true</code> | <code>false</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -45995,7 +49026,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -46158,7 +49189,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTrafficMirrorFilters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -46308,7 +49339,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTrafficMirrorSessions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -46514,7 +49545,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTrafficMirrorTargets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -46689,7 +49720,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTransitGatewayAttachments<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -46904,7 +49935,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTransitGatewayConnectPeers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -47071,7 +50102,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTransitGatewayConnects<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -47260,7 +50291,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTransitGatewayMulticastDomains<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -47423,7 +50454,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTransitGatewayPeeringAttachments<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -47621,7 +50652,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTransitGatewayRouteTables<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -47803,7 +50834,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTransitGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -48030,7 +51061,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTransitGatewayVpcAttachments<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -48205,7 +51236,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTrunkInterfaceAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -48359,7 +51390,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVolumeAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -48463,7 +51494,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVolumes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -48789,7 +51820,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVolumesModifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -49050,7 +52081,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVolumeStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -49322,7 +52353,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -49419,7 +52450,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcClassicLink<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -49563,7 +52594,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcClassicLinkDnsSupport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -49663,7 +52694,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcEndpointConnectionNotifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -49852,7 +52883,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcEndpointConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -50015,7 +53046,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcEndpoints<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -50211,7 +53242,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcEndpointServiceConfigurations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -50398,7 +53429,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcEndpointServicePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -50560,7 +53591,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcEndpointServices<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -50728,7 +53759,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcPeeringConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -50982,7 +54013,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpcs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -51260,7 +54291,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpnConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -51498,7 +54529,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeVpnGateways<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -51702,7 +54733,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetachClassicLinkVpc<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -51798,7 +54829,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetachInternetGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -51895,7 +54926,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetachNetworkInterface<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52036,7 +55067,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetachVolume<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52165,7 +55196,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetachVpnGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52270,7 +55301,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableEbsEncryptionByDefault<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52344,7 +55375,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableFastSnapshotRestores<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52454,7 +55485,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableImageDeprecation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52532,6 +55563,96 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisableIpamOrganizationAdminAccount`.
+    ///
+    /// <p>Disable the IPAM account. For more information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DisableIpamOrganizationAdminAccount<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disable_ipam_organization_admin_account_input::Builder,
+    }
+    impl<C, M, R> DisableIpamOrganizationAdminAccount<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisableIpamOrganizationAdminAccount`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisableIpamOrganizationAdminAccountOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisableIpamOrganizationAdminAccountError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisableIpamOrganizationAdminAccountInputOperationOutputAlias,
+                crate::output::DisableIpamOrganizationAdminAccountOutput,
+                crate::error::DisableIpamOrganizationAdminAccountError,
+                crate::input::DisableIpamOrganizationAdminAccountInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
+        pub fn delegated_admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account_id(inp);
+            self
+        }
+        /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
+        pub fn set_delegated_admin_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_delegated_admin_account_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DisableSerialConsoleAccess`.
     ///
     /// <p>Disables access to the EC2 serial console of all instances for your account. By default,
@@ -52541,7 +55662,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableSerialConsoleAccess<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52612,7 +55733,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableTransitGatewayRouteTablePropagation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52721,7 +55842,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableVgwRoutePropagation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52820,7 +55941,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableVpcClassicLink<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52908,7 +56029,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableVpcClassicLinkDnsSupport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -52982,7 +56103,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateAddress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53095,7 +56216,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateClientVpnTargetNetwork<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53197,7 +56318,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateEnclaveCertificateIamRole<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53294,7 +56415,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateIamInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53369,7 +56490,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53476,7 +56597,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateRouteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53563,7 +56684,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateSubnetCidrBlock<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53636,7 +56757,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateTransitGatewayMulticastDomain<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53761,7 +56882,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateTransitGatewayRouteTable<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53873,7 +56994,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateTrunkInterface<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -53979,7 +57100,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateVpcCidrBlock<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54063,7 +57184,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableEbsEncryptionByDefault<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54142,7 +57263,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableFastSnapshotRestores<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54253,7 +57374,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableImageDeprecation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54354,6 +57475,96 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `EnableIpamOrganizationAdminAccount`.
+    ///
+    /// <p>Enable an Organizations member account as the IPAM admin account. You cannot select the Organizations management account as the IPAM admin account. For more information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct EnableIpamOrganizationAdminAccount<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::enable_ipam_organization_admin_account_input::Builder,
+    }
+    impl<C, M, R> EnableIpamOrganizationAdminAccount<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `EnableIpamOrganizationAdminAccount`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::EnableIpamOrganizationAdminAccountOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::EnableIpamOrganizationAdminAccountError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::EnableIpamOrganizationAdminAccountInputOperationOutputAlias,
+                crate::output::EnableIpamOrganizationAdminAccountOutput,
+                crate::error::EnableIpamOrganizationAdminAccountError,
+                crate::input::EnableIpamOrganizationAdminAccountInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The Organizations member account ID that you want to enable as the IPAM account.</p>
+        pub fn delegated_admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account_id(inp);
+            self
+        }
+        /// <p>The Organizations member account ID that you want to enable as the IPAM account.</p>
+        pub fn set_delegated_admin_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_delegated_admin_account_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `EnableSerialConsoleAccess`.
     ///
     /// <p>Enables access to the EC2 serial console of all instances for your account. By default,
@@ -54362,7 +57573,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableSerialConsoleAccess<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54433,7 +57644,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableTransitGatewayRouteTablePropagation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54542,7 +57753,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableVgwRoutePropagation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54648,7 +57859,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableVolumeIO<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54738,7 +57949,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableVpcClassicLink<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54828,7 +58039,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableVpcClassicLinkDnsSupport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54898,7 +58109,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExportClientVpnClientCertificateRevocationList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -54976,7 +58187,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExportClientVpnClientConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -55063,7 +58274,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExportImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -55234,7 +58445,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExportTransitGatewayRoutes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -55432,7 +58643,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAssociatedEnclaveCertificateIamRoles<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -55519,7 +58730,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAssociatedIpv6PoolCidrs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -55627,7 +58838,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCapacityReservationUsage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -55732,7 +58943,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetCoipPoolUsage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -55923,7 +59134,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetConsoleOutput<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56021,7 +59232,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetConsoleScreenshot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56119,7 +59330,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDefaultCreditSpecification<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56213,7 +59424,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetEbsDefaultKmsKeyId<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56290,7 +59501,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetEbsEncryptionByDefault<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56381,7 +59592,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetFlowLogsIntegrationTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56494,7 +59705,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetGroupsForCapacityReservation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56601,7 +59812,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetHostReservationPurchasePreview<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56697,7 +59908,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetInstanceTypesFromInstanceRequirements<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56847,6 +60058,599 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetIpamAddressHistory`.
+    ///
+    /// <p>Retrieve historical information about a CIDR within an IPAM scope. For more information, see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetIpamAddressHistory<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_ipam_address_history_input::Builder,
+    }
+    impl<C, M, R> GetIpamAddressHistory<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetIpamAddressHistory`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetIpamAddressHistoryOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetIpamAddressHistoryError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetIpamAddressHistoryInputOperationOutputAlias,
+                crate::output::GetIpamAddressHistoryOutput,
+                crate::error::GetIpamAddressHistoryError,
+                crate::input::GetIpamAddressHistoryInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The CIDR you want the history of. The CIDR can be an IPv4 or IPv6 IP address range.
+        /// If you enter a /16 IPv4 CIDR, you will get records that match it exactly. You will not get records for any subnets within the /16 CIDR.</p>
+        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(inp);
+            self
+        }
+        /// <p>The CIDR you want the history of. The CIDR can be an IPv4 or IPv6 IP address range.
+        /// If you enter a /16 IPv4 CIDR, you will get records that match it exactly. You will not get records for any subnets within the /16 CIDR.</p>
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr(input);
+            self
+        }
+        /// <p>The ID of the IPAM scope that the CIDR is in.</p>
+        pub fn ipam_scope_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM scope that the CIDR is in.</p>
+        pub fn set_ipam_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_scope_id(input);
+            self
+        }
+        /// <p>The ID of the VPC you want your history records filtered by.</p>
+        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(inp);
+            self
+        }
+        /// <p>The ID of the VPC you want your history records filtered by.</p>
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_vpc_id(input);
+            self
+        }
+        /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
+        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(inp);
+            self
+        }
+        /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_start_time(input);
+            self
+        }
+        /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
+        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(inp);
+            self
+        }
+        /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_end_time(input);
+            self
+        }
+        /// <p>The maximum number of historical results you would like returned per page. Defaults to 100.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of historical results you would like returned per page. Defaults to 100.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetIpamPoolAllocations`.
+    ///
+    /// <p>Get a list of all the CIDR allocations in an IPAM pool.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetIpamPoolAllocations<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_ipam_pool_allocations_input::Builder,
+    }
+    impl<C, M, R> GetIpamPoolAllocations<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetIpamPoolAllocations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetIpamPoolAllocationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetIpamPoolAllocationsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetIpamPoolAllocationsInputOperationOutputAlias,
+                crate::output::GetIpamPoolAllocationsOutput,
+                crate::error::GetIpamPoolAllocationsError,
+                crate::input::GetIpamPoolAllocationsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM pool you want to see the allocations for.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM pool you want to see the allocations for.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The ID of the allocation.</p>
+        pub fn ipam_pool_allocation_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_allocation_id(inp);
+            self
+        }
+        /// <p>The ID of the allocation.</p>
+        pub fn set_ipam_pool_allocation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_pool_allocation_id(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results you would like returned per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results you would like returned per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetIpamPoolCidrs`.
+    ///
+    /// <p>Get the CIDRs provisioned to an IPAM pool.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetIpamPoolCidrs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_ipam_pool_cidrs_input::Builder,
+    }
+    impl<C, M, R> GetIpamPoolCidrs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetIpamPoolCidrs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetIpamPoolCidrsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetIpamPoolCidrsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetIpamPoolCidrsInputOperationOutputAlias,
+                crate::output::GetIpamPoolCidrsOutput,
+                crate::error::GetIpamPoolCidrsError,
+                crate::input::GetIpamPoolCidrsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM pool you want the CIDR for.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM pool you want the CIDR for.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetIpamResourceCidrs`.
+    ///
+    /// <p>Get information about the resources in a scope.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetIpamResourceCidrs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_ipam_resource_cidrs_input::Builder,
+    }
+    impl<C, M, R> GetIpamResourceCidrs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetIpamResourceCidrs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetIpamResourceCidrsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetIpamResourceCidrsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetIpamResourceCidrsInputOperationOutputAlias,
+                crate::output::GetIpamResourceCidrsOutput,
+                crate::error::GetIpamResourceCidrsError,
+                crate::input::GetIpamResourceCidrsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return in the request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The ID of the scope that the resource is in.</p>
+        pub fn ipam_scope_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the scope that the resource is in.</p>
+        pub fn set_ipam_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_scope_id(input);
+            self
+        }
+        /// <p>The ID of the IPAM pool that the resource is in.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM pool that the resource is in.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(inp);
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, inp: crate::model::IpamResourceType) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::IpamResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>A tag on an IPAM resource.</p>
+        pub fn resource_tag(mut self, inp: crate::model::RequestIpamResourceTag) -> Self {
+            self.inner = self.inner.resource_tag(inp);
+            self
+        }
+        /// <p>A tag on an IPAM resource.</p>
+        pub fn set_resource_tag(
+            mut self,
+            input: std::option::Option<crate::model::RequestIpamResourceTag>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_tag(input);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+        pub fn resource_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_owner(inp);
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+        pub fn set_resource_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_owner(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetLaunchTemplateData`.
     ///
     /// <p>Retrieves the configuration data of the specified instance. You can use this data
@@ -56857,7 +60661,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetLaunchTemplateData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -56943,7 +60747,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetManagedPrefixListAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -57052,7 +60856,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetManagedPrefixListEntries<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -57165,6 +60969,205 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetNetworkInsightsAccessScopeAnalysisFindings`.
+    ///
+    /// <p>Gets the findings for the specified Network Access Scope analysis.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetNetworkInsightsAccessScopeAnalysisFindings<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_network_insights_access_scope_analysis_findings_input::Builder,
+    }
+    impl<C, M, R> GetNetworkInsightsAccessScopeAnalysisFindings<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetNetworkInsightsAccessScopeAnalysisFindings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+                                pub async fn send(self) -> std::result::Result<crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput, aws_smithy_http::result::SdkError<crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError>>
+                                where
+                                    R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<crate::input::GetNetworkInsightsAccessScopeAnalysisFindingsInputOperationOutputAlias,
+                                    crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput,
+                                    crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError,
+                                    crate::input::GetNetworkInsightsAccessScopeAnalysisFindingsInputOperationRetryAlias>,
+                                {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Network Access Scope analysis.</p>
+        pub fn network_insights_access_scope_analysis_id(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.network_insights_access_scope_analysis_id(inp);
+            self
+        }
+        /// <p>The ID of the Network Access Scope analysis.</p>
+        pub fn set_network_insights_access_scope_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_network_insights_access_scope_analysis_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetNetworkInsightsAccessScopeContent`.
+    ///
+    /// <p>Gets the content for the specified Network Access Scope.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetNetworkInsightsAccessScopeContent<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_network_insights_access_scope_content_input::Builder,
+    }
+    impl<C, M, R> GetNetworkInsightsAccessScopeContent<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetNetworkInsightsAccessScopeContent`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetNetworkInsightsAccessScopeContentOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetNetworkInsightsAccessScopeContentError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetNetworkInsightsAccessScopeContentInputOperationOutputAlias,
+                crate::output::GetNetworkInsightsAccessScopeContentOutput,
+                crate::error::GetNetworkInsightsAccessScopeContentError,
+                crate::input::GetNetworkInsightsAccessScopeContentInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn network_insights_access_scope_id(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.network_insights_access_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn set_network_insights_access_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_network_insights_access_scope_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetPasswordData`.
     ///
     /// <p>Retrieves the encrypted administrator password for a running Windows instance.</p>
@@ -57183,7 +61186,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetPasswordData<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -57269,7 +61272,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetReservedInstancesExchangeQuote<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -57385,7 +61388,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSerialConsoleAccessStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -57462,7 +61465,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSpotPlacementScores<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -57672,7 +61675,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSubnetCidrReservations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -57835,7 +61838,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetTransitGatewayAttachmentPropagations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -57978,7 +61981,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetTransitGatewayMulticastDomainAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -58161,7 +62164,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetTransitGatewayPrefixListReferences<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -58356,7 +62359,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetTransitGatewayRouteTableAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -58519,7 +62522,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetTransitGatewayRouteTablePropagations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -58683,7 +62686,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetVpnConnectionDeviceSampleConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -58815,7 +62818,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetVpnConnectionDeviceTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -58934,7 +62937,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ImportClientVpnClientCertificateRevocationList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -59027,7 +63030,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ImportImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -59367,7 +63370,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ImportInstance<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -59502,7 +63505,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ImportKeyPair<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -59621,7 +63624,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ImportSnapshot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -59845,7 +63848,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ImportVolume<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -59962,13 +63965,128 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListSnapshotsInRecycleBin`.
+    ///
+    /// <p>Lists one or more snapshots that are currently in the Recycle Bin.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListSnapshotsInRecycleBin<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_snapshots_in_recycle_bin_input::Builder,
+    }
+    impl<C, M, R> ListSnapshotsInRecycleBin<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListSnapshotsInRecycleBin`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListSnapshotsInRecycleBinOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListSnapshotsInRecycleBinError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListSnapshotsInRecycleBinInputOperationOutputAlias,
+                crate::output::ListSnapshotsInRecycleBinOutput,
+                crate::error::ListSnapshotsInRecycleBinError,
+                crate::input::ListSnapshotsInRecycleBinInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// Appends an item to `SnapshotIds`.
+        ///
+        /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
+        ///
+        /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the
+        /// snapshots that are in the Recycle Bin.</p>
+        pub fn snapshot_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_ids(inp);
+            self
+        }
+        /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the
+        /// snapshots that are in the Recycle Bin.</p>
+        pub fn set_snapshot_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_snapshot_ids(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ModifyAddressAttribute`.
     ///
     /// <p>Modifies an attribute of the specified Elastic IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using reverse DNS for email applications</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct ModifyAddressAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -60068,7 +64186,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyAvailabilityZoneGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -60176,7 +64294,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyCapacityReservation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -60368,7 +64486,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyCapacityReservationFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -60517,7 +64635,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyClientVpnEndpoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -60782,7 +64900,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyDefaultCreditSpecification<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -60893,7 +65011,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyEbsDefaultKmsKeyId<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -61038,7 +65156,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -61188,7 +65306,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyFpgaImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -61394,7 +65512,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyHosts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -61574,7 +65692,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyIdentityIdFormat<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -61716,7 +65834,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyIdFormat<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -61823,7 +65941,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -62071,11 +66189,11 @@ pub mod fluent_builders {
     /// associated with an ENI attached to an instance that has multiple ENIs, we recommend that
     /// you use the <a>ModifyNetworkInterfaceAttribute</a> action.</p>
     /// <p>To modify some attributes, the instance must be stopped. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying attributes of a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modify a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct ModifyInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -62173,7 +66291,7 @@ pub mod fluent_builders {
         /// <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is
         /// deleted when the instance is terminated.</p>
         /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when
-        /// you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating the block device mapping when launching an instance</a> in the
+        /// you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the
         /// <i>Amazon EC2 User Guide</i>.</p>
         pub fn block_device_mappings(
             mut self,
@@ -62187,7 +66305,7 @@ pub mod fluent_builders {
         /// <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is
         /// deleted when the instance is terminated.</p>
         /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when
-        /// you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating the block device mapping when launching an instance</a> in the
+        /// you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the
         /// <i>Amazon EC2 User Guide</i>.</p>
         pub fn set_block_device_mappings(
             mut self,
@@ -62426,7 +66544,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyInstanceCapacityReservationAttributes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -62528,7 +66646,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyInstanceCreditSpecification<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -62638,7 +66756,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyInstanceEventStartTime<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -62755,7 +66873,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyInstanceEventWindow<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -62949,7 +67067,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyInstanceMetadataOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -63059,22 +67177,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_http_put_response_hop_limit(input);
             self
         }
-        /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If
+        /// <p>Enables or disables the HTTP metadata endpoint on your instances. If
         /// the parameter is not specified, the existing state is maintained.</p>
-        /// <note>
-        /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your
+        /// <p>If you specify a value of <code>disabled</code>, you cannot access your
         /// instance metadata.</p>
-        /// </note>
         pub fn http_endpoint(mut self, inp: crate::model::InstanceMetadataEndpointState) -> Self {
             self.inner = self.inner.http_endpoint(inp);
             self
         }
-        /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If
+        /// <p>Enables or disables the HTTP metadata endpoint on your instances. If
         /// the parameter is not specified, the existing state is maintained.</p>
-        /// <note>
-        /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your
+        /// <p>If you specify a value of <code>disabled</code>, you cannot access your
         /// instance metadata.</p>
-        /// </note>
         pub fn set_http_endpoint(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataEndpointState>,
@@ -63082,17 +67196,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_http_endpoint(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is
+        /// <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, inp: bool) -> Self {
             self.inner = self.inner.dry_run(inp);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is
+        /// <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting
+        /// applies only if you have enabled the HTTP metadata endpoint.</p>
         pub fn http_protocol_ipv6(
             mut self,
             inp: crate::model::InstanceMetadataProtocolState,
@@ -63100,7 +67219,8 @@ pub mod fluent_builders {
             self.inner = self.inner.http_protocol_ipv6(inp);
             self
         }
-        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+        /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting
+        /// applies only if you have enabled the HTTP metadata endpoint.</p>
         pub fn set_http_protocol_ipv6(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataProtocolState>,
@@ -63140,7 +67260,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyInstancePlacement<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -63270,12 +67390,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tenancy(input);
             self
         }
-        /// <p>Reserved for future use.</p>
+        /// <p>The number of the partition in which to place the instance. Valid only if the
+        /// placement group strategy is set to <code>partition</code>.</p>
         pub fn partition_number(mut self, inp: i32) -> Self {
             self.inner = self.inner.partition_number(inp);
             self
         }
-        /// <p>Reserved for future use.</p>
+        /// <p>The number of the partition in which to place the instance. Valid only if the
+        /// placement group strategy is set to <code>partition</code>.</p>
         pub fn set_partition_number(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_partition_number(input);
             self
@@ -63294,6 +67416,611 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ModifyIpam`.
+    ///
+    /// <p>Modify the configurations of an IPAM.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ModifyIpam<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::modify_ipam_input::Builder,
+    }
+    impl<C, M, R> ModifyIpam<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ModifyIpam`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyIpamOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifyIpamError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ModifyIpamInputOperationOutputAlias,
+                crate::output::ModifyIpamOutput,
+                crate::error::ModifyIpamError,
+                crate::input::ModifyIpamInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM you want to modify.</p>
+        pub fn ipam_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM you want to modify.</p>
+        pub fn set_ipam_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_id(input);
+            self
+        }
+        /// <p>The description of the IPAM you want to modify.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the IPAM you want to modify.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `AddOperatingRegions`.
+        ///
+        /// To override the contents of this collection use [`set_add_operating_regions`](Self::set_add_operating_regions).
+        ///
+        /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
+        /// discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+        /// <p>For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn add_operating_regions(
+            mut self,
+            inp: impl Into<crate::model::AddIpamOperatingRegion>,
+        ) -> Self {
+            self.inner = self.inner.add_operating_regions(inp);
+            self
+        }
+        /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
+        /// discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+        /// <p>For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn set_add_operating_regions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AddIpamOperatingRegion>>,
+        ) -> Self {
+            self.inner = self.inner.set_add_operating_regions(input);
+            self
+        }
+        /// Appends an item to `RemoveOperatingRegions`.
+        ///
+        /// To override the contents of this collection use [`set_remove_operating_regions`](Self::set_remove_operating_regions).
+        ///
+        /// <p>The operating Regions to remove.</p>
+        pub fn remove_operating_regions(
+            mut self,
+            inp: impl Into<crate::model::RemoveIpamOperatingRegion>,
+        ) -> Self {
+            self.inner = self.inner.remove_operating_regions(inp);
+            self
+        }
+        /// <p>The operating Regions to remove.</p>
+        pub fn set_remove_operating_regions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RemoveIpamOperatingRegion>>,
+        ) -> Self {
+            self.inner = self.inner.set_remove_operating_regions(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ModifyIpamPool`.
+    ///
+    /// <p>Modify the configurations of an IPAM pool.</p>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/mod-pool-ipam.html">Modify a pool</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ModifyIpamPool<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::modify_ipam_pool_input::Builder,
+    }
+    impl<C, M, R> ModifyIpamPool<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ModifyIpamPool`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyIpamPoolOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifyIpamPoolError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ModifyIpamPoolInputOperationOutputAlias,
+                crate::output::ModifyIpamPoolOutput,
+                crate::error::ModifyIpamPoolError,
+                crate::input::ModifyIpamPoolInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM pool you want to modify.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM pool you want to modify.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The description of the IPAM pool you want to modify.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the IPAM pool you want to modify.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool
+        /// and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for
+        /// these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import
+        /// a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently
+        /// marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM
+        /// discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only.
+        /// </p>
+        /// <p>A locale must be set on the pool for this feature to work.</p>
+        pub fn auto_import(mut self, inp: bool) -> Self {
+            self.inner = self.inner.auto_import(inp);
+            self
+        }
+        /// <p>If true, IPAM will continuously look for resources within the CIDR range of this pool
+        /// and automatically import them as allocations into your IPAM. The CIDRs that will be allocated for
+        /// these resources must not already be allocated to other resources in order for the import to succeed. IPAM will import
+        /// a CIDR regardless of its compliance with the pool's allocation rules, so a resource might be imported and subsequently
+        /// marked as noncompliant. If IPAM discovers multiple CIDRs that overlap, IPAM will import the largest CIDR only. If IPAM
+        /// discovers multiple CIDRs with matching CIDRs, IPAM will randomly import one of them only.
+        /// </p>
+        /// <p>A locale must be set on the pool for this feature to work.</p>
+        pub fn set_auto_import(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_import(input);
+            self
+        }
+        /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. Possible
+        /// netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are  0 - 128. The minimum netmask
+        /// length must be less than the maximum netmask length.</p>
+        pub fn allocation_min_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.allocation_min_netmask_length(inp);
+            self
+        }
+        /// <p>The minimum netmask length required for CIDR allocations in this IPAM pool to be compliant. Possible
+        /// netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are  0 - 128. The minimum netmask
+        /// length must be less than the maximum netmask length.</p>
+        pub fn set_allocation_min_netmask_length(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_allocation_min_netmask_length(input);
+            self
+        }
+        /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. Possible
+        /// netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are  0 - 128.The maximum netmask
+        /// length must be greater than the minimum netmask length.</p>
+        pub fn allocation_max_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.allocation_max_netmask_length(inp);
+            self
+        }
+        /// <p>The maximum netmask length possible for CIDR allocations in this IPAM pool to be compliant. Possible
+        /// netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are  0 - 128.The maximum netmask
+        /// length must be greater than the minimum netmask length.</p>
+        pub fn set_allocation_max_netmask_length(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_allocation_max_netmask_length(input);
+            self
+        }
+        /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
+        pub fn allocation_default_netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.allocation_default_netmask_length(inp);
+            self
+        }
+        /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
+        pub fn set_allocation_default_netmask_length(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_allocation_default_netmask_length(input);
+            self
+        }
+        /// <p>Clear the default netmask length allocation rule for this pool.</p>
+        pub fn clear_allocation_default_netmask_length(mut self, inp: bool) -> Self {
+            self.inner = self.inner.clear_allocation_default_netmask_length(inp);
+            self
+        }
+        /// <p>Clear the default netmask length allocation rule for this pool.</p>
+        pub fn set_clear_allocation_default_netmask_length(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_clear_allocation_default_netmask_length(input);
+            self
+        }
+        /// Appends an item to `AddAllocationResourceTags`.
+        ///
+        /// To override the contents of this collection use [`set_add_allocation_resource_tags`](Self::set_add_allocation_resource_tags).
+        ///
+        /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn add_allocation_resource_tags(
+            mut self,
+            inp: impl Into<crate::model::RequestIpamResourceTag>,
+        ) -> Self {
+            self.inner = self.inner.add_allocation_resource_tags(inp);
+            self
+        }
+        /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+        pub fn set_add_allocation_resource_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RequestIpamResourceTag>>,
+        ) -> Self {
+            self.inner = self.inner.set_add_allocation_resource_tags(input);
+            self
+        }
+        /// Appends an item to `RemoveAllocationResourceTags`.
+        ///
+        /// To override the contents of this collection use [`set_remove_allocation_resource_tags`](Self::set_remove_allocation_resource_tags).
+        ///
+        /// <p>Remove tag allocation rules from a pool.</p>
+        pub fn remove_allocation_resource_tags(
+            mut self,
+            inp: impl Into<crate::model::RequestIpamResourceTag>,
+        ) -> Self {
+            self.inner = self.inner.remove_allocation_resource_tags(inp);
+            self
+        }
+        /// <p>Remove tag allocation rules from a pool.</p>
+        pub fn set_remove_allocation_resource_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RequestIpamResourceTag>>,
+        ) -> Self {
+            self.inner = self.inner.set_remove_allocation_resource_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ModifyIpamResourceCidr`.
+    ///
+    /// <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs between scopes and ignore resource CIDRs that you do not want to manage. If set to false, the resource will not be tracked for overlap, it cannot be auto-imported into a pool, and it will be removed from any pool it has an allocation in.</p>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/move-resource-ipam.html">Move resource CIDRs between scopes</a> and <a href="/vpc/latest/ipam/change-monitoring-state-ipam.html">Change the monitoring state of resource CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ModifyIpamResourceCidr<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::modify_ipam_resource_cidr_input::Builder,
+    }
+    impl<C, M, R> ModifyIpamResourceCidr<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ModifyIpamResourceCidr`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyIpamResourceCidrOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifyIpamResourceCidrError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ModifyIpamResourceCidrInputOperationOutputAlias,
+                crate::output::ModifyIpamResourceCidrOutput,
+                crate::error::ModifyIpamResourceCidrError,
+                crate::input::ModifyIpamResourceCidrInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the resource you want to modify.</p>
+        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(inp);
+            self
+        }
+        /// <p>The ID of the resource you want to modify.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The CIDR of the resource you want to modify.</p>
+        pub fn resource_cidr(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_cidr(inp);
+            self
+        }
+        /// <p>The CIDR of the resource you want to modify.</p>
+        pub fn set_resource_cidr(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_cidr(input);
+            self
+        }
+        /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
+        pub fn resource_region(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_region(inp);
+            self
+        }
+        /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
+        pub fn set_resource_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_region(input);
+            self
+        }
+        /// <p>The ID of the current scope that the resource CIDR is in.</p>
+        pub fn current_ipam_scope_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_ipam_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the current scope that the resource CIDR is in.</p>
+        pub fn set_current_ipam_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_current_ipam_scope_id(input);
+            self
+        }
+        /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
+        pub fn destination_ipam_scope_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_ipam_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
+        pub fn set_destination_ipam_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_ipam_scope_id(input);
+            self
+        }
+        /// <p>Determines if the resource is monitored by IPAM. If a resource is monitored, the resource is discovered by IPAM and you can view details about the resource’s CIDR.</p>
+        pub fn monitored(mut self, inp: bool) -> Self {
+            self.inner = self.inner.monitored(inp);
+            self
+        }
+        /// <p>Determines if the resource is monitored by IPAM. If a resource is monitored, the resource is discovered by IPAM and you can view details about the resource’s CIDR.</p>
+        pub fn set_monitored(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_monitored(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ModifyIpamScope`.
+    ///
+    /// <p>Modify an IPAM scope.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ModifyIpamScope<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::modify_ipam_scope_input::Builder,
+    }
+    impl<C, M, R> ModifyIpamScope<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ModifyIpamScope`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyIpamScopeOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifyIpamScopeError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ModifyIpamScopeInputOperationOutputAlias,
+                crate::output::ModifyIpamScopeOutput,
+                crate::error::ModifyIpamScopeError,
+                crate::input::ModifyIpamScopeInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the scope you want to modify.</p>
+        pub fn ipam_scope_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the scope you want to modify.</p>
+        pub fn set_ipam_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_scope_id(input);
+            self
+        }
+        /// <p>The description of the scope you want to modify.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the scope you want to modify.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ModifyLaunchTemplate`.
     ///
     /// <p>Modifies a launch template. You can specify which version of the launch template to
@@ -63302,7 +68029,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyLaunchTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -63441,7 +68168,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyManagedPrefixList<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -63608,7 +68335,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyNetworkInterfaceAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -63755,6 +68482,135 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ModifyPrivateDnsNameOptions`.
+    ///
+    /// <p>Modifies the options for instance hostnames for the specified instance.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ModifyPrivateDnsNameOptions<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::modify_private_dns_name_options_input::Builder,
+    }
+    impl<C, M, R> ModifyPrivateDnsNameOptions<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ModifyPrivateDnsNameOptions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifyPrivateDnsNameOptionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifyPrivateDnsNameOptionsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ModifyPrivateDnsNameOptionsInputOperationOutputAlias,
+                crate::output::ModifyPrivateDnsNameOptionsOutput,
+                crate::error::ModifyPrivateDnsNameOptionsError,
+                crate::input::ModifyPrivateDnsNameOptionsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the instance.</p>
+        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(inp);
+            self
+        }
+        /// <p>The ID of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be
+        /// based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based
+        /// on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance
+        /// IPv4 address or the instance ID.</p>
+        pub fn private_dns_hostname_type(mut self, inp: crate::model::HostnameType) -> Self {
+            self.inner = self.inner.private_dns_hostname_type(inp);
+            self
+        }
+        /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be
+        /// based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based
+        /// on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance
+        /// IPv4 address or the instance ID.</p>
+        pub fn set_private_dns_hostname_type(
+            mut self,
+            input: std::option::Option<crate::model::HostnameType>,
+        ) -> Self {
+            self.inner = self.inner.set_private_dns_hostname_type(input);
+            self
+        }
+        /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
+        pub fn enable_resource_name_dns_a_record(mut self, inp: bool) -> Self {
+            self.inner = self.inner.enable_resource_name_dns_a_record(inp);
+            self
+        }
+        /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
+        pub fn set_enable_resource_name_dns_a_record(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_enable_resource_name_dns_a_record(input);
+            self
+        }
+        /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
+        pub fn enable_resource_name_dns_aaaa_record(mut self, inp: bool) -> Self {
+            self.inner = self.inner.enable_resource_name_dns_aaaa_record(inp);
+            self
+        }
+        /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
+        pub fn set_enable_resource_name_dns_aaaa_record(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_enable_resource_name_dns_aaaa_record(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ModifyReservedInstances`.
     ///
     /// <p>Modifies the Availability Zone, instance count, instance type, or network platform
@@ -63766,7 +68622,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyReservedInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -63875,7 +68731,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifySecurityGroupRules<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -63986,7 +68842,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifySnapshotAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -64140,6 +68996,107 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ModifySnapshotTier`.
+    ///
+    /// <p>Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted to a full
+    /// snapshot that includes all of the blocks of data that were written to the volume at the
+    /// time the snapshot was created, and moved from the standard tier to the archive
+    /// tier. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>
+    /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ModifySnapshotTier<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::modify_snapshot_tier_input::Builder,
+    }
+    impl<C, M, R> ModifySnapshotTier<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ModifySnapshotTier`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifySnapshotTierOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifySnapshotTierError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ModifySnapshotTierInputOperationOutputAlias,
+                crate::output::ModifySnapshotTierOutput,
+                crate::error::ModifySnapshotTierError,
+                crate::input::ModifySnapshotTierInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the snapshot.</p>
+        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(inp);
+            self
+        }
+        /// <p>The ID of the snapshot.</p>
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_snapshot_id(input);
+            self
+        }
+        /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
+        pub fn storage_tier(mut self, inp: crate::model::TargetStorageTier) -> Self {
+            self.inner = self.inner.storage_tier(inp);
+            self
+        }
+        /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
+        pub fn set_storage_tier(
+            mut self,
+            input: std::option::Option<crate::model::TargetStorageTier>,
+        ) -> Self {
+            self.inner = self.inner.set_storage_tier(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ModifySpotFleetRequest`.
     ///
     /// <p>Modifies the specified Spot Fleet request.</p>
@@ -64170,7 +69127,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifySpotFleetRequest<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -64314,10 +69271,40 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifySubnetAttribute`.
     ///
     /// <p>Modifies a subnet attribute. You can only modify one attribute at a time.</p>
+    ///
+    /// <p>Use this action to modify subnets on Amazon Web Services Outposts.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To modify a subnet on an Outpost rack, set both
+    /// <code>MapCustomerOwnedIpOnLaunch</code> and
+    /// <code>CustomerOwnedIpv4Pool</code>. These two parameters act as a single
+    /// attribute.</p>
+    /// </li>
+    /// <li>
+    /// <p>To modify a subnet on an Outpost server, set either
+    /// <code>EnableLniAtDeviceIndex</code> or
+    /// <code>DisableLniAtDeviceIndex</code>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>For more information about Amazon Web Services Outposts, see the following:</p>
+    ///
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/outposts/latest/userguide/how-servers-work.html">Outpost servers</a>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <a href="https://docs.aws.amazon.com/outposts/latest/userguide/how-racks-work.html">Outpost racks</a>
+    /// </p>
+    /// </li>
+    /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct ModifySubnetAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -64473,6 +69460,108 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_dns64(input);
             self
         }
+        /// <p>The type of hostnames to assign to instances in the subnet at launch. For IPv4 only subnets, an
+        /// instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance
+        /// DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS
+        /// names use the instance IPv4 address or the instance ID.</p>
+        pub fn private_dns_hostname_type_on_launch(
+            mut self,
+            inp: crate::model::HostnameType,
+        ) -> Self {
+            self.inner = self.inner.private_dns_hostname_type_on_launch(inp);
+            self
+        }
+        /// <p>The type of hostnames to assign to instances in the subnet at launch. For IPv4 only subnets, an
+        /// instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance
+        /// DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS
+        /// names use the instance IPv4 address or the instance ID.</p>
+        pub fn set_private_dns_hostname_type_on_launch(
+            mut self,
+            input: std::option::Option<crate::model::HostnameType>,
+        ) -> Self {
+            self.inner = self.inner.set_private_dns_hostname_type_on_launch(input);
+            self
+        }
+        /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
+        pub fn enable_resource_name_dns_a_record_on_launch(
+            mut self,
+            inp: crate::model::AttributeBooleanValue,
+        ) -> Self {
+            self.inner = self.inner.enable_resource_name_dns_a_record_on_launch(inp);
+            self
+        }
+        /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
+        pub fn set_enable_resource_name_dns_a_record_on_launch(
+            mut self,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_enable_resource_name_dns_a_record_on_launch(input);
+            self
+        }
+        /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
+        pub fn enable_resource_name_dns_aaaa_record_on_launch(
+            mut self,
+            inp: crate::model::AttributeBooleanValue,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .enable_resource_name_dns_aaaa_record_on_launch(inp);
+            self
+        }
+        /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
+        pub fn set_enable_resource_name_dns_aaaa_record_on_launch(
+            mut self,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_enable_resource_name_dns_aaaa_record_on_launch(input);
+            self
+        }
+        /// <p>
+        /// Indicates the device position for local network interfaces in this subnet. For example,
+        /// <code>1</code> indicates local network interfaces in this subnet are the secondary
+        /// network interface (eth1). A local network interface cannot be the primary network
+        /// interface (eth0).
+        /// </p>
+        pub fn enable_lni_at_device_index(mut self, inp: i32) -> Self {
+            self.inner = self.inner.enable_lni_at_device_index(inp);
+            self
+        }
+        /// <p>
+        /// Indicates the device position for local network interfaces in this subnet. For example,
+        /// <code>1</code> indicates local network interfaces in this subnet are the secondary
+        /// network interface (eth1). A local network interface cannot be the primary network
+        /// interface (eth0).
+        /// </p>
+        pub fn set_enable_lni_at_device_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_enable_lni_at_device_index(input);
+            self
+        }
+        /// <p>
+        /// Specify <code>true</code> to indicate that local network interfaces at the current
+        /// position should be disabled.
+        /// </p>
+        pub fn disable_lni_at_device_index(
+            mut self,
+            inp: crate::model::AttributeBooleanValue,
+        ) -> Self {
+            self.inner = self.inner.disable_lni_at_device_index(inp);
+            self
+        }
+        /// <p>
+        /// Specify <code>true</code> to indicate that local network interfaces at the current
+        /// position should be disabled.
+        /// </p>
+        pub fn set_disable_lni_at_device_index(
+            mut self,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
+        ) -> Self {
+            self.inner = self.inner.set_disable_lni_at_device_index(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ModifyTrafficMirrorFilterNetworkServices`.
     ///
@@ -64483,7 +69572,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyTrafficMirrorFilterNetworkServices<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -64615,7 +69704,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyTrafficMirrorFilterRule<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -64843,7 +69932,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyTrafficMirrorSession<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -65020,7 +70109,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -65130,7 +70219,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyTransitGatewayPrefixListReference<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -65261,7 +70350,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -65418,7 +70507,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVolume<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -65657,7 +70746,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVolumeAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -65754,7 +70843,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpcAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -65865,7 +70954,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpcEndpoint<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -66094,7 +71183,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpcEndpointConnectionNotification<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -66222,7 +71311,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpcEndpointServiceConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -66433,7 +71522,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpcEndpointServicePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -66580,7 +71669,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpcPeeringConnectionOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -66706,7 +71795,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpcTenancy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -66840,7 +71929,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpnConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -66974,7 +72063,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpnConnectionOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -67125,7 +72214,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpnTunnelCertificate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -67233,7 +72322,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyVpnTunnelOptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -67351,13 +72440,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MonitorInstances`.
     ///
     /// <p>Enables detailed monitoring for a running instance. Otherwise, basic monitoring is
-    /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring your instances and
-    /// volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitor your instances using
+    /// CloudWatch</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>To disable detailed monitoring, see .</p>
     #[derive(std::fmt::Debug)]
     pub struct MonitorInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -67453,7 +72542,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct MoveAddressToVpc<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -67531,6 +72620,113 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `MoveByoipCidrToIpam`.
+    ///
+    /// <p>Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct MoveByoipCidrToIpam<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::move_byoip_cidr_to_ipam_input::Builder,
+    }
+    impl<C, M, R> MoveByoipCidrToIpam<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `MoveByoipCidrToIpam`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::MoveByoipCidrToIpamOutput,
+            aws_smithy_http::result::SdkError<crate::error::MoveByoipCidrToIpamError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::MoveByoipCidrToIpamInputOperationOutputAlias,
+                crate::output::MoveByoipCidrToIpamOutput,
+                crate::error::MoveByoipCidrToIpamError,
+                crate::input::MoveByoipCidrToIpamInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The BYOIP CIDR.</p>
+        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(inp);
+            self
+        }
+        /// <p>The BYOIP CIDR.</p>
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr(input);
+            self
+        }
+        /// <p>The IPAM pool ID.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The IPAM pool ID.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
+        pub fn ipam_pool_owner(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_owner(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
+        pub fn set_ipam_pool_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_pool_owner(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ProvisionByoipCidr`.
     ///
     /// <p>Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources through bring your own IP
@@ -67548,7 +72744,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ProvisionByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -67702,6 +72898,224 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ProvisionIpamPoolCidr`.
+    ///
+    /// <p>Provision a CIDR to an IPAM pool. You can use thsi action to provision new CIDRs to a top-level pool or to transfer a CIDR from a top-level pool to a pool within it.</p>
+    /// <p>For more information, see <a href="/vpc/latest/ipam/prov-cidr-ipam.html">Provision CIDRs to pools</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ProvisionIpamPoolCidr<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::provision_ipam_pool_cidr_input::Builder,
+    }
+    impl<C, M, R> ProvisionIpamPoolCidr<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ProvisionIpamPoolCidr`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ProvisionIpamPoolCidrOutput,
+            aws_smithy_http::result::SdkError<crate::error::ProvisionIpamPoolCidrError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ProvisionIpamPoolCidrInputOperationOutputAlias,
+                crate::output::ProvisionIpamPoolCidrOutput,
+                crate::error::ProvisionIpamPoolCidrError,
+                crate::input::ProvisionIpamPoolCidrInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The CIDR you want to assign to the IPAM pool.</p>
+        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(inp);
+            self
+        }
+        /// <p>The CIDR you want to assign to the IPAM pool.</p>
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr(input);
+            self
+        }
+        /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+        pub fn cidr_authorization_context(
+            mut self,
+            inp: crate::model::IpamCidrAuthorizationContext,
+        ) -> Self {
+            self.inner = self.inner.cidr_authorization_context(inp);
+            self
+        }
+        /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+        pub fn set_cidr_authorization_context(
+            mut self,
+            input: std::option::Option<crate::model::IpamCidrAuthorizationContext>,
+        ) -> Self {
+            self.inner = self.inner.set_cidr_authorization_context(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ProvisionPublicIpv4PoolCidr`.
+    ///
+    /// <p>Provision a CIDR to a public IPv4 pool.</p>
+    /// <p>For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ProvisionPublicIpv4PoolCidr<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::provision_public_ipv4_pool_cidr_input::Builder,
+    }
+    impl<C, M, R> ProvisionPublicIpv4PoolCidr<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ProvisionPublicIpv4PoolCidr`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ProvisionPublicIpv4PoolCidrOutput,
+            aws_smithy_http::result::SdkError<crate::error::ProvisionPublicIpv4PoolCidrError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ProvisionPublicIpv4PoolCidrInputOperationOutputAlias,
+                crate::output::ProvisionPublicIpv4PoolCidrOutput,
+                crate::error::ProvisionPublicIpv4PoolCidrError,
+                crate::input::ProvisionPublicIpv4PoolCidrInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
+        pub fn pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_id(inp);
+            self
+        }
+        /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
+        pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_pool_id(input);
+            self
+        }
+        /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+        pub fn netmask_length(mut self, inp: i32) -> Self {
+            self.inner = self.inner.netmask_length(inp);
+            self
+        }
+        /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+        pub fn set_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_netmask_length(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PurchaseHostReservation`.
     ///
     /// <p>Purchase a reservation with configurations that match those of your Dedicated Host.
@@ -67711,7 +73125,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PurchaseHostReservation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -67874,7 +73288,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PurchaseReservedInstancesOffering<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -68005,7 +73419,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PurchaseScheduledInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -68110,12 +73524,12 @@ pub mod fluent_builders {
     /// ignored.</p>
     /// <p>If an instance does not cleanly shut down within a few minutes, Amazon EC2 performs a
     /// hard reboot.</p>
-    /// <p>For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting console output and
-    /// rebooting instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Troubleshoot an unreachable
+    /// instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct RebootInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -68255,7 +73669,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -68532,7 +73946,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterInstanceEventNotificationAttributes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -68629,7 +74043,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterTransitGatewayMulticastGroupMembers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -68756,7 +74170,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RegisterTransitGatewayMulticastGroupSources<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -68878,7 +74292,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RejectTransitGatewayMulticastDomainAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -68994,7 +74408,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RejectTransitGatewayPeeringAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69089,7 +74503,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RejectTransitGatewayVpcAttachment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69180,7 +74594,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RejectVpcEndpointConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69284,7 +74698,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RejectVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69382,7 +74796,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReleaseAddress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69508,7 +74922,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReleaseHosts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69579,6 +74993,114 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ReleaseIpamPoolAllocation`.
+    ///
+    /// <p>Release an allocation within an IPAM pool. You can only use this action to release manual allocations. To remove an allocation for a resource without deleting the resource, set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>. For more information, see <a href="/vpc/latest/ipam/release-pool-alloc-ipam.html">Release an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ReleaseIpamPoolAllocation<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::release_ipam_pool_allocation_input::Builder,
+    }
+    impl<C, M, R> ReleaseIpamPoolAllocation<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ReleaseIpamPoolAllocation`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ReleaseIpamPoolAllocationOutput,
+            aws_smithy_http::result::SdkError<crate::error::ReleaseIpamPoolAllocationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ReleaseIpamPoolAllocationInputOperationOutputAlias,
+                crate::output::ReleaseIpamPoolAllocationOutput,
+                crate::error::ReleaseIpamPoolAllocationError,
+                crate::input::ReleaseIpamPoolAllocationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>A check for whether you have the required permissions for the action without actually making the request
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
+        pub fn ipam_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_id(inp);
+            self
+        }
+        /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
+        pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ipam_pool_id(input);
+            self
+        }
+        /// <p>The CIDR of the allocation you want to release.</p>
+        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(inp);
+            self
+        }
+        /// <p>The CIDR of the allocation you want to release.</p>
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr(input);
+            self
+        }
+        /// <p>The ID of the allocation.</p>
+        pub fn ipam_pool_allocation_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ipam_pool_allocation_id(inp);
+            self
+        }
+        /// <p>The ID of the allocation.</p>
+        pub fn set_ipam_pool_allocation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ipam_pool_allocation_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ReplaceIamInstanceProfileAssociation`.
     ///
     /// <p>Replaces an IAM instance profile for the specified running instance. You can use
@@ -69589,7 +75111,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReplaceIamInstanceProfileAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69684,7 +75206,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReplaceNetworkAclAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69785,7 +75307,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReplaceNetworkAclEntry<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -69989,7 +75511,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReplaceRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -70249,12 +75771,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_peering_connection_id(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the core network.</p>
         pub fn core_network_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_network_arn(inp);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the core network.</p>
         pub fn set_core_network_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -70273,7 +75795,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReplaceRouteTableAssociation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -70373,7 +75895,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReplaceTransitGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -70506,7 +76028,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ReportInstanceStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -70773,7 +76295,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RequestSpotFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -70867,7 +76389,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RequestSpotInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71185,7 +76707,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetAddressAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71290,7 +76812,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetEbsDefaultKmsKeyId<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71365,7 +76887,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetFpgaImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71465,7 +76987,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetImageAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71570,7 +77092,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71677,7 +77199,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetNetworkInterfaceAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71779,7 +77301,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetSnapshotAttribute<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71878,7 +77400,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RestoreAddressToClassic<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -71962,7 +77484,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RestoreManagedPrefixListVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -72063,13 +77585,221 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `RestoreSnapshotFromRecycleBin`.
+    ///
+    /// <p>Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
+    /// snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct RestoreSnapshotFromRecycleBin<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::restore_snapshot_from_recycle_bin_input::Builder,
+    }
+    impl<C, M, R> RestoreSnapshotFromRecycleBin<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `RestoreSnapshotFromRecycleBin`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RestoreSnapshotFromRecycleBinOutput,
+            aws_smithy_http::result::SdkError<crate::error::RestoreSnapshotFromRecycleBinError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RestoreSnapshotFromRecycleBinInputOperationOutputAlias,
+                crate::output::RestoreSnapshotFromRecycleBinOutput,
+                crate::error::RestoreSnapshotFromRecycleBinError,
+                crate::input::RestoreSnapshotFromRecycleBinInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the snapshot to restore.</p>
+        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(inp);
+            self
+        }
+        /// <p>The ID of the snapshot to restore.</p>
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_snapshot_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RestoreSnapshotTier`.
+    ///
+    /// <p>Restores an archived Amazon EBS snapshot for use temporarily or permanently, or modifies the restore
+    /// period or restore type for a snapshot that was previously temporarily restored.</p>
+    ///
+    /// <p>For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot">
+    /// Restore an archived snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period">
+    /// modify the restore period or restore type for a temporarily restored snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct RestoreSnapshotTier<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::restore_snapshot_tier_input::Builder,
+    }
+    impl<C, M, R> RestoreSnapshotTier<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `RestoreSnapshotTier`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RestoreSnapshotTierOutput,
+            aws_smithy_http::result::SdkError<crate::error::RestoreSnapshotTierError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RestoreSnapshotTierInputOperationOutputAlias,
+                crate::output::RestoreSnapshotTierOutput,
+                crate::error::RestoreSnapshotTierError,
+                crate::input::RestoreSnapshotTierInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the snapshot to restore.</p>
+        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(inp);
+            self
+        }
+        /// <p>The ID of the snapshot to restore.</p>
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_snapshot_id(input);
+            self
+        }
+        /// <p>Specifies the number of days for which to temporarily restore an archived snapshot.
+        /// Required for temporary restores only. The snapshot will be automatically re-archived
+        /// after this period.</p>
+        /// <p>To temporarily restore an archived snapshot, specify the number of days and omit
+        /// the <b>PermanentRestore</b> parameter or set it to
+        /// <code>false</code>.</p>
+        pub fn temporary_restore_days(mut self, inp: i32) -> Self {
+            self.inner = self.inner.temporary_restore_days(inp);
+            self
+        }
+        /// <p>Specifies the number of days for which to temporarily restore an archived snapshot.
+        /// Required for temporary restores only. The snapshot will be automatically re-archived
+        /// after this period.</p>
+        /// <p>To temporarily restore an archived snapshot, specify the number of days and omit
+        /// the <b>PermanentRestore</b> parameter or set it to
+        /// <code>false</code>.</p>
+        pub fn set_temporary_restore_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_temporary_restore_days(input);
+            self
+        }
+        /// <p>Indicates whether to permanently restore an archived snapshot. To permanently restore
+        /// an archived snapshot, specify <code>true</code> and omit the
+        /// <b>RestoreSnapshotTierRequest$TemporaryRestoreDays</b> parameter.</p>
+        pub fn permanent_restore(mut self, inp: bool) -> Self {
+            self.inner = self.inner.permanent_restore(inp);
+            self
+        }
+        /// <p>Indicates whether to permanently restore an archived snapshot. To permanently restore
+        /// an archived snapshot, specify <code>true</code> and omit the
+        /// <b>RestoreSnapshotTierRequest$TemporaryRestoreDays</b> parameter.</p>
+        pub fn set_permanent_restore(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_permanent_restore(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `RevokeClientVpnIngress`.
     ///
     /// <p>Removes an ingress authorization rule from a Client VPN endpoint. </p>
     #[derive(std::fmt::Debug)]
     pub struct RevokeClientVpnIngress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -72203,7 +77933,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RevokeSecurityGroupEgress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -72409,7 +78139,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RevokeSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -72676,7 +78406,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RunInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -73027,16 +78757,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_id(input);
             self
         }
-        /// <p>The user data to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands
-        /// on your Linux instance at launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows). If you are using a command line tool,
+        /// <p>The user data to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands
+        /// on your Linux instance at launch</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run commands on your Windows instance at launch</a>. If you are using a command line tool,
         /// base64-encoding is performed for you, and you can load the text from a file. Otherwise,
         /// you must provide base64-encoded text. User data is limited to 16 KB.</p>
         pub fn user_data(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_data(inp);
             self
         }
-        /// <p>The user data to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running commands
-        /// on your Linux instance at launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows). If you are using a command line tool,
+        /// <p>The user data to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands
+        /// on your Linux instance at launch</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run commands on your Windows instance at launch</a>. If you are using a command line tool,
         /// base64-encoding is performed for you, and you can load the text from a file. Otherwise,
         /// you must provide base64-encoded text. User data is limited to 16 KB.</p>
         pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -73376,12 +79106,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_credit_specification(input);
             self
         }
-        /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+        /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn cpu_options(mut self, inp: crate::model::CpuOptionsRequest) -> Self {
             self.inner = self.inner.cpu_options(inp);
             self
         }
-        /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+        /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn set_cpu_options(
             mut self,
             input: std::option::Option<crate::model::CpuOptionsRequest>,
@@ -73485,6 +79215,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enclave_options(input);
             self
         }
+        /// <p>The options for the instance hostname. The default values are inherited from the subnet.</p>
+        pub fn private_dns_name_options(
+            mut self,
+            inp: crate::model::PrivateDnsNameOptionsRequest,
+        ) -> Self {
+            self.inner = self.inner.private_dns_name_options(inp);
+            self
+        }
+        /// <p>The options for the instance hostname. The default values are inherited from the subnet.</p>
+        pub fn set_private_dns_name_options(
+            mut self,
+            input: std::option::Option<crate::model::PrivateDnsNameOptionsRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_private_dns_name_options(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `RunScheduledInstances`.
     ///
@@ -73497,7 +79243,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RunScheduledInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -73626,7 +79372,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchLocalGatewayRoutes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -73752,7 +79498,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchTransitGatewayMulticastGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -73959,7 +79705,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchTransitGatewayRoutes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -74177,11 +79923,11 @@ pub mod fluent_builders {
     /// system is configured to perform the required diagnostic tasks.</p>
     ///
     /// <p>For more information about configuring your operating system to generate a crash dump
-    /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send a diagnostic interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send a Diagnostic Interrupt</a> (Windows instances).</p>
+    /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send a diagnostic interrupt (for advanced users)</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send a diagnostic interrupt (for advanced users)</a> (Windows instances).</p>
     #[derive(std::fmt::Debug)]
     pub struct SendDiagnosticInterrupt<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -74279,12 +80025,12 @@ pub mod fluent_builders {
     /// supported on Dedicated Hosts. Before you start the instance, either change its CPU credit
     /// option to <code>standard</code>, or change its tenancy to <code>default</code> or <code>dedicated</code>.</p>
     ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping instances</a> in the
-    /// <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop and start your instance</a>
+    /// in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -74382,6 +80128,130 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `StartNetworkInsightsAccessScopeAnalysis`.
+    ///
+    /// <p>Starts analyzing the specified Network Access Scope.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartNetworkInsightsAccessScopeAnalysis<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_network_insights_access_scope_analysis_input::Builder,
+    }
+    impl<C, M, R> StartNetworkInsightsAccessScopeAnalysis<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartNetworkInsightsAccessScopeAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartNetworkInsightsAccessScopeAnalysisOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::StartNetworkInsightsAccessScopeAnalysisError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartNetworkInsightsAccessScopeAnalysisInputOperationOutputAlias,
+                crate::output::StartNetworkInsightsAccessScopeAnalysisOutput,
+                crate::error::StartNetworkInsightsAccessScopeAnalysisError,
+                crate::input::StartNetworkInsightsAccessScopeAnalysisInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn network_insights_access_scope_id(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.network_insights_access_scope_id(inp);
+            self
+        }
+        /// <p>The ID of the Network Access Scope.</p>
+        pub fn set_network_insights_access_scope_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_network_insights_access_scope_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// Appends an item to `TagSpecifications`.
+        ///
+        /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+        ///
+        /// <p>The tags to apply.</p>
+        pub fn tag_specifications(
+            mut self,
+            inp: impl Into<crate::model::TagSpecification>,
+        ) -> Self {
+            self.inner = self.inner.tag_specifications(inp);
+            self
+        }
+        /// <p>The tags to apply.</p>
+        pub fn set_tag_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartNetworkInsightsAnalysis`.
     ///
     /// <p>Starts analyzing the specified path. If the path is reachable, the
@@ -74389,7 +80259,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartNetworkInsightsAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -74528,7 +80398,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartVpcEndpointServicePrivateDnsVerification<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -74628,12 +80498,12 @@ pub mod fluent_builders {
     /// in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>When you stop an instance, we attempt to shut it down forcibly after a short while. If
     /// your instance appears stuck in the stopping state after a period of time, there may be
-    /// an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
+    /// an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
     /// stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct StopInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -74764,7 +80634,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TerminateClientVpnConnections<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -74933,7 +80803,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TerminateInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -75028,7 +80898,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UnassignIpv6Addresses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -75135,7 +81005,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UnassignPrivateIpAddresses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -75243,7 +81113,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UnmonitorInstances<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -75337,7 +81207,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateSecurityGroupRuleDescriptionsEgress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -75483,7 +81353,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateSecurityGroupRuleDescriptionsIngress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -75630,7 +81500,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct WithdrawByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -75709,17 +81579,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -75728,7 +81602,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -75744,11 +81618,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

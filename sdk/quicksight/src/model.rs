@@ -98,7 +98,9 @@ impl AsRef<str> for ExceptionResourceType {
 pub struct User {
     /// <p>The Amazon Resource Name (ARN) for the user.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The user's user name.</p>
+    /// <p>The user's user name. In the output, the value for <code>UserName</code> is
+    /// <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
+    /// and the corresponding IAM user is deleted.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The user's email address.</p>
     pub email: std::option::Option<std::string::String>,
@@ -142,7 +144,7 @@ pub struct User {
     /// <p>The custom permissions profile associated with this user.</p>
     pub custom_permissions_name: std::option::Option<std::string::String>,
     /// <p>The type of supported external login provider that provides identity to let the user
-    /// federate into Amazon QuickSight with an associated IAMrole. The type can be one of the following.</p>
+    /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -164,7 +166,9 @@ impl User {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The user's user name.</p>
+    /// <p>The user's user name. In the output, the value for <code>UserName</code> is
+    /// <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
+    /// and the corresponding IAM user is deleted.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -222,7 +226,7 @@ impl User {
         self.custom_permissions_name.as_deref()
     }
     /// <p>The type of supported external login provider that provides identity to let the user
-    /// federate into Amazon QuickSight with an associated IAMrole. The type can be one of the following.</p>
+    /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -298,12 +302,16 @@ pub mod user {
             self.arn = input;
             self
         }
-        /// <p>The user's user name.</p>
+        /// <p>The user's user name. In the output, the value for <code>UserName</code> is
+        /// <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
+        /// and the corresponding IAM user is deleted.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The user's user name.</p>
+        /// <p>The user's user name. In the output, the value for <code>UserName</code> is
+        /// <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
+        /// and the corresponding IAM user is deleted.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -433,7 +441,7 @@ pub mod user {
             self
         }
         /// <p>The type of supported external login provider that provides identity to let the user
-        /// federate into Amazon QuickSight with an associated IAMrole. The type can be one of the following.</p>
+        /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -452,7 +460,7 @@ pub mod user {
             self
         }
         /// <p>The type of supported external login provider that provides identity to let the user
-        /// federate into Amazon QuickSight with an associated IAMrole. The type can be one of the following.</p>
+        /// federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -667,13 +675,13 @@ pub struct ResourcePermission {
     /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
     /// </li>
     /// <li>
-    /// <p>The ARN of an Amazon Web Services account root: This is an IAMARN rather than a Amazon QuickSight
+    /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
     /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
     /// (This is less common.) </p>
     /// </li>
     /// </ul>
     pub principal: std::option::Option<std::string::String>,
-    /// <p>The IAMaction to grant or revoke permissions on.</p>
+    /// <p>The IAM action to grant or revoke permissions on.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResourcePermission {
@@ -687,7 +695,7 @@ impl ResourcePermission {
     /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
     /// </li>
     /// <li>
-    /// <p>The ARN of an Amazon Web Services account root: This is an IAMARN rather than a Amazon QuickSight
+    /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
     /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
     /// (This is less common.) </p>
     /// </li>
@@ -695,7 +703,7 @@ impl ResourcePermission {
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
-    /// <p>The IAMaction to grant or revoke permissions on.</p>
+    /// <p>The IAM action to grant or revoke permissions on.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
@@ -728,7 +736,7 @@ pub mod resource_permission {
         /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
         /// </li>
         /// <li>
-        /// <p>The ARN of an Amazon Web Services account root: This is an IAMARN rather than a Amazon QuickSight
+        /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
         /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
         /// (This is less common.) </p>
         /// </li>
@@ -747,7 +755,7 @@ pub mod resource_permission {
         /// <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p>
         /// </li>
         /// <li>
-        /// <p>The ARN of an Amazon Web Services account root: This is an IAMARN rather than a Amazon QuickSight
+        /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight
         /// ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.
         /// (This is less common.) </p>
         /// </li>
@@ -760,14 +768,14 @@ pub mod resource_permission {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>The IAMaction to grant or revoke permissions on.</p>
+        /// <p>The IAM action to grant or revoke permissions on.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
-        /// <p>The IAMaction to grant or revoke permissions on.</p>
+        /// <p>The IAM action to grant or revoke permissions on.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2641,7 +2649,10 @@ impl VpcConnectionProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceCredentials {
-    /// <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+    /// <p>Credential pair. For more information, see
+    /// <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+    /// </code>.</p>
     pub credential_pair: std::option::Option<crate::model::CredentialPair>,
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you
     /// want to use. When <code>CopySourceArn</code> is not null, the credential pair from the
@@ -2650,7 +2661,10 @@ pub struct DataSourceCredentials {
     pub copy_source_arn: std::option::Option<std::string::String>,
 }
 impl DataSourceCredentials {
-    /// <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+    /// <p>Credential pair. For more information, see
+    /// <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+    /// </code>.</p>
     pub fn credential_pair(&self) -> std::option::Option<&crate::model::CredentialPair> {
         self.credential_pair.as_ref()
     }
@@ -2680,12 +2694,18 @@ pub mod data_source_credentials {
         pub(crate) copy_source_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+        /// <p>Credential pair. For more information, see
+        /// <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+        /// </code>.</p>
         pub fn credential_pair(mut self, input: crate::model::CredentialPair) -> Self {
             self.credential_pair = Some(input);
             self
         }
-        /// <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+        /// <p>Credential pair. For more information, see
+        /// <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+        /// </code>.</p>
         pub fn set_credential_pair(
             mut self,
             input: std::option::Option<crate::model::CredentialPair>,
@@ -2879,7 +2899,7 @@ impl CredentialPair {
 pub enum DataSourceParameters {
     /// <p>The parameters for OpenSearch.</p>
     AmazonElasticsearchParameters(crate::model::AmazonElasticsearchParameters),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The parameters for OpenSearch.</p>
     AmazonOpenSearchParameters(crate::model::AmazonOpenSearchParameters),
     /// <p>The parameters for Amazon Athena.</p>
     AthenaParameters(crate::model::AthenaParameters),
@@ -2889,6 +2909,8 @@ pub enum DataSourceParameters {
     AuroraPostgreSqlParameters(crate::model::AuroraPostgreSqlParameters),
     /// <p>The parameters for IoT Analytics.</p>
     AwsIotAnalyticsParameters(crate::model::AwsIotAnalyticsParameters),
+    /// <p>The parameters for Exasol.</p>
+    ExasolParameters(crate::model::ExasolParameters),
     /// <p>The parameters for Jira.</p>
     JiraParameters(crate::model::JiraParameters),
     /// <p>The parameters for MariaDB.</p>
@@ -3019,6 +3041,21 @@ impl DataSourceParameters {
     /// Returns true if this is a [`AwsIotAnalyticsParameters`](crate::model::DataSourceParameters::AwsIotAnalyticsParameters).
     pub fn is_aws_iot_analytics_parameters(&self) -> bool {
         self.as_aws_iot_analytics_parameters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ExasolParameters`](crate::model::DataSourceParameters::ExasolParameters), extracting the inner [`ExasolParameters`](crate::model::ExasolParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_exasol_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::ExasolParameters, &Self> {
+        if let DataSourceParameters::ExasolParameters(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`ExasolParameters`](crate::model::DataSourceParameters::ExasolParameters).
+    pub fn is_exasol_parameters(&self) -> bool {
+        self.as_exasol_parameters().is_ok()
     }
     /// Tries to convert the enum instance into [`JiraParameters`](crate::model::DataSourceParameters::JiraParameters), extracting the inner [`JiraParameters`](crate::model::JiraParameters).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -3245,15 +3282,88 @@ impl DataSourceParameters {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The required parameters for connecting to an Exasol data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExasolParameters {
+    /// <p>The hostname or IP address of the Exasol data source.</p>
+    pub host: std::option::Option<std::string::String>,
+    /// <p>The port for the Exasol data source.</p>
+    pub port: i32,
+}
+impl ExasolParameters {
+    /// <p>The hostname or IP address of the Exasol data source.</p>
+    pub fn host(&self) -> std::option::Option<&str> {
+        self.host.as_deref()
+    }
+    /// <p>The port for the Exasol data source.</p>
+    pub fn port(&self) -> i32 {
+        self.port
+    }
+}
+impl std::fmt::Debug for ExasolParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExasolParameters");
+        formatter.field("host", &self.host);
+        formatter.field("port", &self.port);
+        formatter.finish()
+    }
+}
+/// See [`ExasolParameters`](crate::model::ExasolParameters)
+pub mod exasol_parameters {
+    /// A builder for [`ExasolParameters`](crate::model::ExasolParameters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) host: std::option::Option<std::string::String>,
+        pub(crate) port: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The hostname or IP address of the Exasol data source.</p>
+        pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host = Some(input.into());
+            self
+        }
+        /// <p>The hostname or IP address of the Exasol data source.</p>
+        pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host = input;
+            self
+        }
+        /// <p>The port for the Exasol data source.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        /// <p>The port for the Exasol data source.</p>
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExasolParameters`](crate::model::ExasolParameters)
+        pub fn build(self) -> crate::model::ExasolParameters {
+            crate::model::ExasolParameters {
+                host: self.host,
+                port: self.port.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ExasolParameters {
+    /// Creates a new builder-style object to manufacture [`ExasolParameters`](crate::model::ExasolParameters)
+    pub fn builder() -> crate::model::exasol_parameters::Builder {
+        crate::model::exasol_parameters::Builder::default()
+    }
+}
+
+/// <p>The parameters for OpenSearch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmazonOpenSearchParameters {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The OpenSearch domain.</p>
     pub domain: std::option::Option<std::string::String>,
 }
 impl AmazonOpenSearchParameters {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The OpenSearch domain.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -3274,12 +3384,12 @@ pub mod amazon_open_search_parameters {
         pub(crate) domain: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The OpenSearch domain.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The OpenSearch domain.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -6904,7 +7014,11 @@ impl TagColumnOperation {
     }
 }
 
-/// <p>A tag for a column in a <a>TagColumnOperation</a> structure. This is a
+/// <p>A tag for a column in a
+/// <code>
+/// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html">TagColumnOperation</a>
+/// </code>
+/// structure. This is a
 /// variant type structure. For this structure to be valid, only one of the attributes can
 /// be non-null.</p>
 #[non_exhaustive]
@@ -8513,6 +8627,70 @@ impl RelationalTable {
     }
 }
 
+/// <p>A structure that contains the configuration of a shareable link to the dashboard.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LinkSharingConfiguration {
+    /// <p>A structure that contains the permissions of a shareable link.</p>
+    pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+}
+impl LinkSharingConfiguration {
+    /// <p>A structure that contains the permissions of a shareable link.</p>
+    pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
+        self.permissions.as_deref()
+    }
+}
+impl std::fmt::Debug for LinkSharingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LinkSharingConfiguration");
+        formatter.field("permissions", &self.permissions);
+        formatter.finish()
+    }
+}
+/// See [`LinkSharingConfiguration`](crate::model::LinkSharingConfiguration)
+pub mod link_sharing_configuration {
+    /// A builder for [`LinkSharingConfiguration`](crate::model::LinkSharingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) permissions:
+            std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+    }
+    impl Builder {
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>A structure that contains the permissions of a shareable link.</p>
+        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+            let mut v = self.permissions.unwrap_or_default();
+            v.push(input.into());
+            self.permissions = Some(v);
+            self
+        }
+        /// <p>A structure that contains the permissions of a shareable link.</p>
+        pub fn set_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        ) -> Self {
+            self.permissions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LinkSharingConfiguration`](crate::model::LinkSharingConfiguration)
+        pub fn build(self) -> crate::model::LinkSharingConfiguration {
+            crate::model::LinkSharingConfiguration {
+                permissions: self.permissions,
+            }
+        }
+    }
+}
+impl LinkSharingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LinkSharingConfiguration`](crate::model::LinkSharingConfiguration)
+    pub fn builder() -> crate::model::link_sharing_configuration::Builder {
+        crate::model::link_sharing_configuration::Builder::default()
+    }
+}
+
 /// <p>Dashboard publish options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9671,23 +9849,33 @@ impl AnalysisSourceTemplate {
     }
 }
 
-/// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account or a Amazon QuickSight namespace in a specific Amazon Web Services Region.</p>
+/// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account or a QuickSight namespace in a specific Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountCustomization {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
     pub default_theme: std::option::Option<std::string::String>,
+    /// <p>The default email customization template.</p>
+    pub default_email_customization_template: std::option::Option<std::string::String>,
 }
 impl AccountCustomization {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
     pub fn default_theme(&self) -> std::option::Option<&str> {
         self.default_theme.as_deref()
     }
+    /// <p>The default email customization template.</p>
+    pub fn default_email_customization_template(&self) -> std::option::Option<&str> {
+        self.default_email_customization_template.as_deref()
+    }
 }
 impl std::fmt::Debug for AccountCustomization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountCustomization");
         formatter.field("default_theme", &self.default_theme);
+        formatter.field(
+            "default_email_customization_template",
+            &self.default_email_customization_template,
+        );
         formatter.finish()
     }
 }
@@ -9698,6 +9886,7 @@ pub mod account_customization {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_theme: std::option::Option<std::string::String>,
+        pub(crate) default_email_customization_template: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The default theme for this Amazon QuickSight subscription.</p>
@@ -9713,10 +9902,27 @@ pub mod account_customization {
             self.default_theme = input;
             self
         }
+        /// <p>The default email customization template.</p>
+        pub fn default_email_customization_template(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.default_email_customization_template = Some(input.into());
+            self
+        }
+        /// <p>The default email customization template.</p>
+        pub fn set_default_email_customization_template(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_email_customization_template = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AccountCustomization`](crate::model::AccountCustomization)
         pub fn build(self) -> crate::model::AccountCustomization {
             crate::model::AccountCustomization {
                 default_theme: self.default_theme,
+                default_email_customization_template: self.default_email_customization_template,
             }
         }
     }
@@ -9802,13 +10008,13 @@ impl Tag {
     }
 }
 
-/// <p>A summary of the folder. </p>
+/// <p>A summary of information about an existing Amazon QuickSight folder. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderSummary {
-    /// <p>The Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The display name of the folder.</p>
     pub name: std::option::Option<std::string::String>,
@@ -9820,11 +10026,11 @@ pub struct FolderSummary {
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl FolderSummary {
-    /// <p>The Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
@@ -9871,22 +10077,22 @@ pub mod folder_summary {
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) of the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.folder_id = Some(input.into());
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.folder_id = input;
             self
@@ -10011,23 +10217,23 @@ impl AsRef<str> for FolderType {
     }
 }
 
-/// <p>Searches a folder by a filter.</p>
+/// <p>A filter to use to search a Amazon QuickSight folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderSearchFilter {
-    /// <p>The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.</p>
+    /// <p>The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.</p>
     pub operator: std::option::Option<crate::model::FilterOperator>,
-    /// <p>The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
+    /// <p>The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
     pub name: std::option::Option<crate::model::FolderFilterAttribute>,
     /// <p>The value of the named item (in this example, <code>PARENT_FOLDER_ARN</code>), that you want to use as a filter. For example, <code>"Value": "arn:aws:quicksight:us-east-1:1:folder/folderId"</code>.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl FolderSearchFilter {
-    /// <p>The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.</p>
+    /// <p>The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::FilterOperator> {
         self.operator.as_ref()
     }
-    /// <p>The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
+    /// <p>The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::FolderFilterAttribute> {
         self.name.as_ref()
     }
@@ -10056,12 +10262,12 @@ pub mod folder_search_filter {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.</p>
+        /// <p>The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.</p>
         pub fn operator(mut self, input: crate::model::FilterOperator) -> Self {
             self.operator = Some(input);
             self
         }
-        /// <p>The comparison operator that you want to use as a filter. For example, <code>"Operator": "StringEquals"</code>.</p>
+        /// <p>The comparison operator that you want to use in the filter. For example, <code>"Operator": "StringEquals"</code>.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::FilterOperator>,
@@ -10069,12 +10275,12 @@ pub mod folder_search_filter {
             self.operator = input;
             self
         }
-        /// <p>The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
+        /// <p>The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
         pub fn name(mut self, input: crate::model::FolderFilterAttribute) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>The name of the value that you want to use as a filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
+        /// <p>The name of a value that you want to use in the filter. For example, <code>"Name": "PARENT_FOLDER_ARN"</code>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::FolderFilterAttribute>,
@@ -12931,13 +13137,13 @@ impl AsRef<str> for IngestionStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveIamPolicyAssignment {
-    /// <p>A name for the IAMpolicy assignment.</p>
+    /// <p>A name for the IAM policy assignment.</p>
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl ActiveIamPolicyAssignment {
-    /// <p>A name for the IAMpolicy assignment.</p>
+    /// <p>A name for the IAM policy assignment.</p>
     pub fn assignment_name(&self) -> std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
@@ -12964,12 +13170,12 @@ pub mod active_iam_policy_assignment {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A name for the IAMpolicy assignment.</p>
+        /// <p>A name for the IAM policy assignment.</p>
         pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_name = Some(input.into());
             self
         }
-        /// <p>A name for the IAMpolicy assignment.</p>
+        /// <p>A name for the IAM policy assignment.</p>
         pub fn set_assignment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13003,7 +13209,7 @@ impl ActiveIamPolicyAssignment {
     }
 }
 
-/// <p>IAMpolicy assignment summary.</p>
+/// <p>IAM policy assignment summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamPolicyAssignmentSummary {
@@ -13156,7 +13362,7 @@ impl GroupMember {
     }
 }
 
-/// <p>An object that consists of the member Amazon Resource Name (ARN) and member ID.</p>
+/// <p>An object that consists of a member Amazon Resource Name (ARN) and a member ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MemberIdArnPair {
@@ -13793,6 +13999,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsIotAnalytics,
     #[allow(missing_docs)] // documentation missing in model
+    Exasol,
+    #[allow(missing_docs)] // documentation missing in model
     Github,
     #[allow(missing_docs)] // documentation missing in model
     Jira,
@@ -13839,6 +14047,7 @@ impl std::convert::From<&str> for DataSourceType {
             "AURORA" => DataSourceType::Aurora,
             "AURORA_POSTGRESQL" => DataSourceType::AuroraPostgresql,
             "AWS_IOT_ANALYTICS" => DataSourceType::AwsIotAnalytics,
+            "EXASOL" => DataSourceType::Exasol,
             "GITHUB" => DataSourceType::Github,
             "JIRA" => DataSourceType::Jira,
             "MARIADB" => DataSourceType::Mariadb,
@@ -13878,6 +14087,7 @@ impl DataSourceType {
             DataSourceType::Aurora => "AURORA",
             DataSourceType::AuroraPostgresql => "AURORA_POSTGRESQL",
             DataSourceType::AwsIotAnalytics => "AWS_IOT_ANALYTICS",
+            DataSourceType::Exasol => "EXASOL",
             DataSourceType::Github => "GITHUB",
             DataSourceType::Jira => "JIRA",
             DataSourceType::Mariadb => "MARIADB",
@@ -13908,6 +14118,7 @@ impl DataSourceType {
             "AURORA",
             "AURORA_POSTGRESQL",
             "AWS_IOT_ANALYTICS",
+            "EXASOL",
             "GITHUB",
             "JIRA",
             "MARIADB",
@@ -14394,26 +14605,31 @@ impl AsRef<str> for EmbeddingIdentityType {
     }
 }
 
-/// <p>The type of experience you want to embed. For registered users, you can embed an Amazon QuickSight dashboard or the Amazon QuickSight console.</p>
+/// <p>The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.</p>
 /// <note>
-/// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuraton.</p>
+/// <p>Exactly one of the experience configurations is required. You can choose
+/// <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more
+/// than one experience configuration.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
     pub dashboard: std::option::Option<crate::model::RegisteredUserDashboardEmbeddingConfiguration>,
-    /// <p>The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
+    /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
     /// Guide</i>.</p>
-    /// <p>Use <code>GenerateEmbedUrlForRegisteredUser</code> where
+    /// <p>Use <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
+    /// </code>
+    /// where
     /// you want to provide an authoring portal that allows users to create data sources,
     /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
     /// needs to belong to the author or admin security cohort. If you want to restrict permissions
     /// to some of these features, add a custom permissions profile to the user with the
     /// <code>
-    /// <a>UpdateUser</a>
-    /// </code> API operation. Use <code>
-    /// <a>RegisterUser</a>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+    /// </code> API operation. Use the <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
     /// </code> API operation to add a new user with a custom permission profile attached. For more
     /// information, see the following sections in the <i>Amazon QuickSight User
     /// Guide</i>:</p>
@@ -14433,7 +14649,8 @@ pub struct RegisteredUserEmbeddingExperienceConfiguration {
     pub quick_sight_console:
         std::option::Option<crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration>,
     /// <p>The configuration details for embedding the Q search bar.</p>
-    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+    /// <p>For more information about embedding the Q search bar, see
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
     pub q_search_bar:
         std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
 }
@@ -14444,17 +14661,20 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
     ) -> std::option::Option<&crate::model::RegisteredUserDashboardEmbeddingConfiguration> {
         self.dashboard.as_ref()
     }
-    /// <p>The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
+    /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
     /// Guide</i>.</p>
-    /// <p>Use <code>GenerateEmbedUrlForRegisteredUser</code> where
+    /// <p>Use <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
+    /// </code>
+    /// where
     /// you want to provide an authoring portal that allows users to create data sources,
     /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
     /// needs to belong to the author or admin security cohort. If you want to restrict permissions
     /// to some of these features, add a custom permissions profile to the user with the
     /// <code>
-    /// <a>UpdateUser</a>
-    /// </code> API operation. Use <code>
-    /// <a>RegisterUser</a>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+    /// </code> API operation. Use the <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
     /// </code> API operation to add a new user with a custom permission profile attached. For more
     /// information, see the following sections in the <i>Amazon QuickSight User
     /// Guide</i>:</p>
@@ -14478,7 +14698,8 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
         self.quick_sight_console.as_ref()
     }
     /// <p>The configuration details for embedding the Q search bar.</p>
-    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+    /// <p>For more information about embedding the Q search bar, see
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
     pub fn q_search_bar(
         &self,
     ) -> std::option::Option<&crate::model::RegisteredUserQSearchBarEmbeddingConfiguration> {
@@ -14525,17 +14746,20 @@ pub mod registered_user_embedding_experience_configuration {
             self.dashboard = input;
             self
         }
-        /// <p>The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
+        /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
         /// Guide</i>.</p>
-        /// <p>Use <code>GenerateEmbedUrlForRegisteredUser</code> where
+        /// <p>Use <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
+        /// </code>
+        /// where
         /// you want to provide an authoring portal that allows users to create data sources,
         /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
         /// needs to belong to the author or admin security cohort. If you want to restrict permissions
         /// to some of these features, add a custom permissions profile to the user with the
         /// <code>
-        /// <a>UpdateUser</a>
-        /// </code> API operation. Use <code>
-        /// <a>RegisterUser</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+        /// </code> API operation. Use the <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
         /// </code> API operation to add a new user with a custom permission profile attached. For more
         /// information, see the following sections in the <i>Amazon QuickSight User
         /// Guide</i>:</p>
@@ -14559,17 +14783,20 @@ pub mod registered_user_embedding_experience_configuration {
             self.quick_sight_console = Some(input);
             self
         }
-        /// <p>The configuration details for providing an Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
+        /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User
         /// Guide</i>.</p>
-        /// <p>Use <code>GenerateEmbedUrlForRegisteredUser</code> where
+        /// <p>Use <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
+        /// </code>
+        /// where
         /// you want to provide an authoring portal that allows users to create data sources,
         /// datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console
         /// needs to belong to the author or admin security cohort. If you want to restrict permissions
         /// to some of these features, add a custom permissions profile to the user with the
         /// <code>
-        /// <a>UpdateUser</a>
-        /// </code> API operation. Use <code>
-        /// <a>RegisterUser</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+        /// </code> API operation. Use the <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
         /// </code> API operation to add a new user with a custom permission profile attached. For more
         /// information, see the following sections in the <i>Amazon QuickSight User
         /// Guide</i>:</p>
@@ -14596,7 +14823,8 @@ pub mod registered_user_embedding_experience_configuration {
             self
         }
         /// <p>The configuration details for embedding the Q search bar.</p>
-        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+        /// <p>For more information about embedding the Q search bar, see
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
         pub fn q_search_bar(
             mut self,
             input: crate::model::RegisteredUserQSearchBarEmbeddingConfiguration,
@@ -14605,7 +14833,8 @@ pub mod registered_user_embedding_experience_configuration {
             self
         }
         /// <p>The configuration details for embedding the Q search bar.</p>
-        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+        /// <p>For more information about embedding the Q search bar, see
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
         pub fn set_q_search_bar(
             mut self,
             input: std::option::Option<
@@ -14636,13 +14865,21 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisteredUserQSearchBarEmbeddingConfiguration {
-    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
-    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar.
+    /// You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening
+    /// a topic. The ID is in the URL for the topic that you open.</p>
+    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar
+    /// for your readers. When you select an initial topic, you can specify whether or not readers
+    /// are allowed to select other topics from the available ones in the list.</p>
     pub initial_topic_id: std::option::Option<std::string::String>,
 }
 impl RegisteredUserQSearchBarEmbeddingConfiguration {
-    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
-    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar.
+    /// You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening
+    /// a topic. The ID is in the URL for the topic that you open.</p>
+    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar
+    /// for your readers. When you select an initial topic, you can specify whether or not readers
+    /// are allowed to select other topics from the available ones in the list.</p>
     pub fn initial_topic_id(&self) -> std::option::Option<&str> {
         self.initial_topic_id.as_deref()
     }
@@ -14663,14 +14900,22 @@ pub mod registered_user_q_search_bar_embedding_configuration {
         pub(crate) initial_topic_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
-        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar.
+        /// You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening
+        /// a topic. The ID is in the URL for the topic that you open.</p>
+        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar
+        /// for your readers. When you select an initial topic, you can specify whether or not readers
+        /// are allowed to select other topics from the available ones in the list.</p>
         pub fn initial_topic_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.initial_topic_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
-        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar.
+        /// You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening
+        /// a topic. The ID is in the URL for the topic that you open.</p>
+        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar
+        /// for your readers. When you select an initial topic, you can specify whether or not readers
+        /// are allowed to select other topics from the available ones in the list.</p>
         pub fn set_initial_topic_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14935,15 +15180,15 @@ impl RegisteredUserDashboardEmbeddingConfiguration {
     }
 }
 
-/// <p>The type of experience you want to embed. For anonymous users, you can embed an Amazon QuickSight dashboard.</p>
+/// <p>The type of experience you want to embed. For anonymous users, you can embed Amazon QuickSight dashboards.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnonymousUserEmbeddingExperienceConfiguration {
-    /// <p>The type of embedding experience. In this case, an Amazon QuickSight dashboard.</p>
+    /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
     pub dashboard: std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {
-    /// <p>The type of embedding experience. In this case, an Amazon QuickSight dashboard.</p>
+    /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
     pub fn dashboard(
         &self,
     ) -> std::option::Option<&crate::model::AnonymousUserDashboardEmbeddingConfiguration> {
@@ -14967,7 +15212,7 @@ pub mod anonymous_user_embedding_experience_configuration {
             std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
     }
     impl Builder {
-        /// <p>The type of embedding experience. In this case, an Amazon QuickSight dashboard.</p>
+        /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
         pub fn dashboard(
             mut self,
             input: crate::model::AnonymousUserDashboardEmbeddingConfiguration,
@@ -14975,7 +15220,7 @@ pub mod anonymous_user_embedding_experience_configuration {
             self.dashboard = Some(input);
             self
         }
-        /// <p>The type of embedding experience. In this case, an Amazon QuickSight dashboard.</p>
+        /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
         pub fn set_dashboard(
             mut self,
             input: std::option::Option<crate::model::AnonymousUserDashboardEmbeddingConfiguration>,
@@ -16727,7 +16972,7 @@ pub struct IamPolicyAssignment {
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>Assignment name.</p>
     pub assignment_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>Identities.</p>
     pub identities: std::option::Option<
@@ -16749,7 +16994,7 @@ impl IamPolicyAssignment {
     pub fn assignment_name(&self) -> std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -16833,12 +17078,12 @@ pub mod iam_policy_assignment {
             self.assignment_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+        /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+        /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -16901,19 +17146,19 @@ impl IamPolicyAssignment {
     }
 }
 
-/// <p>A folder.</p>
+/// <p>A folder in Amazon QuickSight.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Folder {
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub folder_id: std::option::Option<std::string::String>,
-    /// <p>The folder Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>A display name for the folder.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the folder.</p>
+    /// <p>The type of folder it is.</p>
     pub folder_type: std::option::Option<crate::model::FolderType>,
-    /// <p>An array of ancestor folder ARN strings.</p>
+    /// <p>An array of ancestor ARN strings for the folder.</p>
     pub folder_path: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the folder was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -16921,11 +17166,11 @@ pub struct Folder {
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Folder {
-    /// <p>The folder ID.</p>
+    /// <p>The ID of the folder.</p>
     pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
-    /// <p>The folder Amazon Resource Name (ARN).</p>
+    /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -16933,11 +17178,11 @@ impl Folder {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the folder.</p>
+    /// <p>The type of folder it is.</p>
     pub fn folder_type(&self) -> std::option::Option<&crate::model::FolderType> {
         self.folder_type.as_ref()
     }
-    /// <p>An array of ancestor folder ARN strings.</p>
+    /// <p>An array of ancestor ARN strings for the folder.</p>
     pub fn folder_path(&self) -> std::option::Option<&[std::string::String]> {
         self.folder_path.as_deref()
     }
@@ -16978,22 +17223,22 @@ pub mod folder {
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.folder_id = Some(input.into());
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.folder_id = input;
             self
         }
-        /// <p>The folder Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) for the folder.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The folder Amazon Resource Name (ARN).</p>
+        /// <p>The Amazon Resource Name (ARN) for the folder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -17008,12 +17253,12 @@ pub mod folder {
             self.name = input;
             self
         }
-        /// <p>The type of the folder.</p>
+        /// <p>The type of folder it is.</p>
         pub fn folder_type(mut self, input: crate::model::FolderType) -> Self {
             self.folder_type = Some(input);
             self
         }
-        /// <p>The type of the folder.</p>
+        /// <p>The type of folder it is.</p>
         pub fn set_folder_type(
             mut self,
             input: std::option::Option<crate::model::FolderType>,
@@ -17025,14 +17270,14 @@ pub mod folder {
         ///
         /// To override the contents of this collection use [`set_folder_path`](Self::set_folder_path).
         ///
-        /// <p>An array of ancestor folder ARN strings.</p>
+        /// <p>An array of ancestor ARN strings for the folder.</p>
         pub fn folder_path(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.folder_path.unwrap_or_default();
             v.push(input.into());
             self.folder_path = Some(v);
             self
         }
-        /// <p>An array of ancestor folder ARN strings.</p>
+        /// <p>An array of ancestor ARN strings for the folder.</p>
         pub fn set_folder_path(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17131,7 +17376,7 @@ pub struct DataSet {
     pub row_level_permission_tag_configuration:
         std::option::Option<crate::model::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code>
-    /// <a>ColumnLevelPermissionRule</a>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
     /// </code>.</p>
     pub column_level_permission_rules:
         std::option::Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
@@ -17216,7 +17461,7 @@ impl DataSet {
         self.row_level_permission_tag_configuration.as_ref()
     }
     /// <p>A set of one or more definitions of a <code>
-    /// <a>ColumnLevelPermissionRule</a>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
     /// </code>.</p>
     pub fn column_level_permission_rules(
         &self,
@@ -17541,7 +17786,7 @@ pub mod data_set {
         /// To override the contents of this collection use [`set_column_level_permission_rules`](Self::set_column_level_permission_rules).
         ///
         /// <p>A set of one or more definitions of a <code>
-        /// <a>ColumnLevelPermissionRule</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
         /// </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
@@ -17553,7 +17798,7 @@ pub mod data_set {
             self
         }
         /// <p>A set of one or more definitions of a <code>
-        /// <a>ColumnLevelPermissionRule</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
         /// </code>.</p>
         pub fn set_column_level_permission_rules(
             mut self,
@@ -19057,21 +19302,21 @@ impl AsRef<str> for IngestionType {
     }
 }
 
-/// <p>An asset in a folder, such as a dashboard, analysis, or dataset.</p>
+/// <p>An asset in a Amazon QuickSight folder, such as a dashboard, analysis, or dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderMember {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of an asset in the folder.</p>
     pub member_id: std::option::Option<std::string::String>,
-    /// <p>The type of the asset.</p>
+    /// <p>The type of asset that it is.</p>
     pub member_type: std::option::Option<crate::model::MemberType>,
 }
 impl FolderMember {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of an asset in the folder.</p>
     pub fn member_id(&self) -> std::option::Option<&str> {
         self.member_id.as_deref()
     }
-    /// <p>The type of the asset.</p>
+    /// <p>The type of asset that it is.</p>
     pub fn member_type(&self) -> std::option::Option<&crate::model::MemberType> {
         self.member_type.as_ref()
     }
@@ -19094,22 +19339,22 @@ pub mod folder_member {
         pub(crate) member_type: std::option::Option<crate::model::MemberType>,
     }
     impl Builder {
-        /// <p>The ID of the asset.</p>
+        /// <p>The ID of an asset in the folder.</p>
         pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_id = Some(input.into());
             self
         }
-        /// <p>The ID of the asset.</p>
+        /// <p>The ID of an asset in the folder.</p>
         pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.member_id = input;
             self
         }
-        /// <p>The type of the asset.</p>
+        /// <p>The type of asset that it is.</p>
         pub fn member_type(mut self, input: crate::model::MemberType) -> Self {
             self.member_type = Some(input);
             self
         }
-        /// <p>The type of the asset.</p>
+        /// <p>The type of asset that it is.</p>
         pub fn set_member_type(
             mut self,
             input: std::option::Option<crate::model::MemberType>,

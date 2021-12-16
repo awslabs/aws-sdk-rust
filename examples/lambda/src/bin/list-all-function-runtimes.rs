@@ -4,6 +4,8 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
+use aws_sdk_ec2 as ec2;
+use aws_sdk_lambda as lambda;
 use aws_types::region::Region;
 use structopt::StructOpt;
 

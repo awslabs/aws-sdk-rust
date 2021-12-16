@@ -1,6 +1,6 @@
 # aws-sdk-globalaccelerator
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 This is the _AWS Global Accelerator API Reference_. This guide is for developers who need detailed information about AWS Global Accelerator API actions, data types, and errors. For more information about Global Accelerator features, see the [AWS Global Accelerator Developer Guide](https://docs.aws.amazon.com/global-accelerator/latest/dg/Welcome.html).
@@ -62,8 +62,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-globalaccelerator = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-globalaccelerator = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

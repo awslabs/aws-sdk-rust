@@ -3,13 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use std::process;
-
-use ssm::model::ParameterType;
-use ssm::{Client, Region};
-
 use aws_config::meta::region::RegionProviderChain;
-
+use aws_sdk_ssm::model::ParameterType;
+use aws_sdk_ssm::{Client, Region};
+use std::process;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -62,7 +59,7 @@ async fn main() {
     let client = Client::new(&shared_config);
 
     if verbose {
-        println!("SSM client version:   {}", ssm::PKG_VERSION);
+        println!("SSM client version:   {}", aws_sdk_ssm::PKG_VERSION);
         println!(
             "Region:               {:?}",
             shared_config.region().unwrap()

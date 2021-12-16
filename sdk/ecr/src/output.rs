@@ -574,6 +574,73 @@ impl PutReplicationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutRegistryScanningConfigurationOutput {
+    /// <p>The scanning configuration for your registry.</p>
+    pub registry_scanning_configuration:
+        std::option::Option<crate::model::RegistryScanningConfiguration>,
+}
+impl PutRegistryScanningConfigurationOutput {
+    /// <p>The scanning configuration for your registry.</p>
+    pub fn registry_scanning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RegistryScanningConfiguration> {
+        self.registry_scanning_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for PutRegistryScanningConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutRegistryScanningConfigurationOutput");
+        formatter.field(
+            "registry_scanning_configuration",
+            &self.registry_scanning_configuration,
+        );
+        formatter.finish()
+    }
+}
+/// See [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
+pub mod put_registry_scanning_configuration_output {
+    /// A builder for [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) registry_scanning_configuration:
+            std::option::Option<crate::model::RegistryScanningConfiguration>,
+    }
+    impl Builder {
+        /// <p>The scanning configuration for your registry.</p>
+        pub fn registry_scanning_configuration(
+            mut self,
+            input: crate::model::RegistryScanningConfiguration,
+        ) -> Self {
+            self.registry_scanning_configuration = Some(input);
+            self
+        }
+        /// <p>The scanning configuration for your registry.</p>
+        pub fn set_registry_scanning_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RegistryScanningConfiguration>,
+        ) -> Self {
+            self.registry_scanning_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
+        pub fn build(self) -> crate::output::PutRegistryScanningConfigurationOutput {
+            crate::output::PutRegistryScanningConfigurationOutput {
+                registry_scanning_configuration: self.registry_scanning_configuration,
+            }
+        }
+    }
+}
+impl PutRegistryScanningConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
+    pub fn builder() -> crate::output::put_registry_scanning_configuration_output::Builder {
+        crate::output::put_registry_scanning_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRegistryPolicyOutput {
     /// <p>The registry ID.</p>
     pub registry_id: std::option::Option<std::string::String>,
@@ -1333,6 +1400,88 @@ impl GetRepositoryPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRegistryScanningConfigurationOutput {
+    /// <p>The ID of the registry.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+    /// <p>The scanning configuration for the registry.</p>
+    pub scanning_configuration: std::option::Option<crate::model::RegistryScanningConfiguration>,
+}
+impl GetRegistryScanningConfigurationOutput {
+    /// <p>The ID of the registry.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+    /// <p>The scanning configuration for the registry.</p>
+    pub fn scanning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::RegistryScanningConfiguration> {
+        self.scanning_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for GetRegistryScanningConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetRegistryScanningConfigurationOutput");
+        formatter.field("registry_id", &self.registry_id);
+        formatter.field("scanning_configuration", &self.scanning_configuration);
+        formatter.finish()
+    }
+}
+/// See [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
+pub mod get_registry_scanning_configuration_output {
+    /// A builder for [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+        pub(crate) scanning_configuration:
+            std::option::Option<crate::model::RegistryScanningConfiguration>,
+    }
+    impl Builder {
+        /// <p>The ID of the registry.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the registry.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// <p>The scanning configuration for the registry.</p>
+        pub fn scanning_configuration(
+            mut self,
+            input: crate::model::RegistryScanningConfiguration,
+        ) -> Self {
+            self.scanning_configuration = Some(input);
+            self
+        }
+        /// <p>The scanning configuration for the registry.</p>
+        pub fn set_scanning_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RegistryScanningConfiguration>,
+        ) -> Self {
+            self.scanning_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
+        pub fn build(self) -> crate::output::GetRegistryScanningConfigurationOutput {
+            crate::output::GetRegistryScanningConfigurationOutput {
+                registry_id: self.registry_id,
+                scanning_configuration: self.scanning_configuration,
+            }
+        }
+    }
+}
+impl GetRegistryScanningConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
+    pub fn builder() -> crate::output::get_registry_scanning_configuration_output::Builder {
+        crate::output::get_registry_scanning_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegistryPolicyOutput {
     /// <p>The ID of the registry.</p>
     pub registry_id: std::option::Option<std::string::String>,
@@ -2062,6 +2211,111 @@ impl DescribeRegistryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePullThroughCacheRulesOutput {
+    /// <p>The details of the pull through cache rules.</p>
+    pub pull_through_cache_rules:
+        std::option::Option<std::vec::Vec<crate::model::PullThroughCacheRule>>,
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a
+    /// <code>DescribePullThroughCacheRulesRequest</code> request exceed
+    /// <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is null when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribePullThroughCacheRulesOutput {
+    /// <p>The details of the pull through cache rules.</p>
+    pub fn pull_through_cache_rules(
+        &self,
+    ) -> std::option::Option<&[crate::model::PullThroughCacheRule]> {
+        self.pull_through_cache_rules.as_deref()
+    }
+    /// <p>The <code>nextToken</code> value to include in a future
+    /// <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a
+    /// <code>DescribePullThroughCacheRulesRequest</code> request exceed
+    /// <code>maxResults</code>, this value can be used to retrieve the next page of
+    /// results. This value is null when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribePullThroughCacheRulesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribePullThroughCacheRulesOutput");
+        formatter.field("pull_through_cache_rules", &self.pull_through_cache_rules);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
+pub mod describe_pull_through_cache_rules_output {
+    /// A builder for [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pull_through_cache_rules:
+            std::option::Option<std::vec::Vec<crate::model::PullThroughCacheRule>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `pull_through_cache_rules`.
+        ///
+        /// To override the contents of this collection use [`set_pull_through_cache_rules`](Self::set_pull_through_cache_rules).
+        ///
+        /// <p>The details of the pull through cache rules.</p>
+        pub fn pull_through_cache_rules(
+            mut self,
+            input: impl Into<crate::model::PullThroughCacheRule>,
+        ) -> Self {
+            let mut v = self.pull_through_cache_rules.unwrap_or_default();
+            v.push(input.into());
+            self.pull_through_cache_rules = Some(v);
+            self
+        }
+        /// <p>The details of the pull through cache rules.</p>
+        pub fn set_pull_through_cache_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PullThroughCacheRule>>,
+        ) -> Self {
+            self.pull_through_cache_rules = input;
+            self
+        }
+        /// <p>The <code>nextToken</code> value to include in a future
+        /// <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a
+        /// <code>DescribePullThroughCacheRulesRequest</code> request exceed
+        /// <code>maxResults</code>, this value can be used to retrieve the next page of
+        /// results. This value is null when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> value to include in a future
+        /// <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a
+        /// <code>DescribePullThroughCacheRulesRequest</code> request exceed
+        /// <code>maxResults</code>, this value can be used to retrieve the next page of
+        /// results. This value is null when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
+        pub fn build(self) -> crate::output::DescribePullThroughCacheRulesOutput {
+            crate::output::DescribePullThroughCacheRulesOutput {
+                pull_through_cache_rules: self.pull_through_cache_rules,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribePullThroughCacheRulesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
+    pub fn builder() -> crate::output::describe_pull_through_cache_rules_output::Builder {
+        crate::output::describe_pull_through_cache_rules_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageScanFindingsOutput {
     /// <p>The registry ID associated with the request.</p>
     pub registry_id: std::option::Option<std::string::String>,
@@ -2680,6 +2934,126 @@ impl DeleteRegistryPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePullThroughCacheRuleOutput {
+    /// <p>The Amazon ECR repository prefix associated with the request.</p>
+    pub ecr_repository_prefix: std::option::Option<std::string::String>,
+    /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    pub upstream_registry_url: std::option::Option<std::string::String>,
+    /// <p>The timestamp associated with the pull through cache rule.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The registry ID associated with the request.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+}
+impl DeletePullThroughCacheRuleOutput {
+    /// <p>The Amazon ECR repository prefix associated with the request.</p>
+    pub fn ecr_repository_prefix(&self) -> std::option::Option<&str> {
+        self.ecr_repository_prefix.as_deref()
+    }
+    /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    pub fn upstream_registry_url(&self) -> std::option::Option<&str> {
+        self.upstream_registry_url.as_deref()
+    }
+    /// <p>The timestamp associated with the pull through cache rule.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeletePullThroughCacheRuleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePullThroughCacheRuleOutput");
+        formatter.field("ecr_repository_prefix", &self.ecr_repository_prefix);
+        formatter.field("upstream_registry_url", &self.upstream_registry_url);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("registry_id", &self.registry_id);
+        formatter.finish()
+    }
+}
+/// See [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
+pub mod delete_pull_through_cache_rule_output {
+    /// A builder for [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
+        pub(crate) upstream_registry_url: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon ECR repository prefix associated with the request.</p>
+        pub fn ecr_repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ecr_repository_prefix = Some(input.into());
+            self
+        }
+        /// <p>The Amazon ECR repository prefix associated with the request.</p>
+        pub fn set_ecr_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ecr_repository_prefix = input;
+            self
+        }
+        /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+        pub fn upstream_registry_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upstream_registry_url = Some(input.into());
+            self
+        }
+        /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+        pub fn set_upstream_registry_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.upstream_registry_url = input;
+            self
+        }
+        /// <p>The timestamp associated with the pull through cache rule.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The timestamp associated with the pull through cache rule.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The registry ID associated with the request.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        /// <p>The registry ID associated with the request.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
+        pub fn build(self) -> crate::output::DeletePullThroughCacheRuleOutput {
+            crate::output::DeletePullThroughCacheRuleOutput {
+                ecr_repository_prefix: self.ecr_repository_prefix,
+                upstream_registry_url: self.upstream_registry_url,
+                created_at: self.created_at,
+                registry_id: self.registry_id,
+            }
+        }
+    }
+}
+impl DeletePullThroughCacheRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
+    pub fn builder() -> crate::output::delete_pull_through_cache_rule_output::Builder {
+        crate::output::delete_pull_through_cache_rule_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecyclePolicyOutput {
     /// <p>The registry ID associated with the request.</p>
     pub registry_id: std::option::Option<std::string::String>,
@@ -2857,6 +3231,130 @@ impl CreateRepositoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreatePullThroughCacheRuleOutput {
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+    pub ecr_repository_prefix: std::option::Option<std::string::String>,
+    /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    pub upstream_registry_url: std::option::Option<std::string::String>,
+    /// <p>The date and time, in JavaScript date format, when the pull through cache rule was
+    /// created.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The registry ID associated with the request.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+}
+impl CreatePullThroughCacheRuleOutput {
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+    pub fn ecr_repository_prefix(&self) -> std::option::Option<&str> {
+        self.ecr_repository_prefix.as_deref()
+    }
+    /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    pub fn upstream_registry_url(&self) -> std::option::Option<&str> {
+        self.upstream_registry_url.as_deref()
+    }
+    /// <p>The date and time, in JavaScript date format, when the pull through cache rule was
+    /// created.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn registry_id(&self) -> std::option::Option<&str> {
+        self.registry_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreatePullThroughCacheRuleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreatePullThroughCacheRuleOutput");
+        formatter.field("ecr_repository_prefix", &self.ecr_repository_prefix);
+        formatter.field("upstream_registry_url", &self.upstream_registry_url);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("registry_id", &self.registry_id);
+        formatter.finish()
+    }
+}
+/// See [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
+pub mod create_pull_through_cache_rule_output {
+    /// A builder for [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
+        pub(crate) upstream_registry_url: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+        pub fn ecr_repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ecr_repository_prefix = Some(input.into());
+            self
+        }
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+        pub fn set_ecr_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ecr_repository_prefix = input;
+            self
+        }
+        /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+        pub fn upstream_registry_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upstream_registry_url = Some(input.into());
+            self
+        }
+        /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+        pub fn set_upstream_registry_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.upstream_registry_url = input;
+            self
+        }
+        /// <p>The date and time, in JavaScript date format, when the pull through cache rule was
+        /// created.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The date and time, in JavaScript date format, when the pull through cache rule was
+        /// created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The registry ID associated with the request.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        /// <p>The registry ID associated with the request.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
+        pub fn build(self) -> crate::output::CreatePullThroughCacheRuleOutput {
+            crate::output::CreatePullThroughCacheRuleOutput {
+                ecr_repository_prefix: self.ecr_repository_prefix,
+                upstream_registry_url: self.upstream_registry_url,
+                created_at: self.created_at,
+                registry_id: self.registry_id,
+            }
+        }
+    }
+}
+impl CreatePullThroughCacheRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
+    pub fn builder() -> crate::output::create_pull_through_cache_rule_output::Builder {
+        crate::output::create_pull_through_cache_rule_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteLayerUploadOutput {
     /// <p>The registry ID associated with the request.</p>
     pub registry_id: std::option::Option<std::string::String>,
@@ -2965,6 +3463,116 @@ impl CompleteLayerUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput)
     pub fn builder() -> crate::output::complete_layer_upload_output::Builder {
         crate::output::complete_layer_upload_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetRepositoryScanningConfigurationOutput {
+    /// <p>The scanning configuration for the requested repositories.</p>
+    pub scanning_configurations:
+        std::option::Option<std::vec::Vec<crate::model::RepositoryScanningConfiguration>>,
+    /// <p>Any failures associated with the call.</p>
+    pub failures:
+        std::option::Option<std::vec::Vec<crate::model::RepositoryScanningConfigurationFailure>>,
+}
+impl BatchGetRepositoryScanningConfigurationOutput {
+    /// <p>The scanning configuration for the requested repositories.</p>
+    pub fn scanning_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::RepositoryScanningConfiguration]> {
+        self.scanning_configurations.as_deref()
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn failures(
+        &self,
+    ) -> std::option::Option<&[crate::model::RepositoryScanningConfigurationFailure]> {
+        self.failures.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetRepositoryScanningConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetRepositoryScanningConfigurationOutput");
+        formatter.field("scanning_configurations", &self.scanning_configurations);
+        formatter.field("failures", &self.failures);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
+pub mod batch_get_repository_scanning_configuration_output {
+    /// A builder for [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scanning_configurations:
+            std::option::Option<std::vec::Vec<crate::model::RepositoryScanningConfiguration>>,
+        pub(crate) failures: std::option::Option<
+            std::vec::Vec<crate::model::RepositoryScanningConfigurationFailure>,
+        >,
+    }
+    impl Builder {
+        /// Appends an item to `scanning_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_scanning_configurations`](Self::set_scanning_configurations).
+        ///
+        /// <p>The scanning configuration for the requested repositories.</p>
+        pub fn scanning_configurations(
+            mut self,
+            input: impl Into<crate::model::RepositoryScanningConfiguration>,
+        ) -> Self {
+            let mut v = self.scanning_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.scanning_configurations = Some(v);
+            self
+        }
+        /// <p>The scanning configuration for the requested repositories.</p>
+        pub fn set_scanning_configurations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::RepositoryScanningConfiguration>,
+            >,
+        ) -> Self {
+            self.scanning_configurations = input;
+            self
+        }
+        /// Appends an item to `failures`.
+        ///
+        /// To override the contents of this collection use [`set_failures`](Self::set_failures).
+        ///
+        /// <p>Any failures associated with the call.</p>
+        pub fn failures(
+            mut self,
+            input: impl Into<crate::model::RepositoryScanningConfigurationFailure>,
+        ) -> Self {
+            let mut v = self.failures.unwrap_or_default();
+            v.push(input.into());
+            self.failures = Some(v);
+            self
+        }
+        /// <p>Any failures associated with the call.</p>
+        pub fn set_failures(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::RepositoryScanningConfigurationFailure>,
+            >,
+        ) -> Self {
+            self.failures = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
+        pub fn build(self) -> crate::output::BatchGetRepositoryScanningConfigurationOutput {
+            crate::output::BatchGetRepositoryScanningConfigurationOutput {
+                scanning_configurations: self.scanning_configurations,
+                failures: self.failures,
+            }
+        }
+    }
+}
+impl BatchGetRepositoryScanningConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
+    pub fn builder() -> crate::output::batch_get_repository_scanning_configuration_output::Builder {
+        crate::output::batch_get_repository_scanning_configuration_output::Builder::default()
     }
 }
 

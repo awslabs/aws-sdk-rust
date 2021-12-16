@@ -2319,8 +2319,8 @@ pub struct Cluster {
     /// </i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the cluster to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Cluster tags do not propagate to any other resources associated with the
+    /// organization. Each tag consists of a key and an optional value. You define both.
+    /// Cluster tags do not propagate to any other resources associated with the
     /// cluster.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2397,8 +2397,8 @@ impl Cluster {
         self.platform_version.as_deref()
     }
     /// <p>The metadata that you apply to the cluster to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Cluster tags do not propagate to any other resources associated with the
+    /// organization. Each tag consists of a key and an optional value. You define both.
+    /// Cluster tags do not propagate to any other resources associated with the
     /// cluster.</p>
     pub fn tags(
         &self,
@@ -2652,8 +2652,8 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata that you apply to the cluster to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Cluster tags do not propagate to any other resources associated with the
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Cluster tags do not propagate to any other resources associated with the
         /// cluster.</p>
         pub fn tags(
             mut self,
@@ -2666,8 +2666,8 @@ pub mod cluster {
             self
         }
         /// <p>The metadata that you apply to the cluster to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Cluster tags do not propagate to any other resources associated with the
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Cluster tags do not propagate to any other resources associated with the
         /// cluster.</p>
         pub fn set_tags(
             mut self,
@@ -3950,7 +3950,7 @@ pub struct Nodegroup {
     /// template that was used.</p>
     pub launch_template: std::option::Option<crate::model::LaunchTemplateSpecification>,
     /// <p>The metadata applied to the node group to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value, both of which you define. Node group
+    /// Each tag consists of a key and an optional value. You define both. Node group
     /// tags do not propagate to any other resources associated with the node group, such as the
     /// Amazon EC2 instances or subnets. </p>
     pub tags:
@@ -4078,7 +4078,7 @@ impl Nodegroup {
         self.launch_template.as_ref()
     }
     /// <p>The metadata applied to the node group to assist with categorization and organization.
-    /// Each tag consists of a key and an optional value, both of which you define. Node group
+    /// Each tag consists of a key and an optional value. You define both. Node group
     /// tags do not propagate to any other resources associated with the node group, such as the
     /// Amazon EC2 instances or subnets. </p>
     pub fn tags(
@@ -4512,7 +4512,7 @@ pub mod nodegroup {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata applied to the node group to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. Node group
+        /// Each tag consists of a key and an optional value. You define both. Node group
         /// tags do not propagate to any other resources associated with the node group, such as the
         /// Amazon EC2 instances or subnets. </p>
         pub fn tags(
@@ -4526,7 +4526,7 @@ pub mod nodegroup {
             self
         }
         /// <p>The metadata applied to the node group to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. Node group
+        /// Each tag consists of a key and an optional value. You define both. Node group
         /// tags do not propagate to any other resources associated with the node group, such as the
         /// Amazon EC2 instances or subnets. </p>
         pub fn set_tags(
@@ -5850,8 +5850,7 @@ pub struct OidcIdentityProviderConfig {
     pub required_claims:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The metadata to apply to the provider configuration to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// defined.</p>
+    /// organization. Each tag consists of a key and an optional value. You define both.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the OIDC identity provider.</p>
@@ -5911,8 +5910,7 @@ impl OidcIdentityProviderConfig {
         self.required_claims.as_ref()
     }
     /// <p>The metadata to apply to the provider configuration to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// defined.</p>
+    /// organization. Each tag consists of a key and an optional value. You define both.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6131,8 +6129,7 @@ pub mod oidc_identity_provider_config {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata to apply to the provider configuration to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// defined.</p>
+        /// organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6144,8 +6141,7 @@ pub mod oidc_identity_provider_config {
             self
         }
         /// <p>The metadata to apply to the provider configuration to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// defined.</p>
+        /// organization. Each tag consists of a key and an optional value. You define both.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6276,8 +6272,8 @@ pub struct FargateProfile {
     /// <p>The current status of the Fargate profile.</p>
     pub status: std::option::Option<crate::model::FargateProfileStatus>,
     /// <p>The metadata applied to the Fargate profile to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Fargate profile tags do not propagate to any other resources associated with the
+    /// organization. Each tag consists of a key and an optional value. You define both.
+    /// Fargate profile tags do not propagate to any other resources associated with the
     /// Fargate profile, such as the pods that are scheduled with it.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -6318,8 +6314,8 @@ impl FargateProfile {
         self.status.as_ref()
     }
     /// <p>The metadata applied to the Fargate profile to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Fargate profile tags do not propagate to any other resources associated with the
+    /// organization. Each tag consists of a key and an optional value. You define both.
+    /// Fargate profile tags do not propagate to any other resources associated with the
     /// Fargate profile, such as the pods that are scheduled with it.</p>
     pub fn tags(
         &self,
@@ -6485,8 +6481,8 @@ pub mod fargate_profile {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata applied to the Fargate profile to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Fargate profile tags do not propagate to any other resources associated with the
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Fargate profile tags do not propagate to any other resources associated with the
         /// Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn tags(
             mut self,
@@ -6499,8 +6495,8 @@ pub mod fargate_profile {
             self
         }
         /// <p>The metadata applied to the Fargate profile to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Fargate profile tags do not propagate to any other resources associated with the
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Fargate profile tags do not propagate to any other resources associated with the
         /// Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn set_tags(
             mut self,
@@ -7053,8 +7049,8 @@ pub struct Addon {
     /// by the add-on.</p>
     pub service_account_role_arn: std::option::Option<std::string::String>,
     /// <p>The metadata that you apply to the add-on to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Add-on tags do not propagate to any other resources associated with the cluster.
+    /// organization. Each tag consists of a key and an optional value. You define both.
+    /// Add-on tags do not propagate to any other resources associated with the cluster.
     /// </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7098,8 +7094,8 @@ impl Addon {
         self.service_account_role_arn.as_deref()
     }
     /// <p>The metadata that you apply to the add-on to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Add-on tags do not propagate to any other resources associated with the cluster.
+    /// organization. Each tag consists of a key and an optional value. You define both.
+    /// Add-on tags do not propagate to any other resources associated with the cluster.
     /// </p>
     pub fn tags(
         &self,
@@ -7253,8 +7249,8 @@ pub mod addon {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The metadata that you apply to the add-on to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Add-on tags do not propagate to any other resources associated with the cluster.
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Add-on tags do not propagate to any other resources associated with the cluster.
         /// </p>
         pub fn tags(
             mut self,
@@ -7267,8 +7263,8 @@ pub mod addon {
             self
         }
         /// <p>The metadata that you apply to the add-on to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Add-on tags do not propagate to any other resources associated with the cluster.
+        /// organization. Each tag consists of a key and an optional value. You define both.
+        /// Add-on tags do not propagate to any other resources associated with the cluster.
         /// </p>
         pub fn set_tags(
             mut self,

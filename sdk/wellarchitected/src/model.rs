@@ -146,19 +146,19 @@ impl AsRef<str> for ValidationExceptionReason {
 pub struct WorkloadShare {
     /// <p>The ID associated with the workload share.</p>
     pub share_id: std::option::Option<std::string::String>,
-    /// <p>An AWS account ID.</p>
+    /// <p>An Amazon Web Services account ID.</p>
     pub shared_by: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
     pub permission_type: std::option::Option<crate::model::PermissionType>,
     /// <p>The status of a workload share.</p>
     pub status: std::option::Option<crate::model::ShareStatus>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
 }
 impl WorkloadShare {
@@ -166,11 +166,11 @@ impl WorkloadShare {
     pub fn share_id(&self) -> std::option::Option<&str> {
         self.share_id.as_deref()
     }
-    /// <p>An AWS account ID.</p>
+    /// <p>An Amazon Web Services account ID.</p>
     pub fn shared_by(&self) -> std::option::Option<&str> {
         self.shared_by.as_deref()
     }
-    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -183,12 +183,12 @@ impl WorkloadShare {
         self.status.as_ref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -231,22 +231,22 @@ pub mod workload_share {
             self.share_id = input;
             self
         }
-        /// <p>An AWS account ID.</p>
+        /// <p>An Amazon Web Services account ID.</p>
         pub fn shared_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_by = Some(input.into());
             self
         }
-        /// <p>An AWS account ID.</p>
+        /// <p>An Amazon Web Services account ID.</p>
         pub fn set_shared_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_by = input;
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -275,14 +275,14 @@ pub mod workload_share {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
@@ -291,12 +291,12 @@ pub mod workload_share {
             self.workload_name = input;
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -448,12 +448,12 @@ impl AsRef<str> for PermissionType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Workload {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
     pub workload_arn: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The description for the workload.</p>
@@ -462,12 +462,12 @@ pub struct Workload {
     pub environment: std::option::Option<crate::model::WorkloadEnvironment>,
     /// <p>The date and time recorded.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The list of AWS account IDs associated with the workload.</p>
+    /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of AWS Regions associated with the workload, for example,
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
     /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The list of non-AWS Regions associated with the workload.</p>
+    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
     pub architectural_design: std::option::Option<std::string::String>,
@@ -635,7 +635,7 @@ pub struct Workload {
     pub pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An AWS account ID.</p>
+    /// <p>An Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the share invitation.</p>
     pub share_invitation_id: std::option::Option<std::string::String>,
@@ -644,7 +644,7 @@ pub struct Workload {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Workload {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -653,7 +653,7 @@ impl Workload {
         self.workload_arn.as_deref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
@@ -670,16 +670,16 @@ impl Workload {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The list of AWS account IDs associated with the workload.</p>
+    /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p>The list of AWS Regions associated with the workload, for example,
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
     /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.aws_regions.as_deref()
     }
-    /// <p> The list of non-AWS Regions associated with the workload.</p>
+    /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn non_aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.non_aws_regions.as_deref()
     }
@@ -875,7 +875,7 @@ impl Workload {
     pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
         self.lenses.as_deref()
     }
-    /// <p>An AWS account ID.</p>
+    /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -957,12 +957,12 @@ pub mod workload {
         >,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -978,14 +978,14 @@ pub mod workload {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
@@ -1034,14 +1034,14 @@ pub mod workload {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account IDs associated with the workload.</p>
+        /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of AWS account IDs associated with the workload.</p>
+        /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1053,7 +1053,7 @@ pub mod workload {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
         /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
@@ -1061,7 +1061,7 @@ pub mod workload {
             self.aws_regions = Some(v);
             self
         }
-        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
         /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
@@ -1074,14 +1074,14 @@ pub mod workload {
         ///
         /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
         ///
-        /// <p> The list of non-AWS Regions associated with the workload.</p>
+        /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
         pub fn non_aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.non_aws_regions.unwrap_or_default();
             v.push(input.into());
             self.non_aws_regions = Some(v);
             self
         }
-        /// <p> The list of non-AWS Regions associated with the workload.</p>
+        /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
         pub fn set_non_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1532,12 +1532,12 @@ pub mod workload {
             self.lenses = input;
             self
         }
-        /// <p>An AWS account ID.</p>
+        /// <p>An Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>An AWS account ID.</p>
+        /// <p>An Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -1820,24 +1820,47 @@ impl AsRef<str> for WorkloadEnvironment {
 pub struct ShareInvitation {
     /// <p>The ID assigned to the share invitation.</p>
     pub share_invitation_id: std::option::Option<std::string::String>,
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The resource type of the share invitation.</p>
+    pub share_resource_type: std::option::Option<crate::model::ShareResourceType>,
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
 }
 impl ShareInvitation {
     /// <p>The ID assigned to the share invitation.</p>
     pub fn share_invitation_id(&self) -> std::option::Option<&str> {
         self.share_invitation_id.as_deref()
     }
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The resource type of the share invitation.</p>
+    pub fn share_resource_type(&self) -> std::option::Option<&crate::model::ShareResourceType> {
+        self.share_resource_type.as_ref()
+    }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
+    }
+    /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
+        self.lens_alias.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
 }
 impl std::fmt::Debug for ShareInvitation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ShareInvitation");
         formatter.field("share_invitation_id", &self.share_invitation_id);
+        formatter.field("share_resource_type", &self.share_resource_type);
         formatter.field("workload_id", &self.workload_id);
+        formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.finish()
     }
 }
@@ -1848,7 +1871,10 @@ pub mod share_invitation {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_invitation_id: std::option::Option<std::string::String>,
+        pub(crate) share_resource_type: std::option::Option<crate::model::ShareResourceType>,
         pub(crate) workload_id: std::option::Option<std::string::String>,
+        pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID assigned to the share invitation.</p>
@@ -1864,21 +1890,59 @@ pub mod share_invitation {
             self.share_invitation_id = input;
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The resource type of the share invitation.</p>
+        pub fn share_resource_type(mut self, input: crate::model::ShareResourceType) -> Self {
+            self.share_resource_type = Some(input);
+            self
+        }
+        /// <p>The resource type of the share invitation.</p>
+        pub fn set_share_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ShareResourceType>,
+        ) -> Self {
+            self.share_resource_type = input;
+            self
+        }
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_alias = Some(input.into());
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_alias = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ShareInvitation`](crate::model::ShareInvitation)
         pub fn build(self) -> crate::model::ShareInvitation {
             crate::model::ShareInvitation {
                 share_invitation_id: self.share_invitation_id,
+                share_resource_type: self.share_resource_type,
                 workload_id: self.workload_id,
+                lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
             }
         }
     }
@@ -1887,6 +1951,61 @@ impl ShareInvitation {
     /// Creates a new builder-style object to manufacture [`ShareInvitation`](crate::model::ShareInvitation)
     pub fn builder() -> crate::model::share_invitation::Builder {
         crate::model::share_invitation::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ShareResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    Lens,
+    #[allow(missing_docs)] // documentation missing in model
+    Workload,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ShareResourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "LENS" => ShareResourceType::Lens,
+            "WORKLOAD" => ShareResourceType::Workload,
+            other => ShareResourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ShareResourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ShareResourceType::from(s))
+    }
+}
+impl ShareResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ShareResourceType::Lens => "LENS",
+            ShareResourceType::Workload => "WORKLOAD",
+            ShareResourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LENS", "WORKLOAD"]
+    }
+}
+impl AsRef<str> for ShareResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1952,6 +2071,8 @@ pub struct LensReview {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The version of the lens.</p>
     pub lens_version: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
@@ -1975,6 +2096,10 @@ impl LensReview {
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
     /// <p>The version of the lens.</p>
     pub fn lens_version(&self) -> std::option::Option<&str> {
@@ -2017,6 +2142,7 @@ impl std::fmt::Debug for LensReview {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LensReview");
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("lens_version", &self.lens_version);
         formatter.field("lens_name", &self.lens_name);
         formatter.field("lens_status", &self.lens_status);
@@ -2035,6 +2161,7 @@ pub mod lens_review {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) lens_version: std::option::Option<std::string::String>,
         pub(crate) lens_name: std::option::Option<std::string::String>,
         pub(crate) lens_status: std::option::Option<crate::model::LensStatus>,
@@ -2057,6 +2184,16 @@ pub mod lens_review {
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// <p>The version of the lens.</p>
@@ -2170,6 +2307,7 @@ pub mod lens_review {
         pub fn build(self) -> crate::model::LensReview {
             crate::model::LensReview {
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 lens_version: self.lens_version,
                 lens_name: self.lens_name,
                 lens_status: self.lens_status,
@@ -2331,9 +2469,13 @@ pub enum LensStatus {
     #[allow(missing_docs)] // documentation missing in model
     Current,
     #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
     #[allow(missing_docs)] // documentation missing in model
     NotCurrent,
+    #[allow(missing_docs)] // documentation missing in model
+    Unshared,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -2341,8 +2483,10 @@ impl std::convert::From<&str> for LensStatus {
     fn from(s: &str) -> Self {
         match s {
             "CURRENT" => LensStatus::Current,
+            "DELETED" => LensStatus::Deleted,
             "DEPRECATED" => LensStatus::Deprecated,
             "NOT_CURRENT" => LensStatus::NotCurrent,
+            "UNSHARED" => LensStatus::Unshared,
             other => LensStatus::Unknown(other.to_owned()),
         }
     }
@@ -2359,14 +2503,22 @@ impl LensStatus {
     pub fn as_str(&self) -> &str {
         match self {
             LensStatus::Current => "CURRENT",
+            LensStatus::Deleted => "DELETED",
             LensStatus::Deprecated => "DEPRECATED",
             LensStatus::NotCurrent => "NOT_CURRENT",
+            LensStatus::Unshared => "UNSHARED",
             LensStatus::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["CURRENT", "DEPRECATED", "NOT_CURRENT"]
+        &[
+            "CURRENT",
+            "DELETED",
+            "DEPRECATED",
+            "NOT_CURRENT",
+            "UNSHARED",
+        ]
     }
 }
 impl AsRef<str> for LensStatus {
@@ -2393,6 +2545,8 @@ pub struct Answer {
     pub improvement_plan_url: std::option::Option<std::string::String>,
     /// <p>The helpful resource URL for a question.</p>
     pub helpful_resource_url: std::option::Option<std::string::String>,
+    /// <p>The helpful resource text to be displayed.</p>
+    pub helpful_resource_display_text: std::option::Option<std::string::String>,
     /// <p>List of choices available for a question.</p>
     pub choices: std::option::Option<std::vec::Vec<crate::model::Choice>>,
     /// <p>List of selected choice IDs in a question answer.</p>
@@ -2436,6 +2590,10 @@ impl Answer {
     pub fn helpful_resource_url(&self) -> std::option::Option<&str> {
         self.helpful_resource_url.as_deref()
     }
+    /// <p>The helpful resource text to be displayed.</p>
+    pub fn helpful_resource_display_text(&self) -> std::option::Option<&str> {
+        self.helpful_resource_display_text.as_deref()
+    }
     /// <p>List of choices available for a question.</p>
     pub fn choices(&self) -> std::option::Option<&[crate::model::Choice]> {
         self.choices.as_deref()
@@ -2475,6 +2633,10 @@ impl std::fmt::Debug for Answer {
         formatter.field("question_description", &self.question_description);
         formatter.field("improvement_plan_url", &self.improvement_plan_url);
         formatter.field("helpful_resource_url", &self.helpful_resource_url);
+        formatter.field(
+            "helpful_resource_display_text",
+            &self.helpful_resource_display_text,
+        );
         formatter.field("choices", &self.choices);
         formatter.field("selected_choices", &self.selected_choices);
         formatter.field("choice_answers", &self.choice_answers);
@@ -2497,6 +2659,7 @@ pub mod answer {
         pub(crate) question_description: std::option::Option<std::string::String>,
         pub(crate) improvement_plan_url: std::option::Option<std::string::String>,
         pub(crate) helpful_resource_url: std::option::Option<std::string::String>,
+        pub(crate) helpful_resource_display_text: std::option::Option<std::string::String>,
         pub(crate) choices: std::option::Option<std::vec::Vec<crate::model::Choice>>,
         pub(crate) selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) choice_answers: std::option::Option<std::vec::Vec<crate::model::ChoiceAnswer>>,
@@ -2580,6 +2743,22 @@ pub mod answer {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.helpful_resource_url = input;
+            self
+        }
+        /// <p>The helpful resource text to be displayed.</p>
+        pub fn helpful_resource_display_text(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.helpful_resource_display_text = Some(input.into());
+            self
+        }
+        /// <p>The helpful resource text to be displayed.</p>
+        pub fn set_helpful_resource_display_text(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.helpful_resource_display_text = input;
             self
         }
         /// Appends an item to `choices`.
@@ -2693,6 +2872,7 @@ pub mod answer {
                 question_description: self.question_description,
                 improvement_plan_url: self.improvement_plan_url,
                 helpful_resource_url: self.helpful_resource_url,
+                helpful_resource_display_text: self.helpful_resource_display_text,
                 choices: self.choices,
                 selected_choices: self.selected_choices,
                 choice_answers: self.choice_answers,
@@ -3043,6 +3223,10 @@ pub struct Choice {
     pub title: std::option::Option<std::string::String>,
     /// <p>The description of a choice.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>The choice level helpful resource.</p>
+    pub helpful_resource: std::option::Option<crate::model::ChoiceContent>,
+    /// <p>The choice level improvement plan.</p>
+    pub improvement_plan: std::option::Option<crate::model::ChoiceContent>,
 }
 impl Choice {
     /// <p>The ID of a choice.</p>
@@ -3057,6 +3241,14 @@ impl Choice {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The choice level helpful resource.</p>
+    pub fn helpful_resource(&self) -> std::option::Option<&crate::model::ChoiceContent> {
+        self.helpful_resource.as_ref()
+    }
+    /// <p>The choice level improvement plan.</p>
+    pub fn improvement_plan(&self) -> std::option::Option<&crate::model::ChoiceContent> {
+        self.improvement_plan.as_ref()
+    }
 }
 impl std::fmt::Debug for Choice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3064,6 +3256,8 @@ impl std::fmt::Debug for Choice {
         formatter.field("choice_id", &self.choice_id);
         formatter.field("title", &self.title);
         formatter.field("description", &self.description);
+        formatter.field("helpful_resource", &self.helpful_resource);
+        formatter.field("improvement_plan", &self.improvement_plan);
         formatter.finish()
     }
 }
@@ -3076,6 +3270,8 @@ pub mod choice {
         pub(crate) choice_id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) helpful_resource: std::option::Option<crate::model::ChoiceContent>,
+        pub(crate) improvement_plan: std::option::Option<crate::model::ChoiceContent>,
     }
     impl Builder {
         /// <p>The ID of a choice.</p>
@@ -3108,12 +3304,40 @@ pub mod choice {
             self.description = input;
             self
         }
+        /// <p>The choice level helpful resource.</p>
+        pub fn helpful_resource(mut self, input: crate::model::ChoiceContent) -> Self {
+            self.helpful_resource = Some(input);
+            self
+        }
+        /// <p>The choice level helpful resource.</p>
+        pub fn set_helpful_resource(
+            mut self,
+            input: std::option::Option<crate::model::ChoiceContent>,
+        ) -> Self {
+            self.helpful_resource = input;
+            self
+        }
+        /// <p>The choice level improvement plan.</p>
+        pub fn improvement_plan(mut self, input: crate::model::ChoiceContent) -> Self {
+            self.improvement_plan = Some(input);
+            self
+        }
+        /// <p>The choice level improvement plan.</p>
+        pub fn set_improvement_plan(
+            mut self,
+            input: std::option::Option<crate::model::ChoiceContent>,
+        ) -> Self {
+            self.improvement_plan = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Choice`](crate::model::Choice)
         pub fn build(self) -> crate::model::Choice {
             crate::model::Choice {
                 choice_id: self.choice_id,
                 title: self.title,
                 description: self.description,
+                helpful_resource: self.helpful_resource,
+                improvement_plan: self.improvement_plan,
             }
         }
     }
@@ -3122,6 +3346,79 @@ impl Choice {
     /// Creates a new builder-style object to manufacture [`Choice`](crate::model::Choice)
     pub fn builder() -> crate::model::choice::Builder {
         crate::model::choice::Builder::default()
+    }
+}
+
+/// <p>The choice content.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChoiceContent {
+    /// <p>The display text for the choice content.</p>
+    pub display_text: std::option::Option<std::string::String>,
+    /// <p>The URL for the choice content.</p>
+    pub url: std::option::Option<std::string::String>,
+}
+impl ChoiceContent {
+    /// <p>The display text for the choice content.</p>
+    pub fn display_text(&self) -> std::option::Option<&str> {
+        self.display_text.as_deref()
+    }
+    /// <p>The URL for the choice content.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
+impl std::fmt::Debug for ChoiceContent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChoiceContent");
+        formatter.field("display_text", &self.display_text);
+        formatter.field("url", &self.url);
+        formatter.finish()
+    }
+}
+/// See [`ChoiceContent`](crate::model::ChoiceContent)
+pub mod choice_content {
+    /// A builder for [`ChoiceContent`](crate::model::ChoiceContent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) display_text: std::option::Option<std::string::String>,
+        pub(crate) url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The display text for the choice content.</p>
+        pub fn display_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_text = Some(input.into());
+            self
+        }
+        /// <p>The display text for the choice content.</p>
+        pub fn set_display_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_text = input;
+            self
+        }
+        /// <p>The URL for the choice content.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The URL for the choice content.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChoiceContent`](crate::model::ChoiceContent)
+        pub fn build(self) -> crate::model::ChoiceContent {
+            crate::model::ChoiceContent {
+                display_text: self.display_text,
+                url: self.url,
+            }
+        }
+    }
+}
+impl ChoiceContent {
+    /// Creates a new builder-style object to manufacture [`ChoiceContent`](crate::model::ChoiceContent)
+    pub fn builder() -> crate::model::choice_content::Builder {
+        crate::model::choice_content::Builder::default()
     }
 }
 
@@ -3229,7 +3526,7 @@ impl ChoiceUpdate {
 pub struct WorkloadShareSummary {
     /// <p>The ID associated with the workload share.</p>
     pub share_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
     pub permission_type: std::option::Option<crate::model::PermissionType>,
@@ -3241,7 +3538,7 @@ impl WorkloadShareSummary {
     pub fn share_id(&self) -> std::option::Option<&str> {
         self.share_id.as_deref()
     }
-    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -3286,12 +3583,12 @@ pub mod workload_share_summary {
             self.share_id = input;
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -3341,15 +3638,15 @@ impl WorkloadShareSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkloadSummary {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
     pub workload_arn: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
-    /// <p>An AWS account ID.</p>
+    /// <p>An Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -3361,7 +3658,7 @@ pub struct WorkloadSummary {
     pub improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
 }
 impl WorkloadSummary {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
@@ -3370,12 +3667,12 @@ impl WorkloadSummary {
         self.workload_arn.as_deref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
-    /// <p>An AWS account ID.</p>
+    /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -3431,12 +3728,12 @@ pub mod workload_summary {
         pub(crate) improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -3452,14 +3749,14 @@ pub mod workload_summary {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
@@ -3468,12 +3765,12 @@ pub mod workload_summary {
             self.workload_name = input;
             self
         }
-        /// <p>An AWS account ID.</p>
+        /// <p>An Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>An AWS account ID.</p>
+        /// <p>An Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -3573,29 +3870,35 @@ impl WorkloadSummary {
 pub struct ShareInvitationSummary {
     /// <p>The ID assigned to the share invitation.</p>
     pub share_invitation_id: std::option::Option<std::string::String>,
-    /// <p>An AWS account ID.</p>
+    /// <p>An Amazon Web Services account ID.</p>
     pub shared_by: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
     pub permission_type: std::option::Option<crate::model::PermissionType>,
+    /// <p>The resource type of the share invitation.</p>
+    pub share_resource_type: std::option::Option<crate::model::ShareResourceType>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
+    /// <p>The full name of the lens.</p>
+    pub lens_name: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
 }
 impl ShareInvitationSummary {
     /// <p>The ID assigned to the share invitation.</p>
     pub fn share_invitation_id(&self) -> std::option::Option<&str> {
         self.share_invitation_id.as_deref()
     }
-    /// <p>An AWS account ID.</p>
+    /// <p>An Amazon Web Services account ID.</p>
     pub fn shared_by(&self) -> std::option::Option<&str> {
         self.shared_by.as_deref()
     }
-    /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -3603,15 +3906,27 @@ impl ShareInvitationSummary {
     pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
         self.permission_type.as_ref()
     }
+    /// <p>The resource type of the share invitation.</p>
+    pub fn share_resource_type(&self) -> std::option::Option<&crate::model::ShareResourceType> {
+        self.share_resource_type.as_ref()
+    }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn lens_name(&self) -> std::option::Option<&str> {
+        self.lens_name.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
 }
 impl std::fmt::Debug for ShareInvitationSummary {
@@ -3621,8 +3936,11 @@ impl std::fmt::Debug for ShareInvitationSummary {
         formatter.field("shared_by", &self.shared_by);
         formatter.field("shared_with", &self.shared_with);
         formatter.field("permission_type", &self.permission_type);
+        formatter.field("share_resource_type", &self.share_resource_type);
         formatter.field("workload_name", &self.workload_name);
         formatter.field("workload_id", &self.workload_id);
+        formatter.field("lens_name", &self.lens_name);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.finish()
     }
 }
@@ -3636,8 +3954,11 @@ pub mod share_invitation_summary {
         pub(crate) shared_by: std::option::Option<std::string::String>,
         pub(crate) shared_with: std::option::Option<std::string::String>,
         pub(crate) permission_type: std::option::Option<crate::model::PermissionType>,
+        pub(crate) share_resource_type: std::option::Option<crate::model::ShareResourceType>,
         pub(crate) workload_name: std::option::Option<std::string::String>,
         pub(crate) workload_id: std::option::Option<std::string::String>,
+        pub(crate) lens_name: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID assigned to the share invitation.</p>
@@ -3653,22 +3974,22 @@ pub mod share_invitation_summary {
             self.share_invitation_id = input;
             self
         }
-        /// <p>An AWS account ID.</p>
+        /// <p>An Amazon Web Services account ID.</p>
         pub fn shared_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_by = Some(input.into());
             self
         }
-        /// <p>An AWS account ID.</p>
+        /// <p>An Amazon Web Services account ID.</p>
         pub fn set_shared_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_by = input;
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_with = Some(input.into());
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -3686,15 +4007,28 @@ pub mod share_invitation_summary {
             self.permission_type = input;
             self
         }
+        /// <p>The resource type of the share invitation.</p>
+        pub fn share_resource_type(mut self, input: crate::model::ShareResourceType) -> Self {
+            self.share_resource_type = Some(input);
+            self
+        }
+        /// <p>The resource type of the share invitation.</p>
+        pub fn set_share_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ShareResourceType>,
+        ) -> Self {
+            self.share_resource_type = input;
+            self
+        }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
@@ -3703,14 +4037,34 @@ pub mod share_invitation_summary {
             self.workload_name = input;
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
+            self
+        }
+        /// <p>The full name of the lens.</p>
+        pub fn lens_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_name = Some(input.into());
+            self
+        }
+        /// <p>The full name of the lens.</p>
+        pub fn set_lens_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_name = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ShareInvitationSummary`](crate::model::ShareInvitationSummary)
@@ -3720,8 +4074,11 @@ pub mod share_invitation_summary {
                 shared_by: self.shared_by,
                 shared_with: self.shared_with,
                 permission_type: self.permission_type,
+                share_resource_type: self.share_resource_type,
                 workload_name: self.workload_name,
                 workload_id: self.workload_id,
+                lens_name: self.lens_name,
+                lens_arn: self.lens_arn,
             }
         }
     }
@@ -3816,27 +4173,29 @@ impl NotificationSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensUpgradeSummary {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the lens.</p>
     pub current_lens_version: std::option::Option<std::string::String>,
     /// <p>The latest version of the lens.</p>
     pub latest_lens_version: std::option::Option<std::string::String>,
 }
 impl LensUpgradeSummary {
-    /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
     /// are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
@@ -3845,6 +4204,10 @@ impl LensUpgradeSummary {
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
     /// <p>The current version of the lens.</p>
     pub fn current_lens_version(&self) -> std::option::Option<&str> {
@@ -3861,6 +4224,7 @@ impl std::fmt::Debug for LensUpgradeSummary {
         formatter.field("workload_id", &self.workload_id);
         formatter.field("workload_name", &self.workload_name);
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("current_lens_version", &self.current_lens_version);
         formatter.field("latest_lens_version", &self.latest_lens_version);
         formatter.finish()
@@ -3875,29 +4239,30 @@ pub mod lens_upgrade_summary {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) workload_name: std::option::Option<std::string::String>,
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) current_lens_version: std::option::Option<std::string::String>,
         pub(crate) latest_lens_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_id = Some(input.into());
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
@@ -3916,6 +4281,16 @@ pub mod lens_upgrade_summary {
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// <p>The current version of the lens.</p>
@@ -3950,6 +4325,7 @@ pub mod lens_upgrade_summary {
                 workload_id: self.workload_id,
                 workload_name: self.workload_name,
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 current_lens_version: self.current_lens_version,
                 latest_lens_version: self.latest_lens_version,
             }
@@ -4146,6 +4522,98 @@ impl MilestoneSummary {
     }
 }
 
+/// <p>A lens share summary return object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LensShareSummary {
+    /// <p>The ID associated with the workload share.</p>
+    pub share_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    pub shared_with: std::option::Option<std::string::String>,
+    /// <p>The status of a workload share.</p>
+    pub status: std::option::Option<crate::model::ShareStatus>,
+}
+impl LensShareSummary {
+    /// <p>The ID associated with the workload share.</p>
+    pub fn share_id(&self) -> std::option::Option<&str> {
+        self.share_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    pub fn shared_with(&self) -> std::option::Option<&str> {
+        self.shared_with.as_deref()
+    }
+    /// <p>The status of a workload share.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ShareStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for LensShareSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LensShareSummary");
+        formatter.field("share_id", &self.share_id);
+        formatter.field("shared_with", &self.shared_with);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`LensShareSummary`](crate::model::LensShareSummary)
+pub mod lens_share_summary {
+    /// A builder for [`LensShareSummary`](crate::model::LensShareSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) share_id: std::option::Option<std::string::String>,
+        pub(crate) shared_with: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ShareStatus>,
+    }
+    impl Builder {
+        /// <p>The ID associated with the workload share.</p>
+        pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.share_id = Some(input.into());
+            self
+        }
+        /// <p>The ID associated with the workload share.</p>
+        pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.share_id = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shared_with = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shared_with = input;
+            self
+        }
+        /// <p>The status of a workload share.</p>
+        pub fn status(mut self, input: crate::model::ShareStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of a workload share.</p>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LensShareSummary`](crate::model::LensShareSummary)
+        pub fn build(self) -> crate::model::LensShareSummary {
+            crate::model::LensShareSummary {
+                share_id: self.share_id,
+                shared_with: self.shared_with,
+                status: self.status,
+            }
+        }
+    }
+}
+impl LensShareSummary {
+    /// Creates a new builder-style object to manufacture [`LensShareSummary`](crate::model::LensShareSummary)
+    pub fn builder() -> crate::model::lens_share_summary::Builder {
+        crate::model::lens_share_summary::Builder::default()
+    }
+}
+
 /// <p>A lens review summary of a workload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4153,6 +4621,8 @@ pub struct LensReviewSummary {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The version of the lens.</p>
     pub lens_version: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
@@ -4169,6 +4639,10 @@ impl LensReviewSummary {
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
     /// <p>The version of the lens.</p>
     pub fn lens_version(&self) -> std::option::Option<&str> {
@@ -4197,6 +4671,7 @@ impl std::fmt::Debug for LensReviewSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LensReviewSummary");
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("lens_version", &self.lens_version);
         formatter.field("lens_name", &self.lens_name);
         formatter.field("lens_status", &self.lens_status);
@@ -4212,6 +4687,7 @@ pub mod lens_review_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) lens_version: std::option::Option<std::string::String>,
         pub(crate) lens_name: std::option::Option<std::string::String>,
         pub(crate) lens_status: std::option::Option<crate::model::LensStatus>,
@@ -4230,6 +4706,16 @@ pub mod lens_review_summary {
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// <p>The version of the lens.</p>
@@ -4301,6 +4787,7 @@ pub mod lens_review_summary {
         pub fn build(self) -> crate::model::LensReviewSummary {
             crate::model::LensReviewSummary {
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 lens_version: self.lens_version,
                 lens_name: self.lens_name,
                 lens_status: self.lens_status,
@@ -4333,6 +4820,8 @@ pub struct ImprovementSummary {
     /// <p>The improvement plan URL for a question.</p>
     /// <p>This value is only available if the question has been answered.</p>
     pub improvement_plan_url: std::option::Option<std::string::String>,
+    /// <p>The improvement plan details.</p>
+    pub improvement_plans: std::option::Option<std::vec::Vec<crate::model::ChoiceImprovementPlan>>,
 }
 impl ImprovementSummary {
     /// <p>The ID of the question.</p>
@@ -4357,6 +4846,10 @@ impl ImprovementSummary {
     pub fn improvement_plan_url(&self) -> std::option::Option<&str> {
         self.improvement_plan_url.as_deref()
     }
+    /// <p>The improvement plan details.</p>
+    pub fn improvement_plans(&self) -> std::option::Option<&[crate::model::ChoiceImprovementPlan]> {
+        self.improvement_plans.as_deref()
+    }
 }
 impl std::fmt::Debug for ImprovementSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4366,6 +4859,7 @@ impl std::fmt::Debug for ImprovementSummary {
         formatter.field("question_title", &self.question_title);
         formatter.field("risk", &self.risk);
         formatter.field("improvement_plan_url", &self.improvement_plan_url);
+        formatter.field("improvement_plans", &self.improvement_plans);
         formatter.finish()
     }
 }
@@ -4380,6 +4874,8 @@ pub mod improvement_summary {
         pub(crate) question_title: std::option::Option<std::string::String>,
         pub(crate) risk: std::option::Option<crate::model::Risk>,
         pub(crate) improvement_plan_url: std::option::Option<std::string::String>,
+        pub(crate) improvement_plans:
+            std::option::Option<std::vec::Vec<crate::model::ChoiceImprovementPlan>>,
     }
     impl Builder {
         /// <p>The ID of the question.</p>
@@ -4442,6 +4938,28 @@ pub mod improvement_summary {
             self.improvement_plan_url = input;
             self
         }
+        /// Appends an item to `improvement_plans`.
+        ///
+        /// To override the contents of this collection use [`set_improvement_plans`](Self::set_improvement_plans).
+        ///
+        /// <p>The improvement plan details.</p>
+        pub fn improvement_plans(
+            mut self,
+            input: impl Into<crate::model::ChoiceImprovementPlan>,
+        ) -> Self {
+            let mut v = self.improvement_plans.unwrap_or_default();
+            v.push(input.into());
+            self.improvement_plans = Some(v);
+            self
+        }
+        /// <p>The improvement plan details.</p>
+        pub fn set_improvement_plans(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChoiceImprovementPlan>>,
+        ) -> Self {
+            self.improvement_plans = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImprovementSummary`](crate::model::ImprovementSummary)
         pub fn build(self) -> crate::model::ImprovementSummary {
             crate::model::ImprovementSummary {
@@ -4450,6 +4968,7 @@ pub mod improvement_summary {
                 question_title: self.question_title,
                 risk: self.risk,
                 improvement_plan_url: self.improvement_plan_url,
+                improvement_plans: self.improvement_plans,
             }
         }
     }
@@ -4461,46 +4980,187 @@ impl ImprovementSummary {
     }
 }
 
+/// <p>The choice level improvement plan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChoiceImprovementPlan {
+    /// <p>The ID of a choice.</p>
+    pub choice_id: std::option::Option<std::string::String>,
+    /// <p>The display text for the improvement plan.</p>
+    pub display_text: std::option::Option<std::string::String>,
+    /// <p>The improvement plan URL for a question.</p>
+    /// <p>This value is only available if the question has been answered.</p>
+    pub improvement_plan_url: std::option::Option<std::string::String>,
+}
+impl ChoiceImprovementPlan {
+    /// <p>The ID of a choice.</p>
+    pub fn choice_id(&self) -> std::option::Option<&str> {
+        self.choice_id.as_deref()
+    }
+    /// <p>The display text for the improvement plan.</p>
+    pub fn display_text(&self) -> std::option::Option<&str> {
+        self.display_text.as_deref()
+    }
+    /// <p>The improvement plan URL for a question.</p>
+    /// <p>This value is only available if the question has been answered.</p>
+    pub fn improvement_plan_url(&self) -> std::option::Option<&str> {
+        self.improvement_plan_url.as_deref()
+    }
+}
+impl std::fmt::Debug for ChoiceImprovementPlan {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChoiceImprovementPlan");
+        formatter.field("choice_id", &self.choice_id);
+        formatter.field("display_text", &self.display_text);
+        formatter.field("improvement_plan_url", &self.improvement_plan_url);
+        formatter.finish()
+    }
+}
+/// See [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan)
+pub mod choice_improvement_plan {
+    /// A builder for [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) choice_id: std::option::Option<std::string::String>,
+        pub(crate) display_text: std::option::Option<std::string::String>,
+        pub(crate) improvement_plan_url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of a choice.</p>
+        pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.choice_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of a choice.</p>
+        pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.choice_id = input;
+            self
+        }
+        /// <p>The display text for the improvement plan.</p>
+        pub fn display_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_text = Some(input.into());
+            self
+        }
+        /// <p>The display text for the improvement plan.</p>
+        pub fn set_display_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_text = input;
+            self
+        }
+        /// <p>The improvement plan URL for a question.</p>
+        /// <p>This value is only available if the question has been answered.</p>
+        pub fn improvement_plan_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.improvement_plan_url = Some(input.into());
+            self
+        }
+        /// <p>The improvement plan URL for a question.</p>
+        /// <p>This value is only available if the question has been answered.</p>
+        pub fn set_improvement_plan_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.improvement_plan_url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan)
+        pub fn build(self) -> crate::model::ChoiceImprovementPlan {
+            crate::model::ChoiceImprovementPlan {
+                choice_id: self.choice_id,
+                display_text: self.display_text,
+                improvement_plan_url: self.improvement_plan_url,
+            }
+        }
+    }
+}
+impl ChoiceImprovementPlan {
+    /// Creates a new builder-style object to manufacture [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan)
+    pub fn builder() -> crate::model::choice_improvement_plan::Builder {
+        crate::model::choice_improvement_plan::Builder::default()
+    }
+}
+
 /// <p>A lens summary of a lens.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensSummary {
+    /// <p>The ARN of the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
-    /// <p>The version of the lens.</p>
-    pub lens_version: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
     pub lens_name: std::option::Option<std::string::String>,
+    /// <p>The type of the lens.</p>
+    pub lens_type: std::option::Option<crate::model::LensType>,
     /// <p>The description of the lens.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>The date and time recorded.</p>
+    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time recorded.</p>
+    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The version of the lens.</p>
+    pub lens_version: std::option::Option<std::string::String>,
+    /// <p>An Amazon Web Services account ID.</p>
+    pub owner: std::option::Option<std::string::String>,
+    /// <p>The status of the lens.</p>
+    pub lens_status: std::option::Option<crate::model::LensStatus>,
 }
 impl LensSummary {
+    /// <p>The ARN of the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
-    /// <p>The version of the lens.</p>
-    pub fn lens_version(&self) -> std::option::Option<&str> {
-        self.lens_version.as_deref()
-    }
     /// <p>The full name of the lens.</p>
     pub fn lens_name(&self) -> std::option::Option<&str> {
         self.lens_name.as_deref()
+    }
+    /// <p>The type of the lens.</p>
+    pub fn lens_type(&self) -> std::option::Option<&crate::model::LensType> {
+        self.lens_type.as_ref()
     }
     /// <p>The description of the lens.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The date and time recorded.</p>
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The version of the lens.</p>
+    pub fn lens_version(&self) -> std::option::Option<&str> {
+        self.lens_version.as_deref()
+    }
+    /// <p>An Amazon Web Services account ID.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The status of the lens.</p>
+    pub fn lens_status(&self) -> std::option::Option<&crate::model::LensStatus> {
+        self.lens_status.as_ref()
+    }
 }
 impl std::fmt::Debug for LensSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LensSummary");
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_version", &self.lens_version);
         formatter.field("lens_name", &self.lens_name);
+        formatter.field("lens_type", &self.lens_type);
         formatter.field("description", &self.description);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("lens_version", &self.lens_version);
+        formatter.field("owner", &self.owner);
+        formatter.field("lens_status", &self.lens_status);
         formatter.finish()
     }
 }
@@ -4510,12 +5170,28 @@ pub mod lens_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) lens_alias: std::option::Option<std::string::String>,
-        pub(crate) lens_version: std::option::Option<std::string::String>,
         pub(crate) lens_name: std::option::Option<std::string::String>,
+        pub(crate) lens_type: std::option::Option<crate::model::LensType>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) lens_version: std::option::Option<std::string::String>,
+        pub(crate) owner: std::option::Option<std::string::String>,
+        pub(crate) lens_status: std::option::Option<crate::model::LensStatus>,
     }
     impl Builder {
+        /// <p>The ARN of the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4528,16 +5204,6 @@ pub mod lens_summary {
             self.lens_alias = input;
             self
         }
-        /// <p>The version of the lens.</p>
-        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.lens_version = Some(input.into());
-            self
-        }
-        /// <p>The version of the lens.</p>
-        pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lens_version = input;
-            self
-        }
         /// <p>The full name of the lens.</p>
         pub fn lens_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_name = Some(input.into());
@@ -4546,6 +5212,16 @@ pub mod lens_summary {
         /// <p>The full name of the lens.</p>
         pub fn set_lens_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_name = input;
+            self
+        }
+        /// <p>The type of the lens.</p>
+        pub fn lens_type(mut self, input: crate::model::LensType) -> Self {
+            self.lens_type = Some(input);
+            self
+        }
+        /// <p>The type of the lens.</p>
+        pub fn set_lens_type(mut self, input: std::option::Option<crate::model::LensType>) -> Self {
+            self.lens_type = input;
             self
         }
         /// <p>The description of the lens.</p>
@@ -4558,13 +5234,78 @@ pub mod lens_summary {
             self.description = input;
             self
         }
+        /// <p>The date and time recorded.</p>
+        pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        /// <p>The date and time recorded.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>The date and time recorded.</p>
+        pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        /// <p>The date and time recorded.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// <p>The version of the lens.</p>
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the lens.</p>
+        pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_version = input;
+            self
+        }
+        /// <p>An Amazon Web Services account ID.</p>
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
+            self
+        }
+        /// <p>An Amazon Web Services account ID.</p>
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
+            self
+        }
+        /// <p>The status of the lens.</p>
+        pub fn lens_status(mut self, input: crate::model::LensStatus) -> Self {
+            self.lens_status = Some(input);
+            self
+        }
+        /// <p>The status of the lens.</p>
+        pub fn set_lens_status(
+            mut self,
+            input: std::option::Option<crate::model::LensStatus>,
+        ) -> Self {
+            self.lens_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LensSummary`](crate::model::LensSummary)
         pub fn build(self) -> crate::model::LensSummary {
             crate::model::LensSummary {
+                lens_arn: self.lens_arn,
                 lens_alias: self.lens_alias,
-                lens_version: self.lens_version,
                 lens_name: self.lens_name,
+                lens_type: self.lens_type,
                 description: self.description,
+                created_at: self.created_at,
+                updated_at: self.updated_at,
+                lens_version: self.lens_version,
+                owner: self.owner,
+                lens_status: self.lens_status,
             }
         }
     }
@@ -4573,6 +5314,124 @@ impl LensSummary {
     /// Creates a new builder-style object to manufacture [`LensSummary`](crate::model::LensSummary)
     pub fn builder() -> crate::model::lens_summary::Builder {
         crate::model::lens_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LensType {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsOfficial,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomSelf,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomShared,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LensType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_OFFICIAL" => LensType::AwsOfficial,
+            "CUSTOM_SELF" => LensType::CustomSelf,
+            "CUSTOM_SHARED" => LensType::CustomShared,
+            other => LensType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LensType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LensType::from(s))
+    }
+}
+impl LensType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LensType::AwsOfficial => "AWS_OFFICIAL",
+            LensType::CustomSelf => "CUSTOM_SELF",
+            LensType::CustomShared => "CUSTOM_SHARED",
+            LensType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_OFFICIAL", "CUSTOM_SELF", "CUSTOM_SHARED"]
+    }
+}
+impl AsRef<str> for LensType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LensStatusType {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Draft,
+    #[allow(missing_docs)] // documentation missing in model
+    Published,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LensStatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => LensStatusType::All,
+            "DRAFT" => LensStatusType::Draft,
+            "PUBLISHED" => LensStatusType::Published,
+            other => LensStatusType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LensStatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LensStatusType::from(s))
+    }
+}
+impl LensStatusType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LensStatusType::All => "ALL",
+            LensStatusType::Draft => "DRAFT",
+            LensStatusType::Published => "PUBLISHED",
+            LensStatusType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "DRAFT", "PUBLISHED"]
+    }
+}
+impl AsRef<str> for LensStatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4928,6 +5787,65 @@ impl ChoiceAnswerSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImportLensStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Complete,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImportLensStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETE" => ImportLensStatus::Complete,
+            "ERROR" => ImportLensStatus::Error,
+            "IN_PROGRESS" => ImportLensStatus::InProgress,
+            other => ImportLensStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImportLensStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImportLensStatus::from(s))
+    }
+}
+impl ImportLensStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImportLensStatus::Complete => "COMPLETE",
+            ImportLensStatus::Error => "ERROR",
+            ImportLensStatus::InProgress => "IN_PROGRESS",
+            ImportLensStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "ERROR", "IN_PROGRESS"]
+    }
+}
+impl AsRef<str> for ImportLensStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>A milestone return object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5127,6 +6045,8 @@ pub struct PillarDifference {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
     pub pillar_id: std::option::Option<std::string::String>,
+    /// <p>The name of the pillar.</p>
+    pub pillar_name: std::option::Option<std::string::String>,
     /// <p>Indicates the type of change to the pillar.</p>
     pub difference_status: std::option::Option<crate::model::DifferenceStatus>,
     /// <p>List of question differences.</p>
@@ -5137,6 +6057,10 @@ impl PillarDifference {
     /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
     pub fn pillar_id(&self) -> std::option::Option<&str> {
         self.pillar_id.as_deref()
+    }
+    /// <p>The name of the pillar.</p>
+    pub fn pillar_name(&self) -> std::option::Option<&str> {
+        self.pillar_name.as_deref()
     }
     /// <p>Indicates the type of change to the pillar.</p>
     pub fn difference_status(&self) -> std::option::Option<&crate::model::DifferenceStatus> {
@@ -5151,6 +6075,7 @@ impl std::fmt::Debug for PillarDifference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PillarDifference");
         formatter.field("pillar_id", &self.pillar_id);
+        formatter.field("pillar_name", &self.pillar_name);
         formatter.field("difference_status", &self.difference_status);
         formatter.field("question_differences", &self.question_differences);
         formatter.finish()
@@ -5163,6 +6088,7 @@ pub mod pillar_difference {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pillar_id: std::option::Option<std::string::String>,
+        pub(crate) pillar_name: std::option::Option<std::string::String>,
         pub(crate) difference_status: std::option::Option<crate::model::DifferenceStatus>,
         pub(crate) question_differences:
             std::option::Option<std::vec::Vec<crate::model::QuestionDifference>>,
@@ -5178,6 +6104,16 @@ pub mod pillar_difference {
         /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
+            self
+        }
+        /// <p>The name of the pillar.</p>
+        pub fn pillar_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pillar_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the pillar.</p>
+        pub fn set_pillar_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pillar_name = input;
             self
         }
         /// <p>Indicates the type of change to the pillar.</p>
@@ -5219,6 +6155,7 @@ pub mod pillar_difference {
         pub fn build(self) -> crate::model::PillarDifference {
             crate::model::PillarDifference {
                 pillar_id: self.pillar_id,
+                pillar_name: self.pillar_name,
                 difference_status: self.difference_status,
                 question_differences: self.question_differences,
             }
@@ -5396,6 +6333,8 @@ pub struct LensReviewReport {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
+    /// <p>The ARN for the lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
     pub base64_string: std::option::Option<std::string::String>,
@@ -5405,6 +6344,10 @@ impl LensReviewReport {
     /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
     }
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
@@ -5416,6 +6359,7 @@ impl std::fmt::Debug for LensReviewReport {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LensReviewReport");
         formatter.field("lens_alias", &self.lens_alias);
+        formatter.field("lens_arn", &self.lens_arn);
         formatter.field("base64_string", &self.base64_string);
         formatter.finish()
     }
@@ -5427,6 +6371,7 @@ pub mod lens_review_report {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) base64_string: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5440,6 +6385,16 @@ pub mod lens_review_report {
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN for the lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
             self
         }
         /// <p>The Base64-encoded string representation of a lens review report.</p>
@@ -5461,6 +6416,7 @@ pub mod lens_review_report {
         pub fn build(self) -> crate::model::LensReviewReport {
             crate::model::LensReviewReport {
                 lens_alias: self.lens_alias,
+                lens_arn: self.lens_arn,
                 base64_string: self.base64_string,
             }
         }
@@ -5470,5 +6426,157 @@ impl LensReviewReport {
     /// Creates a new builder-style object to manufacture [`LensReviewReport`](crate::model::LensReviewReport)
     pub fn builder() -> crate::model::lens_review_report::Builder {
         crate::model::lens_review_report::Builder::default()
+    }
+}
+
+/// <p>A lens return object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Lens {
+    /// <p>The ARN of a lens.</p>
+    pub lens_arn: std::option::Option<std::string::String>,
+    /// <p>The version of a lens.</p>
+    pub lens_version: std::option::Option<std::string::String>,
+    /// <p>The full name of the lens.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the lens.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the lens.</p>
+    pub owner: std::option::Option<std::string::String>,
+    /// <p>The ID assigned to the share invitation.</p>
+    pub share_invitation_id: std::option::Option<std::string::String>,
+}
+impl Lens {
+    /// <p>The ARN of a lens.</p>
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
+        self.lens_arn.as_deref()
+    }
+    /// <p>The version of a lens.</p>
+    pub fn lens_version(&self) -> std::option::Option<&str> {
+        self.lens_version.as_deref()
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the lens.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the lens.</p>
+    pub fn owner(&self) -> std::option::Option<&str> {
+        self.owner.as_deref()
+    }
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
+        self.share_invitation_id.as_deref()
+    }
+}
+impl std::fmt::Debug for Lens {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Lens");
+        formatter.field("lens_arn", &self.lens_arn);
+        formatter.field("lens_version", &self.lens_version);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("owner", &self.owner);
+        formatter.field("share_invitation_id", &self.share_invitation_id);
+        formatter.finish()
+    }
+}
+/// See [`Lens`](crate::model::Lens)
+pub mod lens {
+    /// A builder for [`Lens`](crate::model::Lens)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lens_arn: std::option::Option<std::string::String>,
+        pub(crate) lens_version: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) owner: std::option::Option<std::string::String>,
+        pub(crate) share_invitation_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of a lens.</p>
+        pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of a lens.</p>
+        pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_arn = input;
+            self
+        }
+        /// <p>The version of a lens.</p>
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lens_version = Some(input.into());
+            self
+        }
+        /// <p>The version of a lens.</p>
+        pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lens_version = input;
+            self
+        }
+        /// <p>The full name of the lens.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The full name of the lens.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the lens.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the lens.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID that owns the lens.</p>
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID that owns the lens.</p>
+        pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner = input;
+            self
+        }
+        /// <p>The ID assigned to the share invitation.</p>
+        pub fn share_invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.share_invitation_id = Some(input.into());
+            self
+        }
+        /// <p>The ID assigned to the share invitation.</p>
+        pub fn set_share_invitation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.share_invitation_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Lens`](crate::model::Lens)
+        pub fn build(self) -> crate::model::Lens {
+            crate::model::Lens {
+                lens_arn: self.lens_arn,
+                lens_version: self.lens_version,
+                name: self.name,
+                description: self.description,
+                owner: self.owner,
+                share_invitation_id: self.share_invitation_id,
+            }
+        }
+    }
+}
+impl Lens {
+    /// Creates a new builder-style object to manufacture [`Lens`](crate::model::Lens)
+    pub fn builder() -> crate::model::lens::Builder {
+        crate::model::lens::Builder::default()
     }
 }

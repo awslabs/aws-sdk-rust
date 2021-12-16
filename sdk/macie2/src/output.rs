@@ -644,13 +644,13 @@ impl ListOrganizationAdminAccountsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersOutput {
-    /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified by the onlyAssociated request parameter.</p>
+    /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
-    /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified by the onlyAssociated request parameter.</p>
+    /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
     pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
         self.members.as_deref()
     }
@@ -681,14 +681,14 @@ pub mod list_members_output {
         ///
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
-        /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified by the onlyAssociated request parameter.</p>
+        /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
         pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
             let mut v = self.members.unwrap_or_default();
             v.push(input.into());
             self.members = Some(v);
             self
         }
-        /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified by the onlyAssociated request parameter.</p>
+        /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
         pub fn set_members(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Member>>,
@@ -1433,7 +1433,7 @@ pub struct GetMemberOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The email address for the account.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
     pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub master_account_id: std::option::Option<std::string::String>,
@@ -1462,7 +1462,7 @@ impl GetMemberOutput {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
     pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
@@ -1563,12 +1563,12 @@ pub mod get_member_output {
             self.email = input;
             self
         }
-        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
         pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.invited_at = Some(input);
             self
         }
-        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
         pub fn set_invited_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1723,13 +1723,13 @@ impl GetMasterAccountOutput {
 pub struct GetMacieSessionOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The frequency with which Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
-    /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
+    /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
     pub status: std::option::Option<crate::model::MacieStatus>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetMacieSessionOutput {
@@ -1737,21 +1737,21 @@ impl GetMacieSessionOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The frequency with which Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
     pub fn finding_publishing_frequency(
         &self,
     ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
         self.finding_publishing_frequency.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
-    /// <p>The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
+    /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::MacieStatus> {
         self.status.as_ref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -1797,7 +1797,7 @@ pub mod get_macie_session_output {
             self.created_at = input;
             self
         }
-        /// <p>The frequency with which Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -1805,7 +1805,7 @@ pub mod get_macie_session_output {
             self.finding_publishing_frequency = Some(input);
             self
         }
-        /// <p>The frequency with which Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+        /// <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -1813,32 +1813,32 @@ pub mod get_macie_session_output {
             self.finding_publishing_frequency = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
         }
-        /// <p>The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
+        /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
         pub fn status(mut self, input: crate::model::MacieStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
+        /// <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::MacieStatus>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
+        /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie account.</p>
+        /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3074,11 +3074,11 @@ impl GetBucketStatisticsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdministratorAccountOutput {
-    /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     pub administrator: std::option::Option<crate::model::Invitation>,
 }
 impl GetAdministratorAccountOutput {
-    /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     pub fn administrator(&self) -> std::option::Option<&crate::model::Invitation> {
         self.administrator.as_ref()
     }
@@ -3099,12 +3099,12 @@ pub mod get_administrator_account_output {
         pub(crate) administrator: std::option::Option<crate::model::Invitation>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+        /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
         pub fn administrator(mut self, input: crate::model::Invitation) -> Self {
             self.administrator = Some(input);
             self
         }
-        /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+        /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
         pub fn set_administrator(
             mut self,
             input: std::option::Option<crate::model::Invitation>,
@@ -3341,17 +3341,17 @@ impl DisableMacieOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationOutput {
-    /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the Amazon Web Services organization.</p>
+    /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
     pub auto_enable: bool,
-    /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the Amazon Web Services organization.</p>
+    /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
     pub max_account_limit_reached: bool,
 }
 impl DescribeOrganizationConfigurationOutput {
-    /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the Amazon Web Services organization.</p>
+    /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
     pub fn auto_enable(&self) -> bool {
         self.auto_enable
     }
-    /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the Amazon Web Services organization.</p>
+    /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
     pub fn max_account_limit_reached(&self) -> bool {
         self.max_account_limit_reached
     }
@@ -3374,22 +3374,22 @@ pub mod describe_organization_configuration_output {
         pub(crate) max_account_limit_reached: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the Amazon Web Services organization.</p>
+        /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
         pub fn auto_enable(mut self, input: bool) -> Self {
             self.auto_enable = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the Amazon Web Services organization.</p>
+        /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable = input;
             self
         }
-        /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the Amazon Web Services organization.</p>
+        /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
         pub fn max_account_limit_reached(mut self, input: bool) -> Self {
             self.max_account_limit_reached = Some(input);
             self
         }
-        /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the Amazon Web Services organization.</p>
+        /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
         pub fn set_max_account_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
             self.max_account_limit_reached = input;
             self

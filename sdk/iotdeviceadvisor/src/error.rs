@@ -12,9 +12,9 @@ pub struct CreateSuiteDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSuiteDefinitionErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -118,9 +118,9 @@ pub struct DeleteSuiteDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSuiteDefinitionErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -211,6 +211,117 @@ impl std::error::Error for DeleteSuiteDefinitionError {
     }
 }
 
+/// Error type for the `GetEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetEndpointError {
+    /// Kind of error that occurred.
+    pub kind: GetEndpointErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetEndpoint` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetEndpointErrorKind {
+    /// <p>Sends an Internal Failure exception.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Sends a Resource Not Found exception.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Sends a validation exception.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetEndpointError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetEndpointErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetEndpointErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetEndpointErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetEndpointError {
+    fn code(&self) -> Option<&str> {
+        GetEndpointError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetEndpointError {
+    /// Creates a new `GetEndpointError`.
+    pub fn new(kind: GetEndpointErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetEndpointError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetEndpointErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetEndpointError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetEndpointErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetEndpointErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEndpointErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetEndpointErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetEndpointError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetEndpointErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetEndpointErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetEndpointErrorKind::ValidationException(_inner) => Some(_inner),
+            GetEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetSuiteDefinition` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -224,11 +335,11 @@ pub struct GetSuiteDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSuiteDefinitionErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends Resource Not Found Exception.</p>
+    /// <p>Sends a Resource Not Found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -341,11 +452,11 @@ pub struct GetSuiteRunError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSuiteRunErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends Resource Not Found Exception.</p>
+    /// <p>Sends a Resource Not Found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -452,11 +563,11 @@ pub struct GetSuiteRunReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSuiteRunReportErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends Resource Not Found Exception.</p>
+    /// <p>Sends a Resource Not Found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -569,9 +680,9 @@ pub struct ListSuiteDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSuiteDefinitionsErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -675,9 +786,9 @@ pub struct ListSuiteRunsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSuiteRunsErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -778,11 +889,11 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends Resource Not Found Exception.</p>
+    /// <p>Sends a Resource Not Found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -895,11 +1006,11 @@ pub struct StartSuiteRunError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartSuiteRunErrorKind {
-    /// <p>Sends Conflict Exception.</p>
+    /// <p>Sends a Conflict Exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1006,11 +1117,11 @@ pub struct StopSuiteRunError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopSuiteRunErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends Resource Not Found Exception.</p>
+    /// <p>Sends a Resource Not Found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1120,11 +1231,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends Resource Not Found Exception.</p>
+    /// <p>Sends a Resource Not Found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1231,11 +1342,11 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends Resource Not Found Exception.</p>
+    /// <p>Sends a Resource Not Found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1345,9 +1456,9 @@ pub struct UpdateSuiteDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSuiteDefinitionErrorKind {
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1438,11 +1549,11 @@ impl std::error::Error for UpdateSuiteDefinitionError {
     }
 }
 
-/// <p>Sends invalid request exception.</p>
+/// <p>Sends a validation exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
-    /// <p>Sends invalid request exception message.</p>
+    /// <p>Sends a Validation Exception message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -1477,12 +1588,12 @@ pub mod validation_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Sends invalid request exception message.</p>
+        /// <p>Sends a Validation Exception message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Sends invalid request exception message.</p>
+        /// <p>Sends a Validation Exception message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1502,11 +1613,11 @@ impl ValidationException {
     }
 }
 
-/// <p>Sends Internal Failure Exception.</p>
+/// <p>Sends an Internal Failure exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
-    /// <p>Sends Internal Failure Exception message.</p>
+    /// <p>Sends an Internal Failure Exception message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerException {
@@ -1541,12 +1652,12 @@ pub mod internal_server_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Sends Internal Failure Exception message.</p>
+        /// <p>Sends an Internal Failure Exception message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Sends Internal Failure Exception message.</p>
+        /// <p>Sends an Internal Failure Exception message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1566,11 +1677,11 @@ impl InternalServerException {
     }
 }
 
-/// <p>Sends Resource Not Found Exception.</p>
+/// <p>Sends a Resource Not Found exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
-    /// <p>Sends Resource Not Found Exception message.</p>
+    /// <p>Sends a Resource Not Found Exception message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -1605,12 +1716,12 @@ pub mod resource_not_found_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Sends Resource Not Found Exception message.</p>
+        /// <p>Sends a Resource Not Found Exception message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Sends Resource Not Found Exception message.</p>
+        /// <p>Sends a Resource Not Found Exception message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1630,11 +1741,11 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Sends Conflict Exception.</p>
+/// <p>Sends a Conflict Exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
-    /// <p>Sends Conflict Exception message.</p>
+    /// <p>Sends a Conflict Exception message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -1669,12 +1780,12 @@ pub mod conflict_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Sends Conflict Exception message.</p>
+        /// <p>Sends a Conflict Exception message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Sends Conflict Exception message.</p>
+        /// <p>Sends a Conflict Exception message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

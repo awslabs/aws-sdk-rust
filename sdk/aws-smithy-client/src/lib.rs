@@ -4,6 +4,16 @@
  */
 
 //! A Hyper-based Smithy service client.
+//!
+//! | Feature           | Description |
+//! |-------------------|-------------|
+//! | `event-stream`    | Provides Sender/Receiver implementations for Event Stream codegen. |
+//! | `rt-tokio`        | Run async code with the `tokio` runtime |
+//! | `test-util`       | Include various testing utils |
+//! | `native-tls`      | Use `native-tls` as the HTTP client's TLS implementation |
+//! | `rustls`          | Use `rustls` as the HTTP client's TLS implementation |
+//! | `client-hyper`    | Use `hyper` to handle HTTP requests |
+
 #![warn(
     missing_debug_implementations,
     missing_docs,
@@ -25,7 +35,7 @@ pub mod dvr;
 #[cfg(feature = "test-util")]
 pub mod test_connection;
 
-#[cfg(feature = "hyper")]
+#[cfg(feature = "client-hyper")]
 pub mod hyper_ext;
 
 // The types in this module are only used to write the bounds in [`Client::check`]. Customers will
@@ -34,16 +44,14 @@ pub mod hyper_ext;
 #[doc(hidden)]
 pub mod static_tests;
 
-#[cfg(feature = "hyper")]
 pub mod never;
 pub mod timeout;
 pub use timeout::TimeoutLayer;
 
 /// Type aliases for standard connection types.
-#[cfg(feature = "hyper")]
+#[cfg(feature = "client-hyper")]
 #[allow(missing_docs)]
 pub mod conns {
-
     #[cfg(feature = "rustls")]
     pub type Https = hyper_rustls::HttpsConnector<hyper::client::HttpConnector>;
 
@@ -79,7 +87,7 @@ use std::sync::Arc;
 use tower::{Layer, Service, ServiceBuilder, ServiceExt};
 
 use crate::timeout::generate_timeout_service_params_from_timeout_config;
-use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::response::ParseHttpResponse;
@@ -119,7 +127,7 @@ pub struct Client<
     middleware: Middleware,
     retry_policy: RetryPolicy,
     timeout_config: TimeoutConfig,
-    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    sleep_impl: TriState<Arc<dyn AsyncSleep>>,
 }
 
 // Quick-create for people who just want "the default".
@@ -127,17 +135,15 @@ impl<C, M> Client<C, M>
 where
     M: Default,
 {
-    /// Create a Smithy client that the given connector, a middleware default, the [standard
-    /// retry policy](crate::retry::Standard), and the [`default_async_sleep`] sleep implementation.
+    /// Create a Smithy client from the given `connector`, a middleware default, the [standard
+    /// retry policy](crate::retry::Standard), and the [`default_async_sleep`](aws_smithy_async::rt::sleep::default_async_sleep)
+    /// sleep implementation.
     pub fn new(connector: C) -> Self {
-        let mut client = Builder::new()
+        Builder::new()
             .connector(connector)
             .middleware(M::default())
-            .build();
-
-        client.set_sleep_impl(default_async_sleep());
-
-        client
+            .default_async_sleep()
+            .build()
     }
 }
 
@@ -152,7 +158,9 @@ impl<C, M> Client<C, M> {
         self.set_retry_config(config);
         self
     }
+}
 
+impl<C, M, R> Client<C, M, R> {
     /// Set the client's timeout configuration.
     pub fn set_timeout_config(&mut self, config: TimeoutConfig) {
         self.timeout_config = config;
@@ -165,8 +173,10 @@ impl<C, M> Client<C, M> {
     }
 
     /// Set the [`AsyncSleep`] function that the client will use to create things like timeout futures.
+    ///
+    /// *Note: If `None` is passed, this will prevent the client from using retries or timeouts.*
     pub fn set_sleep_impl(&mut self, sleep_impl: Option<Arc<dyn AsyncSleep>>) {
-        self.sleep_impl = sleep_impl;
+        self.sleep_impl = sleep_impl.clone().into();
     }
 
     /// Set the [`AsyncSleep`] function that the client will use to create things like timeout futures.
@@ -222,17 +232,28 @@ where
         bounds::Parsed<<M as bounds::SmithyMiddleware<C>>::Service, O, Retry>:
             Service<Operation<O, Retry>, Response = SdkSuccess<T>, Error = SdkError<E>> + Clone,
     {
+        if matches!(&self.sleep_impl, TriState::Unset) {
+            // during requests, debug log (a warning is emitted during client construction)
+            tracing::debug!(
+                "Client does not have a sleep implementation. Timeouts and retry \
+                will not work without this. {}",
+                MISSING_SLEEP_IMPL_RECOMMENDATION
+            );
+        }
         let connector = self.connector.clone();
 
-        let timeout_servic_params = generate_timeout_service_params_from_timeout_config(
+        let timeout_service_params = generate_timeout_service_params_from_timeout_config(
             &self.timeout_config,
-            self.sleep_impl.clone(),
+            self.sleep_impl.clone().into(),
         );
 
         let svc = ServiceBuilder::new()
-            .layer(TimeoutLayer::new(timeout_servic_params.api_call))
-            .retry(self.retry_policy.new_request_policy())
-            .layer(TimeoutLayer::new(timeout_servic_params.api_call_attempt))
+            .layer(TimeoutLayer::new(timeout_service_params.api_call))
+            .retry(
+                self.retry_policy
+                    .new_request_policy(self.sleep_impl.clone().into()),
+            )
+            .layer(TimeoutLayer::new(timeout_service_params.api_call_attempt))
             .layer(ParseResponseLayer::<O, Retry>::new())
             // These layers can be considered as occurring in order. That is, first invoke the
             // customer-provided middleware, then dispatch dispatch over the wire.
@@ -260,5 +281,57 @@ where
         let _ = |o: static_tests::ValidTestOperation| {
             let _ = self.call_raw(o);
         };
+    }
+}
+
+pub(crate) const MISSING_SLEEP_IMPL_RECOMMENDATION: &str =
+    "If this was intentional, you can suppress this message with `Client::set_sleep_impl(None). \
+     Otherwise, unless you have a good reason to use the low-level service \
+     client API, consider using the `aws-config` crate to load a shared config from \
+     the environment, and construct a fluent client from that. If you need to use the low-level \
+     service client API, then pass in a sleep implementation to make timeouts and retry work.";
+
+/// Utility for tracking set vs. unset vs explicitly disabled
+///
+/// If someone explicitly disables something, we don't need to warn them that it may be missing. This
+/// enum impls `From`/`Into` `Option<T>` for ease of use.
+#[derive(Debug, Clone, Eq, PartialEq)]
+enum TriState<T> {
+    Disabled,
+    Unset,
+    Set(T),
+}
+
+impl<T> TriState<T> {
+    /// Create a TriState, returning `Unset` when `None` is passed
+    pub fn or_unset(t: Option<T>) -> Self {
+        match t {
+            Some(t) => Self::Set(t),
+            None => Self::Unset,
+        }
+    }
+}
+
+impl<T> Default for TriState<T> {
+    fn default() -> Self {
+        Self::Unset
+    }
+}
+
+impl<T> From<Option<T>> for TriState<T> {
+    fn from(t: Option<T>) -> Self {
+        match t {
+            Some(t) => TriState::Set(t),
+            None => TriState::Disabled,
+        }
+    }
+}
+
+impl<T> From<TriState<T>> for Option<T> {
+    fn from(t: TriState<T>) -> Self {
+        match t {
+            TriState::Disabled | TriState::Unset => None,
+            TriState::Set(t) => Some(t),
+        }
     }
 }

@@ -2328,6 +2328,8 @@ pub enum CreateUserErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The specified service linked role (SLR) was not found.</p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
     /// <p>A user with this ID already exists.</p>
@@ -2343,6 +2345,7 @@ impl std::fmt::Display for CreateUserError {
             CreateUserErrorKind::DuplicateUserNameFault(_inner) => _inner.fmt(f),
             CreateUserErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             CreateUserErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             CreateUserErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
             CreateUserErrorKind::UserAlreadyExistsFault(_inner) => _inner.fmt(f),
             CreateUserErrorKind::UserQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -2420,6 +2423,13 @@ impl CreateUserError {
             CreateUserErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateUserErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
@@ -2442,6 +2452,7 @@ impl std::error::Error for CreateUserError {
             CreateUserErrorKind::DuplicateUserNameFault(_inner) => Some(_inner),
             CreateUserErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             CreateUserErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             CreateUserErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
             CreateUserErrorKind::UserAlreadyExistsFault(_inner) => Some(_inner),
             CreateUserErrorKind::UserQuotaExceededFault(_inner) => Some(_inner),
@@ -2469,6 +2480,8 @@ pub enum CreateUserGroupErrorKind {
     DuplicateUserNameFault(crate::error::DuplicateUserNameFault),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// <p>The specified service linked role (SLR) was not found.</p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
     /// <p>The user group with this ID already exists.</p>
@@ -2486,6 +2499,7 @@ impl std::fmt::Display for CreateUserGroupError {
             CreateUserGroupErrorKind::DefaultUserRequired(_inner) => _inner.fmt(f),
             CreateUserGroupErrorKind::DuplicateUserNameFault(_inner) => _inner.fmt(f),
             CreateUserGroupErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
             CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(_inner) => _inner.fmt(f),
             CreateUserGroupErrorKind::UserGroupQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -2564,6 +2578,13 @@ impl CreateUserGroupError {
             CreateUserGroupErrorKind::InvalidParameterValueException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateUserGroupErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
@@ -2596,6 +2617,7 @@ impl std::error::Error for CreateUserGroupError {
             CreateUserGroupErrorKind::DefaultUserRequired(_inner) => Some(_inner),
             CreateUserGroupErrorKind::DuplicateUserNameFault(_inner) => Some(_inner),
             CreateUserGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(_inner) => Some(_inner),
             CreateUserGroupErrorKind::UserGroupAlreadyExistsFault(_inner) => Some(_inner),
             CreateUserGroupErrorKind::UserGroupQuotaExceededFault(_inner) => Some(_inner),
@@ -4021,6 +4043,8 @@ pub enum DeleteUserErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The user is not in active state.</p>
     InvalidUserStateFault(crate::error::InvalidUserStateFault),
+    /// <p>The specified service linked role (SLR) was not found.</p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4032,6 +4056,7 @@ impl std::fmt::Display for DeleteUserError {
             DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(_inner) => _inner.fmt(f),
             DeleteUserErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             DeleteUserErrorKind::InvalidUserStateFault(_inner) => _inner.fmt(f),
+            DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             DeleteUserErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
             DeleteUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4107,6 +4132,13 @@ impl DeleteUserError {
     pub fn is_invalid_user_state_fault(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::InvalidUserStateFault(_))
     }
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteUserErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::UserNotFoundFault(_))
@@ -4118,6 +4150,7 @@ impl std::error::Error for DeleteUserError {
             DeleteUserErrorKind::DefaultUserAssociatedToUserGroupFault(_inner) => Some(_inner),
             DeleteUserErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteUserErrorKind::InvalidUserStateFault(_inner) => Some(_inner),
+            DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             DeleteUserErrorKind::UserNotFoundFault(_inner) => Some(_inner),
             DeleteUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4141,6 +4174,8 @@ pub enum DeleteUserGroupErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The user group is not in an active state.</p>
     InvalidUserGroupStateFault(crate::error::InvalidUserGroupStateFault),
+    /// <p>The specified service linked role (SLR) was not found.</p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user group was not found or does not exist</p>
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4151,6 +4186,7 @@ impl std::fmt::Display for DeleteUserGroupError {
         match &self.kind {
             DeleteUserGroupErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_inner) => _inner.fmt(f),
+            DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             DeleteUserGroupErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
             DeleteUserGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4222,6 +4258,13 @@ impl DeleteUserGroupError {
             DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteUserGroupErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
         matches!(
@@ -4235,6 +4278,7 @@ impl std::error::Error for DeleteUserGroupError {
         match &self.kind {
             DeleteUserGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             DeleteUserGroupErrorKind::InvalidUserGroupStateFault(_inner) => Some(_inner),
+            DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             DeleteUserGroupErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
             DeleteUserGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -6063,6 +6107,8 @@ pub struct DescribeUserGroupsError {
 pub enum DescribeUserGroupsErrorKind {
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
+    /// <p>The specified service linked role (SLR) was not found.</p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user group was not found or does not exist</p>
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6074,6 +6120,7 @@ impl std::fmt::Display for DescribeUserGroupsError {
             DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
                 _inner.fmt(f)
             }
+            DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             DescribeUserGroupsErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
             DescribeUserGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -6138,6 +6185,13 @@ impl DescribeUserGroupsError {
             DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeUserGroupsErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
         matches!(
@@ -6152,6 +6206,7 @@ impl std::error::Error for DescribeUserGroupsError {
             DescribeUserGroupsErrorKind::InvalidParameterCombinationException(_inner) => {
                 Some(_inner)
             }
+            DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             DescribeUserGroupsErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
             DescribeUserGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -6173,6 +6228,8 @@ pub struct DescribeUsersError {
 pub enum DescribeUsersErrorKind {
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
+    /// <p>The specified service linked role (SLR) was not found.</p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6182,6 +6239,7 @@ impl std::fmt::Display for DescribeUsersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeUsersErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
+            DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             DescribeUsersErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
             DescribeUsersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -6246,6 +6304,13 @@ impl DescribeUsersError {
             DescribeUsersErrorKind::InvalidParameterCombinationException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `DescribeUsersErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, DescribeUsersErrorKind::UserNotFoundFault(_))
@@ -6255,6 +6320,7 @@ impl std::error::Error for DescribeUsersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeUsersErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
+            DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             DescribeUsersErrorKind::UserNotFoundFault(_inner) => Some(_inner),
             DescribeUsersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -8482,6 +8548,8 @@ pub enum ModifyUserErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The user is not in active state.</p>
     InvalidUserStateFault(crate::error::InvalidUserStateFault),
+    /// <p>The specified service linked role (SLR) was not found.</p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -8493,6 +8561,7 @@ impl std::fmt::Display for ModifyUserError {
             ModifyUserErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             ModifyUserErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             ModifyUserErrorKind::InvalidUserStateFault(_inner) => _inner.fmt(f),
+            ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             ModifyUserErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
             ModifyUserErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -8568,6 +8637,13 @@ impl ModifyUserError {
     pub fn is_invalid_user_state_fault(&self) -> bool {
         matches!(&self.kind, ModifyUserErrorKind::InvalidUserStateFault(_))
     }
+    /// Returns `true` if the error kind is `ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `ModifyUserErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, ModifyUserErrorKind::UserNotFoundFault(_))
@@ -8579,6 +8655,7 @@ impl std::error::Error for ModifyUserError {
             ModifyUserErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             ModifyUserErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ModifyUserErrorKind::InvalidUserStateFault(_inner) => Some(_inner),
+            ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             ModifyUserErrorKind::UserNotFoundFault(_inner) => Some(_inner),
             ModifyUserErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -8608,6 +8685,8 @@ pub enum ModifyUserGroupErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The user group is not in an active state.</p>
     InvalidUserGroupStateFault(crate::error::InvalidUserGroupStateFault),
+    /// <p>The specified service linked role (SLR) was not found.</p>
+    ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The user group was not found or does not exist</p>
     UserGroupNotFoundFault(crate::error::UserGroupNotFoundFault),
     /// <p>The user does not exist or could not be found.</p>
@@ -8623,6 +8702,7 @@ impl std::fmt::Display for ModifyUserGroupError {
             ModifyUserGroupErrorKind::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             ModifyUserGroupErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_inner) => _inner.fmt(f),
+            ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             ModifyUserGroupErrorKind::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
             ModifyUserGroupErrorKind::UserNotFoundFault(_inner) => _inner.fmt(f),
             ModifyUserGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -8713,6 +8793,13 @@ impl ModifyUserGroupError {
             ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_)
         )
     }
+    /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    pub fn is_service_linked_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `ModifyUserGroupErrorKind::UserGroupNotFoundFault`.
     pub fn is_user_group_not_found_fault(&self) -> bool {
         matches!(
@@ -8733,6 +8820,7 @@ impl std::error::Error for ModifyUserGroupError {
             ModifyUserGroupErrorKind::InvalidParameterCombinationException(_inner) => Some(_inner),
             ModifyUserGroupErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             ModifyUserGroupErrorKind::InvalidUserGroupStateFault(_inner) => Some(_inner),
+            ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
             ModifyUserGroupErrorKind::UserGroupNotFoundFault(_inner) => Some(_inner),
             ModifyUserGroupErrorKind::UserNotFoundFault(_inner) => Some(_inner),
             ModifyUserGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -11883,6 +11971,70 @@ impl ReservedCacheNodeAlreadyExistsFault {
     }
 }
 
+/// <p>The specified service linked role (SLR) was not found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceLinkedRoleNotFoundFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ServiceLinkedRoleNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceLinkedRoleNotFoundFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ServiceLinkedRoleNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceLinkedRoleNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceLinkedRoleNotFoundFault")?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceLinkedRoleNotFoundFault {}
+/// See [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
+pub mod service_linked_role_not_found_fault {
+    /// A builder for [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
+        pub fn build(self) -> crate::error::ServiceLinkedRoleNotFoundFault {
+            crate::error::ServiceLinkedRoleNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ServiceLinkedRoleNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
+    pub fn builder() -> crate::error::service_linked_role_not_found_fault::Builder {
+        crate::error::service_linked_role_not_found_fault::Builder::default()
+    }
+}
+
 /// <p>The user group is not in an active state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11906,8 +12058,8 @@ impl InvalidUserGroupStateFault {
 impl std::fmt::Display for InvalidUserGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUserGroupStateFault")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -11970,8 +12122,8 @@ impl DuplicateUserNameFault {
 impl std::fmt::Display for DuplicateUserNameFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateUserNameFault")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -12034,8 +12186,8 @@ impl DefaultUserRequired {
 impl std::fmt::Display for DefaultUserRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DefaultUserRequired")?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -12098,8 +12250,8 @@ impl InvalidUserStateFault {
 impl std::fmt::Display for InvalidUserStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUserStateFault")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
@@ -12162,8 +12314,8 @@ impl NodeQuotaForCustomerExceededFault {
 impl std::fmt::Display for NodeQuotaForCustomerExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NodeQuotaForCustomerExceededFault")?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -12227,8 +12379,8 @@ impl NodeGroupsPerReplicationGroupQuotaExceededFault {
 impl std::fmt::Display for NodeGroupsPerReplicationGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NodeGroupsPerReplicationGroupQuotaExceededFault")?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
@@ -12295,8 +12447,8 @@ impl std::fmt::Display for InvalidVpcNetworkStateFault {
             f,
             "InvalidVpcNetworkStateFault [InvalidVPCNetworkStateFault]"
         )?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
         }
         Ok(())
     }
@@ -12360,8 +12512,8 @@ impl InsufficientCacheClusterCapacityFault {
 impl std::fmt::Display for InsufficientCacheClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientCacheClusterCapacityFault")?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -12424,8 +12576,8 @@ impl NodeQuotaForClusterExceededFault {
 impl std::fmt::Display for NodeQuotaForClusterExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NodeQuotaForClusterExceededFault")?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
         }
         Ok(())
     }
@@ -12489,8 +12641,8 @@ impl SubnetNotAllowedFault {
 impl std::fmt::Display for SubnetNotAllowedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetNotAllowedFault")?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
         }
         Ok(())
     }
@@ -12553,8 +12705,8 @@ impl SubnetInUse {
 impl std::fmt::Display for SubnetInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetInUse")?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
@@ -12617,8 +12769,8 @@ impl InvalidSubnet {
 impl std::fmt::Display for InvalidSubnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubnet")?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -12681,8 +12833,8 @@ impl CacheSubnetQuotaExceededFault {
 impl std::fmt::Display for CacheSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSubnetQuotaExceededFault")?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -12745,8 +12897,8 @@ impl NoOperationFault {
 impl std::fmt::Display for NoOperationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoOperationFault")?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -12809,8 +12961,8 @@ impl ClusterQuotaForCustomerExceededFault {
 impl std::fmt::Display for ClusterQuotaForCustomerExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterQuotaForCustomerExceededFault")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -12873,8 +13025,8 @@ impl ServiceUpdateNotFoundFault {
 impl std::fmt::Display for ServiceUpdateNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUpdateNotFoundFault")?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -12937,8 +13089,8 @@ impl DefaultUserAssociatedToUserGroupFault {
 impl std::fmt::Display for DefaultUserAssociatedToUserGroupFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DefaultUserAssociatedToUserGroupFault")?;
-        if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -13001,8 +13153,8 @@ impl InvalidSnapshotStateFault {
 impl std::fmt::Display for InvalidSnapshotStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSnapshotStateFault")?;
-        if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
@@ -13065,8 +13217,8 @@ impl SnapshotQuotaExceededFault {
 impl std::fmt::Display for SnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotQuotaExceededFault")?;
-        if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
         }
         Ok(())
     }
@@ -13139,8 +13291,8 @@ impl SnapshotFeatureNotSupportedFault {
 impl std::fmt::Display for SnapshotFeatureNotSupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotFeatureNotSupportedFault")?;
-        if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
         }
         Ok(())
     }
@@ -13203,8 +13355,8 @@ impl SnapshotAlreadyExistsFault {
 impl std::fmt::Display for SnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotAlreadyExistsFault")?;
-        if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -13267,8 +13419,8 @@ impl CacheSubnetGroupInUse {
 impl std::fmt::Display for CacheSubnetGroupInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CacheSubnetGroupInUse")?;
-        if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
@@ -13305,70 +13457,6 @@ impl CacheSubnetGroupInUse {
     /// Creates a new builder-style object to manufacture [`CacheSubnetGroupInUse`](crate::error::CacheSubnetGroupInUse)
     pub fn builder() -> crate::error::cache_subnet_group_in_use::Builder {
         crate::error::cache_subnet_group_in_use::Builder::default()
-    }
-}
-
-/// <p>The specified service linked role (SLR) was not found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceLinkedRoleNotFoundFault {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceLinkedRoleNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceLinkedRoleNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ServiceLinkedRoleNotFoundFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceLinkedRoleNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceLinkedRoleNotFoundFault")?;
-        if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceLinkedRoleNotFoundFault {}
-/// See [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
-pub mod service_linked_role_not_found_fault {
-    /// A builder for [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
-        pub fn build(self) -> crate::error::ServiceLinkedRoleNotFoundFault {
-            crate::error::ServiceLinkedRoleNotFoundFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ServiceLinkedRoleNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault)
-    pub fn builder() -> crate::error::service_linked_role_not_found_fault::Builder {
-        crate::error::service_linked_role_not_found_fault::Builder::default()
     }
 }
 

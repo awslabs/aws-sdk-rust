@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_appstream::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -83,6 +83,15 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
+    /// Constructs a fluent builder for the `AssociateApplicationFleet` operation.
+    ///
+    /// See [`AssociateApplicationFleet`](crate::client::fluent_builders::AssociateApplicationFleet) for more information about the
+    /// operation and its arguments.
+    pub fn associate_application_fleet(
+        &self,
+    ) -> fluent_builders::AssociateApplicationFleet<C, M, R> {
+        fluent_builders::AssociateApplicationFleet::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `AssociateFleet` operation.
     ///
     /// See [`AssociateFleet`](crate::client::fluent_builders::AssociateFleet) for more information about the
@@ -112,6 +121,20 @@ where
     /// operation and its arguments.
     pub fn copy_image(&self) -> fluent_builders::CopyImage<C, M, R> {
         fluent_builders::CopyImage::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateAppBlock` operation.
+    ///
+    /// See [`CreateAppBlock`](crate::client::fluent_builders::CreateAppBlock) for more information about the
+    /// operation and its arguments.
+    pub fn create_app_block(&self) -> fluent_builders::CreateAppBlock<C, M, R> {
+        fluent_builders::CreateAppBlock::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateApplication` operation.
+    ///
+    /// See [`CreateApplication`](crate::client::fluent_builders::CreateApplication) for more information about the
+    /// operation and its arguments.
+    pub fn create_application(&self) -> fluent_builders::CreateApplication<C, M, R> {
+        fluent_builders::CreateApplication::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateDirectoryConfig` operation.
     ///
@@ -180,6 +203,20 @@ where
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteAppBlock` operation.
+    ///
+    /// See [`DeleteAppBlock`](crate::client::fluent_builders::DeleteAppBlock) for more information about the
+    /// operation and its arguments.
+    pub fn delete_app_block(&self) -> fluent_builders::DeleteAppBlock<C, M, R> {
+        fluent_builders::DeleteAppBlock::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteApplication` operation.
+    ///
+    /// See [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) for more information about the
+    /// operation and its arguments.
+    pub fn delete_application(&self) -> fluent_builders::DeleteApplication<C, M, R> {
+        fluent_builders::DeleteApplication::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteDirectoryConfig` operation.
     ///
     /// See [`DeleteDirectoryConfig`](crate::client::fluent_builders::DeleteDirectoryConfig) for more information about the
@@ -237,6 +274,29 @@ where
     /// operation and its arguments.
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeAppBlocks` operation.
+    ///
+    /// See [`DescribeAppBlocks`](crate::client::fluent_builders::DescribeAppBlocks) for more information about the
+    /// operation and its arguments.
+    pub fn describe_app_blocks(&self) -> fluent_builders::DescribeAppBlocks<C, M, R> {
+        fluent_builders::DescribeAppBlocks::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeApplicationFleetAssociations` operation.
+    ///
+    /// See [`DescribeApplicationFleetAssociations`](crate::client::fluent_builders::DescribeApplicationFleetAssociations) for more information about the
+    /// operation and its arguments.
+    pub fn describe_application_fleet_associations(
+        &self,
+    ) -> fluent_builders::DescribeApplicationFleetAssociations<C, M, R> {
+        fluent_builders::DescribeApplicationFleetAssociations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeApplications` operation.
+    ///
+    /// See [`DescribeApplications`](crate::client::fluent_builders::DescribeApplications) for more information about the
+    /// operation and its arguments.
+    pub fn describe_applications(&self) -> fluent_builders::DescribeApplications<C, M, R> {
+        fluent_builders::DescribeApplications::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeDirectoryConfigs` operation.
     ///
@@ -318,6 +378,15 @@ where
     /// operation and its arguments.
     pub fn disable_user(&self) -> fluent_builders::DisableUser<C, M, R> {
         fluent_builders::DisableUser::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DisassociateApplicationFleet` operation.
+    ///
+    /// See [`DisassociateApplicationFleet`](crate::client::fluent_builders::DisassociateApplicationFleet) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_application_fleet(
+        &self,
+    ) -> fluent_builders::DisassociateApplicationFleet<C, M, R> {
+        fluent_builders::DisassociateApplicationFleet::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DisassociateFleet` operation.
     ///
@@ -403,6 +472,13 @@ where
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateApplication` operation.
+    ///
+    /// See [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) for more information about the
+    /// operation and its arguments.
+    pub fn update_application(&self) -> fluent_builders::UpdateApplication<C, M, R> {
+        fluent_builders::UpdateApplication::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateDirectoryConfig` operation.
     ///
     /// See [`UpdateDirectoryConfig`](crate::client::fluent_builders::UpdateDirectoryConfig) for more information about the
@@ -440,13 +516,96 @@ pub mod fluent_builders {
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
     //!
+    /// Fluent builder constructing a request to `AssociateApplicationFleet`.
+    ///
+    /// <p>Associates the specified application with the specified fleet. This is only supported for Elastic fleets.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateApplicationFleet<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_application_fleet_input::Builder,
+    }
+    impl<C, M, R> AssociateApplicationFleet<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateApplicationFleet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateApplicationFleetOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateApplicationFleetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateApplicationFleetInputOperationOutputAlias,
+                crate::output::AssociateApplicationFleetOutput,
+                crate::error::AssociateApplicationFleetError,
+                crate::input::AssociateApplicationFleetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the fleet.</p>
+        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(inp);
+            self
+        }
+        /// <p>The name of the fleet.</p>
+        pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_fleet_name(input);
+            self
+        }
+        /// <p>The ARN of the application.</p>
+        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(inp);
+            self
+        }
+        /// <p>The ARN of the application.</p>
+        pub fn set_application_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `AssociateFleet`.
     ///
     /// <p>Associates the specified fleet with the specified stack.</p>
     #[derive(std::fmt::Debug)]
     pub struct AssociateFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -526,7 +685,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchAssociateUserStack<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -606,7 +765,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchDisassociateUserStack<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -686,7 +845,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CopyImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -795,13 +954,373 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateAppBlock`.
+    ///
+    /// <p>Creates an app block.</p>
+    /// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the
+    /// virtual hard disk in an S3 bucket. It also stores the setup script with details about
+    /// how to mount the virtual hard disk. The virtual hard disk includes the application
+    /// binaries and other files necessary to launch your applications. Multiple applications
+    /// can be assigned to a single app block.</p>
+    /// <p>This is only supported for Elastic fleets.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateAppBlock<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_app_block_input::Builder,
+    }
+    impl<C, M, R> CreateAppBlock<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateAppBlock`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAppBlockOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateAppBlockError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateAppBlockInputOperationOutputAlias,
+                crate::output::CreateAppBlockOutput,
+                crate::error::CreateAppBlockError,
+                crate::input::CreateAppBlockInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the app block.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the app block.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the app block.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the app block.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The display name of the app block. This is not displayed to the user.</p>
+        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(inp);
+            self
+        }
+        /// <p>The display name of the app block. This is not displayed to the user.</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
+            self
+        }
+        /// <p>The source S3 location of the app block.</p>
+        pub fn source_s3_location(mut self, inp: crate::model::S3Location) -> Self {
+            self.inner = self.inner.source_s3_location(inp);
+            self
+        }
+        /// <p>The source S3 location of the app block.</p>
+        pub fn set_source_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.inner = self.inner.set_source_s3_location(input);
+            self
+        }
+        /// <p>The setup script details of the app block.</p>
+        pub fn setup_script_details(mut self, inp: crate::model::ScriptDetails) -> Self {
+            self.inner = self.inner.setup_script_details(inp);
+            self
+        }
+        /// <p>The setup script details of the app block.</p>
+        pub fn set_setup_script_details(
+            mut self,
+            input: std::option::Option<crate::model::ScriptDetails>,
+        ) -> Self {
+            self.inner = self.inner.set_setup_script_details(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the app block.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>The tags assigned to the app block.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateApplication`.
+    ///
+    /// <p>Creates an application.</p>
+    /// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to
+    /// launch applications on Elastic fleet streaming instances. An application consists of the
+    /// launch details, icon, and display name. Applications are associated with an app block
+    /// that contains the application binaries and other files. The applications assigned to an
+    /// Elastic fleet are the applications users can launch. </p>
+    /// <p>This is only supported for Elastic fleets.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateApplication<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_application_input::Builder,
+    }
+    impl<C, M, R> CreateApplication<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateApplicationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateApplicationInputOperationOutputAlias,
+                crate::output::CreateApplicationOutput,
+                crate::error::CreateApplicationError,
+                crate::input::CreateApplicationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(inp);
+            self
+        }
+        /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
+            self
+        }
+        /// <p>The description of the application.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the application.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The location in S3 of the application icon.</p>
+        pub fn icon_s3_location(mut self, inp: crate::model::S3Location) -> Self {
+            self.inner = self.inner.icon_s3_location(inp);
+            self
+        }
+        /// <p>The location in S3 of the application icon.</p>
+        pub fn set_icon_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.inner = self.inner.set_icon_s3_location(input);
+            self
+        }
+        /// <p>The launch path of the application.</p>
+        pub fn launch_path(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_path(inp);
+            self
+        }
+        /// <p>The launch path of the application.</p>
+        pub fn set_launch_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_launch_path(input);
+            self
+        }
+        /// <p>The working directory of the application.</p>
+        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.working_directory(inp);
+            self
+        }
+        /// <p>The working directory of the application.</p>
+        pub fn set_working_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_working_directory(input);
+            self
+        }
+        /// <p>The launch parameters of the application.</p>
+        pub fn launch_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_parameters(inp);
+            self
+        }
+        /// <p>The launch parameters of the application.</p>
+        pub fn set_launch_parameters(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_parameters(input);
+            self
+        }
+        /// Appends an item to `Platforms`.
+        ///
+        /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
+        ///
+        /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+        pub fn platforms(mut self, inp: impl Into<crate::model::PlatformType>) -> Self {
+            self.inner = self.inner.platforms(inp);
+            self
+        }
+        /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+        pub fn set_platforms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
+        ) -> Self {
+            self.inner = self.inner.set_platforms(input);
+            self
+        }
+        /// Appends an item to `InstanceFamilies`.
+        ///
+        /// To override the contents of this collection use [`set_instance_families`](Self::set_instance_families).
+        ///
+        /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
+        pub fn instance_families(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_families(inp);
+            self
+        }
+        /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
+        pub fn set_instance_families(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_families(input);
+            self
+        }
+        /// <p>The app block ARN to which the application should be associated</p>
+        pub fn app_block_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_block_arn(inp);
+            self
+        }
+        /// <p>The app block ARN to which the application should be associated</p>
+        pub fn set_app_block_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_block_arn(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the application.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>The tags assigned to the application.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateDirectoryConfig`.
     ///
     /// <p>Creates a Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -908,11 +1427,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
-    /// <p>Creates a fleet. A fleet consists of streaming instances that run a specified image.</p>
+    /// <p>Creates a fleet. A fleet consists of streaming instances that run a specified image when using Always-On or On-Demand.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1097,6 +1616,15 @@ pub mod fluent_builders {
         /// <p>stream.graphics-pro.16xlarge</p>
         /// </li>
         /// </ul>
+        /// <p>The following instance types are available for Elastic fleets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>stream.standard.small</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.standard.medium</p>
+        /// </li>
+        /// </ul>
         pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(inp);
             self
@@ -1203,6 +1731,15 @@ pub mod fluent_builders {
         /// <p>stream.graphics-pro.16xlarge</p>
         /// </li>
         /// </ul>
+        /// <p>The following instance types are available for Elastic fleets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>stream.standard.small</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.standard.medium</p>
+        /// </li>
+        /// </ul>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1249,12 +1786,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_type(input);
             self
         }
-        /// <p>The desired capacity for the fleet.</p>
+        /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
         pub fn compute_capacity(mut self, inp: crate::model::ComputeCapacity) -> Self {
             self.inner = self.inner.compute_capacity(inp);
             self
         }
-        /// <p>The desired capacity for the fleet.</p>
+        /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
         pub fn set_compute_capacity(
             mut self,
             input: std::option::Option<crate::model::ComputeCapacity>,
@@ -1262,12 +1799,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compute_capacity(input);
             self
         }
-        /// <p>The VPC configuration for the fleet.</p>
+        /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
         pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(inp);
             self
         }
-        /// <p>The VPC configuration for the fleet.</p>
+        /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1335,12 +1872,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_default_internet_access(input);
             self
         }
-        /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+        /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
         pub fn domain_join_info(mut self, inp: crate::model::DomainJoinInfo) -> Self {
             self.inner = self.inner.domain_join_info(inp);
             self
         }
-        /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+        /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
         pub fn set_domain_join_info(
             mut self,
             input: std::option::Option<crate::model::DomainJoinInfo>,
@@ -1455,6 +1992,50 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_view(input);
             self
         }
+        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
+        /// fleets. </p>
+        pub fn platform(mut self, inp: crate::model::PlatformType) -> Self {
+            self.inner = self.inner.platform(inp);
+            self
+        }
+        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
+        /// fleets. </p>
+        pub fn set_platform(
+            mut self,
+            input: std::option::Option<crate::model::PlatformType>,
+        ) -> Self {
+            self.inner = self.inner.set_platform(input);
+            self
+        }
+        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
+        /// fleets, and not allowed for other fleet types.</p>
+        pub fn max_concurrent_sessions(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_concurrent_sessions(inp);
+            self
+        }
+        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
+        /// fleets, and not allowed for other fleet types.</p>
+        pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_concurrent_sessions(input);
+            self
+        }
+        /// Appends an item to `UsbDeviceFilterStrings`.
+        ///
+        /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
+        ///
+        /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+        pub fn usb_device_filter_strings(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usb_device_filter_strings(inp);
+            self
+        }
+        /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+        pub fn set_usb_device_filter_strings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_usb_device_filter_strings(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateImageBuilder`.
     ///
@@ -1463,7 +2044,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1908,7 +2489,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateImageBuilderStreamingURL<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1990,7 +2571,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateStack<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2221,7 +2802,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateStreamingURL<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2354,7 +2935,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateUpdatedImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2507,7 +3088,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateUsageReportSubscription<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2567,7 +3148,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2693,13 +3274,153 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteAppBlock`.
+    ///
+    /// <p>Deletes an app block.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteAppBlock<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_app_block_input::Builder,
+    }
+    impl<C, M, R> DeleteAppBlock<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteAppBlock`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAppBlockOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAppBlockError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteAppBlockInputOperationOutputAlias,
+                crate::output::DeleteAppBlockOutput,
+                crate::error::DeleteAppBlockError,
+                crate::input::DeleteAppBlockInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the app block.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the app block.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteApplication`.
+    ///
+    /// <p>Deletes an application.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteApplication<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_application_input::Builder,
+    }
+    impl<C, M, R> DeleteApplication<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteApplicationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteApplicationInputOperationOutputAlias,
+                crate::output::DeleteApplicationOutput,
+                crate::error::DeleteApplicationError,
+                crate::input::DeleteApplicationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the application.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the application.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteDirectoryConfig`.
     ///
     /// <p>Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2772,7 +3493,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2843,7 +3564,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2913,7 +3634,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2983,7 +3704,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3066,7 +3787,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteStack<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3136,7 +3857,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteUsageReportSubscription<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3196,7 +3917,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3281,6 +4002,311 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeAppBlocks`.
+    ///
+    /// <p>Retrieves a list that describes one or more app blocks.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeAppBlocks<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_app_blocks_input::Builder,
+    }
+    impl<C, M, R> DescribeAppBlocks<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeAppBlocks`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAppBlocksOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeAppBlocksError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeAppBlocksInputOperationOutputAlias,
+                crate::output::DescribeAppBlocksOutput,
+                crate::error::DescribeAppBlocksError,
+                crate::input::DescribeAppBlocksInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `Arns`.
+        ///
+        /// To override the contents of this collection use [`set_arns`](Self::set_arns).
+        ///
+        /// <p>The ARNs of the app blocks.</p>
+        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(inp);
+            self
+        }
+        /// <p>The ARNs of the app blocks.</p>
+        pub fn set_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_arns(input);
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeApplicationFleetAssociations`.
+    ///
+    /// <p>Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName must be specified.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeApplicationFleetAssociations<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_application_fleet_associations_input::Builder,
+    }
+    impl<C, M, R> DescribeApplicationFleetAssociations<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeApplicationFleetAssociations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeApplicationFleetAssociationsOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeApplicationFleetAssociationsError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeApplicationFleetAssociationsInputOperationOutputAlias,
+                crate::output::DescribeApplicationFleetAssociationsOutput,
+                crate::error::DescribeApplicationFleetAssociationsError,
+                crate::input::DescribeApplicationFleetAssociationsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the fleet.</p>
+        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(inp);
+            self
+        }
+        /// <p>The name of the fleet.</p>
+        pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_fleet_name(input);
+            self
+        }
+        /// <p>The ARN of the application.</p>
+        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(inp);
+            self
+        }
+        /// <p>The ARN of the application.</p>
+        pub fn set_application_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_arn(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeApplications`.
+    ///
+    /// <p>Retrieves a list that describes one or more applications.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeApplications<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_applications_input::Builder,
+    }
+    impl<C, M, R> DescribeApplications<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeApplications`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeApplicationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeApplicationsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeApplicationsInputOperationOutputAlias,
+                crate::output::DescribeApplicationsOutput,
+                crate::error::DescribeApplicationsError,
+                crate::input::DescribeApplicationsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `Arns`.
+        ///
+        /// To override the contents of this collection use [`set_arns`](Self::set_arns).
+        ///
+        /// <p>The ARNs for the applications.</p>
+        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(inp);
+            self
+        }
+        /// <p>The ARNs for the applications.</p>
+        pub fn set_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_arns(input);
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this
+        /// operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeDirectoryConfigs`.
     ///
     /// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
@@ -3289,7 +4315,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDirectoryConfigs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3386,7 +4412,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFleets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3473,7 +4499,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImageBuilders<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3570,7 +4596,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3677,7 +4703,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImages<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3806,7 +4832,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSessions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3933,7 +4959,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeStacks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4020,7 +5046,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUsageReportSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4100,7 +5126,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUsers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4201,7 +5227,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUserStackAssociations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4322,7 +5348,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisableUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4407,13 +5433,96 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateApplicationFleet`.
+    ///
+    /// <p>Disassociates the specified application from the fleet.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DisassociateApplicationFleet<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_application_fleet_input::Builder,
+    }
+    impl<C, M, R> DisassociateApplicationFleet<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociateApplicationFleet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateApplicationFleetOutput,
+            aws_smithy_http::result::SdkError<crate::error::DisassociateApplicationFleetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociateApplicationFleetInputOperationOutputAlias,
+                crate::output::DisassociateApplicationFleetOutput,
+                crate::error::DisassociateApplicationFleetError,
+                crate::input::DisassociateApplicationFleetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the fleet.</p>
+        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(inp);
+            self
+        }
+        /// <p>The name of the fleet.</p>
+        pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_fleet_name(input);
+            self
+        }
+        /// <p>The ARN of the application.</p>
+        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(inp);
+            self
+        }
+        /// <p>The ARN of the application.</p>
+        pub fn set_application_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DisassociateFleet`.
     ///
     /// <p>Disassociates the specified fleet from the specified stack.</p>
     #[derive(std::fmt::Debug)]
     pub struct DisassociateFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4493,7 +5602,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct EnableUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4584,7 +5693,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ExpireSession<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4654,7 +5763,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAssociatedFleets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4734,7 +5843,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAssociatedStacks<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4815,7 +5924,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4885,7 +5994,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4955,7 +6064,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5038,7 +6147,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5108,7 +6217,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StopImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5184,7 +6293,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5289,7 +6398,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5370,13 +6479,185 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateApplication`.
+    ///
+    /// <p>Updates the specified application.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateApplication<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_application_input::Builder,
+    }
+    impl<C, M, R> UpdateApplication<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateApplication`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateApplicationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateApplicationInputOperationOutputAlias,
+                crate::output::UpdateApplicationOutput,
+                crate::error::UpdateApplicationError,
+                crate::input::UpdateApplicationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(inp);
+            self
+        }
+        /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_display_name(input);
+            self
+        }
+        /// <p>The description of the application.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the application.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The icon S3 location of the application.</p>
+        pub fn icon_s3_location(mut self, inp: crate::model::S3Location) -> Self {
+            self.inner = self.inner.icon_s3_location(inp);
+            self
+        }
+        /// <p>The icon S3 location of the application.</p>
+        pub fn set_icon_s3_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.inner = self.inner.set_icon_s3_location(input);
+            self
+        }
+        /// <p>The launch path of the application.</p>
+        pub fn launch_path(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_path(inp);
+            self
+        }
+        /// <p>The launch path of the application.</p>
+        pub fn set_launch_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_launch_path(input);
+            self
+        }
+        /// <p>The working directory of the application.</p>
+        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.working_directory(inp);
+            self
+        }
+        /// <p>The working directory of the application.</p>
+        pub fn set_working_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_working_directory(input);
+            self
+        }
+        /// <p>The launch parameters of the application.</p>
+        pub fn launch_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_parameters(inp);
+            self
+        }
+        /// <p>The launch parameters of the application.</p>
+        pub fn set_launch_parameters(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_launch_parameters(input);
+            self
+        }
+        /// <p>The ARN of the app block.</p>
+        pub fn app_block_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_block_arn(inp);
+            self
+        }
+        /// <p>The ARN of the app block.</p>
+        pub fn set_app_block_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_block_arn(input);
+            self
+        }
+        /// Appends an item to `AttributesToDelete`.
+        ///
+        /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
+        ///
+        /// <p>The attributes to delete for an application.</p>
+        pub fn attributes_to_delete(
+            mut self,
+            inp: impl Into<crate::model::ApplicationAttribute>,
+        ) -> Self {
+            self.inner = self.inner.attributes_to_delete(inp);
+            self
+        }
+        /// <p>The attributes to delete for an application.</p>
+        pub fn set_attributes_to_delete(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ApplicationAttribute>>,
+        ) -> Self {
+            self.inner = self.inner.set_attributes_to_delete(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateDirectoryConfig`.
     ///
     /// <p>Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5484,13 +6765,31 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFleet`.
     ///
     /// <p>Updates the specified fleet.</p>
-    /// <p>If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name.
-    /// If the fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code> attributes.
-    /// If the fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.</p>
+    /// <p>If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
+    /// the fleet name.</p>
+    /// <p>If the fleet is in the <code>RUNNING</code> state, you can update the following based
+    /// on the fleet type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Always-On and On-Demand fleet types</p>
+    /// <p>You can update the  <code>DisplayName</code>, <code>ComputeCapacity</code>,
+    /// <code>ImageARN</code>, <code>ImageName</code>,
+    /// <code>IdleDisconnectTimeoutInSeconds</code>, and
+    /// <code>DisconnectTimeoutInSeconds</code> attributes.</p>
+    /// </li>
+    /// <li>
+    /// <p>Elastic fleet type</p>
+    /// <p>You can update the  <code>DisplayName</code>,
+    /// <code>IdleDisconnectTimeoutInSeconds</code>,
+    /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>,
+    /// and <code>UsbDeviceFilterStrings</code> attributes.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateFleet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5675,6 +6974,15 @@ pub mod fluent_builders {
         /// <p>stream.graphics-pro.16xlarge</p>
         /// </li>
         /// </ul>
+        /// <p>The following instance types are available for Elastic fleets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>stream.standard.small</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.standard.medium</p>
+        /// </li>
+        /// </ul>
         pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(inp);
             self
@@ -5781,6 +7089,15 @@ pub mod fluent_builders {
         /// <p>stream.graphics-pro.16xlarge</p>
         /// </li>
         /// </ul>
+        /// <p>The following instance types are available for Elastic fleets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>stream.standard.small</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.standard.medium</p>
+        /// </li>
+        /// </ul>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5788,12 +7105,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>The desired capacity for the fleet.</p>
+        /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
         pub fn compute_capacity(mut self, inp: crate::model::ComputeCapacity) -> Self {
             self.inner = self.inner.compute_capacity(inp);
             self
         }
-        /// <p>The desired capacity for the fleet.</p>
+        /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
         pub fn set_compute_capacity(
             mut self,
             input: std::option::Option<crate::model::ComputeCapacity>,
@@ -5801,12 +7118,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compute_capacity(input);
             self
         }
-        /// <p>The VPC configuration for the fleet.</p>
+        /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
         pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(inp);
             self
         }
-        /// <p>The VPC configuration for the fleet.</p>
+        /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -5989,6 +7306,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_view(input);
             self
         }
+        /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
+        pub fn platform(mut self, inp: crate::model::PlatformType) -> Self {
+            self.inner = self.inner.platform(inp);
+            self
+        }
+        /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
+        pub fn set_platform(
+            mut self,
+            input: std::option::Option<crate::model::PlatformType>,
+        ) -> Self {
+            self.inner = self.inner.set_platform(input);
+            self
+        }
+        /// <p>The maximum number of concurrent sessions for a fleet.</p>
+        pub fn max_concurrent_sessions(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_concurrent_sessions(inp);
+            self
+        }
+        /// <p>The maximum number of concurrent sessions for a fleet.</p>
+        pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_concurrent_sessions(input);
+            self
+        }
+        /// Appends an item to `UsbDeviceFilterStrings`.
+        ///
+        /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
+        ///
+        /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+        pub fn usb_device_filter_strings(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usb_device_filter_strings(inp);
+            self
+        }
+        /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
+        pub fn set_usb_device_filter_strings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_usb_device_filter_strings(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateImagePermissions`.
     ///
@@ -5996,7 +7353,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6092,7 +7449,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateStack<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6311,17 +7668,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -6330,7 +7691,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -6346,11 +7707,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

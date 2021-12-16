@@ -7092,6 +7092,1240 @@ impl ScheduleConfig {
     }
 }
 
+/// <p>A structure of additional Inference Specification. Additional Inference Specification
+/// specifies details about inference jobs that can be run with models based on
+/// this model package</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AdditionalInferenceSpecificationDefinition {
+    /// <p>A unique name to identify the additional inference specification. The name must
+    /// be unique within the list of your additional inference specifications for a
+    /// particular model package.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A description of the additional Inference specification</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
+    pub containers:
+        std::option::Option<std::vec::Vec<crate::model::ModelPackageContainerDefinition>>,
+    /// <p>A list of the instance types on which a transformation job can be run
+    /// or on which an endpoint can be deployed.</p>
+    pub supported_transform_instance_types:
+        std::option::Option<std::vec::Vec<crate::model::TransformInstanceType>>,
+    /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+    pub supported_realtime_inference_instance_types:
+        std::option::Option<std::vec::Vec<crate::model::ProductionVariantInstanceType>>,
+    /// <p>The supported MIME types for the input data.</p>
+    pub supported_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The supported MIME types for the output data.</p>
+    pub supported_response_mime_types: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AdditionalInferenceSpecificationDefinition {
+    /// <p>A unique name to identify the additional inference specification. The name must
+    /// be unique within the list of your additional inference specifications for a
+    /// particular model package.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>A description of the additional Inference specification</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
+    pub fn containers(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelPackageContainerDefinition]> {
+        self.containers.as_deref()
+    }
+    /// <p>A list of the instance types on which a transformation job can be run
+    /// or on which an endpoint can be deployed.</p>
+    pub fn supported_transform_instance_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::TransformInstanceType]> {
+        self.supported_transform_instance_types.as_deref()
+    }
+    /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+    pub fn supported_realtime_inference_instance_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::ProductionVariantInstanceType]> {
+        self.supported_realtime_inference_instance_types.as_deref()
+    }
+    /// <p>The supported MIME types for the input data.</p>
+    pub fn supported_content_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_content_types.as_deref()
+    }
+    /// <p>The supported MIME types for the output data.</p>
+    pub fn supported_response_mime_types(&self) -> std::option::Option<&[std::string::String]> {
+        self.supported_response_mime_types.as_deref()
+    }
+}
+impl std::fmt::Debug for AdditionalInferenceSpecificationDefinition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AdditionalInferenceSpecificationDefinition");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("containers", &self.containers);
+        formatter.field(
+            "supported_transform_instance_types",
+            &self.supported_transform_instance_types,
+        );
+        formatter.field(
+            "supported_realtime_inference_instance_types",
+            &self.supported_realtime_inference_instance_types,
+        );
+        formatter.field("supported_content_types", &self.supported_content_types);
+        formatter.field(
+            "supported_response_mime_types",
+            &self.supported_response_mime_types,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AdditionalInferenceSpecificationDefinition`](crate::model::AdditionalInferenceSpecificationDefinition)
+pub mod additional_inference_specification_definition {
+    /// A builder for [`AdditionalInferenceSpecificationDefinition`](crate::model::AdditionalInferenceSpecificationDefinition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) containers:
+            std::option::Option<std::vec::Vec<crate::model::ModelPackageContainerDefinition>>,
+        pub(crate) supported_transform_instance_types:
+            std::option::Option<std::vec::Vec<crate::model::TransformInstanceType>>,
+        pub(crate) supported_realtime_inference_instance_types:
+            std::option::Option<std::vec::Vec<crate::model::ProductionVariantInstanceType>>,
+        pub(crate) supported_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) supported_response_mime_types:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>A unique name to identify the additional inference specification. The name must
+        /// be unique within the list of your additional inference specifications for a
+        /// particular model package.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A unique name to identify the additional inference specification. The name must
+        /// be unique within the list of your additional inference specifications for a
+        /// particular model package.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A description of the additional Inference specification</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A description of the additional Inference specification</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
+        pub fn containers(
+            mut self,
+            input: impl Into<crate::model::ModelPackageContainerDefinition>,
+        ) -> Self {
+            let mut v = self.containers.unwrap_or_default();
+            v.push(input.into());
+            self.containers = Some(v);
+            self
+        }
+        /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
+        pub fn set_containers(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ModelPackageContainerDefinition>,
+            >,
+        ) -> Self {
+            self.containers = input;
+            self
+        }
+        /// Appends an item to `supported_transform_instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_transform_instance_types`](Self::set_supported_transform_instance_types).
+        ///
+        /// <p>A list of the instance types on which a transformation job can be run
+        /// or on which an endpoint can be deployed.</p>
+        pub fn supported_transform_instance_types(
+            mut self,
+            input: impl Into<crate::model::TransformInstanceType>,
+        ) -> Self {
+            let mut v = self.supported_transform_instance_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_transform_instance_types = Some(v);
+            self
+        }
+        /// <p>A list of the instance types on which a transformation job can be run
+        /// or on which an endpoint can be deployed.</p>
+        pub fn set_supported_transform_instance_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TransformInstanceType>>,
+        ) -> Self {
+            self.supported_transform_instance_types = input;
+            self
+        }
+        /// Appends an item to `supported_realtime_inference_instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_realtime_inference_instance_types`](Self::set_supported_realtime_inference_instance_types).
+        ///
+        /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+        pub fn supported_realtime_inference_instance_types(
+            mut self,
+            input: impl Into<crate::model::ProductionVariantInstanceType>,
+        ) -> Self {
+            let mut v = self
+                .supported_realtime_inference_instance_types
+                .unwrap_or_default();
+            v.push(input.into());
+            self.supported_realtime_inference_instance_types = Some(v);
+            self
+        }
+        /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
+        pub fn set_supported_realtime_inference_instance_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductionVariantInstanceType>>,
+        ) -> Self {
+            self.supported_realtime_inference_instance_types = input;
+            self
+        }
+        /// Appends an item to `supported_content_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_content_types`](Self::set_supported_content_types).
+        ///
+        /// <p>The supported MIME types for the input data.</p>
+        pub fn supported_content_types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_content_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_content_types = Some(v);
+            self
+        }
+        /// <p>The supported MIME types for the input data.</p>
+        pub fn set_supported_content_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_content_types = input;
+            self
+        }
+        /// Appends an item to `supported_response_mime_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_response_mime_types`](Self::set_supported_response_mime_types).
+        ///
+        /// <p>The supported MIME types for the output data.</p>
+        pub fn supported_response_mime_types(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.supported_response_mime_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_response_mime_types = Some(v);
+            self
+        }
+        /// <p>The supported MIME types for the output data.</p>
+        pub fn set_supported_response_mime_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_response_mime_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AdditionalInferenceSpecificationDefinition`](crate::model::AdditionalInferenceSpecificationDefinition)
+        pub fn build(self) -> crate::model::AdditionalInferenceSpecificationDefinition {
+            crate::model::AdditionalInferenceSpecificationDefinition {
+                name: self.name,
+                description: self.description,
+                containers: self.containers,
+                supported_transform_instance_types: self.supported_transform_instance_types,
+                supported_realtime_inference_instance_types: self
+                    .supported_realtime_inference_instance_types,
+                supported_content_types: self.supported_content_types,
+                supported_response_mime_types: self.supported_response_mime_types,
+            }
+        }
+    }
+}
+impl AdditionalInferenceSpecificationDefinition {
+    /// Creates a new builder-style object to manufacture [`AdditionalInferenceSpecificationDefinition`](crate::model::AdditionalInferenceSpecificationDefinition)
+    pub fn builder() -> crate::model::additional_inference_specification_definition::Builder {
+        crate::model::additional_inference_specification_definition::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ProductionVariantInstanceType {
+    #[allow(missing_docs)] // documentation missing in model
+    MlC42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC4Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC518Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC59Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5D18Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5D2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5D4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5D9Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5DLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5DXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4DnXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf124Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf1Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM410Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM416Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5D12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5D24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5D2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5D4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5DLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5DXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP216Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP28Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP316Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP38Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR5Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR5D12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR5D24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR5D2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR5D4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR5DLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlR5DXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlT22Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlT2Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlT2Medium,
+    #[allow(missing_docs)] // documentation missing in model
+    MlT2Xlarge,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ProductionVariantInstanceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ml.c4.2xlarge" => ProductionVariantInstanceType::MlC42Xlarge,
+            "ml.c4.4xlarge" => ProductionVariantInstanceType::MlC44Xlarge,
+            "ml.c4.8xlarge" => ProductionVariantInstanceType::MlC48Xlarge,
+            "ml.c4.large" => ProductionVariantInstanceType::MlC4Large,
+            "ml.c4.xlarge" => ProductionVariantInstanceType::MlC4Xlarge,
+            "ml.c5.18xlarge" => ProductionVariantInstanceType::MlC518Xlarge,
+            "ml.c5.2xlarge" => ProductionVariantInstanceType::MlC52Xlarge,
+            "ml.c5.4xlarge" => ProductionVariantInstanceType::MlC54Xlarge,
+            "ml.c5.9xlarge" => ProductionVariantInstanceType::MlC59Xlarge,
+            "ml.c5.large" => ProductionVariantInstanceType::MlC5Large,
+            "ml.c5.xlarge" => ProductionVariantInstanceType::MlC5Xlarge,
+            "ml.c5d.18xlarge" => ProductionVariantInstanceType::MlC5D18Xlarge,
+            "ml.c5d.2xlarge" => ProductionVariantInstanceType::MlC5D2Xlarge,
+            "ml.c5d.4xlarge" => ProductionVariantInstanceType::MlC5D4Xlarge,
+            "ml.c5d.9xlarge" => ProductionVariantInstanceType::MlC5D9Xlarge,
+            "ml.c5d.large" => ProductionVariantInstanceType::MlC5DLarge,
+            "ml.c5d.xlarge" => ProductionVariantInstanceType::MlC5DXlarge,
+            "ml.g4dn.12xlarge" => ProductionVariantInstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => ProductionVariantInstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => ProductionVariantInstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => ProductionVariantInstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => ProductionVariantInstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => ProductionVariantInstanceType::MlG4DnXlarge,
+            "ml.inf1.24xlarge" => ProductionVariantInstanceType::MlInf124Xlarge,
+            "ml.inf1.2xlarge" => ProductionVariantInstanceType::MlInf12Xlarge,
+            "ml.inf1.6xlarge" => ProductionVariantInstanceType::MlInf16Xlarge,
+            "ml.inf1.xlarge" => ProductionVariantInstanceType::MlInf1Xlarge,
+            "ml.m4.10xlarge" => ProductionVariantInstanceType::MlM410Xlarge,
+            "ml.m4.16xlarge" => ProductionVariantInstanceType::MlM416Xlarge,
+            "ml.m4.2xlarge" => ProductionVariantInstanceType::MlM42Xlarge,
+            "ml.m4.4xlarge" => ProductionVariantInstanceType::MlM44Xlarge,
+            "ml.m4.xlarge" => ProductionVariantInstanceType::MlM4Xlarge,
+            "ml.m5.12xlarge" => ProductionVariantInstanceType::MlM512Xlarge,
+            "ml.m5.24xlarge" => ProductionVariantInstanceType::MlM524Xlarge,
+            "ml.m5.2xlarge" => ProductionVariantInstanceType::MlM52Xlarge,
+            "ml.m5.4xlarge" => ProductionVariantInstanceType::MlM54Xlarge,
+            "ml.m5.large" => ProductionVariantInstanceType::MlM5Large,
+            "ml.m5.xlarge" => ProductionVariantInstanceType::MlM5Xlarge,
+            "ml.m5d.12xlarge" => ProductionVariantInstanceType::MlM5D12Xlarge,
+            "ml.m5d.24xlarge" => ProductionVariantInstanceType::MlM5D24Xlarge,
+            "ml.m5d.2xlarge" => ProductionVariantInstanceType::MlM5D2Xlarge,
+            "ml.m5d.4xlarge" => ProductionVariantInstanceType::MlM5D4Xlarge,
+            "ml.m5d.large" => ProductionVariantInstanceType::MlM5DLarge,
+            "ml.m5d.xlarge" => ProductionVariantInstanceType::MlM5DXlarge,
+            "ml.p2.16xlarge" => ProductionVariantInstanceType::MlP216Xlarge,
+            "ml.p2.8xlarge" => ProductionVariantInstanceType::MlP28Xlarge,
+            "ml.p2.xlarge" => ProductionVariantInstanceType::MlP2Xlarge,
+            "ml.p3.16xlarge" => ProductionVariantInstanceType::MlP316Xlarge,
+            "ml.p3.2xlarge" => ProductionVariantInstanceType::MlP32Xlarge,
+            "ml.p3.8xlarge" => ProductionVariantInstanceType::MlP38Xlarge,
+            "ml.r5.12xlarge" => ProductionVariantInstanceType::MlR512Xlarge,
+            "ml.r5.24xlarge" => ProductionVariantInstanceType::MlR524Xlarge,
+            "ml.r5.2xlarge" => ProductionVariantInstanceType::MlR52Xlarge,
+            "ml.r5.4xlarge" => ProductionVariantInstanceType::MlR54Xlarge,
+            "ml.r5.large" => ProductionVariantInstanceType::MlR5Large,
+            "ml.r5.xlarge" => ProductionVariantInstanceType::MlR5Xlarge,
+            "ml.r5d.12xlarge" => ProductionVariantInstanceType::MlR5D12Xlarge,
+            "ml.r5d.24xlarge" => ProductionVariantInstanceType::MlR5D24Xlarge,
+            "ml.r5d.2xlarge" => ProductionVariantInstanceType::MlR5D2Xlarge,
+            "ml.r5d.4xlarge" => ProductionVariantInstanceType::MlR5D4Xlarge,
+            "ml.r5d.large" => ProductionVariantInstanceType::MlR5DLarge,
+            "ml.r5d.xlarge" => ProductionVariantInstanceType::MlR5DXlarge,
+            "ml.t2.2xlarge" => ProductionVariantInstanceType::MlT22Xlarge,
+            "ml.t2.large" => ProductionVariantInstanceType::MlT2Large,
+            "ml.t2.medium" => ProductionVariantInstanceType::MlT2Medium,
+            "ml.t2.xlarge" => ProductionVariantInstanceType::MlT2Xlarge,
+            other => ProductionVariantInstanceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ProductionVariantInstanceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProductionVariantInstanceType::from(s))
+    }
+}
+impl ProductionVariantInstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProductionVariantInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
+            ProductionVariantInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
+            ProductionVariantInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
+            ProductionVariantInstanceType::MlC4Large => "ml.c4.large",
+            ProductionVariantInstanceType::MlC4Xlarge => "ml.c4.xlarge",
+            ProductionVariantInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+            ProductionVariantInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+            ProductionVariantInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+            ProductionVariantInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+            ProductionVariantInstanceType::MlC5Large => "ml.c5.large",
+            ProductionVariantInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            ProductionVariantInstanceType::MlC5D18Xlarge => "ml.c5d.18xlarge",
+            ProductionVariantInstanceType::MlC5D2Xlarge => "ml.c5d.2xlarge",
+            ProductionVariantInstanceType::MlC5D4Xlarge => "ml.c5d.4xlarge",
+            ProductionVariantInstanceType::MlC5D9Xlarge => "ml.c5d.9xlarge",
+            ProductionVariantInstanceType::MlC5DLarge => "ml.c5d.large",
+            ProductionVariantInstanceType::MlC5DXlarge => "ml.c5d.xlarge",
+            ProductionVariantInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            ProductionVariantInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            ProductionVariantInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            ProductionVariantInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            ProductionVariantInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            ProductionVariantInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            ProductionVariantInstanceType::MlInf124Xlarge => "ml.inf1.24xlarge",
+            ProductionVariantInstanceType::MlInf12Xlarge => "ml.inf1.2xlarge",
+            ProductionVariantInstanceType::MlInf16Xlarge => "ml.inf1.6xlarge",
+            ProductionVariantInstanceType::MlInf1Xlarge => "ml.inf1.xlarge",
+            ProductionVariantInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
+            ProductionVariantInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
+            ProductionVariantInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
+            ProductionVariantInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
+            ProductionVariantInstanceType::MlM4Xlarge => "ml.m4.xlarge",
+            ProductionVariantInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+            ProductionVariantInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+            ProductionVariantInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+            ProductionVariantInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+            ProductionVariantInstanceType::MlM5Large => "ml.m5.large",
+            ProductionVariantInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            ProductionVariantInstanceType::MlM5D12Xlarge => "ml.m5d.12xlarge",
+            ProductionVariantInstanceType::MlM5D24Xlarge => "ml.m5d.24xlarge",
+            ProductionVariantInstanceType::MlM5D2Xlarge => "ml.m5d.2xlarge",
+            ProductionVariantInstanceType::MlM5D4Xlarge => "ml.m5d.4xlarge",
+            ProductionVariantInstanceType::MlM5DLarge => "ml.m5d.large",
+            ProductionVariantInstanceType::MlM5DXlarge => "ml.m5d.xlarge",
+            ProductionVariantInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
+            ProductionVariantInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
+            ProductionVariantInstanceType::MlP2Xlarge => "ml.p2.xlarge",
+            ProductionVariantInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+            ProductionVariantInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+            ProductionVariantInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            ProductionVariantInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
+            ProductionVariantInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
+            ProductionVariantInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
+            ProductionVariantInstanceType::MlR54Xlarge => "ml.r5.4xlarge",
+            ProductionVariantInstanceType::MlR5Large => "ml.r5.large",
+            ProductionVariantInstanceType::MlR5Xlarge => "ml.r5.xlarge",
+            ProductionVariantInstanceType::MlR5D12Xlarge => "ml.r5d.12xlarge",
+            ProductionVariantInstanceType::MlR5D24Xlarge => "ml.r5d.24xlarge",
+            ProductionVariantInstanceType::MlR5D2Xlarge => "ml.r5d.2xlarge",
+            ProductionVariantInstanceType::MlR5D4Xlarge => "ml.r5d.4xlarge",
+            ProductionVariantInstanceType::MlR5DLarge => "ml.r5d.large",
+            ProductionVariantInstanceType::MlR5DXlarge => "ml.r5d.xlarge",
+            ProductionVariantInstanceType::MlT22Xlarge => "ml.t2.2xlarge",
+            ProductionVariantInstanceType::MlT2Large => "ml.t2.large",
+            ProductionVariantInstanceType::MlT2Medium => "ml.t2.medium",
+            ProductionVariantInstanceType::MlT2Xlarge => "ml.t2.xlarge",
+            ProductionVariantInstanceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.large",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.large",
+            "ml.c5.xlarge",
+            "ml.c5d.18xlarge",
+            "ml.c5d.2xlarge",
+            "ml.c5d.4xlarge",
+            "ml.c5d.9xlarge",
+            "ml.c5d.large",
+            "ml.c5d.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.inf1.24xlarge",
+            "ml.inf1.2xlarge",
+            "ml.inf1.6xlarge",
+            "ml.inf1.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.m5d.12xlarge",
+            "ml.m5d.24xlarge",
+            "ml.m5d.2xlarge",
+            "ml.m5d.4xlarge",
+            "ml.m5d.large",
+            "ml.m5d.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.r5.12xlarge",
+            "ml.r5.24xlarge",
+            "ml.r5.2xlarge",
+            "ml.r5.4xlarge",
+            "ml.r5.large",
+            "ml.r5.xlarge",
+            "ml.r5d.12xlarge",
+            "ml.r5d.24xlarge",
+            "ml.r5d.2xlarge",
+            "ml.r5d.4xlarge",
+            "ml.r5d.large",
+            "ml.r5d.xlarge",
+            "ml.t2.2xlarge",
+            "ml.t2.large",
+            "ml.t2.medium",
+            "ml.t2.xlarge",
+        ]
+    }
+}
+impl AsRef<str> for ProductionVariantInstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TransformInstanceType {
+    #[allow(missing_docs)] // documentation missing in model
+    MlC42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC518Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC59Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4DnXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM410Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM416Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM512Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM524Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM52Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM5Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP216Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP28Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP316Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP38Xlarge,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TransformInstanceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ml.c4.2xlarge" => TransformInstanceType::MlC42Xlarge,
+            "ml.c4.4xlarge" => TransformInstanceType::MlC44Xlarge,
+            "ml.c4.8xlarge" => TransformInstanceType::MlC48Xlarge,
+            "ml.c4.xlarge" => TransformInstanceType::MlC4Xlarge,
+            "ml.c5.18xlarge" => TransformInstanceType::MlC518Xlarge,
+            "ml.c5.2xlarge" => TransformInstanceType::MlC52Xlarge,
+            "ml.c5.4xlarge" => TransformInstanceType::MlC54Xlarge,
+            "ml.c5.9xlarge" => TransformInstanceType::MlC59Xlarge,
+            "ml.c5.xlarge" => TransformInstanceType::MlC5Xlarge,
+            "ml.g4dn.12xlarge" => TransformInstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => TransformInstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => TransformInstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => TransformInstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => TransformInstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => TransformInstanceType::MlG4DnXlarge,
+            "ml.m4.10xlarge" => TransformInstanceType::MlM410Xlarge,
+            "ml.m4.16xlarge" => TransformInstanceType::MlM416Xlarge,
+            "ml.m4.2xlarge" => TransformInstanceType::MlM42Xlarge,
+            "ml.m4.4xlarge" => TransformInstanceType::MlM44Xlarge,
+            "ml.m4.xlarge" => TransformInstanceType::MlM4Xlarge,
+            "ml.m5.12xlarge" => TransformInstanceType::MlM512Xlarge,
+            "ml.m5.24xlarge" => TransformInstanceType::MlM524Xlarge,
+            "ml.m5.2xlarge" => TransformInstanceType::MlM52Xlarge,
+            "ml.m5.4xlarge" => TransformInstanceType::MlM54Xlarge,
+            "ml.m5.large" => TransformInstanceType::MlM5Large,
+            "ml.m5.xlarge" => TransformInstanceType::MlM5Xlarge,
+            "ml.p2.16xlarge" => TransformInstanceType::MlP216Xlarge,
+            "ml.p2.8xlarge" => TransformInstanceType::MlP28Xlarge,
+            "ml.p2.xlarge" => TransformInstanceType::MlP2Xlarge,
+            "ml.p3.16xlarge" => TransformInstanceType::MlP316Xlarge,
+            "ml.p3.2xlarge" => TransformInstanceType::MlP32Xlarge,
+            "ml.p3.8xlarge" => TransformInstanceType::MlP38Xlarge,
+            other => TransformInstanceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TransformInstanceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TransformInstanceType::from(s))
+    }
+}
+impl TransformInstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TransformInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
+            TransformInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
+            TransformInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
+            TransformInstanceType::MlC4Xlarge => "ml.c4.xlarge",
+            TransformInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+            TransformInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+            TransformInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+            TransformInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+            TransformInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            TransformInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            TransformInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            TransformInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            TransformInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            TransformInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            TransformInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            TransformInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
+            TransformInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
+            TransformInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
+            TransformInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
+            TransformInstanceType::MlM4Xlarge => "ml.m4.xlarge",
+            TransformInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+            TransformInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+            TransformInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+            TransformInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+            TransformInstanceType::MlM5Large => "ml.m5.large",
+            TransformInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            TransformInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
+            TransformInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
+            TransformInstanceType::MlP2Xlarge => "ml.p2.xlarge",
+            TransformInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+            TransformInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+            TransformInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            TransformInstanceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+        ]
+    }
+}
+impl AsRef<str> for TransformInstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the Docker container for the model package.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelPackageContainerDefinition {
+    /// <p>The DNS host name for the Docker container.</p>
+    pub container_hostname: std::option::Option<std::string::String>,
+    /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker,
+    /// the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+    /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
+    /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+    /// SageMaker</a>.</p>
+    pub image: std::option::Option<std::string::String>,
+    /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for
+    /// training.</p>
+    pub image_digest: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored.
+    /// This path must point to a single <code>gzip</code> compressed tar archive
+    /// (<code>.tar.gz</code> suffix).</p>
+    /// <note>
+    /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
+    /// model package.</p>
+    /// </note>
+    pub model_data_url: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
+    pub product_id: std::option::Option<std::string::String>,
+    /// <p>The environment variables to set in the Docker container. Each key and value in the
+    /// <code>Environment</code> string to string map can have length of up to 1024. We
+    /// support up to 16 entries in the map.</p>
+    pub environment:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A structure with Model Input details.</p>
+    pub model_input: std::option::Option<crate::model::ModelInput>,
+    /// <p>The machine learning framework of the model package container image.</p>
+    pub framework: std::option::Option<std::string::String>,
+    /// <p>The framework version of the Model Package Container Image.</p>
+    pub framework_version: std::option::Option<std::string::String>,
+    /// <p>The name of a pre-trained machine learning benchmarked by
+    /// Amazon SageMaker Inference Recommender model that matches your model.
+    /// You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
+    pub nearest_model_name: std::option::Option<std::string::String>,
+}
+impl ModelPackageContainerDefinition {
+    /// <p>The DNS host name for the Docker container.</p>
+    pub fn container_hostname(&self) -> std::option::Option<&str> {
+        self.container_hostname.as_deref()
+    }
+    /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
+    /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker,
+    /// the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+    /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
+    /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+    /// SageMaker</a>.</p>
+    pub fn image(&self) -> std::option::Option<&str> {
+        self.image.as_deref()
+    }
+    /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for
+    /// training.</p>
+    pub fn image_digest(&self) -> std::option::Option<&str> {
+        self.image_digest.as_deref()
+    }
+    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored.
+    /// This path must point to a single <code>gzip</code> compressed tar archive
+    /// (<code>.tar.gz</code> suffix).</p>
+    /// <note>
+    /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
+    /// model package.</p>
+    /// </note>
+    pub fn model_data_url(&self) -> std::option::Option<&str> {
+        self.model_data_url.as_deref()
+    }
+    /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
+    pub fn product_id(&self) -> std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The environment variables to set in the Docker container. Each key and value in the
+    /// <code>Environment</code> string to string map can have length of up to 1024. We
+    /// support up to 16 entries in the map.</p>
+    pub fn environment(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.environment.as_ref()
+    }
+    /// <p>A structure with Model Input details.</p>
+    pub fn model_input(&self) -> std::option::Option<&crate::model::ModelInput> {
+        self.model_input.as_ref()
+    }
+    /// <p>The machine learning framework of the model package container image.</p>
+    pub fn framework(&self) -> std::option::Option<&str> {
+        self.framework.as_deref()
+    }
+    /// <p>The framework version of the Model Package Container Image.</p>
+    pub fn framework_version(&self) -> std::option::Option<&str> {
+        self.framework_version.as_deref()
+    }
+    /// <p>The name of a pre-trained machine learning benchmarked by
+    /// Amazon SageMaker Inference Recommender model that matches your model.
+    /// You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
+    pub fn nearest_model_name(&self) -> std::option::Option<&str> {
+        self.nearest_model_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ModelPackageContainerDefinition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelPackageContainerDefinition");
+        formatter.field("container_hostname", &self.container_hostname);
+        formatter.field("image", &self.image);
+        formatter.field("image_digest", &self.image_digest);
+        formatter.field("model_data_url", &self.model_data_url);
+        formatter.field("product_id", &self.product_id);
+        formatter.field("environment", &self.environment);
+        formatter.field("model_input", &self.model_input);
+        formatter.field("framework", &self.framework);
+        formatter.field("framework_version", &self.framework_version);
+        formatter.field("nearest_model_name", &self.nearest_model_name);
+        formatter.finish()
+    }
+}
+/// See [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
+pub mod model_package_container_definition {
+    /// A builder for [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) container_hostname: std::option::Option<std::string::String>,
+        pub(crate) image: std::option::Option<std::string::String>,
+        pub(crate) image_digest: std::option::Option<std::string::String>,
+        pub(crate) model_data_url: std::option::Option<std::string::String>,
+        pub(crate) product_id: std::option::Option<std::string::String>,
+        pub(crate) environment: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) model_input: std::option::Option<crate::model::ModelInput>,
+        pub(crate) framework: std::option::Option<std::string::String>,
+        pub(crate) framework_version: std::option::Option<std::string::String>,
+        pub(crate) nearest_model_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The DNS host name for the Docker container.</p>
+        pub fn container_hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_hostname = Some(input.into());
+            self
+        }
+        /// <p>The DNS host name for the Docker container.</p>
+        pub fn set_container_hostname(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_hostname = input;
+            self
+        }
+        /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
+        /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker,
+        /// the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+        /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
+        /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+        /// SageMaker</a>.</p>
+        pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image = Some(input.into());
+            self
+        }
+        /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
+        /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker,
+        /// the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+        /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
+        /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
+        /// SageMaker</a>.</p>
+        pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image = input;
+            self
+        }
+        /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for
+        /// training.</p>
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_digest = Some(input.into());
+            self
+        }
+        /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for
+        /// training.</p>
+        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_digest = input;
+            self
+        }
+        /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored.
+        /// This path must point to a single <code>gzip</code> compressed tar archive
+        /// (<code>.tar.gz</code> suffix).</p>
+        /// <note>
+        /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
+        /// model package.</p>
+        /// </note>
+        pub fn model_data_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_data_url = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored.
+        /// This path must point to a single <code>gzip</code> compressed tar archive
+        /// (<code>.tar.gz</code> suffix).</p>
+        /// <note>
+        /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
+        /// model package.</p>
+        /// </note>
+        pub fn set_model_data_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_data_url = input;
+            self
+        }
+        /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
+        pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_id = input;
+            self
+        }
+        /// Adds a key-value pair to `environment`.
+        ///
+        /// To override the contents of this collection use [`set_environment`](Self::set_environment).
+        ///
+        /// <p>The environment variables to set in the Docker container. Each key and value in the
+        /// <code>Environment</code> string to string map can have length of up to 1024. We
+        /// support up to 16 entries in the map.</p>
+        pub fn environment(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.environment.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.environment = Some(hash_map);
+            self
+        }
+        /// <p>The environment variables to set in the Docker container. Each key and value in the
+        /// <code>Environment</code> string to string map can have length of up to 1024. We
+        /// support up to 16 entries in the map.</p>
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
+        /// <p>A structure with Model Input details.</p>
+        pub fn model_input(mut self, input: crate::model::ModelInput) -> Self {
+            self.model_input = Some(input);
+            self
+        }
+        /// <p>A structure with Model Input details.</p>
+        pub fn set_model_input(
+            mut self,
+            input: std::option::Option<crate::model::ModelInput>,
+        ) -> Self {
+            self.model_input = input;
+            self
+        }
+        /// <p>The machine learning framework of the model package container image.</p>
+        pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.framework = Some(input.into());
+            self
+        }
+        /// <p>The machine learning framework of the model package container image.</p>
+        pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.framework = input;
+            self
+        }
+        /// <p>The framework version of the Model Package Container Image.</p>
+        pub fn framework_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.framework_version = Some(input.into());
+            self
+        }
+        /// <p>The framework version of the Model Package Container Image.</p>
+        pub fn set_framework_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.framework_version = input;
+            self
+        }
+        /// <p>The name of a pre-trained machine learning benchmarked by
+        /// Amazon SageMaker Inference Recommender model that matches your model.
+        /// You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
+        pub fn nearest_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.nearest_model_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a pre-trained machine learning benchmarked by
+        /// Amazon SageMaker Inference Recommender model that matches your model.
+        /// You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
+        pub fn set_nearest_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.nearest_model_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
+        pub fn build(self) -> crate::model::ModelPackageContainerDefinition {
+            crate::model::ModelPackageContainerDefinition {
+                container_hostname: self.container_hostname,
+                image: self.image,
+                image_digest: self.image_digest,
+                model_data_url: self.model_data_url,
+                product_id: self.product_id,
+                environment: self.environment,
+                model_input: self.model_input,
+                framework: self.framework,
+                framework_version: self.framework_version,
+                nearest_model_name: self.nearest_model_name,
+            }
+        }
+    }
+}
+impl ModelPackageContainerDefinition {
+    /// Creates a new builder-style object to manufacture [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
+    pub fn builder() -> crate::model::model_package_container_definition::Builder {
+        crate::model::model_package_container_definition::Builder::default()
+    }
+}
+
+/// <p>Input object for the model.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelInput {
+    /// <p>The input configuration object for the model.</p>
+    pub data_input_config: std::option::Option<std::string::String>,
+}
+impl ModelInput {
+    /// <p>The input configuration object for the model.</p>
+    pub fn data_input_config(&self) -> std::option::Option<&str> {
+        self.data_input_config.as_deref()
+    }
+}
+impl std::fmt::Debug for ModelInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelInput");
+        formatter.field("data_input_config", &self.data_input_config);
+        formatter.finish()
+    }
+}
+/// See [`ModelInput`](crate::model::ModelInput)
+pub mod model_input {
+    /// A builder for [`ModelInput`](crate::model::ModelInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_input_config: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The input configuration object for the model.</p>
+        pub fn data_input_config(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_input_config = Some(input.into());
+            self
+        }
+        /// <p>The input configuration object for the model.</p>
+        pub fn set_data_input_config(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_input_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelInput`](crate::model::ModelInput)
+        pub fn build(self) -> crate::model::ModelInput {
+            crate::model::ModelInput {
+                data_input_config: self.data_input_config,
+            }
+        }
+    }
+}
+impl ModelInput {
+    /// Creates a new builder-style object to manufacture [`ModelInput`](crate::model::ModelInput)
+    pub fn builder() -> crate::model::model_input::Builder {
+        crate::model::model_input::Builder::default()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -9693,7 +10927,7 @@ pub struct Project {
     /// <p>A timestamp container for when the project was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl Project {
@@ -9753,7 +10987,7 @@ impl Project {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -9965,13 +11199,13 @@ pub mod project {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -10007,7 +11241,7 @@ impl Project {
 }
 
 /// <p>Information about the user who created or modified an experiment, trial, trial
-/// component, or project.</p>
+/// component, lineage group, or project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserContext {
@@ -12146,10 +13380,10 @@ pub struct PipelineExecution {
     /// <p>The time that the pipeline execution was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
     pub pipeline_parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -12196,12 +13430,12 @@ impl PipelineExecution {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -12386,13 +13620,13 @@ pub mod pipeline_execution {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -12401,13 +13635,13 @@ pub mod pipeline_execution {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -12626,10 +13860,10 @@ pub struct Pipeline {
     /// <p>The time when the pipeline was last run.</p>
     pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A list of tags that apply to the pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12672,12 +13906,12 @@ impl Pipeline {
         self.last_run_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -12836,13 +14070,13 @@ pub mod pipeline {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -12851,13 +14085,13 @@ pub mod pipeline {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -12974,7 +14208,7 @@ pub struct ModelPackageGroup {
     /// <p>The time that the model group was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
@@ -13027,7 +14261,7 @@ impl ModelPackageGroup {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -13161,13 +14395,13 @@ pub mod model_package_group {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -13438,7 +14672,7 @@ pub struct ModelPackage {
     /// </ul>
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
@@ -13447,16 +14681,31 @@ pub struct ModelPackage {
     /// <p>The last time the model package was modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A description provided when the model approval is set.</p>
     pub approval_description: std::option::Option<std::string::String>,
+    /// <p>The machine learning domain of your model package and its components. Common
+    /// machine learning domains include computer vision and natural language processing.</p>
+    pub domain: std::option::Option<std::string::String>,
+    /// <p>The machine learning task your model package accomplishes. Common machine
+    /// learning tasks include object detection and image classification.</p>
+    pub task: std::option::Option<std::string::String>,
+    /// <p>The Amazon Simple Storage Service path where the sample payload are stored. This path must point to
+    /// a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub sample_payload_url: std::option::Option<std::string::String>,
+    /// <p>An array of additional Inference Specification objects.</p>
+    pub additional_inference_specifications: std::option::Option<
+        std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+    >,
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The metadata properties for the model package. </p>
     pub customer_metadata_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.</p>
+    pub drift_check_baselines: std::option::Option<crate::model::DriftCheckBaselines>,
 }
 impl ModelPackage {
     /// <p>The name of the model.</p>
@@ -13560,7 +14809,7 @@ impl ModelPackage {
         self.model_approval_status.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -13577,13 +14826,34 @@ impl ModelPackage {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>A description provided when the model approval is set.</p>
     pub fn approval_description(&self) -> std::option::Option<&str> {
         self.approval_description.as_deref()
+    }
+    /// <p>The machine learning domain of your model package and its components. Common
+    /// machine learning domains include computer vision and natural language processing.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The machine learning task your model package accomplishes. Common machine
+    /// learning tasks include object detection and image classification.</p>
+    pub fn task(&self) -> std::option::Option<&str> {
+        self.task.as_deref()
+    }
+    /// <p>The Amazon Simple Storage Service path where the sample payload are stored. This path must point to
+    /// a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn sample_payload_url(&self) -> std::option::Option<&str> {
+        self.sample_payload_url.as_deref()
+    }
+    /// <p>An array of additional Inference Specification objects.</p>
+    pub fn additional_inference_specifications(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdditionalInferenceSpecificationDefinition]> {
+        self.additional_inference_specifications.as_deref()
     }
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -13596,6 +14866,10 @@ impl ModelPackage {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.customer_metadata_properties.as_ref()
+    }
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.</p>
+    pub fn drift_check_baselines(&self) -> std::option::Option<&crate::model::DriftCheckBaselines> {
+        self.drift_check_baselines.as_ref()
     }
 }
 impl std::fmt::Debug for ModelPackage {
@@ -13626,11 +14900,19 @@ impl std::fmt::Debug for ModelPackage {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("approval_description", &self.approval_description);
+        formatter.field("domain", &self.domain);
+        formatter.field("task", &self.task);
+        formatter.field("sample_payload_url", &self.sample_payload_url);
+        formatter.field(
+            "additional_inference_specifications",
+            &self.additional_inference_specifications,
+        );
         formatter.field("tags", &self.tags);
         formatter.field(
             "customer_metadata_properties",
             &self.customer_metadata_properties,
         );
+        formatter.field("drift_check_baselines", &self.drift_check_baselines);
         formatter.finish()
     }
 }
@@ -13663,10 +14945,17 @@ pub mod model_package {
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
         pub(crate) approval_description: std::option::Option<std::string::String>,
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) task: std::option::Option<std::string::String>,
+        pub(crate) sample_payload_url: std::option::Option<std::string::String>,
+        pub(crate) additional_inference_specifications: std::option::Option<
+            std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+        >,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) customer_metadata_properties: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) drift_check_baselines: std::option::Option<crate::model::DriftCheckBaselines>,
     }
     impl Builder {
         /// <p>The name of the model.</p>
@@ -13925,13 +15214,13 @@ pub mod model_package {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -13979,13 +15268,13 @@ pub mod model_package {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -14004,6 +15293,69 @@ pub mod model_package {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.approval_description = input;
+            self
+        }
+        /// <p>The machine learning domain of your model package and its components. Common
+        /// machine learning domains include computer vision and natural language processing.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>The machine learning domain of your model package and its components. Common
+        /// machine learning domains include computer vision and natural language processing.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p>The machine learning task your model package accomplishes. Common machine
+        /// learning tasks include object detection and image classification.</p>
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task = Some(input.into());
+            self
+        }
+        /// <p>The machine learning task your model package accomplishes. Common machine
+        /// learning tasks include object detection and image classification.</p>
+        pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task = input;
+            self
+        }
+        /// <p>The Amazon Simple Storage Service path where the sample payload are stored. This path must point to
+        /// a single gzip compressed tar archive (.tar.gz suffix).</p>
+        pub fn sample_payload_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sample_payload_url = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Simple Storage Service path where the sample payload are stored. This path must point to
+        /// a single gzip compressed tar archive (.tar.gz suffix).</p>
+        pub fn set_sample_payload_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sample_payload_url = input;
+            self
+        }
+        /// Appends an item to `additional_inference_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_additional_inference_specifications`](Self::set_additional_inference_specifications).
+        ///
+        /// <p>An array of additional Inference Specification objects.</p>
+        pub fn additional_inference_specifications(
+            mut self,
+            input: impl Into<crate::model::AdditionalInferenceSpecificationDefinition>,
+        ) -> Self {
+            let mut v = self.additional_inference_specifications.unwrap_or_default();
+            v.push(input.into());
+            self.additional_inference_specifications = Some(v);
+            self
+        }
+        /// <p>An array of additional Inference Specification objects.</p>
+        pub fn set_additional_inference_specifications(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>,
+            >,
+        ) -> Self {
+            self.additional_inference_specifications = input;
             self
         }
         /// Appends an item to `tags`.
@@ -14052,6 +15404,19 @@ pub mod model_package {
             self.customer_metadata_properties = input;
             self
         }
+        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.</p>
+        pub fn drift_check_baselines(mut self, input: crate::model::DriftCheckBaselines) -> Self {
+            self.drift_check_baselines = Some(input);
+            self
+        }
+        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.</p>
+        pub fn set_drift_check_baselines(
+            mut self,
+            input: std::option::Option<crate::model::DriftCheckBaselines>,
+        ) -> Self {
+            self.drift_check_baselines = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModelPackage`](crate::model::ModelPackage)
         pub fn build(self) -> crate::model::ModelPackage {
             crate::model::ModelPackage {
@@ -14074,8 +15439,13 @@ pub mod model_package {
                 last_modified_time: self.last_modified_time,
                 last_modified_by: self.last_modified_by,
                 approval_description: self.approval_description,
+                domain: self.domain,
+                task: self.task,
+                sample_payload_url: self.sample_payload_url,
+                additional_inference_specifications: self.additional_inference_specifications,
                 tags: self.tags,
                 customer_metadata_properties: self.customer_metadata_properties,
+                drift_check_baselines: self.drift_check_baselines,
             }
         }
     }
@@ -14084,6 +15454,684 @@ impl ModelPackage {
     /// Creates a new builder-style object to manufacture [`ModelPackage`](crate::model::ModelPackage)
     pub fn builder() -> crate::model::model_package::Builder {
         crate::model::model_package::Builder::default()
+    }
+}
+
+/// <p>Represents the drift check baselines that can be used when the model monitor is set using the model
+/// package. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DriftCheckBaselines {
+    /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model
+    /// package. </p>
+    pub bias: std::option::Option<crate::model::DriftCheckBias>,
+    /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using
+    /// the model package. </p>
+    pub explainability: std::option::Option<crate::model::DriftCheckExplainability>,
+    /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using
+    /// the model package.</p>
+    pub model_quality: std::option::Option<crate::model::DriftCheckModelQuality>,
+    /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set
+    /// using the model package.</p>
+    pub model_data_quality: std::option::Option<crate::model::DriftCheckModelDataQuality>,
+}
+impl DriftCheckBaselines {
+    /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model
+    /// package. </p>
+    pub fn bias(&self) -> std::option::Option<&crate::model::DriftCheckBias> {
+        self.bias.as_ref()
+    }
+    /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using
+    /// the model package. </p>
+    pub fn explainability(&self) -> std::option::Option<&crate::model::DriftCheckExplainability> {
+        self.explainability.as_ref()
+    }
+    /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using
+    /// the model package.</p>
+    pub fn model_quality(&self) -> std::option::Option<&crate::model::DriftCheckModelQuality> {
+        self.model_quality.as_ref()
+    }
+    /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set
+    /// using the model package.</p>
+    pub fn model_data_quality(
+        &self,
+    ) -> std::option::Option<&crate::model::DriftCheckModelDataQuality> {
+        self.model_data_quality.as_ref()
+    }
+}
+impl std::fmt::Debug for DriftCheckBaselines {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DriftCheckBaselines");
+        formatter.field("bias", &self.bias);
+        formatter.field("explainability", &self.explainability);
+        formatter.field("model_quality", &self.model_quality);
+        formatter.field("model_data_quality", &self.model_data_quality);
+        formatter.finish()
+    }
+}
+/// See [`DriftCheckBaselines`](crate::model::DriftCheckBaselines)
+pub mod drift_check_baselines {
+    /// A builder for [`DriftCheckBaselines`](crate::model::DriftCheckBaselines)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bias: std::option::Option<crate::model::DriftCheckBias>,
+        pub(crate) explainability: std::option::Option<crate::model::DriftCheckExplainability>,
+        pub(crate) model_quality: std::option::Option<crate::model::DriftCheckModelQuality>,
+        pub(crate) model_data_quality:
+            std::option::Option<crate::model::DriftCheckModelDataQuality>,
+    }
+    impl Builder {
+        /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model
+        /// package. </p>
+        pub fn bias(mut self, input: crate::model::DriftCheckBias) -> Self {
+            self.bias = Some(input);
+            self
+        }
+        /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model
+        /// package. </p>
+        pub fn set_bias(
+            mut self,
+            input: std::option::Option<crate::model::DriftCheckBias>,
+        ) -> Self {
+            self.bias = input;
+            self
+        }
+        /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using
+        /// the model package. </p>
+        pub fn explainability(mut self, input: crate::model::DriftCheckExplainability) -> Self {
+            self.explainability = Some(input);
+            self
+        }
+        /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using
+        /// the model package. </p>
+        pub fn set_explainability(
+            mut self,
+            input: std::option::Option<crate::model::DriftCheckExplainability>,
+        ) -> Self {
+            self.explainability = input;
+            self
+        }
+        /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using
+        /// the model package.</p>
+        pub fn model_quality(mut self, input: crate::model::DriftCheckModelQuality) -> Self {
+            self.model_quality = Some(input);
+            self
+        }
+        /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using
+        /// the model package.</p>
+        pub fn set_model_quality(
+            mut self,
+            input: std::option::Option<crate::model::DriftCheckModelQuality>,
+        ) -> Self {
+            self.model_quality = input;
+            self
+        }
+        /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set
+        /// using the model package.</p>
+        pub fn model_data_quality(
+            mut self,
+            input: crate::model::DriftCheckModelDataQuality,
+        ) -> Self {
+            self.model_data_quality = Some(input);
+            self
+        }
+        /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set
+        /// using the model package.</p>
+        pub fn set_model_data_quality(
+            mut self,
+            input: std::option::Option<crate::model::DriftCheckModelDataQuality>,
+        ) -> Self {
+            self.model_data_quality = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DriftCheckBaselines`](crate::model::DriftCheckBaselines)
+        pub fn build(self) -> crate::model::DriftCheckBaselines {
+            crate::model::DriftCheckBaselines {
+                bias: self.bias,
+                explainability: self.explainability,
+                model_quality: self.model_quality,
+                model_data_quality: self.model_data_quality,
+            }
+        }
+    }
+}
+impl DriftCheckBaselines {
+    /// Creates a new builder-style object to manufacture [`DriftCheckBaselines`](crate::model::DriftCheckBaselines)
+    pub fn builder() -> crate::model::drift_check_baselines::Builder {
+        crate::model::drift_check_baselines::Builder::default()
+    }
+}
+
+/// <p>Represents the drift check data quality baselines that can be used when the model monitor is set using
+/// the model package. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DriftCheckModelDataQuality {
+    /// <p></p>
+    pub statistics: std::option::Option<crate::model::MetricsSource>,
+    /// <p></p>
+    pub constraints: std::option::Option<crate::model::MetricsSource>,
+}
+impl DriftCheckModelDataQuality {
+    /// <p></p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.statistics.as_ref()
+    }
+    /// <p></p>
+    pub fn constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.constraints.as_ref()
+    }
+}
+impl std::fmt::Debug for DriftCheckModelDataQuality {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DriftCheckModelDataQuality");
+        formatter.field("statistics", &self.statistics);
+        formatter.field("constraints", &self.constraints);
+        formatter.finish()
+    }
+}
+/// See [`DriftCheckModelDataQuality`](crate::model::DriftCheckModelDataQuality)
+pub mod drift_check_model_data_quality {
+    /// A builder for [`DriftCheckModelDataQuality`](crate::model::DriftCheckModelDataQuality)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) statistics: std::option::Option<crate::model::MetricsSource>,
+        pub(crate) constraints: std::option::Option<crate::model::MetricsSource>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn statistics(mut self, input: crate::model::MetricsSource) -> Self {
+            self.statistics = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_statistics(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.statistics = input;
+            self
+        }
+        /// <p></p>
+        pub fn constraints(mut self, input: crate::model::MetricsSource) -> Self {
+            self.constraints = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_constraints(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.constraints = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DriftCheckModelDataQuality`](crate::model::DriftCheckModelDataQuality)
+        pub fn build(self) -> crate::model::DriftCheckModelDataQuality {
+            crate::model::DriftCheckModelDataQuality {
+                statistics: self.statistics,
+                constraints: self.constraints,
+            }
+        }
+    }
+}
+impl DriftCheckModelDataQuality {
+    /// Creates a new builder-style object to manufacture [`DriftCheckModelDataQuality`](crate::model::DriftCheckModelDataQuality)
+    pub fn builder() -> crate::model::drift_check_model_data_quality::Builder {
+        crate::model::drift_check_model_data_quality::Builder::default()
+    }
+}
+
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricsSource {
+    /// <p></p>
+    pub content_type: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub content_digest: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub s3_uri: std::option::Option<std::string::String>,
+}
+impl MetricsSource {
+    /// <p></p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p></p>
+    pub fn content_digest(&self) -> std::option::Option<&str> {
+        self.content_digest.as_deref()
+    }
+    /// <p></p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+}
+impl std::fmt::Debug for MetricsSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricsSource");
+        formatter.field("content_type", &self.content_type);
+        formatter.field("content_digest", &self.content_digest);
+        formatter.field("s3_uri", &self.s3_uri);
+        formatter.finish()
+    }
+}
+/// See [`MetricsSource`](crate::model::MetricsSource)
+pub mod metrics_source {
+    /// A builder for [`MetricsSource`](crate::model::MetricsSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) content_digest: std::option::Option<std::string::String>,
+        pub(crate) s3_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
+            self
+        }
+        /// <p></p>
+        pub fn content_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_digest = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_content_digest(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.content_digest = input;
+            self
+        }
+        /// <p></p>
+        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_uri = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricsSource`](crate::model::MetricsSource)
+        pub fn build(self) -> crate::model::MetricsSource {
+            crate::model::MetricsSource {
+                content_type: self.content_type,
+                content_digest: self.content_digest,
+                s3_uri: self.s3_uri,
+            }
+        }
+    }
+}
+impl MetricsSource {
+    /// Creates a new builder-style object to manufacture [`MetricsSource`](crate::model::MetricsSource)
+    pub fn builder() -> crate::model::metrics_source::Builder {
+        crate::model::metrics_source::Builder::default()
+    }
+}
+
+/// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using
+/// the model package. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DriftCheckModelQuality {
+    /// <p></p>
+    pub statistics: std::option::Option<crate::model::MetricsSource>,
+    /// <p></p>
+    pub constraints: std::option::Option<crate::model::MetricsSource>,
+}
+impl DriftCheckModelQuality {
+    /// <p></p>
+    pub fn statistics(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.statistics.as_ref()
+    }
+    /// <p></p>
+    pub fn constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.constraints.as_ref()
+    }
+}
+impl std::fmt::Debug for DriftCheckModelQuality {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DriftCheckModelQuality");
+        formatter.field("statistics", &self.statistics);
+        formatter.field("constraints", &self.constraints);
+        formatter.finish()
+    }
+}
+/// See [`DriftCheckModelQuality`](crate::model::DriftCheckModelQuality)
+pub mod drift_check_model_quality {
+    /// A builder for [`DriftCheckModelQuality`](crate::model::DriftCheckModelQuality)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) statistics: std::option::Option<crate::model::MetricsSource>,
+        pub(crate) constraints: std::option::Option<crate::model::MetricsSource>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn statistics(mut self, input: crate::model::MetricsSource) -> Self {
+            self.statistics = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_statistics(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.statistics = input;
+            self
+        }
+        /// <p></p>
+        pub fn constraints(mut self, input: crate::model::MetricsSource) -> Self {
+            self.constraints = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_constraints(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.constraints = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DriftCheckModelQuality`](crate::model::DriftCheckModelQuality)
+        pub fn build(self) -> crate::model::DriftCheckModelQuality {
+            crate::model::DriftCheckModelQuality {
+                statistics: self.statistics,
+                constraints: self.constraints,
+            }
+        }
+    }
+}
+impl DriftCheckModelQuality {
+    /// Creates a new builder-style object to manufacture [`DriftCheckModelQuality`](crate::model::DriftCheckModelQuality)
+    pub fn builder() -> crate::model::drift_check_model_quality::Builder {
+        crate::model::drift_check_model_quality::Builder::default()
+    }
+}
+
+/// <p>Represents the drift check explainability baselines that can be used when the model monitor is set
+/// using the model package. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DriftCheckExplainability {
+    /// <p></p>
+    pub constraints: std::option::Option<crate::model::MetricsSource>,
+    /// <p>The explainability config file for the model.</p>
+    pub config_file: std::option::Option<crate::model::FileSource>,
+}
+impl DriftCheckExplainability {
+    /// <p></p>
+    pub fn constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.constraints.as_ref()
+    }
+    /// <p>The explainability config file for the model.</p>
+    pub fn config_file(&self) -> std::option::Option<&crate::model::FileSource> {
+        self.config_file.as_ref()
+    }
+}
+impl std::fmt::Debug for DriftCheckExplainability {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DriftCheckExplainability");
+        formatter.field("constraints", &self.constraints);
+        formatter.field("config_file", &self.config_file);
+        formatter.finish()
+    }
+}
+/// See [`DriftCheckExplainability`](crate::model::DriftCheckExplainability)
+pub mod drift_check_explainability {
+    /// A builder for [`DriftCheckExplainability`](crate::model::DriftCheckExplainability)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) constraints: std::option::Option<crate::model::MetricsSource>,
+        pub(crate) config_file: std::option::Option<crate::model::FileSource>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn constraints(mut self, input: crate::model::MetricsSource) -> Self {
+            self.constraints = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_constraints(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.constraints = input;
+            self
+        }
+        /// <p>The explainability config file for the model.</p>
+        pub fn config_file(mut self, input: crate::model::FileSource) -> Self {
+            self.config_file = Some(input);
+            self
+        }
+        /// <p>The explainability config file for the model.</p>
+        pub fn set_config_file(
+            mut self,
+            input: std::option::Option<crate::model::FileSource>,
+        ) -> Self {
+            self.config_file = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DriftCheckExplainability`](crate::model::DriftCheckExplainability)
+        pub fn build(self) -> crate::model::DriftCheckExplainability {
+            crate::model::DriftCheckExplainability {
+                constraints: self.constraints,
+                config_file: self.config_file,
+            }
+        }
+    }
+}
+impl DriftCheckExplainability {
+    /// Creates a new builder-style object to manufacture [`DriftCheckExplainability`](crate::model::DriftCheckExplainability)
+    pub fn builder() -> crate::model::drift_check_explainability::Builder {
+        crate::model::drift_check_explainability::Builder::default()
+    }
+}
+
+/// <p>Contains details regarding the file source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileSource {
+    /// <p>The type of content stored in the file source.</p>
+    pub content_type: std::option::Option<std::string::String>,
+    /// <p>The digest of the file source.</p>
+    pub content_digest: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI for the file source.</p>
+    pub s3_uri: std::option::Option<std::string::String>,
+}
+impl FileSource {
+    /// <p>The type of content stored in the file source.</p>
+    pub fn content_type(&self) -> std::option::Option<&str> {
+        self.content_type.as_deref()
+    }
+    /// <p>The digest of the file source.</p>
+    pub fn content_digest(&self) -> std::option::Option<&str> {
+        self.content_digest.as_deref()
+    }
+    /// <p>The Amazon S3 URI for the file source.</p>
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
+        self.s3_uri.as_deref()
+    }
+}
+impl std::fmt::Debug for FileSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileSource");
+        formatter.field("content_type", &self.content_type);
+        formatter.field("content_digest", &self.content_digest);
+        formatter.field("s3_uri", &self.s3_uri);
+        formatter.finish()
+    }
+}
+/// See [`FileSource`](crate::model::FileSource)
+pub mod file_source {
+    /// A builder for [`FileSource`](crate::model::FileSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) content_digest: std::option::Option<std::string::String>,
+        pub(crate) s3_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The type of content stored in the file source.</p>
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
+            self
+        }
+        /// <p>The type of content stored in the file source.</p>
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
+            self
+        }
+        /// <p>The digest of the file source.</p>
+        pub fn content_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_digest = Some(input.into());
+            self
+        }
+        /// <p>The digest of the file source.</p>
+        pub fn set_content_digest(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.content_digest = input;
+            self
+        }
+        /// <p>The Amazon S3 URI for the file source.</p>
+        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_uri = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI for the file source.</p>
+        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileSource`](crate::model::FileSource)
+        pub fn build(self) -> crate::model::FileSource {
+            crate::model::FileSource {
+                content_type: self.content_type,
+                content_digest: self.content_digest,
+                s3_uri: self.s3_uri,
+            }
+        }
+    }
+}
+impl FileSource {
+    /// Creates a new builder-style object to manufacture [`FileSource`](crate::model::FileSource)
+    pub fn builder() -> crate::model::file_source::Builder {
+        crate::model::file_source::Builder::default()
+    }
+}
+
+/// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the
+/// model package.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DriftCheckBias {
+    /// <p>The bias config file for a model.</p>
+    pub config_file: std::option::Option<crate::model::FileSource>,
+    /// <p></p>
+    pub pre_training_constraints: std::option::Option<crate::model::MetricsSource>,
+    /// <p></p>
+    pub post_training_constraints: std::option::Option<crate::model::MetricsSource>,
+}
+impl DriftCheckBias {
+    /// <p>The bias config file for a model.</p>
+    pub fn config_file(&self) -> std::option::Option<&crate::model::FileSource> {
+        self.config_file.as_ref()
+    }
+    /// <p></p>
+    pub fn pre_training_constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.pre_training_constraints.as_ref()
+    }
+    /// <p></p>
+    pub fn post_training_constraints(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.post_training_constraints.as_ref()
+    }
+}
+impl std::fmt::Debug for DriftCheckBias {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DriftCheckBias");
+        formatter.field("config_file", &self.config_file);
+        formatter.field("pre_training_constraints", &self.pre_training_constraints);
+        formatter.field("post_training_constraints", &self.post_training_constraints);
+        formatter.finish()
+    }
+}
+/// See [`DriftCheckBias`](crate::model::DriftCheckBias)
+pub mod drift_check_bias {
+    /// A builder for [`DriftCheckBias`](crate::model::DriftCheckBias)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) config_file: std::option::Option<crate::model::FileSource>,
+        pub(crate) pre_training_constraints: std::option::Option<crate::model::MetricsSource>,
+        pub(crate) post_training_constraints: std::option::Option<crate::model::MetricsSource>,
+    }
+    impl Builder {
+        /// <p>The bias config file for a model.</p>
+        pub fn config_file(mut self, input: crate::model::FileSource) -> Self {
+            self.config_file = Some(input);
+            self
+        }
+        /// <p>The bias config file for a model.</p>
+        pub fn set_config_file(
+            mut self,
+            input: std::option::Option<crate::model::FileSource>,
+        ) -> Self {
+            self.config_file = input;
+            self
+        }
+        /// <p></p>
+        pub fn pre_training_constraints(mut self, input: crate::model::MetricsSource) -> Self {
+            self.pre_training_constraints = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_pre_training_constraints(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.pre_training_constraints = input;
+            self
+        }
+        /// <p></p>
+        pub fn post_training_constraints(mut self, input: crate::model::MetricsSource) -> Self {
+            self.post_training_constraints = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_post_training_constraints(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.post_training_constraints = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DriftCheckBias`](crate::model::DriftCheckBias)
+        pub fn build(self) -> crate::model::DriftCheckBias {
+            crate::model::DriftCheckBias {
+                config_file: self.config_file,
+                pre_training_constraints: self.pre_training_constraints,
+                post_training_constraints: self.post_training_constraints,
+            }
+        }
+    }
+}
+impl DriftCheckBias {
+    /// Creates a new builder-style object to manufacture [`DriftCheckBias`](crate::model::DriftCheckBias)
+    pub fn builder() -> crate::model::drift_check_bias::Builder {
+        crate::model::drift_check_bias::Builder::default()
     }
 }
 
@@ -14264,118 +16312,37 @@ impl Explainability {
     }
 }
 
-/// <p></p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MetricsSource {
-    /// <p></p>
-    pub content_type: std::option::Option<std::string::String>,
-    /// <p></p>
-    pub content_digest: std::option::Option<std::string::String>,
-    /// <p></p>
-    pub s3_uri: std::option::Option<std::string::String>,
-}
-impl MetricsSource {
-    /// <p></p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
-        self.content_type.as_deref()
-    }
-    /// <p></p>
-    pub fn content_digest(&self) -> std::option::Option<&str> {
-        self.content_digest.as_deref()
-    }
-    /// <p></p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
-        self.s3_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricsSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricsSource");
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_digest", &self.content_digest);
-        formatter.field("s3_uri", &self.s3_uri);
-        formatter.finish()
-    }
-}
-/// See [`MetricsSource`](crate::model::MetricsSource)
-pub mod metrics_source {
-    /// A builder for [`MetricsSource`](crate::model::MetricsSource)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) content_type: std::option::Option<std::string::String>,
-        pub(crate) content_digest: std::option::Option<std::string::String>,
-        pub(crate) s3_uri: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p></p>
-        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(input.into());
-            self
-        }
-        /// <p></p>
-        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
-        }
-        /// <p></p>
-        pub fn content_digest(mut self, input: impl Into<std::string::String>) -> Self {
-            self.content_digest = Some(input.into());
-            self
-        }
-        /// <p></p>
-        pub fn set_content_digest(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.content_digest = input;
-            self
-        }
-        /// <p></p>
-        pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-            self.s3_uri = Some(input.into());
-            self
-        }
-        /// <p></p>
-        pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MetricsSource`](crate::model::MetricsSource)
-        pub fn build(self) -> crate::model::MetricsSource {
-            crate::model::MetricsSource {
-                content_type: self.content_type,
-                content_digest: self.content_digest,
-                s3_uri: self.s3_uri,
-            }
-        }
-    }
-}
-impl MetricsSource {
-    /// Creates a new builder-style object to manufacture [`MetricsSource`](crate::model::MetricsSource)
-    pub fn builder() -> crate::model::metrics_source::Builder {
-        crate::model::metrics_source::Builder::default()
-    }
-}
-
 /// <p>Contains bias metrics for a model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bias {
     /// <p>The bias report for a model</p>
     pub report: std::option::Option<crate::model::MetricsSource>,
+    /// <p></p>
+    pub pre_training_report: std::option::Option<crate::model::MetricsSource>,
+    /// <p></p>
+    pub post_training_report: std::option::Option<crate::model::MetricsSource>,
 }
 impl Bias {
     /// <p>The bias report for a model</p>
     pub fn report(&self) -> std::option::Option<&crate::model::MetricsSource> {
         self.report.as_ref()
     }
+    /// <p></p>
+    pub fn pre_training_report(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.pre_training_report.as_ref()
+    }
+    /// <p></p>
+    pub fn post_training_report(&self) -> std::option::Option<&crate::model::MetricsSource> {
+        self.post_training_report.as_ref()
+    }
 }
 impl std::fmt::Debug for Bias {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Bias");
         formatter.field("report", &self.report);
+        formatter.field("pre_training_report", &self.pre_training_report);
+        formatter.field("post_training_report", &self.post_training_report);
         formatter.finish()
     }
 }
@@ -14386,6 +16353,8 @@ pub mod bias {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report: std::option::Option<crate::model::MetricsSource>,
+        pub(crate) pre_training_report: std::option::Option<crate::model::MetricsSource>,
+        pub(crate) post_training_report: std::option::Option<crate::model::MetricsSource>,
     }
     impl Builder {
         /// <p>The bias report for a model</p>
@@ -14401,10 +16370,38 @@ pub mod bias {
             self.report = input;
             self
         }
+        /// <p></p>
+        pub fn pre_training_report(mut self, input: crate::model::MetricsSource) -> Self {
+            self.pre_training_report = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_pre_training_report(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.pre_training_report = input;
+            self
+        }
+        /// <p></p>
+        pub fn post_training_report(mut self, input: crate::model::MetricsSource) -> Self {
+            self.post_training_report = Some(input);
+            self
+        }
+        /// <p></p>
+        pub fn set_post_training_report(
+            mut self,
+            input: std::option::Option<crate::model::MetricsSource>,
+        ) -> Self {
+            self.post_training_report = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Bias`](crate::model::Bias)
         pub fn build(self) -> crate::model::Bias {
             crate::model::Bias {
                 report: self.report,
+                pre_training_report: self.pre_training_report,
+                post_training_report: self.post_training_report,
             }
         }
     }
@@ -15693,214 +17690,6 @@ impl TransformResources {
     /// Creates a new builder-style object to manufacture [`TransformResources`](crate::model::TransformResources)
     pub fn builder() -> crate::model::transform_resources::Builder {
         crate::model::transform_resources::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TransformInstanceType {
-    #[allow(missing_docs)] // documentation missing in model
-    MlC42Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC44Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC48Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC518Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC52Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC54Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC59Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn12Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn16Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn8Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4DnXlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM410Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM416Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM42Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM44Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM512Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM524Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM52Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM54Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5Large,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP216Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP28Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP316Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP32Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP38Xlarge,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TransformInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ml.c4.2xlarge" => TransformInstanceType::MlC42Xlarge,
-            "ml.c4.4xlarge" => TransformInstanceType::MlC44Xlarge,
-            "ml.c4.8xlarge" => TransformInstanceType::MlC48Xlarge,
-            "ml.c4.xlarge" => TransformInstanceType::MlC4Xlarge,
-            "ml.c5.18xlarge" => TransformInstanceType::MlC518Xlarge,
-            "ml.c5.2xlarge" => TransformInstanceType::MlC52Xlarge,
-            "ml.c5.4xlarge" => TransformInstanceType::MlC54Xlarge,
-            "ml.c5.9xlarge" => TransformInstanceType::MlC59Xlarge,
-            "ml.c5.xlarge" => TransformInstanceType::MlC5Xlarge,
-            "ml.g4dn.12xlarge" => TransformInstanceType::MlG4Dn12Xlarge,
-            "ml.g4dn.16xlarge" => TransformInstanceType::MlG4Dn16Xlarge,
-            "ml.g4dn.2xlarge" => TransformInstanceType::MlG4Dn2Xlarge,
-            "ml.g4dn.4xlarge" => TransformInstanceType::MlG4Dn4Xlarge,
-            "ml.g4dn.8xlarge" => TransformInstanceType::MlG4Dn8Xlarge,
-            "ml.g4dn.xlarge" => TransformInstanceType::MlG4DnXlarge,
-            "ml.m4.10xlarge" => TransformInstanceType::MlM410Xlarge,
-            "ml.m4.16xlarge" => TransformInstanceType::MlM416Xlarge,
-            "ml.m4.2xlarge" => TransformInstanceType::MlM42Xlarge,
-            "ml.m4.4xlarge" => TransformInstanceType::MlM44Xlarge,
-            "ml.m4.xlarge" => TransformInstanceType::MlM4Xlarge,
-            "ml.m5.12xlarge" => TransformInstanceType::MlM512Xlarge,
-            "ml.m5.24xlarge" => TransformInstanceType::MlM524Xlarge,
-            "ml.m5.2xlarge" => TransformInstanceType::MlM52Xlarge,
-            "ml.m5.4xlarge" => TransformInstanceType::MlM54Xlarge,
-            "ml.m5.large" => TransformInstanceType::MlM5Large,
-            "ml.m5.xlarge" => TransformInstanceType::MlM5Xlarge,
-            "ml.p2.16xlarge" => TransformInstanceType::MlP216Xlarge,
-            "ml.p2.8xlarge" => TransformInstanceType::MlP28Xlarge,
-            "ml.p2.xlarge" => TransformInstanceType::MlP2Xlarge,
-            "ml.p3.16xlarge" => TransformInstanceType::MlP316Xlarge,
-            "ml.p3.2xlarge" => TransformInstanceType::MlP32Xlarge,
-            "ml.p3.8xlarge" => TransformInstanceType::MlP38Xlarge,
-            other => TransformInstanceType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TransformInstanceType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransformInstanceType::from(s))
-    }
-}
-impl TransformInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TransformInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
-            TransformInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
-            TransformInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
-            TransformInstanceType::MlC4Xlarge => "ml.c4.xlarge",
-            TransformInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-            TransformInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-            TransformInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-            TransformInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-            TransformInstanceType::MlC5Xlarge => "ml.c5.xlarge",
-            TransformInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
-            TransformInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
-            TransformInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
-            TransformInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
-            TransformInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
-            TransformInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
-            TransformInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
-            TransformInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
-            TransformInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
-            TransformInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
-            TransformInstanceType::MlM4Xlarge => "ml.m4.xlarge",
-            TransformInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-            TransformInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-            TransformInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-            TransformInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-            TransformInstanceType::MlM5Large => "ml.m5.large",
-            TransformInstanceType::MlM5Xlarge => "ml.m5.xlarge",
-            TransformInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
-            TransformInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
-            TransformInstanceType::MlP2Xlarge => "ml.p2.xlarge",
-            TransformInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
-            TransformInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
-            TransformInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
-            TransformInstanceType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "ml.c4.2xlarge",
-            "ml.c4.4xlarge",
-            "ml.c4.8xlarge",
-            "ml.c4.xlarge",
-            "ml.c5.18xlarge",
-            "ml.c5.2xlarge",
-            "ml.c5.4xlarge",
-            "ml.c5.9xlarge",
-            "ml.c5.xlarge",
-            "ml.g4dn.12xlarge",
-            "ml.g4dn.16xlarge",
-            "ml.g4dn.2xlarge",
-            "ml.g4dn.4xlarge",
-            "ml.g4dn.8xlarge",
-            "ml.g4dn.xlarge",
-            "ml.m4.10xlarge",
-            "ml.m4.16xlarge",
-            "ml.m4.2xlarge",
-            "ml.m4.4xlarge",
-            "ml.m4.xlarge",
-            "ml.m5.12xlarge",
-            "ml.m5.24xlarge",
-            "ml.m5.2xlarge",
-            "ml.m5.4xlarge",
-            "ml.m5.large",
-            "ml.m5.xlarge",
-            "ml.p2.16xlarge",
-            "ml.p2.8xlarge",
-            "ml.p2.xlarge",
-            "ml.p3.16xlarge",
-            "ml.p3.2xlarge",
-            "ml.p3.8xlarge",
-        ]
-    }
-}
-impl AsRef<str> for TransformInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -17576,616 +19365,6 @@ impl InferenceSpecification {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ProductionVariantInstanceType {
-    #[allow(missing_docs)] // documentation missing in model
-    MlC42Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC44Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC48Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC4Large,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC518Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC52Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC54Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC59Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5Large,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5D18Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5D2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5D4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5D9Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5DLarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlC5DXlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn12Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn16Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4Dn8Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlG4DnXlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlInf124Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlInf12Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlInf16Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlInf1Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM410Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM416Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM42Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM44Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM512Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM524Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM52Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM54Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5Large,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5D12Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5D24Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5D2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5D4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5DLarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlM5DXlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP216Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP28Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP316Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP32Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlP38Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR512Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR524Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR52Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR54Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR5Large,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR5Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR5D12Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR5D24Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR5D2Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR5D4Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR5DLarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlR5DXlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlT22Xlarge,
-    #[allow(missing_docs)] // documentation missing in model
-    MlT2Large,
-    #[allow(missing_docs)] // documentation missing in model
-    MlT2Medium,
-    #[allow(missing_docs)] // documentation missing in model
-    MlT2Xlarge,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ProductionVariantInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ml.c4.2xlarge" => ProductionVariantInstanceType::MlC42Xlarge,
-            "ml.c4.4xlarge" => ProductionVariantInstanceType::MlC44Xlarge,
-            "ml.c4.8xlarge" => ProductionVariantInstanceType::MlC48Xlarge,
-            "ml.c4.large" => ProductionVariantInstanceType::MlC4Large,
-            "ml.c4.xlarge" => ProductionVariantInstanceType::MlC4Xlarge,
-            "ml.c5.18xlarge" => ProductionVariantInstanceType::MlC518Xlarge,
-            "ml.c5.2xlarge" => ProductionVariantInstanceType::MlC52Xlarge,
-            "ml.c5.4xlarge" => ProductionVariantInstanceType::MlC54Xlarge,
-            "ml.c5.9xlarge" => ProductionVariantInstanceType::MlC59Xlarge,
-            "ml.c5.large" => ProductionVariantInstanceType::MlC5Large,
-            "ml.c5.xlarge" => ProductionVariantInstanceType::MlC5Xlarge,
-            "ml.c5d.18xlarge" => ProductionVariantInstanceType::MlC5D18Xlarge,
-            "ml.c5d.2xlarge" => ProductionVariantInstanceType::MlC5D2Xlarge,
-            "ml.c5d.4xlarge" => ProductionVariantInstanceType::MlC5D4Xlarge,
-            "ml.c5d.9xlarge" => ProductionVariantInstanceType::MlC5D9Xlarge,
-            "ml.c5d.large" => ProductionVariantInstanceType::MlC5DLarge,
-            "ml.c5d.xlarge" => ProductionVariantInstanceType::MlC5DXlarge,
-            "ml.g4dn.12xlarge" => ProductionVariantInstanceType::MlG4Dn12Xlarge,
-            "ml.g4dn.16xlarge" => ProductionVariantInstanceType::MlG4Dn16Xlarge,
-            "ml.g4dn.2xlarge" => ProductionVariantInstanceType::MlG4Dn2Xlarge,
-            "ml.g4dn.4xlarge" => ProductionVariantInstanceType::MlG4Dn4Xlarge,
-            "ml.g4dn.8xlarge" => ProductionVariantInstanceType::MlG4Dn8Xlarge,
-            "ml.g4dn.xlarge" => ProductionVariantInstanceType::MlG4DnXlarge,
-            "ml.inf1.24xlarge" => ProductionVariantInstanceType::MlInf124Xlarge,
-            "ml.inf1.2xlarge" => ProductionVariantInstanceType::MlInf12Xlarge,
-            "ml.inf1.6xlarge" => ProductionVariantInstanceType::MlInf16Xlarge,
-            "ml.inf1.xlarge" => ProductionVariantInstanceType::MlInf1Xlarge,
-            "ml.m4.10xlarge" => ProductionVariantInstanceType::MlM410Xlarge,
-            "ml.m4.16xlarge" => ProductionVariantInstanceType::MlM416Xlarge,
-            "ml.m4.2xlarge" => ProductionVariantInstanceType::MlM42Xlarge,
-            "ml.m4.4xlarge" => ProductionVariantInstanceType::MlM44Xlarge,
-            "ml.m4.xlarge" => ProductionVariantInstanceType::MlM4Xlarge,
-            "ml.m5.12xlarge" => ProductionVariantInstanceType::MlM512Xlarge,
-            "ml.m5.24xlarge" => ProductionVariantInstanceType::MlM524Xlarge,
-            "ml.m5.2xlarge" => ProductionVariantInstanceType::MlM52Xlarge,
-            "ml.m5.4xlarge" => ProductionVariantInstanceType::MlM54Xlarge,
-            "ml.m5.large" => ProductionVariantInstanceType::MlM5Large,
-            "ml.m5.xlarge" => ProductionVariantInstanceType::MlM5Xlarge,
-            "ml.m5d.12xlarge" => ProductionVariantInstanceType::MlM5D12Xlarge,
-            "ml.m5d.24xlarge" => ProductionVariantInstanceType::MlM5D24Xlarge,
-            "ml.m5d.2xlarge" => ProductionVariantInstanceType::MlM5D2Xlarge,
-            "ml.m5d.4xlarge" => ProductionVariantInstanceType::MlM5D4Xlarge,
-            "ml.m5d.large" => ProductionVariantInstanceType::MlM5DLarge,
-            "ml.m5d.xlarge" => ProductionVariantInstanceType::MlM5DXlarge,
-            "ml.p2.16xlarge" => ProductionVariantInstanceType::MlP216Xlarge,
-            "ml.p2.8xlarge" => ProductionVariantInstanceType::MlP28Xlarge,
-            "ml.p2.xlarge" => ProductionVariantInstanceType::MlP2Xlarge,
-            "ml.p3.16xlarge" => ProductionVariantInstanceType::MlP316Xlarge,
-            "ml.p3.2xlarge" => ProductionVariantInstanceType::MlP32Xlarge,
-            "ml.p3.8xlarge" => ProductionVariantInstanceType::MlP38Xlarge,
-            "ml.r5.12xlarge" => ProductionVariantInstanceType::MlR512Xlarge,
-            "ml.r5.24xlarge" => ProductionVariantInstanceType::MlR524Xlarge,
-            "ml.r5.2xlarge" => ProductionVariantInstanceType::MlR52Xlarge,
-            "ml.r5.4xlarge" => ProductionVariantInstanceType::MlR54Xlarge,
-            "ml.r5.large" => ProductionVariantInstanceType::MlR5Large,
-            "ml.r5.xlarge" => ProductionVariantInstanceType::MlR5Xlarge,
-            "ml.r5d.12xlarge" => ProductionVariantInstanceType::MlR5D12Xlarge,
-            "ml.r5d.24xlarge" => ProductionVariantInstanceType::MlR5D24Xlarge,
-            "ml.r5d.2xlarge" => ProductionVariantInstanceType::MlR5D2Xlarge,
-            "ml.r5d.4xlarge" => ProductionVariantInstanceType::MlR5D4Xlarge,
-            "ml.r5d.large" => ProductionVariantInstanceType::MlR5DLarge,
-            "ml.r5d.xlarge" => ProductionVariantInstanceType::MlR5DXlarge,
-            "ml.t2.2xlarge" => ProductionVariantInstanceType::MlT22Xlarge,
-            "ml.t2.large" => ProductionVariantInstanceType::MlT2Large,
-            "ml.t2.medium" => ProductionVariantInstanceType::MlT2Medium,
-            "ml.t2.xlarge" => ProductionVariantInstanceType::MlT2Xlarge,
-            other => ProductionVariantInstanceType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ProductionVariantInstanceType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProductionVariantInstanceType::from(s))
-    }
-}
-impl ProductionVariantInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProductionVariantInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
-            ProductionVariantInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
-            ProductionVariantInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
-            ProductionVariantInstanceType::MlC4Large => "ml.c4.large",
-            ProductionVariantInstanceType::MlC4Xlarge => "ml.c4.xlarge",
-            ProductionVariantInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-            ProductionVariantInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-            ProductionVariantInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-            ProductionVariantInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-            ProductionVariantInstanceType::MlC5Large => "ml.c5.large",
-            ProductionVariantInstanceType::MlC5Xlarge => "ml.c5.xlarge",
-            ProductionVariantInstanceType::MlC5D18Xlarge => "ml.c5d.18xlarge",
-            ProductionVariantInstanceType::MlC5D2Xlarge => "ml.c5d.2xlarge",
-            ProductionVariantInstanceType::MlC5D4Xlarge => "ml.c5d.4xlarge",
-            ProductionVariantInstanceType::MlC5D9Xlarge => "ml.c5d.9xlarge",
-            ProductionVariantInstanceType::MlC5DLarge => "ml.c5d.large",
-            ProductionVariantInstanceType::MlC5DXlarge => "ml.c5d.xlarge",
-            ProductionVariantInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
-            ProductionVariantInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
-            ProductionVariantInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
-            ProductionVariantInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
-            ProductionVariantInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
-            ProductionVariantInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
-            ProductionVariantInstanceType::MlInf124Xlarge => "ml.inf1.24xlarge",
-            ProductionVariantInstanceType::MlInf12Xlarge => "ml.inf1.2xlarge",
-            ProductionVariantInstanceType::MlInf16Xlarge => "ml.inf1.6xlarge",
-            ProductionVariantInstanceType::MlInf1Xlarge => "ml.inf1.xlarge",
-            ProductionVariantInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
-            ProductionVariantInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
-            ProductionVariantInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
-            ProductionVariantInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
-            ProductionVariantInstanceType::MlM4Xlarge => "ml.m4.xlarge",
-            ProductionVariantInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-            ProductionVariantInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-            ProductionVariantInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-            ProductionVariantInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-            ProductionVariantInstanceType::MlM5Large => "ml.m5.large",
-            ProductionVariantInstanceType::MlM5Xlarge => "ml.m5.xlarge",
-            ProductionVariantInstanceType::MlM5D12Xlarge => "ml.m5d.12xlarge",
-            ProductionVariantInstanceType::MlM5D24Xlarge => "ml.m5d.24xlarge",
-            ProductionVariantInstanceType::MlM5D2Xlarge => "ml.m5d.2xlarge",
-            ProductionVariantInstanceType::MlM5D4Xlarge => "ml.m5d.4xlarge",
-            ProductionVariantInstanceType::MlM5DLarge => "ml.m5d.large",
-            ProductionVariantInstanceType::MlM5DXlarge => "ml.m5d.xlarge",
-            ProductionVariantInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
-            ProductionVariantInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
-            ProductionVariantInstanceType::MlP2Xlarge => "ml.p2.xlarge",
-            ProductionVariantInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
-            ProductionVariantInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
-            ProductionVariantInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
-            ProductionVariantInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
-            ProductionVariantInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
-            ProductionVariantInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
-            ProductionVariantInstanceType::MlR54Xlarge => "ml.r5.4xlarge",
-            ProductionVariantInstanceType::MlR5Large => "ml.r5.large",
-            ProductionVariantInstanceType::MlR5Xlarge => "ml.r5.xlarge",
-            ProductionVariantInstanceType::MlR5D12Xlarge => "ml.r5d.12xlarge",
-            ProductionVariantInstanceType::MlR5D24Xlarge => "ml.r5d.24xlarge",
-            ProductionVariantInstanceType::MlR5D2Xlarge => "ml.r5d.2xlarge",
-            ProductionVariantInstanceType::MlR5D4Xlarge => "ml.r5d.4xlarge",
-            ProductionVariantInstanceType::MlR5DLarge => "ml.r5d.large",
-            ProductionVariantInstanceType::MlR5DXlarge => "ml.r5d.xlarge",
-            ProductionVariantInstanceType::MlT22Xlarge => "ml.t2.2xlarge",
-            ProductionVariantInstanceType::MlT2Large => "ml.t2.large",
-            ProductionVariantInstanceType::MlT2Medium => "ml.t2.medium",
-            ProductionVariantInstanceType::MlT2Xlarge => "ml.t2.xlarge",
-            ProductionVariantInstanceType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "ml.c4.2xlarge",
-            "ml.c4.4xlarge",
-            "ml.c4.8xlarge",
-            "ml.c4.large",
-            "ml.c4.xlarge",
-            "ml.c5.18xlarge",
-            "ml.c5.2xlarge",
-            "ml.c5.4xlarge",
-            "ml.c5.9xlarge",
-            "ml.c5.large",
-            "ml.c5.xlarge",
-            "ml.c5d.18xlarge",
-            "ml.c5d.2xlarge",
-            "ml.c5d.4xlarge",
-            "ml.c5d.9xlarge",
-            "ml.c5d.large",
-            "ml.c5d.xlarge",
-            "ml.g4dn.12xlarge",
-            "ml.g4dn.16xlarge",
-            "ml.g4dn.2xlarge",
-            "ml.g4dn.4xlarge",
-            "ml.g4dn.8xlarge",
-            "ml.g4dn.xlarge",
-            "ml.inf1.24xlarge",
-            "ml.inf1.2xlarge",
-            "ml.inf1.6xlarge",
-            "ml.inf1.xlarge",
-            "ml.m4.10xlarge",
-            "ml.m4.16xlarge",
-            "ml.m4.2xlarge",
-            "ml.m4.4xlarge",
-            "ml.m4.xlarge",
-            "ml.m5.12xlarge",
-            "ml.m5.24xlarge",
-            "ml.m5.2xlarge",
-            "ml.m5.4xlarge",
-            "ml.m5.large",
-            "ml.m5.xlarge",
-            "ml.m5d.12xlarge",
-            "ml.m5d.24xlarge",
-            "ml.m5d.2xlarge",
-            "ml.m5d.4xlarge",
-            "ml.m5d.large",
-            "ml.m5d.xlarge",
-            "ml.p2.16xlarge",
-            "ml.p2.8xlarge",
-            "ml.p2.xlarge",
-            "ml.p3.16xlarge",
-            "ml.p3.2xlarge",
-            "ml.p3.8xlarge",
-            "ml.r5.12xlarge",
-            "ml.r5.24xlarge",
-            "ml.r5.2xlarge",
-            "ml.r5.4xlarge",
-            "ml.r5.large",
-            "ml.r5.xlarge",
-            "ml.r5d.12xlarge",
-            "ml.r5d.24xlarge",
-            "ml.r5d.2xlarge",
-            "ml.r5d.4xlarge",
-            "ml.r5d.large",
-            "ml.r5d.xlarge",
-            "ml.t2.2xlarge",
-            "ml.t2.large",
-            "ml.t2.medium",
-            "ml.t2.xlarge",
-        ]
-    }
-}
-impl AsRef<str> for ProductionVariantInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Describes the Docker container for the model package.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ModelPackageContainerDefinition {
-    /// <p>The DNS host name for the Docker container.</p>
-    pub container_hostname: std::option::Option<std::string::String>,
-    /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker,
-    /// the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
-    /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
-    /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
-    /// SageMaker</a>.</p>
-    pub image: std::option::Option<std::string::String>,
-    /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for
-    /// training.</p>
-    pub image_digest: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored.
-    /// This path must point to a single <code>gzip</code> compressed tar archive
-    /// (<code>.tar.gz</code> suffix).</p>
-    /// <note>
-    /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
-    /// model package.</p>
-    /// </note>
-    pub model_data_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
-    pub product_id: std::option::Option<std::string::String>,
-    /// <p>The environment variables to set in the Docker container. Each key and value in the
-    /// <code>Environment</code> string to string map can have length of up to 1024. We
-    /// support up to 16 entries in the map.</p>
-    pub environment:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-}
-impl ModelPackageContainerDefinition {
-    /// <p>The DNS host name for the Docker container.</p>
-    pub fn container_hostname(&self) -> std::option::Option<&str> {
-        self.container_hostname.as_deref()
-    }
-    /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-    /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker,
-    /// the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
-    /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
-    /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
-    /// SageMaker</a>.</p>
-    pub fn image(&self) -> std::option::Option<&str> {
-        self.image.as_deref()
-    }
-    /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for
-    /// training.</p>
-    pub fn image_digest(&self) -> std::option::Option<&str> {
-        self.image_digest.as_deref()
-    }
-    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored.
-    /// This path must point to a single <code>gzip</code> compressed tar archive
-    /// (<code>.tar.gz</code> suffix).</p>
-    /// <note>
-    /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
-    /// model package.</p>
-    /// </note>
-    pub fn model_data_url(&self) -> std::option::Option<&str> {
-        self.model_data_url.as_deref()
-    }
-    /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
-    pub fn product_id(&self) -> std::option::Option<&str> {
-        self.product_id.as_deref()
-    }
-    /// <p>The environment variables to set in the Docker container. Each key and value in the
-    /// <code>Environment</code> string to string map can have length of up to 1024. We
-    /// support up to 16 entries in the map.</p>
-    pub fn environment(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
-        self.environment.as_ref()
-    }
-}
-impl std::fmt::Debug for ModelPackageContainerDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModelPackageContainerDefinition");
-        formatter.field("container_hostname", &self.container_hostname);
-        formatter.field("image", &self.image);
-        formatter.field("image_digest", &self.image_digest);
-        formatter.field("model_data_url", &self.model_data_url);
-        formatter.field("product_id", &self.product_id);
-        formatter.field("environment", &self.environment);
-        formatter.finish()
-    }
-}
-/// See [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
-pub mod model_package_container_definition {
-    /// A builder for [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) container_hostname: std::option::Option<std::string::String>,
-        pub(crate) image: std::option::Option<std::string::String>,
-        pub(crate) image_digest: std::option::Option<std::string::String>,
-        pub(crate) model_data_url: std::option::Option<std::string::String>,
-        pub(crate) product_id: std::option::Option<std::string::String>,
-        pub(crate) environment: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    }
-    impl Builder {
-        /// <p>The DNS host name for the Docker container.</p>
-        pub fn container_hostname(mut self, input: impl Into<std::string::String>) -> Self {
-            self.container_hostname = Some(input.into());
-            self
-        }
-        /// <p>The DNS host name for the Docker container.</p>
-        pub fn set_container_hostname(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.container_hostname = input;
-            self
-        }
-        /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-        /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker,
-        /// the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
-        /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
-        /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
-        /// SageMaker</a>.</p>
-        pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
-            self.image = Some(input.into());
-            self
-        }
-        /// <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
-        /// <p>If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker,
-        /// the inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
-        /// <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
-        /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
-        /// SageMaker</a>.</p>
-        pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image = input;
-            self
-        }
-        /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for
-        /// training.</p>
-        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
-            self.image_digest = Some(input.into());
-            self
-        }
-        /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for
-        /// training.</p>
-        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_digest = input;
-            self
-        }
-        /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored.
-        /// This path must point to a single <code>gzip</code> compressed tar archive
-        /// (<code>.tar.gz</code> suffix).</p>
-        /// <note>
-        /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
-        /// model package.</p>
-        /// </note>
-        pub fn model_data_url(mut self, input: impl Into<std::string::String>) -> Self {
-            self.model_data_url = Some(input.into());
-            self
-        }
-        /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored.
-        /// This path must point to a single <code>gzip</code> compressed tar archive
-        /// (<code>.tar.gz</code> suffix).</p>
-        /// <note>
-        /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
-        /// model package.</p>
-        /// </note>
-        pub fn set_model_data_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_data_url = input;
-            self
-        }
-        /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
-        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.product_id = Some(input.into());
-            self
-        }
-        /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
-        pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_id = input;
-            self
-        }
-        /// Adds a key-value pair to `environment`.
-        ///
-        /// To override the contents of this collection use [`set_environment`](Self::set_environment).
-        ///
-        /// <p>The environment variables to set in the Docker container. Each key and value in the
-        /// <code>Environment</code> string to string map can have length of up to 1024. We
-        /// support up to 16 entries in the map.</p>
-        pub fn environment(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            let mut hash_map = self.environment.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.environment = Some(hash_map);
-            self
-        }
-        /// <p>The environment variables to set in the Docker container. Each key and value in the
-        /// <code>Environment</code> string to string map can have length of up to 1024. We
-        /// support up to 16 entries in the map.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.environment = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
-        pub fn build(self) -> crate::model::ModelPackageContainerDefinition {
-            crate::model::ModelPackageContainerDefinition {
-                container_hostname: self.container_hostname,
-                image: self.image,
-                image_digest: self.image_digest,
-                model_data_url: self.model_data_url,
-                product_id: self.product_id,
-                environment: self.environment,
-            }
-        }
-    }
-}
-impl ModelPackageContainerDefinition {
-    /// Creates a new builder-style object to manufacture [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
-    pub fn builder() -> crate::model::model_package_container_definition::Builder {
-        crate::model::model_package_container_definition::Builder::default()
-    }
-}
-
 /// <p>A hosted endpoint for real-time inference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -19607,6 +20786,18 @@ pub struct ProductionVariantSummary {
     pub desired_instance_count: std::option::Option<i32>,
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     pub variant_status: std::option::Option<std::vec::Vec<crate::model::ProductionVariantStatus>>,
+    /// <p>The serverless configuration for the endpoint.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub current_serverless_config:
+        std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+    /// <p>The serverless configuration requested for the endpoint update.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub desired_serverless_config:
+        std::option::Option<crate::model::ProductionVariantServerlessConfig>,
 }
 impl ProductionVariantSummary {
     /// <p>The name of the variant.</p>
@@ -19640,6 +20831,24 @@ impl ProductionVariantSummary {
     pub fn variant_status(&self) -> std::option::Option<&[crate::model::ProductionVariantStatus]> {
         self.variant_status.as_deref()
     }
+    /// <p>The serverless configuration for the endpoint.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub fn current_serverless_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
+        self.current_serverless_config.as_ref()
+    }
+    /// <p>The serverless configuration requested for the endpoint update.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub fn desired_serverless_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
+        self.desired_serverless_config.as_ref()
+    }
 }
 impl std::fmt::Debug for ProductionVariantSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19651,6 +20860,8 @@ impl std::fmt::Debug for ProductionVariantSummary {
         formatter.field("current_instance_count", &self.current_instance_count);
         formatter.field("desired_instance_count", &self.desired_instance_count);
         formatter.field("variant_status", &self.variant_status);
+        formatter.field("current_serverless_config", &self.current_serverless_config);
+        formatter.field("desired_serverless_config", &self.desired_serverless_config);
         formatter.finish()
     }
 }
@@ -19668,6 +20879,10 @@ pub mod production_variant_summary {
         pub(crate) desired_instance_count: std::option::Option<i32>,
         pub(crate) variant_status:
             std::option::Option<std::vec::Vec<crate::model::ProductionVariantStatus>>,
+        pub(crate) current_serverless_config:
+            std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+        pub(crate) desired_serverless_config:
+            std::option::Option<crate::model::ProductionVariantServerlessConfig>,
     }
     impl Builder {
         /// <p>The name of the variant.</p>
@@ -19767,6 +20982,50 @@ pub mod production_variant_summary {
             self.variant_status = input;
             self
         }
+        /// <p>The serverless configuration for the endpoint.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn current_serverless_config(
+            mut self,
+            input: crate::model::ProductionVariantServerlessConfig,
+        ) -> Self {
+            self.current_serverless_config = Some(input);
+            self
+        }
+        /// <p>The serverless configuration for the endpoint.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn set_current_serverless_config(
+            mut self,
+            input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+        ) -> Self {
+            self.current_serverless_config = input;
+            self
+        }
+        /// <p>The serverless configuration requested for the endpoint update.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn desired_serverless_config(
+            mut self,
+            input: crate::model::ProductionVariantServerlessConfig,
+        ) -> Self {
+            self.desired_serverless_config = Some(input);
+            self
+        }
+        /// <p>The serverless configuration requested for the endpoint update.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn set_desired_serverless_config(
+            mut self,
+            input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+        ) -> Self {
+            self.desired_serverless_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProductionVariantSummary`](crate::model::ProductionVariantSummary)
         pub fn build(self) -> crate::model::ProductionVariantSummary {
             crate::model::ProductionVariantSummary {
@@ -19777,6 +21036,8 @@ pub mod production_variant_summary {
                 current_instance_count: self.current_instance_count,
                 desired_instance_count: self.desired_instance_count,
                 variant_status: self.variant_status,
+                current_serverless_config: self.current_serverless_config,
+                desired_serverless_config: self.desired_serverless_config,
             }
         }
     }
@@ -19785,6 +21046,82 @@ impl ProductionVariantSummary {
     /// Creates a new builder-style object to manufacture [`ProductionVariantSummary`](crate::model::ProductionVariantSummary)
     pub fn builder() -> crate::model::production_variant_summary::Builder {
         crate::model::production_variant_summary::Builder::default()
+    }
+}
+
+/// <important>
+/// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+/// </important>
+/// <p>Specifies the serverless configuration for an endpoint variant.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProductionVariantServerlessConfig {
+    /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
+    pub memory_size_in_mb: std::option::Option<i32>,
+    /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
+    pub max_concurrency: std::option::Option<i32>,
+}
+impl ProductionVariantServerlessConfig {
+    /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
+    pub fn memory_size_in_mb(&self) -> std::option::Option<i32> {
+        self.memory_size_in_mb
+    }
+    /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
+    pub fn max_concurrency(&self) -> std::option::Option<i32> {
+        self.max_concurrency
+    }
+}
+impl std::fmt::Debug for ProductionVariantServerlessConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProductionVariantServerlessConfig");
+        formatter.field("memory_size_in_mb", &self.memory_size_in_mb);
+        formatter.field("max_concurrency", &self.max_concurrency);
+        formatter.finish()
+    }
+}
+/// See [`ProductionVariantServerlessConfig`](crate::model::ProductionVariantServerlessConfig)
+pub mod production_variant_serverless_config {
+    /// A builder for [`ProductionVariantServerlessConfig`](crate::model::ProductionVariantServerlessConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) memory_size_in_mb: std::option::Option<i32>,
+        pub(crate) max_concurrency: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
+        pub fn memory_size_in_mb(mut self, input: i32) -> Self {
+            self.memory_size_in_mb = Some(input);
+            self
+        }
+        /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
+        pub fn set_memory_size_in_mb(mut self, input: std::option::Option<i32>) -> Self {
+            self.memory_size_in_mb = input;
+            self
+        }
+        /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
+        pub fn max_concurrency(mut self, input: i32) -> Self {
+            self.max_concurrency = Some(input);
+            self
+        }
+        /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
+        pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_concurrency = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProductionVariantServerlessConfig`](crate::model::ProductionVariantServerlessConfig)
+        pub fn build(self) -> crate::model::ProductionVariantServerlessConfig {
+            crate::model::ProductionVariantServerlessConfig {
+                memory_size_in_mb: self.memory_size_in_mb,
+                max_concurrency: self.max_concurrency,
+            }
+        }
+    }
+}
+impl ProductionVariantServerlessConfig {
+    /// Creates a new builder-style object to manufacture [`ProductionVariantServerlessConfig`](crate::model::ProductionVariantServerlessConfig)
+    pub fn builder() -> crate::model::production_variant_serverless_config::Builder {
+        crate::model::production_variant_serverless_config::Builder::default()
     }
 }
 
@@ -20199,7 +21536,7 @@ pub struct TrialComponent {
     /// <p>When the component was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>The hyperparameters of the component.</p>
     pub parameters: std::option::Option<
@@ -20219,6 +21556,8 @@ pub struct TrialComponent {
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
     /// <p>Details of the source of the component.</p>
     pub source_detail: std::option::Option<crate::model::TrialComponentSourceDetail>,
+    /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+    pub lineage_group_arn: std::option::Option<std::string::String>,
     /// <p>The list of tags that are associated with the component. You can use <a>Search</a> API to search on the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>An array of the parents of the component. A parent is a trial the component is associated
@@ -20268,7 +21607,7 @@ impl TrialComponent {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -20308,6 +21647,10 @@ impl TrialComponent {
     pub fn source_detail(&self) -> std::option::Option<&crate::model::TrialComponentSourceDetail> {
         self.source_detail.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+        self.lineage_group_arn.as_deref()
+    }
     /// <p>The list of tags that are associated with the component. You can use <a>Search</a> API to search on the tags.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -20338,6 +21681,7 @@ impl std::fmt::Debug for TrialComponent {
         formatter.field("metrics", &self.metrics);
         formatter.field("metadata_properties", &self.metadata_properties);
         formatter.field("source_detail", &self.source_detail);
+        formatter.field("lineage_group_arn", &self.lineage_group_arn);
         formatter.field("tags", &self.tags);
         formatter.field("parents", &self.parents);
         formatter.finish()
@@ -20376,6 +21720,7 @@ pub mod trial_component {
             std::option::Option<std::vec::Vec<crate::model::TrialComponentMetricSummary>>,
         pub(crate) metadata_properties: std::option::Option<crate::model::MetadataProperties>,
         pub(crate) source_detail: std::option::Option<crate::model::TrialComponentSourceDetail>,
+        pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
     }
@@ -20510,13 +21855,13 @@ pub mod trial_component {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -20656,6 +22001,19 @@ pub mod trial_component {
             self.source_detail = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+        pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+        pub fn set_lineage_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_arn = input;
+            self
+        }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -20716,6 +22074,7 @@ pub mod trial_component {
                 metrics: self.metrics,
                 metadata_properties: self.metadata_properties,
                 source_detail: self.source_detail,
+                lineage_group_arn: self.lineage_group_arn,
                 tags: self.tags,
                 parents: self.parents,
             }
@@ -32156,7 +33515,7 @@ pub struct Trial {
     /// <p>Who last modified the trial.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
@@ -32203,7 +33562,7 @@ impl Trial {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -32358,13 +33717,13 @@ pub mod trial {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -32469,7 +33828,7 @@ pub struct TrialComponentSimpleSummary {
     /// <p>When the component was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
 }
 impl TrialComponentSimpleSummary {
@@ -32492,7 +33851,7 @@ impl TrialComponentSimpleSummary {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -32574,13 +33933,13 @@ pub mod trial_component_simple_summary {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -32702,7 +34061,7 @@ pub struct Experiment {
     /// <p>When the experiment was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>The list of tags that are associated with the experiment. You can use <a>Search</a> API to search on the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -32742,7 +34101,7 @@ impl Experiment {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn last_modified_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.last_modified_by.as_ref()
     }
@@ -32886,13 +34245,13 @@ pub mod experiment {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -34448,6 +35807,620 @@ impl UiTemplate {
     /// Creates a new builder-style object to manufacture [`UiTemplate`](crate::model::UiTemplate)
     pub fn builder() -> crate::model::ui_template::Builder {
         crate::model::ui_template::Builder::default()
+    }
+}
+
+/// <p>A directed edge connecting two lineage entities.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Edge {
+    /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
+    pub source_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
+    pub destination_arn: std::option::Option<std::string::String>,
+    /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>,
+    /// <code>Produced</code>, or <code>DerivedFrom</code>.</p>
+    pub association_type: std::option::Option<crate::model::AssociationEdgeType>,
+}
+impl Edge {
+    /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
+    pub fn source_arn(&self) -> std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
+        self.destination_arn.as_deref()
+    }
+    /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>,
+    /// <code>Produced</code>, or <code>DerivedFrom</code>.</p>
+    pub fn association_type(&self) -> std::option::Option<&crate::model::AssociationEdgeType> {
+        self.association_type.as_ref()
+    }
+}
+impl std::fmt::Debug for Edge {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Edge");
+        formatter.field("source_arn", &self.source_arn);
+        formatter.field("destination_arn", &self.destination_arn);
+        formatter.field("association_type", &self.association_type);
+        formatter.finish()
+    }
+}
+/// See [`Edge`](crate::model::Edge)
+pub mod edge {
+    /// A builder for [`Edge`](crate::model::Edge)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_arn: std::option::Option<std::string::String>,
+        pub(crate) destination_arn: std::option::Option<std::string::String>,
+        pub(crate) association_type: std::option::Option<crate::model::AssociationEdgeType>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
+        pub fn set_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_arn = input;
+            self
+        }
+        /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>,
+        /// <code>Produced</code>, or <code>DerivedFrom</code>.</p>
+        pub fn association_type(mut self, input: crate::model::AssociationEdgeType) -> Self {
+            self.association_type = Some(input);
+            self
+        }
+        /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>,
+        /// <code>Produced</code>, or <code>DerivedFrom</code>.</p>
+        pub fn set_association_type(
+            mut self,
+            input: std::option::Option<crate::model::AssociationEdgeType>,
+        ) -> Self {
+            self.association_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Edge`](crate::model::Edge)
+        pub fn build(self) -> crate::model::Edge {
+            crate::model::Edge {
+                source_arn: self.source_arn,
+                destination_arn: self.destination_arn,
+                association_type: self.association_type,
+            }
+        }
+    }
+}
+impl Edge {
+    /// Creates a new builder-style object to manufacture [`Edge`](crate::model::Edge)
+    pub fn builder() -> crate::model::edge::Builder {
+        crate::model::edge::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AssociationEdgeType {
+    #[allow(missing_docs)] // documentation missing in model
+    AssociatedWith,
+    #[allow(missing_docs)] // documentation missing in model
+    ContributedTo,
+    #[allow(missing_docs)] // documentation missing in model
+    DerivedFrom,
+    #[allow(missing_docs)] // documentation missing in model
+    Produced,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AssociationEdgeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AssociatedWith" => AssociationEdgeType::AssociatedWith,
+            "ContributedTo" => AssociationEdgeType::ContributedTo,
+            "DerivedFrom" => AssociationEdgeType::DerivedFrom,
+            "Produced" => AssociationEdgeType::Produced,
+            other => AssociationEdgeType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AssociationEdgeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AssociationEdgeType::from(s))
+    }
+}
+impl AssociationEdgeType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AssociationEdgeType::AssociatedWith => "AssociatedWith",
+            AssociationEdgeType::ContributedTo => "ContributedTo",
+            AssociationEdgeType::DerivedFrom => "DerivedFrom",
+            AssociationEdgeType::Produced => "Produced",
+            AssociationEdgeType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AssociatedWith", "ContributedTo", "DerivedFrom", "Produced"]
+    }
+}
+impl AsRef<str> for AssociationEdgeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A lineage entity connected to the starting entity(ies).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Vertex {
+    /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>,
+    /// etc...</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The type of resource of the lineage entity.</p>
+    pub lineage_type: std::option::Option<crate::model::LineageType>,
+}
+impl Vertex {
+    /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>,
+    /// etc...</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>The type of resource of the lineage entity.</p>
+    pub fn lineage_type(&self) -> std::option::Option<&crate::model::LineageType> {
+        self.lineage_type.as_ref()
+    }
+}
+impl std::fmt::Debug for Vertex {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Vertex");
+        formatter.field("arn", &self.arn);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("lineage_type", &self.lineage_type);
+        formatter.finish()
+    }
+}
+/// See [`Vertex`](crate::model::Vertex)
+pub mod vertex {
+    /// A builder for [`Vertex`](crate::model::Vertex)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) lineage_type: std::option::Option<crate::model::LineageType>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>,
+        /// etc...</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>,
+        /// etc...</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The type of resource of the lineage entity.</p>
+        pub fn lineage_type(mut self, input: crate::model::LineageType) -> Self {
+            self.lineage_type = Some(input);
+            self
+        }
+        /// <p>The type of resource of the lineage entity.</p>
+        pub fn set_lineage_type(
+            mut self,
+            input: std::option::Option<crate::model::LineageType>,
+        ) -> Self {
+            self.lineage_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Vertex`](crate::model::Vertex)
+        pub fn build(self) -> crate::model::Vertex {
+            crate::model::Vertex {
+                arn: self.arn,
+                r#type: self.r#type,
+                lineage_type: self.lineage_type,
+            }
+        }
+    }
+}
+impl Vertex {
+    /// Creates a new builder-style object to manufacture [`Vertex`](crate::model::Vertex)
+    pub fn builder() -> crate::model::vertex::Builder {
+        crate::model::vertex::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LineageType {
+    #[allow(missing_docs)] // documentation missing in model
+    Action,
+    #[allow(missing_docs)] // documentation missing in model
+    Artifact,
+    #[allow(missing_docs)] // documentation missing in model
+    Context,
+    #[allow(missing_docs)] // documentation missing in model
+    TrialComponent,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LineageType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Action" => LineageType::Action,
+            "Artifact" => LineageType::Artifact,
+            "Context" => LineageType::Context,
+            "TrialComponent" => LineageType::TrialComponent,
+            other => LineageType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LineageType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LineageType::from(s))
+    }
+}
+impl LineageType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LineageType::Action => "Action",
+            LineageType::Artifact => "Artifact",
+            LineageType::Context => "Context",
+            LineageType::TrialComponent => "TrialComponent",
+            LineageType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Action", "Artifact", "Context", "TrialComponent"]
+    }
+}
+impl AsRef<str> for LineageType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A set of filters to narrow the set of lineage entities connected to the <code>StartArn</code>(s) returned by the
+/// <code>QueryLineage</code> API action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryFilters {
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>,
+    /// <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
+    pub types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
+    pub lineage_types: std::option::Option<std::vec::Vec<crate::model::LineageType>>,
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
+    pub created_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
+    pub created_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
+    pub modified_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
+    pub modified_after: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs.
+    /// If multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.</p>
+    pub properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl QueryFilters {
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>,
+    /// <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
+    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+        self.types.as_deref()
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
+    pub fn lineage_types(&self) -> std::option::Option<&[crate::model::LineageType]> {
+        self.lineage_types.as_deref()
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
+    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_before.as_ref()
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
+    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_after.as_ref()
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
+    pub fn modified_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.modified_before.as_ref()
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
+    pub fn modified_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.modified_after.as_ref()
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs.
+    /// If multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.</p>
+    pub fn properties(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.properties.as_ref()
+    }
+}
+impl std::fmt::Debug for QueryFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryFilters");
+        formatter.field("types", &self.types);
+        formatter.field("lineage_types", &self.lineage_types);
+        formatter.field("created_before", &self.created_before);
+        formatter.field("created_after", &self.created_after);
+        formatter.field("modified_before", &self.modified_before);
+        formatter.field("modified_after", &self.modified_after);
+        formatter.field("properties", &self.properties);
+        formatter.finish()
+    }
+}
+/// See [`QueryFilters`](crate::model::QueryFilters)
+pub mod query_filters {
+    /// A builder for [`QueryFilters`](crate::model::QueryFilters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) lineage_types: std::option::Option<std::vec::Vec<crate::model::LineageType>>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_before: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) modified_after: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) properties: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// Appends an item to `types`.
+        ///
+        /// To override the contents of this collection use [`set_types`](Self::set_types).
+        ///
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>,
+        /// <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
+        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.types.unwrap_or_default();
+            v.push(input.into());
+            self.types = Some(v);
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>,
+        /// <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
+        pub fn set_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.types = input;
+            self
+        }
+        /// Appends an item to `lineage_types`.
+        ///
+        /// To override the contents of this collection use [`set_lineage_types`](Self::set_lineage_types).
+        ///
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
+        pub fn lineage_types(mut self, input: impl Into<crate::model::LineageType>) -> Self {
+            let mut v = self.lineage_types.unwrap_or_default();
+            v.push(input.into());
+            self.lineage_types = Some(v);
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
+        pub fn set_lineage_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LineageType>>,
+        ) -> Self {
+            self.lineage_types = input;
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_before = Some(input);
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
+        pub fn set_created_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_before = input;
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_after = Some(input);
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
+        pub fn set_created_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_after = input;
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
+        pub fn modified_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.modified_before = Some(input);
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
+        pub fn set_modified_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.modified_before = input;
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
+        pub fn modified_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.modified_after = Some(input);
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
+        pub fn set_modified_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.modified_after = input;
+            self
+        }
+        /// Adds a key-value pair to `properties`.
+        ///
+        /// To override the contents of this collection use [`set_properties`](Self::set_properties).
+        ///
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs.
+        /// If multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.</p>
+        pub fn properties(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.properties.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.properties = Some(hash_map);
+            self
+        }
+        /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs.
+        /// If multiple pairs are provided, an entity will be included in the results if it matches any of the provided pairs.</p>
+        pub fn set_properties(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryFilters`](crate::model::QueryFilters)
+        pub fn build(self) -> crate::model::QueryFilters {
+            crate::model::QueryFilters {
+                types: self.types,
+                lineage_types: self.lineage_types,
+                created_before: self.created_before,
+                created_after: self.created_after,
+                modified_before: self.modified_before,
+                modified_after: self.modified_after,
+                properties: self.properties,
+            }
+        }
+    }
+}
+impl QueryFilters {
+    /// Creates a new builder-style object to manufacture [`QueryFilters`](crate::model::QueryFilters)
+    pub fn builder() -> crate::model::query_filters::Builder {
+        crate::model::query_filters::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Direction {
+    #[allow(missing_docs)] // documentation missing in model
+    Ascendants,
+    #[allow(missing_docs)] // documentation missing in model
+    Both,
+    #[allow(missing_docs)] // documentation missing in model
+    Descendants,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Direction {
+    fn from(s: &str) -> Self {
+        match s {
+            "Ascendants" => Direction::Ascendants,
+            "Both" => Direction::Both,
+            "Descendants" => Direction::Descendants,
+            other => Direction::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Direction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Direction::from(s))
+    }
+}
+impl Direction {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Direction::Ascendants => "Ascendants",
+            Direction::Both => "Both",
+            Direction::Descendants => "Descendants",
+            Direction::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Ascendants", "Both", "Descendants"]
+    }
+}
+impl AsRef<str> for Direction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -38127,6 +40100,65 @@ pub struct PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of
     /// output parameters.</p>
     pub lambda: std::option::Option<crate::model::LambdaStepMetadata>,
+    /// <p>The configurations and outcomes of the check step execution. This includes: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The type of the check conducted,</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p>
+    /// </li>
+    /// <li>
+    /// <p>The model package group name provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URI of the violation report if violations detected.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p>
+    /// </li>
+    /// <li>
+    /// <p>The boolean flags indicating if the drift check is skipped.</p>
+    /// </li>
+    /// <li>
+    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as
+    /// <code>CalculatedBaseline</code>.</p>
+    /// </li>
+    /// </ul>
+    pub quality_check: std::option::Option<crate::model::QualityCheckStepMetadata>,
+    /// <p>Container for the metadata for a Clarify check step. The configurations
+    /// and outcomes of the check step execution. This includes: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The type of the check conducted,</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p>
+    /// </li>
+    /// <li>
+    /// <p>The model package group name provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URI of the violation report if violations detected.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p>
+    /// </li>
+    /// <li>
+    /// <p>The boolean flags indicating if the drift check is skipped.</p>
+    /// </li>
+    /// <li>
+    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as
+    /// <code>CalculatedBaseline</code>.</p>
+    /// </li>
+    /// </ul>
+    pub clarify_check: std::option::Option<crate::model::ClarifyCheckStepMetadata>,
 }
 impl PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -38167,6 +40199,69 @@ impl PipelineExecutionStepMetadata {
     pub fn lambda(&self) -> std::option::Option<&crate::model::LambdaStepMetadata> {
         self.lambda.as_ref()
     }
+    /// <p>The configurations and outcomes of the check step execution. This includes: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The type of the check conducted,</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p>
+    /// </li>
+    /// <li>
+    /// <p>The model package group name provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URI of the violation report if violations detected.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p>
+    /// </li>
+    /// <li>
+    /// <p>The boolean flags indicating if the drift check is skipped.</p>
+    /// </li>
+    /// <li>
+    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as
+    /// <code>CalculatedBaseline</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn quality_check(&self) -> std::option::Option<&crate::model::QualityCheckStepMetadata> {
+        self.quality_check.as_ref()
+    }
+    /// <p>Container for the metadata for a Clarify check step. The configurations
+    /// and outcomes of the check step execution. This includes: </p>
+    /// <ul>
+    /// <li>
+    /// <p>The type of the check conducted,</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p>
+    /// </li>
+    /// <li>
+    /// <p>The model package group name provided.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon S3 URI of the violation report if violations detected.</p>
+    /// </li>
+    /// <li>
+    /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p>
+    /// </li>
+    /// <li>
+    /// <p>The boolean flags indicating if the drift check is skipped.</p>
+    /// </li>
+    /// <li>
+    /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as
+    /// <code>CalculatedBaseline</code>.</p>
+    /// </li>
+    /// </ul>
+    pub fn clarify_check(&self) -> std::option::Option<&crate::model::ClarifyCheckStepMetadata> {
+        self.clarify_check.as_ref()
+    }
 }
 impl std::fmt::Debug for PipelineExecutionStepMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38180,6 +40275,8 @@ impl std::fmt::Debug for PipelineExecutionStepMetadata {
         formatter.field("condition", &self.condition);
         formatter.field("callback", &self.callback);
         formatter.field("lambda", &self.lambda);
+        formatter.field("quality_check", &self.quality_check);
+        formatter.field("clarify_check", &self.clarify_check);
         formatter.finish()
     }
 }
@@ -38198,6 +40295,8 @@ pub mod pipeline_execution_step_metadata {
         pub(crate) condition: std::option::Option<crate::model::ConditionStepMetadata>,
         pub(crate) callback: std::option::Option<crate::model::CallbackStepMetadata>,
         pub(crate) lambda: std::option::Option<crate::model::LambdaStepMetadata>,
+        pub(crate) quality_check: std::option::Option<crate::model::QualityCheckStepMetadata>,
+        pub(crate) clarify_check: std::option::Option<crate::model::ClarifyCheckStepMetadata>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -38321,6 +40420,142 @@ pub mod pipeline_execution_step_metadata {
             self.lambda = input;
             self
         }
+        /// <p>The configurations and outcomes of the check step execution. This includes: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The type of the check conducted,</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p>
+        /// </li>
+        /// <li>
+        /// <p>The model package group name provided.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URI of the violation report if violations detected.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p>
+        /// </li>
+        /// <li>
+        /// <p>The boolean flags indicating if the drift check is skipped.</p>
+        /// </li>
+        /// <li>
+        /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as
+        /// <code>CalculatedBaseline</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn quality_check(mut self, input: crate::model::QualityCheckStepMetadata) -> Self {
+            self.quality_check = Some(input);
+            self
+        }
+        /// <p>The configurations and outcomes of the check step execution. This includes: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The type of the check conducted,</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p>
+        /// </li>
+        /// <li>
+        /// <p>The model package group name provided.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URI of the violation report if violations detected.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p>
+        /// </li>
+        /// <li>
+        /// <p>The boolean flags indicating if the drift check is skipped.</p>
+        /// </li>
+        /// <li>
+        /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as
+        /// <code>CalculatedBaseline</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_quality_check(
+            mut self,
+            input: std::option::Option<crate::model::QualityCheckStepMetadata>,
+        ) -> Self {
+            self.quality_check = input;
+            self
+        }
+        /// <p>Container for the metadata for a Clarify check step. The configurations
+        /// and outcomes of the check step execution. This includes: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The type of the check conducted,</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p>
+        /// </li>
+        /// <li>
+        /// <p>The model package group name provided.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URI of the violation report if violations detected.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p>
+        /// </li>
+        /// <li>
+        /// <p>The boolean flags indicating if the drift check is skipped.</p>
+        /// </li>
+        /// <li>
+        /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as
+        /// <code>CalculatedBaseline</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn clarify_check(mut self, input: crate::model::ClarifyCheckStepMetadata) -> Self {
+            self.clarify_check = Some(input);
+            self
+        }
+        /// <p>Container for the metadata for a Clarify check step. The configurations
+        /// and outcomes of the check step execution. This includes: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The type of the check conducted,</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URIs of baseline constraints and statistics files to be used for the drift check.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URIs of newly calculated baseline constraints and statistics.</p>
+        /// </li>
+        /// <li>
+        /// <p>The model package group name provided.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon S3 URI of the violation report if violations detected.</p>
+        /// </li>
+        /// <li>
+        /// <p>The Amazon Resource Name (ARN) of check processing job initiated by the step execution.</p>
+        /// </li>
+        /// <li>
+        /// <p>The boolean flags indicating if the drift check is skipped.</p>
+        /// </li>
+        /// <li>
+        /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as
+        /// <code>CalculatedBaseline</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_clarify_check(
+            mut self,
+            input: std::option::Option<crate::model::ClarifyCheckStepMetadata>,
+        ) -> Self {
+            self.clarify_check = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PipelineExecutionStepMetadata`](crate::model::PipelineExecutionStepMetadata)
         pub fn build(self) -> crate::model::PipelineExecutionStepMetadata {
             crate::model::PipelineExecutionStepMetadata {
@@ -38333,6 +40568,8 @@ pub mod pipeline_execution_step_metadata {
                 condition: self.condition,
                 callback: self.callback,
                 lambda: self.lambda,
+                quality_check: self.quality_check,
+                clarify_check: self.clarify_check,
             }
         }
     }
@@ -38341,6 +40578,536 @@ impl PipelineExecutionStepMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStepMetadata`](crate::model::PipelineExecutionStepMetadata)
     pub fn builder() -> crate::model::pipeline_execution_step_metadata::Builder {
         crate::model::pipeline_execution_step_metadata::Builder::default()
+    }
+}
+
+/// <p>The container for the metadata for the ClarifyCheck step. For more information,
+/// see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/build-and-manage-steps.html#step-type-clarify-check">ClarifyCheck step</a> in the <i>Amazon SageMaker Developer Guide</i>.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClarifyCheckStepMetadata {
+    /// <p>The type of the Clarify Check step</p>
+    pub check_type: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
+    pub baseline_used_for_drift_check_constraints: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+    pub calculated_baseline_constraints: std::option::Option<std::string::String>,
+    /// <p>The model package group name.</p>
+    pub model_package_group_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
+    pub violation_report: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
+    pub check_job_arn: std::option::Option<std::string::String>,
+    /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not.
+    /// If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+    pub skip_check: bool,
+    /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties
+    /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
+    /// If it is set to <code>False</code>, the previous baseline of the configured check type must also be available.
+    /// These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property. </p>
+    pub register_new_baseline: bool,
+}
+impl ClarifyCheckStepMetadata {
+    /// <p>The type of the Clarify Check step</p>
+    pub fn check_type(&self) -> std::option::Option<&str> {
+        self.check_type.as_deref()
+    }
+    /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
+    pub fn baseline_used_for_drift_check_constraints(&self) -> std::option::Option<&str> {
+        self.baseline_used_for_drift_check_constraints.as_deref()
+    }
+    /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+    pub fn calculated_baseline_constraints(&self) -> std::option::Option<&str> {
+        self.calculated_baseline_constraints.as_deref()
+    }
+    /// <p>The model package group name.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+    /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
+    pub fn violation_report(&self) -> std::option::Option<&str> {
+        self.violation_report.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
+    pub fn check_job_arn(&self) -> std::option::Option<&str> {
+        self.check_job_arn.as_deref()
+    }
+    /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not.
+    /// If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+    pub fn skip_check(&self) -> bool {
+        self.skip_check
+    }
+    /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties
+    /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
+    /// If it is set to <code>False</code>, the previous baseline of the configured check type must also be available.
+    /// These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property. </p>
+    pub fn register_new_baseline(&self) -> bool {
+        self.register_new_baseline
+    }
+}
+impl std::fmt::Debug for ClarifyCheckStepMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClarifyCheckStepMetadata");
+        formatter.field("check_type", &self.check_type);
+        formatter.field(
+            "baseline_used_for_drift_check_constraints",
+            &self.baseline_used_for_drift_check_constraints,
+        );
+        formatter.field(
+            "calculated_baseline_constraints",
+            &self.calculated_baseline_constraints,
+        );
+        formatter.field("model_package_group_name", &self.model_package_group_name);
+        formatter.field("violation_report", &self.violation_report);
+        formatter.field("check_job_arn", &self.check_job_arn);
+        formatter.field("skip_check", &self.skip_check);
+        formatter.field("register_new_baseline", &self.register_new_baseline);
+        formatter.finish()
+    }
+}
+/// See [`ClarifyCheckStepMetadata`](crate::model::ClarifyCheckStepMetadata)
+pub mod clarify_check_step_metadata {
+    /// A builder for [`ClarifyCheckStepMetadata`](crate::model::ClarifyCheckStepMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) check_type: std::option::Option<std::string::String>,
+        pub(crate) baseline_used_for_drift_check_constraints:
+            std::option::Option<std::string::String>,
+        pub(crate) calculated_baseline_constraints: std::option::Option<std::string::String>,
+        pub(crate) model_package_group_name: std::option::Option<std::string::String>,
+        pub(crate) violation_report: std::option::Option<std::string::String>,
+        pub(crate) check_job_arn: std::option::Option<std::string::String>,
+        pub(crate) skip_check: std::option::Option<bool>,
+        pub(crate) register_new_baseline: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The type of the Clarify Check step</p>
+        pub fn check_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.check_type = Some(input.into());
+            self
+        }
+        /// <p>The type of the Clarify Check step</p>
+        pub fn set_check_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.check_type = input;
+            self
+        }
+        /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
+        pub fn baseline_used_for_drift_check_constraints(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.baseline_used_for_drift_check_constraints = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
+        pub fn set_baseline_used_for_drift_check_constraints(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.baseline_used_for_drift_check_constraints = input;
+            self
+        }
+        /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+        pub fn calculated_baseline_constraints(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.calculated_baseline_constraints = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+        pub fn set_calculated_baseline_constraints(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculated_baseline_constraints = input;
+            self
+        }
+        /// <p>The model package group name.</p>
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_package_group_name = Some(input.into());
+            self
+        }
+        /// <p>The model package group name.</p>
+        pub fn set_model_package_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_package_group_name = input;
+            self
+        }
+        /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
+        pub fn violation_report(mut self, input: impl Into<std::string::String>) -> Self {
+            self.violation_report = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
+        pub fn set_violation_report(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.violation_report = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
+        pub fn check_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.check_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
+        pub fn set_check_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.check_job_arn = input;
+            self
+        }
+        /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not.
+        /// If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+        pub fn skip_check(mut self, input: bool) -> Self {
+            self.skip_check = Some(input);
+            self
+        }
+        /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not.
+        /// If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+        pub fn set_skip_check(mut self, input: std::option::Option<bool>) -> Self {
+            self.skip_check = input;
+            self
+        }
+        /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties
+        /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
+        /// If it is set to <code>False</code>, the previous baseline of the configured check type must also be available.
+        /// These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property. </p>
+        pub fn register_new_baseline(mut self, input: bool) -> Self {
+            self.register_new_baseline = Some(input);
+            self
+        }
+        /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties
+        /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
+        /// If it is set to <code>False</code>, the previous baseline of the configured check type must also be available.
+        /// These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property. </p>
+        pub fn set_register_new_baseline(mut self, input: std::option::Option<bool>) -> Self {
+            self.register_new_baseline = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClarifyCheckStepMetadata`](crate::model::ClarifyCheckStepMetadata)
+        pub fn build(self) -> crate::model::ClarifyCheckStepMetadata {
+            crate::model::ClarifyCheckStepMetadata {
+                check_type: self.check_type,
+                baseline_used_for_drift_check_constraints: self
+                    .baseline_used_for_drift_check_constraints,
+                calculated_baseline_constraints: self.calculated_baseline_constraints,
+                model_package_group_name: self.model_package_group_name,
+                violation_report: self.violation_report,
+                check_job_arn: self.check_job_arn,
+                skip_check: self.skip_check.unwrap_or_default(),
+                register_new_baseline: self.register_new_baseline.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ClarifyCheckStepMetadata {
+    /// Creates a new builder-style object to manufacture [`ClarifyCheckStepMetadata`](crate::model::ClarifyCheckStepMetadata)
+    pub fn builder() -> crate::model::clarify_check_step_metadata::Builder {
+        crate::model::clarify_check_step_metadata::Builder::default()
+    }
+}
+
+/// <p>Container for the metadata for a Quality check step. For more information, see
+/// the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/build-and-manage-steps.html#step-type-quality-check">QualityCheck step</a> in the <i>Amazon SageMaker Developer Guide</i>.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QualityCheckStepMetadata {
+    /// <p>The type of the Quality check step.</p>
+    pub check_type: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI of the baseline statistics file used for the drift check.</p>
+    pub baseline_used_for_drift_check_statistics: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI of the baseline constraints file used for the drift check.</p>
+    pub baseline_used_for_drift_check_constraints: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI of the newly calculated baseline statistics file.</p>
+    pub calculated_baseline_statistics: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+    pub calculated_baseline_constraints: std::option::Option<std::string::String>,
+    /// <p>The model package group name.</p>
+    pub model_package_group_name: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI of violation report if violations are detected.</p>
+    pub violation_report: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Quality check processing job that was run by this step execution.</p>
+    pub check_job_arn: std::option::Option<std::string::String>,
+    /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not.
+    /// If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+    pub skip_check: bool,
+    /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties
+    /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
+    /// If it is set to <code>False</code>, the previous baseline of the configured check type must also be available.
+    /// These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code>
+    /// BaselineUsedForDriftCheckStatistics</code> properties. </p>
+    pub register_new_baseline: bool,
+}
+impl QualityCheckStepMetadata {
+    /// <p>The type of the Quality check step.</p>
+    pub fn check_type(&self) -> std::option::Option<&str> {
+        self.check_type.as_deref()
+    }
+    /// <p>The Amazon S3 URI of the baseline statistics file used for the drift check.</p>
+    pub fn baseline_used_for_drift_check_statistics(&self) -> std::option::Option<&str> {
+        self.baseline_used_for_drift_check_statistics.as_deref()
+    }
+    /// <p>The Amazon S3 URI of the baseline constraints file used for the drift check.</p>
+    pub fn baseline_used_for_drift_check_constraints(&self) -> std::option::Option<&str> {
+        self.baseline_used_for_drift_check_constraints.as_deref()
+    }
+    /// <p>The Amazon S3 URI of the newly calculated baseline statistics file.</p>
+    pub fn calculated_baseline_statistics(&self) -> std::option::Option<&str> {
+        self.calculated_baseline_statistics.as_deref()
+    }
+    /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+    pub fn calculated_baseline_constraints(&self) -> std::option::Option<&str> {
+        self.calculated_baseline_constraints.as_deref()
+    }
+    /// <p>The model package group name.</p>
+    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+        self.model_package_group_name.as_deref()
+    }
+    /// <p>The Amazon S3 URI of violation report if violations are detected.</p>
+    pub fn violation_report(&self) -> std::option::Option<&str> {
+        self.violation_report.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Quality check processing job that was run by this step execution.</p>
+    pub fn check_job_arn(&self) -> std::option::Option<&str> {
+        self.check_job_arn.as_deref()
+    }
+    /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not.
+    /// If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+    pub fn skip_check(&self) -> bool {
+        self.skip_check
+    }
+    /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties
+    /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
+    /// If it is set to <code>False</code>, the previous baseline of the configured check type must also be available.
+    /// These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code>
+    /// BaselineUsedForDriftCheckStatistics</code> properties. </p>
+    pub fn register_new_baseline(&self) -> bool {
+        self.register_new_baseline
+    }
+}
+impl std::fmt::Debug for QualityCheckStepMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QualityCheckStepMetadata");
+        formatter.field("check_type", &self.check_type);
+        formatter.field(
+            "baseline_used_for_drift_check_statistics",
+            &self.baseline_used_for_drift_check_statistics,
+        );
+        formatter.field(
+            "baseline_used_for_drift_check_constraints",
+            &self.baseline_used_for_drift_check_constraints,
+        );
+        formatter.field(
+            "calculated_baseline_statistics",
+            &self.calculated_baseline_statistics,
+        );
+        formatter.field(
+            "calculated_baseline_constraints",
+            &self.calculated_baseline_constraints,
+        );
+        formatter.field("model_package_group_name", &self.model_package_group_name);
+        formatter.field("violation_report", &self.violation_report);
+        formatter.field("check_job_arn", &self.check_job_arn);
+        formatter.field("skip_check", &self.skip_check);
+        formatter.field("register_new_baseline", &self.register_new_baseline);
+        formatter.finish()
+    }
+}
+/// See [`QualityCheckStepMetadata`](crate::model::QualityCheckStepMetadata)
+pub mod quality_check_step_metadata {
+    /// A builder for [`QualityCheckStepMetadata`](crate::model::QualityCheckStepMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) check_type: std::option::Option<std::string::String>,
+        pub(crate) baseline_used_for_drift_check_statistics:
+            std::option::Option<std::string::String>,
+        pub(crate) baseline_used_for_drift_check_constraints:
+            std::option::Option<std::string::String>,
+        pub(crate) calculated_baseline_statistics: std::option::Option<std::string::String>,
+        pub(crate) calculated_baseline_constraints: std::option::Option<std::string::String>,
+        pub(crate) model_package_group_name: std::option::Option<std::string::String>,
+        pub(crate) violation_report: std::option::Option<std::string::String>,
+        pub(crate) check_job_arn: std::option::Option<std::string::String>,
+        pub(crate) skip_check: std::option::Option<bool>,
+        pub(crate) register_new_baseline: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The type of the Quality check step.</p>
+        pub fn check_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.check_type = Some(input.into());
+            self
+        }
+        /// <p>The type of the Quality check step.</p>
+        pub fn set_check_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.check_type = input;
+            self
+        }
+        /// <p>The Amazon S3 URI of the baseline statistics file used for the drift check.</p>
+        pub fn baseline_used_for_drift_check_statistics(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.baseline_used_for_drift_check_statistics = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI of the baseline statistics file used for the drift check.</p>
+        pub fn set_baseline_used_for_drift_check_statistics(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.baseline_used_for_drift_check_statistics = input;
+            self
+        }
+        /// <p>The Amazon S3 URI of the baseline constraints file used for the drift check.</p>
+        pub fn baseline_used_for_drift_check_constraints(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.baseline_used_for_drift_check_constraints = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI of the baseline constraints file used for the drift check.</p>
+        pub fn set_baseline_used_for_drift_check_constraints(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.baseline_used_for_drift_check_constraints = input;
+            self
+        }
+        /// <p>The Amazon S3 URI of the newly calculated baseline statistics file.</p>
+        pub fn calculated_baseline_statistics(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.calculated_baseline_statistics = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI of the newly calculated baseline statistics file.</p>
+        pub fn set_calculated_baseline_statistics(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculated_baseline_statistics = input;
+            self
+        }
+        /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+        pub fn calculated_baseline_constraints(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.calculated_baseline_constraints = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+        pub fn set_calculated_baseline_constraints(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculated_baseline_constraints = input;
+            self
+        }
+        /// <p>The model package group name.</p>
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_package_group_name = Some(input.into());
+            self
+        }
+        /// <p>The model package group name.</p>
+        pub fn set_model_package_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_package_group_name = input;
+            self
+        }
+        /// <p>The Amazon S3 URI of violation report if violations are detected.</p>
+        pub fn violation_report(mut self, input: impl Into<std::string::String>) -> Self {
+            self.violation_report = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URI of violation report if violations are detected.</p>
+        pub fn set_violation_report(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.violation_report = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Quality check processing job that was run by this step execution.</p>
+        pub fn check_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.check_job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Quality check processing job that was run by this step execution.</p>
+        pub fn set_check_job_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.check_job_arn = input;
+            self
+        }
+        /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not.
+        /// If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+        pub fn skip_check(mut self, input: bool) -> Self {
+            self.skip_check = Some(input);
+            self
+        }
+        /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not.
+        /// If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+        pub fn set_skip_check(mut self, input: std::option::Option<bool>) -> Self {
+            self.skip_check = input;
+            self
+        }
+        /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties
+        /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
+        /// If it is set to <code>False</code>, the previous baseline of the configured check type must also be available.
+        /// These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code>
+        /// BaselineUsedForDriftCheckStatistics</code> properties. </p>
+        pub fn register_new_baseline(mut self, input: bool) -> Self {
+            self.register_new_baseline = Some(input);
+            self
+        }
+        /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties
+        /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
+        /// If it is set to <code>False</code>, the previous baseline of the configured check type must also be available.
+        /// These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code>
+        /// BaselineUsedForDriftCheckStatistics</code> properties. </p>
+        pub fn set_register_new_baseline(mut self, input: std::option::Option<bool>) -> Self {
+            self.register_new_baseline = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QualityCheckStepMetadata`](crate::model::QualityCheckStepMetadata)
+        pub fn build(self) -> crate::model::QualityCheckStepMetadata {
+            crate::model::QualityCheckStepMetadata {
+                check_type: self.check_type,
+                baseline_used_for_drift_check_statistics: self
+                    .baseline_used_for_drift_check_statistics,
+                baseline_used_for_drift_check_constraints: self
+                    .baseline_used_for_drift_check_constraints,
+                calculated_baseline_statistics: self.calculated_baseline_statistics,
+                calculated_baseline_constraints: self.calculated_baseline_constraints,
+                model_package_group_name: self.model_package_group_name,
+                violation_report: self.violation_report,
+                check_job_arn: self.check_job_arn,
+                skip_check: self.skip_check.unwrap_or_default(),
+                register_new_baseline: self.register_new_baseline.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl QualityCheckStepMetadata {
+    /// Creates a new builder-style object to manufacture [`QualityCheckStepMetadata`](crate::model::QualityCheckStepMetadata)
+    pub fn builder() -> crate::model::quality_check_step_metadata::Builder {
+        crate::model::quality_check_step_metadata::Builder::default()
     }
 }
 
@@ -41445,6 +44212,542 @@ impl AsRef<str> for ModelPackageGroupSortBy {
     }
 }
 
+/// <p>A summary of the model metadata.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelMetadataSummary {
+    /// <p>The machine learning domain of the model.</p>
+    pub domain: std::option::Option<std::string::String>,
+    /// <p>The machine learning framework of the model.</p>
+    pub framework: std::option::Option<std::string::String>,
+    /// <p>The machine learning task of the model.</p>
+    pub task: std::option::Option<std::string::String>,
+    /// <p>The name of the model.</p>
+    pub model: std::option::Option<std::string::String>,
+    /// <p>The framework version of the model.</p>
+    pub framework_version: std::option::Option<std::string::String>,
+}
+impl ModelMetadataSummary {
+    /// <p>The machine learning domain of the model.</p>
+    pub fn domain(&self) -> std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The machine learning framework of the model.</p>
+    pub fn framework(&self) -> std::option::Option<&str> {
+        self.framework.as_deref()
+    }
+    /// <p>The machine learning task of the model.</p>
+    pub fn task(&self) -> std::option::Option<&str> {
+        self.task.as_deref()
+    }
+    /// <p>The name of the model.</p>
+    pub fn model(&self) -> std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The framework version of the model.</p>
+    pub fn framework_version(&self) -> std::option::Option<&str> {
+        self.framework_version.as_deref()
+    }
+}
+impl std::fmt::Debug for ModelMetadataSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelMetadataSummary");
+        formatter.field("domain", &self.domain);
+        formatter.field("framework", &self.framework);
+        formatter.field("task", &self.task);
+        formatter.field("model", &self.model);
+        formatter.field("framework_version", &self.framework_version);
+        formatter.finish()
+    }
+}
+/// See [`ModelMetadataSummary`](crate::model::ModelMetadataSummary)
+pub mod model_metadata_summary {
+    /// A builder for [`ModelMetadataSummary`](crate::model::ModelMetadataSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain: std::option::Option<std::string::String>,
+        pub(crate) framework: std::option::Option<std::string::String>,
+        pub(crate) task: std::option::Option<std::string::String>,
+        pub(crate) model: std::option::Option<std::string::String>,
+        pub(crate) framework_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The machine learning domain of the model.</p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
+            self
+        }
+        /// <p>The machine learning domain of the model.</p>
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
+            self
+        }
+        /// <p>The machine learning framework of the model.</p>
+        pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.framework = Some(input.into());
+            self
+        }
+        /// <p>The machine learning framework of the model.</p>
+        pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.framework = input;
+            self
+        }
+        /// <p>The machine learning task of the model.</p>
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task = Some(input.into());
+            self
+        }
+        /// <p>The machine learning task of the model.</p>
+        pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task = input;
+            self
+        }
+        /// <p>The name of the model.</p>
+        pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model = Some(input.into());
+            self
+        }
+        /// <p>The name of the model.</p>
+        pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model = input;
+            self
+        }
+        /// <p>The framework version of the model.</p>
+        pub fn framework_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.framework_version = Some(input.into());
+            self
+        }
+        /// <p>The framework version of the model.</p>
+        pub fn set_framework_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.framework_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelMetadataSummary`](crate::model::ModelMetadataSummary)
+        pub fn build(self) -> crate::model::ModelMetadataSummary {
+            crate::model::ModelMetadataSummary {
+                domain: self.domain,
+                framework: self.framework,
+                task: self.task,
+                model: self.model,
+                framework_version: self.framework_version,
+            }
+        }
+    }
+}
+impl ModelMetadataSummary {
+    /// Creates a new builder-style object to manufacture [`ModelMetadataSummary`](crate::model::ModelMetadataSummary)
+    pub fn builder() -> crate::model::model_metadata_summary::Builder {
+        crate::model::model_metadata_summary::Builder::default()
+    }
+}
+
+/// <p>One or more filters that searches for the specified resource or resources in
+/// a search. All resource objects that satisfy the expression's condition are
+/// included in the search results</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelMetadataSearchExpression {
+    /// <p>A list of filter objects.</p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::ModelMetadataFilter>>,
+}
+impl ModelMetadataSearchExpression {
+    /// <p>A list of filter objects.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::ModelMetadataFilter]> {
+        self.filters.as_deref()
+    }
+}
+impl std::fmt::Debug for ModelMetadataSearchExpression {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelMetadataSearchExpression");
+        formatter.field("filters", &self.filters);
+        formatter.finish()
+    }
+}
+/// See [`ModelMetadataSearchExpression`](crate::model::ModelMetadataSearchExpression)
+pub mod model_metadata_search_expression {
+    /// A builder for [`ModelMetadataSearchExpression`](crate::model::ModelMetadataSearchExpression)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ModelMetadataFilter>>,
+    }
+    impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>A list of filter objects.</p>
+        pub fn filters(mut self, input: impl Into<crate::model::ModelMetadataFilter>) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input.into());
+            self.filters = Some(v);
+            self
+        }
+        /// <p>A list of filter objects.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelMetadataFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelMetadataSearchExpression`](crate::model::ModelMetadataSearchExpression)
+        pub fn build(self) -> crate::model::ModelMetadataSearchExpression {
+            crate::model::ModelMetadataSearchExpression {
+                filters: self.filters,
+            }
+        }
+    }
+}
+impl ModelMetadataSearchExpression {
+    /// Creates a new builder-style object to manufacture [`ModelMetadataSearchExpression`](crate::model::ModelMetadataSearchExpression)
+    pub fn builder() -> crate::model::model_metadata_search_expression::Builder {
+        crate::model::model_metadata_search_expression::Builder::default()
+    }
+}
+
+/// <p>Part of the search expression. You can specify the name and value
+/// (domain, task, framework, framework version, task, and model).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelMetadataFilter {
+    /// <p>The name of the of the model to filter by.</p>
+    pub name: std::option::Option<crate::model::ModelMetadataFilterType>,
+    /// <p>The value to filter the model metadata.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl ModelMetadataFilter {
+    /// <p>The name of the of the model to filter by.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::ModelMetadataFilterType> {
+        self.name.as_ref()
+    }
+    /// <p>The value to filter the model metadata.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for ModelMetadataFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelMetadataFilter");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`ModelMetadataFilter`](crate::model::ModelMetadataFilter)
+pub mod model_metadata_filter {
+    /// A builder for [`ModelMetadataFilter`](crate::model::ModelMetadataFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::ModelMetadataFilterType>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the of the model to filter by.</p>
+        pub fn name(mut self, input: crate::model::ModelMetadataFilterType) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p>The name of the of the model to filter by.</p>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::ModelMetadataFilterType>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The value to filter the model metadata.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value to filter the model metadata.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelMetadataFilter`](crate::model::ModelMetadataFilter)
+        pub fn build(self) -> crate::model::ModelMetadataFilter {
+            crate::model::ModelMetadataFilter {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl ModelMetadataFilter {
+    /// Creates a new builder-style object to manufacture [`ModelMetadataFilter`](crate::model::ModelMetadataFilter)
+    pub fn builder() -> crate::model::model_metadata_filter::Builder {
+        crate::model::model_metadata_filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ModelMetadataFilterType {
+    #[allow(missing_docs)] // documentation missing in model
+    Domain,
+    #[allow(missing_docs)] // documentation missing in model
+    Framework,
+    #[allow(missing_docs)] // documentation missing in model
+    Frameworkversion,
+    #[allow(missing_docs)] // documentation missing in model
+    Task,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ModelMetadataFilterType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Domain" => ModelMetadataFilterType::Domain,
+            "Framework" => ModelMetadataFilterType::Framework,
+            "FrameworkVersion" => ModelMetadataFilterType::Frameworkversion,
+            "Task" => ModelMetadataFilterType::Task,
+            other => ModelMetadataFilterType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ModelMetadataFilterType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ModelMetadataFilterType::from(s))
+    }
+}
+impl ModelMetadataFilterType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ModelMetadataFilterType::Domain => "Domain",
+            ModelMetadataFilterType::Framework => "Framework",
+            ModelMetadataFilterType::Frameworkversion => "FrameworkVersion",
+            ModelMetadataFilterType::Task => "Task",
+            ModelMetadataFilterType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Domain", "Framework", "FrameworkVersion", "Task"]
+    }
+}
+impl AsRef<str> for ModelMetadataFilterType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Lists a summary of the properties of a lineage group. A lineage group provides a group of shareable lineage entity
+/// resources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LineageGroupSummary {
+    /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+    pub lineage_group_arn: std::option::Option<std::string::String>,
+    /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    pub lineage_group_name: std::option::Option<std::string::String>,
+    /// <p>The display name of the lineage group summary.</p>
+    pub display_name: std::option::Option<std::string::String>,
+    /// <p>The creation time of the lineage group summary.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The last modified time of the lineage group summary.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl LineageGroupSummary {
+    /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+        self.lineage_group_arn.as_deref()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn lineage_group_name(&self) -> std::option::Option<&str> {
+        self.lineage_group_name.as_deref()
+    }
+    /// <p>The display name of the lineage group summary.</p>
+    pub fn display_name(&self) -> std::option::Option<&str> {
+        self.display_name.as_deref()
+    }
+    /// <p>The creation time of the lineage group summary.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>The last modified time of the lineage group summary.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+}
+impl std::fmt::Debug for LineageGroupSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LineageGroupSummary");
+        formatter.field("lineage_group_arn", &self.lineage_group_arn);
+        formatter.field("lineage_group_name", &self.lineage_group_name);
+        formatter.field("display_name", &self.display_name);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.finish()
+    }
+}
+/// See [`LineageGroupSummary`](crate::model::LineageGroupSummary)
+pub mod lineage_group_summary {
+    /// A builder for [`LineageGroupSummary`](crate::model::LineageGroupSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
+        pub(crate) lineage_group_name: std::option::Option<std::string::String>,
+        pub(crate) display_name: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+        pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+        pub fn set_lineage_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_arn = input;
+            self
+        }
+        /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn lineage_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lineage_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+        pub fn set_lineage_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.lineage_group_name = input;
+            self
+        }
+        /// <p>The display name of the lineage group summary.</p>
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
+            self
+        }
+        /// <p>The display name of the lineage group summary.</p>
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
+            self
+        }
+        /// <p>The creation time of the lineage group summary.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The creation time of the lineage group summary.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>The last modified time of the lineage group summary.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The last modified time of the lineage group summary.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LineageGroupSummary`](crate::model::LineageGroupSummary)
+        pub fn build(self) -> crate::model::LineageGroupSummary {
+            crate::model::LineageGroupSummary {
+                lineage_group_arn: self.lineage_group_arn,
+                lineage_group_name: self.lineage_group_name,
+                display_name: self.display_name,
+                creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+            }
+        }
+    }
+}
+impl LineageGroupSummary {
+    /// Creates a new builder-style object to manufacture [`LineageGroupSummary`](crate::model::LineageGroupSummary)
+    pub fn builder() -> crate::model::lineage_group_summary::Builder {
+        crate::model::lineage_group_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortLineageGroupsBy {
+    #[allow(missing_docs)] // documentation missing in model
+    CreationTime,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SortLineageGroupsBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "CreationTime" => SortLineageGroupsBy::CreationTime,
+            "Name" => SortLineageGroupsBy::Name,
+            other => SortLineageGroupsBy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SortLineageGroupsBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortLineageGroupsBy::from(s))
+    }
+}
+impl SortLineageGroupsBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortLineageGroupsBy::CreationTime => "CreationTime",
+            SortLineageGroupsBy::Name => "Name",
+            SortLineageGroupsBy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
+    }
+}
+impl AsRef<str> for SortLineageGroupsBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Provides summary information for a work team.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -42878,6 +46181,448 @@ impl LabelingJobStatus {
     }
 }
 impl AsRef<str> for LabelingJobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A structure that contains a list of recommendation jobs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InferenceRecommendationsJob {
+    /// <p>The name of the job.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The job description.</p>
+    pub job_description: std::option::Option<std::string::String>,
+    /// <p>The recommendation job type.</p>
+    pub job_type: std::option::Option<crate::model::RecommendationJobType>,
+    /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+    pub job_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the job.</p>
+    pub status: std::option::Option<crate::model::RecommendationJobStatus>,
+    /// <p>A timestamp that shows when the job was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp that shows when the job completed.</p>
+    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+    /// to perform tasks on your behalf.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>A timestamp that shows when the job was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>If the job fails, provides information why the job failed.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl InferenceRecommendationsJob {
+    /// <p>The name of the job.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The job description.</p>
+    pub fn job_description(&self) -> std::option::Option<&str> {
+        self.job_description.as_deref()
+    }
+    /// <p>The recommendation job type.</p>
+    pub fn job_type(&self) -> std::option::Option<&crate::model::RecommendationJobType> {
+        self.job_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+    pub fn job_arn(&self) -> std::option::Option<&str> {
+        self.job_arn.as_deref()
+    }
+    /// <p>The status of the job.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::RecommendationJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A timestamp that shows when the job was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>A timestamp that shows when the job completed.</p>
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.completion_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+    /// to perform tasks on your behalf.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>A timestamp that shows when the job was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>If the job fails, provides information why the job failed.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for InferenceRecommendationsJob {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InferenceRecommendationsJob");
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_description", &self.job_description);
+        formatter.field("job_type", &self.job_type);
+        formatter.field("job_arn", &self.job_arn);
+        formatter.field("status", &self.status);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("completion_time", &self.completion_time);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`InferenceRecommendationsJob`](crate::model::InferenceRecommendationsJob)
+pub mod inference_recommendations_job {
+    /// A builder for [`InferenceRecommendationsJob`](crate::model::InferenceRecommendationsJob)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_description: std::option::Option<std::string::String>,
+        pub(crate) job_type: std::option::Option<crate::model::RecommendationJobType>,
+        pub(crate) job_arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::RecommendationJobStatus>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the job.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the job.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The job description.</p>
+        pub fn job_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_description = Some(input.into());
+            self
+        }
+        /// <p>The job description.</p>
+        pub fn set_job_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.job_description = input;
+            self
+        }
+        /// <p>The recommendation job type.</p>
+        pub fn job_type(mut self, input: crate::model::RecommendationJobType) -> Self {
+            self.job_type = Some(input);
+            self
+        }
+        /// <p>The recommendation job type.</p>
+        pub fn set_job_type(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobType>,
+        ) -> Self {
+            self.job_type = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+        pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_arn = input;
+            self
+        }
+        /// <p>The status of the job.</p>
+        pub fn status(mut self, input: crate::model::RecommendationJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the job.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A timestamp that shows when the job was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>A timestamp that shows when the job was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>A timestamp that shows when the job completed.</p>
+        pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.completion_time = Some(input);
+            self
+        }
+        /// <p>A timestamp that shows when the job completed.</p>
+        pub fn set_completion_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.completion_time = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+        /// to perform tasks on your behalf.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+        /// to perform tasks on your behalf.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>A timestamp that shows when the job was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>A timestamp that shows when the job was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>If the job fails, provides information why the job failed.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>If the job fails, provides information why the job failed.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InferenceRecommendationsJob`](crate::model::InferenceRecommendationsJob)
+        pub fn build(self) -> crate::model::InferenceRecommendationsJob {
+            crate::model::InferenceRecommendationsJob {
+                job_name: self.job_name,
+                job_description: self.job_description,
+                job_type: self.job_type,
+                job_arn: self.job_arn,
+                status: self.status,
+                creation_time: self.creation_time,
+                completion_time: self.completion_time,
+                role_arn: self.role_arn,
+                last_modified_time: self.last_modified_time,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl InferenceRecommendationsJob {
+    /// Creates a new builder-style object to manufacture [`InferenceRecommendationsJob`](crate::model::InferenceRecommendationsJob)
+    pub fn builder() -> crate::model::inference_recommendations_job::Builder {
+        crate::model::inference_recommendations_job::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecommendationJobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => RecommendationJobStatus::Completed,
+            "FAILED" => RecommendationJobStatus::Failed,
+            "IN_PROGRESS" => RecommendationJobStatus::InProgress,
+            "PENDING" => RecommendationJobStatus::Pending,
+            "STOPPED" => RecommendationJobStatus::Stopped,
+            "STOPPING" => RecommendationJobStatus::Stopping,
+            other => RecommendationJobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecommendationJobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationJobStatus::from(s))
+    }
+}
+impl RecommendationJobStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationJobStatus::Completed => "COMPLETED",
+            RecommendationJobStatus::Failed => "FAILED",
+            RecommendationJobStatus::InProgress => "IN_PROGRESS",
+            RecommendationJobStatus::Pending => "PENDING",
+            RecommendationJobStatus::Stopped => "STOPPED",
+            RecommendationJobStatus::Stopping => "STOPPING",
+            RecommendationJobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "FAILED",
+            "IN_PROGRESS",
+            "PENDING",
+            "STOPPED",
+            "STOPPING",
+        ]
+    }
+}
+impl AsRef<str> for RecommendationJobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RecommendationJobType {
+    #[allow(missing_docs)] // documentation missing in model
+    Advanced,
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RecommendationJobType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Advanced" => RecommendationJobType::Advanced,
+            "Default" => RecommendationJobType::Default,
+            other => RecommendationJobType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RecommendationJobType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RecommendationJobType::from(s))
+    }
+}
+impl RecommendationJobType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RecommendationJobType::Advanced => "Advanced",
+            RecommendationJobType::Default => "Default",
+            RecommendationJobType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Advanced", "Default"]
+    }
+}
+impl AsRef<str> for RecommendationJobType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListInferenceRecommendationsJobsSortBy {
+    #[allow(missing_docs)] // documentation missing in model
+    CreationTime,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    #[allow(missing_docs)] // documentation missing in model
+    Status,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ListInferenceRecommendationsJobsSortBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "CreationTime" => ListInferenceRecommendationsJobsSortBy::CreationTime,
+            "Name" => ListInferenceRecommendationsJobsSortBy::Name,
+            "Status" => ListInferenceRecommendationsJobsSortBy::Status,
+            other => ListInferenceRecommendationsJobsSortBy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ListInferenceRecommendationsJobsSortBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListInferenceRecommendationsJobsSortBy::from(s))
+    }
+}
+impl ListInferenceRecommendationsJobsSortBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListInferenceRecommendationsJobsSortBy::CreationTime => "CreationTime",
+            ListInferenceRecommendationsJobsSortBy::Name => "Name",
+            ListInferenceRecommendationsJobsSortBy::Status => "Status",
+            ListInferenceRecommendationsJobsSortBy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
+    }
+}
+impl AsRef<str> for ListInferenceRecommendationsJobsSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -50495,7 +54240,7 @@ pub struct AssociationSummary {
     /// <p>When the association was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
 }
 impl AssociationSummary {
@@ -50532,7 +54277,7 @@ impl AssociationSummary {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial
-    /// component, or project.</p>
+    /// component, lineage group, or project.</p>
     pub fn created_by(&self) -> std::option::Option<&crate::model::UserContext> {
         self.created_by.as_ref()
     }
@@ -50665,13 +54410,13 @@ pub mod association_summary {
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
         }
         /// <p>Information about the user who created or modified an experiment, trial, trial
-        /// component, or project.</p>
+        /// component, lineage group, or project.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::UserContext>,
@@ -50699,69 +54444,6 @@ impl AssociationSummary {
     /// Creates a new builder-style object to manufacture [`AssociationSummary`](crate::model::AssociationSummary)
     pub fn builder() -> crate::model::association_summary::Builder {
         crate::model::association_summary::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum AssociationEdgeType {
-    #[allow(missing_docs)] // documentation missing in model
-    AssociatedWith,
-    #[allow(missing_docs)] // documentation missing in model
-    ContributedTo,
-    #[allow(missing_docs)] // documentation missing in model
-    DerivedFrom,
-    #[allow(missing_docs)] // documentation missing in model
-    Produced,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for AssociationEdgeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AssociatedWith" => AssociationEdgeType::AssociatedWith,
-            "ContributedTo" => AssociationEdgeType::ContributedTo,
-            "DerivedFrom" => AssociationEdgeType::DerivedFrom,
-            "Produced" => AssociationEdgeType::Produced,
-            other => AssociationEdgeType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for AssociationEdgeType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssociationEdgeType::from(s))
-    }
-}
-impl AssociationEdgeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AssociationEdgeType::AssociatedWith => "AssociatedWith",
-            AssociationEdgeType::ContributedTo => "ContributedTo",
-            AssociationEdgeType::DerivedFrom => "DerivedFrom",
-            AssociationEdgeType::Produced => "Produced",
-            AssociationEdgeType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["AssociatedWith", "ContributedTo", "DerivedFrom", "Produced"]
-    }
-}
-impl AsRef<str> for AssociationEdgeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -54802,6 +58484,8 @@ pub struct ContainerDefinition {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the
     /// model.</p>
     pub model_package_name: std::option::Option<std::string::String>,
+    /// <p>The inference specification name in the model package version.</p>
+    pub inference_specification_name: std::option::Option<std::string::String>,
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     pub multi_model_config: std::option::Option<crate::model::MultiModelConfig>,
 }
@@ -54881,6 +58565,10 @@ impl ContainerDefinition {
     pub fn model_package_name(&self) -> std::option::Option<&str> {
         self.model_package_name.as_deref()
     }
+    /// <p>The inference specification name in the model package version.</p>
+    pub fn inference_specification_name(&self) -> std::option::Option<&str> {
+        self.inference_specification_name.as_deref()
+    }
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     pub fn multi_model_config(&self) -> std::option::Option<&crate::model::MultiModelConfig> {
         self.multi_model_config.as_ref()
@@ -54896,6 +58584,10 @@ impl std::fmt::Debug for ContainerDefinition {
         formatter.field("model_data_url", &self.model_data_url);
         formatter.field("environment", &self.environment);
         formatter.field("model_package_name", &self.model_package_name);
+        formatter.field(
+            "inference_specification_name",
+            &self.inference_specification_name,
+        );
         formatter.field("multi_model_config", &self.multi_model_config);
         formatter.finish()
     }
@@ -54915,6 +58607,7 @@ pub mod container_definition {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) model_package_name: std::option::Option<std::string::String>,
+        pub(crate) inference_specification_name: std::option::Option<std::string::String>,
         pub(crate) multi_model_config: std::option::Option<crate::model::MultiModelConfig>,
     }
     impl Builder {
@@ -55103,6 +58796,22 @@ pub mod container_definition {
             self.model_package_name = input;
             self
         }
+        /// <p>The inference specification name in the model package version.</p>
+        pub fn inference_specification_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inference_specification_name = Some(input.into());
+            self
+        }
+        /// <p>The inference specification name in the model package version.</p>
+        pub fn set_inference_specification_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_specification_name = input;
+            self
+        }
         /// <p>Specifies additional configuration for multi-model endpoints.</p>
         pub fn multi_model_config(mut self, input: crate::model::MultiModelConfig) -> Self {
             self.multi_model_config = Some(input);
@@ -55126,6 +58835,7 @@ pub mod container_definition {
                 model_data_url: self.model_data_url,
                 environment: self.environment,
                 model_package_name: self.model_package_name,
+                inference_specification_name: self.inference_specification_name,
                 multi_model_config: self.multi_model_config,
             }
         }
@@ -57159,8 +60869,7 @@ pub struct HumanTaskConfig {
     /// the maximum is 8 hours (28,800 seconds).</p>
     /// </li>
     /// <li>
-    /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want to change these limits,
-    /// contact Amazon Web Services Support.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p>
     /// </li>
     /// </ul>
     pub task_time_limit_in_seconds: std::option::Option<i32>,
@@ -57173,8 +60882,7 @@ pub struct HumanTaskConfig {
     /// The default is 6 hours (21,600 seconds).</p>
     /// </li>
     /// <li>
-    /// <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want to
-    /// change this limit, contact Amazon Web Services Support.</p>
+    /// <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p>
     /// </li>
     /// </ul>
     pub task_availability_lifetime_in_seconds: std::option::Option<i32>,
@@ -58750,8 +62458,7 @@ impl HumanTaskConfig {
     /// the maximum is 8 hours (28,800 seconds).</p>
     /// </li>
     /// <li>
-    /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want to change these limits,
-    /// contact Amazon Web Services Support.</p>
+    /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p>
     /// </li>
     /// </ul>
     pub fn task_time_limit_in_seconds(&self) -> std::option::Option<i32> {
@@ -58766,8 +62473,7 @@ impl HumanTaskConfig {
     /// The default is 6 hours (21,600 seconds).</p>
     /// </li>
     /// <li>
-    /// <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want to
-    /// change this limit, contact Amazon Web Services Support.</p>
+    /// <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p>
     /// </li>
     /// </ul>
     pub fn task_availability_lifetime_in_seconds(&self) -> std::option::Option<i32> {
@@ -61989,8 +65695,7 @@ pub mod human_task_config {
         /// the maximum is 8 hours (28,800 seconds).</p>
         /// </li>
         /// <li>
-        /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want to change these limits,
-        /// contact Amazon Web Services Support.</p>
+        /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p>
         /// </li>
         /// </ul>
         pub fn task_time_limit_in_seconds(mut self, input: i32) -> Self {
@@ -62009,8 +65714,7 @@ pub mod human_task_config {
         /// the maximum is 8 hours (28,800 seconds).</p>
         /// </li>
         /// <li>
-        /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want to change these limits,
-        /// contact Amazon Web Services Support.</p>
+        /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p>
         /// </li>
         /// </ul>
         pub fn set_task_time_limit_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -62026,8 +65730,7 @@ pub mod human_task_config {
         /// The default is 6 hours (21,600 seconds).</p>
         /// </li>
         /// <li>
-        /// <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want to
-        /// change this limit, contact Amazon Web Services Support.</p>
+        /// <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p>
         /// </li>
         /// </ul>
         pub fn task_availability_lifetime_in_seconds(mut self, input: i32) -> Self {
@@ -62043,8 +65746,7 @@ pub mod human_task_config {
         /// The default is 6 hours (21,600 seconds).</p>
         /// </li>
         /// <li>
-        /// <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want to
-        /// change this limit, contact Amazon Web Services Support.</p>
+        /// <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p>
         /// </li>
         /// </ul>
         pub fn set_task_availability_lifetime_in_seconds(
@@ -69672,6 +73374,1444 @@ impl LabelingJobOutputConfig {
     }
 }
 
+/// <p>A list of recommendations made by Amazon SageMaker Inference Recommender.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InferenceRecommendation {
+    /// <p>The metrics used to decide what recommendation to make.</p>
+    pub metrics: std::option::Option<crate::model::RecommendationMetrics>,
+    /// <p>Defines the endpoint configuration parameters.</p>
+    pub endpoint_configuration: std::option::Option<crate::model::EndpointOutputConfiguration>,
+    /// <p>Defines the model configuration.</p>
+    pub model_configuration: std::option::Option<crate::model::ModelConfiguration>,
+}
+impl InferenceRecommendation {
+    /// <p>The metrics used to decide what recommendation to make.</p>
+    pub fn metrics(&self) -> std::option::Option<&crate::model::RecommendationMetrics> {
+        self.metrics.as_ref()
+    }
+    /// <p>Defines the endpoint configuration parameters.</p>
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::EndpointOutputConfiguration> {
+        self.endpoint_configuration.as_ref()
+    }
+    /// <p>Defines the model configuration.</p>
+    pub fn model_configuration(&self) -> std::option::Option<&crate::model::ModelConfiguration> {
+        self.model_configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for InferenceRecommendation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InferenceRecommendation");
+        formatter.field("metrics", &self.metrics);
+        formatter.field("endpoint_configuration", &self.endpoint_configuration);
+        formatter.field("model_configuration", &self.model_configuration);
+        formatter.finish()
+    }
+}
+/// See [`InferenceRecommendation`](crate::model::InferenceRecommendation)
+pub mod inference_recommendation {
+    /// A builder for [`InferenceRecommendation`](crate::model::InferenceRecommendation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metrics: std::option::Option<crate::model::RecommendationMetrics>,
+        pub(crate) endpoint_configuration:
+            std::option::Option<crate::model::EndpointOutputConfiguration>,
+        pub(crate) model_configuration: std::option::Option<crate::model::ModelConfiguration>,
+    }
+    impl Builder {
+        /// <p>The metrics used to decide what recommendation to make.</p>
+        pub fn metrics(mut self, input: crate::model::RecommendationMetrics) -> Self {
+            self.metrics = Some(input);
+            self
+        }
+        /// <p>The metrics used to decide what recommendation to make.</p>
+        pub fn set_metrics(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationMetrics>,
+        ) -> Self {
+            self.metrics = input;
+            self
+        }
+        /// <p>Defines the endpoint configuration parameters.</p>
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointOutputConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
+            self
+        }
+        /// <p>Defines the endpoint configuration parameters.</p>
+        pub fn set_endpoint_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EndpointOutputConfiguration>,
+        ) -> Self {
+            self.endpoint_configuration = input;
+            self
+        }
+        /// <p>Defines the model configuration.</p>
+        pub fn model_configuration(mut self, input: crate::model::ModelConfiguration) -> Self {
+            self.model_configuration = Some(input);
+            self
+        }
+        /// <p>Defines the model configuration.</p>
+        pub fn set_model_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ModelConfiguration>,
+        ) -> Self {
+            self.model_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InferenceRecommendation`](crate::model::InferenceRecommendation)
+        pub fn build(self) -> crate::model::InferenceRecommendation {
+            crate::model::InferenceRecommendation {
+                metrics: self.metrics,
+                endpoint_configuration: self.endpoint_configuration,
+                model_configuration: self.model_configuration,
+            }
+        }
+    }
+}
+impl InferenceRecommendation {
+    /// Creates a new builder-style object to manufacture [`InferenceRecommendation`](crate::model::InferenceRecommendation)
+    pub fn builder() -> crate::model::inference_recommendation::Builder {
+        crate::model::inference_recommendation::Builder::default()
+    }
+}
+
+/// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelConfiguration {
+    /// <p>The inference specification name in the model package version.</p>
+    pub inference_specification_name: std::option::Option<std::string::String>,
+    /// <p>Defines the environment parameters that includes key, value types, and values.</p>
+    pub environment_parameters:
+        std::option::Option<std::vec::Vec<crate::model::EnvironmentParameter>>,
+}
+impl ModelConfiguration {
+    /// <p>The inference specification name in the model package version.</p>
+    pub fn inference_specification_name(&self) -> std::option::Option<&str> {
+        self.inference_specification_name.as_deref()
+    }
+    /// <p>Defines the environment parameters that includes key, value types, and values.</p>
+    pub fn environment_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::model::EnvironmentParameter]> {
+        self.environment_parameters.as_deref()
+    }
+}
+impl std::fmt::Debug for ModelConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelConfiguration");
+        formatter.field(
+            "inference_specification_name",
+            &self.inference_specification_name,
+        );
+        formatter.field("environment_parameters", &self.environment_parameters);
+        formatter.finish()
+    }
+}
+/// See [`ModelConfiguration`](crate::model::ModelConfiguration)
+pub mod model_configuration {
+    /// A builder for [`ModelConfiguration`](crate::model::ModelConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inference_specification_name: std::option::Option<std::string::String>,
+        pub(crate) environment_parameters:
+            std::option::Option<std::vec::Vec<crate::model::EnvironmentParameter>>,
+    }
+    impl Builder {
+        /// <p>The inference specification name in the model package version.</p>
+        pub fn inference_specification_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inference_specification_name = Some(input.into());
+            self
+        }
+        /// <p>The inference specification name in the model package version.</p>
+        pub fn set_inference_specification_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_specification_name = input;
+            self
+        }
+        /// Appends an item to `environment_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_environment_parameters`](Self::set_environment_parameters).
+        ///
+        /// <p>Defines the environment parameters that includes key, value types, and values.</p>
+        pub fn environment_parameters(
+            mut self,
+            input: impl Into<crate::model::EnvironmentParameter>,
+        ) -> Self {
+            let mut v = self.environment_parameters.unwrap_or_default();
+            v.push(input.into());
+            self.environment_parameters = Some(v);
+            self
+        }
+        /// <p>Defines the environment parameters that includes key, value types, and values.</p>
+        pub fn set_environment_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EnvironmentParameter>>,
+        ) -> Self {
+            self.environment_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelConfiguration`](crate::model::ModelConfiguration)
+        pub fn build(self) -> crate::model::ModelConfiguration {
+            crate::model::ModelConfiguration {
+                inference_specification_name: self.inference_specification_name,
+                environment_parameters: self.environment_parameters,
+            }
+        }
+    }
+}
+impl ModelConfiguration {
+    /// Creates a new builder-style object to manufacture [`ModelConfiguration`](crate::model::ModelConfiguration)
+    pub fn builder() -> crate::model::model_configuration::Builder {
+        crate::model::model_configuration::Builder::default()
+    }
+}
+
+/// <p>A list of environment parameters suggested by the Amazon SageMaker Inference Recommender.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnvironmentParameter {
+    /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub value_type: std::option::Option<std::string::String>,
+    /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl EnvironmentParameter {
+    /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn value_type(&self) -> std::option::Option<&str> {
+        self.value_type.as_deref()
+    }
+    /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for EnvironmentParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnvironmentParameter");
+        formatter.field("key", &self.key);
+        formatter.field("value_type", &self.value_type);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`EnvironmentParameter`](crate::model::EnvironmentParameter)
+pub mod environment_parameter {
+    /// A builder for [`EnvironmentParameter`](crate::model::EnvironmentParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value_type: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
+        pub fn value_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value_type = Some(input.into());
+            self
+        }
+        /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
+        pub fn set_value_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value_type = input;
+            self
+        }
+        /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnvironmentParameter`](crate::model::EnvironmentParameter)
+        pub fn build(self) -> crate::model::EnvironmentParameter {
+            crate::model::EnvironmentParameter {
+                key: self.key,
+                value_type: self.value_type,
+                value: self.value,
+            }
+        }
+    }
+}
+impl EnvironmentParameter {
+    /// Creates a new builder-style object to manufacture [`EnvironmentParameter`](crate::model::EnvironmentParameter)
+    pub fn builder() -> crate::model::environment_parameter::Builder {
+        crate::model::environment_parameter::Builder::default()
+    }
+}
+
+/// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EndpointOutputConfiguration {
+    /// <p>The name of the endpoint made during a recommendation job.</p>
+    pub endpoint_name: std::option::Option<std::string::String>,
+    /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
+    pub variant_name: std::option::Option<std::string::String>,
+    /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
+    pub instance_type: std::option::Option<crate::model::ProductionVariantInstanceType>,
+    /// <p>The number of instances recommended to launch initially.</p>
+    pub initial_instance_count: i32,
+}
+impl EndpointOutputConfiguration {
+    /// <p>The name of the endpoint made during a recommendation job.</p>
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+        self.endpoint_name.as_deref()
+    }
+    /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
+    pub fn variant_name(&self) -> std::option::Option<&str> {
+        self.variant_name.as_deref()
+    }
+    /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
+    pub fn instance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ProductionVariantInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The number of instances recommended to launch initially.</p>
+    pub fn initial_instance_count(&self) -> i32 {
+        self.initial_instance_count
+    }
+}
+impl std::fmt::Debug for EndpointOutputConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EndpointOutputConfiguration");
+        formatter.field("endpoint_name", &self.endpoint_name);
+        formatter.field("variant_name", &self.variant_name);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("initial_instance_count", &self.initial_instance_count);
+        formatter.finish()
+    }
+}
+/// See [`EndpointOutputConfiguration`](crate::model::EndpointOutputConfiguration)
+pub mod endpoint_output_configuration {
+    /// A builder for [`EndpointOutputConfiguration`](crate::model::EndpointOutputConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint_name: std::option::Option<std::string::String>,
+        pub(crate) variant_name: std::option::Option<std::string::String>,
+        pub(crate) instance_type: std::option::Option<crate::model::ProductionVariantInstanceType>,
+        pub(crate) initial_instance_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint made during a recommendation job.</p>
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the endpoint made during a recommendation job.</p>
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_name = input;
+            self
+        }
+        /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
+        pub fn variant_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.variant_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
+        pub fn set_variant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.variant_name = input;
+            self
+        }
+        /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
+        pub fn instance_type(mut self, input: crate::model::ProductionVariantInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::ProductionVariantInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The number of instances recommended to launch initially.</p>
+        pub fn initial_instance_count(mut self, input: i32) -> Self {
+            self.initial_instance_count = Some(input);
+            self
+        }
+        /// <p>The number of instances recommended to launch initially.</p>
+        pub fn set_initial_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.initial_instance_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EndpointOutputConfiguration`](crate::model::EndpointOutputConfiguration)
+        pub fn build(self) -> crate::model::EndpointOutputConfiguration {
+            crate::model::EndpointOutputConfiguration {
+                endpoint_name: self.endpoint_name,
+                variant_name: self.variant_name,
+                instance_type: self.instance_type,
+                initial_instance_count: self.initial_instance_count.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl EndpointOutputConfiguration {
+    /// Creates a new builder-style object to manufacture [`EndpointOutputConfiguration`](crate::model::EndpointOutputConfiguration)
+    pub fn builder() -> crate::model::endpoint_output_configuration::Builder {
+        crate::model::endpoint_output_configuration::Builder::default()
+    }
+}
+
+/// <p>The metrics of recommendations.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationMetrics {
+    /// <p>Defines the cost per hour for the instance. </p>
+    pub cost_per_hour: f32,
+    /// <p>Defines the cost per inference for the instance .</p>
+    pub cost_per_inference: f32,
+    /// <p>The expected maximum number of requests per minute for the instance.</p>
+    pub max_invocations: i32,
+    /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
+    pub model_latency: i32,
+}
+impl RecommendationMetrics {
+    /// <p>Defines the cost per hour for the instance. </p>
+    pub fn cost_per_hour(&self) -> f32 {
+        self.cost_per_hour
+    }
+    /// <p>Defines the cost per inference for the instance .</p>
+    pub fn cost_per_inference(&self) -> f32 {
+        self.cost_per_inference
+    }
+    /// <p>The expected maximum number of requests per minute for the instance.</p>
+    pub fn max_invocations(&self) -> i32 {
+        self.max_invocations
+    }
+    /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
+    pub fn model_latency(&self) -> i32 {
+        self.model_latency
+    }
+}
+impl std::fmt::Debug for RecommendationMetrics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationMetrics");
+        formatter.field("cost_per_hour", &self.cost_per_hour);
+        formatter.field("cost_per_inference", &self.cost_per_inference);
+        formatter.field("max_invocations", &self.max_invocations);
+        formatter.field("model_latency", &self.model_latency);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationMetrics`](crate::model::RecommendationMetrics)
+pub mod recommendation_metrics {
+    /// A builder for [`RecommendationMetrics`](crate::model::RecommendationMetrics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cost_per_hour: std::option::Option<f32>,
+        pub(crate) cost_per_inference: std::option::Option<f32>,
+        pub(crate) max_invocations: std::option::Option<i32>,
+        pub(crate) model_latency: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Defines the cost per hour for the instance. </p>
+        pub fn cost_per_hour(mut self, input: f32) -> Self {
+            self.cost_per_hour = Some(input);
+            self
+        }
+        /// <p>Defines the cost per hour for the instance. </p>
+        pub fn set_cost_per_hour(mut self, input: std::option::Option<f32>) -> Self {
+            self.cost_per_hour = input;
+            self
+        }
+        /// <p>Defines the cost per inference for the instance .</p>
+        pub fn cost_per_inference(mut self, input: f32) -> Self {
+            self.cost_per_inference = Some(input);
+            self
+        }
+        /// <p>Defines the cost per inference for the instance .</p>
+        pub fn set_cost_per_inference(mut self, input: std::option::Option<f32>) -> Self {
+            self.cost_per_inference = input;
+            self
+        }
+        /// <p>The expected maximum number of requests per minute for the instance.</p>
+        pub fn max_invocations(mut self, input: i32) -> Self {
+            self.max_invocations = Some(input);
+            self
+        }
+        /// <p>The expected maximum number of requests per minute for the instance.</p>
+        pub fn set_max_invocations(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_invocations = input;
+            self
+        }
+        /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
+        pub fn model_latency(mut self, input: i32) -> Self {
+            self.model_latency = Some(input);
+            self
+        }
+        /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
+        pub fn set_model_latency(mut self, input: std::option::Option<i32>) -> Self {
+            self.model_latency = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationMetrics`](crate::model::RecommendationMetrics)
+        pub fn build(self) -> crate::model::RecommendationMetrics {
+            crate::model::RecommendationMetrics {
+                cost_per_hour: self.cost_per_hour.unwrap_or_default(),
+                cost_per_inference: self.cost_per_inference.unwrap_or_default(),
+                max_invocations: self.max_invocations.unwrap_or_default(),
+                model_latency: self.model_latency.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl RecommendationMetrics {
+    /// Creates a new builder-style object to manufacture [`RecommendationMetrics`](crate::model::RecommendationMetrics)
+    pub fn builder() -> crate::model::recommendation_metrics::Builder {
+        crate::model::recommendation_metrics::Builder::default()
+    }
+}
+
+/// <p>Specifies conditions for stopping a job. When a job reaches a
+/// stopping condition limit, SageMaker ends the job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationJobStoppingConditions {
+    /// <p>The maximum number of requests per minute expected for the endpoint.</p>
+    pub max_invocations: i32,
+    /// <p>The interval of time taken by a model to respond as viewed from SageMaker.
+    /// The interval includes the local communication time taken to send the request
+    /// and to fetch the response from the container of a model and the time taken to
+    /// complete the inference in the container.</p>
+    pub model_latency_thresholds:
+        std::option::Option<std::vec::Vec<crate::model::ModelLatencyThreshold>>,
+}
+impl RecommendationJobStoppingConditions {
+    /// <p>The maximum number of requests per minute expected for the endpoint.</p>
+    pub fn max_invocations(&self) -> i32 {
+        self.max_invocations
+    }
+    /// <p>The interval of time taken by a model to respond as viewed from SageMaker.
+    /// The interval includes the local communication time taken to send the request
+    /// and to fetch the response from the container of a model and the time taken to
+    /// complete the inference in the container.</p>
+    pub fn model_latency_thresholds(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelLatencyThreshold]> {
+        self.model_latency_thresholds.as_deref()
+    }
+}
+impl std::fmt::Debug for RecommendationJobStoppingConditions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationJobStoppingConditions");
+        formatter.field("max_invocations", &self.max_invocations);
+        formatter.field("model_latency_thresholds", &self.model_latency_thresholds);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationJobStoppingConditions`](crate::model::RecommendationJobStoppingConditions)
+pub mod recommendation_job_stopping_conditions {
+    /// A builder for [`RecommendationJobStoppingConditions`](crate::model::RecommendationJobStoppingConditions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_invocations: std::option::Option<i32>,
+        pub(crate) model_latency_thresholds:
+            std::option::Option<std::vec::Vec<crate::model::ModelLatencyThreshold>>,
+    }
+    impl Builder {
+        /// <p>The maximum number of requests per minute expected for the endpoint.</p>
+        pub fn max_invocations(mut self, input: i32) -> Self {
+            self.max_invocations = Some(input);
+            self
+        }
+        /// <p>The maximum number of requests per minute expected for the endpoint.</p>
+        pub fn set_max_invocations(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_invocations = input;
+            self
+        }
+        /// Appends an item to `model_latency_thresholds`.
+        ///
+        /// To override the contents of this collection use [`set_model_latency_thresholds`](Self::set_model_latency_thresholds).
+        ///
+        /// <p>The interval of time taken by a model to respond as viewed from SageMaker.
+        /// The interval includes the local communication time taken to send the request
+        /// and to fetch the response from the container of a model and the time taken to
+        /// complete the inference in the container.</p>
+        pub fn model_latency_thresholds(
+            mut self,
+            input: impl Into<crate::model::ModelLatencyThreshold>,
+        ) -> Self {
+            let mut v = self.model_latency_thresholds.unwrap_or_default();
+            v.push(input.into());
+            self.model_latency_thresholds = Some(v);
+            self
+        }
+        /// <p>The interval of time taken by a model to respond as viewed from SageMaker.
+        /// The interval includes the local communication time taken to send the request
+        /// and to fetch the response from the container of a model and the time taken to
+        /// complete the inference in the container.</p>
+        pub fn set_model_latency_thresholds(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelLatencyThreshold>>,
+        ) -> Self {
+            self.model_latency_thresholds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationJobStoppingConditions`](crate::model::RecommendationJobStoppingConditions)
+        pub fn build(self) -> crate::model::RecommendationJobStoppingConditions {
+            crate::model::RecommendationJobStoppingConditions {
+                max_invocations: self.max_invocations.unwrap_or_default(),
+                model_latency_thresholds: self.model_latency_thresholds,
+            }
+        }
+    }
+}
+impl RecommendationJobStoppingConditions {
+    /// Creates a new builder-style object to manufacture [`RecommendationJobStoppingConditions`](crate::model::RecommendationJobStoppingConditions)
+    pub fn builder() -> crate::model::recommendation_job_stopping_conditions::Builder {
+        crate::model::recommendation_job_stopping_conditions::Builder::default()
+    }
+}
+
+/// <p>The model latency threshold.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelLatencyThreshold {
+    /// <p>The model latency percentile threshold.</p>
+    pub percentile: std::option::Option<std::string::String>,
+    /// <p>The model latency percentile value in milliseconds.</p>
+    pub value_in_milliseconds: i32,
+}
+impl ModelLatencyThreshold {
+    /// <p>The model latency percentile threshold.</p>
+    pub fn percentile(&self) -> std::option::Option<&str> {
+        self.percentile.as_deref()
+    }
+    /// <p>The model latency percentile value in milliseconds.</p>
+    pub fn value_in_milliseconds(&self) -> i32 {
+        self.value_in_milliseconds
+    }
+}
+impl std::fmt::Debug for ModelLatencyThreshold {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelLatencyThreshold");
+        formatter.field("percentile", &self.percentile);
+        formatter.field("value_in_milliseconds", &self.value_in_milliseconds);
+        formatter.finish()
+    }
+}
+/// See [`ModelLatencyThreshold`](crate::model::ModelLatencyThreshold)
+pub mod model_latency_threshold {
+    /// A builder for [`ModelLatencyThreshold`](crate::model::ModelLatencyThreshold)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) percentile: std::option::Option<std::string::String>,
+        pub(crate) value_in_milliseconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The model latency percentile threshold.</p>
+        pub fn percentile(mut self, input: impl Into<std::string::String>) -> Self {
+            self.percentile = Some(input.into());
+            self
+        }
+        /// <p>The model latency percentile threshold.</p>
+        pub fn set_percentile(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.percentile = input;
+            self
+        }
+        /// <p>The model latency percentile value in milliseconds.</p>
+        pub fn value_in_milliseconds(mut self, input: i32) -> Self {
+            self.value_in_milliseconds = Some(input);
+            self
+        }
+        /// <p>The model latency percentile value in milliseconds.</p>
+        pub fn set_value_in_milliseconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.value_in_milliseconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelLatencyThreshold`](crate::model::ModelLatencyThreshold)
+        pub fn build(self) -> crate::model::ModelLatencyThreshold {
+            crate::model::ModelLatencyThreshold {
+                percentile: self.percentile,
+                value_in_milliseconds: self.value_in_milliseconds.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ModelLatencyThreshold {
+    /// Creates a new builder-style object to manufacture [`ModelLatencyThreshold`](crate::model::ModelLatencyThreshold)
+    pub fn builder() -> crate::model::model_latency_threshold::Builder {
+        crate::model::model_latency_threshold::Builder::default()
+    }
+}
+
+/// <p>The input configuration of the recommendation job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationJobInputConfig {
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+    pub model_package_version_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the maximum duration of the job, in seconds.></p>
+    pub job_duration_in_seconds: std::option::Option<i32>,
+    /// <p>Specifies the traffic pattern of the job.</p>
+    pub traffic_pattern: std::option::Option<crate::model::TrafficPattern>,
+    /// <p>Defines the resource limit of the job.</p>
+    pub resource_limit: std::option::Option<crate::model::RecommendationJobResourceLimit>,
+    /// <p>Specifies the endpoint configuration to use for a job.</p>
+    pub endpoint_configurations:
+        std::option::Option<std::vec::Vec<crate::model::EndpointInputConfiguration>>,
+}
+impl RecommendationJobInputConfig {
+    /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+    pub fn model_package_version_arn(&self) -> std::option::Option<&str> {
+        self.model_package_version_arn.as_deref()
+    }
+    /// <p>Specifies the maximum duration of the job, in seconds.></p>
+    pub fn job_duration_in_seconds(&self) -> std::option::Option<i32> {
+        self.job_duration_in_seconds
+    }
+    /// <p>Specifies the traffic pattern of the job.</p>
+    pub fn traffic_pattern(&self) -> std::option::Option<&crate::model::TrafficPattern> {
+        self.traffic_pattern.as_ref()
+    }
+    /// <p>Defines the resource limit of the job.</p>
+    pub fn resource_limit(
+        &self,
+    ) -> std::option::Option<&crate::model::RecommendationJobResourceLimit> {
+        self.resource_limit.as_ref()
+    }
+    /// <p>Specifies the endpoint configuration to use for a job.</p>
+    pub fn endpoint_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::EndpointInputConfiguration]> {
+        self.endpoint_configurations.as_deref()
+    }
+}
+impl std::fmt::Debug for RecommendationJobInputConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationJobInputConfig");
+        formatter.field("model_package_version_arn", &self.model_package_version_arn);
+        formatter.field("job_duration_in_seconds", &self.job_duration_in_seconds);
+        formatter.field("traffic_pattern", &self.traffic_pattern);
+        formatter.field("resource_limit", &self.resource_limit);
+        formatter.field("endpoint_configurations", &self.endpoint_configurations);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationJobInputConfig`](crate::model::RecommendationJobInputConfig)
+pub mod recommendation_job_input_config {
+    /// A builder for [`RecommendationJobInputConfig`](crate::model::RecommendationJobInputConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_package_version_arn: std::option::Option<std::string::String>,
+        pub(crate) job_duration_in_seconds: std::option::Option<i32>,
+        pub(crate) traffic_pattern: std::option::Option<crate::model::TrafficPattern>,
+        pub(crate) resource_limit:
+            std::option::Option<crate::model::RecommendationJobResourceLimit>,
+        pub(crate) endpoint_configurations:
+            std::option::Option<std::vec::Vec<crate::model::EndpointInputConfiguration>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+        pub fn model_package_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_package_version_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+        pub fn set_model_package_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_package_version_arn = input;
+            self
+        }
+        /// <p>Specifies the maximum duration of the job, in seconds.></p>
+        pub fn job_duration_in_seconds(mut self, input: i32) -> Self {
+            self.job_duration_in_seconds = Some(input);
+            self
+        }
+        /// <p>Specifies the maximum duration of the job, in seconds.></p>
+        pub fn set_job_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.job_duration_in_seconds = input;
+            self
+        }
+        /// <p>Specifies the traffic pattern of the job.</p>
+        pub fn traffic_pattern(mut self, input: crate::model::TrafficPattern) -> Self {
+            self.traffic_pattern = Some(input);
+            self
+        }
+        /// <p>Specifies the traffic pattern of the job.</p>
+        pub fn set_traffic_pattern(
+            mut self,
+            input: std::option::Option<crate::model::TrafficPattern>,
+        ) -> Self {
+            self.traffic_pattern = input;
+            self
+        }
+        /// <p>Defines the resource limit of the job.</p>
+        pub fn resource_limit(
+            mut self,
+            input: crate::model::RecommendationJobResourceLimit,
+        ) -> Self {
+            self.resource_limit = Some(input);
+            self
+        }
+        /// <p>Defines the resource limit of the job.</p>
+        pub fn set_resource_limit(
+            mut self,
+            input: std::option::Option<crate::model::RecommendationJobResourceLimit>,
+        ) -> Self {
+            self.resource_limit = input;
+            self
+        }
+        /// Appends an item to `endpoint_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
+        ///
+        /// <p>Specifies the endpoint configuration to use for a job.</p>
+        pub fn endpoint_configurations(
+            mut self,
+            input: impl Into<crate::model::EndpointInputConfiguration>,
+        ) -> Self {
+            let mut v = self.endpoint_configurations.unwrap_or_default();
+            v.push(input.into());
+            self.endpoint_configurations = Some(v);
+            self
+        }
+        /// <p>Specifies the endpoint configuration to use for a job.</p>
+        pub fn set_endpoint_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EndpointInputConfiguration>>,
+        ) -> Self {
+            self.endpoint_configurations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationJobInputConfig`](crate::model::RecommendationJobInputConfig)
+        pub fn build(self) -> crate::model::RecommendationJobInputConfig {
+            crate::model::RecommendationJobInputConfig {
+                model_package_version_arn: self.model_package_version_arn,
+                job_duration_in_seconds: self.job_duration_in_seconds,
+                traffic_pattern: self.traffic_pattern,
+                resource_limit: self.resource_limit,
+                endpoint_configurations: self.endpoint_configurations,
+            }
+        }
+    }
+}
+impl RecommendationJobInputConfig {
+    /// Creates a new builder-style object to manufacture [`RecommendationJobInputConfig`](crate::model::RecommendationJobInputConfig)
+    pub fn builder() -> crate::model::recommendation_job_input_config::Builder {
+        crate::model::recommendation_job_input_config::Builder::default()
+    }
+}
+
+/// <p>The endpoint configuration for the load test.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EndpointInputConfiguration {
+    /// <p>The instance types to use for the load test.</p>
+    pub instance_type: std::option::Option<crate::model::ProductionVariantInstanceType>,
+    /// <p>The inference specification name in the model package version.</p>
+    pub inference_specification_name: std::option::Option<std::string::String>,
+    /// <p> The parameter you want to benchmark against.</p>
+    pub environment_parameter_ranges: std::option::Option<crate::model::EnvironmentParameterRanges>,
+}
+impl EndpointInputConfiguration {
+    /// <p>The instance types to use for the load test.</p>
+    pub fn instance_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ProductionVariantInstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The inference specification name in the model package version.</p>
+    pub fn inference_specification_name(&self) -> std::option::Option<&str> {
+        self.inference_specification_name.as_deref()
+    }
+    /// <p> The parameter you want to benchmark against.</p>
+    pub fn environment_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&crate::model::EnvironmentParameterRanges> {
+        self.environment_parameter_ranges.as_ref()
+    }
+}
+impl std::fmt::Debug for EndpointInputConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EndpointInputConfiguration");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field(
+            "inference_specification_name",
+            &self.inference_specification_name,
+        );
+        formatter.field(
+            "environment_parameter_ranges",
+            &self.environment_parameter_ranges,
+        );
+        formatter.finish()
+    }
+}
+/// See [`EndpointInputConfiguration`](crate::model::EndpointInputConfiguration)
+pub mod endpoint_input_configuration {
+    /// A builder for [`EndpointInputConfiguration`](crate::model::EndpointInputConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::ProductionVariantInstanceType>,
+        pub(crate) inference_specification_name: std::option::Option<std::string::String>,
+        pub(crate) environment_parameter_ranges:
+            std::option::Option<crate::model::EnvironmentParameterRanges>,
+    }
+    impl Builder {
+        /// <p>The instance types to use for the load test.</p>
+        pub fn instance_type(mut self, input: crate::model::ProductionVariantInstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        /// <p>The instance types to use for the load test.</p>
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::ProductionVariantInstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The inference specification name in the model package version.</p>
+        pub fn inference_specification_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inference_specification_name = Some(input.into());
+            self
+        }
+        /// <p>The inference specification name in the model package version.</p>
+        pub fn set_inference_specification_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_specification_name = input;
+            self
+        }
+        /// <p> The parameter you want to benchmark against.</p>
+        pub fn environment_parameter_ranges(
+            mut self,
+            input: crate::model::EnvironmentParameterRanges,
+        ) -> Self {
+            self.environment_parameter_ranges = Some(input);
+            self
+        }
+        /// <p> The parameter you want to benchmark against.</p>
+        pub fn set_environment_parameter_ranges(
+            mut self,
+            input: std::option::Option<crate::model::EnvironmentParameterRanges>,
+        ) -> Self {
+            self.environment_parameter_ranges = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EndpointInputConfiguration`](crate::model::EndpointInputConfiguration)
+        pub fn build(self) -> crate::model::EndpointInputConfiguration {
+            crate::model::EndpointInputConfiguration {
+                instance_type: self.instance_type,
+                inference_specification_name: self.inference_specification_name,
+                environment_parameter_ranges: self.environment_parameter_ranges,
+            }
+        }
+    }
+}
+impl EndpointInputConfiguration {
+    /// Creates a new builder-style object to manufacture [`EndpointInputConfiguration`](crate::model::EndpointInputConfiguration)
+    pub fn builder() -> crate::model::endpoint_input_configuration::Builder {
+        crate::model::endpoint_input_configuration::Builder::default()
+    }
+}
+
+/// <p>Specifies the range of environment parameters</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnvironmentParameterRanges {
+    /// <p>Specified a list of parameters for each category.</p>
+    pub categorical_parameter_ranges:
+        std::option::Option<std::vec::Vec<crate::model::CategoricalParameter>>,
+}
+impl EnvironmentParameterRanges {
+    /// <p>Specified a list of parameters for each category.</p>
+    pub fn categorical_parameter_ranges(
+        &self,
+    ) -> std::option::Option<&[crate::model::CategoricalParameter]> {
+        self.categorical_parameter_ranges.as_deref()
+    }
+}
+impl std::fmt::Debug for EnvironmentParameterRanges {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnvironmentParameterRanges");
+        formatter.field(
+            "categorical_parameter_ranges",
+            &self.categorical_parameter_ranges,
+        );
+        formatter.finish()
+    }
+}
+/// See [`EnvironmentParameterRanges`](crate::model::EnvironmentParameterRanges)
+pub mod environment_parameter_ranges {
+    /// A builder for [`EnvironmentParameterRanges`](crate::model::EnvironmentParameterRanges)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) categorical_parameter_ranges:
+            std::option::Option<std::vec::Vec<crate::model::CategoricalParameter>>,
+    }
+    impl Builder {
+        /// Appends an item to `categorical_parameter_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_categorical_parameter_ranges`](Self::set_categorical_parameter_ranges).
+        ///
+        /// <p>Specified a list of parameters for each category.</p>
+        pub fn categorical_parameter_ranges(
+            mut self,
+            input: impl Into<crate::model::CategoricalParameter>,
+        ) -> Self {
+            let mut v = self.categorical_parameter_ranges.unwrap_or_default();
+            v.push(input.into());
+            self.categorical_parameter_ranges = Some(v);
+            self
+        }
+        /// <p>Specified a list of parameters for each category.</p>
+        pub fn set_categorical_parameter_ranges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CategoricalParameter>>,
+        ) -> Self {
+            self.categorical_parameter_ranges = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnvironmentParameterRanges`](crate::model::EnvironmentParameterRanges)
+        pub fn build(self) -> crate::model::EnvironmentParameterRanges {
+            crate::model::EnvironmentParameterRanges {
+                categorical_parameter_ranges: self.categorical_parameter_ranges,
+            }
+        }
+    }
+}
+impl EnvironmentParameterRanges {
+    /// Creates a new builder-style object to manufacture [`EnvironmentParameterRanges`](crate::model::EnvironmentParameterRanges)
+    pub fn builder() -> crate::model::environment_parameter_ranges::Builder {
+        crate::model::environment_parameter_ranges::Builder::default()
+    }
+}
+
+/// <p>Environment parameters you want to benchmark your load test against.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CategoricalParameter {
+    /// <p>The Name of the environment variable.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The list of values you can pass.</p>
+    pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl CategoricalParameter {
+    /// <p>The Name of the environment variable.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The list of values you can pass.</p>
+    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for CategoricalParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CategoricalParameter");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`CategoricalParameter`](crate::model::CategoricalParameter)
+pub mod categorical_parameter {
+    /// A builder for [`CategoricalParameter`](crate::model::CategoricalParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The Name of the environment variable.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The Name of the environment variable.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `value`.
+        ///
+        /// To override the contents of this collection use [`set_value`](Self::set_value).
+        ///
+        /// <p>The list of values you can pass.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.value.unwrap_or_default();
+            v.push(input.into());
+            self.value = Some(v);
+            self
+        }
+        /// <p>The list of values you can pass.</p>
+        pub fn set_value(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CategoricalParameter`](crate::model::CategoricalParameter)
+        pub fn build(self) -> crate::model::CategoricalParameter {
+            crate::model::CategoricalParameter {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl CategoricalParameter {
+    /// Creates a new builder-style object to manufacture [`CategoricalParameter`](crate::model::CategoricalParameter)
+    pub fn builder() -> crate::model::categorical_parameter::Builder {
+        crate::model::categorical_parameter::Builder::default()
+    }
+}
+
+/// <p>Specifies the maximum number of jobs that can run in parallel
+/// and the maximum number of jobs that can run.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendationJobResourceLimit {
+    /// <p>Defines the maximum number of load tests.</p>
+    pub max_number_of_tests: std::option::Option<i32>,
+    /// <p>Defines the maximum number of parallel load tests.</p>
+    pub max_parallel_of_tests: std::option::Option<i32>,
+}
+impl RecommendationJobResourceLimit {
+    /// <p>Defines the maximum number of load tests.</p>
+    pub fn max_number_of_tests(&self) -> std::option::Option<i32> {
+        self.max_number_of_tests
+    }
+    /// <p>Defines the maximum number of parallel load tests.</p>
+    pub fn max_parallel_of_tests(&self) -> std::option::Option<i32> {
+        self.max_parallel_of_tests
+    }
+}
+impl std::fmt::Debug for RecommendationJobResourceLimit {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendationJobResourceLimit");
+        formatter.field("max_number_of_tests", &self.max_number_of_tests);
+        formatter.field("max_parallel_of_tests", &self.max_parallel_of_tests);
+        formatter.finish()
+    }
+}
+/// See [`RecommendationJobResourceLimit`](crate::model::RecommendationJobResourceLimit)
+pub mod recommendation_job_resource_limit {
+    /// A builder for [`RecommendationJobResourceLimit`](crate::model::RecommendationJobResourceLimit)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_number_of_tests: std::option::Option<i32>,
+        pub(crate) max_parallel_of_tests: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Defines the maximum number of load tests.</p>
+        pub fn max_number_of_tests(mut self, input: i32) -> Self {
+            self.max_number_of_tests = Some(input);
+            self
+        }
+        /// <p>Defines the maximum number of load tests.</p>
+        pub fn set_max_number_of_tests(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_number_of_tests = input;
+            self
+        }
+        /// <p>Defines the maximum number of parallel load tests.</p>
+        pub fn max_parallel_of_tests(mut self, input: i32) -> Self {
+            self.max_parallel_of_tests = Some(input);
+            self
+        }
+        /// <p>Defines the maximum number of parallel load tests.</p>
+        pub fn set_max_parallel_of_tests(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parallel_of_tests = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendationJobResourceLimit`](crate::model::RecommendationJobResourceLimit)
+        pub fn build(self) -> crate::model::RecommendationJobResourceLimit {
+            crate::model::RecommendationJobResourceLimit {
+                max_number_of_tests: self.max_number_of_tests,
+                max_parallel_of_tests: self.max_parallel_of_tests,
+            }
+        }
+    }
+}
+impl RecommendationJobResourceLimit {
+    /// Creates a new builder-style object to manufacture [`RecommendationJobResourceLimit`](crate::model::RecommendationJobResourceLimit)
+    pub fn builder() -> crate::model::recommendation_job_resource_limit::Builder {
+        crate::model::recommendation_job_resource_limit::Builder::default()
+    }
+}
+
+/// <p>Defines the traffic pattern of the load test.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TrafficPattern {
+    /// <p>Defines the traffic patterns.</p>
+    pub traffic_type: std::option::Option<crate::model::TrafficType>,
+    /// <p>Defines the phases traffic specification.</p>
+    pub phases: std::option::Option<std::vec::Vec<crate::model::Phase>>,
+}
+impl TrafficPattern {
+    /// <p>Defines the traffic patterns.</p>
+    pub fn traffic_type(&self) -> std::option::Option<&crate::model::TrafficType> {
+        self.traffic_type.as_ref()
+    }
+    /// <p>Defines the phases traffic specification.</p>
+    pub fn phases(&self) -> std::option::Option<&[crate::model::Phase]> {
+        self.phases.as_deref()
+    }
+}
+impl std::fmt::Debug for TrafficPattern {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TrafficPattern");
+        formatter.field("traffic_type", &self.traffic_type);
+        formatter.field("phases", &self.phases);
+        formatter.finish()
+    }
+}
+/// See [`TrafficPattern`](crate::model::TrafficPattern)
+pub mod traffic_pattern {
+    /// A builder for [`TrafficPattern`](crate::model::TrafficPattern)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) traffic_type: std::option::Option<crate::model::TrafficType>,
+        pub(crate) phases: std::option::Option<std::vec::Vec<crate::model::Phase>>,
+    }
+    impl Builder {
+        /// <p>Defines the traffic patterns.</p>
+        pub fn traffic_type(mut self, input: crate::model::TrafficType) -> Self {
+            self.traffic_type = Some(input);
+            self
+        }
+        /// <p>Defines the traffic patterns.</p>
+        pub fn set_traffic_type(
+            mut self,
+            input: std::option::Option<crate::model::TrafficType>,
+        ) -> Self {
+            self.traffic_type = input;
+            self
+        }
+        /// Appends an item to `phases`.
+        ///
+        /// To override the contents of this collection use [`set_phases`](Self::set_phases).
+        ///
+        /// <p>Defines the phases traffic specification.</p>
+        pub fn phases(mut self, input: impl Into<crate::model::Phase>) -> Self {
+            let mut v = self.phases.unwrap_or_default();
+            v.push(input.into());
+            self.phases = Some(v);
+            self
+        }
+        /// <p>Defines the phases traffic specification.</p>
+        pub fn set_phases(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Phase>>,
+        ) -> Self {
+            self.phases = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TrafficPattern`](crate::model::TrafficPattern)
+        pub fn build(self) -> crate::model::TrafficPattern {
+            crate::model::TrafficPattern {
+                traffic_type: self.traffic_type,
+                phases: self.phases,
+            }
+        }
+    }
+}
+impl TrafficPattern {
+    /// Creates a new builder-style object to manufacture [`TrafficPattern`](crate::model::TrafficPattern)
+    pub fn builder() -> crate::model::traffic_pattern::Builder {
+        crate::model::traffic_pattern::Builder::default()
+    }
+}
+
+/// <p>Defines the traffic pattern.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Phase {
+    /// <p>Specifies how many concurrent users to start with.</p>
+    pub initial_number_of_users: std::option::Option<i32>,
+    /// <p>Specified how many new users to spawn in a minute.</p>
+    pub spawn_rate: std::option::Option<i32>,
+    /// <p>Specifies how long traffic phase should be.</p>
+    pub duration_in_seconds: std::option::Option<i32>,
+}
+impl Phase {
+    /// <p>Specifies how many concurrent users to start with.</p>
+    pub fn initial_number_of_users(&self) -> std::option::Option<i32> {
+        self.initial_number_of_users
+    }
+    /// <p>Specified how many new users to spawn in a minute.</p>
+    pub fn spawn_rate(&self) -> std::option::Option<i32> {
+        self.spawn_rate
+    }
+    /// <p>Specifies how long traffic phase should be.</p>
+    pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
+        self.duration_in_seconds
+    }
+}
+impl std::fmt::Debug for Phase {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Phase");
+        formatter.field("initial_number_of_users", &self.initial_number_of_users);
+        formatter.field("spawn_rate", &self.spawn_rate);
+        formatter.field("duration_in_seconds", &self.duration_in_seconds);
+        formatter.finish()
+    }
+}
+/// See [`Phase`](crate::model::Phase)
+pub mod phase {
+    /// A builder for [`Phase`](crate::model::Phase)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) initial_number_of_users: std::option::Option<i32>,
+        pub(crate) spawn_rate: std::option::Option<i32>,
+        pub(crate) duration_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Specifies how many concurrent users to start with.</p>
+        pub fn initial_number_of_users(mut self, input: i32) -> Self {
+            self.initial_number_of_users = Some(input);
+            self
+        }
+        /// <p>Specifies how many concurrent users to start with.</p>
+        pub fn set_initial_number_of_users(mut self, input: std::option::Option<i32>) -> Self {
+            self.initial_number_of_users = input;
+            self
+        }
+        /// <p>Specified how many new users to spawn in a minute.</p>
+        pub fn spawn_rate(mut self, input: i32) -> Self {
+            self.spawn_rate = Some(input);
+            self
+        }
+        /// <p>Specified how many new users to spawn in a minute.</p>
+        pub fn set_spawn_rate(mut self, input: std::option::Option<i32>) -> Self {
+            self.spawn_rate = input;
+            self
+        }
+        /// <p>Specifies how long traffic phase should be.</p>
+        pub fn duration_in_seconds(mut self, input: i32) -> Self {
+            self.duration_in_seconds = Some(input);
+            self
+        }
+        /// <p>Specifies how long traffic phase should be.</p>
+        pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Phase`](crate::model::Phase)
+        pub fn build(self) -> crate::model::Phase {
+            crate::model::Phase {
+                initial_number_of_users: self.initial_number_of_users,
+                spawn_rate: self.spawn_rate,
+                duration_in_seconds: self.duration_in_seconds,
+            }
+        }
+    }
+}
+impl Phase {
+    /// Creates a new builder-style object to manufacture [`Phase`](crate::model::Phase)
+    pub fn builder() -> crate::model::phase::Builder {
+        crate::model::phase::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TrafficType {
+    #[allow(missing_docs)] // documentation missing in model
+    Phases,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TrafficType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PHASES" => TrafficType::Phases,
+            other => TrafficType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TrafficType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrafficType::from(s))
+    }
+}
+impl TrafficType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrafficType::Phases => "PHASES",
+            TrafficType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PHASES"]
+    }
+}
+impl AsRef<str> for TrafficType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Specifies the configuration for a hyperparameter tuning job that uses one or more
 /// previous hyperparameter tuning jobs as a starting point. The results of previous tuning
 /// jobs are used to inform which combinations of hyperparameters to search over in the new
@@ -75053,6 +80193,11 @@ pub struct ProductionVariant {
     /// <p>Specifies configuration for a core dump from the model container when the process
     /// crashes.</p>
     pub core_dump_config: std::option::Option<crate::model::ProductionVariantCoreDumpConfig>,
+    /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub serverless_config: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
 }
 impl ProductionVariant {
     /// <p>The name of the production variant.</p>
@@ -75098,6 +80243,15 @@ impl ProductionVariant {
     ) -> std::option::Option<&crate::model::ProductionVariantCoreDumpConfig> {
         self.core_dump_config.as_ref()
     }
+    /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub fn serverless_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
+        self.serverless_config.as_ref()
+    }
 }
 impl std::fmt::Debug for ProductionVariant {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -75109,6 +80263,7 @@ impl std::fmt::Debug for ProductionVariant {
         formatter.field("initial_variant_weight", &self.initial_variant_weight);
         formatter.field("accelerator_type", &self.accelerator_type);
         formatter.field("core_dump_config", &self.core_dump_config);
+        formatter.field("serverless_config", &self.serverless_config);
         formatter.finish()
     }
 }
@@ -75127,6 +80282,8 @@ pub mod production_variant {
             std::option::Option<crate::model::ProductionVariantAcceleratorType>,
         pub(crate) core_dump_config:
             std::option::Option<crate::model::ProductionVariantCoreDumpConfig>,
+        pub(crate) serverless_config:
+            std::option::Option<crate::model::ProductionVariantServerlessConfig>,
     }
     impl Builder {
         /// <p>The name of the production variant.</p>
@@ -75232,6 +80389,28 @@ pub mod production_variant {
             self.core_dump_config = input;
             self
         }
+        /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn serverless_config(
+            mut self,
+            input: crate::model::ProductionVariantServerlessConfig,
+        ) -> Self {
+            self.serverless_config = Some(input);
+            self
+        }
+        /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn set_serverless_config(
+            mut self,
+            input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+        ) -> Self {
+            self.serverless_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProductionVariant`](crate::model::ProductionVariant)
         pub fn build(self) -> crate::model::ProductionVariant {
             crate::model::ProductionVariant {
@@ -75242,6 +80421,7 @@ pub mod production_variant {
                 initial_variant_weight: self.initial_variant_weight,
                 accelerator_type: self.accelerator_type,
                 core_dump_config: self.core_dump_config,
+                serverless_config: self.serverless_config,
             }
         }
     }
@@ -75739,6 +80919,18 @@ pub struct PendingProductionVariantSummary {
     pub accelerator_type: std::option::Option<crate::model::ProductionVariantAcceleratorType>,
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     pub variant_status: std::option::Option<std::vec::Vec<crate::model::ProductionVariantStatus>>,
+    /// <p>The serverless configuration for the endpoint.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub current_serverless_config:
+        std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+    /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub desired_serverless_config:
+        std::option::Option<crate::model::ProductionVariantServerlessConfig>,
 }
 impl PendingProductionVariantSummary {
     /// <p>The name of the variant.</p>
@@ -75792,6 +80984,24 @@ impl PendingProductionVariantSummary {
     pub fn variant_status(&self) -> std::option::Option<&[crate::model::ProductionVariantStatus]> {
         self.variant_status.as_deref()
     }
+    /// <p>The serverless configuration for the endpoint.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub fn current_serverless_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
+        self.current_serverless_config.as_ref()
+    }
+    /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
+    /// <note>
+    /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+    /// </note>
+    pub fn desired_serverless_config(
+        &self,
+    ) -> std::option::Option<&crate::model::ProductionVariantServerlessConfig> {
+        self.desired_serverless_config.as_ref()
+    }
 }
 impl std::fmt::Debug for PendingProductionVariantSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -75805,6 +81015,8 @@ impl std::fmt::Debug for PendingProductionVariantSummary {
         formatter.field("instance_type", &self.instance_type);
         formatter.field("accelerator_type", &self.accelerator_type);
         formatter.field("variant_status", &self.variant_status);
+        formatter.field("current_serverless_config", &self.current_serverless_config);
+        formatter.field("desired_serverless_config", &self.desired_serverless_config);
         formatter.finish()
     }
 }
@@ -75825,6 +81037,10 @@ pub mod pending_production_variant_summary {
             std::option::Option<crate::model::ProductionVariantAcceleratorType>,
         pub(crate) variant_status:
             std::option::Option<std::vec::Vec<crate::model::ProductionVariantStatus>>,
+        pub(crate) current_serverless_config:
+            std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+        pub(crate) desired_serverless_config:
+            std::option::Option<crate::model::ProductionVariantServerlessConfig>,
     }
     impl Builder {
         /// <p>The name of the variant.</p>
@@ -75969,6 +81185,50 @@ pub mod pending_production_variant_summary {
             self.variant_status = input;
             self
         }
+        /// <p>The serverless configuration for the endpoint.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn current_serverless_config(
+            mut self,
+            input: crate::model::ProductionVariantServerlessConfig,
+        ) -> Self {
+            self.current_serverless_config = Some(input);
+            self
+        }
+        /// <p>The serverless configuration for the endpoint.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn set_current_serverless_config(
+            mut self,
+            input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+        ) -> Self {
+            self.current_serverless_config = input;
+            self
+        }
+        /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn desired_serverless_config(
+            mut self,
+            input: crate::model::ProductionVariantServerlessConfig,
+        ) -> Self {
+            self.desired_serverless_config = Some(input);
+            self
+        }
+        /// <p>The serverless configuration requested for this deployment, as specified in the endpoint configuration for the endpoint.</p>
+        /// <note>
+        /// <p>Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments.</p>
+        /// </note>
+        pub fn set_desired_serverless_config(
+            mut self,
+            input: std::option::Option<crate::model::ProductionVariantServerlessConfig>,
+        ) -> Self {
+            self.desired_serverless_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PendingProductionVariantSummary`](crate::model::PendingProductionVariantSummary)
         pub fn build(self) -> crate::model::PendingProductionVariantSummary {
             crate::model::PendingProductionVariantSummary {
@@ -75981,6 +81241,8 @@ pub mod pending_production_variant_summary {
                 instance_type: self.instance_type,
                 accelerator_type: self.accelerator_type,
                 variant_status: self.variant_status,
+                current_serverless_config: self.current_serverless_config,
+                desired_serverless_config: self.desired_serverless_config,
             }
         }
     }

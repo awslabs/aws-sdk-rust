@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_wellarchitected::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -90,6 +90,20 @@ where
     pub fn associate_lenses(&self) -> fluent_builders::AssociateLenses<C, M, R> {
         fluent_builders::AssociateLenses::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateLensShare` operation.
+    ///
+    /// See [`CreateLensShare`](crate::client::fluent_builders::CreateLensShare) for more information about the
+    /// operation and its arguments.
+    pub fn create_lens_share(&self) -> fluent_builders::CreateLensShare<C, M, R> {
+        fluent_builders::CreateLensShare::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateLensVersion` operation.
+    ///
+    /// See [`CreateLensVersion`](crate::client::fluent_builders::CreateLensVersion) for more information about the
+    /// operation and its arguments.
+    pub fn create_lens_version(&self) -> fluent_builders::CreateLensVersion<C, M, R> {
+        fluent_builders::CreateLensVersion::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateMilestone` operation.
     ///
     /// See [`CreateMilestone`](crate::client::fluent_builders::CreateMilestone) for more information about the
@@ -110,6 +124,20 @@ where
     /// operation and its arguments.
     pub fn create_workload_share(&self) -> fluent_builders::CreateWorkloadShare<C, M, R> {
         fluent_builders::CreateWorkloadShare::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteLens` operation.
+    ///
+    /// See [`DeleteLens`](crate::client::fluent_builders::DeleteLens) for more information about the
+    /// operation and its arguments.
+    pub fn delete_lens(&self) -> fluent_builders::DeleteLens<C, M, R> {
+        fluent_builders::DeleteLens::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteLensShare` operation.
+    ///
+    /// See [`DeleteLensShare`](crate::client::fluent_builders::DeleteLensShare) for more information about the
+    /// operation and its arguments.
+    pub fn delete_lens_share(&self) -> fluent_builders::DeleteLensShare<C, M, R> {
+        fluent_builders::DeleteLensShare::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteWorkload` operation.
     ///
@@ -132,12 +160,26 @@ where
     pub fn disassociate_lenses(&self) -> fluent_builders::DisassociateLenses<C, M, R> {
         fluent_builders::DisassociateLenses::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ExportLens` operation.
+    ///
+    /// See [`ExportLens`](crate::client::fluent_builders::ExportLens) for more information about the
+    /// operation and its arguments.
+    pub fn export_lens(&self) -> fluent_builders::ExportLens<C, M, R> {
+        fluent_builders::ExportLens::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetAnswer` operation.
     ///
     /// See [`GetAnswer`](crate::client::fluent_builders::GetAnswer) for more information about the
     /// operation and its arguments.
     pub fn get_answer(&self) -> fluent_builders::GetAnswer<C, M, R> {
         fluent_builders::GetAnswer::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetLens` operation.
+    ///
+    /// See [`GetLens`](crate::client::fluent_builders::GetLens) for more information about the
+    /// operation and its arguments.
+    pub fn get_lens(&self) -> fluent_builders::GetLens<C, M, R> {
+        fluent_builders::GetLens::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetLensReview` operation.
     ///
@@ -176,6 +218,13 @@ where
     pub fn get_workload(&self) -> fluent_builders::GetWorkload<C, M, R> {
         fluent_builders::GetWorkload::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ImportLens` operation.
+    ///
+    /// See [`ImportLens`](crate::client::fluent_builders::ImportLens) for more information about the
+    /// operation and its arguments.
+    pub fn import_lens(&self) -> fluent_builders::ImportLens<C, M, R> {
+        fluent_builders::ImportLens::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListAnswers` operation.
     ///
     /// See [`ListAnswers`](crate::client::fluent_builders::ListAnswers) for more information about the
@@ -205,6 +254,13 @@ where
     /// operation and its arguments.
     pub fn list_lens_reviews(&self) -> fluent_builders::ListLensReviews<C, M, R> {
         fluent_builders::ListLensReviews::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListLensShares` operation.
+    ///
+    /// See [`ListLensShares`](crate::client::fluent_builders::ListLensShares) for more information about the
+    /// operation and its arguments.
+    pub fn list_lens_shares(&self) -> fluent_builders::ListLensShares<C, M, R> {
+        fluent_builders::ListLensShares::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListMilestones` operation.
     ///
@@ -316,10 +372,20 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateLenses`.
     ///
     /// <p>Associate a lens to a workload.</p>
+    /// <p>Up to 10 lenses can be associated with a workload in a single API operation. A
+    /// maximum of 20 lenses can be associated with a workload.</p>
+    /// <note>
+    /// <p>
+    /// <b>Disclaimer</b>
+    /// </p>
+    /// <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account,
+    /// you acknowledge that custom lenses created by other users and shared with you are
+    /// Third Party Content as defined in the Amazon Web Services Customer Agreement.    </p>
+    /// </note>
     #[derive(std::fmt::Debug)]
     pub struct AssociateLenses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -372,12 +438,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -386,13 +452,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
         ///
-        /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+        /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
         /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
         pub fn lens_aliases(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_aliases(inp);
             self
         }
-        /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+        /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
         /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_aliases(
             mut self,
@@ -402,13 +468,266 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateLensShare`.
+    ///
+    /// <p>Create a lens share.</p>
+    /// <p>The owner of a lens can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region.
+    /// Shared access to a lens is not removed until the lens invitation is deleted.</p>
+    /// <note>
+    /// <p>
+    /// <b>Disclaimer</b>
+    /// </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
+    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
+    /// other accounts. Those other accounts may continue to access and use your
+    /// shared custom lenses even if you delete the custom lenses
+    /// from your own Amazon Web Services account or terminate
+    /// your Amazon Web Services account.</p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateLensShare<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_lens_share_input::Builder,
+    }
+    impl<C, M, R> CreateLensShare<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateLensShare`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLensShareOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLensShareError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateLensShareInputOperationOutputAlias,
+                crate::output::CreateLensShareOutput,
+                crate::error::CreateLensShareError,
+                crate::input::CreateLensShareInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(inp);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_alias(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        pub fn shared_with(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+        pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_shared_with(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateLensVersion`.
+    ///
+    /// <p>Create a new lens version.</p>
+    /// <p>A lens can have up to 100 versions.</p>
+    /// <p>After a lens has been imported, create a new lens version to publish it.  The owner of a lens can share the lens with other
+    /// Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a lens can delete it.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateLensVersion<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_lens_version_input::Builder,
+    }
+    impl<C, M, R> CreateLensVersion<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateLensVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLensVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateLensVersionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateLensVersionInputOperationOutputAlias,
+                crate::output::CreateLensVersionOutput,
+                crate::error::CreateLensVersionError,
+                crate::input::CreateLensVersionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(inp);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_alias(input);
+            self
+        }
+        /// <p>The version of the lens being created.</p>
+        pub fn lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(inp);
+            self
+        }
+        /// <p>The version of the lens being created.</p>
+        pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_version(input);
+            self
+        }
+        /// <p>Set to true if this new major lens version.</p>
+        pub fn is_major_version(mut self, inp: bool) -> Self {
+            self.inner = self.inner.is_major_version(inp);
+            self
+        }
+        /// <p>Set to true if this new major lens version.</p>
+        pub fn set_is_major_version(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_is_major_version(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateMilestone`.
     ///
     /// <p>Create a milestone for an existing workload.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateMilestone<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -461,12 +780,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -492,8 +811,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -506,8 +825,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
@@ -521,14 +840,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkload`.
     ///
     /// <p>Create a new workload.</p>
-    /// <p>The owner of a workload can share the workload with other AWS accounts and IAM users
-    /// in the same AWS Region. Only the owner of a workload can delete it.</p>
+    /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts and IAM users
+    /// in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the
-    /// <i>AWS Well-Architected Tool User Guide</i>.</p>
+    /// <i>Well-Architected Tool User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateWorkload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -582,14 +901,14 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_name(inp);
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
@@ -625,12 +944,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account IDs associated with the workload.</p>
+        /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
             self
         }
-        /// <p>The list of AWS account IDs associated with the workload.</p>
+        /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -642,13 +961,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
         /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_regions(inp);
             self
         }
-        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
         /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
@@ -661,12 +980,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
         ///
-        /// <p> The list of non-AWS Regions associated with the workload.</p>
+        /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
         pub fn non_aws_regions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.non_aws_regions(inp);
             self
         }
-        /// <p> The list of non-AWS Regions associated with the workload.</p>
+        /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
         pub fn set_non_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1050,8 +1369,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1064,8 +1383,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
@@ -1102,15 +1421,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkloadShare`.
     ///
     /// <p>Create a workload share.</p>
-    /// <p>The owner of a workload can share it with other AWS accounts and IAM users in the same
-    /// AWS Region. Shared access to a workload is not removed until the workload invitation is
+    /// <p>The owner of a workload can share it with other Amazon Web Services accounts and IAM users in the same
+    /// Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is
     /// deleted.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a Workload</a> in the
-    /// <i>AWS Well-Architected Tool User Guide</i>.</p>
+    /// <i>Well-Architected Tool User Guide</i>.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1163,22 +1482,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn shared_with(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shared_with(inp);
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_shared_with(input);
             self
@@ -1202,8 +1521,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1216,8 +1535,264 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteLens`.
+    ///
+    /// <p>Delete an existing lens.</p>
+    /// <p>Only the owner of a lens can delete it.  After the lens is deleted,  Amazon Web Services accounts and IAM users
+    /// that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.
+    /// </p>
+    /// <note>
+    /// <p>
+    /// <b>Disclaimer</b>
+    /// </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
+    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
+    /// other accounts. Those other accounts may continue to access and use your
+    /// shared custom lenses even if you delete the custom lenses
+    /// from your own Amazon Web Services account or terminate
+    /// your Amazon Web Services account.</p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteLens<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_lens_input::Builder,
+    }
+    impl<C, M, R> DeleteLens<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteLens`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteLensOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLensError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteLensInputOperationOutputAlias,
+                crate::output::DeleteLensOutput,
+                crate::error::DeleteLensError,
+                crate::input::DeleteLensInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(inp);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_alias(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>The status of the lens to be deleted.</p>
+        pub fn lens_status(mut self, inp: crate::model::LensStatusType) -> Self {
+            self.inner = self.inner.lens_status(inp);
+            self
+        }
+        /// <p>The status of the lens to be deleted.</p>
+        pub fn set_lens_status(
+            mut self,
+            input: std::option::Option<crate::model::LensStatusType>,
+        ) -> Self {
+            self.inner = self.inner.set_lens_status(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteLensShare`.
+    ///
+    /// <p>Delete a lens share.</p>
+    /// <p>After the lens share is deleted,  Amazon Web Services accounts and IAM users
+    /// that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p>
+    /// <note>
+    /// <p>
+    /// <b>Disclaimer</b>
+    /// </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
+    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
+    /// other accounts. Those other accounts may continue to access and use your
+    /// shared custom lenses even if you delete the custom lenses
+    /// from your own Amazon Web Services account or terminate
+    /// your Amazon Web Services account.</p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteLensShare<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_lens_share_input::Builder,
+    }
+    impl<C, M, R> DeleteLensShare<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteLensShare`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteLensShareOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteLensShareError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteLensShareInputOperationOutputAlias,
+                crate::output::DeleteLensShareOutput,
+                crate::error::DeleteLensShareError,
+                crate::input::DeleteLensShareInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID associated with the workload share.</p>
+        pub fn share_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_id(inp);
+            self
+        }
+        /// <p>The ID associated with the workload share.</p>
+        pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_share_id(input);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(inp);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_alias(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
@@ -1234,7 +1809,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteWorkload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1287,12 +1862,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -1303,8 +1878,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1317,8 +1892,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
@@ -1335,7 +1910,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1398,12 +1973,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_share_id(input);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -1414,8 +1989,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1428,8 +2003,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
@@ -1443,14 +2018,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateLenses`.
     ///
     /// <p>Disassociate a lens from a workload.</p>
+    /// <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p>
     /// <note>
-    /// <p>The AWS Well-Architected Framework lens (<code>wellarchitected</code>) cannot be
+    /// <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be
     /// removed from a workload.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct DisassociateLenses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1503,12 +2079,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -1517,13 +2093,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
         ///
-        /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+        /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
         /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
         pub fn lens_aliases(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lens_aliases(inp);
             self
         }
-        /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+        /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
         /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_aliases(
             mut self,
@@ -1533,13 +2109,109 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ExportLens`.
+    ///
+    /// <p>Export an existing lens.</p>
+    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a>
+    /// in the <i>Well-Architected Tool User Guide</i>. Only the owner of a lens can export it.               
+    /// </p>
+    /// <note>
+    /// <p>
+    /// <b>Disclaimer</b>
+    /// </p>
+    /// <p>Do not include or gather personal identifiable information (PII) of end users or
+    /// other identifiable individuals in or via your custom lenses. If your custom
+    /// lens or those shared with you and used in your account do include or collect
+    /// PII you are responsible for: ensuring that the included PII is processed in accordance
+    /// with applicable law, providing adequate privacy notices, and obtaining necessary
+    /// consents for processing such data.</p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct ExportLens<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::export_lens_input::Builder,
+    }
+    impl<C, M, R> ExportLens<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ExportLens`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ExportLensOutput,
+            aws_smithy_http::result::SdkError<crate::error::ExportLensError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ExportLensInputOperationOutputAlias,
+                crate::output::ExportLensOutput,
+                crate::error::ExportLensError,
+                crate::input::ExportLensInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(inp);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_alias(input);
+            self
+        }
+        /// <p>The lens version to be exported.</p>
+        pub fn lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(inp);
+            self
+        }
+        /// <p>The lens version to be exported.</p>
+        pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_version(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetAnswer`.
     ///
     /// <p>Get the answer to a specific question in a workload review.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetAnswer<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1592,12 +2264,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -1637,13 +2309,95 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetLens`.
+    ///
+    /// <p>Get an existing lens.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetLens<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_lens_input::Builder,
+    }
+    impl<C, M, R> GetLens<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetLens`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetLensOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetLensError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetLensInputOperationOutputAlias,
+                crate::output::GetLensOutput,
+                crate::error::GetLensError,
+                crate::input::GetLensInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(inp);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_alias(input);
+            self
+        }
+        /// <p>The lens version to be retrieved.</p>
+        pub fn lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(inp);
+            self
+        }
+        /// <p>The lens version to be retrieved.</p>
+        pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_version(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetLensReview`.
     ///
     /// <p>Get lens review.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetLensReview<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1696,12 +2450,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -1737,7 +2491,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetLensReviewReport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1790,12 +2544,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -1831,7 +2585,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetLensVersionDifference<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1909,6 +2663,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_base_lens_version(input);
             self
         }
+        /// <p>The lens version to target a difference for.</p>
+        pub fn target_lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_lens_version(inp);
+            self
+        }
+        /// <p>The lens version to target a difference for.</p>
+        pub fn set_target_lens_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_lens_version(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `GetMilestone`.
     ///
@@ -1916,7 +2683,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetMilestone<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1969,12 +2736,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -1998,7 +2765,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetWorkload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2051,14 +2818,168 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ImportLens`.
+    ///
+    /// <p>Import a new lens.</p>
+    /// <p>The lens cannot be applied to workloads or shared with other Amazon Web Services accounts
+    /// until it's published with <a>CreateLensVersion</a>
+    /// </p>
+    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a>
+    /// in the <i>Well-Architected Tool User Guide</i>.</p>
+    /// <p>A custom lens cannot exceed 500 KB in size.</p>
+    ///
+    /// <note>
+    /// <p>
+    /// <b>Disclaimer</b>
+    /// </p>
+    /// <p>Do not include or gather personal identifiable information (PII) of end users or
+    /// other identifiable individuals in or via your custom lenses. If your custom
+    /// lens or those shared with you and used in your account do include or collect
+    /// PII you are responsible for: ensuring that the included PII is processed in accordance
+    /// with applicable law, providing adequate privacy notices, and obtaining necessary
+    /// consents for processing such data.</p>
+    /// </note>
+    #[derive(std::fmt::Debug)]
+    pub struct ImportLens<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::import_lens_input::Builder,
+    }
+    impl<C, M, R> ImportLens<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ImportLens`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ImportLensOutput,
+            aws_smithy_http::result::SdkError<crate::error::ImportLensError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ImportLensInputOperationOutputAlias,
+                crate::output::ImportLensOutput,
+                crate::error::ImportLensError,
+                crate::input::ImportLensInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(inp);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_alias(input);
+            self
+        }
+        /// <p>The JSON representation of a lens.</p>
+        pub fn json_string(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.json_string(inp);
+            self
+        }
+        /// <p>The JSON representation of a lens.</p>
+        pub fn set_json_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_json_string(input);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to associate to a lens.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>Tags to associate to a lens.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -2068,7 +2989,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAnswers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2121,12 +3042,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -2194,7 +3115,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListLenses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2267,6 +3188,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// <p>The type of lenses to be returned.</p>
+        pub fn lens_type(mut self, inp: crate::model::LensType) -> Self {
+            self.inner = self.inner.lens_type(inp);
+            self
+        }
+        /// <p>The type of lenses to be returned.</p>
+        pub fn set_lens_type(mut self, input: std::option::Option<crate::model::LensType>) -> Self {
+            self.inner = self.inner.set_lens_type(input);
+            self
+        }
+        /// <p>The status of lenses to be returned.</p>
+        pub fn lens_status(mut self, inp: crate::model::LensStatusType) -> Self {
+            self.inner = self.inner.lens_status(inp);
+            self
+        }
+        /// <p>The status of lenses to be returned.</p>
+        pub fn set_lens_status(
+            mut self,
+            input: std::option::Option<crate::model::LensStatusType>,
+        ) -> Self {
+            self.inner = self.inner.set_lens_status(input);
+            self
+        }
+        /// <p>The full name of the lens.</p>
+        pub fn lens_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_name(inp);
+            self
+        }
+        /// <p>The full name of the lens.</p>
+        pub fn set_lens_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_name(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListLensReviewImprovements`.
     ///
@@ -2274,7 +3228,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListLensReviewImprovements<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2327,12 +3281,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -2400,7 +3354,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListLensReviews<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2453,12 +3407,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -2496,13 +3450,118 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListLensShares`.
+    ///
+    /// <p>List the lens shares associated with the lens.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListLensShares<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_lens_shares_input::Builder,
+    }
+    impl<C, M, R> ListLensShares<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListLensShares`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListLensSharesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListLensSharesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListLensSharesInputOperationOutputAlias,
+                crate::output::ListLensSharesOutput,
+                crate::error::ListLensSharesError,
+                crate::input::ListLensSharesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(inp);
+            self
+        }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lens_alias(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+        pub fn shared_with_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with_prefix(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+        pub fn set_shared_with_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_shared_with_prefix(input);
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token to use to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return for this request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListMilestones`.
     ///
     /// <p>List all milestones for an existing workload.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListMilestones<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2555,12 +3614,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -2592,7 +3651,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListNotifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2645,12 +3704,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -2682,7 +3741,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListShareInvitations<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2750,6 +3809,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_name_prefix(input);
             self
         }
+        /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
+        pub fn lens_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_name_prefix(inp);
+            self
+        }
+        /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
+        pub fn set_lens_name_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_lens_name_prefix(input);
+            self
+        }
+        /// <p>The type of share invitations to be returned.</p>
+        pub fn share_resource_type(mut self, inp: crate::model::ShareResourceType) -> Self {
+            self.inner = self.inner.share_resource_type(inp);
+            self
+        }
+        /// <p>The type of share invitations to be returned.</p>
+        pub fn set_share_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::ShareResourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_share_resource_type(input);
+            self
+        }
         /// <p>The token to use to retrieve the next set of results.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
@@ -2777,7 +3862,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2847,7 +3932,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListWorkloads<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2942,7 +4027,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListWorkloadShares<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2995,22 +4080,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn shared_with_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shared_with_prefix(inp);
             self
         }
-        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
+        /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3045,7 +4130,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3142,7 +4227,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3231,7 +4316,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAnswer<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3284,12 +4369,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -3400,7 +4485,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateLensReview<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3453,12 +4538,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -3515,7 +4600,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateShareInvitation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3601,7 +4686,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateWorkload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3654,25 +4739,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_name(inp);
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
@@ -3708,12 +4793,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account IDs associated with the workload.</p>
+        /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
             self
         }
-        /// <p>The list of AWS account IDs associated with the workload.</p>
+        /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3725,13 +4810,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
         /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_regions(inp);
             self
         }
-        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
         /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
@@ -3744,12 +4829,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
         ///
-        /// <p> The list of non-AWS Regions associated with the workload.</p>
+        /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
         pub fn non_aws_regions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.non_aws_regions(inp);
             self
         }
-        /// <p> The list of non-AWS Regions associated with the workload.</p>
+        /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
         pub fn set_non_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4151,7 +5236,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4214,12 +5299,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_share_id(input);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -4244,7 +5329,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpgradeLensReview<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4297,12 +5382,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workload_id(inp);
             self
         }
-        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
+        /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workload_id(input);
             self
@@ -4340,8 +5425,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -4354,8 +5439,8 @@ pub mod fluent_builders {
         /// the same client request token and the same parameters after it has completed
         /// successfully, the result of the original request is returned. </p>
         /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
-        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
+        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
@@ -4367,17 +5452,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4386,7 +5475,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -4402,11 +5491,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

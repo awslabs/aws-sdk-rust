@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Sends Conflict Exception.</p>
+    /// <p>Sends a Conflict Exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Sends Internal Failure Exception.</p>
+    /// <p>Sends an Internal Failure exception.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Sends Resource Not Found Exception.</p>
+    /// <p>Sends a Resource Not Found exception.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Sends invalid request exception.</p>
+    /// <p>Sends a validation exception.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -68,6 +68,28 @@ where
                 crate::error::DeleteSuiteDefinitionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEndpointError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetEndpointErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetEndpointErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetEndpointErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

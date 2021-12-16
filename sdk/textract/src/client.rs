@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_textract::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -96,6 +96,13 @@ where
     /// operation and its arguments.
     pub fn analyze_expense(&self) -> fluent_builders::AnalyzeExpense<C, M, R> {
         fluent_builders::AnalyzeExpense::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `AnalyzeID` operation.
+    ///
+    /// See [`AnalyzeID`](crate::client::fluent_builders::AnalyzeID) for more information about the
+    /// operation and its arguments.
+    pub fn analyze_id(&self) -> fluent_builders::AnalyzeID<C, M, R> {
+        fluent_builders::AnalyzeID::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DetectDocumentText` operation.
     ///
@@ -195,7 +202,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AnalyzeDocument<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -307,7 +314,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AnalyzeExpense`.
     ///
-    /// <p>Analyzes an input document for financially related relationships between text.</p>
+    /// <p>
+    /// <code>AnalyzeExpense</code> synchronously analyzes an input document for financially related relationships between text.</p>
     /// <p>Information is returned as <code>ExpenseDocuments</code> and seperated as follows.</p>
     /// <ul>
     /// <li>
@@ -324,7 +332,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AnalyzeExpense<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -420,6 +428,85 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `AnalyzeID`.
+    ///
+    /// <p>Analyzes identity documents for relevant information. This information is extracted
+    /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
+    /// field and value of the extracted text.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct AnalyzeID<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::analyze_id_input::Builder,
+    }
+    impl<C, M, R> AnalyzeID<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AnalyzeID`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AnalyzeIdOutput,
+            aws_smithy_http::result::SdkError<crate::error::AnalyzeIDError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AnalyzeIdInputOperationOutputAlias,
+                crate::output::AnalyzeIdOutput,
+                crate::error::AnalyzeIDError,
+                crate::input::AnalyzeIdInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `DocumentPages`.
+        ///
+        /// To override the contents of this collection use [`set_document_pages`](Self::set_document_pages).
+        ///
+        /// <p>The document being passed to AnalyzeID.</p>
+        pub fn document_pages(mut self, inp: impl Into<crate::model::Document>) -> Self {
+            self.inner = self.inner.document_pages(inp);
+            self
+        }
+        /// <p>The document being passed to AnalyzeID.</p>
+        pub fn set_document_pages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Document>>,
+        ) -> Self {
+            self.inner = self.inner.set_document_pages(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DetectDocumentText`.
     ///
     /// <p>Detects text in the input document. Amazon Textract can detect lines of text and the
@@ -436,7 +523,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DetectDocumentText<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -558,7 +645,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDocumentAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -680,7 +767,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDocumentTextDetection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -794,7 +881,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetExpenseAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -909,7 +996,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartDocumentAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1110,7 +1197,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartDocumentTextDetection<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1283,7 +1370,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartExpenseAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1436,17 +1523,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1455,7 +1546,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -1471,11 +1562,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

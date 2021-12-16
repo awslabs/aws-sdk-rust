@@ -1,6 +1,6 @@
 # aws-sdk-opsworkscm
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 AWS OpsWorks for configuration management (CM) is a service that runs and manages configuration management servers. You can use AWS OpsWorks CM to create and manage AWS OpsWorks for Chef Automate and AWS OpsWorks for Puppet Enterprise servers, and add or remove nodes for the servers to manage.
@@ -42,8 +42,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-opsworkscm = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-opsworkscm = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

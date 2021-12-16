@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_quicksight::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -953,7 +953,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelIngestion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1049,7 +1049,7 @@ pub mod fluent_builders {
     /// Guide.</i>
     /// </p>
     /// <p>You can create customizations for your Amazon Web Services account or, if you specify a namespace, for
-    /// a Amazon QuickSight namespace instead. Customizations that apply to a namespace always override
+    /// a QuickSight namespace instead. Customizations that apply to a namespace always override
     /// customizations that apply to an Amazon Web Services account. To find out which customizations apply, use
     /// the <code>DescribeAccountCustomization</code> API operation.</p>
     /// <p>Before you use the <code>CreateAccountCustomization</code> API operation to add a theme
@@ -1058,16 +1058,18 @@ pub mod fluent_builders {
     /// even if you make it the default theme.
     /// To check if the theme is shared, view the current permissions by using the
     /// <code>
-    /// <a>DescribeThemePermissions</a>
-    /// </code> API operation.
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a>
+    /// </code>
+    /// API operation.
     /// To share the theme, grant permissions by using the
     /// <code>
-    /// <a>UpdateThemePermissions</a>
-    /// </code> API operation. </p>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a>
+    /// </code>
+    /// API operation. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateAccountCustomization<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1144,7 +1146,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add
-        /// these to an Amazon Web Services account and a Amazon QuickSight namespace. </p>
+        /// these to an Amazon Web Services account and a QuickSight namespace. </p>
         /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
         /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
         /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
@@ -1156,7 +1158,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add
-        /// these to an Amazon Web Services account and a Amazon QuickSight namespace. </p>
+        /// these to an Amazon Web Services account and a QuickSight namespace. </p>
         /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
         /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
         /// "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by
@@ -1194,7 +1196,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1375,9 +1377,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDashboard`.
     ///
-    /// <p>Creates a dashboard from a template. To first create a template, see the <code>
-    /// <a>CreateTemplate</a>
-    /// </code> API operation.</p>
+    /// <p>Creates a dashboard from a template. To first create a template, see the
+    /// <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+    /// </code>
+    /// API operation.</p>
     /// <p>A dashboard is an entity in Amazon QuickSight that identifies Amazon QuickSight reports, created
     /// from analyses. You can share Amazon QuickSight dashboards. With the right permissions, you can
     /// create scheduled email reports from them. If you have the correct permissions, you can
@@ -1385,7 +1389,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDashboard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1451,12 +1455,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+        /// <p>The ID for the dashboard, also added to the IAM policy.</p>
         pub fn dashboard_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dashboard_id(inp);
             self
         }
-        /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+        /// <p>The ID for the dashboard, also added to the IAM policy.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dashboard_id(input);
             self
@@ -1493,7 +1497,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A structure that contains the permissions of the dashboard. You can use this structure
-        /// for granting permissions by providing a list of IAMaction information for each
+        /// for granting permissions by providing a list of IAM action information for each
         /// principal ARN. </p>
         ///
         /// <p>To specify no permissions, omit the permissions list.</p>
@@ -1502,7 +1506,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that contains the permissions of the dashboard. You can use this structure
-        /// for granting permissions by providing a list of IAMaction information for each
+        /// for granting permissions by providing a list of IAM action information for each
         /// principal ARN. </p>
         ///
         /// <p>To specify no permissions, omit the permissions list.</p>
@@ -1517,7 +1521,10 @@ pub mod fluent_builders {
         /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
         /// can only create a dashboard from a template, so you use a <code>SourceTemplate</code>
         /// entity. If you need to create a dashboard from an analysis, first convert the analysis
-        /// to a template by using the <a>CreateTemplate</a> API operation. For
+        /// to a template by using the <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </code>
+        /// API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
         /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
         /// Amazon QuickSight-supported Amazon Web Services Region. </p>
@@ -1532,7 +1539,10 @@ pub mod fluent_builders {
         /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
         /// can only create a dashboard from a template, so you use a <code>SourceTemplate</code>
         /// entity. If you need to create a dashboard from an analysis, first convert the analysis
-        /// to a template by using the <a>CreateTemplate</a> API operation. For
+        /// to a template by using the <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </code>
+        /// API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
         /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any
         /// Amazon QuickSight-supported Amazon Web Services Region. </p>
@@ -1663,7 +1673,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDataSet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1902,7 +1912,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_column_level_permission_rules`](Self::set_column_level_permission_rules).
         ///
         /// <p>A set of one or more definitions of a <code>
-        /// <a>ColumnLevelPermissionRule</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
         /// </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
@@ -1912,7 +1922,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A set of one or more definitions of a <code>
-        /// <a>ColumnLevelPermissionRule</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
         /// </code>.</p>
         pub fn set_column_level_permission_rules(
             mut self,
@@ -1961,7 +1971,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2167,7 +2177,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFolder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2220,12 +2230,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID.</p>
+        /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS Account ID.</p>
+        /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2233,12 +2243,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -2326,7 +2336,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateFolderMembership<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2379,12 +2389,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS Account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2392,12 +2402,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -2436,7 +2446,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2541,7 +2551,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateGroupMembership<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2642,14 +2652,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIAMPolicyAssignment`.
     ///
-    /// <p>Creates an assignment with one specified IAMpolicy, identified by its Amazon Resource Name
+    /// <p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name
     /// (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight.
     /// Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces,
     /// use assignment names that are unique.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateIAMPolicyAssignment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2702,13 +2712,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account where you want to assign an IAMpolicy to Amazon QuickSight users or
+        /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or
         /// groups.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The ID of the Amazon Web Services account where you want to assign an IAMpolicy to Amazon QuickSight users or
+        /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or
         /// groups.</p>
         pub fn set_aws_account_id(
             mut self,
@@ -2775,13 +2785,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_status(input);
             self
         }
-        /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
         pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(inp);
             self
         }
-        /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
@@ -2831,7 +2841,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateIngestion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2944,7 +2954,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateNamespace<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3066,7 +3076,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3245,7 +3255,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTemplateAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3355,7 +3365,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateTheme<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3446,7 +3456,7 @@ pub mod fluent_builders {
         /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
         /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
         /// <code>ListThemes</code> or choose <b>Themes</b> from
-        /// within a Amazon QuickSight analysis. </p>
+        /// within an analysis. </p>
         pub fn base_theme_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.base_theme_id(inp);
             self
@@ -3454,7 +3464,7 @@ pub mod fluent_builders {
         /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
         /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
         /// <code>ListThemes</code> or choose <b>Themes</b> from
-        /// within a Amazon QuickSight analysis. </p>
+        /// within an analysis. </p>
         pub fn set_base_theme_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3539,7 +3549,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateThemeAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3647,7 +3657,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteAccountCustomization<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3743,7 +3753,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3857,7 +3867,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDashboard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3954,7 +3964,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDataSet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4038,7 +4048,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4124,7 +4134,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFolder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4177,12 +4187,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID for the folder.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS Account ID for the folder.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4190,12 +4200,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -4207,7 +4217,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteFolderMembership<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4260,12 +4270,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS Account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4315,7 +4325,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4410,7 +4420,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteGroupMembership<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4511,11 +4521,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIAMPolicyAssignment`.
     ///
-    /// <p>Deletes an existing IAMpolicy assignment.</p>
+    /// <p>Deletes an existing IAM policy assignment.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteIAMPolicyAssignment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4568,12 +4578,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID where you want to delete the IAMpolicy assignment.</p>
+        /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The Amazon Web Services account ID where you want to delete the IAMpolicy assignment.</p>
+        /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4613,7 +4623,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteNamespace<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4696,7 +4706,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4794,7 +4804,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTemplateAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4893,7 +4903,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteTheme<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4994,7 +5004,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteThemeAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5089,7 +5099,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5184,7 +5194,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteUserByPrincipalId<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5285,7 +5295,7 @@ pub mod fluent_builders {
     /// <li>
     /// <p>
     /// <code>Amazon Web Services account</code> - The Amazon Web Services account exists at the top of the hierarchy.
-    /// It has the potential to use all of the Amazon Web Services Regions and AWS Services. When you
+    /// It has the potential to use all of the Amazon Web Services Regions and Amazon Web Services Services. When you
     /// subscribe to Amazon QuickSight, you choose one Amazon Web Services Region to use as your home Region.
     /// That's where your free SPICE capacity is located. You can use Amazon QuickSight in any
     /// supported Amazon Web Services Region. </p>
@@ -5298,7 +5308,7 @@ pub mod fluent_builders {
     /// Virginia). Generally speaking, these users have access to Amazon QuickSight in any
     /// Amazon Web Services Region, unless they are constrained to a namespace. </p>
     /// <p>To run the command in a different Amazon Web Services Region, you change your Region settings.
-    /// If you're using the AWS CLI, you can use one of the following options:</p>
+    /// If you're using the CLI, you can use one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p>Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command line options</a>. </p>
@@ -5309,13 +5319,13 @@ pub mod fluent_builders {
     /// <li>
     /// <p>Run <code>aws configure</code> to change your default Amazon Web Services Region. Use
     /// Enter to key the same settings for your keys. For more information, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the CLI</a>.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Namespace</code> - A Amazon QuickSight namespace is a partition that contains
+    /// <code>Namespace</code> - A QuickSight namespace is a partition that contains
     /// users and assets (data sources, datasets, dashboards, and so on). To access
     /// assets that are in a specific namespace, users and groups must also be part of
     /// the same namespace. People who share a namespace are completely isolated from
@@ -5335,7 +5345,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAccountCustomization<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5441,7 +5451,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5514,7 +5524,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5601,7 +5611,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAnalysisPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5688,7 +5698,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDashboard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5795,7 +5805,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDashboardPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5863,12 +5873,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+        /// <p>The ID for the dashboard, also added to the IAM policy.</p>
         pub fn dashboard_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dashboard_id(inp);
             self
         }
-        /// <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+        /// <p>The ID for the dashboard, also added to the IAM policy.</p>
         pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dashboard_id(input);
             self
@@ -5880,7 +5890,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDataSet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5964,7 +5974,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDataSetPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6047,7 +6057,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6133,7 +6143,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeDataSourcePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6219,7 +6229,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFolder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6272,12 +6282,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6285,12 +6295,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -6302,7 +6312,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFolderPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6355,12 +6365,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS Account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6368,12 +6378,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -6385,7 +6395,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeFolderResolvedPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6438,12 +6448,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6451,12 +6461,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -6468,7 +6478,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6559,11 +6569,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeIAMPolicyAssignment`.
     ///
-    /// <p>Describes an existing IAMpolicy assignment, as specified by the assignment name.</p>
+    /// <p>Describes an existing IAM policy assignment, as specified by the assignment name.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeIAMPolicyAssignment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6659,7 +6669,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeIngestion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6748,11 +6758,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeIpRestriction`.
     ///
-    /// <p>Provides a summary and status of IP Rules.</p>
+    /// <p>Provides a summary and status of IP rules.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeIpRestriction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6805,12 +6815,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Your AWS account ID.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>Your AWS account ID.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6825,7 +6835,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeNamespace<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6908,7 +6918,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7019,7 +7029,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTemplateAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7120,7 +7130,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTemplatePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7203,7 +7213,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeTheme<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7314,7 +7324,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeThemeAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7409,7 +7419,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeThemePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7492,7 +7502,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7606,7 +7616,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GenerateEmbedUrlForAnonymousUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7772,7 +7782,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GenerateEmbedUrlForRegisteredUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7858,7 +7868,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_arn(input);
             self
         }
-        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, the entire Amazon QuickSight console, or the Amazon QuickSight Q search bar.</p>
+        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
         pub fn experience_configuration(
             mut self,
             inp: crate::model::RegisteredUserEmbeddingExperienceConfiguration,
@@ -7866,7 +7876,7 @@ pub mod fluent_builders {
             self.inner = self.inner.experience_configuration(inp);
             self
         }
-        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, the entire Amazon QuickSight console, or the Amazon QuickSight Q search bar.</p>
+        /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
         pub fn set_experience_configuration(
             mut self,
             input: std::option::Option<
@@ -7905,7 +7915,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDashboardEmbedUrl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8063,11 +8073,11 @@ pub mod fluent_builders {
         /// <p>Invited nonfederated users</p>
         /// </li>
         /// <li>
-        /// <p>IAMusers and IAMrole-based sessions authenticated through Federated Single Sign-On using
-        /// SAML, OpenID Connect, or IAMfederation.</p>
+        /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
+        /// SAML, OpenID Connect, or IAM federation.</p>
         /// </li>
         /// </ul>
-        /// <p>Omit this parameter for users in the third group – IAMusers and IAM
+        /// <p>Omit this parameter for users in the third group – IAM users and IAM
         /// role-based sessions.</p>
         pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_arn(inp);
@@ -8084,11 +8094,11 @@ pub mod fluent_builders {
         /// <p>Invited nonfederated users</p>
         /// </li>
         /// <li>
-        /// <p>IAMusers and IAMrole-based sessions authenticated through Federated Single Sign-On using
-        /// SAML, OpenID Connect, or IAMfederation.</p>
+        /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using
+        /// SAML, OpenID Connect, or IAM federation.</p>
         /// </li>
         /// </ul>
-        /// <p>Omit this parameter for users in the third group – IAMusers and IAM
+        /// <p>Omit this parameter for users in the third group – IAM users and IAM
         /// role-based sessions.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_arn(input);
@@ -8113,7 +8123,7 @@ pub mod fluent_builders {
         /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
         /// anonymous users. The <code>IdentityType</code> parameter must be set to
         /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
-        /// as Amazon QuickSight or IAMusers. For example, if you set "<code>--dashboard-id dash_id1
+        /// as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1
         /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
         /// can access all three dashboards. </p>
         pub fn additional_dashboard_ids(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -8123,7 +8133,7 @@ pub mod fluent_builders {
         /// <p>A list of one or more dashboard IDs that you want to add to a session that includes
         /// anonymous users. The <code>IdentityType</code> parameter must be set to
         /// <code>ANONYMOUS</code> for this to work, because other identity types authenticate
-        /// as Amazon QuickSight or IAMusers. For example, if you set "<code>--dashboard-id dash_id1
+        /// as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1
         /// --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session
         /// can access all three dashboards. </p>
         pub fn set_additional_dashboard_ids(
@@ -8143,10 +8153,11 @@ pub mod fluent_builders {
     /// need belong to the author or admin security cohort. If you want to restrict permissions
     /// to some of these features, add a custom permissions profile to the user with the
     /// <code>
-    /// <a>UpdateUser</a>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
     /// </code> API operation. Use <code>
-    /// <a>RegisterUser</a>
-    /// </code> API operation to add a new user with a custom permission profile attached. For more
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
+    /// </code>
+    /// API operation to add a new user with a custom permission profile attached. For more
     /// information, see the following sections in the <i>Amazon QuickSight User
     /// Guide</i>:</p>
     /// <ul>
@@ -8164,7 +8175,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSessionEmbedUrl<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8367,7 +8378,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAnalyses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8460,7 +8471,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDashboards<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8555,7 +8566,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDashboardVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8661,7 +8672,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDataSets<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8754,7 +8765,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListDataSources<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8847,7 +8858,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListFolderMembers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8900,12 +8911,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8913,12 +8924,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -8950,7 +8961,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListFolders<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9003,12 +9014,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9043,7 +9054,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListGroupMemberships<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9158,7 +9169,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9259,11 +9270,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIAMPolicyAssignments`.
     ///
-    /// <p>Lists IAMpolicy assignments in the current Amazon QuickSight account.</p>
+    /// <p>Lists IAM policy assignments in the current Amazon QuickSight account.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListIAMPolicyAssignments<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9316,12 +9327,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account that contains these IAMpolicy assignments.</p>
+        /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains these IAMpolicy assignments.</p>
+        /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9375,13 +9386,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIAMPolicyAssignmentsForUser`.
     ///
-    /// <p>Lists all the IAMpolicy assignments, including the Amazon Resource Names (ARNs) for the IAM
+    /// <p>Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM
     /// policies assigned to the specified user and group or groups that the user belongs
     /// to.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListIAMPolicyAssignmentsForUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9494,7 +9505,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListIngestions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9597,7 +9608,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListNamespaces<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9690,7 +9701,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9760,7 +9771,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTemplateAliases<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9863,7 +9874,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTemplates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9956,7 +9967,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10059,7 +10070,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListThemeAliases<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10162,7 +10173,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListThemes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10293,7 +10304,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListThemeVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10396,7 +10407,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListUserGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10511,7 +10522,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10612,12 +10623,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterUser`.
     ///
-    /// <p>Creates an Amazon QuickSight user, whose identity is associated with the AWS Identity
-    /// and Access Management (IAM) identity or role specified in the request. </p>
+    /// <p>Creates an Amazon QuickSight user, whose identity is associated with the Identity and Access Management (IAM) identity or role specified in the request. </p>
     #[derive(std::fmt::Debug)]
     pub struct RegisterUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10675,7 +10685,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+        /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
         /// </p>
         /// </li>
         /// <li>
@@ -10693,7 +10703,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>IAM</code>: A user whose identity maps to an existing IAMuser or role.
+        /// <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
         /// </p>
         /// </li>
         /// <li>
@@ -10783,35 +10793,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_role(input);
             self
         }
-        /// <p>The ARN of the IAMuser or role that you are registering with Amazon QuickSight. </p>
+        /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
         pub fn iam_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_arn(inp);
             self
         }
-        /// <p>The ARN of the IAMuser or role that you are registering with Amazon QuickSight. </p>
+        /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
         pub fn set_iam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_arn(input);
             self
         }
         /// <p>You need to use this parameter only when you register one or more users using an assumed
-        /// IAMrole. You don't need to provide the session name for other scenarios, for example when
-        /// you are registering an IAMuser or an Amazon QuickSight user. You can register multiple
-        /// users using the same IAMrole if each user has a different session name. For more
-        /// information on assuming IAMroles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+        /// IAM role. You don't need to provide the session name for other scenarios, for example when
+        /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
+        /// users using the same IAM role if each user has a different session name. For more
+        /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
         /// <code>assume-role</code>
-        /// </a> in the <i>AWS CLI Reference.</i>
+        /// </a> in the <i>CLI Reference.</i>
         /// </p>
         pub fn session_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_name(inp);
             self
         }
         /// <p>You need to use this parameter only when you register one or more users using an assumed
-        /// IAMrole. You don't need to provide the session name for other scenarios, for example when
-        /// you are registering an IAMuser or an Amazon QuickSight user. You can register multiple
-        /// users using the same IAMrole if each user has a different session name. For more
-        /// information on assuming IAMroles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+        /// IAM role. You don't need to provide the session name for other scenarios, for example when
+        /// you are registering an IAM user or an Amazon QuickSight user. You can register multiple
+        /// users using the same IAM role if each user has a different session name. For more
+        /// information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
         /// <code>assume-role</code>
-        /// </a> in the <i>AWS CLI Reference.</i>
+        /// </a> in the <i>CLI Reference.</i>
         /// </p>
         pub fn set_session_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_name(input);
@@ -10872,13 +10882,13 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To add custom permissions to an existing user, use <code>
-        /// <a>UpdateUser</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
         /// </code> instead.</p>
         /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
         /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a Amazon QuickSight user. </p>
-        /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+        /// permissions to a QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
         /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
         /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
@@ -10904,13 +10914,13 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To add custom permissions to an existing user, use <code>
-        /// <a>UpdateUser</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
         /// </code> instead.</p>
         /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
         /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a Amazon QuickSight user. </p>
-        /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+        /// permissions to a QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
         /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
         /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
@@ -10999,7 +11009,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RestoreAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11085,7 +11095,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchAnalyses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11200,7 +11210,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchDashboards<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11318,7 +11328,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SearchFolders<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11371,12 +11381,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11434,22 +11444,23 @@ pub mod fluent_builders {
     /// replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data
     /// set, data source, dashboard, and template. </p>
-    /// <p>Tagging for Amazon QuickSight works in a similar way to tagging for other AWS services, except for
+    /// <p>Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except for
     /// the following:</p>
     /// <ul>
     /// <li>
-    /// <p>You can't use tags to track AWS costs for Amazon QuickSight. This restriction is because Amazon QuickSight
-    /// costs are based on users and SPICE capacity, which aren't taggable
-    /// resources.</p>
+    /// <p>You can't use tags to track costs for Amazon QuickSight. This isn't
+    /// possible because you can't tag the resources that Amazon QuickSight costs are based
+    /// on, for example Amazon QuickSight storage capacity (SPICE), number of users, type
+    /// of users, and usage metrics.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon QuickSight doesn't currently support the Tag Editor for Resource Groups.</p>
+    /// <p>Amazon QuickSight doesn't currently support the tag editor for Resource Groups.</p>
     /// </li>
     /// </ul>
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11536,7 +11547,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11628,7 +11639,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAccountCustomization<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11726,7 +11737,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11835,7 +11846,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAnalysis<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11976,7 +11987,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateAnalysisPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12107,12 +12118,14 @@ pub mod fluent_builders {
     /// <note>
     /// <p>Updating a Dashboard creates a new dashboard version but does not immediately publish
     /// the new version.  You can update the published version of a dashboard by
-    /// using the <a>UpdateDashboardPublishedVersion</a> API operation.</p>
+    /// using the <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
+    /// </code> API operation.</p>
     /// </note>
     #[derive(std::fmt::Debug)]
     pub struct UpdateDashboard<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12204,7 +12217,9 @@ pub mod fluent_builders {
         /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
         /// can only update a dashboard from a template, so you use a <code>SourceTemplate</code>
         /// entity. If you need to update a dashboard from an analysis, first convert the analysis
-        /// to a template by using the <a>CreateTemplate</a> API operation. For
+        /// to a template by using the <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </code> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
         /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
         /// Amazon QuickSight-supported Amazon Web Services Region. </p>
@@ -12219,7 +12234,9 @@ pub mod fluent_builders {
         /// <code>SourceEntity</code>, you specify the type of object you're using as source. You
         /// can only update a dashboard from a template, so you use a <code>SourceTemplate</code>
         /// entity. If you need to update a dashboard from an analysis, first convert the analysis
-        /// to a template by using the <a>CreateTemplate</a> API operation. For
+        /// to a template by using the <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </code> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
         /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any
         /// Amazon QuickSight-supported Amazon Web Services Region. </p>
@@ -12348,7 +12365,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDashboardPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12466,6 +12483,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_revoke_permissions(input);
             self
         }
+        /// Appends an item to `GrantLinkPermissions`.
+        ///
+        /// To override the contents of this collection use [`set_grant_link_permissions`](Self::set_grant_link_permissions).
+        ///
+        /// <p>Grants link permissions to all users in a defined namespace.</p>
+        pub fn grant_link_permissions(
+            mut self,
+            inp: impl Into<crate::model::ResourcePermission>,
+        ) -> Self {
+            self.inner = self.inner.grant_link_permissions(inp);
+            self
+        }
+        /// <p>Grants link permissions to all users in a defined namespace.</p>
+        pub fn set_grant_link_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        ) -> Self {
+            self.inner = self.inner.set_grant_link_permissions(input);
+            self
+        }
+        /// Appends an item to `RevokeLinkPermissions`.
+        ///
+        /// To override the contents of this collection use [`set_revoke_link_permissions`](Self::set_revoke_link_permissions).
+        ///
+        /// <p>Revokes link permissions from all users in a defined namespace.</p>
+        pub fn revoke_link_permissions(
+            mut self,
+            inp: impl Into<crate::model::ResourcePermission>,
+        ) -> Self {
+            self.inner = self.inner.revoke_link_permissions(inp);
+            self
+        }
+        /// <p>Revokes link permissions from all users in a defined namespace.</p>
+        pub fn set_revoke_link_permissions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
+        ) -> Self {
+            self.inner = self.inner.set_revoke_link_permissions(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateDashboardPublishedVersion`.
     ///
@@ -12473,7 +12530,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDashboardPublishedVersion<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12568,7 +12625,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDataSet<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12792,7 +12849,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_column_level_permission_rules`](Self::set_column_level_permission_rules).
         ///
         /// <p>A set of one or more definitions of a <code>
-        /// <a>ColumnLevelPermissionRule</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
         /// </code>.</p>
         pub fn column_level_permission_rules(
             mut self,
@@ -12802,7 +12859,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A set of one or more definitions of a <code>
-        /// <a>ColumnLevelPermissionRule</a>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
         /// </code>.</p>
         pub fn set_column_level_permission_rules(
             mut self,
@@ -12835,7 +12892,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDataSetPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12960,7 +13017,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDataSource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13117,7 +13174,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateDataSourcePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13243,7 +13300,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateFolder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13296,12 +13353,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13309,12 +13366,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -13336,7 +13393,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateFolderPermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13389,12 +13446,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13402,12 +13459,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_id(inp);
             self
         }
-        /// <p>The folder ID.</p>
+        /// <p>The ID of the folder.</p>
         pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_id(input);
             self
@@ -13459,7 +13516,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13560,14 +13617,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateIAMPolicyAssignment`.
     ///
-    /// <p>Updates an existing IAMpolicy assignment. This operation updates only the optional
+    /// <p>Updates an existing IAM policy assignment. This operation updates only the optional
     /// parameter or parameters that are specified in the request.
     /// This overwrites all of the users included in <code>Identities</code>.
     /// </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateIAMPolicyAssignment<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13620,12 +13677,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Web Services account that contains the IAMpolicy assignment. </p>
+        /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>The ID of the Amazon Web Services account that contains the IAMpolicy assignment. </p>
+        /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13701,13 +13758,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_status(input);
             self
         }
-        /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
         pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_arn(inp);
             self
         }
-        /// <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+        /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
@@ -13739,11 +13796,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateIpRestriction`.
     ///
-    /// <p>Updates content and status of IP Rules.</p>
+    /// <p>Updates the content and status of IP rules. To use this operation, you need to provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateIpRestriction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13796,12 +13853,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Your AWS account ID.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
         pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(inp);
             self
         }
-        /// <p>Your AWS account ID.</p>
+        /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13813,7 +13870,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ip_restriction_rule_map`](Self::set_ip_restriction_rule_map).
         ///
-        /// <p>Describes updated IP rules.</p>
+        /// <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
         pub fn ip_restriction_rule_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -13822,7 +13879,7 @@ pub mod fluent_builders {
             self.inner = self.inner.ip_restriction_rule_map(k, v);
             self
         }
-        /// <p>Describes updated IP rules.</p>
+        /// <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
         pub fn set_ip_restriction_rule_map(
             mut self,
             input: std::option::Option<
@@ -13832,12 +13889,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_restriction_rule_map(input);
             self
         }
-        /// <p>Whether or not IP rules are enabled.</p>
+        /// <p>A value that specifies whether IP rules are turned on.</p>
         pub fn enabled(mut self, inp: bool) -> Self {
             self.inner = self.inner.enabled(inp);
             self
         }
-        /// <p>Whether or not IP rules are enabled.</p>
+        /// <p>A value that specifies whether IP rules are turned on.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enabled(input);
             self
@@ -13849,7 +13906,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateTemplate<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -13992,7 +14049,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateTemplateAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14101,7 +14158,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateTemplatePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14224,7 +14281,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateTheme<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14362,7 +14419,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateThemeAlias<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14558,7 +14615,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateThemePermissions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14681,7 +14738,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -14847,8 +14904,8 @@ pub mod fluent_builders {
         /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
         /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a Amazon QuickSight user. </p>
-        /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+        /// permissions to a QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
         /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
         /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
@@ -14876,8 +14933,8 @@ pub mod fluent_builders {
         /// <p>A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon QuickSight
         /// console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of
-        /// permissions to a Amazon QuickSight user. </p>
-        /// <p>Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
+        /// permissions to a QuickSight user. </p>
+        /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they
         /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
         /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
@@ -14916,9 +14973,11 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use <code>
-        /// <a>DescribeUser</a>
-        /// </code> API to check the external login information.</p>
+        /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use the
+        /// <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// </code>
+        /// API operation to check the external login information.</p>
         /// </li>
         /// </ul>
         pub fn external_login_federation_provider_type(
@@ -14940,9 +14999,11 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use <code>
-        /// <a>DescribeUser</a>
-        /// </code> API to check the external login information.</p>
+        /// <code>NONE</code>: This clears all the previously saved external login information for a user. Use the
+        /// <code>
+        /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// </code>
+        /// API operation to check the external login information.</p>
         /// </li>
         /// </ul>
         pub fn set_external_login_federation_provider_type(
@@ -14989,17 +15050,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -15008,7 +15073,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -15024,11 +15089,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

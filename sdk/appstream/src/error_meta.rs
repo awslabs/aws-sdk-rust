@@ -49,6 +49,27 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateApplicationFleetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::AssociateApplicationFleetError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::AssociateApplicationFleetErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+                crate::error::AssociateApplicationFleetErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+                crate::error::AssociateApplicationFleetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::AssociateApplicationFleetErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+                crate::error::AssociateApplicationFleetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::AssociateApplicationFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateFleetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -142,6 +163,63 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CopyImageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppBlockError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAppBlockError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateAppBlockErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
+                crate::error::CreateAppBlockErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateAppBlockErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
+                crate::error::CreateAppBlockErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
+                }
+                crate::error::CreateAppBlockErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateApplicationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateApplicationErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::CreateApplicationErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateApplicationErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
+                crate::error::CreateApplicationErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
+                }
+                crate::error::CreateApplicationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -449,6 +527,57 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppBlockError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppBlockError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteAppBlockErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
+                crate::error::DeleteAppBlockErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::DeleteAppBlockErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteAppBlockErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteApplicationErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::DeleteApplicationErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
+                crate::error::DeleteApplicationErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
+                crate::error::DeleteApplicationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteApplicationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDirectoryConfigError, R>>
     for Error
 where
@@ -621,6 +750,79 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppBlocksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeAppBlocksError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeAppBlocksErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
+                crate::error::DescribeAppBlocksErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeAppBlocksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DescribeApplicationFleetAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeApplicationFleetAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeApplicationFleetAssociationsErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+                crate::error::DescribeApplicationFleetAssociationsErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+                crate::error::DescribeApplicationFleetAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeApplicationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeApplicationsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeApplicationsErrorKind::OperationNotPermittedException(
+                    inner,
+                ) => Error::OperationNotPermittedException(inner),
+                crate::error::DescribeApplicationsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeApplicationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -834,6 +1036,25 @@ where
                 }
                 crate::error::DisableUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateApplicationFleetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DisassociateApplicationFleetError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DisassociateApplicationFleetErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+                crate::error::DisassociateApplicationFleetErrorKind::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+                crate::error::DisassociateApplicationFleetErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+                crate::error::DisassociateApplicationFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1102,6 +1323,32 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateApplicationErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::UpdateApplicationErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
+                crate::error::UpdateApplicationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateApplicationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

@@ -2988,6 +2988,38 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessages {
     }
 }
 
+/// Operation shape for `SendOTPMessage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`send_otp_message`](crate::client::Client::send_otp_message).
+///
+/// See [`crate::client::fluent_builders::SendOTPMessage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SendOTPMessage {
+    _private: (),
+}
+impl SendOTPMessage {
+    /// Creates a new builder-style object to manufacture [`SendOtpMessageInput`](crate::input::SendOtpMessageInput)
+    pub fn builder() -> crate::input::send_otp_message_input::Builder {
+        crate::input::send_otp_message_input::Builder::default()
+    }
+    /// Creates a new `SendOTPMessage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SendOTPMessage {
+    type Output =
+        std::result::Result<crate::output::SendOtpMessageOutput, crate::error::SendOTPMessageError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_send_otp_message_error(response)
+        } else {
+            crate::operation_deser::parse_send_otp_message_response(response)
+        }
+    }
+}
+
 /// Operation shape for `SendUsersMessages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3890,6 +3922,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVoiceTemplate {
             crate::operation_deser::parse_update_voice_template_error(response)
         } else {
             crate::operation_deser::parse_update_voice_template_response(response)
+        }
+    }
+}
+
+/// Operation shape for `VerifyOTPMessage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`verify_otp_message`](crate::client::Client::verify_otp_message).
+///
+/// See [`crate::client::fluent_builders::VerifyOTPMessage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct VerifyOTPMessage {
+    _private: (),
+}
+impl VerifyOTPMessage {
+    /// Creates a new builder-style object to manufacture [`VerifyOtpMessageInput`](crate::input::VerifyOtpMessageInput)
+    pub fn builder() -> crate::input::verify_otp_message_input::Builder {
+        crate::input::verify_otp_message_input::Builder::default()
+    }
+    /// Creates a new `VerifyOTPMessage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for VerifyOTPMessage {
+    type Output = std::result::Result<
+        crate::output::VerifyOtpMessageOutput,
+        crate::error::VerifyOTPMessageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_verify_otp_message_error(response)
+        } else {
+            crate::operation_deser::parse_verify_otp_message_response(response)
         }
     }
 }

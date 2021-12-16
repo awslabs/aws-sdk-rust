@@ -181,17 +181,24 @@ impl UpdatePackageOutput {
 pub struct UpdateElasticsearchDomainConfigOutput {
     /// <p>The status of the updated Elasticsearch domain. </p>
     pub domain_config: std::option::Option<crate::model::ElasticsearchDomainConfig>,
+    /// <p>Contains result of DryRun. </p>
+    pub dry_run_results: std::option::Option<crate::model::DryRunResults>,
 }
 impl UpdateElasticsearchDomainConfigOutput {
     /// <p>The status of the updated Elasticsearch domain. </p>
     pub fn domain_config(&self) -> std::option::Option<&crate::model::ElasticsearchDomainConfig> {
         self.domain_config.as_ref()
     }
+    /// <p>Contains result of DryRun. </p>
+    pub fn dry_run_results(&self) -> std::option::Option<&crate::model::DryRunResults> {
+        self.dry_run_results.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateElasticsearchDomainConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateElasticsearchDomainConfigOutput");
         formatter.field("domain_config", &self.domain_config);
+        formatter.field("dry_run_results", &self.dry_run_results);
         formatter.finish()
     }
 }
@@ -202,6 +209,7 @@ pub mod update_elasticsearch_domain_config_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::ElasticsearchDomainConfig>,
+        pub(crate) dry_run_results: std::option::Option<crate::model::DryRunResults>,
     }
     impl Builder {
         /// <p>The status of the updated Elasticsearch domain. </p>
@@ -217,10 +225,24 @@ pub mod update_elasticsearch_domain_config_output {
             self.domain_config = input;
             self
         }
+        /// <p>Contains result of DryRun. </p>
+        pub fn dry_run_results(mut self, input: crate::model::DryRunResults) -> Self {
+            self.dry_run_results = Some(input);
+            self
+        }
+        /// <p>Contains result of DryRun. </p>
+        pub fn set_dry_run_results(
+            mut self,
+            input: std::option::Option<crate::model::DryRunResults>,
+        ) -> Self {
+            self.dry_run_results = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput)
         pub fn build(self) -> crate::output::UpdateElasticsearchDomainConfigOutput {
             crate::output::UpdateElasticsearchDomainConfigOutput {
                 domain_config: self.domain_config,
+                dry_run_results: self.dry_run_results,
             }
         }
     }

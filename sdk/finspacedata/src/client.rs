@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_finspacedata::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -90,6 +90,48 @@ where
     pub fn create_changeset(&self) -> fluent_builders::CreateChangeset<C, M, R> {
         fluent_builders::CreateChangeset::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateDataset` operation.
+    ///
+    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
+    /// operation and its arguments.
+    pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
+        fluent_builders::CreateDataset::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateDataView` operation.
+    ///
+    /// See [`CreateDataView`](crate::client::fluent_builders::CreateDataView) for more information about the
+    /// operation and its arguments.
+    pub fn create_data_view(&self) -> fluent_builders::CreateDataView<C, M, R> {
+        fluent_builders::CreateDataView::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    ///
+    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
+    /// operation and its arguments.
+    pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
+        fluent_builders::DeleteDataset::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetChangeset` operation.
+    ///
+    /// See [`GetChangeset`](crate::client::fluent_builders::GetChangeset) for more information about the
+    /// operation and its arguments.
+    pub fn get_changeset(&self) -> fluent_builders::GetChangeset<C, M, R> {
+        fluent_builders::GetChangeset::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetDataset` operation.
+    ///
+    /// See [`GetDataset`](crate::client::fluent_builders::GetDataset) for more information about the
+    /// operation and its arguments.
+    pub fn get_dataset(&self) -> fluent_builders::GetDataset<C, M, R> {
+        fluent_builders::GetDataset::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetDataView` operation.
+    ///
+    /// See [`GetDataView`](crate::client::fluent_builders::GetDataView) for more information about the
+    /// operation and its arguments.
+    pub fn get_data_view(&self) -> fluent_builders::GetDataView<C, M, R> {
+        fluent_builders::GetDataView::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetProgrammaticAccessCredentials` operation.
     ///
     /// See [`GetProgrammaticAccessCredentials`](crate::client::fluent_builders::GetProgrammaticAccessCredentials) for more information about the
@@ -106,6 +148,41 @@ where
     pub fn get_working_location(&self) -> fluent_builders::GetWorkingLocation<C, M, R> {
         fluent_builders::GetWorkingLocation::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListChangesets` operation.
+    ///
+    /// See [`ListChangesets`](crate::client::fluent_builders::ListChangesets) for more information about the
+    /// operation and its arguments.
+    pub fn list_changesets(&self) -> fluent_builders::ListChangesets<C, M, R> {
+        fluent_builders::ListChangesets::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListDatasets` operation.
+    ///
+    /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
+    /// operation and its arguments.
+    pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
+        fluent_builders::ListDatasets::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListDataViews` operation.
+    ///
+    /// See [`ListDataViews`](crate::client::fluent_builders::ListDataViews) for more information about the
+    /// operation and its arguments.
+    pub fn list_data_views(&self) -> fluent_builders::ListDataViews<C, M, R> {
+        fluent_builders::ListDataViews::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateChangeset` operation.
+    ///
+    /// See [`UpdateChangeset`](crate::client::fluent_builders::UpdateChangeset) for more information about the
+    /// operation and its arguments.
+    pub fn update_changeset(&self) -> fluent_builders::UpdateChangeset<C, M, R> {
+        fluent_builders::UpdateChangeset::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateDataset` operation.
+    ///
+    /// See [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) for more information about the
+    /// operation and its arguments.
+    pub fn update_dataset(&self) -> fluent_builders::UpdateDataset<C, M, R> {
+        fluent_builders::UpdateDataset::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     //!
@@ -117,11 +194,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateChangeset`.
     ///
-    /// <p>Creates a new changeset in a FinSpace dataset.</p>
+    /// <p>Creates a new Changeset in a FinSpace Dataset.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateChangeset<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -174,46 +251,64 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the FinSpace dataset in which the changeset will be
-        /// created.</p>
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
+        /// </p>
         pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dataset_id(inp);
             self
         }
-        /// <p>The unique identifier for the FinSpace dataset in which the changeset will be
-        /// created.</p>
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
+        /// </p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_id(input);
             self
         }
-        /// <p>Option to indicate how a changeset will be applied to a dataset.</p>
+        /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
         /// <li>
         /// <p>
         /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded changesets.</p>
+        /// loaded Changesets.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded changesets.</p>
+        /// prior loaded Changesets.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
         /// </li>
         /// </ul>
         pub fn change_type(mut self, inp: crate::model::ChangeType) -> Self {
             self.inner = self.inner.change_type(inp);
             self
         }
-        /// <p>Option to indicate how a changeset will be applied to a dataset.</p>
+        /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
         /// <li>
         /// <p>
         /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded changesets.</p>
+        /// loaded Changesets.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded changesets.</p>
+        /// prior loaded Changesets.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
         /// </li>
         /// </ul>
         pub fn set_change_type(
@@ -223,38 +318,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_type(input);
             self
         }
-        /// <p>Type of the data source from which the files to create the changeset will be
-        /// sourced.</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>S3</code> - Amazon S3.</p>
-        /// </li>
-        /// </ul>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(inp);
-            self
-        }
-        /// <p>Type of the data source from which the files to create the changeset will be
-        /// sourced.</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>S3</code> - Amazon S3.</p>
-        /// </li>
-        /// </ul>
-        pub fn set_source_type(
-            mut self,
-            input: std::option::Option<crate::model::SourceType>,
-        ) -> Self {
-            self.inner = self.inner.set_source_type(input);
-            self
-        }
         /// Adds a key-value pair to `sourceParams`.
         ///
         /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
         ///
-        /// <p>Source path from which the files to create the changeset will be sourced.</p>
+        /// <p>Options that define the location of the data being ingested.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -263,7 +331,7 @@ pub mod fluent_builders {
             self.inner = self.inner.source_params(k, v);
             self
         }
-        /// <p>Source path from which the files to create the changeset will be sourced.</p>
+        /// <p>Options that define the location of the data being ingested.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -273,24 +341,48 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_params(input);
             self
         }
-        /// <p>Format type of the input files being loaded into the changeset.</p>
-        pub fn format_type(mut self, inp: crate::model::FormatType) -> Self {
-            self.inner = self.inner.format_type(inp);
-            self
-        }
-        /// <p>Format type of the input files being loaded into the changeset.</p>
-        pub fn set_format_type(
-            mut self,
-            input: std::option::Option<crate::model::FormatType>,
-        ) -> Self {
-            self.inner = self.inner.set_format_type(input);
-            self
-        }
         /// Adds a key-value pair to `formatParams`.
         ///
         /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
         ///
-        /// <p>Options that define the structure of the source file(s).</p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
+        /// </p>
+        /// <p>
+        /// <code>formatType</code> is a required attribute and can have the following values:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PARQUET</code> - Parquet source file format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CSV</code> - CSV source file format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JSON</code> - JSON source file format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>XML</code> - XML source file format.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        ///
+        /// For example, you could specify the following for <code>formatParams</code>:
+        ///
+        /// <code>
+        /// "formatParams":
+        /// {
+        /// "formatType": "CSV",
+        /// "withHeader": "true",
+        /// "separator": ",",
+        /// "compression":"None"
+        /// }
+        /// </code>
+        /// </p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -299,7 +391,44 @@ pub mod fluent_builders {
             self.inner = self.inner.format_params(k, v);
             self
         }
-        /// <p>Options that define the structure of the source file(s).</p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
+        /// </p>
+        /// <p>
+        /// <code>formatType</code> is a required attribute and can have the following values:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PARQUET</code> - Parquet source file format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CSV</code> - CSV source file format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JSON</code> - JSON source file format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>XML</code> - XML source file format.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        ///
+        /// For example, you could specify the following for <code>formatParams</code>:
+        ///
+        /// <code>
+        /// "formatParams":
+        /// {
+        /// "formatType": "CSV",
+        /// "withHeader": "true",
+        /// "separator": ",",
+        /// "compression":"None"
+        /// }
+        /// </code>
+        /// </p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -309,37 +438,649 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format_params(input);
             self
         }
-        /// Adds a key-value pair to `tags`.
+    }
+    /// Fluent builder constructing a request to `CreateDataset`.
+    ///
+    /// <p>Creates a new FinSpace Dataset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateDataset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_dataset_input::Builder,
+    }
+    impl<C, M, R> CreateDataset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateDataset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
         ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
         ///
-        /// <p>Metadata tags to apply to this changeset.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k, v);
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateDatasetOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateDatasetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateDatasetInputOperationOutputAlias,
+                crate::output::CreateDatasetOutput,
+                crate::error::CreateDatasetError,
+                crate::input::CreateDatasetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>Metadata tags to apply to this changeset.</p>
-        pub fn set_tags(
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>Display title for a FinSpace Dataset.</p>
+        pub fn dataset_title(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_title(inp);
+            self
+        }
+        /// <p>Display title for a FinSpace Dataset.</p>
+        pub fn set_dataset_title(
             mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_tags(input);
+            self.inner = self.inner.set_dataset_title(input);
+            self
+        }
+        /// <p>The format in which Dataset data is structured.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+        /// </li>
+        /// </ul>
+        pub fn kind(mut self, inp: crate::model::DatasetKind) -> Self {
+            self.inner = self.inner.kind(inp);
+            self
+        }
+        /// <p>The format in which Dataset data is structured.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
+            self.inner = self.inner.set_kind(input);
+            self
+        }
+        /// <p>Description of a Dataset.</p>
+        pub fn dataset_description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_description(inp);
+            self
+        }
+        /// <p>Description of a Dataset.</p>
+        pub fn set_dataset_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_description(input);
+            self
+        }
+        /// <p>Contact information for a Dataset owner.</p>
+        pub fn owner_info(mut self, inp: crate::model::DatasetOwnerInfo) -> Self {
+            self.inner = self.inner.owner_info(inp);
+            self
+        }
+        /// <p>Contact information for a Dataset owner.</p>
+        pub fn set_owner_info(
+            mut self,
+            input: std::option::Option<crate::model::DatasetOwnerInfo>,
+        ) -> Self {
+            self.inner = self.inner.set_owner_info(input);
+            self
+        }
+        /// <p>Permission group parameters for Dataset permissions.</p>
+        pub fn permission_group_params(mut self, inp: crate::model::PermissionGroupParams) -> Self {
+            self.inner = self.inner.permission_group_params(inp);
+            self
+        }
+        /// <p>Permission group parameters for Dataset permissions.</p>
+        pub fn set_permission_group_params(
+            mut self,
+            input: std::option::Option<crate::model::PermissionGroupParams>,
+        ) -> Self {
+            self.inner = self.inner.set_permission_group_params(input);
+            self
+        }
+        /// <p>The unique resource identifier for a Dataset.</p>
+        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(inp);
+            self
+        }
+        /// <p>The unique resource identifier for a Dataset.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>Definition for a schema on a tabular Dataset.</p>
+        pub fn schema_definition(mut self, inp: crate::model::SchemaUnion) -> Self {
+            self.inner = self.inner.schema_definition(inp);
+            self
+        }
+        /// <p>Definition for a schema on a tabular Dataset.</p>
+        pub fn set_schema_definition(
+            mut self,
+            input: std::option::Option<crate::model::SchemaUnion>,
+        ) -> Self {
+            self.inner = self.inner.set_schema_definition(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateDataView`.
+    ///
+    /// <p>Creates a Dataview for a Dataset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateDataView<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_data_view_input::Builder,
+    }
+    impl<C, M, R> CreateDataView<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateDataView`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateDataViewOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateDataViewError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateDataViewInputOperationOutputAlias,
+                crate::output::CreateDataViewOutput,
+                crate::error::CreateDataViewError,
+                crate::input::CreateDataViewInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+        /// <p>Flag to indicate Dataview should be updated automatically.</p>
+        pub fn auto_update(mut self, inp: bool) -> Self {
+            self.inner = self.inner.auto_update(inp);
+            self
+        }
+        /// <p>Flag to indicate Dataview should be updated automatically.</p>
+        pub fn set_auto_update(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_update(input);
+            self
+        }
+        /// Appends an item to `sortColumns`.
+        ///
+        /// To override the contents of this collection use [`set_sort_columns`](Self::set_sort_columns).
+        ///
+        /// <p>Columns to be used for sorting the data.</p>
+        pub fn sort_columns(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_columns(inp);
+            self
+        }
+        /// <p>Columns to be used for sorting the data.</p>
+        pub fn set_sort_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_columns(input);
+            self
+        }
+        /// Appends an item to `partitionColumns`.
+        ///
+        /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
+        ///
+        /// <p>Ordered set of column names used to partition data.</p>
+        pub fn partition_columns(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_columns(inp);
+            self
+        }
+        /// <p>Ordered set of column names used to partition data.</p>
+        pub fn set_partition_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_partition_columns(input);
+            self
+        }
+        /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+        pub fn as_of_timestamp(mut self, inp: i64) -> Self {
+            self.inner = self.inner.as_of_timestamp(inp);
+            self
+        }
+        /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+        pub fn set_as_of_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_as_of_timestamp(input);
+            self
+        }
+        /// <p>Options that define the destination type for the Dataview.</p>
+        pub fn destination_type_params(
+            mut self,
+            inp: crate::model::DataViewDestinationTypeParams,
+        ) -> Self {
+            self.inner = self.inner.destination_type_params(inp);
+            self
+        }
+        /// <p>Options that define the destination type for the Dataview.</p>
+        pub fn set_destination_type_params(
+            mut self,
+            input: std::option::Option<crate::model::DataViewDestinationTypeParams>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_type_params(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteDataset`.
+    ///
+    /// <p>Deletes a FinSpace Dataset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteDataset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_dataset_input::Builder,
+    }
+    impl<C, M, R> DeleteDataset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteDataset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteDatasetOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteDatasetInputOperationOutputAlias,
+                crate::output::DeleteDatasetOutput,
+                crate::error::DeleteDatasetError,
+                crate::input::DeleteDatasetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The unique identifier of the Dataset to be deleted.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the Dataset to be deleted.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetChangeset`.
+    ///
+    /// <p>Get information about a Changeset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetChangeset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_changeset_input::Builder,
+    }
+    impl<C, M, R> GetChangeset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetChangeset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetChangesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetChangesetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetChangesetInputOperationOutputAlias,
+                crate::output::GetChangesetOutput,
+                crate::error::GetChangesetError,
+                crate::input::GetChangesetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+        /// <p>The unique identifier of the Changeset for which to get data.</p>
+        pub fn changeset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.changeset_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the Changeset for which to get data.</p>
+        pub fn set_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_changeset_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetDataset`.
+    ///
+    /// <p>Returns information about a Dataset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetDataset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_dataset_input::Builder,
+    }
+    impl<C, M, R> GetDataset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetDataset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDatasetOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDatasetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetDatasetInputOperationOutputAlias,
+                crate::output::GetDatasetOutput,
+                crate::error::GetDatasetError,
+                crate::input::GetDatasetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for a Dataset.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique identifier for a Dataset.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetDataView`.
+    ///
+    /// <p>Gets information about a Dataview.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetDataView<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_data_view_input::Builder,
+    }
+    impl<C, M, R> GetDataView<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetDataView`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDataViewOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetDataViewError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetDataViewInputOperationOutputAlias,
+                crate::output::GetDataViewOutput,
+                crate::error::GetDataViewError,
+                crate::input::GetDataViewInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the Dataview.</p>
+        pub fn data_view_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_view_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the Dataview.</p>
+        pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_data_view_id(input);
+            self
+        }
+        /// <p>The unique identifier for the Dataset used in the Dataview.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the Dataset used in the Dataview.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
             self
         }
     }
     /// Fluent builder constructing a request to `GetProgrammaticAccessCredentials`.
     ///
-    /// <p>Request programmatic credentials to use with Habanero SDK.</p>
+    /// <p>Request programmatic credentials to use with FinSpace SDK.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetProgrammaticAccessCredentials<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -402,12 +1143,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_duration_in_minutes(input);
             self
         }
-        /// <p>The habanero environment identifier.</p>
+        /// <p>The FinSpace environment identifier.</p>
         pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.environment_id(inp);
             self
         }
-        /// <p>The habanero environment identifier.</p>
+        /// <p>The FinSpace environment identifier.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -418,12 +1159,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetWorkingLocation`.
     ///
-    /// <p>A temporary Amazon S3 location to copy your files from a source location to stage or use
-    /// as a scratch space in Habanero notebook.</p>
+    /// <p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use
+    /// as a scratch space in FinSpace notebook.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetWorkingLocation<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -486,7 +1227,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-        /// data content and then use the location with the changeset creation operation.</p>
+        /// data content and then use the location with the Changeset creation operation.</p>
         /// </li>
         /// </ul>
         pub fn location_type(mut self, inp: crate::model::LocationType) -> Self {
@@ -503,7 +1244,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-        /// data content and then use the location with the changeset creation operation.</p>
+        /// data content and then use the location with the Changeset creation operation.</p>
         /// </li>
         /// </ul>
         pub fn set_location_type(
@@ -514,18 +1255,577 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListChangesets`.
+    ///
+    /// <p>Lists the FinSpace Changesets for a Dataset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListChangesets<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_changesets_input::Builder,
+    }
+    impl<C, M, R> ListChangesets<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListChangesets`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListChangesetsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListChangesetsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListChangesetsInputOperationOutputAlias,
+                crate::output::ListChangesetsOutput,
+                crate::error::ListChangesetsError,
+                crate::input::ListChangesetsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A token indicating where a results page should begin.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A token indicating where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListDatasets`.
+    ///
+    /// <p>Lists all of the active Datasets that a user has access to.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListDatasets<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_datasets_input::Builder,
+    }
+    impl<C, M, R> ListDatasets<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListDatasets`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDatasetsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDatasetsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDatasetsInputOperationOutputAlias,
+                crate::output::ListDatasetsOutput,
+                crate::error::ListDatasetsError,
+                crate::input::ListDatasetsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A token indicating where a results page should begin.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A token indicating where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListDataViews`.
+    ///
+    /// <p>Lists all available Dataviews for a Dataset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListDataViews<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_data_views_input::Builder,
+    }
+    impl<C, M, R> ListDataViews<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListDataViews`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDataViewsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDataViewsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDataViewsInputOperationOutputAlias,
+                crate::output::ListDataViewsOutput,
+                crate::error::ListDataViewsError,
+                crate::input::ListDataViewsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+        /// <p>A token indicating where a results page should begin.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>A token indicating where a results page should begin.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateChangeset`.
+    ///
+    /// <p>Updates a FinSpace Changeset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateChangeset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_changeset_input::Builder,
+    }
+    impl<C, M, R> UpdateChangeset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateChangeset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateChangesetOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateChangesetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateChangesetInputOperationOutputAlias,
+                crate::output::UpdateChangesetOutput,
+                crate::error::UpdateChangesetError,
+                crate::input::UpdateChangesetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+        /// <p>The unique identifier for the Changeset to update.</p>
+        pub fn changeset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.changeset_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the Changeset to update.</p>
+        pub fn set_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_changeset_id(input);
+            self
+        }
+        /// Adds a key-value pair to `sourceParams`.
+        ///
+        /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
+        ///
+        /// <p>Options that define the location of the data being ingested.</p>
+        pub fn source_params(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.source_params(k, v);
+            self
+        }
+        /// <p>Options that define the location of the data being ingested.</p>
+        pub fn set_source_params(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_source_params(input);
+            self
+        }
+        /// Adds a key-value pair to `formatParams`.
+        ///
+        /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
+        ///
+        /// <p>Options that define the structure of the source file(s).</p>
+        pub fn format_params(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.format_params(k, v);
+            self
+        }
+        /// <p>Options that define the structure of the source file(s).</p>
+        pub fn set_format_params(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_format_params(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateDataset`.
+    ///
+    /// <p>Updates a FinSpace Dataset.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateDataset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_dataset_input::Builder,
+    }
+    impl<C, M, R> UpdateDataset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateDataset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDatasetOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateDatasetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateDatasetInputOperationOutputAlias,
+                crate::output::UpdateDatasetOutput,
+                crate::error::UpdateDatasetError,
+                crate::input::UpdateDatasetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>A token used to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The unique identifier for the Dataset to update.</p>
+        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the Dataset to update.</p>
+        pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_id(input);
+            self
+        }
+        /// <p>A display title for the Dataset.</p>
+        pub fn dataset_title(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_title(inp);
+            self
+        }
+        /// <p>A display title for the Dataset.</p>
+        pub fn set_dataset_title(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_title(input);
+            self
+        }
+        /// <p>The format in which the Dataset data is structured.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+        /// </li>
+        /// </ul>
+        pub fn kind(mut self, inp: crate::model::DatasetKind) -> Self {
+            self.inner = self.inner.kind(inp);
+            self
+        }
+        /// <p>The format in which the Dataset data is structured.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
+            self.inner = self.inner.set_kind(input);
+            self
+        }
+        /// <p>A description for the Dataset.</p>
+        pub fn dataset_description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_description(inp);
+            self
+        }
+        /// <p>A description for the Dataset.</p>
+        pub fn set_dataset_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_description(input);
+            self
+        }
+        /// <p>The unique resource identifier for a Dataset.</p>
+        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(inp);
+            self
+        }
+        /// <p>The unique resource identifier for a Dataset.</p>
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>Definition for a schema on a tabular Dataset.</p>
+        pub fn schema_definition(mut self, inp: crate::model::SchemaUnion) -> Self {
+            self.inner = self.inner.schema_definition(inp);
+            self
+        }
+        /// <p>Definition for a schema on a tabular Dataset.</p>
+        pub fn set_schema_definition(
+            mut self,
+            input: std::option::Option<crate::model::SchemaUnion>,
+        ) -> Self {
+            self.inner = self.inner.set_schema_definition(input);
+            self
+        }
+    }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -534,7 +1834,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -550,11 +1850,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -8753,6 +8753,138 @@ impl std::error::Error for DescribePartnersError {
     }
 }
 
+/// Error type for the `DescribeReservedNodeExchangeStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeReservedNodeExchangeStatusError {
+    /// Kind of error that occurred.
+    pub kind: DescribeReservedNodeExchangeStatusErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeReservedNodeExchangeStatus` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeReservedNodeExchangeStatusErrorKind {
+    /// <p>The reserved-node exchange status wasn't found.</p>
+    ReservedNodeExchangeNotFoundFault(crate::error::ReservedNodeExchangeNotFoundFault),
+    /// <p>The specified reserved compute node not found.</p>
+    ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeReservedNodeExchangeStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeExchangeNotFoundFault(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReservedNodeExchangeStatusErrorKind::UnsupportedOperationFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReservedNodeExchangeStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeReservedNodeExchangeStatusError {
+    fn code(&self) -> Option<&str> {
+        DescribeReservedNodeExchangeStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeReservedNodeExchangeStatusError {
+    /// Creates a new `DescribeReservedNodeExchangeStatusError`.
+    pub fn new(
+        kind: DescribeReservedNodeExchangeStatusErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeReservedNodeExchangeStatusError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeReservedNodeExchangeStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeReservedNodeExchangeStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeReservedNodeExchangeStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeExchangeNotFoundFault`.
+    pub fn is_reserved_node_exchange_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeExchangeNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeNotFoundFault`.
+    pub fn is_reserved_node_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReservedNodeExchangeStatusErrorKind::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedNodeExchangeStatusErrorKind::UnsupportedOperationFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeReservedNodeExchangeStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeExchangeNotFoundFault(
+                _inner,
+            ) => Some(_inner),
+            DescribeReservedNodeExchangeStatusErrorKind::ReservedNodeNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            DescribeReservedNodeExchangeStatusErrorKind::UnsupportedOperationFault(_inner) => {
+                Some(_inner)
+            }
+            DescribeReservedNodeExchangeStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeReservedNodeOfferings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10608,6 +10740,227 @@ impl std::error::Error for GetClusterCredentialsError {
             GetClusterCredentialsErrorKind::ClusterNotFoundFault(_inner) => Some(_inner),
             GetClusterCredentialsErrorKind::UnsupportedOperationFault(_inner) => Some(_inner),
             GetClusterCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetReservedNodeExchangeConfigurationOptions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetReservedNodeExchangeConfigurationOptionsError {
+    /// Kind of error that occurred.
+    pub kind: GetReservedNodeExchangeConfigurationOptionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetReservedNodeExchangeConfigurationOptions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetReservedNodeExchangeConfigurationOptionsErrorKind {
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+    /// </p>
+    ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
+    /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
+    ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
+    /// <p>Your request cannot be completed because a dependent internal service is
+    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
+    /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
+    InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
+    /// <p>Indicates that the reserved node has already been exchanged.</p>
+    ReservedNodeAlreadyMigratedFault(crate::error::ReservedNodeAlreadyMigratedFault),
+    /// <p>The specified reserved compute node not found.</p>
+    ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
+    /// <p>Specified offering does not exist.</p>
+    ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetReservedNodeExchangeConfigurationOptionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::DependentServiceUnavailableFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::InvalidReservedNodeStateFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeAlreadyMigratedFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeOfferingNotFoundFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::UnsupportedOperationFault(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind
+    for GetReservedNodeExchangeConfigurationOptionsError
+{
+    fn code(&self) -> Option<&str> {
+        GetReservedNodeExchangeConfigurationOptionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetReservedNodeExchangeConfigurationOptionsError {
+    /// Creates a new `GetReservedNodeExchangeConfigurationOptionsError`.
+    pub fn new(
+        kind: GetReservedNodeExchangeConfigurationOptionsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetReservedNodeExchangeConfigurationOptionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetReservedNodeExchangeConfigurationOptionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetReservedNodeExchangeConfigurationOptionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetReservedNodeExchangeConfigurationOptionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterNotFoundFault`.
+    pub fn is_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault`.
+    pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeConfigurationOptionsErrorKind::DependentServiceUnavailableFault`.
+    pub fn is_dependent_service_unavailable_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::DependentServiceUnavailableFault(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeConfigurationOptionsErrorKind::InvalidReservedNodeStateFault`.
+    pub fn is_invalid_reserved_node_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::InvalidReservedNodeStateFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeAlreadyMigratedFault`.
+    pub fn is_reserved_node_already_migrated_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeAlreadyMigratedFault(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeNotFoundFault`.
+    pub fn is_reserved_node_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeOfferingNotFoundFault`.
+    pub fn is_reserved_node_offering_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeOfferingNotFoundFault(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeConfigurationOptionsErrorKind::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::UnsupportedOperationFault(_)
+        )
+    }
+}
+impl std::error::Error for GetReservedNodeExchangeConfigurationOptionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::DependentServiceUnavailableFault(_inner) =>
+            Some(_inner)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::InvalidReservedNodeStateFault(_inner) =>
+            Some(_inner)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeAlreadyMigratedFault(_inner) =>
+            Some(_inner)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::ReservedNodeOfferingNotFoundFault(_inner) =>
+            Some(_inner)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::UnsupportedOperationFault(_inner) =>
+            Some(_inner)
+            ,
+            GetReservedNodeExchangeConfigurationOptionsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -13698,11 +14051,16 @@ pub enum ResizeClusterErrorKind {
     /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
     /// </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
+    /// <p>Your request cannot be completed because a dependent internal service is
+    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
     /// <p>The number of nodes specified exceeds the allotted capacity of the
     /// cluster.</p>
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
+    /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
+    InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
     /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
@@ -13715,6 +14073,14 @@ pub enum ResizeClusterErrorKind {
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </p>
     NumberOfNodesQuotaExceededFault(crate::error::NumberOfNodesQuotaExceededFault),
+    /// <p>User already has a reservation with the given identifier.</p>
+    ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
+    /// <p>Indicates that the reserved node has already been exchanged.</p>
+    ReservedNodeAlreadyMigratedFault(crate::error::ReservedNodeAlreadyMigratedFault),
+    /// <p>The specified reserved compute node not found.</p>
+    ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
+    /// <p>Specified offering does not exist.</p>
+    ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// <p>The requested operation isn't supported.</p>
@@ -13728,13 +14094,19 @@ impl std::fmt::Display for ResizeClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ResizeClusterErrorKind::ClusterNotFoundFault(_inner) => _inner.fmt(f),
+            ResizeClusterErrorKind::DependentServiceUnavailableFault(_inner) => _inner.fmt(f),
             ResizeClusterErrorKind::InsufficientClusterCapacityFault(_inner) => _inner.fmt(f),
             ResizeClusterErrorKind::InvalidClusterStateFault(_inner) => _inner.fmt(f),
+            ResizeClusterErrorKind::InvalidReservedNodeStateFault(_inner) => _inner.fmt(f),
             ResizeClusterErrorKind::LimitExceededFault(_inner) => _inner.fmt(f),
             ResizeClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault(_inner) => {
                 _inner.fmt(f)
             }
             ResizeClusterErrorKind::NumberOfNodesQuotaExceededFault(_inner) => _inner.fmt(f),
+            ResizeClusterErrorKind::ReservedNodeAlreadyExistsFault(_inner) => _inner.fmt(f),
+            ResizeClusterErrorKind::ReservedNodeAlreadyMigratedFault(_inner) => _inner.fmt(f),
+            ResizeClusterErrorKind::ReservedNodeNotFoundFault(_inner) => _inner.fmt(f),
+            ResizeClusterErrorKind::ReservedNodeOfferingNotFoundFault(_inner) => _inner.fmt(f),
             ResizeClusterErrorKind::UnauthorizedOperation(_inner) => _inner.fmt(f),
             ResizeClusterErrorKind::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             ResizeClusterErrorKind::UnsupportedOptionFault(_inner) => _inner.fmt(f),
@@ -13798,6 +14170,13 @@ impl ResizeClusterError {
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, ResizeClusterErrorKind::ClusterNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::DependentServiceUnavailableFault`.
+    pub fn is_dependent_service_unavailable_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResizeClusterErrorKind::DependentServiceUnavailableFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `ResizeClusterErrorKind::InsufficientClusterCapacityFault`.
     pub fn is_insufficient_cluster_capacity_fault(&self) -> bool {
         matches!(
@@ -13810,6 +14189,13 @@ impl ResizeClusterError {
         matches!(
             &self.kind,
             ResizeClusterErrorKind::InvalidClusterStateFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::InvalidReservedNodeStateFault`.
+    pub fn is_invalid_reserved_node_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResizeClusterErrorKind::InvalidReservedNodeStateFault(_)
         )
     }
     /// Returns `true` if the error kind is `ResizeClusterErrorKind::LimitExceededFault`.
@@ -13828,6 +14214,34 @@ impl ResizeClusterError {
         matches!(
             &self.kind,
             ResizeClusterErrorKind::NumberOfNodesQuotaExceededFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::ReservedNodeAlreadyExistsFault`.
+    pub fn is_reserved_node_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResizeClusterErrorKind::ReservedNodeAlreadyExistsFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::ReservedNodeAlreadyMigratedFault`.
+    pub fn is_reserved_node_already_migrated_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResizeClusterErrorKind::ReservedNodeAlreadyMigratedFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::ReservedNodeNotFoundFault`.
+    pub fn is_reserved_node_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResizeClusterErrorKind::ReservedNodeNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::ReservedNodeOfferingNotFoundFault`.
+    pub fn is_reserved_node_offering_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResizeClusterErrorKind::ReservedNodeOfferingNotFoundFault(_)
         )
     }
     /// Returns `true` if the error kind is `ResizeClusterErrorKind::UnauthorizedOperation`.
@@ -13853,13 +14267,19 @@ impl std::error::Error for ResizeClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ResizeClusterErrorKind::ClusterNotFoundFault(_inner) => Some(_inner),
+            ResizeClusterErrorKind::DependentServiceUnavailableFault(_inner) => Some(_inner),
             ResizeClusterErrorKind::InsufficientClusterCapacityFault(_inner) => Some(_inner),
             ResizeClusterErrorKind::InvalidClusterStateFault(_inner) => Some(_inner),
+            ResizeClusterErrorKind::InvalidReservedNodeStateFault(_inner) => Some(_inner),
             ResizeClusterErrorKind::LimitExceededFault(_inner) => Some(_inner),
             ResizeClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault(_inner) => {
                 Some(_inner)
             }
             ResizeClusterErrorKind::NumberOfNodesQuotaExceededFault(_inner) => Some(_inner),
+            ResizeClusterErrorKind::ReservedNodeAlreadyExistsFault(_inner) => Some(_inner),
+            ResizeClusterErrorKind::ReservedNodeAlreadyMigratedFault(_inner) => Some(_inner),
+            ResizeClusterErrorKind::ReservedNodeNotFoundFault(_inner) => Some(_inner),
+            ResizeClusterErrorKind::ReservedNodeOfferingNotFoundFault(_inner) => Some(_inner),
             ResizeClusterErrorKind::UnauthorizedOperation(_inner) => Some(_inner),
             ResizeClusterErrorKind::UnsupportedOperationFault(_inner) => Some(_inner),
             ResizeClusterErrorKind::UnsupportedOptionFault(_inner) => Some(_inner),
@@ -13905,6 +14325,9 @@ pub enum RestoreFromClusterSnapshotErrorKind {
     /// <p>The request cannot be completed because a dependent service is throttling requests
     /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
+    /// <p>Your request cannot be completed because a dependent internal service is
+    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
     /// <p>There is no Amazon Redshift HSM client certificate with the specified
     /// identifier.</p>
     HsmClientCertificateNotFoundFault(crate::error::HsmClientCertificateNotFoundFault),
@@ -13922,6 +14345,8 @@ pub enum RestoreFromClusterSnapshotErrorKind {
     InvalidClusterTrackFault(crate::error::InvalidClusterTrackFault),
     /// <p>The Elastic IP (EIP) is invalid or cannot be found.</p>
     InvalidElasticIpFault(crate::error::InvalidElasticIpFault),
+    /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
+    InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
     /// <p>The restore is invalid.</p>
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
     /// <p>The requested subnet is not valid, or not all of the subnets are in the same
@@ -13943,12 +14368,22 @@ pub enum RestoreFromClusterSnapshotErrorKind {
     /// in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </p>
     NumberOfNodesQuotaExceededFault(crate::error::NumberOfNodesQuotaExceededFault),
+    /// <p>User already has a reservation with the given identifier.</p>
+    ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
+    /// <p>Indicates that the reserved node has already been exchanged.</p>
+    ReservedNodeAlreadyMigratedFault(crate::error::ReservedNodeAlreadyMigratedFault),
+    /// <p>The specified reserved compute node not found.</p>
+    ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
+    /// <p>Specified offering does not exist.</p>
+    ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
     /// <p>We could not find the specified snapshot schedule. </p>
     SnapshotScheduleNotFoundFault(crate::error::SnapshotScheduleNotFoundFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
+    /// <p>The requested operation isn't supported.</p>
+    UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -13975,6 +14410,9 @@ impl std::fmt::Display for RestoreFromClusterSnapshotError {
             RestoreFromClusterSnapshotErrorKind::DependentServiceRequestThrottlingFault(_inner) => {
                 _inner.fmt(f)
             }
+            RestoreFromClusterSnapshotErrorKind::DependentServiceUnavailableFault(_inner) => {
+                _inner.fmt(f)
+            }
             RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
@@ -13992,6 +14430,9 @@ impl std::fmt::Display for RestoreFromClusterSnapshotError {
             }
             RestoreFromClusterSnapshotErrorKind::InvalidClusterTrackFault(_inner) => _inner.fmt(f),
             RestoreFromClusterSnapshotErrorKind::InvalidElasticIpFault(_inner) => _inner.fmt(f),
+            RestoreFromClusterSnapshotErrorKind::InvalidReservedNodeStateFault(_inner) => {
+                _inner.fmt(f)
+            }
             RestoreFromClusterSnapshotErrorKind::InvalidRestoreFault(_inner) => _inner.fmt(f),
             RestoreFromClusterSnapshotErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
             RestoreFromClusterSnapshotErrorKind::InvalidTagFault(_inner) => _inner.fmt(f),
@@ -14005,11 +14446,22 @@ impl std::fmt::Display for RestoreFromClusterSnapshotError {
             RestoreFromClusterSnapshotErrorKind::NumberOfNodesQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyExistsFault(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyMigratedFault(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeNotFoundFault(_inner) => _inner.fmt(f),
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeOfferingNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
             RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreFromClusterSnapshotErrorKind::TagLimitExceededFault(_inner) => _inner.fmt(f),
             RestoreFromClusterSnapshotErrorKind::UnauthorizedOperation(_inner) => _inner.fmt(f),
+            RestoreFromClusterSnapshotErrorKind::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             RestoreFromClusterSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14122,6 +14574,13 @@ impl RestoreFromClusterSnapshotError {
             RestoreFromClusterSnapshotErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::DependentServiceUnavailableFault`.
+    pub fn is_dependent_service_unavailable_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreFromClusterSnapshotErrorKind::DependentServiceUnavailableFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault`.
     pub fn is_hsm_client_certificate_not_found_fault(&self) -> bool {
         matches!(
@@ -14169,6 +14628,13 @@ impl RestoreFromClusterSnapshotError {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidElasticIpFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidReservedNodeStateFault`.
+    pub fn is_invalid_reserved_node_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreFromClusterSnapshotErrorKind::InvalidReservedNodeStateFault(_)
         )
     }
     /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidRestoreFault`.
@@ -14220,6 +14686,34 @@ impl RestoreFromClusterSnapshotError {
             RestoreFromClusterSnapshotErrorKind::NumberOfNodesQuotaExceededFault(_)
         )
     }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyExistsFault`.
+    pub fn is_reserved_node_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyExistsFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyMigratedFault`.
+    pub fn is_reserved_node_already_migrated_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyMigratedFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ReservedNodeNotFoundFault`.
+    pub fn is_reserved_node_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ReservedNodeOfferingNotFoundFault`.
+    pub fn is_reserved_node_offering_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeOfferingNotFoundFault(_)
+        )
+    }
     /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault`.
     pub fn is_snapshot_schedule_not_found_fault(&self) -> bool {
         matches!(
@@ -14239,6 +14733,13 @@ impl RestoreFromClusterSnapshotError {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::UnauthorizedOperation(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::UnsupportedOperationFault`.
+    pub fn is_unsupported_operation_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreFromClusterSnapshotErrorKind::UnsupportedOperationFault(_)
         )
     }
 }
@@ -14265,6 +14766,9 @@ impl std::error::Error for RestoreFromClusterSnapshotError {
             RestoreFromClusterSnapshotErrorKind::DependentServiceRequestThrottlingFault(_inner) => {
                 Some(_inner)
             }
+            RestoreFromClusterSnapshotErrorKind::DependentServiceUnavailableFault(_inner) => {
+                Some(_inner)
+            }
             RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault(_inner) => {
                 Some(_inner)
             }
@@ -14282,6 +14786,9 @@ impl std::error::Error for RestoreFromClusterSnapshotError {
             }
             RestoreFromClusterSnapshotErrorKind::InvalidClusterTrackFault(_inner) => Some(_inner),
             RestoreFromClusterSnapshotErrorKind::InvalidElasticIpFault(_inner) => Some(_inner),
+            RestoreFromClusterSnapshotErrorKind::InvalidReservedNodeStateFault(_inner) => {
+                Some(_inner)
+            }
             RestoreFromClusterSnapshotErrorKind::InvalidRestoreFault(_inner) => Some(_inner),
             RestoreFromClusterSnapshotErrorKind::InvalidSubnet(_inner) => Some(_inner),
             RestoreFromClusterSnapshotErrorKind::InvalidTagFault(_inner) => Some(_inner),
@@ -14295,11 +14802,22 @@ impl std::error::Error for RestoreFromClusterSnapshotError {
             RestoreFromClusterSnapshotErrorKind::NumberOfNodesQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyExistsFault(_inner) => {
+                Some(_inner)
+            }
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeAlreadyMigratedFault(_inner) => {
+                Some(_inner)
+            }
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeNotFoundFault(_inner) => Some(_inner),
+            RestoreFromClusterSnapshotErrorKind::ReservedNodeOfferingNotFoundFault(_inner) => {
+                Some(_inner)
+            }
             RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault(_inner) => {
                 Some(_inner)
             }
             RestoreFromClusterSnapshotErrorKind::TagLimitExceededFault(_inner) => Some(_inner),
             RestoreFromClusterSnapshotErrorKind::UnauthorizedOperation(_inner) => Some(_inner),
+            RestoreFromClusterSnapshotErrorKind::UnsupportedOperationFault(_inner) => Some(_inner),
             RestoreFromClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -16702,6 +17220,262 @@ impl SnapshotScheduleNotFoundFault {
     }
 }
 
+/// <p>Specified offering does not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReservedNodeOfferingNotFoundFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ReservedNodeOfferingNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReservedNodeOfferingNotFoundFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ReservedNodeOfferingNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodeOfferingNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodeOfferingNotFoundFault")?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodeOfferingNotFoundFault {}
+/// See [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault)
+pub mod reserved_node_offering_not_found_fault {
+    /// A builder for [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault)
+        pub fn build(self) -> crate::error::ReservedNodeOfferingNotFoundFault {
+            crate::error::ReservedNodeOfferingNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodeOfferingNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault)
+    pub fn builder() -> crate::error::reserved_node_offering_not_found_fault::Builder {
+        crate::error::reserved_node_offering_not_found_fault::Builder::default()
+    }
+}
+
+/// <p>The specified reserved compute node not found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReservedNodeNotFoundFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ReservedNodeNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReservedNodeNotFoundFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ReservedNodeNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodeNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodeNotFoundFault")?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodeNotFoundFault {}
+/// See [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault)
+pub mod reserved_node_not_found_fault {
+    /// A builder for [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault)
+        pub fn build(self) -> crate::error::ReservedNodeNotFoundFault {
+            crate::error::ReservedNodeNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodeNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault)
+    pub fn builder() -> crate::error::reserved_node_not_found_fault::Builder {
+        crate::error::reserved_node_not_found_fault::Builder::default()
+    }
+}
+
+/// <p>Indicates that the reserved node has already been exchanged.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReservedNodeAlreadyMigratedFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ReservedNodeAlreadyMigratedFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReservedNodeAlreadyMigratedFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ReservedNodeAlreadyMigratedFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodeAlreadyMigratedFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodeAlreadyMigratedFault")?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodeAlreadyMigratedFault {}
+/// See [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault)
+pub mod reserved_node_already_migrated_fault {
+    /// A builder for [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault)
+        pub fn build(self) -> crate::error::ReservedNodeAlreadyMigratedFault {
+            crate::error::ReservedNodeAlreadyMigratedFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodeAlreadyMigratedFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault)
+    pub fn builder() -> crate::error::reserved_node_already_migrated_fault::Builder {
+        crate::error::reserved_node_already_migrated_fault::Builder::default()
+    }
+}
+
+/// <p>User already has a reservation with the given identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReservedNodeAlreadyExistsFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ReservedNodeAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReservedNodeAlreadyExistsFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ReservedNodeAlreadyExistsFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodeAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodeAlreadyExistsFault")?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodeAlreadyExistsFault {}
+/// See [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault)
+pub mod reserved_node_already_exists_fault {
+    /// A builder for [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault)
+        pub fn build(self) -> crate::error::ReservedNodeAlreadyExistsFault {
+            crate::error::ReservedNodeAlreadyExistsFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodeAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault)
+    pub fn builder() -> crate::error::reserved_node_already_exists_fault::Builder {
+        crate::error::reserved_node_already_exists_fault::Builder::default()
+    }
+}
+
 /// <p>The operation would exceed the number of nodes allotted to the account.
 ///
 /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
@@ -16729,8 +17503,8 @@ impl NumberOfNodesQuotaExceededFault {
 impl std::fmt::Display for NumberOfNodesQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NumberOfNodesQuotaExceededFault")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -16793,8 +17567,8 @@ impl NumberOfNodesPerClusterLimitExceededFault {
 impl std::fmt::Display for NumberOfNodesPerClusterLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NumberOfNodesPerClusterLimitExceededFault")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -16857,8 +17631,8 @@ impl LimitExceededFault {
 impl std::fmt::Display for LimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededFault")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -16924,8 +17698,8 @@ impl std::fmt::Display for InvalidVpcNetworkStateFault {
             f,
             "InvalidVpcNetworkStateFault [InvalidVPCNetworkStateFault]"
         )?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -16988,8 +17762,8 @@ impl InvalidTagFault {
 impl std::fmt::Display for InvalidTagFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagFault")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -17053,8 +17827,8 @@ impl InvalidSubnet {
 impl std::fmt::Display for InvalidSubnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubnet")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -17117,8 +17891,8 @@ impl InvalidRestoreFault {
 impl std::fmt::Display for InvalidRestoreFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRestoreFault")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -17158,6 +17932,70 @@ impl InvalidRestoreFault {
     }
 }
 
+/// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidReservedNodeStateFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidReservedNodeStateFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidReservedNodeStateFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidReservedNodeStateFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidReservedNodeStateFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidReservedNodeStateFault")?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidReservedNodeStateFault {}
+/// See [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault)
+pub mod invalid_reserved_node_state_fault {
+    /// A builder for [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault)
+        pub fn build(self) -> crate::error::InvalidReservedNodeStateFault {
+            crate::error::InvalidReservedNodeStateFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidReservedNodeStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault)
+    pub fn builder() -> crate::error::invalid_reserved_node_state_fault::Builder {
+        crate::error::invalid_reserved_node_state_fault::Builder::default()
+    }
+}
+
 /// <p>The Elastic IP (EIP) is invalid or cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17181,8 +18019,8 @@ impl InvalidElasticIpFault {
 impl std::fmt::Display for InvalidElasticIpFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidElasticIpFault")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -17245,8 +18083,8 @@ impl InvalidClusterTrackFault {
 impl std::fmt::Display for InvalidClusterTrackFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClusterTrackFault")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
@@ -17309,8 +18147,8 @@ impl InvalidClusterSubnetGroupStateFault {
 impl std::fmt::Display for InvalidClusterSubnetGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClusterSubnetGroupStateFault")?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
         }
         Ok(())
     }
@@ -17373,8 +18211,8 @@ impl HsmConfigurationNotFoundFault {
 impl std::fmt::Display for HsmConfigurationNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmConfigurationNotFoundFault")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -17438,8 +18276,8 @@ impl HsmClientCertificateNotFoundFault {
 impl std::fmt::Display for HsmClientCertificateNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmClientCertificateNotFoundFault")?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
         }
         Ok(())
     }
@@ -17479,6 +18317,71 @@ impl HsmClientCertificateNotFoundFault {
     }
 }
 
+/// <p>Your request cannot be completed because a dependent internal service is
+/// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DependentServiceUnavailableFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DependentServiceUnavailableFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DependentServiceUnavailableFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl DependentServiceUnavailableFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DependentServiceUnavailableFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DependentServiceUnavailableFault")?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DependentServiceUnavailableFault {}
+/// See [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault)
+pub mod dependent_service_unavailable_fault {
+    /// A builder for [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault)
+        pub fn build(self) -> crate::error::DependentServiceUnavailableFault {
+            crate::error::DependentServiceUnavailableFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl DependentServiceUnavailableFault {
+    /// Creates a new builder-style object to manufacture [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault)
+    pub fn builder() -> crate::error::dependent_service_unavailable_fault::Builder {
+        crate::error::dependent_service_unavailable_fault::Builder::default()
+    }
+}
+
 /// <p>The cluster subnet group name does not refer to an existing cluster subnet
 /// group.</p>
 #[non_exhaustive]
@@ -17503,8 +18406,8 @@ impl ClusterSubnetGroupNotFoundFault {
 impl std::fmt::Display for ClusterSubnetGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSubnetGroupNotFoundFault")?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
@@ -17571,8 +18474,8 @@ impl ClusterQuotaExceededFault {
 impl std::fmt::Display for ClusterQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterQuotaExceededFault")?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -17635,8 +18538,8 @@ impl ClusterParameterGroupNotFoundFault {
 impl std::fmt::Display for ClusterParameterGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterParameterGroupNotFoundFault")?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -17699,8 +18602,8 @@ impl ClusterAlreadyExistsFault {
 impl std::fmt::Display for ClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterAlreadyExistsFault")?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -17763,8 +18666,8 @@ impl UnsupportedOptionFault {
 impl std::fmt::Display for UnsupportedOptionFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOptionFault")?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -17829,8 +18732,8 @@ impl InvalidClusterParameterGroupStateFault {
 impl std::fmt::Display for InvalidClusterParameterGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClusterParameterGroupStateFault")?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -17893,8 +18796,8 @@ impl InvalidDataShareFault {
 impl std::fmt::Display for InvalidDataShareFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDataShareFault")?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -17960,8 +18863,8 @@ impl ReservedNodeQuotaExceededFault {
 impl std::fmt::Display for ReservedNodeQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedNodeQuotaExceededFault")?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
@@ -18001,134 +18904,6 @@ impl ReservedNodeQuotaExceededFault {
     }
 }
 
-/// <p>Specified offering does not exist.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReservedNodeOfferingNotFoundFault {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeOfferingNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeOfferingNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ReservedNodeOfferingNotFoundFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ReservedNodeOfferingNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReservedNodeOfferingNotFoundFault")?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ReservedNodeOfferingNotFoundFault {}
-/// See [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault)
-pub mod reserved_node_offering_not_found_fault {
-    /// A builder for [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault)
-        pub fn build(self) -> crate::error::ReservedNodeOfferingNotFoundFault {
-            crate::error::ReservedNodeOfferingNotFoundFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ReservedNodeOfferingNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault)
-    pub fn builder() -> crate::error::reserved_node_offering_not_found_fault::Builder {
-        crate::error::reserved_node_offering_not_found_fault::Builder::default()
-    }
-}
-
-/// <p>User already has a reservation with the given identifier.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReservedNodeAlreadyExistsFault {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeAlreadyExistsFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ReservedNodeAlreadyExistsFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ReservedNodeAlreadyExistsFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReservedNodeAlreadyExistsFault")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ReservedNodeAlreadyExistsFault {}
-/// See [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault)
-pub mod reserved_node_already_exists_fault {
-    /// A builder for [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault)
-        pub fn build(self) -> crate::error::ReservedNodeAlreadyExistsFault {
-            crate::error::ReservedNodeAlreadyExistsFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ReservedNodeAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault)
-    pub fn builder() -> crate::error::reserved_node_already_exists_fault::Builder {
-        crate::error::reserved_node_already_exists_fault::Builder::default()
-    }
-}
-
 /// <p>The usage limit identifier can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -18152,8 +18927,8 @@ impl UsageLimitNotFoundFault {
 impl std::fmt::Display for UsageLimitNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UsageLimitNotFoundFault")?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
         }
         Ok(())
     }
@@ -18216,8 +18991,8 @@ impl InvalidUsageLimitFault {
 impl std::fmt::Display for InvalidUsageLimitFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUsageLimitFault")?;
-        if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
         }
         Ok(())
     }
@@ -18280,8 +19055,8 @@ impl SnapshotScheduleUpdateInProgressFault {
 impl std::fmt::Display for SnapshotScheduleUpdateInProgressFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotScheduleUpdateInProgressFault")?;
-        if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -18344,8 +19119,8 @@ impl InvalidScheduleFault {
 impl std::fmt::Display for InvalidScheduleFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidScheduleFault")?;
-        if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
@@ -18409,8 +19184,8 @@ impl SnapshotCopyDisabledFault {
 impl std::fmt::Display for SnapshotCopyDisabledFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyDisabledFault")?;
-        if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+        if let Some(inner_53) = &self.message {
+            write!(f, ": {}", inner_53)?;
         }
         Ok(())
     }
@@ -18474,8 +19249,8 @@ impl InvalidRetentionPeriodFault {
 impl std::fmt::Display for InvalidRetentionPeriodFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRetentionPeriodFault")?;
-        if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+        if let Some(inner_54) = &self.message {
+            write!(f, ": {}", inner_54)?;
         }
         Ok(())
     }
@@ -18538,8 +19313,8 @@ impl ScheduledActionTypeUnsupportedFault {
 impl std::fmt::Display for ScheduledActionTypeUnsupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduledActionTypeUnsupportedFault")?;
-        if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+        if let Some(inner_55) = &self.message {
+            write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
@@ -18602,8 +19377,8 @@ impl ScheduledActionNotFoundFault {
 impl std::fmt::Display for ScheduledActionNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduledActionNotFoundFault")?;
-        if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+        if let Some(inner_56) = &self.message {
+            write!(f, ": {}", inner_56)?;
         }
         Ok(())
     }
@@ -18666,8 +19441,8 @@ impl InvalidScheduledActionFault {
 impl std::fmt::Display for InvalidScheduledActionFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidScheduledActionFault")?;
-        if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+        if let Some(inner_57) = &self.message {
+            write!(f, ": {}", inner_57)?;
         }
         Ok(())
     }
@@ -18732,8 +19507,8 @@ impl SubscriptionSeverityNotFoundFault {
 impl std::fmt::Display for SubscriptionSeverityNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionSeverityNotFoundFault")?;
-        if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+        if let Some(inner_58) = &self.message {
+            write!(f, ": {}", inner_58)?;
         }
         Ok(())
     }
@@ -18797,8 +19572,8 @@ impl SubscriptionNotFoundFault {
 impl std::fmt::Display for SubscriptionNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionNotFoundFault")?;
-        if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+        if let Some(inner_59) = &self.message {
+            write!(f, ": {}", inner_59)?;
         }
         Ok(())
     }
@@ -18861,8 +19636,8 @@ impl SubscriptionEventIdNotFoundFault {
 impl std::fmt::Display for SubscriptionEventIdNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionEventIdNotFoundFault")?;
-        if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+        if let Some(inner_60) = &self.message {
+            write!(f, ": {}", inner_60)?;
         }
         Ok(())
     }
@@ -18927,8 +19702,8 @@ impl SubscriptionCategoryNotFoundFault {
 impl std::fmt::Display for SubscriptionCategoryNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionCategoryNotFoundFault")?;
-        if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+        if let Some(inner_61) = &self.message {
+            write!(f, ": {}", inner_61)?;
         }
         Ok(())
     }
@@ -18991,8 +19766,8 @@ impl SourceNotFoundFault {
 impl std::fmt::Display for SourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceNotFoundFault")?;
-        if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+        if let Some(inner_62) = &self.message {
+            write!(f, ": {}", inner_62)?;
         }
         Ok(())
     }
@@ -19056,8 +19831,8 @@ impl SnsTopicArnNotFoundFault {
 impl std::fmt::Display for SnsTopicArnNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsTopicArnNotFoundFault [SNSTopicArnNotFoundFault]")?;
-        if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+        if let Some(inner_63) = &self.message {
+            write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
@@ -19120,8 +19895,8 @@ impl SnsNoAuthorizationFault {
 impl std::fmt::Display for SnsNoAuthorizationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsNoAuthorizationFault [SNSNoAuthorizationFault]")?;
-        if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+        if let Some(inner_64) = &self.message {
+            write!(f, ": {}", inner_64)?;
         }
         Ok(())
     }
@@ -19185,8 +19960,8 @@ impl SnsInvalidTopicFault {
 impl std::fmt::Display for SnsInvalidTopicFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsInvalidTopicFault [SNSInvalidTopicFault]")?;
-        if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+        if let Some(inner_65) = &self.message {
+            write!(f, ": {}", inner_65)?;
         }
         Ok(())
     }
@@ -19250,8 +20025,8 @@ impl InvalidSubscriptionStateFault {
 impl std::fmt::Display for InvalidSubscriptionStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubscriptionStateFault")?;
-        if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+        if let Some(inner_66) = &self.message {
+            write!(f, ": {}", inner_66)?;
         }
         Ok(())
     }
@@ -19314,8 +20089,8 @@ impl SubnetAlreadyInUse {
 impl std::fmt::Display for SubnetAlreadyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetAlreadyInUse")?;
-        if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+        if let Some(inner_67) = &self.message {
+            write!(f, ": {}", inner_67)?;
         }
         Ok(())
     }
@@ -19382,8 +20157,8 @@ impl ClusterSubnetQuotaExceededFault {
 impl std::fmt::Display for ClusterSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSubnetQuotaExceededFault")?;
-        if let Some(inner_64) = &self.message {
-            write!(f, ": {}", inner_64)?;
+        if let Some(inner_68) = &self.message {
+            write!(f, ": {}", inner_68)?;
         }
         Ok(())
     }
@@ -19446,8 +20221,8 @@ impl InvalidClusterSnapshotScheduleStateFault {
 impl std::fmt::Display for InvalidClusterSnapshotScheduleStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClusterSnapshotScheduleStateFault")?;
-        if let Some(inner_65) = &self.message {
-            write!(f, ": {}", inner_65)?;
+        if let Some(inner_69) = &self.message {
+            write!(f, ": {}", inner_69)?;
         }
         Ok(())
     }
@@ -19510,8 +20285,8 @@ impl ClusterOnLatestRevisionFault {
 impl std::fmt::Display for ClusterOnLatestRevisionFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterOnLatestRevisionFault")?;
-        if let Some(inner_66) = &self.message {
-            write!(f, ": {}", inner_66)?;
+        if let Some(inner_70) = &self.message {
+            write!(f, ": {}", inner_70)?;
         }
         Ok(())
     }
@@ -19575,8 +20350,8 @@ impl TableLimitExceededFault {
 impl std::fmt::Display for TableLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TableLimitExceededFault")?;
-        if let Some(inner_67) = &self.message {
-            write!(f, ": {}", inner_67)?;
+        if let Some(inner_71) = &self.message {
+            write!(f, ": {}", inner_71)?;
         }
         Ok(())
     }
@@ -19640,8 +20415,8 @@ impl InvalidAuthenticationProfileRequestFault {
 impl std::fmt::Display for InvalidAuthenticationProfileRequestFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAuthenticationProfileRequestFault")?;
-        if let Some(inner_68) = &self.message {
-            write!(f, ": {}", inner_68)?;
+        if let Some(inner_72) = &self.message {
+            write!(f, ": {}", inner_72)?;
         }
         Ok(())
     }
@@ -19705,8 +20480,8 @@ impl AuthenticationProfileQuotaExceededFault {
 impl std::fmt::Display for AuthenticationProfileQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthenticationProfileQuotaExceededFault")?;
-        if let Some(inner_69) = &self.message {
-            write!(f, ": {}", inner_69)?;
+        if let Some(inner_73) = &self.message {
+            write!(f, ": {}", inner_73)?;
         }
         Ok(())
     }
@@ -19769,8 +20544,8 @@ impl AuthenticationProfileNotFoundFault {
 impl std::fmt::Display for AuthenticationProfileNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthenticationProfileNotFoundFault")?;
-        if let Some(inner_70) = &self.message {
-            write!(f, ": {}", inner_70)?;
+        if let Some(inner_74) = &self.message {
+            write!(f, ": {}", inner_74)?;
         }
         Ok(())
     }
@@ -19807,263 +20582,6 @@ impl AuthenticationProfileNotFoundFault {
     /// Creates a new builder-style object to manufacture [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault)
     pub fn builder() -> crate::error::authentication_profile_not_found_fault::Builder {
         crate::error::authentication_profile_not_found_fault::Builder::default()
-    }
-}
-
-/// <p>The specified reserved compute node not found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReservedNodeNotFoundFault {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeNotFoundFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ReservedNodeNotFoundFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ReservedNodeNotFoundFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReservedNodeNotFoundFault")?;
-        if let Some(inner_71) = &self.message {
-            write!(f, ": {}", inner_71)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ReservedNodeNotFoundFault {}
-/// See [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault)
-pub mod reserved_node_not_found_fault {
-    /// A builder for [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault)
-        pub fn build(self) -> crate::error::ReservedNodeNotFoundFault {
-            crate::error::ReservedNodeNotFoundFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ReservedNodeNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault)
-    pub fn builder() -> crate::error::reserved_node_not_found_fault::Builder {
-        crate::error::reserved_node_not_found_fault::Builder::default()
-    }
-}
-
-/// <p>Indicates that the reserved node has already been exchanged.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReservedNodeAlreadyMigratedFault {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReservedNodeAlreadyMigratedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedNodeAlreadyMigratedFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ReservedNodeAlreadyMigratedFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ReservedNodeAlreadyMigratedFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReservedNodeAlreadyMigratedFault")?;
-        if let Some(inner_72) = &self.message {
-            write!(f, ": {}", inner_72)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ReservedNodeAlreadyMigratedFault {}
-/// See [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault)
-pub mod reserved_node_already_migrated_fault {
-    /// A builder for [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault)
-        pub fn build(self) -> crate::error::ReservedNodeAlreadyMigratedFault {
-            crate::error::ReservedNodeAlreadyMigratedFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ReservedNodeAlreadyMigratedFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault)
-    pub fn builder() -> crate::error::reserved_node_already_migrated_fault::Builder {
-        crate::error::reserved_node_already_migrated_fault::Builder::default()
-    }
-}
-
-/// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidReservedNodeStateFault {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidReservedNodeStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReservedNodeStateFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InvalidReservedNodeStateFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidReservedNodeStateFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidReservedNodeStateFault")?;
-        if let Some(inner_73) = &self.message {
-            write!(f, ": {}", inner_73)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidReservedNodeStateFault {}
-/// See [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault)
-pub mod invalid_reserved_node_state_fault {
-    /// A builder for [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault)
-        pub fn build(self) -> crate::error::InvalidReservedNodeStateFault {
-            crate::error::InvalidReservedNodeStateFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidReservedNodeStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault)
-    pub fn builder() -> crate::error::invalid_reserved_node_state_fault::Builder {
-        crate::error::invalid_reserved_node_state_fault::Builder::default()
-    }
-}
-
-/// <p>Your request cannot be completed because a dependent internal service is
-/// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DependentServiceUnavailableFault {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DependentServiceUnavailableFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DependentServiceUnavailableFault");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl DependentServiceUnavailableFault {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DependentServiceUnavailableFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DependentServiceUnavailableFault")?;
-        if let Some(inner_74) = &self.message {
-            write!(f, ": {}", inner_74)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DependentServiceUnavailableFault {}
-/// See [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault)
-pub mod dependent_service_unavailable_fault {
-    /// A builder for [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault)
-        pub fn build(self) -> crate::error::DependentServiceUnavailableFault {
-            crate::error::DependentServiceUnavailableFault {
-                message: self.message,
-            }
-        }
-    }
-}
-impl DependentServiceUnavailableFault {
-    /// Creates a new builder-style object to manufacture [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault)
-    pub fn builder() -> crate::error::dependent_service_unavailable_fault::Builder {
-        crate::error::dependent_service_unavailable_fault::Builder::default()
     }
 }
 
@@ -20970,6 +21488,70 @@ impl ResizeNotFoundFault {
     }
 }
 
+/// <p>The reserved-node exchange status wasn't found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReservedNodeExchangeNotFoundFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ReservedNodeExchangeNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReservedNodeExchangeNotFoundFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ReservedNodeExchangeNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReservedNodeExchangeNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReservedNodeExchangeNotFoundFault")?;
+        if let Some(inner_89) = &self.message {
+            write!(f, ": {}", inner_89)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReservedNodeExchangeNotFoundFault {}
+/// See [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault)
+pub mod reserved_node_exchange_not_found_fault {
+    /// A builder for [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault)
+        pub fn build(self) -> crate::error::ReservedNodeExchangeNotFoundFault {
+            crate::error::ReservedNodeExchangeNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReservedNodeExchangeNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault)
+    pub fn builder() -> crate::error::reserved_node_exchange_not_found_fault::Builder {
+        crate::error::reserved_node_exchange_not_found_fault::Builder::default()
+    }
+}
+
 /// <p>The snapshot copy grant can't be deleted because it is used by one or more
 /// clusters.</p>
 #[non_exhaustive]
@@ -20994,8 +21576,8 @@ impl InvalidSnapshotCopyGrantStateFault {
 impl std::fmt::Display for InvalidSnapshotCopyGrantStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSnapshotCopyGrantStateFault")?;
-        if let Some(inner_89) = &self.message {
-            write!(f, ": {}", inner_89)?;
+        if let Some(inner_90) = &self.message {
+            write!(f, ": {}", inner_90)?;
         }
         Ok(())
     }
@@ -21059,8 +21641,8 @@ impl InvalidHsmConfigurationStateFault {
 impl std::fmt::Display for InvalidHsmConfigurationStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHsmConfigurationStateFault")?;
-        if let Some(inner_90) = &self.message {
-            write!(f, ": {}", inner_90)?;
+        if let Some(inner_91) = &self.message {
+            write!(f, ": {}", inner_91)?;
         }
         Ok(())
     }
@@ -21124,8 +21706,8 @@ impl InvalidHsmClientCertificateStateFault {
 impl std::fmt::Display for InvalidHsmClientCertificateStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHsmClientCertificateStateFault")?;
-        if let Some(inner_91) = &self.message {
-            write!(f, ": {}", inner_91)?;
+        if let Some(inner_92) = &self.message {
+            write!(f, ": {}", inner_92)?;
         }
         Ok(())
     }
@@ -21188,8 +21770,8 @@ impl InvalidClusterSubnetStateFault {
 impl std::fmt::Display for InvalidClusterSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClusterSubnetStateFault")?;
-        if let Some(inner_92) = &self.message {
-            write!(f, ": {}", inner_92)?;
+        if let Some(inner_93) = &self.message {
+            write!(f, ": {}", inner_93)?;
         }
         Ok(())
     }
@@ -21253,8 +21835,8 @@ impl ClusterSnapshotQuotaExceededFault {
 impl std::fmt::Display for ClusterSnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSnapshotQuotaExceededFault")?;
-        if let Some(inner_93) = &self.message {
-            write!(f, ": {}", inner_93)?;
+        if let Some(inner_94) = &self.message {
+            write!(f, ": {}", inner_94)?;
         }
         Ok(())
     }
@@ -21318,8 +21900,8 @@ impl ClusterSnapshotAlreadyExistsFault {
 impl std::fmt::Display for ClusterSnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSnapshotAlreadyExistsFault")?;
-        if let Some(inner_94) = &self.message {
-            write!(f, ": {}", inner_94)?;
+        if let Some(inner_95) = &self.message {
+            write!(f, ": {}", inner_95)?;
         }
         Ok(())
     }
@@ -21382,8 +21964,8 @@ impl UsageLimitAlreadyExistsFault {
 impl std::fmt::Display for UsageLimitAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UsageLimitAlreadyExistsFault")?;
-        if let Some(inner_95) = &self.message {
-            write!(f, ": {}", inner_95)?;
+        if let Some(inner_96) = &self.message {
+            write!(f, ": {}", inner_96)?;
         }
         Ok(())
     }
@@ -21446,8 +22028,8 @@ impl SnapshotScheduleQuotaExceededFault {
 impl std::fmt::Display for SnapshotScheduleQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotScheduleQuotaExceededFault")?;
-        if let Some(inner_96) = &self.message {
-            write!(f, ": {}", inner_96)?;
+        if let Some(inner_97) = &self.message {
+            write!(f, ": {}", inner_97)?;
         }
         Ok(())
     }
@@ -21510,8 +22092,8 @@ impl SnapshotScheduleAlreadyExistsFault {
 impl std::fmt::Display for SnapshotScheduleAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotScheduleAlreadyExistsFault")?;
-        if let Some(inner_97) = &self.message {
-            write!(f, ": {}", inner_97)?;
+        if let Some(inner_98) = &self.message {
+            write!(f, ": {}", inner_98)?;
         }
         Ok(())
     }
@@ -21574,8 +22156,8 @@ impl ScheduleDefinitionTypeUnsupportedFault {
 impl std::fmt::Display for ScheduleDefinitionTypeUnsupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduleDefinitionTypeUnsupportedFault")?;
-        if let Some(inner_98) = &self.message {
-            write!(f, ": {}", inner_98)?;
+        if let Some(inner_99) = &self.message {
+            write!(f, ": {}", inner_99)?;
         }
         Ok(())
     }
@@ -21639,8 +22221,8 @@ impl SnapshotCopyGrantQuotaExceededFault {
 impl std::fmt::Display for SnapshotCopyGrantQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyGrantQuotaExceededFault")?;
-        if let Some(inner_99) = &self.message {
-            write!(f, ": {}", inner_99)?;
+        if let Some(inner_100) = &self.message {
+            write!(f, ": {}", inner_100)?;
         }
         Ok(())
     }
@@ -21704,8 +22286,8 @@ impl SnapshotCopyGrantAlreadyExistsFault {
 impl std::fmt::Display for SnapshotCopyGrantAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyGrantAlreadyExistsFault")?;
-        if let Some(inner_100) = &self.message {
-            write!(f, ": {}", inner_100)?;
+        if let Some(inner_101) = &self.message {
+            write!(f, ": {}", inner_101)?;
         }
         Ok(())
     }
@@ -21768,8 +22350,8 @@ impl ScheduledActionQuotaExceededFault {
 impl std::fmt::Display for ScheduledActionQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduledActionQuotaExceededFault")?;
-        if let Some(inner_101) = &self.message {
-            write!(f, ": {}", inner_101)?;
+        if let Some(inner_102) = &self.message {
+            write!(f, ": {}", inner_102)?;
         }
         Ok(())
     }
@@ -21832,8 +22414,8 @@ impl ScheduledActionAlreadyExistsFault {
 impl std::fmt::Display for ScheduledActionAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduledActionAlreadyExistsFault")?;
-        if let Some(inner_102) = &self.message {
-            write!(f, ": {}", inner_102)?;
+        if let Some(inner_103) = &self.message {
+            write!(f, ": {}", inner_103)?;
         }
         Ok(())
     }
@@ -21899,8 +22481,8 @@ impl HsmConfigurationQuotaExceededFault {
 impl std::fmt::Display for HsmConfigurationQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmConfigurationQuotaExceededFault")?;
-        if let Some(inner_103) = &self.message {
-            write!(f, ": {}", inner_103)?;
+        if let Some(inner_104) = &self.message {
+            write!(f, ": {}", inner_104)?;
         }
         Ok(())
     }
@@ -21964,8 +22546,8 @@ impl HsmConfigurationAlreadyExistsFault {
 impl std::fmt::Display for HsmConfigurationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmConfigurationAlreadyExistsFault")?;
-        if let Some(inner_104) = &self.message {
-            write!(f, ": {}", inner_104)?;
+        if let Some(inner_105) = &self.message {
+            write!(f, ": {}", inner_105)?;
         }
         Ok(())
     }
@@ -22031,8 +22613,8 @@ impl HsmClientCertificateQuotaExceededFault {
 impl std::fmt::Display for HsmClientCertificateQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmClientCertificateQuotaExceededFault")?;
-        if let Some(inner_105) = &self.message {
-            write!(f, ": {}", inner_105)?;
+        if let Some(inner_106) = &self.message {
+            write!(f, ": {}", inner_106)?;
         }
         Ok(())
     }
@@ -22096,8 +22678,8 @@ impl HsmClientCertificateAlreadyExistsFault {
 impl std::fmt::Display for HsmClientCertificateAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmClientCertificateAlreadyExistsFault")?;
-        if let Some(inner_106) = &self.message {
-            write!(f, ": {}", inner_106)?;
+        if let Some(inner_107) = &self.message {
+            write!(f, ": {}", inner_107)?;
         }
         Ok(())
     }
@@ -22161,8 +22743,8 @@ impl SubscriptionAlreadyExistFault {
 impl std::fmt::Display for SubscriptionAlreadyExistFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionAlreadyExistFault")?;
-        if let Some(inner_107) = &self.message {
-            write!(f, ": {}", inner_107)?;
+        if let Some(inner_108) = &self.message {
+            write!(f, ": {}", inner_108)?;
         }
         Ok(())
     }
@@ -22229,8 +22811,8 @@ impl EventSubscriptionQuotaExceededFault {
 impl std::fmt::Display for EventSubscriptionQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventSubscriptionQuotaExceededFault")?;
-        if let Some(inner_108) = &self.message {
-            write!(f, ": {}", inner_108)?;
+        if let Some(inner_109) = &self.message {
+            write!(f, ": {}", inner_109)?;
         }
         Ok(())
     }
@@ -22293,8 +22875,8 @@ impl EndpointsPerClusterLimitExceededFault {
 impl std::fmt::Display for EndpointsPerClusterLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointsPerClusterLimitExceededFault")?;
-        if let Some(inner_109) = &self.message {
-            write!(f, ": {}", inner_109)?;
+        if let Some(inner_110) = &self.message {
+            write!(f, ": {}", inner_110)?;
         }
         Ok(())
     }
@@ -22357,8 +22939,8 @@ impl EndpointsPerAuthorizationLimitExceededFault {
 impl std::fmt::Display for EndpointsPerAuthorizationLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointsPerAuthorizationLimitExceededFault")?;
-        if let Some(inner_110) = &self.message {
-            write!(f, ": {}", inner_110)?;
+        if let Some(inner_111) = &self.message {
+            write!(f, ": {}", inner_111)?;
         }
         Ok(())
     }
@@ -22421,8 +23003,8 @@ impl EndpointAlreadyExistsFault {
 impl std::fmt::Display for EndpointAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAlreadyExistsFault")?;
-        if let Some(inner_111) = &self.message {
-            write!(f, ": {}", inner_111)?;
+        if let Some(inner_112) = &self.message {
+            write!(f, ": {}", inner_112)?;
         }
         Ok(())
     }
@@ -22485,8 +23067,8 @@ impl AccessToClusterDeniedFault {
 impl std::fmt::Display for AccessToClusterDeniedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessToClusterDeniedFault")?;
-        if let Some(inner_112) = &self.message {
-            write!(f, ": {}", inner_112)?;
+        if let Some(inner_113) = &self.message {
+            write!(f, ": {}", inner_113)?;
         }
         Ok(())
     }
@@ -22553,8 +23135,8 @@ impl ClusterSubnetGroupQuotaExceededFault {
 impl std::fmt::Display for ClusterSubnetGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSubnetGroupQuotaExceededFault")?;
-        if let Some(inner_113) = &self.message {
-            write!(f, ": {}", inner_113)?;
+        if let Some(inner_114) = &self.message {
+            write!(f, ": {}", inner_114)?;
         }
         Ok(())
     }
@@ -22618,8 +23200,8 @@ impl ClusterSubnetGroupAlreadyExistsFault {
 impl std::fmt::Display for ClusterSubnetGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSubnetGroupAlreadyExistsFault")?;
-        if let Some(inner_114) = &self.message {
-            write!(f, ": {}", inner_114)?;
+        if let Some(inner_115) = &self.message {
+            write!(f, ": {}", inner_115)?;
         }
         Ok(())
     }
@@ -22686,8 +23268,8 @@ impl ClusterSecurityGroupQuotaExceededFault {
 impl std::fmt::Display for ClusterSecurityGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSecurityGroupQuotaExceededFault")?;
-        if let Some(inner_115) = &self.message {
-            write!(f, ": {}", inner_115)?;
+        if let Some(inner_116) = &self.message {
+            write!(f, ": {}", inner_116)?;
         }
         Ok(())
     }
@@ -22750,8 +23332,8 @@ impl ClusterSecurityGroupAlreadyExistsFault {
 impl std::fmt::Display for ClusterSecurityGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSecurityGroupAlreadyExistsFault")?;
-        if let Some(inner_116) = &self.message {
-            write!(f, ": {}", inner_116)?;
+        if let Some(inner_117) = &self.message {
+            write!(f, ": {}", inner_117)?;
         }
         Ok(())
     }
@@ -22818,8 +23400,8 @@ impl ClusterParameterGroupQuotaExceededFault {
 impl std::fmt::Display for ClusterParameterGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterParameterGroupQuotaExceededFault")?;
-        if let Some(inner_117) = &self.message {
-            write!(f, ": {}", inner_117)?;
+        if let Some(inner_118) = &self.message {
+            write!(f, ": {}", inner_118)?;
         }
         Ok(())
     }
@@ -22882,8 +23464,8 @@ impl ClusterParameterGroupAlreadyExistsFault {
 impl std::fmt::Display for ClusterParameterGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterParameterGroupAlreadyExistsFault")?;
-        if let Some(inner_118) = &self.message {
-            write!(f, ": {}", inner_118)?;
+        if let Some(inner_119) = &self.message {
+            write!(f, ": {}", inner_119)?;
         }
         Ok(())
     }
@@ -22946,8 +23528,8 @@ impl AuthenticationProfileAlreadyExistsFault {
 impl std::fmt::Display for AuthenticationProfileAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthenticationProfileAlreadyExistsFault")?;
-        if let Some(inner_119) = &self.message {
-            write!(f, ": {}", inner_119)?;
+        if let Some(inner_120) = &self.message {
+            write!(f, ": {}", inner_120)?;
         }
         Ok(())
     }
@@ -23011,8 +23593,8 @@ impl BatchModifyClusterSnapshotsLimitExceededFault {
 impl std::fmt::Display for BatchModifyClusterSnapshotsLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchModifyClusterSnapshotsLimitExceededFault")?;
-        if let Some(inner_120) = &self.message {
-            write!(f, ": {}", inner_120)?;
+        if let Some(inner_121) = &self.message {
+            write!(f, ": {}", inner_121)?;
         }
         Ok(())
     }
@@ -23076,8 +23658,8 @@ impl BatchDeleteRequestSizeExceededFault {
 impl std::fmt::Display for BatchDeleteRequestSizeExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchDeleteRequestSizeExceededFault")?;
-        if let Some(inner_121) = &self.message {
-            write!(f, ": {}", inner_121)?;
+        if let Some(inner_122) = &self.message {
+            write!(f, ": {}", inner_122)?;
         }
         Ok(())
     }
@@ -23140,8 +23722,8 @@ impl AuthorizationQuotaExceededFault {
 impl std::fmt::Display for AuthorizationQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationQuotaExceededFault")?;
-        if let Some(inner_122) = &self.message {
-            write!(f, ": {}", inner_122)?;
+        if let Some(inner_123) = &self.message {
+            write!(f, ": {}", inner_123)?;
         }
         Ok(())
     }
@@ -23205,8 +23787,8 @@ impl AuthorizationAlreadyExistsFault {
 impl std::fmt::Display for AuthorizationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationAlreadyExistsFault")?;
-        if let Some(inner_123) = &self.message {
-            write!(f, ": {}", inner_123)?;
+        if let Some(inner_124) = &self.message {
+            write!(f, ": {}", inner_124)?;
         }
         Ok(())
     }
@@ -23269,8 +23851,8 @@ impl EndpointAuthorizationsPerClusterLimitExceededFault {
 impl std::fmt::Display for EndpointAuthorizationsPerClusterLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAuthorizationsPerClusterLimitExceededFault")?;
-        if let Some(inner_124) = &self.message {
-            write!(f, ": {}", inner_124)?;
+        if let Some(inner_125) = &self.message {
+            write!(f, ": {}", inner_125)?;
         }
         Ok(())
     }
@@ -23334,8 +23916,8 @@ impl EndpointAuthorizationAlreadyExistsFault {
 impl std::fmt::Display for EndpointAuthorizationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAuthorizationAlreadyExistsFault")?;
-        if let Some(inner_125) = &self.message {
-            write!(f, ": {}", inner_125)?;
+        if let Some(inner_126) = &self.message {
+            write!(f, ": {}", inner_126)?;
         }
         Ok(())
     }

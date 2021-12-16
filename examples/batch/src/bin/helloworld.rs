@@ -4,10 +4,10 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use batch::{Client, Region};
+use aws_sdk_batch::{Client, Region};
 
 #[tokio::main]
-async fn main() -> Result<(), batch::Error> {
+async fn main() -> Result<(), aws_sdk_batch::Error> {
     tracing_subscriber::fmt::init();
 
     let region_provider = RegionProviderChain::default_provider().or_else(Region::new("us-west-2"));

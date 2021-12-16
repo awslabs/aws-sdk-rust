@@ -709,7 +709,7 @@ pub mod create_protection_input {
         /// </p>
         /// </li>
         /// <li>
-        /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
+        /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
         /// </code>
         /// </p>
         /// </li>
@@ -747,7 +747,7 @@ pub mod create_protection_input {
         /// </p>
         /// </li>
         /// <li>
-        /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
+        /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
         /// </code>
         /// </p>
         /// </li>
@@ -1778,12 +1778,12 @@ pub mod describe_attack_input {
         pub(crate) attack_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) for the attack that to be described.</p>
+        /// <p>The unique identifier (ID) for the attack.</p>
         pub fn attack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.attack_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the attack that to be described.</p>
+        /// <p>The unique identifier (ID) for the attack.</p>
         pub fn set_attack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attack_id = input;
             self
@@ -2789,6 +2789,165 @@ impl DescribeSubscriptionInput {
     }
 }
 
+/// See [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput)
+pub mod disable_application_layer_automatic_response_input {
+    /// A builder for [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisableApplicationLayerAutomaticResponseInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::input::DisableApplicationLayerAutomaticResponseInput {
+                    resource_arn: self.resource_arn,
+                },
+            )
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisableApplicationLayerAutomaticResponseInputOperationOutputAlias =
+    crate::operation::DisableApplicationLayerAutomaticResponse;
+#[doc(hidden)]
+pub type DisableApplicationLayerAutomaticResponseInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl DisableApplicationLayerAutomaticResponseInput {
+    /// Consumes the builder and constructs an Operation<[`DisableApplicationLayerAutomaticResponse`](crate::operation::DisableApplicationLayerAutomaticResponse)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisableApplicationLayerAutomaticResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DisableApplicationLayerAutomaticResponseInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisableApplicationLayerAutomaticResponseInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisableApplicationLayerAutomaticResponseInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSShield_20160616.DisableApplicationLayerAutomaticResponse",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disable_application_layer_automatic_response(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisableApplicationLayerAutomaticResponse::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisableApplicationLayerAutomaticResponse",
+            "shield",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput)
+    pub fn builder() -> crate::input::disable_application_layer_automatic_response_input::Builder {
+        crate::input::disable_application_layer_automatic_response_input::Builder::default()
+    }
+}
+
 /// See [`DisableProactiveEngagementInput`](crate::input::DisableProactiveEngagementInput)
 pub mod disable_proactive_engagement_input {
     /// A builder for [`DisableProactiveEngagementInput`](crate::input::DisableProactiveEngagementInput)
@@ -3388,6 +3547,182 @@ impl DisassociateHealthCheckInput {
     }
 }
 
+/// See [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput)
+pub mod enable_application_layer_automatic_response_input {
+    /// A builder for [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) action: std::option::Option<crate::model::ResponseAction>,
+    }
+    impl Builder {
+        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
+            self.action = Some(input);
+            self
+        }
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        pub fn set_action(
+            mut self,
+            input: std::option::Option<crate::model::ResponseAction>,
+        ) -> Self {
+            self.action = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::EnableApplicationLayerAutomaticResponseInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::EnableApplicationLayerAutomaticResponseInput {
+                resource_arn: self.resource_arn,
+                action: self.action,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type EnableApplicationLayerAutomaticResponseInputOperationOutputAlias =
+    crate::operation::EnableApplicationLayerAutomaticResponse;
+#[doc(hidden)]
+pub type EnableApplicationLayerAutomaticResponseInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl EnableApplicationLayerAutomaticResponseInput {
+    /// Consumes the builder and constructs an Operation<[`EnableApplicationLayerAutomaticResponse`](crate::operation::EnableApplicationLayerAutomaticResponse)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::EnableApplicationLayerAutomaticResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::EnableApplicationLayerAutomaticResponseInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::EnableApplicationLayerAutomaticResponseInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::EnableApplicationLayerAutomaticResponseInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSShield_20160616.EnableApplicationLayerAutomaticResponse",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_enable_application_layer_automatic_response(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::EnableApplicationLayerAutomaticResponse::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EnableApplicationLayerAutomaticResponse",
+            "shield",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput)
+    pub fn builder() -> crate::input::enable_application_layer_automatic_response_input::Builder {
+        crate::input::enable_application_layer_automatic_response_input::Builder::default()
+    }
+}
+
 /// See [`EnableProactiveEngagementInput`](crate::input::EnableProactiveEngagementInput)
 pub mod enable_proactive_engagement_input {
     /// A builder for [`EnableProactiveEngagementInput`](crate::input::EnableProactiveEngagementInput)
@@ -3674,7 +4009,7 @@ pub mod list_attacks_input {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left
+        /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this
         /// blank, all applicable resources for this account will be included.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
@@ -3682,7 +4017,7 @@ pub mod list_attacks_input {
             self.resource_arns = Some(v);
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left
+        /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this
         /// blank, all applicable resources for this account will be included.</p>
         pub fn set_resource_arns(
             mut self,
@@ -3691,12 +4026,14 @@ pub mod list_attacks_input {
             self.resource_arns = input;
             self
         }
-        /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+        /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
+        /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
         pub fn start_time(mut self, input: crate::model::TimeRange) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+        /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
+        /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<crate::model::TimeRange>,
@@ -3704,36 +4041,52 @@ pub mod list_attacks_input {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+        /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
+        /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
         pub fn end_time(mut self, input: crate::model::TimeRange) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+        /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
+        /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
         pub fn set_end_time(mut self, input: std::option::Option<crate::model::TimeRange>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+        /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+        /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave this blank,
-        /// Shield Advanced returns the first 20 results.</p>
-        /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+        /// in the response.</p>
+        /// <p>The default setting is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave this blank,
-        /// Shield Advanced returns the first 20 results.</p>
-        /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+        /// in the response.</p>
+        /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3886,26 +4239,40 @@ pub mod list_protection_groups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The next token value from a previous call to <code>ListProtectionGroups</code>. Pass null if this is the first call.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+        /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token value from a previous call to <code>ListProtectionGroups</code>. Pass null if this is the first call.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+        /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of <a>ProtectionGroup</a> objects to return. If you leave this blank,
-        /// Shield Advanced returns the first 20 results.</p>
-        /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+        /// in the response.</p>
+        /// <p>The default setting is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of <a>ProtectionGroup</a> objects to return. If you leave this blank,
-        /// Shield Advanced returns the first 20 results.</p>
-        /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+        /// in the response.</p>
+        /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4058,26 +4425,40 @@ pub mod list_protections_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+        /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+        /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of <a>Protection</a> objects to return. If you leave this blank,
-        /// Shield Advanced returns the first 20 results.</p>
-        /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+        /// in the response.</p>
+        /// <p>The default setting is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of <a>Protection</a> objects to return. If you leave this blank,
-        /// Shield Advanced returns the first 20 results.</p>
-        /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+        /// in the response.</p>
+        /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4242,26 +4623,40 @@ pub mod list_resources_in_protection_group_input {
             self.protection_group_id = input;
             self
         }
-        /// <p>The next token value from a previous call to <code>ListResourcesInProtectionGroup</code>. Pass null if this is the first call.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+        /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token value from a previous call to <code>ListResourcesInProtectionGroup</code>. Pass null if this is the first call.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+        /// providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+        /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of resource ARN objects to return. If you leave this blank,
-        /// Shield Advanced returns the first 20 results.</p>
-        /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+        /// in the response.</p>
+        /// <p>The default setting is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of resource ARN objects to return. If you leave this blank,
-        /// Shield Advanced returns the first 20 results.</p>
-        /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+        /// in the response.</p>
+        /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4906,6 +5301,182 @@ impl UntagResourceInput {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput)
+pub mod update_application_layer_automatic_response_input {
+    /// A builder for [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) action: std::option::Option<crate::model::ResponseAction>,
+    }
+    impl Builder {
+        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
+            self.action = Some(input);
+            self
+        }
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        pub fn set_action(
+            mut self,
+            input: std::option::Option<crate::model::ResponseAction>,
+        ) -> Self {
+            self.action = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateApplicationLayerAutomaticResponseInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateApplicationLayerAutomaticResponseInput {
+                resource_arn: self.resource_arn,
+                action: self.action,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateApplicationLayerAutomaticResponseInputOperationOutputAlias =
+    crate::operation::UpdateApplicationLayerAutomaticResponse;
+#[doc(hidden)]
+pub type UpdateApplicationLayerAutomaticResponseInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl UpdateApplicationLayerAutomaticResponseInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateApplicationLayerAutomaticResponse`](crate::operation::UpdateApplicationLayerAutomaticResponse)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateApplicationLayerAutomaticResponse,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateApplicationLayerAutomaticResponseInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateApplicationLayerAutomaticResponseInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateApplicationLayerAutomaticResponseInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSShield_20160616.UpdateApplicationLayerAutomaticResponse",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_application_layer_automatic_response(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateApplicationLayerAutomaticResponse::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateApplicationLayerAutomaticResponse",
+            "shield",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput)
+    pub fn builder() -> crate::input::update_application_layer_automatic_response_input::Builder {
+        crate::input::update_application_layer_automatic_response_input::Builder::default()
     }
 }
 
@@ -5606,6 +6177,38 @@ impl std::fmt::Debug for UpdateEmergencyContactSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateApplicationLayerAutomaticResponseInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+    /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+    /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    pub action: std::option::Option<crate::model::ResponseAction>,
+}
+impl UpdateApplicationLayerAutomaticResponseInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+    /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+    /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ResponseAction> {
+        self.action.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateApplicationLayerAutomaticResponseInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateApplicationLayerAutomaticResponseInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("action", &self.action);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -5686,11 +6289,18 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListResourcesInProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub protection_group_id: std::option::Option<std::string::String>,
-    /// <p>The next token value from a previous call to <code>ListResourcesInProtectionGroup</code>. Pass null if this is the first call.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of resource ARN objects to return. If you leave this blank,
-    /// Shield Advanced returns the first 20 results.</p>
-    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+    /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+    /// in the response.</p>
+    /// <p>The default setting is 20.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourcesInProtectionGroupInput {
@@ -5698,13 +6308,20 @@ impl ListResourcesInProtectionGroupInput {
     pub fn protection_group_id(&self) -> std::option::Option<&str> {
         self.protection_group_id.as_deref()
     }
-    /// <p>The next token value from a previous call to <code>ListResourcesInProtectionGroup</code>. Pass null if this is the first call.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of resource ARN objects to return. If you leave this blank,
-    /// Shield Advanced returns the first 20 results.</p>
-    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+    /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+    /// in the response.</p>
+    /// <p>The default setting is 20.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5723,21 +6340,35 @@ impl std::fmt::Debug for ListResourcesInProtectionGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtectionsInput {
-    /// <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of <a>Protection</a> objects to return. If you leave this blank,
-    /// Shield Advanced returns the first 20 results.</p>
-    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+    /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+    /// in the response.</p>
+    /// <p>The default setting is 20.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListProtectionsInput {
-    /// <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of <a>Protection</a> objects to return. If you leave this blank,
-    /// Shield Advanced returns the first 20 results.</p>
-    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+    /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+    /// in the response.</p>
+    /// <p>The default setting is 20.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5755,21 +6386,35 @@ impl std::fmt::Debug for ListProtectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtectionGroupsInput {
-    /// <p>The next token value from a previous call to <code>ListProtectionGroups</code>. Pass null if this is the first call.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of <a>ProtectionGroup</a> objects to return. If you leave this blank,
-    /// Shield Advanced returns the first 20 results.</p>
-    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+    /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+    /// in the response.</p>
+    /// <p>The default setting is 20.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListProtectionGroupsInput {
-    /// <p>The next token value from a previous call to <code>ListProtectionGroups</code>. Pass null if this is the first call.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of <a>ProtectionGroup</a> objects to return. If you leave this blank,
-    /// Shield Advanced returns the first 20 results.</p>
-    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+    /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+    /// in the response.</p>
+    /// <p>The default setting is 20.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5787,41 +6432,59 @@ impl std::fmt::Debug for ListProtectionGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttacksInput {
-    /// <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left
+    /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this
     /// blank, all applicable resources for this account will be included.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+    /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
+    /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
     pub start_time: std::option::Option<crate::model::TimeRange>,
-    /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+    /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
+    /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
     pub end_time: std::option::Option<crate::model::TimeRange>,
-    /// <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave this blank,
-    /// Shield Advanced returns the first 20 results.</p>
-    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+    /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+    /// in the response.</p>
+    /// <p>The default setting is 20.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAttacksInput {
-    /// <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left
+    /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this
     /// blank, all applicable resources for this account will be included.</p>
     pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+    /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
+    /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
     pub fn start_time(&self) -> std::option::Option<&crate::model::TimeRange> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp format</a>  is allowed.  </p>
+    /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
+    /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
     pub fn end_time(&self) -> std::option::Option<&crate::model::TimeRange> {
         self.end_time.as_ref()
     }
-    /// <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
+    /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
+    /// providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
+    /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of <a>AttackSummary</a> objects to return. If you leave this blank,
-    /// Shield Advanced returns the first 20 results.</p>
-    /// <p>This is a maximum value. Shield Advanced might return the results in smaller batches. That is, the number of objects returned could be less than <code>MaxResults</code>, even if there are still more objects yet to return. If there are more objects to return, Shield Advanced returns a value in <code>NextToken</code> that you can use in your next request, to get the next batch of objects.</p>
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
+    /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
+    /// in the response.</p>
+    /// <p>The default setting is 20.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5856,6 +6519,38 @@ pub struct EnableProactiveEngagementInput {}
 impl std::fmt::Debug for EnableProactiveEngagementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnableProactiveEngagementInput");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnableApplicationLayerAutomaticResponseInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+    /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+    /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    pub action: std::option::Option<crate::model::ResponseAction>,
+}
+impl EnableApplicationLayerAutomaticResponseInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
+    /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
+    /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    pub fn action(&self) -> std::option::Option<&crate::model::ResponseAction> {
+        self.action.as_ref()
+    }
+}
+impl std::fmt::Debug for EnableApplicationLayerAutomaticResponseInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnableApplicationLayerAutomaticResponseInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("action", &self.action);
         formatter.finish()
     }
 }
@@ -5927,6 +6622,27 @@ pub struct DisableProactiveEngagementInput {}
 impl std::fmt::Debug for DisableProactiveEngagementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DisableProactiveEngagementInput");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisableApplicationLayerAutomaticResponseInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl DisableApplicationLayerAutomaticResponseInput {
+    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DisableApplicationLayerAutomaticResponseInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisableApplicationLayerAutomaticResponseInput");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.finish()
     }
 }
@@ -6032,11 +6748,11 @@ impl std::fmt::Debug for DescribeAttackStatisticsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttackInput {
-    /// <p>The unique identifier (ID) for the attack that to be described.</p>
+    /// <p>The unique identifier (ID) for the attack.</p>
     pub attack_id: std::option::Option<std::string::String>,
 }
 impl DescribeAttackInput {
-    /// <p>The unique identifier (ID) for the attack that to be described.</p>
+    /// <p>The unique identifier (ID) for the attack.</p>
     pub fn attack_id(&self) -> std::option::Option<&str> {
         self.attack_id.as_deref()
     }
@@ -6225,7 +6941,7 @@ pub struct CreateProtectionInput {
     /// </p>
     /// </li>
     /// <li>
-    /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
+    /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
     /// </code>
     /// </p>
     /// </li>
@@ -6268,7 +6984,7 @@ impl CreateProtectionInput {
     /// </p>
     /// </li>
     /// <li>
-    /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
+    /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
     /// </code>
     /// </p>
     /// </li>

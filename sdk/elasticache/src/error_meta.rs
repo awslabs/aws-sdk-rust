@@ -622,6 +622,9 @@ where
                 crate::error::CreateUserErrorKind::InvalidParameterValueException(inner) => {
                     Error::InvalidParameterValueException(inner)
                 }
+                crate::error::CreateUserErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
+                    Error::ServiceLinkedRoleNotFoundFault(inner)
+                }
                 crate::error::CreateUserErrorKind::TagQuotaPerResourceExceeded(inner) => {
                     Error::TagQuotaPerResourceExceeded(inner)
                 }
@@ -652,6 +655,9 @@ where
                 }
                 crate::error::CreateUserGroupErrorKind::InvalidParameterValueException(inner) => {
                     Error::InvalidParameterValueException(inner)
+                }
+                crate::error::CreateUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
+                    Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
                 crate::error::CreateUserGroupErrorKind::TagQuotaPerResourceExceeded(inner) => {
                     Error::TagQuotaPerResourceExceeded(inner)
@@ -912,6 +918,9 @@ where
                 crate::error::DeleteUserErrorKind::InvalidUserStateFault(inner) => {
                     Error::InvalidUserStateFault(inner)
                 }
+                crate::error::DeleteUserErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
+                    Error::ServiceLinkedRoleNotFoundFault(inner)
+                }
                 crate::error::DeleteUserErrorKind::UserNotFoundFault(inner) => {
                     Error::UserNotFoundFault(inner)
                 }
@@ -933,6 +942,9 @@ where
                 }
                 crate::error::DeleteUserGroupErrorKind::InvalidUserGroupStateFault(inner) => {
                     Error::InvalidUserGroupStateFault(inner)
+                }
+                crate::error::DeleteUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
+                    Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
                 crate::error::DeleteUserGroupErrorKind::UserGroupNotFoundFault(inner) => {
                     Error::UserGroupNotFoundFault(inner)
@@ -1265,6 +1277,9 @@ where
                 crate::error::DescribeUserGroupsErrorKind::InvalidParameterCombinationException(
                     inner,
                 ) => Error::InvalidParameterCombinationException(inner),
+                crate::error::DescribeUserGroupsErrorKind::ServiceLinkedRoleNotFoundFault(
+                    inner,
+                ) => Error::ServiceLinkedRoleNotFoundFault(inner),
                 crate::error::DescribeUserGroupsErrorKind::UserGroupNotFoundFault(inner) => {
                     Error::UserGroupNotFoundFault(inner)
                 }
@@ -1286,6 +1301,9 @@ where
                 crate::error::DescribeUsersErrorKind::InvalidParameterCombinationException(
                     inner,
                 ) => Error::InvalidParameterCombinationException(inner),
+                crate::error::DescribeUsersErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
+                    Error::ServiceLinkedRoleNotFoundFault(inner)
+                }
                 crate::error::DescribeUsersErrorKind::UserNotFoundFault(inner) => {
                     Error::UserNotFoundFault(inner)
                 }
@@ -1654,6 +1672,9 @@ where
                 crate::error::ModifyUserErrorKind::InvalidUserStateFault(inner) => {
                     Error::InvalidUserStateFault(inner)
                 }
+                crate::error::ModifyUserErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
+                    Error::ServiceLinkedRoleNotFoundFault(inner)
+                }
                 crate::error::ModifyUserErrorKind::UserNotFoundFault(inner) => {
                     Error::UserNotFoundFault(inner)
                 }
@@ -1684,6 +1705,9 @@ where
                 }
                 crate::error::ModifyUserGroupErrorKind::InvalidUserGroupStateFault(inner) => {
                     Error::InvalidUserGroupStateFault(inner)
+                }
+                crate::error::ModifyUserGroupErrorKind::ServiceLinkedRoleNotFoundFault(inner) => {
+                    Error::ServiceLinkedRoleNotFoundFault(inner)
                 }
                 crate::error::ModifyUserGroupErrorKind::UserGroupNotFoundFault(inner) => {
                     Error::UserGroupNotFoundFault(inner)

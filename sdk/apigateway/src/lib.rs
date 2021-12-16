@@ -20,7 +20,7 @@
 //! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
 //! error encompassing all possible errors that can be returned by the service.
 //!
-//! The other modules within this crate and not required for normal usage.
+//! The other modules within this crate are not required for normal usage.
 //!
 //! # Examples
 //! Examples can be found [here](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/apigateway).
@@ -32,7 +32,6 @@ pub use config::Config;
 
 mod aws_endpoint;
 /// Client and fluent builders for calling the service.
-#[cfg(feature = "client")]
 pub mod client;
 /// Configuration for the service.
 pub mod config;
@@ -45,6 +44,7 @@ pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+pub mod middleware;
 /// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
@@ -67,5 +67,4 @@ pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::app_name::AppName;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
-#[cfg(feature = "client")]
 pub use client::Client;

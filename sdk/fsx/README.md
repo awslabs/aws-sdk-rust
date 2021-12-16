@@ -1,6 +1,6 @@
 # aws-sdk-fsx
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon FSx is a fully managed service that makes it easy for storage and application administrators to launch and use shared file storage.
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-fsx = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-fsx = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

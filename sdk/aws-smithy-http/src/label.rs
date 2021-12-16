@@ -25,10 +25,20 @@ pub fn fmt_timestamp(t: &DateTime, format: Format) -> Result<String, DateTimeFor
 #[cfg(test)]
 mod test {
     use crate::label::fmt_string;
+    use http::Uri;
+    use proptest::proptest;
 
     #[test]
     fn greedy_params() {
         assert_eq!(fmt_string("a/b", false), "a%2Fb");
         assert_eq!(fmt_string("a/b", true), "a/b");
+    }
+
+    proptest! {
+        #[test]
+        fn test_encode_request(s: String) {
+            let _: Uri = format!("http://host.example.com/{}", fmt_string(&s, false)).parse().expect("all strings should be encoded properly");
+            let _: Uri = format!("http://host.example.com/{}", fmt_string(&s, true)).parse().expect("all strings should be encoded properly");
+        }
     }
 }

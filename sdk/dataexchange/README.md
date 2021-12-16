@@ -1,6 +1,6 @@
 # aws-sdk-dataexchange
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 AWS Data Exchange is a service that makes it easy for AWS customers to exchange data in the cloud. You can use the AWS Data Exchange APIs to create, update, manage, and access file-based data set in the AWS Cloud.
@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-dataexchange = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-dataexchange = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

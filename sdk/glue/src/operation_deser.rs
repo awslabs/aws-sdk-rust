@@ -372,6 +372,23 @@ pub fn parse_batch_delete_table_error(
                 tmp
             }),
         },
+        "GlueEncryptionException" => crate::error::BatchDeleteTableError {
+            meta: generic,
+            kind: crate::error::BatchDeleteTableErrorKind::GlueEncryptionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::glue_encryption_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_glue_encryption_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServiceException" => crate::error::BatchDeleteTableError {
             meta: generic,
             kind: crate::error::BatchDeleteTableErrorKind::InternalServiceException({
@@ -415,6 +432,23 @@ pub fn parse_batch_delete_table_error(
                     let mut output = crate::error::operation_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotReadyException" => crate::error::BatchDeleteTableError {
+            meta: generic,
+            kind: crate::error::BatchDeleteTableErrorKind::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteTableError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -985,6 +1019,23 @@ pub fn parse_batch_get_partition_error(
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetPartitionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidStateException" => crate::error::BatchGetPartitionError {
+            meta: generic,
+            kind: crate::error::BatchGetPartitionErrorKind::InvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetPartitionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3560,6 +3611,23 @@ pub fn parse_create_table_error(
                 tmp
             }),
         },
+        "ResourceNotReadyException" => crate::error::CreateTableError {
+            meta: generic,
+            kind: crate::error::CreateTableErrorKind::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNumberLimitExceededException" => {
             crate::error::CreateTableError {
                 meta: generic,
@@ -5896,6 +5964,23 @@ pub fn parse_delete_table_error(
                     let mut output = crate::error::operation_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotReadyException" => crate::error::DeleteTableError {
+            meta: generic,
+            kind: crate::error::DeleteTableErrorKind::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTableError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9442,6 +9527,23 @@ pub fn parse_get_partitions_error(
                 tmp
             }),
         },
+        "InvalidStateException" => crate::error::GetPartitionsError {
+            meta: generic,
+            kind: crate::error::GetPartitionsErrorKind::InvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPartitionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "OperationTimeoutException" => crate::error::GetPartitionsError {
             meta: generic,
             kind: crate::error::GetPartitionsErrorKind::OperationTimeoutException({
@@ -9451,6 +9553,23 @@ pub fn parse_get_partitions_error(
                     let mut output = crate::error::operation_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPartitionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotReadyException" => crate::error::GetPartitionsError {
+            meta: generic,
+            kind: crate::error::GetPartitionsErrorKind::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPartitionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -10615,6 +10734,23 @@ pub fn parse_get_table_error(
                     let mut output = crate::error::operation_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotReadyException" => crate::error::GetTableError {
+            meta: generic,
+            kind: crate::error::GetTableErrorKind::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTableError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -17786,6 +17922,23 @@ pub fn parse_update_table_error(
                     let mut output = crate::error::operation_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotReadyException" => crate::error::UpdateTableError {
+            meta: generic,
+            kind: crate::error::UpdateTableErrorKind::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTableError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

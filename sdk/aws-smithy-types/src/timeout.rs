@@ -42,6 +42,17 @@ pub struct TimeoutConfig {
     api_call_timeout: Option<Duration>,
 }
 
+impl TimeoutConfig {
+    /// Returns true if any of the possible timeouts are set
+    pub fn has_timeouts(&self) -> bool {
+        self.connect_timeout.is_some()
+            || self.tls_negotiation_timeout.is_some()
+            || self.read_timeout.is_some()
+            || self.api_call_attempt_timeout.is_some()
+            || self.api_call_timeout.is_some()
+    }
+}
+
 impl Debug for TimeoutConfig {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         write!(

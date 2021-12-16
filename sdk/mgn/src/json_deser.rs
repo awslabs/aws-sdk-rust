@@ -319,6 +319,18 @@ pub fn deser_operation_crate_operation_change_server_life_cycle_state(
                             crate::json_deser::deser_structure_crate_model_life_cycle(tokens)?,
                         );
                     }
+                    "replicationType" => {
+                        builder = builder.set_replication_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::ReplicationType::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "sourceProperties" => {
                         builder = builder.set_source_properties(
                             crate::json_deser::deser_structure_crate_model_source_properties(
@@ -338,6 +350,15 @@ pub fn deser_operation_crate_operation_change_server_life_cycle_state(
                     "tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(tokens)?,
+                        );
+                    }
+                    "vcenterClientID" => {
+                        builder = builder.set_vcenter_client_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -773,6 +794,58 @@ pub fn deser_operation_crate_operation_describe_source_servers(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_describe_vcenter_clients(
+    value: &[u8],
+    mut builder: crate::output::describe_vcenter_clients_output::Builder,
+) -> Result<
+    crate::output::describe_vcenter_clients_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "items" => {
+                        builder = builder.set_items(
+                            crate::json_deser::deser_list_com_amazonaws_mgn_vcenter_client_list(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "nextToken" => {
+                        builder = builder.set_next_token(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_disconnect_from_service(
     value: &[u8],
     mut builder: crate::output::disconnect_from_service_output::Builder,
@@ -825,6 +898,18 @@ pub fn deser_operation_crate_operation_disconnect_from_service(
                             crate::json_deser::deser_structure_crate_model_life_cycle(tokens)?,
                         );
                     }
+                    "replicationType" => {
+                        builder = builder.set_replication_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::ReplicationType::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "sourceProperties" => {
                         builder = builder.set_source_properties(
                             crate::json_deser::deser_structure_crate_model_source_properties(
@@ -844,6 +929,15 @@ pub fn deser_operation_crate_operation_disconnect_from_service(
                     "tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(tokens)?,
+                        );
+                    }
+                    "vcenterClientID" => {
+                        builder = builder.set_vcenter_client_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -914,6 +1008,18 @@ pub fn deser_operation_crate_operation_finalize_cutover(
                             crate::json_deser::deser_structure_crate_model_life_cycle(tokens)?,
                         );
                     }
+                    "replicationType" => {
+                        builder = builder.set_replication_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::ReplicationType::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "sourceProperties" => {
                         builder = builder.set_source_properties(
                             crate::json_deser::deser_structure_crate_model_source_properties(
@@ -933,6 +1039,15 @@ pub fn deser_operation_crate_operation_finalize_cutover(
                     "tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(tokens)?,
+                        );
+                    }
+                    "vcenterClientID" => {
+                        builder = builder.set_vcenter_client_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1436,6 +1551,18 @@ pub fn deser_operation_crate_operation_mark_as_archived(
                             crate::json_deser::deser_structure_crate_model_life_cycle(tokens)?,
                         );
                     }
+                    "replicationType" => {
+                        builder = builder.set_replication_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::ReplicationType::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "sourceProperties" => {
                         builder = builder.set_source_properties(
                             crate::json_deser::deser_structure_crate_model_source_properties(
@@ -1455,6 +1582,15 @@ pub fn deser_operation_crate_operation_mark_as_archived(
                     "tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(tokens)?,
+                        );
+                    }
+                    "vcenterClientID" => {
+                        builder = builder.set_vcenter_client_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1528,6 +1664,18 @@ pub fn deser_operation_crate_operation_retry_data_replication(
                             crate::json_deser::deser_structure_crate_model_life_cycle(tokens)?,
                         );
                     }
+                    "replicationType" => {
+                        builder = builder.set_replication_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::ReplicationType::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
                     "sourceProperties" => {
                         builder = builder.set_source_properties(
                             crate::json_deser::deser_structure_crate_model_source_properties(
@@ -1547,6 +1695,15 @@ pub fn deser_operation_crate_operation_retry_data_replication(
                     "tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(tokens)?,
+                        );
+                    }
+                    "vcenterClientID" => {
+                        builder = builder.set_vcenter_client_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1585,6 +1742,206 @@ pub fn deser_operation_crate_operation_start_cutover(
                     "job" => {
                         builder = builder
                             .set_job(crate::json_deser::deser_structure_crate_model_job(tokens)?);
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_structure_crate_error_service_quota_exceeded_exception_json_err(
+    value: &[u8],
+    mut builder: crate::error::service_quota_exceeded_exception::Builder,
+) -> Result<
+    crate::error::service_quota_exceeded_exception::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "message" => {
+                        builder = builder.set_message(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "code" => {
+                        builder = builder.set_code(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "resourceId" => {
+                        builder = builder.set_resource_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "resourceType" => {
+                        builder = builder.set_resource_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "serviceCode" => {
+                        builder = builder.set_service_code(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "quotaCode" => {
+                        builder = builder.set_quota_code(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_start_replication(
+    value: &[u8],
+    mut builder: crate::output::start_replication_output::Builder,
+) -> Result<crate::output::start_replication_output::Builder, aws_smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "arn" => {
+                        builder = builder.set_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "dataReplicationInfo" => {
+                        builder = builder.set_data_replication_info(
+                            crate::json_deser::deser_structure_crate_model_data_replication_info(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "isArchived" => {
+                        builder = builder.set_is_archived(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
+                    "launchedInstance" => {
+                        builder = builder.set_launched_instance(
+                            crate::json_deser::deser_structure_crate_model_launched_instance(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "lifeCycle" => {
+                        builder = builder.set_life_cycle(
+                            crate::json_deser::deser_structure_crate_model_life_cycle(tokens)?,
+                        );
+                    }
+                    "replicationType" => {
+                        builder = builder.set_replication_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::ReplicationType::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
+                    "sourceProperties" => {
+                        builder = builder.set_source_properties(
+                            crate::json_deser::deser_structure_crate_model_source_properties(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "sourceServerID" => {
+                        builder = builder.set_source_server_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "tags" => {
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(tokens)?,
+                        );
+                    }
+                    "vcenterClientID" => {
+                        builder = builder.set_vcenter_client_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
@@ -2119,6 +2476,119 @@ pub fn deser_operation_crate_operation_update_replication_configuration_template
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_update_source_server_replication_type(
+    value: &[u8],
+    mut builder: crate::output::update_source_server_replication_type_output::Builder,
+) -> Result<
+    crate::output::update_source_server_replication_type_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "arn" => {
+                        builder = builder.set_arn(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "dataReplicationInfo" => {
+                        builder = builder.set_data_replication_info(
+                            crate::json_deser::deser_structure_crate_model_data_replication_info(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "isArchived" => {
+                        builder = builder.set_is_archived(
+                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
+                    "launchedInstance" => {
+                        builder = builder.set_launched_instance(
+                            crate::json_deser::deser_structure_crate_model_launched_instance(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "lifeCycle" => {
+                        builder = builder.set_life_cycle(
+                            crate::json_deser::deser_structure_crate_model_life_cycle(tokens)?,
+                        );
+                    }
+                    "replicationType" => {
+                        builder = builder.set_replication_type(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::ReplicationType::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
+                    "sourceProperties" => {
+                        builder = builder.set_source_properties(
+                            crate::json_deser::deser_structure_crate_model_source_properties(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "sourceServerID" => {
+                        builder = builder.set_source_server_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "tags" => {
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(tokens)?,
+                        );
+                    }
+                    "vcenterClientID" => {
+                        builder = builder.set_vcenter_client_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -2229,6 +2699,15 @@ where
                             "dataReplicationError" => {
                                 builder = builder.set_data_replication_error(
                                     crate::json_deser::deser_structure_crate_model_data_replication_error(tokens)?
+                                );
+                            }
+                            "lastSnapshotDateTime" => {
+                                builder = builder.set_last_snapshot_date_time(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2717,6 +3196,42 @@ where
                     _ => {
                         let value =
                             crate::json_deser::deser_structure_crate_model_source_server(tokens)?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_mgn_vcenter_client_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<crate::model::VcenterClient>>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_vcenter_client(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3310,6 +3825,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "vmPath" => {
+                                builder = builder.set_vm_path(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3779,6 +4303,133 @@ where
                             "sourceProperties" => {
                                 builder = builder.set_source_properties(
                                     crate::json_deser::deser_structure_crate_model_source_properties(tokens)?
+                                );
+                            }
+                            "replicationType" => {
+                                builder = builder.set_replication_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::ReplicationType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "vcenterClientID" => {
+                                builder = builder.set_vcenter_client_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_vcenter_client<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::VcenterClient>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::VcenterClient::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "vcenterClientID" => {
+                                builder = builder.set_vcenter_client_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "arn" => {
+                                builder = builder.set_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "hostname" => {
+                                builder = builder.set_hostname(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "vcenterUUID" => {
+                                builder = builder.set_vcenter_uuid(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "datacenterName" => {
+                                builder = builder.set_datacenter_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "lastSeenDatetime" => {
+                                builder = builder.set_last_seen_datetime(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "sourceServerTags" => {
+                                builder = builder.set_source_server_tags(
+                                    crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "tags" => {
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_map_com_amazonaws_mgn_tags_map(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -469,7 +469,7 @@ pub struct ExecuteStatementOutput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time (UTC) the statement was created. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The cluster identifier. </p>
+    /// <p>The cluster identifier. This parameter is not returned when connecting to a serverless endpoint. </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The database user name.</p>
     pub db_user: std::option::Option<std::string::String>,
@@ -487,7 +487,7 @@ impl ExecuteStatementOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The cluster identifier. </p>
+    /// <p>The cluster identifier. This parameter is not returned when connecting to a serverless endpoint. </p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -553,12 +553,12 @@ pub mod execute_statement_output {
             self.created_at = input;
             self
         }
-        /// <p>The cluster identifier. </p>
+        /// <p>The cluster identifier. This parameter is not returned when connecting to a serverless endpoint. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. </p>
+        /// <p>The cluster identifier. This parameter is not returned when connecting to a serverless endpoint. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -767,7 +767,8 @@ pub struct DescribeStatementOutput {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The process identifier from Amazon Redshift. </p>
     pub redshift_pid: i64,
-    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. </p>
+    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set.
+    /// The value is true if any substatement returns a result set.</p>
     pub has_result_set: std::option::Option<bool>,
     /// <p>The SQL statement text. </p>
     pub query_string: std::option::Option<std::string::String>,
@@ -854,7 +855,8 @@ impl DescribeStatementOutput {
     pub fn redshift_pid(&self) -> i64 {
         self.redshift_pid
     }
-    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. </p>
+    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set.
+    /// The value is true if any substatement returns a result set.</p>
     pub fn has_result_set(&self) -> std::option::Option<bool> {
         self.has_result_set
     }
@@ -1107,12 +1109,14 @@ pub mod describe_statement_output {
             self.redshift_pid = input;
             self
         }
-        /// <p>A value that indicates whether the statement has a result set. The result set can be empty. </p>
+        /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set.
+        /// The value is true if any substatement returns a result set.</p>
         pub fn has_result_set(mut self, input: bool) -> Self {
             self.has_result_set = Some(input);
             self
         }
-        /// <p>A value that indicates whether the statement has a result set. The result set can be empty. </p>
+        /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set.
+        /// The value is true if any substatement returns a result set.</p>
         pub fn set_has_result_set(mut self, input: std::option::Option<bool>) -> Self {
             self.has_result_set = input;
             self
@@ -1296,7 +1300,7 @@ pub struct BatchExecuteStatementOutput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time (UTC) the statement was created. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The cluster identifier. </p>
+    /// <p>The cluster identifier. This parameter is not returned when connecting to a serverless endpoint. </p>
     pub cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The database user name.</p>
     pub db_user: std::option::Option<std::string::String>,
@@ -1315,7 +1319,7 @@ impl BatchExecuteStatementOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The cluster identifier. </p>
+    /// <p>The cluster identifier. This parameter is not returned when connecting to a serverless endpoint. </p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
@@ -1383,12 +1387,12 @@ pub mod batch_execute_statement_output {
             self.created_at = input;
             self
         }
-        /// <p>The cluster identifier. </p>
+        /// <p>The cluster identifier. This parameter is not returned when connecting to a serverless endpoint. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_identifier = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. </p>
+        /// <p>The cluster identifier. This parameter is not returned when connecting to a serverless endpoint. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,

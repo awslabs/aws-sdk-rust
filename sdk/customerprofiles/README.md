@@ -1,6 +1,6 @@
 # aws-sdk-customerprofiles
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Welcome to the Amazon Connect Customer Profiles API Reference. This guide provides information about the Amazon Connect Customer Profiles API, including supported operations, data types, parameters, and schemas.
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-customerprofiles = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-customerprofiles = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

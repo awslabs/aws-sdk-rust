@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 aws-config = { path = "../../sdk/aws-config" }
-cloudwatchlogs = { package = "aws-sdk-cloudwatchlogs", path = "../../sdk/cloudwatchlogs" }
+aws-sdk-cloudwatchlogs = { path = "../../sdk/cloudwatchlogs" }
 tokio = { version = "1", features = ["full"] }
 structopt = { version = "0.3", default-features = false }
 tracing-subscriber = { version = "0.2.16", features = ["fmt"] }

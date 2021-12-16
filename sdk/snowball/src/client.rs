@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_snowball::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -279,7 +279,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -354,7 +354,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -429,7 +429,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateAddress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -500,7 +500,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -578,13 +578,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resources associated with the cluster job. These resources include Amazon S3
-        /// buckets and optional AWS Lambda functions written in the Python language. </p>
+        /// buckets and optional Lambda functions written in the Python language.
+        /// </p>
         pub fn resources(mut self, inp: crate::model::JobResource) -> Self {
             self.inner = self.inner.resources(inp);
             self
         }
         /// <p>The resources associated with the cluster job. These resources include Amazon S3
-        /// buckets and optional AWS Lambda functions written in the Python language. </p>
+        /// buckets and optional Lambda functions written in the Python language.
+        /// </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -592,8 +594,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+        /// (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
             inp: crate::model::OnDeviceServiceConfiguration,
@@ -601,8 +604,9 @@ pub mod fluent_builders {
             self.inner = self.inner.on_device_service_configuration(inp);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+        /// (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -633,37 +637,33 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-        /// Management Service (AWS KMS). </p>
+        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(inp);
             self
         }
         /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-        /// Management Service (AWS KMS). </p>
+        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-        /// Identity and Access Management (IAM).</p>
+        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(inp);
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-        /// Identity and Access Management (IAM).</p>
+        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for this cluster.
-        /// </p>
+        /// <p>The type of Snow Family Devices to use for this cluster. </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
         ///
         /// <p>For more information, see
@@ -675,10 +675,10 @@ pub mod fluent_builders {
             self.inner = self.inner.snowball_type(inp);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for this cluster.
-        /// </p>
+        /// <p>The type of Snow Family Devices to use for this cluster. </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
         ///
         /// <p>For more information, see
@@ -695,16 +695,15 @@ pub mod fluent_builders {
         }
         /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
         /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows:
-        /// </p>
+        /// its destination while in transit. Regional shipping speeds are as follows: </p>
         /// <ul>
         /// <li>
         /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -723,9 +722,9 @@ pub mod fluent_builders {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries
-        /// in the EU have access to standard shipping, which typically takes less than a week, one
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
+        /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
         /// <li>
@@ -741,16 +740,15 @@ pub mod fluent_builders {
         }
         /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
         /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows:
-        /// </p>
+        /// its destination while in transit. Regional shipping speeds are as follows: </p>
         /// <ul>
         /// <li>
         /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -769,9 +767,9 @@ pub mod fluent_builders {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries
-        /// in the EU have access to standard shipping, which typically takes less than a week, one
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
+        /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
         /// <li>
@@ -818,12 +816,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_forwarding_address_id(input);
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, inp: crate::model::TaxDocuments) -> Self {
             self.inner = self.inner.tax_documents(inp);
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn set_tax_documents(
             mut self,
             input: std::option::Option<crate::model::TaxDocuments>,
@@ -854,21 +852,21 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJob`.
     ///
     /// <p>Creates a job to import or export data between Amazon S3 and your on-premises data
-    /// center. Your AWS account must have the right trust policies and permissions in place to create
-    /// a job for a Snow device. If you're creating a job for a node in a cluster, you only need to provide
-    /// the <code>clusterId</code> value; the other job attributes are inherited from the cluster.
-    /// </p>
+    /// center. Your Amazon Web Services account must have the right trust policies and permissions in
+    /// place to create a job for a Snow device. If you're creating a job for a node in a cluster, you
+    /// only need to provide the <code>clusterId</code> value; the other job attributes are inherited
+    /// from the cluster. </p>
     /// <note>
     /// <p>Only the Snowball; Edge device type is supported when ordering clustered jobs.</p>
     /// <p>The device capacity is optional.</p>
-    /// <p>Availability of device types differ by AWS Region. For more information about Region
-    /// availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4">AWS Regional Services</a>.</p>
+    /// <p>Availability of device types differ by Amazon Web Services Region. For more information
+    /// about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4">Amazon Web Services Regional Services</a>.</p>
     /// </note>
     ///
     /// <p></p>
     ///
     /// <p class="title">
-    /// <b>AWS Snow Family device types and their capacities.</b>
+    /// <b>Snow Family Devices and their capacities.</b>
     /// </p>
     /// <ul>
     /// <li>
@@ -962,7 +960,8 @@ pub mod fluent_builders {
     /// <li>
     /// <p>Description: Original Snowball device</p>
     /// <note>
-    /// <p>This device is only available in the Ningxia, Beijing, and Singapore AWS Regions. </p>
+    /// <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region
+    /// </p>
     /// </note>
     /// </li>
     /// </ul>
@@ -978,7 +977,7 @@ pub mod fluent_builders {
     /// <li>
     /// <p>Description: Original Snowball device</p>
     /// <note>
-    /// <p>This device is only available in the Ningxia, Beijing, and Singapore AWS Regions. </p>
+    /// <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region. </p>
     /// </note>
     /// </li>
     /// </ul>
@@ -988,7 +987,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1084,8 +1083,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
             inp: crate::model::OnDeviceServiceConfiguration,
@@ -1093,8 +1093,9 @@ pub mod fluent_builders {
             self.inner = self.inner.on_device_service_configuration(inp);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -1125,29 +1126,29 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key Management
-        /// Service (KMS) API action.</p>
+        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// Key Management Service (KMS) API action.</p>
         pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(inp);
             self
         }
         /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key Management
-        /// Service (KMS) API action.</p>
+        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// Key Management Service (KMS) API action.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this job.
-        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
-        /// Access Management (IAM) API action.</p>
+        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// Identity and Access Management (IAM) API action.</p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(inp);
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this job.
-        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
-        /// Access Management (IAM) API action.</p>
+        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// Identity and Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1182,8 +1183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
-        /// transit. Regional shipping speeds are as follows:</p>
+        /// Snow device, rather it represents how quickly the Snow device moves to its destination while
+        /// in transit. Regional shipping speeds are as follows:</p>
         ///
         /// <ul>
         /// <li>
@@ -1191,8 +1192,8 @@ pub mod fluent_builders {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -1208,8 +1209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
-        /// transit. Regional shipping speeds are as follows:</p>
+        /// Snow device, rather it represents how quickly the Snow device moves to its destination while
+        /// in transit. Regional shipping speeds are as follows:</p>
         ///
         /// <ul>
         /// <li>
@@ -1217,8 +1218,8 @@ pub mod fluent_builders {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -1265,13 +1266,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for this job.
+        /// <p>The type of Snow Family Devices to use for this job.
         /// </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
-        /// <p>The type of AWS Snow device to use for this job. Currently, the only supported
-        /// device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
+        /// supported device type for cluster jobs is <code>EDGE</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
         /// Options</a> in the Snowball Edge Developer Guide.</p>
         ///
@@ -1284,13 +1286,14 @@ pub mod fluent_builders {
             self.inner = self.inner.snowball_type(inp);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for this job.
+        /// <p>The type of Snow Family Devices to use for this job.
         /// </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
-        /// <p>The type of AWS Snow device to use for this job. Currently, the only supported
-        /// device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
+        /// supported device type for cluster jobs is <code>EDGE</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
         /// Options</a> in the Snowball Edge Developer Guide.</p>
         ///
@@ -1321,12 +1324,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_forwarding_address_id(input);
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, inp: crate::model::TaxDocuments) -> Self {
             self.inner = self.inner.tax_documents(inp);
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn set_tax_documents(
             mut self,
             input: std::option::Option<crate::model::TaxDocuments>,
@@ -1334,7 +1337,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tax_documents(input);
             self
         }
-        /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+        /// <p>Defines the device configuration for an Snowcone job.</p>
         ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
@@ -1345,7 +1348,7 @@ pub mod fluent_builders {
             self.inner = self.inner.device_configuration(inp);
             self
         }
-        /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+        /// <p>Defines the device configuration for an Snowcone job.</p>
         ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
@@ -1395,13 +1398,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLongTermPricing`.
     ///
     /// <p>Creates a job with the long-term usage option for a device. The long-term usage is a
-    /// 1-year or 3-year long-term pricing type for the device. You are billed upfront, and AWS
-    /// provides discounts for long-term pricing.
+    /// 1-year or 3-year long-term pricing type for the device. You are billed upfront, and Amazon Web Services provides discounts for long-term pricing.
     /// </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateLongTermPricing<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1469,12 +1471,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_long_term_pricing_type(input);
             self
         }
-        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+        /// <p>Specifies whether the current long-term pricing type for the device should be
+        /// renewed.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, inp: bool) -> Self {
             self.inner = self.inner.is_long_term_pricing_auto_renew(inp);
             self
         }
-        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+        /// <p>Specifies whether the current long-term pricing type for the device should be
+        /// renewed.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
             input: std::option::Option<bool>,
@@ -1482,12 +1486,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_is_long_term_pricing_auto_renew(input);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+        /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
         pub fn snowball_type(mut self, inp: crate::model::SnowballType) -> Self {
             self.inner = self.inner.snowball_type(inp);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+        /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1498,11 +1502,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateReturnShippingLabel`.
     ///
-    /// <p>Creates a shipping label that will be used to return the Snow device to AWS.</p>
+    /// <p>Creates a shipping label that will be used to return the Snow device to Amazon Web Services.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateReturnShippingLabel<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1567,15 +1571,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to AWS.
-        /// This speed represents how quickly it moves to its
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
+        /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
         /// destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn shipping_option(mut self, inp: crate::model::ShippingOption) -> Self {
             self.inner = self.inner.shipping_option(inp);
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to AWS.
-        /// This speed represents how quickly it moves to its
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
+        /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
         /// destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn set_shipping_option(
             mut self,
@@ -1592,7 +1596,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAddress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1664,7 +1668,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeAddresses<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1749,7 +1753,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1820,7 +1824,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1888,11 +1892,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReturnShippingLabel`.
     ///
-    /// <p>Information on the shipping label of a Snow device that is being returned to AWS.</p>
+    /// <p>Information on the shipping label of a Snow device that is being returned to Amazon Web Services.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeReturnShippingLabel<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1982,7 +1986,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetJobManifest<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2056,17 +2060,17 @@ pub mod fluent_builders {
     ///
     /// <p>The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric
     /// characters and 4 hyphens. This code is used to decrypt the manifest file when it is passed
-    /// along with the manifest to the Snow device through the Snowball client when the client is started
-    /// for the first time.</p>
+    /// along with the manifest to the Snow device through the Snowball client when the client is
+    /// started for the first time.</p>
     ///
     /// <p>As a best practice, we recommend that you don't save a copy of the
     /// <code>UnlockCode</code> in the same location as the manifest file for that job. Saving these
-    /// separately helps prevent unauthorized parties from gaining access to the Snow device associated
-    /// with that job.</p>
+    /// separately helps prevent unauthorized parties from gaining access to the Snow device
+    /// associated with that job.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetJobUnlockCode<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2137,12 +2141,12 @@ pub mod fluent_builders {
     /// <p>Returns information about the Snow Family service limit for your account, and also the
     /// number of Snow devices your account has in use.</p>
     ///
-    /// <p>The default service limit for the number of Snow devices that you can have at one time is
-    /// 1. If you want to increase your service limit, contact AWS Support.</p>
+    /// <p>The default service limit for the number of Snow devices that you can have at one time
+    /// is 1. If you want to increase your service limit, contact Amazon Web Services Support.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetSnowballUsage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2203,7 +2207,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetSoftwareUpdates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2277,7 +2281,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListClusterJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2375,7 +2379,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2456,14 +2460,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCompatibleImages`.
     ///
     /// <p>This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
-    /// that are owned by your AWS account that would be supported for use on a Snow device.
-    /// Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server
-    /// 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available on the AWS
-    /// Marketplace.</p>
+    /// that are owned by your Amazon Web Services accountthat would be supported for use on a Snow
+    /// device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates HVM,
+    /// Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available on the
+    /// Amazon Web Services Marketplace.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListCompatibleImages<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2553,7 +2557,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2637,7 +2641,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListLongTermPricing<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2722,7 +2726,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2788,15 +2792,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-        /// Identity and Access Management (IAM).</p>
+        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(inp);
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-        /// Identity and Access Management (IAM).</p>
+        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -2826,8 +2828,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+        /// (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
             inp: crate::model::OnDeviceServiceConfiguration,
@@ -2835,8 +2838,9 @@ pub mod fluent_builders {
             self.inner = self.inner.on_device_service_configuration(inp);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+        /// (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -2906,7 +2910,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateJob<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2972,15 +2976,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and Access
-        /// Management (IAM) API action.</p>
+        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
+        /// (IAM) API action.</p>
         pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(inp);
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and Access
-        /// Management (IAM) API action.</p>
+        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
+        /// (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -3011,8 +3015,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
             inp: crate::model::OnDeviceServiceConfiguration,
@@ -3020,8 +3025,9 @@ pub mod fluent_builders {
             self.inner = self.inner.on_device_service_configuration(inp);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -3113,7 +3119,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateJobShipmentState<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3180,14 +3186,14 @@ pub mod fluent_builders {
         }
         /// <p>The state of a device when it is being shipped. </p>
         /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
-        /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
+        /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
         pub fn shipment_state(mut self, inp: crate::model::ShipmentState) -> Self {
             self.inner = self.inner.shipment_state(inp);
             self
         }
         /// <p>The state of a device when it is being shipped. </p>
         /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
-        /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
+        /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
         pub fn set_shipment_state(
             mut self,
             input: std::option::Option<crate::model::ShipmentState>,
@@ -3202,7 +3208,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UpdateLongTermPricing<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3268,12 +3274,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_long_term_pricing_id(input);
             self
         }
-        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
+        /// new device.</p>
         pub fn replacement_job(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.replacement_job(inp);
             self
         }
-        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
+        /// new device.</p>
         pub fn set_replacement_job(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3298,17 +3306,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3317,7 +3329,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -3333,11 +3345,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

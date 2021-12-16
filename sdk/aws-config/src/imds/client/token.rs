@@ -34,6 +34,7 @@ use http::{HeaderValue, Uri};
 
 use crate::cache::ExpiringCache;
 use crate::imds::client::{ImdsError, ImdsErrorPolicy, TokenError};
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_client::retry;
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::fmt::{Debug, Formatter};
@@ -84,8 +85,12 @@ impl TokenMiddleware {
         token_ttl: Duration,
         retry_config: retry::Config,
         timeout_config: TimeoutConfig,
+        sleep_impl: Option<Arc<dyn AsyncSleep>>,
     ) -> Self {
-        let inner_client = aws_smithy_client::Client::new(connector)
+        let inner_client = aws_smithy_client::Builder::new()
+            .connector(connector)
+            .sleep_impl(sleep_impl)
+            .build()
             .with_retry_config(retry_config)
             .with_timeout_config(timeout_config);
         let client = Arc::new(inner_client);

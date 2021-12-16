@@ -1,6 +1,6 @@
 # aws-sdk-organizations
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an _organization_ and centrally manage your accounts and their resources.
@@ -33,8 +33,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-organizations = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-organizations = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

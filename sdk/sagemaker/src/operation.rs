@@ -863,6 +863,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateImageVersion {
     }
 }
 
+/// Operation shape for `CreateInferenceRecommendationsJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_inference_recommendations_job`](crate::client::Client::create_inference_recommendations_job).
+///
+/// See [`crate::client::fluent_builders::CreateInferenceRecommendationsJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateInferenceRecommendationsJob {
+    _private: (),
+}
+impl CreateInferenceRecommendationsJob {
+    /// Creates a new builder-style object to manufacture [`CreateInferenceRecommendationsJobInput`](crate::input::CreateInferenceRecommendationsJobInput)
+    pub fn builder() -> crate::input::create_inference_recommendations_job_input::Builder {
+        crate::input::create_inference_recommendations_job_input::Builder::default()
+    }
+    /// Creates a new `CreateInferenceRecommendationsJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateInferenceRecommendationsJob {
+    type Output = std::result::Result<
+        crate::output::CreateInferenceRecommendationsJobOutput,
+        crate::error::CreateInferenceRecommendationsJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_inference_recommendations_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_inference_recommendations_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateLabelingJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3714,6 +3748,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageVersion {
     }
 }
 
+/// Operation shape for `DescribeInferenceRecommendationsJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_inference_recommendations_job`](crate::client::Client::describe_inference_recommendations_job).
+///
+/// See [`crate::client::fluent_builders::DescribeInferenceRecommendationsJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeInferenceRecommendationsJob {
+    _private: (),
+}
+impl DescribeInferenceRecommendationsJob {
+    /// Creates a new builder-style object to manufacture [`DescribeInferenceRecommendationsJobInput`](crate::input::DescribeInferenceRecommendationsJobInput)
+    pub fn builder() -> crate::input::describe_inference_recommendations_job_input::Builder {
+        crate::input::describe_inference_recommendations_job_input::Builder::default()
+    }
+    /// Creates a new `DescribeInferenceRecommendationsJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeInferenceRecommendationsJob {
+    type Output = std::result::Result<
+        crate::output::DescribeInferenceRecommendationsJobOutput,
+        crate::error::DescribeInferenceRecommendationsJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_inference_recommendations_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_inference_recommendations_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeLabelingJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -3744,6 +3812,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLabelingJob {
             crate::operation_deser::parse_describe_labeling_job_error(response)
         } else {
             crate::operation_deser::parse_describe_labeling_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeLineageGroup`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_lineage_group`](crate::client::Client::describe_lineage_group).
+///
+/// See [`crate::client::fluent_builders::DescribeLineageGroup`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeLineageGroup {
+    _private: (),
+}
+impl DescribeLineageGroup {
+    /// Creates a new builder-style object to manufacture [`DescribeLineageGroupInput`](crate::input::DescribeLineageGroupInput)
+    pub fn builder() -> crate::input::describe_lineage_group_input::Builder {
+        crate::input::describe_lineage_group_input::Builder::default()
+    }
+    /// Creates a new `DescribeLineageGroup` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeLineageGroup {
+    type Output = std::result::Result<
+        crate::output::DescribeLineageGroupOutput,
+        crate::error::DescribeLineageGroupError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_lineage_group_error(response)
+        } else {
+            crate::operation_deser::parse_describe_lineage_group_response(response)
         }
     }
 }
@@ -4672,6 +4774,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceFleetReport {
             crate::operation_deser::parse_get_device_fleet_report_error(response)
         } else {
             crate::operation_deser::parse_get_device_fleet_report_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetLineageGroupPolicy`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_lineage_group_policy`](crate::client::Client::get_lineage_group_policy).
+///
+/// See [`crate::client::fluent_builders::GetLineageGroupPolicy`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetLineageGroupPolicy {
+    _private: (),
+}
+impl GetLineageGroupPolicy {
+    /// Creates a new builder-style object to manufacture [`GetLineageGroupPolicyInput`](crate::input::GetLineageGroupPolicyInput)
+    pub fn builder() -> crate::input::get_lineage_group_policy_input::Builder {
+        crate::input::get_lineage_group_policy_input::Builder::default()
+    }
+    /// Creates a new `GetLineageGroupPolicy` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetLineageGroupPolicy {
+    type Output = std::result::Result<
+        crate::output::GetLineageGroupPolicyOutput,
+        crate::error::GetLineageGroupPolicyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_lineage_group_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_lineage_group_policy_response(response)
         }
     }
 }
@@ -5611,6 +5747,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImageVersions {
     }
 }
 
+/// Operation shape for `ListInferenceRecommendationsJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_inference_recommendations_jobs`](crate::client::Client::list_inference_recommendations_jobs).
+///
+/// See [`crate::client::fluent_builders::ListInferenceRecommendationsJobs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListInferenceRecommendationsJobs {
+    _private: (),
+}
+impl ListInferenceRecommendationsJobs {
+    /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsInput`](crate::input::ListInferenceRecommendationsJobsInput)
+    pub fn builder() -> crate::input::list_inference_recommendations_jobs_input::Builder {
+        crate::input::list_inference_recommendations_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListInferenceRecommendationsJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListInferenceRecommendationsJobs {
+    type Output = std::result::Result<
+        crate::output::ListInferenceRecommendationsJobsOutput,
+        crate::error::ListInferenceRecommendationsJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_inference_recommendations_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_inference_recommendations_jobs_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListLabelingJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -5675,6 +5845,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLabelingJobsForWorkt
             crate::operation_deser::parse_list_labeling_jobs_for_workteam_error(response)
         } else {
             crate::operation_deser::parse_list_labeling_jobs_for_workteam_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListLineageGroups`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_lineage_groups`](crate::client::Client::list_lineage_groups).
+///
+/// See [`crate::client::fluent_builders::ListLineageGroups`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListLineageGroups {
+    _private: (),
+}
+impl ListLineageGroups {
+    /// Creates a new builder-style object to manufacture [`ListLineageGroupsInput`](crate::input::ListLineageGroupsInput)
+    pub fn builder() -> crate::input::list_lineage_groups_input::Builder {
+        crate::input::list_lineage_groups_input::Builder::default()
+    }
+    /// Creates a new `ListLineageGroups` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListLineageGroups {
+    type Output = std::result::Result<
+        crate::output::ListLineageGroupsOutput,
+        crate::error::ListLineageGroupsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_lineage_groups_error(response)
+        } else {
+            crate::operation_deser::parse_list_lineage_groups_response(response)
         }
     }
 }
@@ -5745,6 +5949,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelExplainabilityJ
             crate::operation_deser::parse_list_model_explainability_job_definitions_response(
                 response,
             )
+        }
+    }
+}
+
+/// Operation shape for `ListModelMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_model_metadata`](crate::client::Client::list_model_metadata).
+///
+/// See [`crate::client::fluent_builders::ListModelMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListModelMetadata {
+    _private: (),
+}
+impl ListModelMetadata {
+    /// Creates a new builder-style object to manufacture [`ListModelMetadataInput`](crate::input::ListModelMetadataInput)
+    pub fn builder() -> crate::input::list_model_metadata_input::Builder {
+        crate::input::list_model_metadata_input::Builder::default()
+    }
+    /// Creates a new `ListModelMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListModelMetadata {
+    type Output = std::result::Result<
+        crate::output::ListModelMetadataOutput,
+        crate::error::ListModelMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_metadata_response(response)
         }
     }
 }
@@ -6625,6 +6863,38 @@ impl aws_smithy_http::response::ParseStrictResponse for PutModelPackageGroupPoli
     }
 }
 
+/// Operation shape for `QueryLineage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`query_lineage`](crate::client::Client::query_lineage).
+///
+/// See [`crate::client::fluent_builders::QueryLineage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct QueryLineage {
+    _private: (),
+}
+impl QueryLineage {
+    /// Creates a new builder-style object to manufacture [`QueryLineageInput`](crate::input::QueryLineageInput)
+    pub fn builder() -> crate::input::query_lineage_input::Builder {
+        crate::input::query_lineage_input::Builder::default()
+    }
+    /// Creates a new `QueryLineage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for QueryLineage {
+    type Output =
+        std::result::Result<crate::output::QueryLineageOutput, crate::error::QueryLineageError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_query_lineage_error(response)
+        } else {
+            crate::operation_deser::parse_query_lineage_response(response)
+        }
+    }
+}
+
 /// Operation shape for `RegisterDevices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -7058,6 +7328,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopHyperParameterTuning
             crate::operation_deser::parse_stop_hyper_parameter_tuning_job_error(response)
         } else {
             crate::operation_deser::parse_stop_hyper_parameter_tuning_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopInferenceRecommendationsJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_inference_recommendations_job`](crate::client::Client::stop_inference_recommendations_job).
+///
+/// See [`crate::client::fluent_builders::StopInferenceRecommendationsJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopInferenceRecommendationsJob {
+    _private: (),
+}
+impl StopInferenceRecommendationsJob {
+    /// Creates a new builder-style object to manufacture [`StopInferenceRecommendationsJobInput`](crate::input::StopInferenceRecommendationsJobInput)
+    pub fn builder() -> crate::input::stop_inference_recommendations_job_input::Builder {
+        crate::input::stop_inference_recommendations_job_input::Builder::default()
+    }
+    /// Creates a new `StopInferenceRecommendationsJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopInferenceRecommendationsJob {
+    type Output = std::result::Result<
+        crate::output::StopInferenceRecommendationsJobOutput,
+        crate::error::StopInferenceRecommendationsJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_inference_recommendations_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_inference_recommendations_job_response(response)
         }
     }
 }

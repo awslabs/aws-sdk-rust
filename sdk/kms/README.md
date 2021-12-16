@@ -1,6 +1,6 @@
 # aws-sdk-kms
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Key Management Service (KMS) is an encryption and key management web service. This guide describes the KMS operations that you can call programmatically. For general information about KMS, see the [_Key Management Service Developer Guide_](https://docs.aws.amazon.com/kms/latest/developerguide/).
@@ -45,8 +45,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-kms = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-kms = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

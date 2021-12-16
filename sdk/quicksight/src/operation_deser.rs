@@ -174,6 +174,25 @@ pub fn parse_create_account_customization_error(
                 tmp
             }),
         },
+        "ConflictException" => {
+            crate::error::CreateAccountCustomizationError {
+                meta: generic,
+                kind: crate::error::CreateAccountCustomizationErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAccountCustomizationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalFailureException" => crate::error::CreateAccountCustomizationError {
             meta: generic,
             kind: crate::error::CreateAccountCustomizationErrorKind::InternalFailureException({
@@ -2994,6 +3013,25 @@ pub fn parse_delete_account_customization_error(
                 tmp
             }),
         },
+        "ConflictException" => {
+            crate::error::DeleteAccountCustomizationError {
+                meta: generic,
+                kind: crate::error::DeleteAccountCustomizationErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountCustomizationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalFailureException" => crate::error::DeleteAccountCustomizationError {
             meta: generic,
             kind: crate::error::DeleteAccountCustomizationErrorKind::InternalFailureException({
@@ -14100,6 +14138,25 @@ pub fn parse_update_account_customization_error(
                 tmp
             }),
         },
+        "ConflictException" => {
+            crate::error::UpdateAccountCustomizationError {
+                meta: generic,
+                kind: crate::error::UpdateAccountCustomizationErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccountCustomizationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "InternalFailureException" => crate::error::UpdateAccountCustomizationError {
             meta: generic,
             kind: crate::error::UpdateAccountCustomizationErrorKind::InternalFailureException({

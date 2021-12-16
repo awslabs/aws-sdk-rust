@@ -8,6 +8,8 @@ pub mod batch_execute_statement_input {
     pub struct Builder {
         pub(crate) statements:
             std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
     }
     impl Builder {
         /// Appends an item to `statements`.
@@ -29,6 +31,70 @@ pub mod batch_execute_statement_input {
             self.statements = input;
             self
         }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate
+        /// <code>ConsumedCapacity</code> for the operation, together with
+        /// <code>ConsumedCapacity</code> for each table and secondary index that was
+        /// accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and
+        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+        /// information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate
+        /// <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+        /// response.</p>
+        /// </li>
+        /// </ul>
+        pub fn return_consumed_capacity(
+            mut self,
+            input: crate::model::ReturnConsumedCapacity,
+        ) -> Self {
+            self.return_consumed_capacity = Some(input);
+            self
+        }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate
+        /// <code>ConsumedCapacity</code> for the operation, together with
+        /// <code>ConsumedCapacity</code> for each table and secondary index that was
+        /// accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and
+        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+        /// information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate
+        /// <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+        /// response.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_return_consumed_capacity(
+            mut self,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
+        ) -> Self {
+            self.return_consumed_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
         pub fn build(
             self,
@@ -38,6 +104,7 @@ pub mod batch_execute_statement_input {
         > {
             Ok(crate::input::BatchExecuteStatementInput {
                 statements: self.statements,
+                return_consumed_capacity: self.return_consumed_capacity,
             })
         }
     }
@@ -402,8 +469,8 @@ pub mod batch_get_item_input {
             self.request_items = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -434,8 +501,8 @@ pub mod batch_get_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -731,8 +798,8 @@ pub mod batch_write_item_input {
             self.request_items = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -763,8 +830,8 @@ pub mod batch_write_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1316,6 +1383,7 @@ pub mod create_table_input {
         pub(crate) stream_specification: std::option::Option<crate::model::StreamSpecification>,
         pub(crate) sse_specification: std::option::Option<crate::model::SseSpecification>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) table_class: std::option::Option<crate::model::TableClass>,
     }
     impl Builder {
         /// Appends an item to `attribute_definitions`.
@@ -1919,6 +1987,21 @@ pub mod create_table_input {
             self.tags = input;
             self
         }
+        /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn table_class(mut self, input: crate::model::TableClass) -> Self {
+            self.table_class = Some(input);
+            self
+        }
+        /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn set_table_class(
+            mut self,
+            input: std::option::Option<crate::model::TableClass>,
+        ) -> Self {
+            self.table_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTableInput`](crate::input::CreateTableInput)
         pub fn build(
             self,
@@ -1937,6 +2020,7 @@ pub mod create_table_input {
                 stream_specification: self.stream_specification,
                 sse_specification: self.sse_specification,
                 tags: self.tags,
+                table_class: self.table_class,
             })
         }
     }
@@ -2386,8 +2470,8 @@ pub mod delete_item_input {
             self.return_values = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2418,8 +2502,8 @@ pub mod delete_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -5192,6 +5276,8 @@ pub mod execute_statement_input {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
         pub(crate) consistent_read: std::option::Option<bool>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
     }
     impl Builder {
         /// <p>The PartiQL statement representing the operation to run.</p>
@@ -5247,6 +5333,70 @@ pub mod execute_statement_input {
             self.next_token = input;
             self
         }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate
+        /// <code>ConsumedCapacity</code> for the operation, together with
+        /// <code>ConsumedCapacity</code> for each table and secondary index that was
+        /// accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and
+        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+        /// information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate
+        /// <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+        /// response.</p>
+        /// </li>
+        /// </ul>
+        pub fn return_consumed_capacity(
+            mut self,
+            input: crate::model::ReturnConsumedCapacity,
+        ) -> Self {
+            self.return_consumed_capacity = Some(input);
+            self
+        }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate
+        /// <code>ConsumedCapacity</code> for the operation, together with
+        /// <code>ConsumedCapacity</code> for each table and secondary index that was
+        /// accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and
+        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+        /// information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate
+        /// <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+        /// response.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_return_consumed_capacity(
+            mut self,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
+        ) -> Self {
+            self.return_consumed_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
         pub fn build(
             self,
@@ -5259,6 +5409,7 @@ pub mod execute_statement_input {
                 parameters: self.parameters,
                 consistent_read: self.consistent_read,
                 next_token: self.next_token,
+                return_consumed_capacity: self.return_consumed_capacity,
             })
         }
     }
@@ -5394,6 +5545,8 @@ pub mod execute_transaction_input {
         pub(crate) transact_statements:
             std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) return_consumed_capacity:
+            std::option::Option<crate::model::ReturnConsumedCapacity>,
     }
     impl Builder {
         /// Appends an item to `transact_statements`.
@@ -5433,6 +5586,24 @@ pub mod execute_transaction_input {
             self.client_request_token = input;
             self
         }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
+        /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+        pub fn return_consumed_capacity(
+            mut self,
+            input: crate::model::ReturnConsumedCapacity,
+        ) -> Self {
+            self.return_consumed_capacity = Some(input);
+            self
+        }
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
+        /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+        pub fn set_return_consumed_capacity(
+            mut self,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
+        ) -> Self {
+            self.return_consumed_capacity = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteTransactionInput`](crate::input::ExecuteTransactionInput)
         pub fn build(
             self,
@@ -5443,6 +5614,7 @@ pub mod execute_transaction_input {
             Ok(crate::input::ExecuteTransactionInput {
                 transact_statements: self.transact_statements,
                 client_request_token: self.client_request_token,
+                return_consumed_capacity: self.return_consumed_capacity,
             })
         }
     }
@@ -5998,8 +6170,8 @@ pub mod get_item_input {
             self.consistent_read = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6030,8 +6202,8 @@ pub mod get_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -7702,8 +7874,8 @@ pub mod put_item_input {
             self.return_values = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -7734,8 +7906,8 @@ pub mod put_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -8567,8 +8739,8 @@ pub mod query_input {
             self.exclusive_start_key = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -8599,8 +8771,8 @@ pub mod query_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -10189,8 +10361,8 @@ pub mod scan_input {
             self.exclusive_start_key = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -10221,8 +10393,8 @@ pub mod scan_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -11153,8 +11325,8 @@ pub mod transact_write_items_input {
             self.transact_items = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -11185,8 +11357,8 @@ pub mod transact_write_items_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -12686,8 +12858,8 @@ pub mod update_item_input {
             self.return_values = input;
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -12718,8 +12890,8 @@ pub mod update_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about provisioned throughput consumption that is
-        /// returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput
+        /// consumption that is returned in the response:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -13394,6 +13566,7 @@ pub mod update_table_input {
         pub(crate) sse_specification: std::option::Option<crate::model::SseSpecification>,
         pub(crate) replica_updates:
             std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
+        pub(crate) table_class: std::option::Option<crate::model::TableClass>,
     }
     impl Builder {
         /// Appends an item to `attribute_definitions`.
@@ -13625,6 +13798,21 @@ pub mod update_table_input {
             self.replica_updates = input;
             self
         }
+        /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn table_class(mut self, input: crate::model::TableClass) -> Self {
+            self.table_class = Some(input);
+            self
+        }
+        /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn set_table_class(
+            mut self,
+            input: std::option::Option<crate::model::TableClass>,
+        ) -> Self {
+            self.table_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTableInput`](crate::input::UpdateTableInput)
         pub fn build(
             self,
@@ -13641,6 +13829,7 @@ pub mod update_table_input {
                 stream_specification: self.stream_specification,
                 sse_specification: self.sse_specification,
                 replica_updates: self.replica_updates,
+                table_class: self.table_class,
             })
         }
     }
@@ -14343,6 +14532,9 @@ pub struct UpdateTableInput {
     /// 2019.11.21</a> of global tables.</p>
     /// </note>
     pub replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
+    /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
+    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    pub table_class: std::option::Option<crate::model::TableClass>,
 }
 impl UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you
@@ -14432,6 +14624,11 @@ impl UpdateTableInput {
     pub fn replica_updates(&self) -> std::option::Option<&[crate::model::ReplicationGroupUpdate]> {
         self.replica_updates.as_deref()
     }
+    /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
+    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    pub fn table_class(&self) -> std::option::Option<&crate::model::TableClass> {
+        self.table_class.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14447,6 +14644,7 @@ impl std::fmt::Debug for UpdateTableInput {
         formatter.field("stream_specification", &self.stream_specification);
         formatter.field("sse_specification", &self.sse_specification);
         formatter.field("replica_updates", &self.replica_updates);
+        formatter.field("table_class", &self.table_class);
         formatter.finish()
     }
 }
@@ -14518,8 +14716,8 @@ pub struct UpdateItemInput {
     /// units are consumed.</p>
     /// <p>The values returned are strongly consistent.</p>
     pub return_values: std::option::Option<crate::model::ReturnValue>,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -14836,8 +15034,8 @@ impl UpdateItemInput {
     pub fn return_values(&self) -> std::option::Option<&crate::model::ReturnValue> {
         self.return_values.as_ref()
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -15378,8 +15576,8 @@ pub struct TransactWriteItemsInput {
     /// tables must reside in the same Amazon Web Services account and Region, and no two of them
     /// can operate on the same item. </p>
     pub transact_items: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -15438,8 +15636,8 @@ impl TransactWriteItemsInput {
     pub fn transact_items(&self) -> std::option::Option<&[crate::model::TransactWriteItem]> {
         self.transact_items.as_deref()
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -15678,8 +15876,8 @@ pub struct ScanInput {
     pub exclusive_start_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -15960,8 +16158,8 @@ impl ScanInput {
     > {
         self.exclusive_start_key.as_ref()
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -16512,8 +16710,8 @@ pub struct QueryInput {
     pub exclusive_start_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -16902,8 +17100,8 @@ impl QueryInput {
     > {
         self.exclusive_start_key.as_ref()
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -17252,8 +17450,8 @@ pub struct PutItemInput {
     /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
     pub return_values: std::option::Option<crate::model::ReturnValue>,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -17453,8 +17651,8 @@ impl PutItemInput {
     pub fn return_values(&self) -> std::option::Option<&crate::model::ReturnValue> {
         self.return_values.as_ref()
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -17953,8 +18151,8 @@ pub struct GetItemInput {
     /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
     /// reads.</p>
     pub consistent_read: std::option::Option<bool>,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -18071,8 +18269,8 @@ impl GetItemInput {
     pub fn consistent_read(&self) -> std::option::Option<bool> {
         self.consistent_read
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -18327,6 +18525,9 @@ pub struct ExecuteTransactionInput {
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
     /// statement response.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
+    /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+    pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl ExecuteTransactionInput {
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
@@ -18340,12 +18541,20 @@ impl ExecuteTransactionInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
+    /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+    pub fn return_consumed_capacity(
+        &self,
+    ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
+        self.return_consumed_capacity.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecuteTransactionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecuteTransactionInput");
         formatter.field("transact_statements", &self.transact_statements);
         formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
         formatter.finish()
     }
 }
@@ -18364,6 +18573,32 @@ pub struct ExecuteStatementInput {
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
     /// statement response.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INDEXES</code> - The response includes the aggregate
+    /// <code>ConsumedCapacity</code> for the operation, together with
+    /// <code>ConsumedCapacity</code> for each table and secondary index that was
+    /// accessed.</p>
+    /// <p>Note that some operations, such as <code>GetItem</code> and
+    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+    /// information for table(s).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TOTAL</code> - The response includes only the aggregate
+    /// <code>ConsumedCapacity</code> for the operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+    /// response.</p>
+    /// </li>
+    /// </ul>
+    pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl ExecuteStatementInput {
     /// <p>The PartiQL statement representing the operation to run.</p>
@@ -18384,6 +18619,36 @@ impl ExecuteStatementInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INDEXES</code> - The response includes the aggregate
+    /// <code>ConsumedCapacity</code> for the operation, together with
+    /// <code>ConsumedCapacity</code> for each table and secondary index that was
+    /// accessed.</p>
+    /// <p>Note that some operations, such as <code>GetItem</code> and
+    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+    /// information for table(s).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TOTAL</code> - The response includes only the aggregate
+    /// <code>ConsumedCapacity</code> for the operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+    /// response.</p>
+    /// </li>
+    /// </ul>
+    pub fn return_consumed_capacity(
+        &self,
+    ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
+        self.return_consumed_capacity.as_ref()
+    }
 }
 impl std::fmt::Debug for ExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18392,6 +18657,7 @@ impl std::fmt::Debug for ExecuteStatementInput {
         formatter.field("parameters", &self.parameters);
         formatter.field("consistent_read", &self.consistent_read);
         formatter.field("next_token", &self.next_token);
+        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
         formatter.finish()
     }
 }
@@ -18760,8 +19026,8 @@ pub struct DeleteItemInput {
     /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
     pub return_values: std::option::Option<crate::model::ReturnValue>,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -18948,8 +19214,8 @@ impl DeleteItemInput {
     pub fn return_values(&self) -> std::option::Option<&crate::model::ReturnValue> {
         self.return_values.as_ref()
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -19387,6 +19653,9 @@ pub struct CreateTableInput {
     /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
     /// for DynamoDB</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    pub table_class: std::option::Option<crate::model::TableClass>,
 }
 impl CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
@@ -19653,6 +19922,11 @@ impl CreateTableInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    pub fn table_class(&self) -> std::option::Option<&crate::model::TableClass> {
+        self.table_class.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateTableInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19667,6 +19941,7 @@ impl std::fmt::Debug for CreateTableInput {
         formatter.field("stream_specification", &self.stream_specification);
         formatter.field("sse_specification", &self.sse_specification);
         formatter.field("tags", &self.tags);
+        formatter.field("table_class", &self.table_class);
         formatter.finish()
     }
 }
@@ -19777,8 +20052,8 @@ pub struct BatchWriteItemInput {
     pub request_items: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
     >,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -19861,8 +20136,8 @@ impl BatchWriteItemInput {
     > {
         self.request_items.as_ref()
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -20021,8 +20296,8 @@ pub struct BatchGetItemInput {
     pub request_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
     >,
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -20156,8 +20431,8 @@ impl BatchGetItemInput {
     > {
         self.request_items.as_ref()
     }
-    /// <p>Determines the level of detail about provisioned throughput consumption that is
-    /// returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -20202,17 +20477,74 @@ impl std::fmt::Debug for BatchGetItemInput {
 pub struct BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
     pub statements: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INDEXES</code> - The response includes the aggregate
+    /// <code>ConsumedCapacity</code> for the operation, together with
+    /// <code>ConsumedCapacity</code> for each table and secondary index that was
+    /// accessed.</p>
+    /// <p>Note that some operations, such as <code>GetItem</code> and
+    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+    /// information for table(s).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TOTAL</code> - The response includes only the aggregate
+    /// <code>ConsumedCapacity</code> for the operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+    /// response.</p>
+    /// </li>
+    /// </ul>
+    pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
     pub fn statements(&self) -> std::option::Option<&[crate::model::BatchStatementRequest]> {
         self.statements.as_deref()
     }
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput
+    /// consumption that is returned in the response:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>INDEXES</code> - The response includes the aggregate
+    /// <code>ConsumedCapacity</code> for the operation, together with
+    /// <code>ConsumedCapacity</code> for each table and secondary index that was
+    /// accessed.</p>
+    /// <p>Note that some operations, such as <code>GetItem</code> and
+    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
+    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
+    /// information for table(s).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TOTAL</code> - The response includes only the aggregate
+    /// <code>ConsumedCapacity</code> for the operation.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
+    /// response.</p>
+    /// </li>
+    /// </ul>
+    pub fn return_consumed_capacity(
+        &self,
+    ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
+        self.return_consumed_capacity.as_ref()
+    }
 }
 impl std::fmt::Debug for BatchExecuteStatementInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchExecuteStatementInput");
         formatter.field("statements", &self.statements);
+        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
         formatter.finish()
     }
 }

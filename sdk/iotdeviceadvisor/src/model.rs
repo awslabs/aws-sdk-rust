@@ -11,7 +11,7 @@ pub struct SuiteDefinitionConfiguration {
     pub intended_for_qualification: bool,
     /// <p>Gets test suite root group.</p>
     pub root_group: std::option::Option<std::string::String>,
-    /// <p>Gets device permission arn.</p>
+    /// <p>Gets the device permission ARN.</p>
     pub device_permission_role_arn: std::option::Option<std::string::String>,
 }
 impl SuiteDefinitionConfiguration {
@@ -31,7 +31,7 @@ impl SuiteDefinitionConfiguration {
     pub fn root_group(&self) -> std::option::Option<&str> {
         self.root_group.as_deref()
     }
-    /// <p>Gets device permission arn.</p>
+    /// <p>Gets the device permission ARN.</p>
     pub fn device_permission_role_arn(&self) -> std::option::Option<&str> {
         self.device_permission_role_arn.as_deref()
     }
@@ -118,12 +118,12 @@ pub mod suite_definition_configuration {
             self.root_group = input;
             self
         }
-        /// <p>Gets device permission arn.</p>
+        /// <p>Gets the device permission ARN.</p>
         pub fn device_permission_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_permission_role_arn = Some(input.into());
             self
         }
-        /// <p>Gets device permission arn.</p>
+        /// <p>Gets the device permission ARN.</p>
         pub fn set_device_permission_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -150,21 +150,21 @@ impl SuiteDefinitionConfiguration {
     }
 }
 
-/// <p>Lists all the devices under test</p>
+/// <p>Information of a test device. A thing ARN or a certificate ARN is required.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceUnderTest {
-    /// <p>Lists devices thing arn</p>
+    /// <p>Lists devices thing ARN.</p>
     pub thing_arn: std::option::Option<std::string::String>,
-    /// <p>Lists devices certificate arn</p>
+    /// <p>Lists devices certificate ARN.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl DeviceUnderTest {
-    /// <p>Lists devices thing arn</p>
+    /// <p>Lists devices thing ARN.</p>
     pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
-    /// <p>Lists devices certificate arn</p>
+    /// <p>Lists devices certificate ARN.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -187,22 +187,22 @@ pub mod device_under_test {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Lists devices thing arn</p>
+        /// <p>Lists devices thing ARN.</p>
         pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_arn = Some(input.into());
             self
         }
-        /// <p>Lists devices thing arn</p>
+        /// <p>Lists devices thing ARN.</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_arn = input;
             self
         }
-        /// <p>Lists devices certificate arn</p>
+        /// <p>Lists devices certificate ARN.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>Lists devices certificate arn</p>
+        /// <p>Lists devices certificate ARN.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -234,6 +234,8 @@ pub struct SuiteRunConfiguration {
     pub primary_device: std::option::Option<crate::model::DeviceUnderTest>,
     /// <p>Gets test case list.</p>
     pub selected_test_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>TRUE if multiple test suites run in parallel.</p>
+    pub parallel_run: bool,
 }
 impl SuiteRunConfiguration {
     /// <p>Gets the primary device for suite run.</p>
@@ -244,12 +246,17 @@ impl SuiteRunConfiguration {
     pub fn selected_test_list(&self) -> std::option::Option<&[std::string::String]> {
         self.selected_test_list.as_deref()
     }
+    /// <p>TRUE if multiple test suites run in parallel.</p>
+    pub fn parallel_run(&self) -> bool {
+        self.parallel_run
+    }
 }
 impl std::fmt::Debug for SuiteRunConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SuiteRunConfiguration");
         formatter.field("primary_device", &self.primary_device);
         formatter.field("selected_test_list", &self.selected_test_list);
+        formatter.field("parallel_run", &self.parallel_run);
         formatter.finish()
     }
 }
@@ -261,6 +268,7 @@ pub mod suite_run_configuration {
     pub struct Builder {
         pub(crate) primary_device: std::option::Option<crate::model::DeviceUnderTest>,
         pub(crate) selected_test_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) parallel_run: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Gets the primary device for suite run.</p>
@@ -295,11 +303,22 @@ pub mod suite_run_configuration {
             self.selected_test_list = input;
             self
         }
+        /// <p>TRUE if multiple test suites run in parallel.</p>
+        pub fn parallel_run(mut self, input: bool) -> Self {
+            self.parallel_run = Some(input);
+            self
+        }
+        /// <p>TRUE if multiple test suites run in parallel.</p>
+        pub fn set_parallel_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.parallel_run = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration)
         pub fn build(self) -> crate::model::SuiteRunConfiguration {
             crate::model::SuiteRunConfiguration {
                 primary_device: self.primary_device,
                 selected_test_list: self.selected_test_list,
+                parallel_run: self.parallel_run.unwrap_or_default(),
             }
         }
     }
@@ -312,16 +331,17 @@ impl SuiteRunConfiguration {
 }
 
 /// <p>Information about the suite run.</p>
+/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SuiteRunInformation</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuiteRunInformation {
-    /// <p>Suite definition Id of the suite run.</p>
+    /// <p>Suite definition ID of the suite run.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the suite run.</p>
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>Suite definition name of the suite run.</p>
     pub suite_definition_name: std::option::Option<std::string::String>,
-    /// <p>Suite run Id of the suite run.</p>
+    /// <p>Suite run ID of the suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -337,7 +357,7 @@ pub struct SuiteRunInformation {
     pub failed: i32,
 }
 impl SuiteRunInformation {
-    /// <p>Suite definition Id of the suite run.</p>
+    /// <p>Suite definition ID of the suite run.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
@@ -349,7 +369,7 @@ impl SuiteRunInformation {
     pub fn suite_definition_name(&self) -> std::option::Option<&str> {
         self.suite_definition_name.as_deref()
     }
-    /// <p>Suite run Id of the suite run.</p>
+    /// <p>Suite run ID of the suite run.</p>
     pub fn suite_run_id(&self) -> std::option::Option<&str> {
         self.suite_run_id.as_deref()
     }
@@ -412,12 +432,12 @@ pub mod suite_run_information {
         pub(crate) failed: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Suite definition Id of the suite run.</p>
+        /// <p>Suite definition ID of the suite run.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the suite run.</p>
+        /// <p>Suite definition ID of the suite run.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -451,12 +471,12 @@ pub mod suite_run_information {
             self.suite_definition_name = input;
             self
         }
-        /// <p>Suite run Id of the suite run.</p>
+        /// <p>Suite run ID of the suite run.</p>
         pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_run_id = Some(input.into());
             self
         }
-        /// <p>Suite run Id of the suite run.</p>
+        /// <p>Suite run ID of the suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suite_run_id = input;
             self
@@ -654,11 +674,11 @@ impl AsRef<str> for SuiteRunStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuiteDefinitionInformation {
-    /// <p>Suite definition Id of the test suite.</p>
+    /// <p>Suite definition ID of the test suite.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite name of the test suite.</p>
     pub suite_definition_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the devices under test for the test suite.</p>
+    /// <p>Specifies the devices that are under test for the test suite.</p>
     pub default_devices: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub intended_for_qualification: bool,
@@ -666,7 +686,7 @@ pub struct SuiteDefinitionInformation {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SuiteDefinitionInformation {
-    /// <p>Suite definition Id of the test suite.</p>
+    /// <p>Suite definition ID of the test suite.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
@@ -674,7 +694,7 @@ impl SuiteDefinitionInformation {
     pub fn suite_definition_name(&self) -> std::option::Option<&str> {
         self.suite_definition_name.as_deref()
     }
-    /// <p>Specifies the devices under test for the test suite.</p>
+    /// <p>Specifies the devices that are under test for the test suite.</p>
     pub fn default_devices(&self) -> std::option::Option<&[crate::model::DeviceUnderTest]> {
         self.default_devices.as_deref()
     }
@@ -715,12 +735,12 @@ pub mod suite_definition_information {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -745,14 +765,14 @@ pub mod suite_definition_information {
         ///
         /// To override the contents of this collection use [`set_default_devices`](Self::set_default_devices).
         ///
-        /// <p>Specifies the devices under test for the test suite.</p>
+        /// <p>Specifies the devices that are under test for the test suite.</p>
         pub fn default_devices(mut self, input: impl Into<crate::model::DeviceUnderTest>) -> Self {
             let mut v = self.default_devices.unwrap_or_default();
             v.push(input.into());
             self.default_devices = Some(v);
             self
         }
-        /// <p>Specifies the devices under test for the test suite.</p>
+        /// <p>Specifies the devices that are under test for the test suite.</p>
         pub fn set_default_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
@@ -869,7 +889,7 @@ impl TestResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupResult {
-    /// <p>Group result Id.</p>
+    /// <p>Group result ID.</p>
     pub group_id: std::option::Option<std::string::String>,
     /// <p>Group Result Name.</p>
     pub group_name: std::option::Option<std::string::String>,
@@ -877,7 +897,7 @@ pub struct GroupResult {
     pub tests: std::option::Option<std::vec::Vec<crate::model::TestCaseRun>>,
 }
 impl GroupResult {
-    /// <p>Group result Id.</p>
+    /// <p>Group result ID.</p>
     pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
@@ -910,12 +930,12 @@ pub mod group_result {
         pub(crate) tests: std::option::Option<std::vec::Vec<crate::model::TestCaseRun>>,
     }
     impl Builder {
-        /// <p>Group result Id.</p>
+        /// <p>Group result ID.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_id = Some(input.into());
             self
         }
-        /// <p>Group result Id.</p>
+        /// <p>Group result ID.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -966,23 +986,57 @@ impl GroupResult {
     }
 }
 
-/// <p>Provides test case run.</p>
+/// <p>Provides the test case run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestCaseRun {
-    /// <p>Provides test case run Id.</p>
+    /// <p>Provides the test case run ID.</p>
     pub test_case_run_id: std::option::Option<std::string::String>,
-    /// <p>Provides test case run definition Id.</p>
+    /// <p>Provides the test case run definition ID.</p>
     pub test_case_definition_id: std::option::Option<std::string::String>,
-    /// <p>Provides test case run definition Name.</p>
+    /// <p>Provides the test case run definition name.</p>
     pub test_case_definition_name: std::option::Option<std::string::String>,
-    /// <p>Provides test case run status.</p>
+    /// <p>Provides the test case run status. Status is one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PASS</code>: Test passed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAIL</code>: Test failed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>: Test has not started running but is scheduled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RUNNING</code>: Test is running.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ERORR</code>: Test faced an error when running due to an internal issue.</p>
+    /// </li>
+    /// </ul>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Provides test case run start time.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides test case run end time.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Provides test case run log Url.</p>
+    /// <p>Provides test case run log URL.</p>
     pub log_url: std::option::Option<std::string::String>,
     /// <p>Provides test case run warnings.</p>
     pub warnings: std::option::Option<std::string::String>,
@@ -990,19 +1044,53 @@ pub struct TestCaseRun {
     pub failure: std::option::Option<std::string::String>,
 }
 impl TestCaseRun {
-    /// <p>Provides test case run Id.</p>
+    /// <p>Provides the test case run ID.</p>
     pub fn test_case_run_id(&self) -> std::option::Option<&str> {
         self.test_case_run_id.as_deref()
     }
-    /// <p>Provides test case run definition Id.</p>
+    /// <p>Provides the test case run definition ID.</p>
     pub fn test_case_definition_id(&self) -> std::option::Option<&str> {
         self.test_case_definition_id.as_deref()
     }
-    /// <p>Provides test case run definition Name.</p>
+    /// <p>Provides the test case run definition name.</p>
     pub fn test_case_definition_name(&self) -> std::option::Option<&str> {
         self.test_case_definition_name.as_deref()
     }
-    /// <p>Provides test case run status.</p>
+    /// <p>Provides the test case run status. Status is one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PASS</code>: Test passed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FAIL</code>: Test failed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PENDING</code>: Test has not started running but is scheduled.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RUNNING</code>: Test is running.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ERORR</code>: Test faced an error when running due to an internal issue.</p>
+    /// </li>
+    /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::Status> {
         self.status.as_ref()
     }
@@ -1014,7 +1102,7 @@ impl TestCaseRun {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Provides test case run log Url.</p>
+    /// <p>Provides test case run log URL.</p>
     pub fn log_url(&self) -> std::option::Option<&str> {
         self.log_url.as_deref()
     }
@@ -1059,12 +1147,12 @@ pub mod test_case_run {
         pub(crate) failure: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Provides test case run Id.</p>
+        /// <p>Provides the test case run ID.</p>
         pub fn test_case_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.test_case_run_id = Some(input.into());
             self
         }
-        /// <p>Provides test case run Id.</p>
+        /// <p>Provides the test case run ID.</p>
         pub fn set_test_case_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1072,12 +1160,12 @@ pub mod test_case_run {
             self.test_case_run_id = input;
             self
         }
-        /// <p>Provides test case run definition Id.</p>
+        /// <p>Provides the test case run definition ID.</p>
         pub fn test_case_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.test_case_definition_id = Some(input.into());
             self
         }
-        /// <p>Provides test case run definition Id.</p>
+        /// <p>Provides the test case run definition ID.</p>
         pub fn set_test_case_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1085,12 +1173,12 @@ pub mod test_case_run {
             self.test_case_definition_id = input;
             self
         }
-        /// <p>Provides test case run definition Name.</p>
+        /// <p>Provides the test case run definition name.</p>
         pub fn test_case_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.test_case_definition_name = Some(input.into());
             self
         }
-        /// <p>Provides test case run definition Name.</p>
+        /// <p>Provides the test case run definition name.</p>
         pub fn set_test_case_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1098,12 +1186,80 @@ pub mod test_case_run {
             self.test_case_definition_name = input;
             self
         }
-        /// <p>Provides test case run status.</p>
+        /// <p>Provides the test case run status. Status is one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PASS</code>: Test passed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAIL</code>: Test failed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: Test has not started running but is scheduled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RUNNING</code>: Test is running.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ERORR</code>: Test faced an error when running due to an internal issue.</p>
+        /// </li>
+        /// </ul>
         pub fn status(mut self, input: crate::model::Status) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Provides test case run status.</p>
+        /// <p>Provides the test case run status. Status is one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PASS</code>: Test passed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAIL</code>: Test failed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: Test has not started running but is scheduled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RUNNING</code>: Test is running.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ERORR</code>: Test faced an error when running due to an internal issue.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -1134,12 +1290,12 @@ pub mod test_case_run {
             self.end_time = input;
             self
         }
-        /// <p>Provides test case run log Url.</p>
+        /// <p>Provides test case run log URL.</p>
         pub fn log_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_url = Some(input.into());
             self
         }
-        /// <p>Provides test case run log Url.</p>
+        /// <p>Provides test case run log URL.</p>
         pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_url = input;
             self

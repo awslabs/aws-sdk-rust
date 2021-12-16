@@ -6810,6 +6810,7 @@ pub mod update_domain_config_input {
         pub(crate) advanced_security_options:
             std::option::Option<crate::model::AdvancedSecurityOptionsInput>,
         pub(crate) auto_tune_options: std::option::Option<crate::model::AutoTuneOptions>,
+        pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the domain you're updating.</p>
@@ -7047,6 +7048,16 @@ pub mod update_domain_config_input {
             self.auto_tune_options = input;
             self
         }
+        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.dry_run = Some(input);
+            self
+        }
+        /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.dry_run = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainConfigInput`](crate::input::UpdateDomainConfigInput)
         pub fn build(
             self,
@@ -7069,6 +7080,7 @@ pub mod update_domain_config_input {
                 node_to_node_encryption_options: self.node_to_node_encryption_options,
                 advanced_security_options: self.advanced_security_options,
                 auto_tune_options: self.auto_tune_options,
+                dry_run: self.dry_run,
             })
         }
     }
@@ -7855,6 +7867,8 @@ pub struct UpdateDomainConfigInput {
     pub advanced_security_options: std::option::Option<crate::model::AdvancedSecurityOptionsInput>,
     /// <p>Specifies Auto-Tune options.</p>
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptions>,
+    /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
+    pub dry_run: std::option::Option<bool>,
 }
 impl UpdateDomainConfigInput {
     /// <p>The name of the domain you're updating.</p>
@@ -7938,6 +7952,10 @@ impl UpdateDomainConfigInput {
     pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptions> {
         self.auto_tune_options.as_ref()
     }
+    /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
+    pub fn dry_run(&self) -> std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl std::fmt::Debug for UpdateDomainConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7962,6 +7980,7 @@ impl std::fmt::Debug for UpdateDomainConfigInput {
         );
         formatter.field("advanced_security_options", &self.advanced_security_options);
         formatter.field("auto_tune_options", &self.auto_tune_options);
+        formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }

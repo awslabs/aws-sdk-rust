@@ -8,20 +8,20 @@
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <fullname>AWS CloudFormation</fullname>
-//! <p>CloudFormation allows you to create and manage Amazon Web Services infrastructure deployments
-//! predictably and repeatedly. You can use CloudFormation to leverage Amazon Web Services products, such
-//! as Amazon Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple Notification
-//! Service, Elastic Load Balancing, and Auto Scaling to build highly-reliable, highly
-//! scalable, cost-effective applications without creating or configuring the underlying Amazon Web Services
-//! infrastructure.</p>
+//! <p>CloudFormation allows you to create and manage Amazon Web Services infrastructure
+//! deployments predictably and repeatedly. You can use CloudFormation to leverage
+//! Amazon Web Services products, such as Amazon Elastic Compute Cloud, Amazon Elastic Block
+//! Store, Amazon Simple Notification Service, Elastic Load Balancing, and Auto Scaling to
+//! build highly-reliable, highly scalable, cost-effective applications without creating or
+//! configuring the underlying Amazon Web Services infrastructure.</p>
 //! <p>With CloudFormation, you declare all of your resources and dependencies in a
 //! template file. The template defines a collection of resources as a single unit called a
-//! stack. CloudFormation creates and deletes all member resources of the stack together
-//! and manages all dependencies between the resources for you.</p>
+//! stack. CloudFormation creates and deletes all member resources of the stack
+//! together and manages all dependencies between the resources for you.</p>
 //! <p>For more information about CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">CloudFormation Product Page</a>.</p>
-//! <p>CloudFormation makes use of other Amazon Web Services products. If you need additional
-//! technical information about a specific Amazon Web Services product, you can find the product's technical
-//! documentation at <a href="https://docs.aws.amazon.com/">
+//! <p>CloudFormation makes use of other Amazon Web Services products. If you need
+//! additional technical information about a specific Amazon Web Services product, you can find
+//! the product's technical documentation at <a href="https://docs.aws.amazon.com/">
 //! <code>docs.aws.amazon.com</code>
 //! </a>.</p>
 //!
@@ -35,7 +35,7 @@
 //! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
 //! error encompassing all possible errors that can be returned by the service.
 //!
-//! The other modules within this crate and not required for normal usage.
+//! The other modules within this crate are not required for normal usage.
 //!
 //! # Examples
 //! Examples can be found [here](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/cloudformation).
@@ -47,7 +47,6 @@ pub use config::Config;
 
 mod aws_endpoint;
 /// Client and fluent builders for calling the service.
-#[cfg(feature = "client")]
 pub mod client;
 /// Configuration for the service.
 pub mod config;
@@ -57,6 +56,7 @@ mod error_meta;
 mod idempotency_token;
 /// Input structures for operations.
 pub mod input;
+pub mod middleware;
 /// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
@@ -82,5 +82,4 @@ pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::app_name::AppName;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
-#[cfg(feature = "client")]
 pub use client::Client;

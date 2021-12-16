@@ -4,9 +4,10 @@
  */
 
 use aws_http::user_agent::AwsUserAgent;
-use aws_hyper::{Client, SdkError};
 use aws_sdk_kms as kms;
+use aws_sdk_kms::middleware::DefaultMiddleware;
 use aws_smithy_client::test_connection::TestConnection;
+use aws_smithy_client::{Client as CoreClient, SdkError};
 use aws_smithy_http::body::SdkBody;
 use http::header::AUTHORIZATION;
 use http::Uri;
@@ -14,6 +15,8 @@ use kms::operation::GenerateRandom;
 use kms::Credentials;
 use kms::{Config, Region};
 use std::time::{Duration, UNIX_EPOCH};
+
+type Client<C> = CoreClient<C, DefaultMiddleware>;
 
 // TODO: having the full HTTP requests right in the code is a bit gross, consider something
 // like https://github.com/davidbarsky/sigv4/blob/master/aws-sigv4/src/lib.rs#L283-L315 to store

@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_outposts::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -83,6 +83,13 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
+    /// Constructs a fluent builder for the `CancelOrder` operation.
+    ///
+    /// See [`CancelOrder`](crate::client::fluent_builders::CancelOrder) for more information about the
+    /// operation and its arguments.
+    pub fn cancel_order(&self) -> fluent_builders::CancelOrder<C, M, R> {
+        fluent_builders::CancelOrder::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateOrder` operation.
     ///
     /// See [`CreateOrder`](crate::client::fluent_builders::CreateOrder) for more information about the
@@ -96,6 +103,13 @@ where
     /// operation and its arguments.
     pub fn create_outpost(&self) -> fluent_builders::CreateOutpost<C, M, R> {
         fluent_builders::CreateOutpost::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateSite` operation.
+    ///
+    /// See [`CreateSite`](crate::client::fluent_builders::CreateSite) for more information about the
+    /// operation and its arguments.
+    pub fn create_site(&self) -> fluent_builders::CreateSite<C, M, R> {
+        fluent_builders::CreateSite::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteOutpost` operation.
     ///
@@ -111,6 +125,20 @@ where
     pub fn delete_site(&self) -> fluent_builders::DeleteSite<C, M, R> {
         fluent_builders::DeleteSite::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetCatalogItem` operation.
+    ///
+    /// See [`GetCatalogItem`](crate::client::fluent_builders::GetCatalogItem) for more information about the
+    /// operation and its arguments.
+    pub fn get_catalog_item(&self) -> fluent_builders::GetCatalogItem<C, M, R> {
+        fluent_builders::GetCatalogItem::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetOrder` operation.
+    ///
+    /// See [`GetOrder`](crate::client::fluent_builders::GetOrder) for more information about the
+    /// operation and its arguments.
+    pub fn get_order(&self) -> fluent_builders::GetOrder<C, M, R> {
+        fluent_builders::GetOrder::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetOutpost` operation.
     ///
     /// See [`GetOutpost`](crate::client::fluent_builders::GetOutpost) for more information about the
@@ -124,6 +152,34 @@ where
     /// operation and its arguments.
     pub fn get_outpost_instance_types(&self) -> fluent_builders::GetOutpostInstanceTypes<C, M, R> {
         fluent_builders::GetOutpostInstanceTypes::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetSite` operation.
+    ///
+    /// See [`GetSite`](crate::client::fluent_builders::GetSite) for more information about the
+    /// operation and its arguments.
+    pub fn get_site(&self) -> fluent_builders::GetSite<C, M, R> {
+        fluent_builders::GetSite::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetSiteAddress` operation.
+    ///
+    /// See [`GetSiteAddress`](crate::client::fluent_builders::GetSiteAddress) for more information about the
+    /// operation and its arguments.
+    pub fn get_site_address(&self) -> fluent_builders::GetSiteAddress<C, M, R> {
+        fluent_builders::GetSiteAddress::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListCatalogItems` operation.
+    ///
+    /// See [`ListCatalogItems`](crate::client::fluent_builders::ListCatalogItems) for more information about the
+    /// operation and its arguments.
+    pub fn list_catalog_items(&self) -> fluent_builders::ListCatalogItems<C, M, R> {
+        fluent_builders::ListCatalogItems::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListOrders` operation.
+    ///
+    /// See [`ListOrders`](crate::client::fluent_builders::ListOrders) for more information about the
+    /// operation and its arguments.
+    pub fn list_orders(&self) -> fluent_builders::ListOrders<C, M, R> {
+        fluent_builders::ListOrders::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListOutposts` operation.
     ///
@@ -160,6 +216,29 @@ where
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateSite` operation.
+    ///
+    /// See [`UpdateSite`](crate::client::fluent_builders::UpdateSite) for more information about the
+    /// operation and its arguments.
+    pub fn update_site(&self) -> fluent_builders::UpdateSite<C, M, R> {
+        fluent_builders::UpdateSite::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateSiteAddress` operation.
+    ///
+    /// See [`UpdateSiteAddress`](crate::client::fluent_builders::UpdateSiteAddress) for more information about the
+    /// operation and its arguments.
+    pub fn update_site_address(&self) -> fluent_builders::UpdateSiteAddress<C, M, R> {
+        fluent_builders::UpdateSiteAddress::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateSiteRackPhysicalProperties` operation.
+    ///
+    /// See [`UpdateSiteRackPhysicalProperties`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties) for more information about the
+    /// operation and its arguments.
+    pub fn update_site_rack_physical_properties(
+        &self,
+    ) -> fluent_builders::UpdateSiteRackPhysicalProperties<C, M, R> {
+        fluent_builders::UpdateSiteRackPhysicalProperties::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     //!
@@ -169,13 +248,89 @@ pub mod fluent_builders {
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
     //!
+    /// Fluent builder constructing a request to `CancelOrder`.
+    ///
+    /// <p>
+    /// Cancels an order for an Outpost.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct CancelOrder<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::cancel_order_input::Builder,
+    }
+    impl<C, M, R> CancelOrder<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CancelOrder`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelOrderOutput,
+            aws_smithy_http::result::SdkError<crate::error::CancelOrderError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CancelOrderInputOperationOutputAlias,
+                crate::output::CancelOrderOutput,
+                crate::error::CancelOrderError,
+                crate::input::CancelOrderInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The ID of the order to cancel.
+        /// </p>
+        pub fn order_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.order_id(inp);
+            self
+        }
+        /// <p>
+        /// The ID of the order to cancel.
+        /// </p>
+        pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_order_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateOrder`.
     ///
     /// <p>Creates an order for an Outpost.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateOrder<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -296,7 +451,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateOutpost<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -428,6 +583,208 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>
+        /// The type of hardware for this Outpost.
+        /// </p>
+        pub fn supported_hardware_type(mut self, inp: crate::model::SupportedHardwareType) -> Self {
+            self.inner = self.inner.supported_hardware_type(inp);
+            self
+        }
+        /// <p>
+        /// The type of hardware for this Outpost.
+        /// </p>
+        pub fn set_supported_hardware_type(
+            mut self,
+            input: std::option::Option<crate::model::SupportedHardwareType>,
+        ) -> Self {
+            self.inner = self.inner.set_supported_hardware_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateSite`.
+    ///
+    /// <p>
+    /// Creates a site for an Outpost.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateSite<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_site_input::Builder,
+    }
+    impl<C, M, R> CreateSite<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateSite`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSiteOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateSiteError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateSiteInputOperationOutputAlias,
+                crate::output::CreateSiteOutput,
+                crate::error::CreateSiteError,
+                crate::input::CreateSiteInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the site.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the site.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the site.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the site.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Additional information that you provide about site access requirements, electrician
+        /// scheduling, personal protective equipment, or regulation of equipment materials that could
+        /// affect your installation process. </p>
+        pub fn notes(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(inp);
+            self
+        }
+        /// <p>Additional information that you provide about site access requirements, electrician
+        /// scheduling, personal protective equipment, or regulation of equipment materials that could
+        /// affect your installation process. </p>
+        pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notes(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// The tags to apply to a site.
+        /// </p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        /// <p>
+        /// The tags to apply to a site.
+        /// </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>
+        /// The location to install and power on the hardware. This address might be
+        /// different from the shipping address.
+        /// </p>
+        pub fn operating_address(mut self, inp: crate::model::Address) -> Self {
+            self.inner = self.inner.operating_address(inp);
+            self
+        }
+        /// <p>
+        /// The location to install and power on the hardware. This address might be
+        /// different from the shipping address.
+        /// </p>
+        pub fn set_operating_address(
+            mut self,
+            input: std::option::Option<crate::model::Address>,
+        ) -> Self {
+            self.inner = self.inner.set_operating_address(input);
+            self
+        }
+        /// <p>
+        /// The location to ship the hardware. This address might be different
+        /// from the operating address.
+        /// </p>
+        pub fn shipping_address(mut self, inp: crate::model::Address) -> Self {
+            self.inner = self.inner.shipping_address(inp);
+            self
+        }
+        /// <p>
+        /// The location to ship the hardware. This address might be different
+        /// from the operating address.
+        /// </p>
+        pub fn set_shipping_address(
+            mut self,
+            input: std::option::Option<crate::model::Address>,
+        ) -> Self {
+            self.inner = self.inner.set_shipping_address(input);
+            self
+        }
+        /// <p> Information about the physical and logistical details for the rack at this site.
+        /// For more information
+        /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
+        /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
+        /// </p>
+        pub fn rack_physical_properties(
+            mut self,
+            inp: crate::model::RackPhysicalProperties,
+        ) -> Self {
+            self.inner = self.inner.rack_physical_properties(inp);
+            self
+        }
+        /// <p> Information about the physical and logistical details for the rack at this site.
+        /// For more information
+        /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
+        /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
+        /// </p>
+        pub fn set_rack_physical_properties(
+            mut self,
+            input: std::option::Option<crate::model::RackPhysicalProperties>,
+        ) -> Self {
+            self.inner = self.inner.set_rack_physical_properties(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteOutpost`.
     ///
@@ -435,7 +792,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteOutpost<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -509,7 +866,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSite<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -573,13 +930,156 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetCatalogItem`.
+    ///
+    /// <p>Gets information about a catalog item.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetCatalogItem<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_catalog_item_input::Builder,
+    }
+    impl<C, M, R> GetCatalogItem<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetCatalogItem`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCatalogItemOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCatalogItemError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetCatalogItemInputOperationOutputAlias,
+                crate::output::GetCatalogItemOutput,
+                crate::error::GetCatalogItemError,
+                crate::input::GetCatalogItemInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the catalog item.</p>
+        pub fn catalog_item_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_item_id(inp);
+            self
+        }
+        /// <p>The ID of the catalog item.</p>
+        pub fn set_catalog_item_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_catalog_item_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetOrder`.
+    ///
+    /// <p>Gets an order.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetOrder<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_order_input::Builder,
+    }
+    impl<C, M, R> GetOrder<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetOrder`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetOrderOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetOrderError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetOrderInputOperationOutputAlias,
+                crate::output::GetOrderOutput,
+                crate::error::GetOrderError,
+                crate::input::GetOrderInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the order.</p>
+        pub fn order_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.order_id(inp);
+            self
+        }
+        /// <p>The ID of the order.</p>
+        pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_order_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetOutpost`.
     ///
     /// <p>Gets information about the specified Outpost.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetOutpost<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -653,7 +1153,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetOutpostInstanceTypes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -741,18 +1241,441 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetSite`.
+    ///
+    /// <p>
+    /// Gets information about the specified Outpost site.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetSite<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_site_input::Builder,
+    }
+    impl<C, M, R> GetSite<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetSite`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSiteOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSiteError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetSiteInputOperationOutputAlias,
+                crate::output::GetSiteOutput,
+                crate::error::GetSiteError,
+                crate::input::GetSiteInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the site.</p>
+        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(inp);
+            self
+        }
+        /// <p>The ID of the site.</p>
+        pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_site_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetSiteAddress`.
+    ///
+    /// <p>
+    /// Gets the site address.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetSiteAddress<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_site_address_input::Builder,
+    }
+    impl<C, M, R> GetSiteAddress<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetSiteAddress`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSiteAddressOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSiteAddressError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetSiteAddressInputOperationOutputAlias,
+                crate::output::GetSiteAddressOutput,
+                crate::error::GetSiteAddressError,
+                crate::input::GetSiteAddressInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the site.</p>
+        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(inp);
+            self
+        }
+        /// <p>The ID of the site.</p>
+        pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_site_id(input);
+            self
+        }
+        /// <p> The type of the address you request. </p>
+        pub fn address_type(mut self, inp: crate::model::AddressType) -> Self {
+            self.inner = self.inner.address_type(inp);
+            self
+        }
+        /// <p> The type of the address you request. </p>
+        pub fn set_address_type(
+            mut self,
+            input: std::option::Option<crate::model::AddressType>,
+        ) -> Self {
+            self.inner = self.inner.set_address_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListCatalogItems`.
+    ///
+    /// <p>Use to create a list of every item in the catalog. Add filters to your request to return a
+    /// more specific list of results. Use filters to match an item class, storage
+    /// option, or EC2 family. </p>
+    /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and
+    /// the request returns only results that match all of the specified filters.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListCatalogItems<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_catalog_items_input::Builder,
+    }
+    impl<C, M, R> ListCatalogItems<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListCatalogItems`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCatalogItemsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCatalogItemsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListCatalogItemsInputOperationOutputAlias,
+                crate::output::ListCatalogItemsOutput,
+                crate::error::ListCatalogItemsError,
+                crate::input::ListCatalogItemsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The pagination token.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum page size.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum page size.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `ItemClassFilter`.
+        ///
+        /// To override the contents of this collection use [`set_item_class_filter`](Self::set_item_class_filter).
+        ///
+        /// <p>
+        /// A filter for the class of items in the catalog.
+        /// </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
+        pub fn item_class_filter(mut self, inp: impl Into<crate::model::CatalogItemClass>) -> Self {
+            self.inner = self.inner.item_class_filter(inp);
+            self
+        }
+        /// <p>
+        /// A filter for the class of items in the catalog.
+        /// </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
+        pub fn set_item_class_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CatalogItemClass>>,
+        ) -> Self {
+            self.inner = self.inner.set_item_class_filter(input);
+            self
+        }
+        /// Appends an item to `SupportedStorageFilter`.
+        ///
+        /// To override the contents of this collection use [`set_supported_storage_filter`](Self::set_supported_storage_filter).
+        ///
+        /// <p>
+        /// A filter for the storage options of items in the catalog.
+        /// </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
+        pub fn supported_storage_filter(
+            mut self,
+            inp: impl Into<crate::model::SupportedStorageEnum>,
+        ) -> Self {
+            self.inner = self.inner.supported_storage_filter(inp);
+            self
+        }
+        /// <p>
+        /// A filter for the storage options of items in the catalog.
+        /// </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
+        pub fn set_supported_storage_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
+        ) -> Self {
+            self.inner = self.inner.set_supported_storage_filter(input);
+            self
+        }
+        /// Appends an item to `EC2FamilyFilter`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_family_filter`](Self::set_ec2_family_filter).
+        ///
+        /// <p>
+        /// A filter for EC2 family options for items in the catalog.
+        /// </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
+        pub fn ec2_family_filter(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_family_filter(inp);
+            self
+        }
+        /// <p>
+        /// A filter for EC2 family options for items in the catalog.
+        /// </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
+        pub fn set_ec2_family_filter(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ec2_family_filter(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListOrders`.
+    ///
+    /// <p>Create a list of the Outpost orders for your Amazon Web Services account. You can filter your request by Outpost to
+    /// return a more specific list of results. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListOrders<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_orders_input::Builder,
+    }
+    impl<C, M, R> ListOrders<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListOrders`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListOrdersOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListOrdersError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListOrdersInputOperationOutputAlias,
+                crate::output::ListOrdersOutput,
+                crate::error::ListOrdersError,
+                crate::input::ListOrdersInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
+        /// </p>
+        pub fn outpost_identifier_filter(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_identifier_filter(inp);
+            self
+        }
+        /// <p>
+        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
+        /// </p>
+        pub fn set_outpost_identifier_filter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_outpost_identifier_filter(input);
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum page size.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum page size.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListOutposts`.
     ///
-    /// <p>Create a list of the Outposts for your AWS account. Add filters to your request to return
+    /// <p>Create a list of the Outposts for your Amazon Web Services account. Add filters to your request to return
     /// a more specific list of results. Use filters to match an Outpost lifecycle status,
-    /// Availibility Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p>
+    /// Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>). </p>
     ///
     /// <p>If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
     /// results that match all of the specified filters.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListOutposts<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -832,9 +1755,9 @@ pub mod fluent_builders {
         /// <p>
         /// A filter for the lifecycle status of the Outpost.
         /// </p>
-        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
-        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
-        /// specified values. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
         pub fn life_cycle_status_filter(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.life_cycle_status_filter(inp);
             self
@@ -842,9 +1765,9 @@ pub mod fluent_builders {
         /// <p>
         /// A filter for the lifecycle status of the Outpost.
         /// </p>
-        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
-        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
-        /// specified values. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
         pub fn set_life_cycle_status_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -856,20 +1779,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
         ///
-        /// <p> A filter for the Availibility Zone (<code>us-east-1a</code>) of the Outpost. </p>
+        /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
         ///
-        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
-        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
-        /// specified values. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
         pub fn availability_zone_filter(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone_filter(inp);
             self
         }
-        /// <p> A filter for the Availibility Zone (<code>us-east-1a</code>) of the Outpost. </p>
+        /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
         ///
-        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
-        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
-        /// specified values. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
         pub fn set_availability_zone_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -885,9 +1808,9 @@ pub mod fluent_builders {
         /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
         /// </p>
         ///
-        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
-        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
-        /// specified values. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
         pub fn availability_zone_id_filter(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone_id_filter(inp);
             self
@@ -896,9 +1819,9 @@ pub mod fluent_builders {
         /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
         /// </p>
         ///
-        /// <p> Filter values are case sensitive. If you specify multiple values for a filter, the values
-        /// are joined with an <code>OR</code>, and the request returns all results that match any of the
-        /// specified values. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple
+        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
+        /// all results that match any of the specified values.</p>
         pub fn set_availability_zone_id_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -909,11 +1832,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSites`.
     ///
-    /// <p>Lists the sites for the specified AWS account.</p>
+    /// <p>Lists the sites for your Amazon Web Services account.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListSites<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -993,7 +1916,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1063,7 +1986,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1156,7 +2079,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1237,18 +2160,671 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateSite`.
+    ///
+    /// <p>
+    /// Updates the site.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateSite<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_site_input::Builder,
+    }
+    impl<C, M, R> UpdateSite<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateSite`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSiteOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSiteError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateSiteInputOperationOutputAlias,
+                crate::output::UpdateSiteOutput,
+                crate::error::UpdateSiteError,
+                crate::input::UpdateSiteInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the site.</p>
+        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(inp);
+            self
+        }
+        /// <p>The ID of the site.</p>
+        pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_site_id(input);
+            self
+        }
+        /// <p>The name of the site.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the site.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the site.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        /// <p>The description of the site.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>
+        /// Notes about a site.
+        /// </p>
+        pub fn notes(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(inp);
+            self
+        }
+        /// <p>
+        /// Notes about a site.
+        /// </p>
+        pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_notes(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateSiteAddress`.
+    ///
+    /// <p>
+    /// Updates the site address.
+    /// </p>
+    /// <p>
+    /// To update a site address
+    /// with an order <code>IN_PROGRESS</code>, you must wait for the order
+    /// to complete or cancel the order.
+    /// </p>
+    /// <p>You
+    /// can update the operating address before you place an order at the
+    /// site, or after all Outposts that belong to the site have been deactivated.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateSiteAddress<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_site_address_input::Builder,
+    }
+    impl<C, M, R> UpdateSiteAddress<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateSiteAddress`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSiteAddressOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSiteAddressError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateSiteAddressInputOperationOutputAlias,
+                crate::output::UpdateSiteAddressOutput,
+                crate::error::UpdateSiteAddressError,
+                crate::input::UpdateSiteAddressInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the site.</p>
+        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(inp);
+            self
+        }
+        /// <p>The ID of the site.</p>
+        pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_site_id(input);
+            self
+        }
+        /// <p>
+        /// The type of the address.
+        /// </p>
+        pub fn address_type(mut self, inp: crate::model::AddressType) -> Self {
+            self.inner = self.inner.address_type(inp);
+            self
+        }
+        /// <p>
+        /// The type of the address.
+        /// </p>
+        pub fn set_address_type(
+            mut self,
+            input: std::option::Option<crate::model::AddressType>,
+        ) -> Self {
+            self.inner = self.inner.set_address_type(input);
+            self
+        }
+        /// <p>
+        /// The address for the site.
+        /// </p>
+        pub fn address(mut self, inp: crate::model::Address) -> Self {
+            self.inner = self.inner.address(inp);
+            self
+        }
+        /// <p>
+        /// The address for the site.
+        /// </p>
+        pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
+            self.inner = self.inner.set_address(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateSiteRackPhysicalProperties`.
+    ///
+    /// <p>Update the physical and logistical details for a rack at a site. For more information
+    /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
+    /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
+    /// </p>
+    /// <p>To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait for
+    /// the order to complete or cancel the order.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateSiteRackPhysicalProperties<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_site_rack_physical_properties_input::Builder,
+    }
+    impl<C, M, R> UpdateSiteRackPhysicalProperties<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateSiteRackPhysicalProperties`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSiteRackPhysicalPropertiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateSiteRackPhysicalPropertiesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateSiteRackPhysicalPropertiesInputOperationOutputAlias,
+                crate::output::UpdateSiteRackPhysicalPropertiesOutput,
+                crate::error::UpdateSiteRackPhysicalPropertiesError,
+                crate::input::UpdateSiteRackPhysicalPropertiesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the site.</p>
+        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(inp);
+            self
+        }
+        /// <p>The ID of the site.</p>
+        pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_site_id(input);
+            self
+        }
+        /// <p>Specify in kVA the power draw available at the hardware placement position for the
+        /// rack.</p>
+        pub fn power_draw_kva(mut self, inp: crate::model::PowerDrawKva) -> Self {
+            self.inner = self.inner.power_draw_kva(inp);
+            self
+        }
+        /// <p>Specify in kVA the power draw available at the hardware placement position for the
+        /// rack.</p>
+        pub fn set_power_draw_kva(
+            mut self,
+            input: std::option::Option<crate::model::PowerDrawKva>,
+        ) -> Self {
+            self.inner = self.inner.set_power_draw_kva(input);
+            self
+        }
+        /// <p> Specify the power option that you can provide for hardware. </p>
+        /// <ul>
+        /// <li>
+        /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
+        /// </li>
+        /// <li>
+        /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
+        /// </li>
+        /// </ul>
+        pub fn power_phase(mut self, inp: crate::model::PowerPhase) -> Self {
+            self.inner = self.inner.power_phase(inp);
+            self
+        }
+        /// <p> Specify the power option that you can provide for hardware. </p>
+        /// <ul>
+        /// <li>
+        /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
+        /// </li>
+        /// <li>
+        /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
+        /// </li>
+        /// </ul>
+        pub fn set_power_phase(
+            mut self,
+            input: std::option::Option<crate::model::PowerPhase>,
+        ) -> Self {
+            self.inner = self.inner.set_power_phase(input);
+            self
+        }
+        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
+        /// hardware. Note the correlation between <code>PowerPhase</code> and
+        /// <code>PowerConnector</code>. </p>
+        /// <ul>
+        /// <li>
+        /// <p>Single-phase AC feed</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
+        /// phase</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Three-phase AC feed</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
+        /// phase</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
+        /// phase</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        pub fn power_connector(mut self, inp: crate::model::PowerConnector) -> Self {
+            self.inner = self.inner.power_connector(inp);
+            self
+        }
+        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
+        /// hardware. Note the correlation between <code>PowerPhase</code> and
+        /// <code>PowerConnector</code>. </p>
+        /// <ul>
+        /// <li>
+        /// <p>Single-phase AC feed</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
+        /// phase</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Three-phase AC feed</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
+        /// phase</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
+        /// phase</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        pub fn set_power_connector(
+            mut self,
+            input: std::option::Option<crate::model::PowerConnector>,
+        ) -> Self {
+            self.inner = self.inner.set_power_connector(input);
+            self
+        }
+        /// <p> Specify whether the power feed comes above or below the rack. </p>
+        pub fn power_feed_drop(mut self, inp: crate::model::PowerFeedDrop) -> Self {
+            self.inner = self.inner.power_feed_drop(inp);
+            self
+        }
+        /// <p> Specify whether the power feed comes above or below the rack. </p>
+        pub fn set_power_feed_drop(
+            mut self,
+            input: std::option::Option<crate::model::PowerFeedDrop>,
+        ) -> Self {
+            self.inner = self.inner.set_power_feed_drop(input);
+            self
+        }
+        /// <p> Specify the uplink speed the rack should support for the connection to the Region.
+        /// </p>
+        pub fn uplink_gbps(mut self, inp: crate::model::UplinkGbps) -> Self {
+            self.inner = self.inner.uplink_gbps(inp);
+            self
+        }
+        /// <p> Specify the uplink speed the rack should support for the connection to the Region.
+        /// </p>
+        pub fn set_uplink_gbps(
+            mut self,
+            input: std::option::Option<crate::model::UplinkGbps>,
+        ) -> Self {
+            self.inner = self.inner.set_uplink_gbps(input);
+            self
+        }
+        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
+        /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
+        /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
+        /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+        /// <ul>
+        /// <li>
+        /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
+        /// </li>
+        /// <li>
+        /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
+        /// </li>
+        /// <li>
+        /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
+        /// </li>
+        /// </ul>
+        pub fn uplink_count(mut self, inp: crate::model::UplinkCount) -> Self {
+            self.inner = self.inner.uplink_count(inp);
+            self
+        }
+        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
+        /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
+        /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
+        /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+        /// <ul>
+        /// <li>
+        /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
+        /// </li>
+        /// <li>
+        /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
+        /// </li>
+        /// <li>
+        /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
+        /// </li>
+        /// </ul>
+        pub fn set_uplink_count(
+            mut self,
+            input: std::option::Option<crate::model::UplinkCount>,
+        ) -> Self {
+            self.inner = self.inner.set_uplink_count(input);
+            self
+        }
+        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
+        /// </p>
+        pub fn fiber_optic_cable_type(mut self, inp: crate::model::FiberOpticCableType) -> Self {
+            self.inner = self.inner.fiber_optic_cable_type(inp);
+            self
+        }
+        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
+        /// </p>
+        pub fn set_fiber_optic_cable_type(
+            mut self,
+            input: std::option::Option<crate::model::FiberOpticCableType>,
+        ) -> Self {
+            self.inner = self.inner.set_fiber_optic_cable_type(input);
+            self
+        }
+        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
+        /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
+        /// device. For more information
+        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
+        /// in the Amazon Web Services Outposts User Guide.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
+        /// </li>
+        /// </ul>
+        pub fn optical_standard(mut self, inp: crate::model::OpticalStandard) -> Self {
+            self.inner = self.inner.optical_standard(inp);
+            self
+        }
+        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
+        /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
+        /// device. For more information
+        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
+        /// in the Amazon Web Services Outposts User Guide.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
+        /// </li>
+        /// </ul>
+        pub fn set_optical_standard(
+            mut self,
+            input: std::option::Option<crate::model::OpticalStandard>,
+        ) -> Self {
+            self.inner = self.inner.set_optical_standard(input);
+            self
+        }
+        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
+        /// 2000lbs. </p>
+        pub fn maximum_supported_weight_lbs(
+            mut self,
+            inp: crate::model::MaximumSupportedWeightLbs,
+        ) -> Self {
+            self.inner = self.inner.maximum_supported_weight_lbs(inp);
+            self
+        }
+        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
+        /// 2000lbs. </p>
+        pub fn set_maximum_supported_weight_lbs(
+            mut self,
+            input: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
+        ) -> Self {
+            self.inner = self.inner.set_maximum_supported_weight_lbs(input);
+            self
+        }
+    }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1257,7 +2833,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -1273,11 +2849,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

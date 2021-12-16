@@ -79,8 +79,8 @@ pub struct UpdatePatchBaselineOutput {
     /// completed.</p>
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-    /// only.</p>
+    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+    /// nodes only.</p>
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -94,8 +94,8 @@ pub struct UpdatePatchBaselineOutput {
     pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Information about the patches to use to update the instances, including target operating
-    /// systems and source repositories. Applies to Linux instances only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating
+    /// systems and source repositories. Applies to Linux managed nodes only.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
 impl UpdatePatchBaselineOutput {
@@ -131,8 +131,8 @@ impl UpdatePatchBaselineOutput {
         self.approved_patches_compliance_level.as_ref()
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-    /// only.</p>
+    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+    /// nodes only.</p>
     pub fn approved_patches_enable_non_security(&self) -> std::option::Option<bool> {
         self.approved_patches_enable_non_security
     }
@@ -158,8 +158,8 @@ impl UpdatePatchBaselineOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Information about the patches to use to update the instances, including target operating
-    /// systems and source repositories. Applies to Linux instances only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating
+    /// systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
         self.sources.as_deref()
     }
@@ -310,15 +310,15 @@ pub mod update_patch_baseline_output {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.approved_patches_enable_non_security = Some(input);
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -402,16 +402,16 @@ pub mod update_patch_baseline_output {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: impl Into<crate::model::PatchSource>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -1930,10 +1930,10 @@ pub struct StartSessionOutput {
     /// <p>The ID of the session.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-    /// connection to the instance.</p>
+    /// connection to the managed node.</p>
     pub token_value: std::option::Option<std::string::String>,
-    /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
-    /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
+    /// receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
     /// </p>
     /// <p>
     /// <b>region</b> represents the Region identifier for an
@@ -1951,12 +1951,12 @@ impl StartSessionOutput {
         self.session_id.as_deref()
     }
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-    /// connection to the instance.</p>
+    /// connection to the managed node.</p>
     pub fn token_value(&self) -> std::option::Option<&str> {
         self.token_value.as_deref()
     }
-    /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
-    /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
+    /// receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
     /// </p>
     /// <p>
     /// <b>region</b> represents the Region identifier for an
@@ -2001,19 +2001,19 @@ pub mod start_session_output {
             self
         }
         /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-        /// connection to the instance.</p>
+        /// connection to the managed node.</p>
         pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_value = Some(input.into());
             self
         }
         /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-        /// connection to the instance.</p>
+        /// connection to the managed node.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_value = input;
             self
         }
-        /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
-        /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
+        /// receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
         /// </p>
         /// <p>
         /// <b>region</b> represents the Region identifier for an
@@ -2027,8 +2027,8 @@ pub mod start_session_output {
             self.stream_url = Some(input.into());
             self
         }
-        /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
-        /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
+        /// receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
         /// </p>
         /// <p>
         /// <b>region</b> represents the Region identifier for an
@@ -2302,10 +2302,10 @@ pub struct ResumeSessionOutput {
     /// <p>The ID of the session.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-    /// connection to the instance.</p>
+    /// connection to the managed node.</p>
     pub token_value: std::option::Option<std::string::String>,
-    /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
-    /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
+    /// receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
     /// <p>
     /// <b>region</b> represents the Region identifier for an
     /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
@@ -2322,12 +2322,12 @@ impl ResumeSessionOutput {
         self.session_id.as_deref()
     }
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-    /// connection to the instance.</p>
+    /// connection to the managed node.</p>
     pub fn token_value(&self) -> std::option::Option<&str> {
         self.token_value.as_deref()
     }
-    /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
-    /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+    /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
+    /// receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
     /// <p>
     /// <b>region</b> represents the Region identifier for an
     /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
@@ -2371,19 +2371,19 @@ pub mod resume_session_output {
             self
         }
         /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-        /// connection to the instance.</p>
+        /// connection to the managed node.</p>
         pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_value = Some(input.into());
             self
         }
         /// <p>An encrypted token value containing session and caller information. Used to authenticate the
-        /// connection to the instance.</p>
+        /// connection to the managed node.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_value = input;
             self
         }
-        /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
-        /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
+        /// receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
         /// <p>
         /// <b>region</b> represents the Region identifier for an
         /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
@@ -2396,8 +2396,8 @@ pub mod resume_session_output {
             self.stream_url = Some(input.into());
             self
         }
-        /// <p>A URL back to SSM Agent on the instance that the Session Manager client uses to send commands and
-        /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
+        /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and
+        /// receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
         /// <p>
         /// <b>region</b> represents the Region identifier for an
         /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
@@ -3122,9 +3122,9 @@ impl ListResourceDataSyncOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceComplianceSummariesOutput {
-    /// <p>A summary count for specified or targeted managed instances. Summary count includes
-    /// information about compliant and non-compliant State Manager associations, patch status, or custom
-    /// items according to the filter criteria that you specify. </p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information
+    /// about compliant and non-compliant State Manager associations, patch status, or custom items
+    /// according to the filter criteria that you specify. </p>
     pub resource_compliance_summary_items:
         std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of
@@ -3132,9 +3132,9 @@ pub struct ListResourceComplianceSummariesOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceComplianceSummariesOutput {
-    /// <p>A summary count for specified or targeted managed instances. Summary count includes
-    /// information about compliant and non-compliant State Manager associations, patch status, or custom
-    /// items according to the filter criteria that you specify. </p>
+    /// <p>A summary count for specified or targeted managed nodes. Summary count includes information
+    /// about compliant and non-compliant State Manager associations, patch status, or custom items
+    /// according to the filter criteria that you specify. </p>
     pub fn resource_compliance_summary_items(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceComplianceSummaryItem]> {
@@ -3172,9 +3172,9 @@ pub mod list_resource_compliance_summaries_output {
         ///
         /// To override the contents of this collection use [`set_resource_compliance_summary_items`](Self::set_resource_compliance_summary_items).
         ///
-        /// <p>A summary count for specified or targeted managed instances. Summary count includes
-        /// information about compliant and non-compliant State Manager associations, patch status, or custom
-        /// items according to the filter criteria that you specify. </p>
+        /// <p>A summary count for specified or targeted managed nodes. Summary count includes information
+        /// about compliant and non-compliant State Manager associations, patch status, or custom items
+        /// according to the filter criteria that you specify. </p>
         pub fn resource_compliance_summary_items(
             mut self,
             input: impl Into<crate::model::ResourceComplianceSummaryItem>,
@@ -3184,9 +3184,9 @@ pub mod list_resource_compliance_summaries_output {
             self.resource_compliance_summary_items = Some(v);
             self
         }
-        /// <p>A summary count for specified or targeted managed instances. Summary count includes
-        /// information about compliant and non-compliant State Manager associations, patch status, or custom
-        /// items according to the filter criteria that you specify. </p>
+        /// <p>A summary count for specified or targeted managed nodes. Summary count includes information
+        /// about compliant and non-compliant State Manager associations, patch status, or custom items
+        /// according to the filter criteria that you specify. </p>
         pub fn set_resource_compliance_summary_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceComplianceSummaryItem>>,
@@ -3490,13 +3490,13 @@ impl ListOpsItemEventsOutput {
 pub struct ListInventoryEntriesOutput {
     /// <p>The type of inventory item returned by the request.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The instance ID targeted by the request to query inventory information.</p>
+    /// <p>The managed node ID targeted by the request to query inventory information.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The inventory schema version used by the instance(s).</p>
+    /// <p>The inventory schema version used by the managed node(s).</p>
     pub schema_version: std::option::Option<std::string::String>,
-    /// <p>The time that inventory information was collected for the instance(s).</p>
+    /// <p>The time that inventory information was collected for the managed node(s).</p>
     pub capture_time: std::option::Option<std::string::String>,
-    /// <p>A list of inventory items on the instance(s).</p>
+    /// <p>A list of inventory items on the managed node(s).</p>
     pub entries: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
@@ -3509,19 +3509,19 @@ impl ListInventoryEntriesOutput {
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>The instance ID targeted by the request to query inventory information.</p>
+    /// <p>The managed node ID targeted by the request to query inventory information.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The inventory schema version used by the instance(s).</p>
+    /// <p>The inventory schema version used by the managed node(s).</p>
     pub fn schema_version(&self) -> std::option::Option<&str> {
         self.schema_version.as_deref()
     }
-    /// <p>The time that inventory information was collected for the instance(s).</p>
+    /// <p>The time that inventory information was collected for the managed node(s).</p>
     pub fn capture_time(&self) -> std::option::Option<&str> {
         self.capture_time.as_deref()
     }
-    /// <p>A list of inventory items on the instance(s).</p>
+    /// <p>A list of inventory items on the managed node(s).</p>
     pub fn entries(
         &self,
     ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
@@ -3572,22 +3572,22 @@ pub mod list_inventory_entries_output {
             self.type_name = input;
             self
         }
-        /// <p>The instance ID targeted by the request to query inventory information.</p>
+        /// <p>The managed node ID targeted by the request to query inventory information.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID targeted by the request to query inventory information.</p>
+        /// <p>The managed node ID targeted by the request to query inventory information.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
-        /// <p>The inventory schema version used by the instance(s).</p>
+        /// <p>The inventory schema version used by the managed node(s).</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_version = Some(input.into());
             self
         }
-        /// <p>The inventory schema version used by the instance(s).</p>
+        /// <p>The inventory schema version used by the managed node(s).</p>
         pub fn set_schema_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3595,12 +3595,12 @@ pub mod list_inventory_entries_output {
             self.schema_version = input;
             self
         }
-        /// <p>The time that inventory information was collected for the instance(s).</p>
+        /// <p>The time that inventory information was collected for the managed node(s).</p>
         pub fn capture_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.capture_time = Some(input.into());
             self
         }
-        /// <p>The time that inventory information was collected for the instance(s).</p>
+        /// <p>The time that inventory information was collected for the managed node(s).</p>
         pub fn set_capture_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.capture_time = input;
             self
@@ -3609,7 +3609,7 @@ pub mod list_inventory_entries_output {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>A list of inventory items on the instance(s).</p>
+        /// <p>A list of inventory items on the managed node(s).</p>
         pub fn entries(
             mut self,
             input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3619,7 +3619,7 @@ pub mod list_inventory_entries_output {
             self.entries = Some(v);
             self
         }
-        /// <p>A list of inventory items on the instance(s).</p>
+        /// <p>A list of inventory items on the managed node(s).</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<
@@ -4790,8 +4790,8 @@ pub struct GetPatchBaselineOutput {
     /// baseline.</p>
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-    /// only.</p>
+    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+    /// nodes only.</p>
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4807,8 +4807,8 @@ pub struct GetPatchBaselineOutput {
     pub modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Information about the patches to use to update the instances, including target operating
-    /// systems and source repositories. Applies to Linux instances only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating
+    /// systems and source repositories. Applies to Linux managed nodes only.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
 }
 impl GetPatchBaselineOutput {
@@ -4844,8 +4844,8 @@ impl GetPatchBaselineOutput {
         self.approved_patches_compliance_level.as_ref()
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-    /// only.</p>
+    /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+    /// nodes only.</p>
     pub fn approved_patches_enable_non_security(&self) -> std::option::Option<bool> {
         self.approved_patches_enable_non_security
     }
@@ -4875,8 +4875,8 @@ impl GetPatchBaselineOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Information about the patches to use to update the instances, including target operating
-    /// systems and source repositories. Applies to Linux instances only.</p>
+    /// <p>Information about the patches to use to update the managed nodes, including target operating
+    /// systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::PatchSource]> {
         self.sources.as_deref()
     }
@@ -5029,15 +5029,15 @@ pub mod get_patch_baseline_output {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.approved_patches_enable_non_security = Some(input);
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
-        /// only.</p>
+        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
+        /// nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -5140,16 +5140,16 @@ pub mod get_patch_baseline_output {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: impl Into<crate::model::PatchSource>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
-        /// <p>Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating
+        /// systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -7681,14 +7681,14 @@ impl GetInventorySchemaOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInventoryOutput {
-    /// <p>Collection of inventory entities such as a collection of instance inventory. </p>
+    /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInventoryOutput {
-    /// <p>Collection of inventory entities such as a collection of instance inventory. </p>
+    /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
     pub fn entities(&self) -> std::option::Option<&[crate::model::InventoryResultEntity]> {
         self.entities.as_deref()
     }
@@ -7721,14 +7721,14 @@ pub mod get_inventory_output {
         ///
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
-        /// <p>Collection of inventory entities such as a collection of instance inventory. </p>
+        /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
         pub fn entities(mut self, input: impl Into<crate::model::InventoryResultEntity>) -> Self {
             let mut v = self.entities.unwrap_or_default();
             v.push(input.into());
             self.entities = Some(v);
             self
         }
-        /// <p>Collection of inventory entities such as a collection of instance inventory. </p>
+        /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
         pub fn set_entities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InventoryResultEntity>>,
@@ -8141,7 +8141,7 @@ impl GetDocumentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeployablePatchSnapshotForInstanceOutput {
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The user-defined snapshot ID.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -8149,11 +8149,11 @@ pub struct GetDeployablePatchSnapshotForInstanceOutput {
     /// patch snapshot.</p>
     pub snapshot_download_url: std::option::Option<std::string::String>,
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-    /// 2015.09) on the instance for the specified patch snapshot.</p>
+    /// 2015.09) on the managed node for the specified patch snapshot.</p>
     pub product: std::option::Option<std::string::String>,
 }
 impl GetDeployablePatchSnapshotForInstanceOutput {
-    /// <p>The instance ID.</p>
+    /// <p>The managed node ID.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -8167,7 +8167,7 @@ impl GetDeployablePatchSnapshotForInstanceOutput {
         self.snapshot_download_url.as_deref()
     }
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-    /// 2015.09) on the instance for the specified patch snapshot.</p>
+    /// 2015.09) on the managed node for the specified patch snapshot.</p>
     pub fn product(&self) -> std::option::Option<&str> {
         self.product.as_deref()
     }
@@ -8194,12 +8194,12 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
         pub(crate) product: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID.</p>
+        /// <p>The managed node ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -8230,13 +8230,13 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
             self
         }
         /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-        /// 2015.09) on the instance for the specified patch snapshot.</p>
+        /// 2015.09) on the managed node for the specified patch snapshot.</p>
         pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
             self.product = Some(input.into());
             self
         }
         /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-        /// 2015.09) on the instance for the specified patch snapshot.</p>
+        /// 2015.09) on the managed node for the specified patch snapshot.</p>
         pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product = input;
             self
@@ -8339,18 +8339,18 @@ impl GetDefaultPatchBaselineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionStatusOutput {
-    /// <p>The ID of the instance to check connection status. </p>
+    /// <p>The ID of the managed node to check connection status. </p>
     pub target: std::option::Option<std::string::String>,
-    /// <p>The status of the connection to the instance. For example, 'Connected' or 'Not
+    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not
     /// Connected'.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
 }
 impl GetConnectionStatusOutput {
-    /// <p>The ID of the instance to check connection status. </p>
+    /// <p>The ID of the managed node to check connection status. </p>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p>The status of the connection to the instance. For example, 'Connected' or 'Not
+    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not
     /// Connected'.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ConnectionStatus> {
         self.status.as_ref()
@@ -8374,23 +8374,23 @@ pub mod get_connection_status_output {
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
     }
     impl Builder {
-        /// <p>The ID of the instance to check connection status. </p>
+        /// <p>The ID of the managed node to check connection status. </p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
             self.target = Some(input.into());
             self
         }
-        /// <p>The ID of the instance to check connection status. </p>
+        /// <p>The ID of the managed node to check connection status. </p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
         }
-        /// <p>The status of the connection to the instance. For example, 'Connected' or 'Not
+        /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not
         /// Connected'.</p>
         pub fn status(mut self, input: crate::model::ConnectionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the connection to the instance. For example, 'Connected' or 'Not
+        /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not
         /// Connected'.</p>
         pub fn set_status(
             mut self,
@@ -8421,8 +8421,8 @@ impl GetConnectionStatusOutput {
 pub struct GetCommandInvocationOutput {
     /// <p>The parent command ID of the invocation plugin.</p>
     pub command_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the managed instance targeted by the command. A managed instance can be an EC2
-    /// instance or an instance in your hybrid environment that is configured for Systems Manager.</p>
+    /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an
+    /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The comment text for the command.</p>
     pub comment: std::option::Option<std::string::String>,
@@ -8434,8 +8434,8 @@ pub struct GetCommandInvocationOutput {
     /// For example, <code>aws:RunShellScript</code> is a plugin.</p>
     pub plugin_name: std::option::Option<std::string::String>,
     /// <p>The error level response code for the plugin script. If the response code is
-    /// <code>-1</code>, then the command hasn't started running on the instance, or it wasn't received
-    /// by the instance.</p>
+    /// <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received
+    /// by the node.</p>
     pub response_code: i32,
     /// <p>The date and time the plugin started running. Date and time are written in ISO 8601 format.
     /// For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses
@@ -8466,33 +8466,33 @@ pub struct GetCommandInvocationOutput {
     /// <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command hasn't been sent to the instance.</p>
+    /// <p>Pending: The command hasn't been sent to the managed node.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
     /// state.</p>
     /// </li>
     /// <li>
     /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
-    /// available. The instance might not be available because of network issues, because the instance
+    /// available. The managed node might not be available because of network issues, because the node
     /// was stopped, or for similar reasons. The system will try to send the command again.</p>
     /// </li>
     /// <li>
     /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
     /// timeout expired. Delivery timeouts don't count against the parent command's
     /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
     /// Success or Incomplete. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Execution Timed Out: The command started to run on the instance, but the execution wasn't
+    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't
     /// complete before the timeout expired. Execution timeouts count against the
     /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Failed: The command wasn't run successfully on the instance. For a plugin, this indicates
+    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates
     /// that the result code wasn't zero. For a command invocation, this indicates that the result code
     /// for one or more plugins wasn't zero. Invocation failures count against the
     /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
@@ -8502,7 +8502,7 @@ pub struct GetCommandInvocationOutput {
     /// state.</p>
     /// </li>
     /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not
     /// exist or might not be responding. Undeliverable invocations don't count against the parent
     /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
     /// status is Success or Incomplete. This is a terminal state.</p>
@@ -8534,8 +8534,8 @@ impl GetCommandInvocationOutput {
     pub fn command_id(&self) -> std::option::Option<&str> {
         self.command_id.as_deref()
     }
-    /// <p>The ID of the managed instance targeted by the command. A managed instance can be an EC2
-    /// instance or an instance in your hybrid environment that is configured for Systems Manager.</p>
+    /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an
+    /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -8557,8 +8557,8 @@ impl GetCommandInvocationOutput {
         self.plugin_name.as_deref()
     }
     /// <p>The error level response code for the plugin script. If the response code is
-    /// <code>-1</code>, then the command hasn't started running on the instance, or it wasn't received
-    /// by the instance.</p>
+    /// <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received
+    /// by the node.</p>
     pub fn response_code(&self) -> i32 {
         self.response_code
     }
@@ -8599,33 +8599,33 @@ impl GetCommandInvocationOutput {
     /// <code>StatusDetails</code> can be one of the following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command hasn't been sent to the instance.</p>
+    /// <p>Pending: The command hasn't been sent to the managed node.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+    /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
     /// state.</p>
     /// </li>
     /// <li>
     /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
-    /// available. The instance might not be available because of network issues, because the instance
+    /// available. The managed node might not be available because of network issues, because the node
     /// was stopped, or for similar reasons. The system will try to send the command again.</p>
     /// </li>
     /// <li>
     /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
     /// timeout expired. Delivery timeouts don't count against the parent command's
     /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
     /// Success or Incomplete. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Execution Timed Out: The command started to run on the instance, but the execution wasn't
+    /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't
     /// complete before the timeout expired. Execution timeouts count against the
     /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Failed: The command wasn't run successfully on the instance. For a plugin, this indicates
+    /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates
     /// that the result code wasn't zero. For a command invocation, this indicates that the result code
     /// for one or more plugins wasn't zero. Invocation failures count against the
     /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
@@ -8635,7 +8635,7 @@ impl GetCommandInvocationOutput {
     /// state.</p>
     /// </li>
     /// <li>
-    /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+    /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not
     /// exist or might not be responding. Undeliverable invocations don't count against the parent
     /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
     /// status is Success or Incomplete. This is a terminal state.</p>
@@ -8735,14 +8735,14 @@ pub mod get_command_invocation_output {
             self.command_id = input;
             self
         }
-        /// <p>The ID of the managed instance targeted by the command. A managed instance can be an EC2
-        /// instance or an instance in your hybrid environment that is configured for Systems Manager.</p>
+        /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an
+        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The ID of the managed instance targeted by the command. A managed instance can be an EC2
-        /// instance or an instance in your hybrid environment that is configured for Systems Manager.</p>
+        /// <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an
+        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -8796,15 +8796,15 @@ pub mod get_command_invocation_output {
             self
         }
         /// <p>The error level response code for the plugin script. If the response code is
-        /// <code>-1</code>, then the command hasn't started running on the instance, or it wasn't received
-        /// by the instance.</p>
+        /// <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received
+        /// by the node.</p>
         pub fn response_code(mut self, input: i32) -> Self {
             self.response_code = Some(input);
             self
         }
         /// <p>The error level response code for the plugin script. If the response code is
-        /// <code>-1</code>, then the command hasn't started running on the instance, or it wasn't received
-        /// by the instance.</p>
+        /// <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received
+        /// by the node.</p>
         pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
             self.response_code = input;
             self
@@ -8895,33 +8895,33 @@ pub mod get_command_invocation_output {
         /// <code>StatusDetails</code> can be one of the following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command hasn't been sent to the instance.</p>
+        /// <p>Pending: The command hasn't been sent to the managed node.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.</p>
         /// </li>
         /// <li>
         /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
-        /// available. The instance might not be available because of network issues, because the instance
+        /// available. The managed node might not be available because of network issues, because the node
         /// was stopped, or for similar reasons. The system will try to send the command again.</p>
         /// </li>
         /// <li>
         /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's
         /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
         /// Success or Incomplete. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Execution Timed Out: The command started to run on the instance, but the execution wasn't
+        /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't
         /// complete before the timeout expired. Execution timeouts count against the
         /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Failed: The command wasn't run successfully on the instance. For a plugin, this indicates
+        /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates
         /// that the result code wasn't zero. For a command invocation, this indicates that the result code
         /// for one or more plugins wasn't zero. Invocation failures count against the
         /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
@@ -8931,7 +8931,7 @@ pub mod get_command_invocation_output {
         /// state.</p>
         /// </li>
         /// <li>
-        /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+        /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not
         /// exist or might not be responding. Undeliverable invocations don't count against the parent
         /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
         /// status is Success or Incomplete. This is a terminal state.</p>
@@ -8953,33 +8953,33 @@ pub mod get_command_invocation_output {
         /// <code>StatusDetails</code> can be one of the following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command hasn't been sent to the instance.</p>
+        /// <p>Pending: The command hasn't been sent to the managed node.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.</p>
         /// </li>
         /// <li>
         /// <p>Delayed: The system attempted to send the command to the target, but the target wasn't
-        /// available. The instance might not be available because of network issues, because the instance
+        /// available. The managed node might not be available because of network issues, because the node
         /// was stopped, or for similar reasons. The system will try to send the command again.</p>
         /// </li>
         /// <li>
         /// <p>Success: The command or plugin ran successfully. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's
         /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
         /// Success or Incomplete. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Execution Timed Out: The command started to run on the instance, but the execution wasn't
+        /// <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't
         /// complete before the timeout expired. Execution timeouts count against the
         /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Failed: The command wasn't run successfully on the instance. For a plugin, this indicates
+        /// <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates
         /// that the result code wasn't zero. For a command invocation, this indicates that the result code
         /// for one or more plugins wasn't zero. Invocation failures count against the
         /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
@@ -8989,7 +8989,7 @@ pub mod get_command_invocation_output {
         /// state.</p>
         /// </li>
         /// <li>
-        /// <p>Undeliverable: The command can't be delivered to the instance. The instance might not
+        /// <p>Undeliverable: The command can't be delivered to the managed node. The node might not
         /// exist or might not be responding. Undeliverable invocations don't count against the parent
         /// command's <code>MaxErrors</code> limit and don't contribute to whether the parent command
         /// status is Success or Incomplete. This is a terminal state.</p>
@@ -9512,17 +9512,18 @@ impl DescribePatchPropertiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePatchGroupStateOutput {
-    /// <p>The number of instances in the patch group.</p>
+    /// <p>The number of managed nodes in the patch group.</p>
     pub instances: i32,
-    /// <p>The number of instances with installed patches.</p>
+    /// <p>The number of managed nodes with installed patches.</p>
     pub instances_with_installed_patches: i32,
-    /// <p>The number of instances with patches installed that aren't defined in the patch
+    /// <p>The number of managed nodes with patches installed that aren't defined in the patch
     /// baseline.</p>
     pub instances_with_installed_other_patches: i32,
-    /// <p>The number of instances with patches installed by Patch Manager that haven't been rebooted
-    /// after the patch installation. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been
+    /// rebooted after the patch installation. The status of these managed nodes is
+    /// <code>NON_COMPLIANT</code>.</p>
     pub instances_with_installed_pending_reboot_patches: std::option::Option<i32>,
-    /// <p>The number of instances with patches installed that are specified in a
+    /// <p>The number of managed nodes with patches installed that are specified in a
     /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
     /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
     /// <note>
@@ -9531,50 +9532,52 @@ pub struct DescribePatchGroupStateOutput {
     /// <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub instances_with_installed_rejected_patches: std::option::Option<i32>,
-    /// <p>The number of instances with missing patches from the patch baseline.</p>
+    /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
     pub instances_with_missing_patches: i32,
-    /// <p>The number of instances with patches from the patch baseline that failed to install.</p>
+    /// <p>The number of managed nodes with patches from the patch baseline that failed to
+    /// install.</p>
     pub instances_with_failed_patches: i32,
-    /// <p>The number of instances with patches that aren't applicable.</p>
+    /// <p>The number of managed nodes with patches that aren't applicable.</p>
     pub instances_with_not_applicable_patches: i32,
-    /// <p>The number of instances with <code>NotApplicable</code> patches beyond the supported limit,
-    /// which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
+    /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
     pub instances_with_unreported_not_applicable_patches: std::option::Option<i32>,
-    /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
     /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-    /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
-    /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
+    /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_critical_non_compliant_patches: std::option::Option<i32>,
-    /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
-    /// advisory aren't installed. These patches might be missing, have failed installation, were
-    /// rejected, or were installed but awaiting a required instance reboot. The status of these
-    /// instances is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
+    /// patch advisory aren't installed. These patches might be missing, have failed installation, were
+    /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+    /// nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_security_non_compliant_patches: std::option::Option<i32>,
-    /// <p>The number of instances with patches installed that are specified as other than
+    /// <p>The number of managed nodes with patches installed that are specified as other than
     /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-    /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_other_non_compliant_patches: std::option::Option<i32>,
 }
 impl DescribePatchGroupStateOutput {
-    /// <p>The number of instances in the patch group.</p>
+    /// <p>The number of managed nodes in the patch group.</p>
     pub fn instances(&self) -> i32 {
         self.instances
     }
-    /// <p>The number of instances with installed patches.</p>
+    /// <p>The number of managed nodes with installed patches.</p>
     pub fn instances_with_installed_patches(&self) -> i32 {
         self.instances_with_installed_patches
     }
-    /// <p>The number of instances with patches installed that aren't defined in the patch
+    /// <p>The number of managed nodes with patches installed that aren't defined in the patch
     /// baseline.</p>
     pub fn instances_with_installed_other_patches(&self) -> i32 {
         self.instances_with_installed_other_patches
     }
-    /// <p>The number of instances with patches installed by Patch Manager that haven't been rebooted
-    /// after the patch installation. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been
+    /// rebooted after the patch installation. The status of these managed nodes is
+    /// <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_installed_pending_reboot_patches(&self) -> std::option::Option<i32> {
         self.instances_with_installed_pending_reboot_patches
     }
-    /// <p>The number of instances with patches installed that are specified in a
+    /// <p>The number of managed nodes with patches installed that are specified in a
     /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
     /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
     /// <note>
@@ -9585,40 +9588,41 @@ impl DescribePatchGroupStateOutput {
     pub fn instances_with_installed_rejected_patches(&self) -> std::option::Option<i32> {
         self.instances_with_installed_rejected_patches
     }
-    /// <p>The number of instances with missing patches from the patch baseline.</p>
+    /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
     pub fn instances_with_missing_patches(&self) -> i32 {
         self.instances_with_missing_patches
     }
-    /// <p>The number of instances with patches from the patch baseline that failed to install.</p>
+    /// <p>The number of managed nodes with patches from the patch baseline that failed to
+    /// install.</p>
     pub fn instances_with_failed_patches(&self) -> i32 {
         self.instances_with_failed_patches
     }
-    /// <p>The number of instances with patches that aren't applicable.</p>
+    /// <p>The number of managed nodes with patches that aren't applicable.</p>
     pub fn instances_with_not_applicable_patches(&self) -> i32 {
         self.instances_with_not_applicable_patches
     }
-    /// <p>The number of instances with <code>NotApplicable</code> patches beyond the supported limit,
-    /// which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
+    /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
     pub fn instances_with_unreported_not_applicable_patches(&self) -> std::option::Option<i32> {
         self.instances_with_unreported_not_applicable_patches
     }
-    /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+    /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
     /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-    /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
-    /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
+    /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_critical_non_compliant_patches(&self) -> std::option::Option<i32> {
         self.instances_with_critical_non_compliant_patches
     }
-    /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
-    /// advisory aren't installed. These patches might be missing, have failed installation, were
-    /// rejected, or were installed but awaiting a required instance reboot. The status of these
-    /// instances is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
+    /// patch advisory aren't installed. These patches might be missing, have failed installation, were
+    /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+    /// nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_security_non_compliant_patches(&self) -> std::option::Option<i32> {
         self.instances_with_security_non_compliant_patches
     }
-    /// <p>The number of instances with patches installed that are specified as other than
+    /// <p>The number of managed nodes with patches installed that are specified as other than
     /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-    /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn instances_with_other_non_compliant_patches(&self) -> std::option::Option<i32> {
         self.instances_with_other_non_compliant_patches
     }
@@ -9694,22 +9698,22 @@ pub mod describe_patch_group_state_output {
         pub(crate) instances_with_other_non_compliant_patches: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of instances in the patch group.</p>
+        /// <p>The number of managed nodes in the patch group.</p>
         pub fn instances(mut self, input: i32) -> Self {
             self.instances = Some(input);
             self
         }
-        /// <p>The number of instances in the patch group.</p>
+        /// <p>The number of managed nodes in the patch group.</p>
         pub fn set_instances(mut self, input: std::option::Option<i32>) -> Self {
             self.instances = input;
             self
         }
-        /// <p>The number of instances with installed patches.</p>
+        /// <p>The number of managed nodes with installed patches.</p>
         pub fn instances_with_installed_patches(mut self, input: i32) -> Self {
             self.instances_with_installed_patches = Some(input);
             self
         }
-        /// <p>The number of instances with installed patches.</p>
+        /// <p>The number of managed nodes with installed patches.</p>
         pub fn set_instances_with_installed_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9717,13 +9721,13 @@ pub mod describe_patch_group_state_output {
             self.instances_with_installed_patches = input;
             self
         }
-        /// <p>The number of instances with patches installed that aren't defined in the patch
+        /// <p>The number of managed nodes with patches installed that aren't defined in the patch
         /// baseline.</p>
         pub fn instances_with_installed_other_patches(mut self, input: i32) -> Self {
             self.instances_with_installed_other_patches = Some(input);
             self
         }
-        /// <p>The number of instances with patches installed that aren't defined in the patch
+        /// <p>The number of managed nodes with patches installed that aren't defined in the patch
         /// baseline.</p>
         pub fn set_instances_with_installed_other_patches(
             mut self,
@@ -9732,14 +9736,16 @@ pub mod describe_patch_group_state_output {
             self.instances_with_installed_other_patches = input;
             self
         }
-        /// <p>The number of instances with patches installed by Patch Manager that haven't been rebooted
-        /// after the patch installation. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been
+        /// rebooted after the patch installation. The status of these managed nodes is
+        /// <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_installed_pending_reboot_patches(mut self, input: i32) -> Self {
             self.instances_with_installed_pending_reboot_patches = Some(input);
             self
         }
-        /// <p>The number of instances with patches installed by Patch Manager that haven't been rebooted
-        /// after the patch installation. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been
+        /// rebooted after the patch installation. The status of these managed nodes is
+        /// <code>NON_COMPLIANT</code>.</p>
         pub fn set_instances_with_installed_pending_reboot_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9747,7 +9753,7 @@ pub mod describe_patch_group_state_output {
             self.instances_with_installed_pending_reboot_patches = input;
             self
         }
-        /// <p>The number of instances with patches installed that are specified in a
+        /// <p>The number of managed nodes with patches installed that are specified in a
         /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
         /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
         /// <note>
@@ -9759,7 +9765,7 @@ pub mod describe_patch_group_state_output {
             self.instances_with_installed_rejected_patches = Some(input);
             self
         }
-        /// <p>The number of instances with patches installed that are specified in a
+        /// <p>The number of managed nodes with patches installed that are specified in a
         /// <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were
         /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
         /// <note>
@@ -9774,12 +9780,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_installed_rejected_patches = input;
             self
         }
-        /// <p>The number of instances with missing patches from the patch baseline.</p>
+        /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
         pub fn instances_with_missing_patches(mut self, input: i32) -> Self {
             self.instances_with_missing_patches = Some(input);
             self
         }
-        /// <p>The number of instances with missing patches from the patch baseline.</p>
+        /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
         pub fn set_instances_with_missing_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9787,12 +9793,14 @@ pub mod describe_patch_group_state_output {
             self.instances_with_missing_patches = input;
             self
         }
-        /// <p>The number of instances with patches from the patch baseline that failed to install.</p>
+        /// <p>The number of managed nodes with patches from the patch baseline that failed to
+        /// install.</p>
         pub fn instances_with_failed_patches(mut self, input: i32) -> Self {
             self.instances_with_failed_patches = Some(input);
             self
         }
-        /// <p>The number of instances with patches from the patch baseline that failed to install.</p>
+        /// <p>The number of managed nodes with patches from the patch baseline that failed to
+        /// install.</p>
         pub fn set_instances_with_failed_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9800,12 +9808,12 @@ pub mod describe_patch_group_state_output {
             self.instances_with_failed_patches = input;
             self
         }
-        /// <p>The number of instances with patches that aren't applicable.</p>
+        /// <p>The number of managed nodes with patches that aren't applicable.</p>
         pub fn instances_with_not_applicable_patches(mut self, input: i32) -> Self {
             self.instances_with_not_applicable_patches = Some(input);
             self
         }
-        /// <p>The number of instances with patches that aren't applicable.</p>
+        /// <p>The number of managed nodes with patches that aren't applicable.</p>
         pub fn set_instances_with_not_applicable_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9813,14 +9821,14 @@ pub mod describe_patch_group_state_output {
             self.instances_with_not_applicable_patches = input;
             self
         }
-        /// <p>The number of instances with <code>NotApplicable</code> patches beyond the supported limit,
-        /// which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+        /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
+        /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
         pub fn instances_with_unreported_not_applicable_patches(mut self, input: i32) -> Self {
             self.instances_with_unreported_not_applicable_patches = Some(input);
             self
         }
-        /// <p>The number of instances with <code>NotApplicable</code> patches beyond the supported limit,
-        /// which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+        /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
+        /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
         pub fn set_instances_with_unreported_not_applicable_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9828,18 +9836,18 @@ pub mod describe_patch_group_state_output {
             self.instances_with_unreported_not_applicable_patches = input;
             self
         }
-        /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
         /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-        /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
-        /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
+        /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_critical_non_compliant_patches(mut self, input: i32) -> Self {
             self.instances_with_critical_non_compliant_patches = Some(input);
             self
         }
-        /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+        /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for
         /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
-        /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
-        /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// failed installation, were rejected, or were installed but awaiting a required managed node reboot.
+        /// The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_instances_with_critical_non_compliant_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9847,18 +9855,18 @@ pub mod describe_patch_group_state_output {
             self.instances_with_critical_non_compliant_patches = input;
             self
         }
-        /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
-        /// advisory aren't installed. These patches might be missing, have failed installation, were
-        /// rejected, or were installed but awaiting a required instance reboot. The status of these
-        /// instances is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
+        /// patch advisory aren't installed. These patches might be missing, have failed installation, were
+        /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+        /// nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_security_non_compliant_patches(mut self, input: i32) -> Self {
             self.instances_with_security_non_compliant_patches = Some(input);
             self
         }
-        /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
-        /// advisory aren't installed. These patches might be missing, have failed installation, were
-        /// rejected, or were installed but awaiting a required instance reboot. The status of these
-        /// instances is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a
+        /// patch advisory aren't installed. These patches might be missing, have failed installation, were
+        /// rejected, or were installed but awaiting a required managed node reboot. The status of these managed
+        /// nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_instances_with_security_non_compliant_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -9866,16 +9874,16 @@ pub mod describe_patch_group_state_output {
             self.instances_with_security_non_compliant_patches = input;
             self
         }
-        /// <p>The number of instances with patches installed that are specified as other than
+        /// <p>The number of managed nodes with patches installed that are specified as other than
         /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-        /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn instances_with_other_non_compliant_patches(mut self, input: i32) -> Self {
             self.instances_with_other_non_compliant_patches = Some(input);
             self
         }
-        /// <p>The number of instances with patches installed that are specified as other than
+        /// <p>The number of managed nodes with patches installed that are specified as other than
         /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
-        /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
         pub fn set_instances_with_other_non_compliant_patches(
             mut self,
             input: std::option::Option<i32>,
@@ -10505,7 +10513,7 @@ impl DescribeMaintenanceWindowTargetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowsForTargetOutput {
-    /// <p>Information about the maintenance window targets and tasks an instance is associated
+    /// <p>Information about the maintenance window targets and tasks a managed node is associated
     /// with.</p>
     pub window_identities:
         std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
@@ -10513,7 +10521,7 @@ pub struct DescribeMaintenanceWindowsForTargetOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeMaintenanceWindowsForTargetOutput {
-    /// <p>Information about the maintenance window targets and tasks an instance is associated
+    /// <p>Information about the maintenance window targets and tasks a managed node is associated
     /// with.</p>
     pub fn window_identities(
         &self,
@@ -10548,7 +10556,7 @@ pub mod describe_maintenance_windows_for_target_output {
         ///
         /// To override the contents of this collection use [`set_window_identities`](Self::set_window_identities).
         ///
-        /// <p>Information about the maintenance window targets and tasks an instance is associated
+        /// <p>Information about the maintenance window targets and tasks a managed node is associated
         /// with.</p>
         pub fn window_identities(
             mut self,
@@ -10559,7 +10567,7 @@ pub mod describe_maintenance_windows_for_target_output {
             self.window_identities = Some(v);
             self
         }
-        /// <p>Information about the maintenance window targets and tasks an instance is associated
+        /// <p>Information about the maintenance window targets and tasks a managed node is associated
         /// with.</p>
         pub fn set_window_identities(
             mut self,
@@ -11182,14 +11190,14 @@ impl DescribeInventoryDeletionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancePatchStatesForPatchGroupOutput {
-    /// <p>The high-level patch state for the requested instances. </p>
+    /// <p>The high-level patch state for the requested managed nodes. </p>
     pub instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchStatesForPatchGroupOutput {
-    /// <p>The high-level patch state for the requested instances. </p>
+    /// <p>The high-level patch state for the requested managed nodes. </p>
     pub fn instance_patch_states(
         &self,
     ) -> std::option::Option<&[crate::model::InstancePatchState]> {
@@ -11224,7 +11232,7 @@ pub mod describe_instance_patch_states_for_patch_group_output {
         ///
         /// To override the contents of this collection use [`set_instance_patch_states`](Self::set_instance_patch_states).
         ///
-        /// <p>The high-level patch state for the requested instances. </p>
+        /// <p>The high-level patch state for the requested managed nodes. </p>
         pub fn instance_patch_states(
             mut self,
             input: impl Into<crate::model::InstancePatchState>,
@@ -11234,7 +11242,7 @@ pub mod describe_instance_patch_states_for_patch_group_output {
             self.instance_patch_states = Some(v);
             self
         }
-        /// <p>The high-level patch state for the requested instances. </p>
+        /// <p>The high-level patch state for the requested managed nodes. </p>
         pub fn set_instance_patch_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
@@ -11275,14 +11283,14 @@ impl DescribeInstancePatchStatesForPatchGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancePatchStatesOutput {
-    /// <p>The high-level patch state for the requested instances.</p>
+    /// <p>The high-level patch state for the requested managed nodes.</p>
     pub instance_patch_states: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancePatchStatesOutput {
-    /// <p>The high-level patch state for the requested instances.</p>
+    /// <p>The high-level patch state for the requested managed nodes.</p>
     pub fn instance_patch_states(
         &self,
     ) -> std::option::Option<&[crate::model::InstancePatchState]> {
@@ -11317,7 +11325,7 @@ pub mod describe_instance_patch_states_output {
         ///
         /// To override the contents of this collection use [`set_instance_patch_states`](Self::set_instance_patch_states).
         ///
-        /// <p>The high-level patch state for the requested instances.</p>
+        /// <p>The high-level patch state for the requested managed nodes.</p>
         pub fn instance_patch_states(
             mut self,
             input: impl Into<crate::model::InstancePatchState>,
@@ -11327,7 +11335,7 @@ pub mod describe_instance_patch_states_output {
             self.instance_patch_states = Some(v);
             self
         }
-        /// <p>The high-level patch state for the requested instances.</p>
+        /// <p>The high-level patch state for the requested managed nodes.</p>
         pub fn set_instance_patch_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstancePatchState>>,
@@ -11545,7 +11553,7 @@ impl DescribeInstancePatchesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceInformationOutput {
-    /// <p>The instance information list.</p>
+    /// <p>The managed node information list.</p>
     pub instance_information_list:
         std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
@@ -11553,7 +11561,7 @@ pub struct DescribeInstanceInformationOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceInformationOutput {
-    /// <p>The instance information list.</p>
+    /// <p>The managed node information list.</p>
     pub fn instance_information_list(
         &self,
     ) -> std::option::Option<&[crate::model::InstanceInformation]> {
@@ -11588,7 +11596,7 @@ pub mod describe_instance_information_output {
         ///
         /// To override the contents of this collection use [`set_instance_information_list`](Self::set_instance_information_list).
         ///
-        /// <p>The instance information list.</p>
+        /// <p>The managed node information list.</p>
         pub fn instance_information_list(
             mut self,
             input: impl Into<crate::model::InstanceInformation>,
@@ -11598,7 +11606,7 @@ pub mod describe_instance_information_output {
             self.instance_information_list = Some(v);
             self
         }
-        /// <p>The instance information list.</p>
+        /// <p>The managed node information list.</p>
         pub fn set_instance_information_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceInformation>>,
@@ -11822,14 +11830,14 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEffectiveInstanceAssociationsOutput {
-    /// <p>The associations for the requested instance.</p>
+    /// <p>The associations for the requested managed node.</p>
     pub associations: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to
     /// return, the string is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEffectiveInstanceAssociationsOutput {
-    /// <p>The associations for the requested instance.</p>
+    /// <p>The associations for the requested managed node.</p>
     pub fn associations(&self) -> std::option::Option<&[crate::model::InstanceAssociation]> {
         self.associations.as_deref()
     }
@@ -11862,14 +11870,14 @@ pub mod describe_effective_instance_associations_output {
         ///
         /// To override the contents of this collection use [`set_associations`](Self::set_associations).
         ///
-        /// <p>The associations for the requested instance.</p>
+        /// <p>The associations for the requested managed node.</p>
         pub fn associations(mut self, input: impl Into<crate::model::InstanceAssociation>) -> Self {
             let mut v = self.associations.unwrap_or_default();
             v.push(input.into());
             self.associations = Some(v);
             self
         }
-        /// <p>The associations for the requested instance.</p>
+        /// <p>The associations for the requested managed node.</p>
         pub fn set_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceAssociation>>,

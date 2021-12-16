@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_ecr::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -106,12 +106,30 @@ where
     pub fn batch_get_image(&self) -> fluent_builders::BatchGetImage<C, M, R> {
         fluent_builders::BatchGetImage::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `BatchGetRepositoryScanningConfiguration` operation.
+    ///
+    /// See [`BatchGetRepositoryScanningConfiguration`](crate::client::fluent_builders::BatchGetRepositoryScanningConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn batch_get_repository_scanning_configuration(
+        &self,
+    ) -> fluent_builders::BatchGetRepositoryScanningConfiguration<C, M, R> {
+        fluent_builders::BatchGetRepositoryScanningConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CompleteLayerUpload` operation.
     ///
     /// See [`CompleteLayerUpload`](crate::client::fluent_builders::CompleteLayerUpload) for more information about the
     /// operation and its arguments.
     pub fn complete_layer_upload(&self) -> fluent_builders::CompleteLayerUpload<C, M, R> {
         fluent_builders::CompleteLayerUpload::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreatePullThroughCacheRule` operation.
+    ///
+    /// See [`CreatePullThroughCacheRule`](crate::client::fluent_builders::CreatePullThroughCacheRule) for more information about the
+    /// operation and its arguments.
+    pub fn create_pull_through_cache_rule(
+        &self,
+    ) -> fluent_builders::CreatePullThroughCacheRule<C, M, R> {
+        fluent_builders::CreatePullThroughCacheRule::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateRepository` operation.
     ///
@@ -126,6 +144,15 @@ where
     /// operation and its arguments.
     pub fn delete_lifecycle_policy(&self) -> fluent_builders::DeleteLifecyclePolicy<C, M, R> {
         fluent_builders::DeleteLifecyclePolicy::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeletePullThroughCacheRule` operation.
+    ///
+    /// See [`DeletePullThroughCacheRule`](crate::client::fluent_builders::DeletePullThroughCacheRule) for more information about the
+    /// operation and its arguments.
+    pub fn delete_pull_through_cache_rule(
+        &self,
+    ) -> fluent_builders::DeletePullThroughCacheRule<C, M, R> {
+        fluent_builders::DeletePullThroughCacheRule::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteRegistryPolicy` operation.
     ///
@@ -172,6 +199,15 @@ where
         &self,
     ) -> fluent_builders::DescribeImageScanFindings<C, M, R> {
         fluent_builders::DescribeImageScanFindings::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribePullThroughCacheRules` operation.
+    ///
+    /// See [`DescribePullThroughCacheRules`](crate::client::fluent_builders::DescribePullThroughCacheRules) for more information about the
+    /// operation and its arguments.
+    pub fn describe_pull_through_cache_rules(
+        &self,
+    ) -> fluent_builders::DescribePullThroughCacheRules<C, M, R> {
+        fluent_builders::DescribePullThroughCacheRules::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeRegistry` operation.
     ///
@@ -223,6 +259,15 @@ where
     /// operation and its arguments.
     pub fn get_registry_policy(&self) -> fluent_builders::GetRegistryPolicy<C, M, R> {
         fluent_builders::GetRegistryPolicy::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetRegistryScanningConfiguration` operation.
+    ///
+    /// See [`GetRegistryScanningConfiguration`](crate::client::fluent_builders::GetRegistryScanningConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn get_registry_scanning_configuration(
+        &self,
+    ) -> fluent_builders::GetRegistryScanningConfiguration<C, M, R> {
+        fluent_builders::GetRegistryScanningConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetRepositoryPolicy` operation.
     ///
@@ -288,6 +333,15 @@ where
     /// operation and its arguments.
     pub fn put_registry_policy(&self) -> fluent_builders::PutRegistryPolicy<C, M, R> {
         fluent_builders::PutRegistryPolicy::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `PutRegistryScanningConfiguration` operation.
+    ///
+    /// See [`PutRegistryScanningConfiguration`](crate::client::fluent_builders::PutRegistryScanningConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn put_registry_scanning_configuration(
+        &self,
+    ) -> fluent_builders::PutRegistryScanningConfiguration<C, M, R> {
+        fluent_builders::PutRegistryScanningConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `PutReplicationConfiguration` operation.
     ///
@@ -364,7 +418,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchCheckLayerAvailability<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -471,7 +525,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchDeleteImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -580,7 +634,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchGetImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -705,6 +759,85 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `BatchGetRepositoryScanningConfiguration`.
+    ///
+    /// <p>Gets the scanning configuration for one or more repositories.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct BatchGetRepositoryScanningConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::batch_get_repository_scanning_configuration_input::Builder,
+    }
+    impl<C, M, R> BatchGetRepositoryScanningConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `BatchGetRepositoryScanningConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetRepositoryScanningConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::BatchGetRepositoryScanningConfigurationError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::BatchGetRepositoryScanningConfigurationInputOperationOutputAlias,
+                crate::output::BatchGetRepositoryScanningConfigurationOutput,
+                crate::error::BatchGetRepositoryScanningConfigurationError,
+                crate::input::BatchGetRepositoryScanningConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `repositoryNames`.
+        ///
+        /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
+        ///
+        /// <p>One or more repository names to get the scanning configuration for.</p>
+        pub fn repository_names(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_names(inp);
+            self
+        }
+        /// <p>One or more repository names to get the scanning configuration for.</p>
+        pub fn set_repository_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_repository_names(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CompleteLayerUpload`.
     ///
     /// <p>Informs Amazon ECR that the image layer upload has completed for a specified registry,
@@ -719,7 +852,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CompleteLayerUpload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -827,6 +960,107 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreatePullThroughCacheRule`.
+    ///
+    /// <p>Creates a pull through cache rule. A pull through cache rule provides a way to cache
+    /// images from an external public registry in your Amazon ECR private registry.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreatePullThroughCacheRule<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_pull_through_cache_rule_input::Builder,
+    }
+    impl<C, M, R> CreatePullThroughCacheRule<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreatePullThroughCacheRule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreatePullThroughCacheRuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreatePullThroughCacheRuleError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreatePullThroughCacheRuleInputOperationOutputAlias,
+                crate::output::CreatePullThroughCacheRuleOutput,
+                crate::error::CreatePullThroughCacheRuleError,
+                crate::input::CreatePullThroughCacheRuleInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The repository name prefix to use when caching images from the source registry.</p>
+        pub fn ecr_repository_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecr_repository_prefix(inp);
+            self
+        }
+        /// <p>The repository name prefix to use when caching images from the source registry.</p>
+        pub fn set_ecr_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ecr_repository_prefix(input);
+            self
+        }
+        /// <p>The registry URL of the upstream public registry to use as the source for the pull
+        /// through cache rule.</p>
+        pub fn upstream_registry_url(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upstream_registry_url(inp);
+            self
+        }
+        /// <p>The registry URL of the upstream public registry to use as the source for the pull
+        /// through cache rule.</p>
+        pub fn set_upstream_registry_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_upstream_registry_url(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
+        /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
+        /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_registry_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateRepository`.
     ///
     /// <p>Creates a repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR repositories</a> in the
@@ -834,7 +1068,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateRepository<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -887,13 +1121,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account ID associated with the registry to create the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(inp);
             self
         }
-        /// <p>The AWS account ID associated with the registry to create the repository.
+        /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
         /// If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
@@ -1001,7 +1235,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1080,13 +1314,100 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeletePullThroughCacheRule`.
+    ///
+    /// <p>Deletes a pull through cache rule.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeletePullThroughCacheRule<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_pull_through_cache_rule_input::Builder,
+    }
+    impl<C, M, R> DeletePullThroughCacheRule<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeletePullThroughCacheRule`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeletePullThroughCacheRuleOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeletePullThroughCacheRuleError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeletePullThroughCacheRuleInputOperationOutputAlias,
+                crate::output::DeletePullThroughCacheRuleOutput,
+                crate::error::DeletePullThroughCacheRuleError,
+                crate::input::DeletePullThroughCacheRuleInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
+        /// delete.</p>
+        pub fn ecr_repository_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecr_repository_prefix(inp);
+            self
+        }
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
+        /// delete.</p>
+        pub fn set_ecr_repository_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ecr_repository_prefix(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
+        /// rule. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
+        /// rule. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_registry_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteRegistryPolicy`.
     ///
     /// <p>Deletes the registry permissions policy.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteRegistryPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1148,7 +1469,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteRepository<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1243,7 +1564,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteRepositoryPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1330,7 +1651,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImageReplicationStatus<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1432,7 +1753,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImages<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1595,7 +1916,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeImageScanFindings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1731,6 +2052,145 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribePullThroughCacheRules`.
+    ///
+    /// <p>Returns the pull through cache rules for a registry.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribePullThroughCacheRules<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_pull_through_cache_rules_input::Builder,
+    }
+    impl<C, M, R> DescribePullThroughCacheRules<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribePullThroughCacheRules`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribePullThroughCacheRulesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribePullThroughCacheRulesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribePullThroughCacheRulesInputOperationOutputAlias,
+                crate::output::DescribePullThroughCacheRulesOutput,
+                crate::error::DescribePullThroughCacheRulesError,
+                crate::input::DescribePullThroughCacheRulesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
+        /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn registry_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_id(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
+        /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_registry_id(input);
+            self
+        }
+        /// Appends an item to `ecrRepositoryPrefixes`.
+        ///
+        /// To override the contents of this collection use [`set_ecr_repository_prefixes`](Self::set_ecr_repository_prefixes).
+        ///
+        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
+        /// If no repository prefix value is specified, all pull through cache rules are
+        /// returned.</p>
+        pub fn ecr_repository_prefixes(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecr_repository_prefixes(inp);
+            self
+        }
+        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
+        /// If no repository prefix value is specified, all pull through cache rules are
+        /// returned.</p>
+        pub fn set_ecr_repository_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_ecr_repository_prefixes(input);
+            self
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>DescribePullThroughCacheRulesRequest</code> request where
+        /// <code>maxResults</code> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned the
+        /// <code>nextToken</code> value. This value is null when there are no more results to
+        /// return.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>DescribePullThroughCacheRulesRequest</code> request where
+        /// <code>maxResults</code> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned the
+        /// <code>nextToken</code> value. This value is null when there are no more results to
+        /// return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of pull through cache rules returned by
+        /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
+        /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
+        /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
+        /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of pull through cache rules returned by
+        /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
+        /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
+        /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
+        /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeRegistry`.
     ///
     /// <p>Describes the settings for a registry. The replication configuration for a repository
@@ -1739,7 +2199,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRegistry<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1799,7 +2259,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeRepositories<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1953,7 +2413,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetAuthorizationToken<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2039,7 +2499,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetDownloadUrlForLayer<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2134,7 +2594,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2220,7 +2680,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetLifecyclePolicyPreview<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2387,7 +2847,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct GetRegistryPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2441,13 +2901,73 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
     }
+    /// Fluent builder constructing a request to `GetRegistryScanningConfiguration`.
+    ///
+    /// <p>Retrieves the scanning configuration for a registry.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetRegistryScanningConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_registry_scanning_configuration_input::Builder,
+    }
+    impl<C, M, R> GetRegistryScanningConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetRegistryScanningConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetRegistryScanningConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetRegistryScanningConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetRegistryScanningConfigurationInputOperationOutputAlias,
+                crate::output::GetRegistryScanningConfigurationOutput,
+                crate::error::GetRegistryScanningConfigurationError,
+                crate::input::GetRegistryScanningConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `GetRepositoryPolicy`.
     ///
     /// <p>Retrieves the repository policy for the specified repository.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetRepositoryPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2539,7 +3059,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct InitiateLayerUpload<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2630,7 +3150,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListImages<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2780,7 +3300,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2860,7 +3380,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutImage<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2997,7 +3517,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutImageScanningConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3108,7 +3628,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutImageTagMutability<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3216,7 +3736,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3316,7 +3836,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutRegistryPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3384,6 +3904,107 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutRegistryScanningConfiguration`.
+    ///
+    /// <p>Creates or updates the scanning configuration for your private registry.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct PutRegistryScanningConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_registry_scanning_configuration_input::Builder,
+    }
+    impl<C, M, R> PutRegistryScanningConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `PutRegistryScanningConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutRegistryScanningConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutRegistryScanningConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutRegistryScanningConfigurationInputOperationOutputAlias,
+                crate::output::PutRegistryScanningConfigurationOutput,
+                crate::error::PutRegistryScanningConfigurationError,
+                crate::input::PutRegistryScanningConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The scanning type to set for the registry.</p>
+        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
+        /// may specify filters to determine which individual repositories, or all repositories, are
+        /// scanned when new images are pushed. Alternatively, you can do manual scans of images
+        /// with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
+        /// scanning of all repositories in your registry.</p>
+        pub fn scan_type(mut self, inp: crate::model::ScanType) -> Self {
+            self.inner = self.inner.scan_type(inp);
+            self
+        }
+        /// <p>The scanning type to set for the registry.</p>
+        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
+        /// may specify filters to determine which individual repositories, or all repositories, are
+        /// scanned when new images are pushed. Alternatively, you can do manual scans of images
+        /// with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
+        /// scanning of all repositories in your registry.</p>
+        pub fn set_scan_type(mut self, input: std::option::Option<crate::model::ScanType>) -> Self {
+            self.inner = self.inner.set_scan_type(input);
+            self
+        }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
+        /// repository filters are used and at what frequency scanning will occur.</p>
+        pub fn rules(mut self, inp: impl Into<crate::model::RegistryScanningRule>) -> Self {
+            self.inner = self.inner.rules(inp);
+            self
+        }
+        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
+        /// repository filters are used and at what frequency scanning will occur.</p>
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
+        ) -> Self {
+            self.inner = self.inner.set_rules(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutReplicationConfiguration`.
     ///
     /// <p>Creates or updates the replication configuration for a registry. The existing
@@ -3400,7 +4021,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PutReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3478,7 +4099,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct SetRepositoryPolicy<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3594,7 +4215,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartImageScan<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3693,7 +4314,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartLifecyclePolicyPreview<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3794,7 +4415,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3887,7 +4508,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3983,7 +4604,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct UploadLayerPart<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4108,17 +4729,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4127,7 +4752,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -4143,11 +4768,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

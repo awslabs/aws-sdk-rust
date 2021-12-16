@@ -11,22 +11,22 @@ pub mod add_lf_tags_to_resource_input {
         pub(crate) lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The resource to which to attach a tag.</p>
+        /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
         pub fn resource(mut self, input: crate::model::Resource) -> Self {
             self.resource = Some(input);
             self
         }
-        /// <p>The resource to which to attach a tag.</p>
+        /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.resource = input;
             self
@@ -35,14 +35,14 @@ pub mod add_lf_tags_to_resource_input {
         ///
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
-        /// <p>The tags to attach to the resource.</p>
+        /// <p>The LF-tags to attach to the resource.</p>
         pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
             v.push(input.into());
             self.lf_tags = Some(v);
             self
         }
-        /// <p>The tags to attach to the resource.</p>
+        /// <p>The LF-tags to attach to the resource.</p>
         pub fn set_lf_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -87,7 +87,7 @@ impl AddLfTagsToResourceInput {
             _input: &crate::input::AddLfTagsToResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/AddLFTagsToResource").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -110,12 +110,7 @@ impl AddLfTagsToResourceInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.AddLFTagsToResource",
+                "application/json",
             );
             Ok(builder)
         }
@@ -200,12 +195,12 @@ pub mod batch_grant_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::BatchPermissionsRequestEntry>>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -268,7 +263,7 @@ impl BatchGrantPermissionsInput {
             _input: &crate::input::BatchGrantPermissionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/BatchGrantPermissions").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -291,12 +286,7 @@ impl BatchGrantPermissionsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.BatchGrantPermissions",
+                "application/json",
             );
             Ok(builder)
         }
@@ -381,12 +371,12 @@ pub mod batch_revoke_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::BatchPermissionsRequestEntry>>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -449,7 +439,7 @@ impl BatchRevokePermissionsInput {
             _input: &crate::input::BatchRevokePermissionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/BatchRevokePermissions").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -472,12 +462,7 @@ impl BatchRevokePermissionsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.BatchRevokePermissions",
+                "application/json",
             );
             Ok(builder)
         }
@@ -551,6 +536,464 @@ impl BatchRevokePermissionsInput {
     }
 }
 
+/// See [`CancelTransactionInput`](crate::input::CancelTransactionInput)
+pub mod cancel_transaction_input {
+    /// A builder for [`CancelTransactionInput`](crate::input::CancelTransactionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The transaction to cancel.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction to cancel.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelTransactionInput`](crate::input::CancelTransactionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CancelTransactionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CancelTransactionInput {
+                transaction_id: self.transaction_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CancelTransactionInputOperationOutputAlias = crate::operation::CancelTransaction;
+#[doc(hidden)]
+pub type CancelTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CancelTransactionInput {
+    /// Consumes the builder and constructs an Operation<[`CancelTransaction`](crate::operation::CancelTransaction)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelTransaction,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CancelTransactionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/CancelTransaction").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CancelTransactionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CancelTransactionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_cancel_transaction(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelTransaction::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelTransaction",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CancelTransactionInput`](crate::input::CancelTransactionInput)
+    pub fn builder() -> crate::input::cancel_transaction_input::Builder {
+        crate::input::cancel_transaction_input::Builder::default()
+    }
+}
+
+/// See [`CommitTransactionInput`](crate::input::CommitTransactionInput)
+pub mod commit_transaction_input {
+    /// A builder for [`CommitTransactionInput`](crate::input::CommitTransactionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The transaction to commit.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction to commit.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::input::CommitTransactionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CommitTransactionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CommitTransactionInput {
+                transaction_id: self.transaction_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CommitTransactionInputOperationOutputAlias = crate::operation::CommitTransaction;
+#[doc(hidden)]
+pub type CommitTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CommitTransactionInput {
+    /// Consumes the builder and constructs an Operation<[`CommitTransaction`](crate::operation::CommitTransaction)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CommitTransaction,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CommitTransactionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/CommitTransaction").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CommitTransactionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CommitTransactionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_commit_transaction(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CommitTransaction::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CommitTransaction",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::input::CommitTransactionInput)
+    pub fn builder() -> crate::input::commit_transaction_input::Builder {
+        crate::input::commit_transaction_input::Builder::default()
+    }
+}
+
+/// See [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput)
+pub mod create_data_cells_filter_input {
+    /// A builder for [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_data: std::option::Option<crate::model::DataCellsFilter>,
+    }
+    impl Builder {
+        /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+        pub fn table_data(mut self, input: crate::model::DataCellsFilter) -> Self {
+            self.table_data = Some(input);
+            self
+        }
+        /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+        pub fn set_table_data(
+            mut self,
+            input: std::option::Option<crate::model::DataCellsFilter>,
+        ) -> Self {
+            self.table_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateDataCellsFilterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateDataCellsFilterInput {
+                table_data: self.table_data,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateDataCellsFilterInputOperationOutputAlias = crate::operation::CreateDataCellsFilter;
+#[doc(hidden)]
+pub type CreateDataCellsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateDataCellsFilterInput {
+    /// Consumes the builder and constructs an Operation<[`CreateDataCellsFilter`](crate::operation::CreateDataCellsFilter)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateDataCellsFilter,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateDataCellsFilterInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/CreateDataCellsFilter").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateDataCellsFilterInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateDataCellsFilterInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_data_cells_filter(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDataCellsFilter::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateDataCellsFilter",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput)
+    pub fn builder() -> crate::input::create_data_cells_filter_input::Builder {
+        crate::input::create_data_cells_filter_input::Builder::default()
+    }
+}
+
 /// See [`CreateLfTagInput`](crate::input::CreateLfTagInput)
 pub mod create_lf_tag_input {
     /// A builder for [`CreateLfTagInput`](crate::input::CreateLfTagInput)
@@ -562,22 +1005,22 @@ pub mod create_lf_tag_input {
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The key-name for the tag.</p>
+        /// <p>The key-name for the LF-tag.</p>
         pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.tag_key = Some(input.into());
             self
         }
-        /// <p>The key-name for the tag.</p>
+        /// <p>The key-name for the LF-tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
@@ -638,7 +1081,7 @@ impl CreateLfTagInput {
             _input: &crate::input::CreateLfTagInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/CreateLFTag").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -661,12 +1104,7 @@ impl CreateLfTagInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.CreateLFTag",
+                "application/json",
             );
             Ok(builder)
         }
@@ -737,6 +1175,199 @@ impl CreateLfTagInput {
     }
 }
 
+/// See [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput)
+pub mod delete_data_cells_filter_input {
+    /// A builder for [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the catalog to which the table belongs.</p>
+        pub fn table_catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the catalog to which the table belongs.</p>
+        pub fn set_table_catalog_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.table_catalog_id = input;
+            self
+        }
+        /// <p>A database in the Glue Data Catalog.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>A database in the Glue Data Catalog.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>A table in the database.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>A table in the database.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>The name given by the user to the data filter cell.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name given by the user to the data filter cell.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteDataCellsFilterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteDataCellsFilterInput {
+                table_catalog_id: self.table_catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                name: self.name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteDataCellsFilterInputOperationOutputAlias = crate::operation::DeleteDataCellsFilter;
+#[doc(hidden)]
+pub type DeleteDataCellsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteDataCellsFilterInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDataCellsFilter`](crate::operation::DeleteDataCellsFilter)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteDataCellsFilter,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteDataCellsFilterInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/DeleteDataCellsFilter").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteDataCellsFilterInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteDataCellsFilterInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_data_cells_filter(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDataCellsFilter::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDataCellsFilter",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput)
+    pub fn builder() -> crate::input::delete_data_cells_filter_input::Builder {
+        crate::input::delete_data_cells_filter_input::Builder::default()
+    }
+}
+
 /// See [`DeleteLfTagInput`](crate::input::DeleteLfTagInput)
 pub mod delete_lf_tag_input {
     /// A builder for [`DeleteLfTagInput`](crate::input::DeleteLfTagInput)
@@ -747,22 +1378,22 @@ pub mod delete_lf_tag_input {
         pub(crate) tag_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The key-name for the tag to delete.</p>
+        /// <p>The key-name for the LF-tag to delete.</p>
         pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.tag_key = Some(input.into());
             self
         }
-        /// <p>The key-name for the tag to delete.</p>
+        /// <p>The key-name for the LF-tag to delete.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
@@ -803,7 +1434,7 @@ impl DeleteLfTagInput {
             _input: &crate::input::DeleteLfTagInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/DeleteLFTag").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -826,12 +1457,7 @@ impl DeleteLfTagInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.DeleteLFTag",
+                "application/json",
             );
             Ok(builder)
         }
@@ -902,6 +1528,220 @@ impl DeleteLfTagInput {
     }
 }
 
+/// See [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput)
+pub mod delete_objects_on_cancel_input {
+    /// A builder for [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) objects: std::option::Option<std::vec::Vec<crate::model::VirtualObject>>,
+    }
+    impl Builder {
+        /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>The database that contains the governed table.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The database that contains the governed table.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>The name of the governed table.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the governed table.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>ID of the transaction that the writes occur in.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>ID of the transaction that the writes occur in.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// Appends an item to `objects`.
+        ///
+        /// To override the contents of this collection use [`set_objects`](Self::set_objects).
+        ///
+        /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+        pub fn objects(mut self, input: impl Into<crate::model::VirtualObject>) -> Self {
+            let mut v = self.objects.unwrap_or_default();
+            v.push(input.into());
+            self.objects = Some(v);
+            self
+        }
+        /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+        pub fn set_objects(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VirtualObject>>,
+        ) -> Self {
+            self.objects = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteObjectsOnCancelInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteObjectsOnCancelInput {
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                transaction_id: self.transaction_id,
+                objects: self.objects,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteObjectsOnCancelInputOperationOutputAlias = crate::operation::DeleteObjectsOnCancel;
+#[doc(hidden)]
+pub type DeleteObjectsOnCancelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteObjectsOnCancelInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteObjectsOnCancel`](crate::operation::DeleteObjectsOnCancel)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteObjectsOnCancel,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteObjectsOnCancelInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/DeleteObjectsOnCancel").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteObjectsOnCancelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteObjectsOnCancelInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_objects_on_cancel(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteObjectsOnCancel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteObjectsOnCancel",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput)
+    pub fn builder() -> crate::input::delete_objects_on_cancel_input::Builder {
+        crate::input::delete_objects_on_cancel_input::Builder::default()
+    }
+}
+
 /// See [`DeregisterResourceInput`](crate::input::DeregisterResourceInput)
 pub mod deregister_resource_input {
     /// A builder for [`DeregisterResourceInput`](crate::input::DeregisterResourceInput)
@@ -956,7 +1796,7 @@ impl DeregisterResourceInput {
             _input: &crate::input::DeregisterResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/DeregisterResource").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -979,12 +1819,7 @@ impl DeregisterResourceInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.DeregisterResource",
+                "application/json",
             );
             Ok(builder)
         }
@@ -1110,7 +1945,7 @@ impl DescribeResourceInput {
             _input: &crate::input::DescribeResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/DescribeResource").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1133,12 +1968,7 @@ impl DescribeResourceInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.DescribeResource",
+                "application/json",
             );
             Ok(builder)
         }
@@ -1210,6 +2040,310 @@ impl DescribeResourceInput {
     }
 }
 
+/// See [`DescribeTransactionInput`](crate::input::DescribeTransactionInput)
+pub mod describe_transaction_input {
+    /// A builder for [`DescribeTransactionInput`](crate::input::DescribeTransactionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The transaction for which to return status.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction for which to return status.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTransactionInput`](crate::input::DescribeTransactionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeTransactionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeTransactionInput {
+                transaction_id: self.transaction_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeTransactionInputOperationOutputAlias = crate::operation::DescribeTransaction;
+#[doc(hidden)]
+pub type DescribeTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeTransactionInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeTransaction`](crate::operation::DescribeTransaction)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeTransaction,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeTransactionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/DescribeTransaction").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeTransactionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeTransactionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_transaction(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTransaction::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTransaction",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeTransactionInput`](crate::input::DescribeTransactionInput)
+    pub fn builder() -> crate::input::describe_transaction_input::Builder {
+        crate::input::describe_transaction_input::Builder::default()
+    }
+}
+
+/// See [`ExtendTransactionInput`](crate::input::ExtendTransactionInput)
+pub mod extend_transaction_input {
+    /// A builder for [`ExtendTransactionInput`](crate::input::ExtendTransactionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The transaction to extend.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction to extend.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExtendTransactionInput`](crate::input::ExtendTransactionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ExtendTransactionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ExtendTransactionInput {
+                transaction_id: self.transaction_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ExtendTransactionInputOperationOutputAlias = crate::operation::ExtendTransaction;
+#[doc(hidden)]
+pub type ExtendTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ExtendTransactionInput {
+    /// Consumes the builder and constructs an Operation<[`ExtendTransaction`](crate::operation::ExtendTransaction)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ExtendTransaction,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ExtendTransactionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/ExtendTransaction").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ExtendTransactionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ExtendTransactionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_extend_transaction(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExtendTransaction::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExtendTransaction",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ExtendTransactionInput`](crate::input::ExtendTransactionInput)
+    pub fn builder() -> crate::input::extend_transaction_input::Builder {
+        crate::input::extend_transaction_input::Builder::default()
+    }
+}
+
 /// See [`GetDataLakeSettingsInput`](crate::input::GetDataLakeSettingsInput)
 pub mod get_data_lake_settings_input {
     /// A builder for [`GetDataLakeSettingsInput`](crate::input::GetDataLakeSettingsInput)
@@ -1219,12 +2353,12 @@ pub mod get_data_lake_settings_input {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -1264,7 +2398,7 @@ impl GetDataLakeSettingsInput {
             _input: &crate::input::GetDataLakeSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/GetDataLakeSettings").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1287,12 +2421,7 @@ impl GetDataLakeSettingsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.GetDataLakeSettings",
+                "application/json",
             );
             Ok(builder)
         }
@@ -1378,12 +2507,12 @@ pub mod get_effective_permissions_for_path_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -1457,7 +2586,7 @@ impl GetEffectivePermissionsForPathInput {
             _input: &crate::input::GetEffectivePermissionsForPathInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/GetEffectivePermissionsForPath").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1480,12 +2609,7 @@ impl GetEffectivePermissionsForPathInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.GetEffectivePermissionsForPath",
+                "application/json",
             );
             Ok(builder)
         }
@@ -1568,22 +2692,22 @@ pub mod get_lf_tag_input {
         pub(crate) tag_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The key-name for the tag.</p>
+        /// <p>The key-name for the LF-tag.</p>
         pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.tag_key = Some(input.into());
             self
         }
-        /// <p>The key-name for the tag.</p>
+        /// <p>The key-name for the LF-tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
@@ -1622,7 +2746,7 @@ impl GetLfTagInput {
             _input: &crate::input::GetLfTagInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/GetLFTag").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1645,12 +2769,7 @@ impl GetLfTagInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.GetLFTag",
+                "application/json",
             );
             Ok(builder)
         }
@@ -1719,6 +2838,308 @@ impl GetLfTagInput {
     }
 }
 
+/// See [`GetQueryStateInput`](crate::input::GetQueryStateInput)
+pub mod get_query_state_input {
+    /// A builder for [`GetQueryStateInput`](crate::input::GetQueryStateInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the plan query operation.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetQueryStateInput`](crate::input::GetQueryStateInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetQueryStateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetQueryStateInput {
+                query_id: self.query_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetQueryStateInputOperationOutputAlias = crate::operation::GetQueryState;
+#[doc(hidden)]
+pub type GetQueryStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetQueryStateInput {
+    /// Consumes the builder and constructs an Operation<[`GetQueryState`](crate::operation::GetQueryState)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetQueryState,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetQueryStateInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/GetQueryState").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetQueryStateInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetQueryStateInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_query_state(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("query-")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetQueryState::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetQueryState",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetQueryStateInput`](crate::input::GetQueryStateInput)
+    pub fn builder() -> crate::input::get_query_state_input::Builder {
+        crate::input::get_query_state_input::Builder::default()
+    }
+}
+
+/// See [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput)
+pub mod get_query_statistics_input {
+    /// A builder for [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the plan query operation.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetQueryStatisticsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetQueryStatisticsInput {
+                query_id: self.query_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetQueryStatisticsInputOperationOutputAlias = crate::operation::GetQueryStatistics;
+#[doc(hidden)]
+pub type GetQueryStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetQueryStatisticsInput {
+    /// Consumes the builder and constructs an Operation<[`GetQueryStatistics`](crate::operation::GetQueryStatistics)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetQueryStatistics,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetQueryStatisticsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/GetQueryStatistics").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetQueryStatisticsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetQueryStatisticsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_query_statistics(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("query-")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetQueryStatistics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetQueryStatistics",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput)
+    pub fn builder() -> crate::input::get_query_statistics_input::Builder {
+        crate::input::get_query_statistics_input::Builder::default()
+    }
+}
+
 /// See [`GetResourceLfTagsInput`](crate::input::GetResourceLfTagsInput)
 pub mod get_resource_lf_tags_input {
     /// A builder for [`GetResourceLfTagsInput`](crate::input::GetResourceLfTagsInput)
@@ -1730,32 +3151,32 @@ pub mod get_resource_lf_tags_input {
         pub(crate) show_assigned_lf_tags: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The resource for which you want to return tags.</p>
+        /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
         pub fn resource(mut self, input: crate::model::Resource) -> Self {
             self.resource = Some(input);
             self
         }
-        /// <p>The resource for which you want to return tags.</p>
+        /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.resource = input;
             self
         }
-        /// <p>Indicates whether to show the assigned tags.</p>
+        /// <p>Indicates whether to show the assigned LF-tags.</p>
         pub fn show_assigned_lf_tags(mut self, input: bool) -> Self {
             self.show_assigned_lf_tags = Some(input);
             self
         }
-        /// <p>Indicates whether to show the assigned tags.</p>
+        /// <p>Indicates whether to show the assigned LF-tags.</p>
         pub fn set_show_assigned_lf_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.show_assigned_lf_tags = input;
             self
@@ -1797,7 +3218,7 @@ impl GetResourceLfTagsInput {
             _input: &crate::input::GetResourceLfTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/GetResourceLFTags").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1820,12 +3241,7 @@ impl GetResourceLfTagsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.GetResourceLFTags",
+                "application/json",
             );
             Ok(builder)
         }
@@ -1897,6 +3313,625 @@ impl GetResourceLfTagsInput {
     }
 }
 
+/// See [`GetTableObjectsInput`](crate::input::GetTableObjectsInput)
+pub mod get_table_objects_input {
+    /// A builder for [`GetTableObjectsInput`](crate::input::GetTableObjectsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) partition_predicate: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>The database containing the governed table.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The database containing the governed table.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>The governed table for which to retrieve objects.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>The governed table for which to retrieve objects.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.query_as_of_time = Some(input);
+            self
+        }
+        /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+        pub fn set_query_as_of_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.query_as_of_time = input;
+            self
+        }
+        /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
+        /// </li>
+        /// <li>
+        /// <p>The logical operators supported are: AND</p>
+        /// </li>
+        /// <li>
+        /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
+        /// </li>
+        /// </ul>
+        pub fn partition_predicate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partition_predicate = Some(input.into());
+            self
+        }
+        /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
+        /// </li>
+        /// <li>
+        /// <p>The logical operators supported are: AND</p>
+        /// </li>
+        /// <li>
+        /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_partition_predicate(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partition_predicate = input;
+            self
+        }
+        /// <p>Specifies how many values to return in a page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Specifies how many values to return in a page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTableObjectsInput`](crate::input::GetTableObjectsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetTableObjectsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetTableObjectsInput {
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                transaction_id: self.transaction_id,
+                query_as_of_time: self.query_as_of_time,
+                partition_predicate: self.partition_predicate,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetTableObjectsInputOperationOutputAlias = crate::operation::GetTableObjects;
+#[doc(hidden)]
+pub type GetTableObjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetTableObjectsInput {
+    /// Consumes the builder and constructs an Operation<[`GetTableObjects`](crate::operation::GetTableObjects)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetTableObjects,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetTableObjectsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/GetTableObjects").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetTableObjectsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetTableObjectsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_table_objects(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTableObjects::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTableObjects",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetTableObjectsInput`](crate::input::GetTableObjectsInput)
+    pub fn builder() -> crate::input::get_table_objects_input::Builder {
+        crate::input::get_table_objects_input::Builder::default()
+    }
+}
+
+/// See [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput)
+pub mod get_work_unit_results_input {
+    /// A builder for [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_id: std::option::Option<std::string::String>,
+        pub(crate) work_unit_id: std::option::Option<i64>,
+        pub(crate) work_unit_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the plan query operation for which to get results.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the plan query operation for which to get results.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
+        pub fn work_unit_id(mut self, input: i64) -> Self {
+            self.work_unit_id = Some(input);
+            self
+        }
+        /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
+        pub fn set_work_unit_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.work_unit_id = input;
+            self
+        }
+        /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
+        pub fn work_unit_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.work_unit_token = Some(input.into());
+            self
+        }
+        /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
+        pub fn set_work_unit_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.work_unit_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetWorkUnitResultsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetWorkUnitResultsInput {
+                query_id: self.query_id,
+                work_unit_id: self.work_unit_id.unwrap_or_default(),
+                work_unit_token: self.work_unit_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetWorkUnitResultsInputOperationOutputAlias = crate::operation::GetWorkUnitResults;
+#[doc(hidden)]
+pub type GetWorkUnitResultsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetWorkUnitResultsInput {
+    /// Consumes the builder and constructs an Operation<[`GetWorkUnitResults`](crate::operation::GetWorkUnitResults)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetWorkUnitResults,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetWorkUnitResultsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/GetWorkUnitResults").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetWorkUnitResultsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetWorkUnitResultsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_work_unit_results(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("data-")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetWorkUnitResults::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetWorkUnitResults",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput)
+    pub fn builder() -> crate::input::get_work_unit_results_input::Builder {
+        crate::input::get_work_unit_results_input::Builder::default()
+    }
+}
+
+/// See [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput)
+pub mod get_work_units_input {
+    /// A builder for [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) page_size: std::option::Option<i32>,
+        pub(crate) query_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
+            self
+        }
+        /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
+            self
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the plan query operation.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetWorkUnitsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetWorkUnitsInput {
+                next_token: self.next_token,
+                page_size: self.page_size,
+                query_id: self.query_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetWorkUnitsInputOperationOutputAlias = crate::operation::GetWorkUnits;
+#[doc(hidden)]
+pub type GetWorkUnitsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetWorkUnitsInput {
+    /// Consumes the builder and constructs an Operation<[`GetWorkUnits`](crate::operation::GetWorkUnits)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetWorkUnits,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetWorkUnitsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/GetWorkUnits").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetWorkUnitsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetWorkUnitsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_work_units(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("query-")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetWorkUnits::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetWorkUnits",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput)
+    pub fn builder() -> crate::input::get_work_units_input::Builder {
+        crate::input::get_work_units_input::Builder::default()
+    }
+}
+
 /// See [`GrantPermissionsInput`](crate::input::GrantPermissionsInput)
 pub mod grant_permissions_input {
     /// A builder for [`GrantPermissionsInput`](crate::input::GrantPermissionsInput)
@@ -1911,12 +3946,12 @@ pub mod grant_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::Permission>>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -1936,12 +3971,12 @@ pub mod grant_permissions_input {
             self.principal = input;
             self
         }
-        /// <p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>
+        /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
         pub fn resource(mut self, input: crate::model::Resource) -> Self {
             self.resource = Some(input);
             self
         }
-        /// <p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>
+        /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.resource = input;
             self
@@ -1950,14 +3985,14 @@ pub mod grant_permissions_input {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>
+        /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
         pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
-        /// <p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>
+        /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -2026,7 +4061,7 @@ impl GrantPermissionsInput {
             _input: &crate::input::GrantPermissionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/GrantPermissions").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2049,12 +4084,7 @@ impl GrantPermissionsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.GrantPermissions",
+                "application/json",
             );
             Ok(builder)
         }
@@ -2126,6 +4156,184 @@ impl GrantPermissionsInput {
     }
 }
 
+/// See [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput)
+pub mod list_data_cells_filter_input {
+    /// A builder for [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table: std::option::Option<crate::model::TableResource>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A table in the Glue Data Catalog.</p>
+        pub fn table(mut self, input: crate::model::TableResource) -> Self {
+            self.table = Some(input);
+            self
+        }
+        /// <p>A table in the Glue Data Catalog.</p>
+        pub fn set_table(
+            mut self,
+            input: std::option::Option<crate::model::TableResource>,
+        ) -> Self {
+            self.table = input;
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum size of the response.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum size of the response.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListDataCellsFilterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListDataCellsFilterInput {
+                table: self.table,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListDataCellsFilterInputOperationOutputAlias = crate::operation::ListDataCellsFilter;
+#[doc(hidden)]
+pub type ListDataCellsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListDataCellsFilterInput {
+    /// Consumes the builder and constructs an Operation<[`ListDataCellsFilter`](crate::operation::ListDataCellsFilter)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDataCellsFilter,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListDataCellsFilterInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/ListDataCellsFilter").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListDataCellsFilterInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListDataCellsFilterInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_data_cells_filter(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDataCellsFilter::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDataCellsFilter",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput)
+    pub fn builder() -> crate::input::list_data_cells_filter_input::Builder {
+        crate::input::list_data_cells_filter_input::Builder::default()
+    }
+}
+
 /// See [`ListLfTagsInput`](crate::input::ListLfTagsInput)
 pub mod list_lf_tags_input {
     /// A builder for [`ListLfTagsInput`](crate::input::ListLfTagsInput)
@@ -2138,22 +4346,22 @@ pub mod list_lf_tags_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>If resource share type is <code>ALL</code>, returns both in-account tags and shared tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share tags that the requester can view. If no resource share type is passed, lists tags in the given catalog ID that the requester has permission to view.</p>
+        /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
         pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
             self.resource_share_type = Some(input);
             self
         }
-        /// <p>If resource share type is <code>ALL</code>, returns both in-account tags and shared tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share tags that the requester can view. If no resource share type is passed, lists tags in the given catalog ID that the requester has permission to view.</p>
+        /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
         pub fn set_resource_share_type(
             mut self,
             input: std::option::Option<crate::model::ResourceShareType>,
@@ -2219,7 +4427,7 @@ impl ListLfTagsInput {
             _input: &crate::input::ListLfTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/ListLFTags").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2242,12 +4450,7 @@ impl ListLfTagsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.ListLFTags",
+                "application/json",
             );
             Ok(builder)
         }
@@ -2330,14 +4533,15 @@ pub mod list_permissions_input {
         pub(crate) resource: std::option::Option<crate::model::Resource>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) include_related: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -2400,6 +4604,19 @@ pub mod list_permissions_input {
             self.max_results = input;
             self
         }
+        /// <p>Indicates that related permissions should be included in the results.</p>
+        pub fn include_related(mut self, input: impl Into<std::string::String>) -> Self {
+            self.include_related = Some(input.into());
+            self
+        }
+        /// <p>Indicates that related permissions should be included in the results.</p>
+        pub fn set_include_related(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.include_related = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::input::ListPermissionsInput)
         pub fn build(
             self,
@@ -2414,6 +4631,7 @@ pub mod list_permissions_input {
                 resource: self.resource,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                include_related: self.include_related,
             })
         }
     }
@@ -2440,7 +4658,7 @@ impl ListPermissionsInput {
             _input: &crate::input::ListPermissionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/ListPermissions").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2463,12 +4681,7 @@ impl ListPermissionsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.ListPermissions",
+                "application/json",
             );
             Ok(builder)
         }
@@ -2631,7 +4844,7 @@ impl ListResourcesInput {
             _input: &crate::input::ListResourcesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/ListResources").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2654,12 +4867,7 @@ impl ListResourcesInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.ListResources",
+                "application/json",
             );
             Ok(builder)
         }
@@ -2730,6 +4938,411 @@ impl ListResourcesInput {
     }
 }
 
+/// See [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput)
+pub mod list_table_storage_optimizers_input {
+    /// A builder for [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) storage_optimizer_type: std::option::Option<crate::model::OptimizerType>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Catalog ID of the table.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The Catalog ID of the table.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>Name of the database where the table is present.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the database where the table is present.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>Name of the table.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the table.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+        pub fn storage_optimizer_type(mut self, input: crate::model::OptimizerType) -> Self {
+            self.storage_optimizer_type = Some(input);
+            self
+        }
+        /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+        pub fn set_storage_optimizer_type(
+            mut self,
+            input: std::option::Option<crate::model::OptimizerType>,
+        ) -> Self {
+            self.storage_optimizer_type = input;
+            self
+        }
+        /// <p>The number of storage optimizers to return on each call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The number of storage optimizers to return on each call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A continuation token, if this is a continuation call.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTableStorageOptimizersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTableStorageOptimizersInput {
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                storage_optimizer_type: self.storage_optimizer_type,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTableStorageOptimizersInputOperationOutputAlias =
+    crate::operation::ListTableStorageOptimizers;
+#[doc(hidden)]
+pub type ListTableStorageOptimizersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListTableStorageOptimizersInput {
+    /// Consumes the builder and constructs an Operation<[`ListTableStorageOptimizers`](crate::operation::ListTableStorageOptimizers)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTableStorageOptimizers,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListTableStorageOptimizersInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/ListTableStorageOptimizers").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTableStorageOptimizersInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTableStorageOptimizersInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_table_storage_optimizers(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTableStorageOptimizers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTableStorageOptimizers",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput)
+    pub fn builder() -> crate::input::list_table_storage_optimizers_input::Builder {
+        crate::input::list_table_storage_optimizers_input::Builder::default()
+    }
+}
+
+/// See [`ListTransactionsInput`](crate::input::ListTransactionsInput)
+pub mod list_transactions_input {
+    /// A builder for [`ListTransactionsInput`](crate::input::ListTransactionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) status_filter: std::option::Option<crate::model::TransactionStatusFilter>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+        pub fn status_filter(mut self, input: crate::model::TransactionStatusFilter) -> Self {
+            self.status_filter = Some(input);
+            self
+        }
+        /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+        pub fn set_status_filter(
+            mut self,
+            input: std::option::Option<crate::model::TransactionStatusFilter>,
+        ) -> Self {
+            self.status_filter = input;
+            self
+        }
+        /// <p>The maximum number of transactions to return in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of transactions to return in a single call.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTransactionsInput`](crate::input::ListTransactionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTransactionsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTransactionsInput {
+                catalog_id: self.catalog_id,
+                status_filter: self.status_filter,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTransactionsInputOperationOutputAlias = crate::operation::ListTransactions;
+#[doc(hidden)]
+pub type ListTransactionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListTransactionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListTransactions`](crate::operation::ListTransactions)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTransactions,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListTransactionsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/ListTransactions").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTransactionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTransactionsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_transactions(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTransactions::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTransactions",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListTransactionsInput`](crate::input::ListTransactionsInput)
+    pub fn builder() -> crate::input::list_transactions_input::Builder {
+        crate::input::list_transactions_input::Builder::default()
+    }
+}
+
 /// See [`PutDataLakeSettingsInput`](crate::input::PutDataLakeSettingsInput)
 pub mod put_data_lake_settings_input {
     /// A builder for [`PutDataLakeSettingsInput`](crate::input::PutDataLakeSettingsInput)
@@ -2740,22 +5353,22 @@ pub mod put_data_lake_settings_input {
         pub(crate) data_lake_settings: std::option::Option<crate::model::DataLakeSettings>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
+        /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
         pub fn data_lake_settings(mut self, input: crate::model::DataLakeSettings) -> Self {
             self.data_lake_settings = Some(input);
             self
         }
-        /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
+        /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
         pub fn set_data_lake_settings(
             mut self,
             input: std::option::Option<crate::model::DataLakeSettings>,
@@ -2799,7 +5412,7 @@ impl PutDataLakeSettingsInput {
             _input: &crate::input::PutDataLakeSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/PutDataLakeSettings").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2822,12 +5435,7 @@ impl PutDataLakeSettingsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.PutDataLakeSettings",
+                "application/json",
             );
             Ok(builder)
         }
@@ -2922,14 +5530,14 @@ pub mod register_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+        /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
         ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn use_service_linked_role(mut self, input: bool) -> Self {
             self.use_service_linked_role = Some(input);
             self
         }
-        /// <p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+        /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
         ///
         /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
         pub fn set_use_service_linked_role(mut self, input: std::option::Option<bool>) -> Self {
@@ -2983,7 +5591,7 @@ impl RegisterResourceInput {
             _input: &crate::input::RegisterResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/RegisterResource").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3006,12 +5614,7 @@ impl RegisterResourceInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.RegisterResource",
+                "application/json",
             );
             Ok(builder)
         }
@@ -3094,22 +5697,22 @@ pub mod remove_lf_tags_from_resource_input {
         pub(crate) lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The resource where you want to remove a tag.</p>
+        /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
         pub fn resource(mut self, input: crate::model::Resource) -> Self {
             self.resource = Some(input);
             self
         }
-        /// <p>The resource where you want to remove a tag.</p>
+        /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.resource = input;
             self
@@ -3118,14 +5721,14 @@ pub mod remove_lf_tags_from_resource_input {
         ///
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
-        /// <p>The tags to be removed from the resource.</p>
+        /// <p>The LF-tags to be removed from the resource.</p>
         pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
             v.push(input.into());
             self.lf_tags = Some(v);
             self
         }
-        /// <p>The tags to be removed from the resource.</p>
+        /// <p>The LF-tags to be removed from the resource.</p>
         pub fn set_lf_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -3171,7 +5774,7 @@ impl RemoveLfTagsFromResourceInput {
             _input: &crate::input::RemoveLfTagsFromResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/RemoveLFTagsFromResource").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3194,12 +5797,7 @@ impl RemoveLfTagsFromResourceInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.RemoveLFTagsFromResource",
+                "application/json",
             );
             Ok(builder)
         }
@@ -3287,12 +5885,12 @@ pub mod revoke_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::Permission>>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -3402,7 +6000,7 @@ impl RevokePermissionsInput {
             _input: &crate::input::RevokePermissionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/RevokePermissions").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3425,12 +6023,7 @@ impl RevokePermissionsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.RevokePermissions",
+                "application/json",
             );
             Ok(builder)
         }
@@ -3534,12 +6127,12 @@ pub mod search_databases_by_lf_tags_input {
             self.max_results = input;
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -3602,7 +6195,7 @@ impl SearchDatabasesByLfTagsInput {
             _input: &crate::input::SearchDatabasesByLfTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/SearchDatabasesByLFTags").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3625,12 +6218,7 @@ impl SearchDatabasesByLfTagsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.SearchDatabasesByLFTags",
+                "application/json",
             );
             Ok(builder)
         }
@@ -3736,12 +6324,12 @@ pub mod search_tables_by_lf_tags_input {
             self.max_results = input;
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -3803,7 +6391,7 @@ impl SearchTablesByLfTagsInput {
             _input: &crate::input::SearchTablesByLfTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/SearchTablesByLFTags").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3826,12 +6414,7 @@ impl SearchTablesByLfTagsInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.SearchTablesByLFTags",
+                "application/json",
             );
             Ok(builder)
         }
@@ -3905,6 +6488,324 @@ impl SearchTablesByLfTagsInput {
     }
 }
 
+/// See [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput)
+pub mod start_query_planning_input {
+    /// A builder for [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_planning_context: std::option::Option<crate::model::QueryPlanningContext>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A structure containing information about the query plan.</p>
+        pub fn query_planning_context(mut self, input: crate::model::QueryPlanningContext) -> Self {
+            self.query_planning_context = Some(input);
+            self
+        }
+        /// <p>A structure containing information about the query plan.</p>
+        pub fn set_query_planning_context(
+            mut self,
+            input: std::option::Option<crate::model::QueryPlanningContext>,
+        ) -> Self {
+            self.query_planning_context = input;
+            self
+        }
+        /// <p>A PartiQL query statement used as an input to the planner service.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        /// <p>A PartiQL query statement used as an input to the planner service.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartQueryPlanningInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartQueryPlanningInput {
+                query_planning_context: self.query_planning_context,
+                query_string: self.query_string,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartQueryPlanningInputOperationOutputAlias = crate::operation::StartQueryPlanning;
+#[doc(hidden)]
+pub type StartQueryPlanningInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartQueryPlanningInput {
+    /// Consumes the builder and constructs an Operation<[`StartQueryPlanning`](crate::operation::StartQueryPlanning)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartQueryPlanning,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartQueryPlanningInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/StartQueryPlanning").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartQueryPlanningInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartQueryPlanningInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_query_planning(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("query-")?;
+        request.properties_mut().insert(endpoint_prefix);
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartQueryPlanning::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartQueryPlanning",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput)
+    pub fn builder() -> crate::input::start_query_planning_input::Builder {
+        crate::input::start_query_planning_input::Builder::default()
+    }
+}
+
+/// See [`StartTransactionInput`](crate::input::StartTransactionInput)
+pub mod start_transaction_input {
+    /// A builder for [`StartTransactionInput`](crate::input::StartTransactionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transaction_type: std::option::Option<crate::model::TransactionType>,
+    }
+    impl Builder {
+        /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+        pub fn transaction_type(mut self, input: crate::model::TransactionType) -> Self {
+            self.transaction_type = Some(input);
+            self
+        }
+        /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+        pub fn set_transaction_type(
+            mut self,
+            input: std::option::Option<crate::model::TransactionType>,
+        ) -> Self {
+            self.transaction_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartTransactionInput`](crate::input::StartTransactionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartTransactionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartTransactionInput {
+                transaction_type: self.transaction_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartTransactionInputOperationOutputAlias = crate::operation::StartTransaction;
+#[doc(hidden)]
+pub type StartTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartTransactionInput {
+    /// Consumes the builder and constructs an Operation<[`StartTransaction`](crate::operation::StartTransaction)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartTransaction,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartTransactionInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/StartTransaction").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartTransactionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartTransactionInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_transaction(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartTransaction::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartTransaction",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartTransactionInput`](crate::input::StartTransactionInput)
+    pub fn builder() -> crate::input::start_transaction_input::Builder {
+        crate::input::start_transaction_input::Builder::default()
+    }
+}
+
 /// See [`UpdateLfTagInput`](crate::input::UpdateLfTagInput)
 pub mod update_lf_tag_input {
     /// A builder for [`UpdateLfTagInput`](crate::input::UpdateLfTagInput)
@@ -3917,22 +6818,22 @@ pub mod update_lf_tag_input {
         pub(crate) tag_values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The key-name for the tag for which to add or delete values.</p>
+        /// <p>The key-name for the LF-tag for which to add or delete values.</p>
         pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.tag_key = Some(input.into());
             self
         }
-        /// <p>The key-name for the tag for which to add or delete values.</p>
+        /// <p>The key-name for the LF-tag for which to add or delete values.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
@@ -3941,14 +6842,14 @@ pub mod update_lf_tag_input {
         ///
         /// To override the contents of this collection use [`set_tag_values_to_delete`](Self::set_tag_values_to_delete).
         ///
-        /// <p>A list of tag values to delete from the tag.</p>
+        /// <p>A list of LF-tag values to delete from the LF-tag.</p>
         pub fn tag_values_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values_to_delete.unwrap_or_default();
             v.push(input.into());
             self.tag_values_to_delete = Some(v);
             self
         }
-        /// <p>A list of tag values to delete from the tag.</p>
+        /// <p>A list of LF-tag values to delete from the LF-tag.</p>
         pub fn set_tag_values_to_delete(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3960,14 +6861,14 @@ pub mod update_lf_tag_input {
         ///
         /// To override the contents of this collection use [`set_tag_values_to_add`](Self::set_tag_values_to_add).
         ///
-        /// <p>A list of tag values to add from the tag.</p>
+        /// <p>A list of LF-tag values to add from the LF-tag.</p>
         pub fn tag_values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values_to_add.unwrap_or_default();
             v.push(input.into());
             self.tag_values_to_add = Some(v);
             self
         }
-        /// <p>A list of tag values to add from the tag.</p>
+        /// <p>A list of LF-tag values to add from the LF-tag.</p>
         pub fn set_tag_values_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4013,7 +6914,7 @@ impl UpdateLfTagInput {
             _input: &crate::input::UpdateLfTagInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/UpdateLFTag").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4036,12 +6937,7 @@ impl UpdateLfTagInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.UpdateLFTag",
+                "application/json",
             );
             Ok(builder)
         }
@@ -4122,12 +7018,12 @@ pub mod update_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The new role to use for the given resource registered in AWS Lake Formation.</p>
+        /// <p>The new role to use for the given resource registered in Lake Formation.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The new role to use for the given resource registered in AWS Lake Formation.</p>
+        /// <p>The new role to use for the given resource registered in Lake Formation.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4178,7 +7074,7 @@ impl UpdateResourceInput {
             _input: &crate::input::UpdateResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            write!(output, "/").expect("formatting should succeed");
+            write!(output, "/UpdateResource").expect("formatting should succeed");
             Ok(())
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4201,12 +7097,7 @@ impl UpdateResourceInput {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSLakeFormation.UpdateResource",
+                "application/json",
             );
             Ok(builder)
         }
@@ -4278,17 +7169,546 @@ impl UpdateResourceInput {
     }
 }
 
+/// See [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput)
+pub mod update_table_objects_input {
+    /// A builder for [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) transaction_id: std::option::Option<std::string::String>,
+        pub(crate) write_operations:
+            std::option::Option<std::vec::Vec<crate::model::WriteOperation>>,
+    }
+    impl Builder {
+        /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>The database containing the governed table to update.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>The database containing the governed table to update.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>The governed table to update.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>The governed table to update.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// <p>The transaction at which to do the write.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
+            self
+        }
+        /// <p>The transaction at which to do the write.</p>
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
+            self
+        }
+        /// Appends an item to `write_operations`.
+        ///
+        /// To override the contents of this collection use [`set_write_operations`](Self::set_write_operations).
+        ///
+        /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+        pub fn write_operations(mut self, input: impl Into<crate::model::WriteOperation>) -> Self {
+            let mut v = self.write_operations.unwrap_or_default();
+            v.push(input.into());
+            self.write_operations = Some(v);
+            self
+        }
+        /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+        pub fn set_write_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::WriteOperation>>,
+        ) -> Self {
+            self.write_operations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateTableObjectsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateTableObjectsInput {
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                transaction_id: self.transaction_id,
+                write_operations: self.write_operations,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateTableObjectsInputOperationOutputAlias = crate::operation::UpdateTableObjects;
+#[doc(hidden)]
+pub type UpdateTableObjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateTableObjectsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateTableObjects`](crate::operation::UpdateTableObjects)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateTableObjects,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateTableObjectsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/UpdateTableObjects").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateTableObjectsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateTableObjectsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_table_objects(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateTableObjects::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateTableObjects",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput)
+    pub fn builder() -> crate::input::update_table_objects_input::Builder {
+        crate::input::update_table_objects_input::Builder::default()
+    }
+}
+
+/// See [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput)
+pub mod update_table_storage_optimizer_input {
+    /// A builder for [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) storage_optimizer_config: std::option::Option<
+            std::collections::HashMap<
+                crate::model::OptimizerType,
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        >,
+    }
+    impl Builder {
+        /// <p>The Catalog ID of the table.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        /// <p>The Catalog ID of the table.</p>
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        /// <p>Name of the database where the table is present.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the database where the table is present.</p>
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        /// <p>Name of the table for which to enable the storage optimizer.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        /// <p>Name of the table for which to enable the storage optimizer.</p>
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// Adds a key-value pair to `storage_optimizer_config`.
+        ///
+        /// To override the contents of this collection use [`set_storage_optimizer_config`](Self::set_storage_optimizer_config).
+        ///
+        /// <p>Name of the table for which to enable the storage optimizer.</p>
+        pub fn storage_optimizer_config(
+            mut self,
+            k: impl Into<crate::model::OptimizerType>,
+            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+        ) -> Self {
+            let mut hash_map = self.storage_optimizer_config.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.storage_optimizer_config = Some(hash_map);
+            self
+        }
+        /// <p>Name of the table for which to enable the storage optimizer.</p>
+        pub fn set_storage_optimizer_config(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::OptimizerType,
+                    std::collections::HashMap<std::string::String, std::string::String>,
+                >,
+            >,
+        ) -> Self {
+            self.storage_optimizer_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateTableStorageOptimizerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateTableStorageOptimizerInput {
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                storage_optimizer_config: self.storage_optimizer_config,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateTableStorageOptimizerInputOperationOutputAlias =
+    crate::operation::UpdateTableStorageOptimizer;
+#[doc(hidden)]
+pub type UpdateTableStorageOptimizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateTableStorageOptimizerInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateTableStorageOptimizer`](crate::operation::UpdateTableStorageOptimizer)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateTableStorageOptimizer,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateTableStorageOptimizerInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/UpdateTableStorageOptimizer").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateTableStorageOptimizerInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateTableStorageOptimizerInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_table_storage_optimizer(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateTableStorageOptimizer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateTableStorageOptimizer",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput)
+    pub fn builder() -> crate::input::update_table_storage_optimizer_input::Builder {
+        crate::input::update_table_storage_optimizer_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateTableStorageOptimizerInput {
+    /// <p>The Catalog ID of the table.</p>
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>Name of the database where the table is present.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    pub storage_optimizer_config: std::option::Option<
+        std::collections::HashMap<
+            crate::model::OptimizerType,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    >,
+}
+impl UpdateTableStorageOptimizerInput {
+    /// <p>The Catalog ID of the table.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>Name of the database where the table is present.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    pub fn storage_optimizer_config(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::OptimizerType,
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    > {
+        self.storage_optimizer_config.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateTableStorageOptimizerInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateTableStorageOptimizerInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("storage_optimizer_config", &self.storage_optimizer_config);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateTableObjectsInput {
+    /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>The database containing the governed table to update.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>The governed table to update.</p>
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>The transaction at which to do the write.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+    /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+    pub write_operations: std::option::Option<std::vec::Vec<crate::model::WriteOperation>>,
+}
+impl UpdateTableObjectsInput {
+    /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The database containing the governed table to update.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The governed table to update.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The transaction at which to do the write.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+    pub fn write_operations(&self) -> std::option::Option<&[crate::model::WriteOperation]> {
+        self.write_operations.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateTableObjectsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateTableObjectsInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.field("write_operations", &self.write_operations);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
-    /// <p>The new role to use for the given resource registered in AWS Lake Formation.</p>
+    /// <p>The new role to use for the given resource registered in Lake Formation.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl UpdateResourceInput {
-    /// <p>The new role to use for the given resource registered in AWS Lake Formation.</p>
+    /// <p>The new role to use for the given resource registered in Lake Formation.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -4310,29 +7730,29 @@ impl std::fmt::Debug for UpdateResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLfTagInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The key-name for the tag for which to add or delete values.</p>
+    /// <p>The key-name for the LF-tag for which to add or delete values.</p>
     pub tag_key: std::option::Option<std::string::String>,
-    /// <p>A list of tag values to delete from the tag.</p>
+    /// <p>A list of LF-tag values to delete from the LF-tag.</p>
     pub tag_values_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of tag values to add from the tag.</p>
+    /// <p>A list of LF-tag values to add from the LF-tag.</p>
     pub tag_values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLfTagInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The key-name for the tag for which to add or delete values.</p>
+    /// <p>The key-name for the LF-tag for which to add or delete values.</p>
     pub fn tag_key(&self) -> std::option::Option<&str> {
         self.tag_key.as_deref()
     }
-    /// <p>A list of tag values to delete from the tag.</p>
+    /// <p>A list of LF-tag values to delete from the LF-tag.</p>
     pub fn tag_values_to_delete(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values_to_delete.as_deref()
     }
-    /// <p>A list of tag values to add from the tag.</p>
+    /// <p>A list of LF-tag values to add from the LF-tag.</p>
     pub fn tag_values_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values_to_add.as_deref()
     }
@@ -4351,12 +7771,63 @@ impl std::fmt::Debug for UpdateLfTagInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartTransactionInput {
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    pub transaction_type: std::option::Option<crate::model::TransactionType>,
+}
+impl StartTransactionInput {
+    /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
+    pub fn transaction_type(&self) -> std::option::Option<&crate::model::TransactionType> {
+        self.transaction_type.as_ref()
+    }
+}
+impl std::fmt::Debug for StartTransactionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartTransactionInput");
+        formatter.field("transaction_type", &self.transaction_type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartQueryPlanningInput {
+    /// <p>A structure containing information about the query plan.</p>
+    pub query_planning_context: std::option::Option<crate::model::QueryPlanningContext>,
+    /// <p>A PartiQL query statement used as an input to the planner service.</p>
+    pub query_string: std::option::Option<std::string::String>,
+}
+impl StartQueryPlanningInput {
+    /// <p>A structure containing information about the query plan.</p>
+    pub fn query_planning_context(
+        &self,
+    ) -> std::option::Option<&crate::model::QueryPlanningContext> {
+        self.query_planning_context.as_ref()
+    }
+    /// <p>A PartiQL query statement used as an input to the planner service.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+}
+impl std::fmt::Debug for StartQueryPlanningInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartQueryPlanningInput");
+        formatter.field("query_planning_context", &self.query_planning_context);
+        formatter.field("query_string", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTablesByLfTagsInput {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
     pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
@@ -4370,7 +7841,7 @@ impl SearchTablesByLfTagsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -4398,7 +7869,7 @@ pub struct SearchDatabasesByLfTagsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
     pub expression: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
@@ -4412,7 +7883,7 @@ impl SearchDatabasesByLfTagsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -4436,7 +7907,7 @@ impl std::fmt::Debug for SearchDatabasesByLfTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokePermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The principal to be revoked permissions on the resource.</p>
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
@@ -4449,7 +7920,7 @@ pub struct RevokePermissionsInput {
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl RevokePermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -4492,23 +7963,23 @@ impl std::fmt::Debug for RevokePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveLfTagsFromResourceInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The resource where you want to remove a tag.</p>
+    /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
     pub resource: std::option::Option<crate::model::Resource>,
-    /// <p>The tags to be removed from the resource.</p>
+    /// <p>The LF-tags to be removed from the resource.</p>
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
 }
 impl RemoveLfTagsFromResourceInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The resource where you want to remove a tag.</p>
+    /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
     pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
         self.resource.as_ref()
     }
-    /// <p>The tags to be removed from the resource.</p>
+    /// <p>The LF-tags to be removed from the resource.</p>
     pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
         self.lf_tags.as_deref()
     }
@@ -4529,7 +8000,7 @@ impl std::fmt::Debug for RemoveLfTagsFromResourceInput {
 pub struct RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
     ///
     /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub use_service_linked_role: std::option::Option<bool>,
@@ -4541,7 +8012,7 @@ impl RegisterResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
     ///
     /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub fn use_service_linked_role(&self) -> std::option::Option<bool> {
@@ -4566,17 +8037,17 @@ impl std::fmt::Debug for RegisterResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDataLakeSettingsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
+    /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
     pub data_lake_settings: std::option::Option<crate::model::DataLakeSettings>,
 }
 impl PutDataLakeSettingsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>A structure representing a list of AWS Lake Formation principals designated as data lake administrators.</p>
+    /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
     pub fn data_lake_settings(&self) -> std::option::Option<&crate::model::DataLakeSettings> {
         self.data_lake_settings.as_ref()
     }
@@ -4586,6 +8057,104 @@ impl std::fmt::Debug for PutDataLakeSettingsInput {
         let mut formatter = f.debug_struct("PutDataLakeSettingsInput");
         formatter.field("catalog_id", &self.catalog_id);
         formatter.field("data_lake_settings", &self.data_lake_settings);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTransactionsInput {
+    /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    pub status_filter: std::option::Option<crate::model::TransactionStatusFilter>,
+    /// <p>The maximum number of transactions to return in a single call.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTransactionsInput {
+    /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    pub fn status_filter(&self) -> std::option::Option<&crate::model::TransactionStatusFilter> {
+        self.status_filter.as_ref()
+    }
+    /// <p>The maximum number of transactions to return in a single call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token if this is not the first call to retrieve transactions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTransactionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTransactionsInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("status_filter", &self.status_filter);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTableStorageOptimizersInput {
+    /// <p>The Catalog ID of the table.</p>
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>Name of the database where the table is present.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>Name of the table.</p>
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+    pub storage_optimizer_type: std::option::Option<crate::model::OptimizerType>,
+    /// <p>The number of storage optimizers to return on each call.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListTableStorageOptimizersInput {
+    /// <p>The Catalog ID of the table.</p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>Name of the database where the table is present.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Name of the table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+    pub fn storage_optimizer_type(&self) -> std::option::Option<&crate::model::OptimizerType> {
+        self.storage_optimizer_type.as_ref()
+    }
+    /// <p>The number of storage optimizers to return on each call.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTableStorageOptimizersInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTableStorageOptimizersInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("storage_optimizer_type", &self.storage_optimizer_type);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
@@ -4629,7 +8198,7 @@ impl std::fmt::Debug for ListResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>Specifies a principal to filter the permissions returned.</p>
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
@@ -4642,9 +8211,11 @@ pub struct ListPermissionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Indicates that related permissions should be included in the results.</p>
+    pub include_related: std::option::Option<std::string::String>,
 }
 impl ListPermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -4669,6 +8240,10 @@ impl ListPermissionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Indicates that related permissions should be included in the results.</p>
+    pub fn include_related(&self) -> std::option::Option<&str> {
+        self.include_related.as_deref()
+    }
 }
 impl std::fmt::Debug for ListPermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4679,6 +8254,7 @@ impl std::fmt::Debug for ListPermissionsInput {
         formatter.field("resource", &self.resource);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("include_related", &self.include_related);
         formatter.finish()
     }
 }
@@ -4687,9 +8263,9 @@ impl std::fmt::Debug for ListPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLfTagsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>If resource share type is <code>ALL</code>, returns both in-account tags and shared tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share tags that the requester can view. If no resource share type is passed, lists tags in the given catalog ID that the requester has permission to view.</p>
+    /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
     pub resource_share_type: std::option::Option<crate::model::ResourceShareType>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -4697,11 +8273,11 @@ pub struct ListLfTagsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLfTagsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>If resource share type is <code>ALL</code>, returns both in-account tags and shared tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share tags that the requester can view. If no resource share type is passed, lists tags in the given catalog ID that the requester has permission to view.</p>
+    /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
     pub fn resource_share_type(&self) -> std::option::Option<&crate::model::ResourceShareType> {
         self.resource_share_type.as_ref()
     }
@@ -4728,21 +8304,56 @@ impl std::fmt::Debug for ListLfTagsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDataCellsFilterInput {
+    /// <p>A table in the Glue Data Catalog.</p>
+    pub table: std::option::Option<crate::model::TableResource>,
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum size of the response.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListDataCellsFilterInput {
+    /// <p>A table in the Glue Data Catalog.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::TableResource> {
+        self.table.as_ref()
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of the response.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListDataCellsFilterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDataCellsFilterInput");
+        formatter.field("table", &self.table);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantPermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>
     /// <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
     pub principal: std::option::Option<crate::model::DataLakePrincipal>,
-    /// <p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>
+    /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
     pub resource: std::option::Option<crate::model::Resource>,
-    /// <p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>
+    /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
     pub permissions_with_grant_option: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl GrantPermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -4751,11 +8362,11 @@ impl GrantPermissionsInput {
     pub fn principal(&self) -> std::option::Option<&crate::model::DataLakePrincipal> {
         self.principal.as_ref()
     }
-    /// <p>The resource to which permissions are to be granted. Resources in AWS Lake Formation are the Data Catalog, databases, and tables.</p>
+    /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
     pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
         self.resource.as_ref()
     }
-    /// <p>The permissions granted to the principal on the resource. AWS Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. AWS Lake Formation requires that each principal be authorized to perform a specific task on AWS Lake Formation resources. </p>
+    /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
     }
@@ -4784,24 +8395,186 @@ impl std::fmt::Debug for GrantPermissionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetResourceLfTagsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
-    pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The resource for which you want to return tags.</p>
-    pub resource: std::option::Option<crate::model::Resource>,
-    /// <p>Indicates whether to show the assigned tags.</p>
-    pub show_assigned_lf_tags: std::option::Option<bool>,
+pub struct GetWorkUnitsInput {
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+    pub page_size: std::option::Option<i32>,
+    /// <p>The ID of the plan query operation.</p>
+    pub query_id: std::option::Option<std::string::String>,
 }
-impl GetResourceLfTagsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+impl GetWorkUnitsInput {
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+    pub fn page_size(&self) -> std::option::Option<i32> {
+        self.page_size
+    }
+    /// <p>The ID of the plan query operation.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetWorkUnitsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetWorkUnitsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("page_size", &self.page_size);
+        formatter.field("query_id", &self.query_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetWorkUnitResultsInput {
+    /// <p>The ID of the plan query operation for which to get results.</p>
+    pub query_id: std::option::Option<std::string::String>,
+    /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
+    pub work_unit_id: i64,
+    /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
+    pub work_unit_token: std::option::Option<std::string::String>,
+}
+impl GetWorkUnitResultsInput {
+    /// <p>The ID of the plan query operation for which to get results.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>The work unit ID for which to get results. Value generated by enumerating <code>WorkUnitIdMin</code> to <code>WorkUnitIdMax</code> (inclusive) from the <code>WorkUnitRange</code> in the output of <code>GetWorkUnits</code>.</p>
+    pub fn work_unit_id(&self) -> i64 {
+        self.work_unit_id
+    }
+    /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
+    pub fn work_unit_token(&self) -> std::option::Option<&str> {
+        self.work_unit_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetWorkUnitResultsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetWorkUnitResultsInput");
+        formatter.field("query_id", &self.query_id);
+        formatter.field("work_unit_id", &self.work_unit_id);
+        formatter.field("work_unit_token", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTableObjectsInput {
+    /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>The database containing the governed table.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>The governed table for which to retrieve objects.</p>
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+    /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
+    /// </li>
+    /// <li>
+    /// <p>The logical operators supported are: AND</p>
+    /// </li>
+    /// <li>
+    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
+    /// </li>
+    /// </ul>
+    pub partition_predicate: std::option::Option<std::string::String>,
+    /// <p>Specifies how many values to return in a page.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetTableObjectsInput {
+    /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The resource for which you want to return tags.</p>
+    /// <p>The database containing the governed table.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The governed table for which to retrieve objects.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub fn query_as_of_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.query_as_of_time.as_ref()
+    }
+    /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The comparison operators supported are: =, >, <, >=, <=</p>
+    /// </li>
+    /// <li>
+    /// <p>The logical operators supported are: AND</p>
+    /// </li>
+    /// <li>
+    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
+    /// </li>
+    /// </ul>
+    pub fn partition_predicate(&self) -> std::option::Option<&str> {
+        self.partition_predicate.as_deref()
+    }
+    /// <p>Specifies how many values to return in a page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetTableObjectsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTableObjectsInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.field("query_as_of_time", &self.query_as_of_time);
+        formatter.field("partition_predicate", &self.partition_predicate);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResourceLfTagsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
+    pub resource: std::option::Option<crate::model::Resource>,
+    /// <p>Indicates whether to show the assigned LF-tags.</p>
+    pub show_assigned_lf_tags: std::option::Option<bool>,
+}
+impl GetResourceLfTagsInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
     pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
         self.resource.as_ref()
     }
-    /// <p>Indicates whether to show the assigned tags.</p>
+    /// <p>Indicates whether to show the assigned LF-tags.</p>
     pub fn show_assigned_lf_tags(&self) -> std::option::Option<bool> {
         self.show_assigned_lf_tags
     }
@@ -4819,18 +8592,60 @@ impl std::fmt::Debug for GetResourceLfTagsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetQueryStatisticsInput {
+    /// <p>The ID of the plan query operation.</p>
+    pub query_id: std::option::Option<std::string::String>,
+}
+impl GetQueryStatisticsInput {
+    /// <p>The ID of the plan query operation.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetQueryStatisticsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetQueryStatisticsInput");
+        formatter.field("query_id", &self.query_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetQueryStateInput {
+    /// <p>The ID of the plan query operation.</p>
+    pub query_id: std::option::Option<std::string::String>,
+}
+impl GetQueryStateInput {
+    /// <p>The ID of the plan query operation.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetQueryStateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetQueryStateInput");
+        formatter.field("query_id", &self.query_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLfTagInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The key-name for the tag.</p>
+    /// <p>The key-name for the LF-tag.</p>
     pub tag_key: std::option::Option<std::string::String>,
 }
 impl GetLfTagInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The key-name for the tag.</p>
+    /// <p>The key-name for the LF-tag.</p>
     pub fn tag_key(&self) -> std::option::Option<&str> {
         self.tag_key.as_deref()
     }
@@ -4848,7 +8663,7 @@ impl std::fmt::Debug for GetLfTagInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEffectivePermissionsForPathInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -4858,7 +8673,7 @@ pub struct GetEffectivePermissionsForPathInput {
     pub max_results: std::option::Option<i32>,
 }
 impl GetEffectivePermissionsForPathInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -4890,11 +8705,11 @@ impl std::fmt::Debug for GetEffectivePermissionsForPathInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataLakeSettingsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl GetDataLakeSettingsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -4903,6 +8718,48 @@ impl std::fmt::Debug for GetDataLakeSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataLakeSettingsInput");
         formatter.field("catalog_id", &self.catalog_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExtendTransactionInput {
+    /// <p>The transaction to extend.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+}
+impl ExtendTransactionInput {
+    /// <p>The transaction to extend.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ExtendTransactionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExtendTransactionInput");
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTransactionInput {
+    /// <p>The transaction for which to return status.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+}
+impl DescribeTransactionInput {
+    /// <p>The transaction for which to return status.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeTransactionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeTransactionInput");
+        formatter.field("transaction_id", &self.transaction_id);
         formatter.finish()
     }
 }
@@ -4952,18 +8809,67 @@ impl std::fmt::Debug for DeregisterResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteLfTagInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+pub struct DeleteObjectsOnCancelInput {
+    /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The key-name for the tag to delete.</p>
-    pub tag_key: std::option::Option<std::string::String>,
+    /// <p>The database that contains the governed table.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>The name of the governed table.</p>
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>ID of the transaction that the writes occur in.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+    /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+    pub objects: std::option::Option<std::vec::Vec<crate::model::VirtualObject>>,
 }
-impl DeleteLfTagInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+impl DeleteObjectsOnCancelInput {
+    /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The key-name for the tag to delete.</p>
+    /// <p>The database that contains the governed table.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>The name of the governed table.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>ID of the transaction that the writes occur in.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+    /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+    pub fn objects(&self) -> std::option::Option<&[crate::model::VirtualObject]> {
+        self.objects.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteObjectsOnCancelInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteObjectsOnCancelInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.field("objects", &self.objects);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteLfTagInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub catalog_id: std::option::Option<std::string::String>,
+    /// <p>The key-name for the LF-tag to delete.</p>
+    pub tag_key: std::option::Option<std::string::String>,
+}
+impl DeleteLfTagInput {
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    /// <p>The key-name for the LF-tag to delete.</p>
     pub fn tag_key(&self) -> std::option::Option<&str> {
         self.tag_key.as_deref()
     }
@@ -4980,20 +8886,62 @@ impl std::fmt::Debug for DeleteLfTagInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDataCellsFilterInput {
+    /// <p>The ID of the catalog to which the table belongs.</p>
+    pub table_catalog_id: std::option::Option<std::string::String>,
+    /// <p>A database in the Glue Data Catalog.</p>
+    pub database_name: std::option::Option<std::string::String>,
+    /// <p>A table in the database.</p>
+    pub table_name: std::option::Option<std::string::String>,
+    /// <p>The name given by the user to the data filter cell.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl DeleteDataCellsFilterInput {
+    /// <p>The ID of the catalog to which the table belongs.</p>
+    pub fn table_catalog_id(&self) -> std::option::Option<&str> {
+        self.table_catalog_id.as_deref()
+    }
+    /// <p>A database in the Glue Data Catalog.</p>
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>A table in the database.</p>
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    /// <p>The name given by the user to the data filter cell.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteDataCellsFilterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDataCellsFilterInput");
+        formatter.field("table_catalog_id", &self.table_catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLfTagInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The key-name for the tag.</p>
+    /// <p>The key-name for the LF-tag.</p>
     pub tag_key: std::option::Option<std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateLfTagInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The key-name for the tag.</p>
+    /// <p>The key-name for the LF-tag.</p>
     pub fn tag_key(&self) -> std::option::Option<&str> {
         self.tag_key.as_deref()
     }
@@ -5015,14 +8963,77 @@ impl std::fmt::Debug for CreateLfTagInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDataCellsFilterInput {
+    /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    pub table_data: std::option::Option<crate::model::DataCellsFilter>,
+}
+impl CreateDataCellsFilterInput {
+    /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    pub fn table_data(&self) -> std::option::Option<&crate::model::DataCellsFilter> {
+        self.table_data.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateDataCellsFilterInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDataCellsFilterInput");
+        formatter.field("table_data", &self.table_data);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CommitTransactionInput {
+    /// <p>The transaction to commit.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+}
+impl CommitTransactionInput {
+    /// <p>The transaction to commit.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CommitTransactionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CommitTransactionInput");
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelTransactionInput {
+    /// <p>The transaction to cancel.</p>
+    pub transaction_id: std::option::Option<std::string::String>,
+}
+impl CancelTransactionInput {
+    /// <p>The transaction to cancel.</p>
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
+        self.transaction_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CancelTransactionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelTransactionInput");
+        formatter.field("transaction_id", &self.transaction_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRevokePermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsRequestEntry>>,
 }
 impl BatchRevokePermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -5044,13 +9055,13 @@ impl std::fmt::Debug for BatchRevokePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGrantPermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchPermissionsRequestEntry>>,
 }
 impl BatchGrantPermissionsInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -5072,23 +9083,23 @@ impl std::fmt::Debug for BatchGrantPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddLfTagsToResourceInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The resource to which to attach a tag.</p>
+    /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
     pub resource: std::option::Option<crate::model::Resource>,
-    /// <p>The tags to attach to the resource.</p>
+    /// <p>The LF-tags to attach to the resource.</p>
     pub lf_tags: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
 }
 impl AddLfTagsToResourceInput {
-    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The resource to which to attach a tag.</p>
+    /// <p>The database, table, or column resource to which to attach an LF-tag.</p>
     pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
         self.resource.as_ref()
     }
-    /// <p>The tags to attach to the resource.</p>
+    /// <p>The LF-tags to attach to the resource.</p>
     pub fn lf_tags(&self) -> std::option::Option<&[crate::model::LfTagPair]> {
         self.lf_tags.as_deref()
     }

@@ -4,15 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_sig_auth::signer::SignableBody;
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::byte_stream::ByteStream;
+use aws_smithy_http::byte_stream::{self, ByteStream};
+use aws_smithy_http::operation::Request;
+
 use bytes::Buf;
 use bytes_utils::SegmentedBuf;
 use http::header::HeaderName;
-
-use aws_sig_auth::signer::SignableBody;
-use aws_smithy_http::byte_stream;
-use aws_smithy_http::operation::Request;
 use ring::digest::{Context, Digest, SHA256};
 use tokio_stream::StreamExt;
 
@@ -31,9 +30,9 @@ const X_AMZ_CONTENT_SHA256: &str = "x-amz-content-sha256";
 ///
 /// See <https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html> for more information.
 pub async fn add_checksum_treehash(request: &mut Request) -> Result<(), byte_stream::Error> {
-    let clonable = request.http().body().try_clone();
+    let cloneable = request.http().body().try_clone();
     let http_request = request.http_mut();
-    let body_to_process = if let Some(cloned_body) = clonable {
+    let body_to_process = if let Some(cloned_body) = cloneable {
         // we can stream the body
         cloned_body
     } else {

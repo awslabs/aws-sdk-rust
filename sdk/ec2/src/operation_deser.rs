@@ -266,6 +266,38 @@ pub fn parse_allocate_hosts_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_allocate_ipam_pool_cidr_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AllocateIpamPoolCidrOutput,
+    crate::error::AllocateIpamPoolCidrError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::AllocateIpamPoolCidrError::unhandled)?;
+    Err(crate::error::AllocateIpamPoolCidrError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_allocate_ipam_pool_cidr_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AllocateIpamPoolCidrOutput,
+    crate::error::AllocateIpamPoolCidrError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::allocate_ipam_pool_cidr_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_allocate_ipam_pool_cidr(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AllocateIpamPoolCidrError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_apply_security_groups_to_client_vpn_target_network_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1923,6 +1955,84 @@ pub fn parse_create_internet_gateway_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ipam_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateIpamOutput, crate::error::CreateIpamError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateIpamError::unhandled)?;
+    Err(crate::error::CreateIpamError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ipam_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateIpamOutput, crate::error::CreateIpamError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_ipam_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_ipam(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateIpamError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ipam_pool_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateIpamPoolOutput, crate::error::CreateIpamPoolError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateIpamPoolError::unhandled)?;
+    Err(crate::error::CreateIpamPoolError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ipam_pool_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateIpamPoolOutput, crate::error::CreateIpamPoolError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_ipam_pool_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_ipam_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateIpamPoolError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ipam_scope_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateIpamScopeOutput, crate::error::CreateIpamScopeError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateIpamScopeError::unhandled)?;
+    Err(crate::error::CreateIpamScopeError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_ipam_scope_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateIpamScopeOutput, crate::error::CreateIpamScopeError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_ipam_scope_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_ipam_scope(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateIpamScopeError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_key_pair_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError> {
@@ -2189,6 +2299,40 @@ pub fn parse_create_network_acl_entry_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_network_insights_access_scope_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateNetworkInsightsAccessScopeOutput,
+    crate::error::CreateNetworkInsightsAccessScopeError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateNetworkInsightsAccessScopeError::unhandled)?;
+    Err(crate::error::CreateNetworkInsightsAccessScopeError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_network_insights_access_scope_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateNetworkInsightsAccessScopeOutput,
+    crate::error::CreateNetworkInsightsAccessScopeError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_network_insights_access_scope_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_network_insights_access_scope(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateNetworkInsightsAccessScopeError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_insights_path_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2316,6 +2460,38 @@ pub fn parse_create_placement_group_response(
             output,
         )
         .map_err(crate::error::CreatePlacementGroupError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_public_ipv4_pool_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreatePublicIpv4PoolOutput,
+    crate::error::CreatePublicIpv4PoolError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreatePublicIpv4PoolError::unhandled)?;
+    Err(crate::error::CreatePublicIpv4PoolError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_public_ipv4_pool_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreatePublicIpv4PoolOutput,
+    crate::error::CreatePublicIpv4PoolError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_public_ipv4_pool_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_public_ipv4_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreatePublicIpv4PoolError::unhandled)?;
         output.build()
     })
 }
@@ -3718,6 +3894,84 @@ pub fn parse_delete_internet_gateway_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ipam_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteIpamOutput, crate::error::DeleteIpamError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteIpamError::unhandled)?;
+    Err(crate::error::DeleteIpamError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ipam_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteIpamOutput, crate::error::DeleteIpamError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_ipam_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_ipam(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteIpamError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ipam_pool_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteIpamPoolOutput, crate::error::DeleteIpamPoolError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteIpamPoolError::unhandled)?;
+    Err(crate::error::DeleteIpamPoolError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ipam_pool_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteIpamPoolOutput, crate::error::DeleteIpamPoolError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_ipam_pool_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_ipam_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteIpamPoolError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ipam_scope_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteIpamScopeOutput, crate::error::DeleteIpamScopeError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteIpamScopeError::unhandled)?;
+    Err(crate::error::DeleteIpamScopeError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_ipam_scope_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteIpamScopeOutput, crate::error::DeleteIpamScopeError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_ipam_scope_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_ipam_scope(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteIpamScopeError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_key_pair_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError> {
@@ -3974,6 +4228,69 @@ pub fn parse_delete_network_acl_entry_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_network_insights_access_scope_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteNetworkInsightsAccessScopeOutput,
+    crate::error::DeleteNetworkInsightsAccessScopeError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteNetworkInsightsAccessScopeError::unhandled)?;
+    Err(crate::error::DeleteNetworkInsightsAccessScopeError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_network_insights_access_scope_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteNetworkInsightsAccessScopeOutput,
+    crate::error::DeleteNetworkInsightsAccessScopeError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_network_insights_access_scope_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_delete_network_insights_access_scope(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteNetworkInsightsAccessScopeError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_network_insights_access_scope_analysis_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput,
+    crate::error::DeleteNetworkInsightsAccessScopeAnalysisError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteNetworkInsightsAccessScopeAnalysisError::unhandled)?;
+    Err(crate::error::DeleteNetworkInsightsAccessScopeAnalysisError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_network_insights_access_scope_analysis_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput,
+    crate::error::DeleteNetworkInsightsAccessScopeAnalysisError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_network_insights_access_scope_analysis_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_network_insights_access_scope_analysis(response.body().as_ref(), output).map_err(crate::error::DeleteNetworkInsightsAccessScopeAnalysisError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_insights_analysis_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4126,6 +4443,38 @@ pub fn parse_delete_placement_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_placement_group_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_public_ipv4_pool_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeletePublicIpv4PoolOutput,
+    crate::error::DeletePublicIpv4PoolError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeletePublicIpv4PoolError::unhandled)?;
+    Err(crate::error::DeletePublicIpv4PoolError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_public_ipv4_pool_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeletePublicIpv4PoolOutput,
+    crate::error::DeletePublicIpv4PoolError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_public_ipv4_pool_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_public_ipv4_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeletePublicIpv4PoolError::unhandled)?;
         output.build()
     })
 }
@@ -5062,6 +5411,74 @@ pub fn parse_deprovision_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_deprovision_ipam_pool_cidr_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeprovisionIpamPoolCidrOutput,
+    crate::error::DeprovisionIpamPoolCidrError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeprovisionIpamPoolCidrError::unhandled)?;
+    Err(crate::error::DeprovisionIpamPoolCidrError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_deprovision_ipam_pool_cidr_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeprovisionIpamPoolCidrOutput,
+    crate::error::DeprovisionIpamPoolCidrError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::deprovision_ipam_pool_cidr_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_deprovision_ipam_pool_cidr(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeprovisionIpamPoolCidrError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_deprovision_public_ipv4_pool_cidr_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeprovisionPublicIpv4PoolCidrOutput,
+    crate::error::DeprovisionPublicIpv4PoolCidrError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeprovisionPublicIpv4PoolCidrError::unhandled)?;
+    Err(crate::error::DeprovisionPublicIpv4PoolCidrError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_deprovision_public_ipv4_pool_cidr_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeprovisionPublicIpv4PoolCidrOutput,
+    crate::error::DeprovisionPublicIpv4PoolCidrError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::deprovision_public_ipv4_pool_cidr_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_deprovision_public_ipv4_pool_cidr(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeprovisionPublicIpv4PoolCidrError::unhandled)?;
         output.build()
     })
 }
@@ -6766,6 +7183,92 @@ pub fn parse_describe_internet_gateways_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ipam_pools_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeIpamPoolsOutput, crate::error::DescribeIpamPoolsError>
+{
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeIpamPoolsError::unhandled)?;
+    Err(crate::error::DescribeIpamPoolsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ipam_pools_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeIpamPoolsOutput, crate::error::DescribeIpamPoolsError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_ipam_pools_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_ipam_pools(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeIpamPoolsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ipams_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeIpamsOutput, crate::error::DescribeIpamsError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeIpamsError::unhandled)?;
+    Err(crate::error::DescribeIpamsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ipams_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeIpamsOutput, crate::error::DescribeIpamsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_ipams_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_ipams(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeIpamsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ipam_scopes_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeIpamScopesOutput,
+    crate::error::DescribeIpamScopesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeIpamScopesError::unhandled)?;
+    Err(crate::error::DescribeIpamScopesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_ipam_scopes_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeIpamScopesOutput,
+    crate::error::DescribeIpamScopesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_ipam_scopes_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_ipam_scopes(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeIpamScopesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_ipv6_pools_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeIpv6PoolsOutput, crate::error::DescribeIpv6PoolsError>
@@ -7199,6 +7702,65 @@ pub fn parse_describe_network_acls_response(
             output,
         )
         .map_err(crate::error::DescribeNetworkAclsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_network_insights_access_scope_analyses_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput,
+    crate::error::DescribeNetworkInsightsAccessScopeAnalysesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeNetworkInsightsAccessScopeAnalysesError::unhandled)?;
+    Err(crate::error::DescribeNetworkInsightsAccessScopeAnalysesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_network_insights_access_scope_analyses_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput,
+    crate::error::DescribeNetworkInsightsAccessScopeAnalysesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_network_insights_access_scope_analyses_output::Builder::default(
+            );
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_network_insights_access_scope_analyses(response.body().as_ref(), output).map_err(crate::error::DescribeNetworkInsightsAccessScopeAnalysesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_network_insights_access_scopes_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeNetworkInsightsAccessScopesOutput,
+    crate::error::DescribeNetworkInsightsAccessScopesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeNetworkInsightsAccessScopesError::unhandled)?;
+    Err(crate::error::DescribeNetworkInsightsAccessScopesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_network_insights_access_scopes_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeNetworkInsightsAccessScopesOutput,
+    crate::error::DescribeNetworkInsightsAccessScopesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_network_insights_access_scopes_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_network_insights_access_scopes(response.body().as_ref(), output).map_err(crate::error::DescribeNetworkInsightsAccessScopesError::unhandled)?;
         output.build()
     })
 }
@@ -7943,6 +8505,40 @@ pub fn parse_describe_snapshots_response(
             output,
         )
         .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_snapshot_tier_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeSnapshotTierStatusOutput,
+    crate::error::DescribeSnapshotTierStatusError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeSnapshotTierStatusError::unhandled)?;
+    Err(crate::error::DescribeSnapshotTierStatusError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_snapshot_tier_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeSnapshotTierStatusOutput,
+    crate::error::DescribeSnapshotTierStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_snapshot_tier_status_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_describe_snapshot_tier_status(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSnapshotTierStatusError::unhandled)?;
         output.build()
     })
 }
@@ -9420,6 +10016,35 @@ pub fn parse_disable_image_deprecation_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_disable_ipam_organization_admin_account_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisableIpamOrganizationAdminAccountOutput,
+    crate::error::DisableIpamOrganizationAdminAccountError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DisableIpamOrganizationAdminAccountError::unhandled)?;
+    Err(crate::error::DisableIpamOrganizationAdminAccountError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disable_ipam_organization_admin_account_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisableIpamOrganizationAdminAccountOutput,
+    crate::error::DisableIpamOrganizationAdminAccountError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::disable_ipam_organization_admin_account_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_disable_ipam_organization_admin_account(response.body().as_ref(), output).map_err(crate::error::DisableIpamOrganizationAdminAccountError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_serial_console_access_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10021,6 +10646,35 @@ pub fn parse_enable_image_deprecation_response(
             output,
         )
         .map_err(crate::error::EnableImageDeprecationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_enable_ipam_organization_admin_account_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::EnableIpamOrganizationAdminAccountOutput,
+    crate::error::EnableIpamOrganizationAdminAccountError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::EnableIpamOrganizationAdminAccountError::unhandled)?;
+    Err(crate::error::EnableIpamOrganizationAdminAccountError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_enable_ipam_organization_admin_account_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::EnableIpamOrganizationAdminAccountOutput,
+    crate::error::EnableIpamOrganizationAdminAccountError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::enable_ipam_organization_admin_account_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_enable_ipam_organization_admin_account(response.body().as_ref(), output).map_err(crate::error::EnableIpamOrganizationAdminAccountError::unhandled)?;
         output.build()
     })
 }
@@ -10740,6 +11394,130 @@ pub fn parse_get_instance_types_from_instance_requirements_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ipam_address_history_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetIpamAddressHistoryOutput,
+    crate::error::GetIpamAddressHistoryError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetIpamAddressHistoryError::unhandled)?;
+    Err(crate::error::GetIpamAddressHistoryError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ipam_address_history_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetIpamAddressHistoryOutput,
+    crate::error::GetIpamAddressHistoryError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_ipam_address_history_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_ipam_address_history(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetIpamAddressHistoryError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ipam_pool_allocations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetIpamPoolAllocationsOutput,
+    crate::error::GetIpamPoolAllocationsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetIpamPoolAllocationsError::unhandled)?;
+    Err(crate::error::GetIpamPoolAllocationsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ipam_pool_allocations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetIpamPoolAllocationsOutput,
+    crate::error::GetIpamPoolAllocationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_ipam_pool_allocations_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_ipam_pool_allocations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetIpamPoolAllocationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ipam_pool_cidrs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetIpamPoolCidrsOutput, crate::error::GetIpamPoolCidrsError>
+{
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetIpamPoolCidrsError::unhandled)?;
+    Err(crate::error::GetIpamPoolCidrsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ipam_pool_cidrs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetIpamPoolCidrsOutput, crate::error::GetIpamPoolCidrsError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_ipam_pool_cidrs_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_ipam_pool_cidrs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetIpamPoolCidrsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ipam_resource_cidrs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetIpamResourceCidrsOutput,
+    crate::error::GetIpamResourceCidrsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetIpamResourceCidrsError::unhandled)?;
+    Err(crate::error::GetIpamResourceCidrsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_ipam_resource_cidrs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetIpamResourceCidrsOutput,
+    crate::error::GetIpamResourceCidrsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_ipam_resource_cidrs_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_ipam_resource_cidrs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetIpamResourceCidrsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_launch_template_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10835,6 +11613,62 @@ pub fn parse_get_managed_prefix_list_entries_response(
             output,
         )
         .map_err(crate::error::GetManagedPrefixListEntriesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_network_insights_access_scope_analysis_findings_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput,
+    crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError::unhandled)?;
+    Err(crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_network_insights_access_scope_analysis_findings_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput,
+    crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::get_network_insights_access_scope_analysis_findings_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_network_insights_access_scope_analysis_findings(response.body().as_ref(), output).map_err(crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_network_insights_access_scope_content_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetNetworkInsightsAccessScopeContentOutput,
+    crate::error::GetNetworkInsightsAccessScopeContentError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetNetworkInsightsAccessScopeContentError::unhandled)?;
+    Err(crate::error::GetNetworkInsightsAccessScopeContentError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_network_insights_access_scope_content_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetNetworkInsightsAccessScopeContentOutput,
+    crate::error::GetNetworkInsightsAccessScopeContentError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_network_insights_access_scope_content_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_network_insights_access_scope_content(response.body().as_ref(), output).map_err(crate::error::GetNetworkInsightsAccessScopeContentError::unhandled)?;
         output.build()
     })
 }
@@ -11355,6 +12189,40 @@ pub fn parse_import_volume_response(
             output,
         )
         .map_err(crate::error::ImportVolumeError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_snapshots_in_recycle_bin_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListSnapshotsInRecycleBinOutput,
+    crate::error::ListSnapshotsInRecycleBinError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListSnapshotsInRecycleBinError::unhandled)?;
+    Err(crate::error::ListSnapshotsInRecycleBinError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_snapshots_in_recycle_bin_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListSnapshotsInRecycleBinOutput,
+    crate::error::ListSnapshotsInRecycleBinError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_snapshots_in_recycle_bin_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_list_snapshots_in_recycle_bin(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListSnapshotsInRecycleBinError::unhandled)?;
         output.build()
     })
 }
@@ -11984,6 +12852,116 @@ pub fn parse_modify_instance_placement_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_ipam_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ModifyIpamOutput, crate::error::ModifyIpamError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyIpamError::unhandled)?;
+    Err(crate::error::ModifyIpamError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_ipam_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ModifyIpamOutput, crate::error::ModifyIpamError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_ipam_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_ipam(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyIpamError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_ipam_pool_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ModifyIpamPoolOutput, crate::error::ModifyIpamPoolError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyIpamPoolError::unhandled)?;
+    Err(crate::error::ModifyIpamPoolError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_ipam_pool_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ModifyIpamPoolOutput, crate::error::ModifyIpamPoolError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_ipam_pool_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_ipam_pool(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyIpamPoolError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_ipam_resource_cidr_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyIpamResourceCidrOutput,
+    crate::error::ModifyIpamResourceCidrError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyIpamResourceCidrError::unhandled)?;
+    Err(crate::error::ModifyIpamResourceCidrError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_ipam_resource_cidr_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyIpamResourceCidrOutput,
+    crate::error::ModifyIpamResourceCidrError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_ipam_resource_cidr_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_ipam_resource_cidr(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyIpamResourceCidrError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_ipam_scope_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ModifyIpamScopeOutput, crate::error::ModifyIpamScopeError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyIpamScopeError::unhandled)?;
+    Err(crate::error::ModifyIpamScopeError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_ipam_scope_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ModifyIpamScopeOutput, crate::error::ModifyIpamScopeError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_ipam_scope_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_ipam_scope(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyIpamScopeError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_launch_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -12078,6 +13056,40 @@ pub fn parse_modify_network_interface_attribute_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_private_dns_name_options_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyPrivateDnsNameOptionsOutput,
+    crate::error::ModifyPrivateDnsNameOptionsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyPrivateDnsNameOptionsError::unhandled)?;
+    Err(crate::error::ModifyPrivateDnsNameOptionsError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_private_dns_name_options_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyPrivateDnsNameOptionsOutput,
+    crate::error::ModifyPrivateDnsNameOptionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_private_dns_name_options_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_private_dns_name_options(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyPrivateDnsNameOptionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_reserved_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -12166,6 +13178,38 @@ pub fn parse_modify_snapshot_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_snapshot_attribute_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_snapshot_tier_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifySnapshotTierOutput,
+    crate::error::ModifySnapshotTierError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifySnapshotTierError::unhandled)?;
+    Err(crate::error::ModifySnapshotTierError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_snapshot_tier_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifySnapshotTierOutput,
+    crate::error::ModifySnapshotTierError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_snapshot_tier_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_snapshot_tier(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifySnapshotTierError::unhandled)?;
         output.build()
     })
 }
@@ -12859,6 +13903,38 @@ pub fn parse_move_address_to_vpc_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_move_byoip_cidr_to_ipam_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::MoveByoipCidrToIpamOutput,
+    crate::error::MoveByoipCidrToIpamError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::MoveByoipCidrToIpamError::unhandled)?;
+    Err(crate::error::MoveByoipCidrToIpamError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_move_byoip_cidr_to_ipam_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::MoveByoipCidrToIpamOutput,
+    crate::error::MoveByoipCidrToIpamError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::move_byoip_cidr_to_ipam_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_move_byoip_cidr_to_ipam(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::MoveByoipCidrToIpamError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_provision_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -12886,6 +13962,72 @@ pub fn parse_provision_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_provision_ipam_pool_cidr_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ProvisionIpamPoolCidrOutput,
+    crate::error::ProvisionIpamPoolCidrError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ProvisionIpamPoolCidrError::unhandled)?;
+    Err(crate::error::ProvisionIpamPoolCidrError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_provision_ipam_pool_cidr_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ProvisionIpamPoolCidrOutput,
+    crate::error::ProvisionIpamPoolCidrError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::provision_ipam_pool_cidr_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_provision_ipam_pool_cidr(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ProvisionIpamPoolCidrError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_provision_public_ipv4_pool_cidr_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ProvisionPublicIpv4PoolCidrOutput,
+    crate::error::ProvisionPublicIpv4PoolCidrError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ProvisionPublicIpv4PoolCidrError::unhandled)?;
+    Err(crate::error::ProvisionPublicIpv4PoolCidrError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_provision_public_ipv4_pool_cidr_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ProvisionPublicIpv4PoolCidrOutput,
+    crate::error::ProvisionPublicIpv4PoolCidrError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::provision_public_ipv4_pool_cidr_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_provision_public_ipv4_pool_cidr(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ProvisionPublicIpv4PoolCidrError::unhandled)?;
         output.build()
     })
 }
@@ -13317,6 +14459,40 @@ pub fn parse_release_hosts_response(
             output,
         )
         .map_err(crate::error::ReleaseHostsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_release_ipam_pool_allocation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ReleaseIpamPoolAllocationOutput,
+    crate::error::ReleaseIpamPoolAllocationError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ReleaseIpamPoolAllocationError::unhandled)?;
+    Err(crate::error::ReleaseIpamPoolAllocationError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_release_ipam_pool_allocation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ReleaseIpamPoolAllocationOutput,
+    crate::error::ReleaseIpamPoolAllocationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::release_ipam_pool_allocation_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_release_ipam_pool_allocation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ReleaseIpamPoolAllocationError::unhandled)?;
         output.build()
     })
 }
@@ -13863,6 +15039,74 @@ pub fn parse_restore_managed_prefix_list_version_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_snapshot_from_recycle_bin_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreSnapshotFromRecycleBinOutput,
+    crate::error::RestoreSnapshotFromRecycleBinError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RestoreSnapshotFromRecycleBinError::unhandled)?;
+    Err(crate::error::RestoreSnapshotFromRecycleBinError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_snapshot_from_recycle_bin_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreSnapshotFromRecycleBinOutput,
+    crate::error::RestoreSnapshotFromRecycleBinError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::restore_snapshot_from_recycle_bin_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_restore_snapshot_from_recycle_bin(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::RestoreSnapshotFromRecycleBinError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_snapshot_tier_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreSnapshotTierOutput,
+    crate::error::RestoreSnapshotTierError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RestoreSnapshotTierError::unhandled)?;
+    Err(crate::error::RestoreSnapshotTierError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_snapshot_tier_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreSnapshotTierOutput,
+    crate::error::RestoreSnapshotTierError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::restore_snapshot_tier_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_restore_snapshot_tier(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RestoreSnapshotTierError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_client_vpn_ingress_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -14166,6 +15410,35 @@ pub fn parse_start_instances_response(
             output,
         )
         .map_err(crate::error::StartInstancesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_network_insights_access_scope_analysis_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartNetworkInsightsAccessScopeAnalysisOutput,
+    crate::error::StartNetworkInsightsAccessScopeAnalysisError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartNetworkInsightsAccessScopeAnalysisError::unhandled)?;
+    Err(crate::error::StartNetworkInsightsAccessScopeAnalysisError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_network_insights_access_scope_analysis_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartNetworkInsightsAccessScopeAnalysisOutput,
+    crate::error::StartNetworkInsightsAccessScopeAnalysisError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::start_network_insights_access_scope_analysis_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_start_network_insights_access_scope_analysis(response.body().as_ref(), output).map_err(crate::error::StartNetworkInsightsAccessScopeAnalysisError::unhandled)?;
         output.build()
     })
 }

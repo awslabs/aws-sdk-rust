@@ -1,6 +1,6 @@
 # aws-sdk-elasticache
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the cloud.
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-elasticache = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-elasticache = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -528,20 +528,20 @@ pub mod cancel_update_stack_input {
             self.stack_name = input;
             self
         }
-        /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
-        /// token if you plan to retry requests so that CloudFormation knows that you're not
+        /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token
+        /// if you plan to retry requests so that CloudFormation knows that you're not
         /// attempting to cancel an update on a stack with the same name. You might retry
-        /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully
-        /// received them.</p>
+        /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation
+        /// successfully received them.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
-        /// token if you plan to retry requests so that CloudFormation knows that you're not
+        /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token
+        /// if you plan to retry requests so that CloudFormation knows that you're not
         /// attempting to cancel an update on a stack with the same name. You might retry
-        /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully
-        /// received them.</p>
+        /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation
+        /// successfully received them.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -692,8 +692,7 @@ pub mod continue_update_rollback_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or the unique ID of the stack that you want to continue rolling
-        /// back.</p>
+        /// <p>The name or the unique ID of the stack that you want to continue rolling back.</p>
         /// <note>
         /// <p>Don't specify the name of a nested stack (a stack that was created by using the
         /// <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the
@@ -704,8 +703,7 @@ pub mod continue_update_rollback_input {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or the unique ID of the stack that you want to continue rolling
-        /// back.</p>
+        /// <p>The name or the unique ID of the stack that you want to continue rolling back.</p>
         /// <note>
         /// <p>Don't specify the name of a nested stack (a stack that was created by using the
         /// <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the
@@ -716,12 +714,11 @@ pub mod continue_update_rollback_input {
             self.stack_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
-        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
@@ -729,12 +726,11 @@ pub mod continue_update_rollback_input {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
-        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
@@ -817,8 +813,8 @@ pub mod continue_update_rollback_input {
             self.resources_to_skip = input;
             self
         }
-        /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
-        /// this token if you plan to retry requests so that CloudFormationknows that you're not
+        /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this
+        /// token if you plan to retry requests so that CloudFormationknows that you're not
         /// attempting to continue the rollback to a stack with the same name. You might retry
         /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
         /// successfully received them.</p>
@@ -826,8 +822,8 @@ pub mod continue_update_rollback_input {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
-        /// this token if you plan to retry requests so that CloudFormationknows that you're not
+        /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this
+        /// token if you plan to retry requests so that CloudFormationknows that you're not
         /// attempting to continue the rollback to a stack with the same name. You might retry
         /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
         /// successfully received them.</p>
@@ -999,34 +995,32 @@ pub mod create_change_set_input {
         pub(crate) include_nested_stacks: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name or the unique ID of the stack for which you are creating a change set.
-        /// CloudFormation generates the change set by comparing this stack's information with the
+        /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the
         /// information that you submit, such as a modified template or different parameter input
         /// values.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or the unique ID of the stack for which you are creating a change set.
-        /// CloudFormation generates the change set by comparing this stack's information with the
+        /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the
         /// information that you submit, such as a modified template or different parameter input
         /// values.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
         }
-        /// <p>A structure that contains the body of the revised template, with a minimum length of
-        /// 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by
-        /// comparing this template with the template of the stack that you specified.</p>
+        /// <p>A structure that contains the body of the revised template, with a minimum length of 1
+        /// byte and a maximum length of 51,200 bytes. CloudFormation generates the change set
+        /// by comparing this template with the template of the stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>A structure that contains the body of the revised template, with a minimum length of
-        /// 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by
-        /// comparing this template with the template of the stack that you specified.</p>
+        /// <p>A structure that contains the body of the revised template, with a minimum length of 1
+        /// byte and a maximum length of 51,200 bytes. CloudFormation generates the change set
+        /// by comparing this template with the template of the stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
         pub fn set_template_body(
@@ -1038,8 +1032,8 @@ pub mod create_change_set_input {
         }
         /// <p>The location of the file that contains the revised template. The URL must point to a
         /// template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems Manager
-        /// document. CloudFormation generates the change set by comparing this template with the
-        /// stack that you specified.</p>
+        /// document. CloudFormation generates the change set by comparing this template with
+        /// the stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1048,8 +1042,8 @@ pub mod create_change_set_input {
         }
         /// <p>The location of the file that contains the revised template. The URL must point to a
         /// template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems Manager
-        /// document. CloudFormation generates the change set by comparing this template with the
-        /// stack that you specified.</p>
+        /// document. CloudFormation generates the change set by comparing this template with
+        /// the stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1072,16 +1066,16 @@ pub mod create_change_set_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-        /// change set. For more information, see the <a>Parameter</a> data type.</p>
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change
+        /// set. For more information, see the <a>Parameter</a> data type.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
-        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-        /// change set. For more information, see the <a>Parameter</a> data type.</p>
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change
+        /// set. For more information, see the <a>Parameter</a> data type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -1100,8 +1094,8 @@ pub mod create_change_set_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
         /// of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -1121,9 +1115,8 @@ pub mod create_change_set_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1205,8 +1198,8 @@ pub mod create_change_set_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
         /// of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -1226,9 +1219,8 @@ pub mod create_change_set_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1308,30 +1300,28 @@ pub mod create_change_set_input {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The template resource types that you have permissions to work with if you execute
-        /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <p>The template resource types that you have permissions to work with if you execute this
+        /// change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
         /// <code>Custom::MyCustomInstance</code>.</p>
-        /// <p>If the list of resource types doesn't include a resource type that you're updating,
-        /// the stack update fails. By default, CloudFormation grants permissions to all resource
-        /// types. Identity and Access Management (IAM) uses this parameter for condition keys in
-        /// IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
-        /// Identity and Access Management</a> in the CloudFormation User
-        /// Guide.</p>
+        /// <p>If the list of resource types doesn't include a resource type that you're updating, the
+        /// stack update fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies
+        /// for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+        /// Identity and Access Management</a> in the CloudFormation User Guide.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
-        /// <p>The template resource types that you have permissions to work with if you execute
-        /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <p>The template resource types that you have permissions to work with if you execute this
+        /// change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
         /// <code>Custom::MyCustomInstance</code>.</p>
-        /// <p>If the list of resource types doesn't include a resource type that you're updating,
-        /// the stack update fails. By default, CloudFormation grants permissions to all resource
-        /// types. Identity and Access Management (IAM) uses this parameter for condition keys in
-        /// IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
-        /// Identity and Access Management</a> in the CloudFormation User
-        /// Guide.</p>
+        /// <p>If the list of resource types doesn't include a resource type that you're updating, the
+        /// stack update fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies
+        /// for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+        /// Identity and Access Management</a> in the CloudFormation User Guide.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1340,11 +1330,11 @@ pub mod create_change_set_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes when executing the change set. CloudFormation uses the
-        /// role's credentials to make calls on your behalf. CloudFormation uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
+        /// that CloudFormation assumes when executing the change set. CloudFormation
+        /// uses the role's credentials to make calls on your behalf. CloudFormation uses this
+        /// role for all future operations on the stack. As long as users have permission to operate on
+        /// the stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
@@ -1353,11 +1343,11 @@ pub mod create_change_set_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes when executing the change set. CloudFormation uses the
-        /// role's credentials to make calls on your behalf. CloudFormation uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
+        /// that CloudFormation assumes when executing the change set. CloudFormation
+        /// uses the role's credentials to make calls on your behalf. CloudFormation uses this
+        /// role for all future operations on the stack. As long as users have permission to operate on
+        /// the stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
@@ -1429,18 +1419,16 @@ pub mod create_change_set_input {
         }
         /// <p>The name of the change set. The name must be unique among all change sets that are
         /// associated with the specified stack.</p>
-        /// <p>A change set name can contain only alphanumeric, case sensitive characters and
-        /// hyphens. It must start with an alphabetic character and cannot exceed 128
-        /// characters.</p>
+        /// <p>A change set name can contain only alphanumeric, case sensitive characters and hyphens.
+        /// It must start with an alphabetic character and cannot exceed 128 characters.</p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_name = Some(input.into());
             self
         }
         /// <p>The name of the change set. The name must be unique among all change sets that are
         /// associated with the specified stack.</p>
-        /// <p>A change set name can contain only alphanumeric, case sensitive characters and
-        /// hyphens. It must start with an alphabetic character and cannot exceed 128
-        /// characters.</p>
+        /// <p>A change set name can contain only alphanumeric, case sensitive characters and hyphens.
+        /// It must start with an alphabetic character and cannot exceed 128 characters.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1448,8 +1436,8 @@ pub mod create_change_set_input {
             self.change_set_name = input;
             self
         }
-        /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
-        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
         /// to create another change set with the same name. You might retry
         /// <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully
         /// received them.</p>
@@ -1457,8 +1445,8 @@ pub mod create_change_set_input {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
-        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
         /// to create another change set with the same name. You might retry
         /// <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully
         /// received them.</p>
@@ -1480,8 +1468,8 @@ pub mod create_change_set_input {
         /// <code>CREATE</code>. To create a change set for an existing stack, specify
         /// <code>UPDATE</code>. To create a change set for an import operation, specify
         /// <code>IMPORT</code>.</p>
-        /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a
-        /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+        /// <p>If you create a change set for a new stack, CloudFormation creates a stack with
+        /// a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
         /// <code>REVIEW_IN_PROGRESS</code>
         /// </a> state until you execute the change
         /// set.</p>
@@ -1496,8 +1484,8 @@ pub mod create_change_set_input {
         /// <code>CREATE</code>. To create a change set for an existing stack, specify
         /// <code>UPDATE</code>. To create a change set for an import operation, specify
         /// <code>IMPORT</code>.</p>
-        /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a
-        /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+        /// <p>If you create a change set for a new stack, CloudFormation creates a stack with
+        /// a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
         /// <code>REVIEW_IN_PROGRESS</code>
         /// </a> state until you execute the change
         /// set.</p>
@@ -1785,8 +1773,8 @@ pub mod create_stack_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-        /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
         /// type.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
@@ -1794,8 +1782,8 @@ pub mod create_stack_input {
             self.parameters = Some(v);
             self
         }
-        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-        /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
         /// type.</p>
         pub fn set_parameters(
             mut self,
@@ -1804,8 +1792,8 @@ pub mod create_stack_input {
             self.parameters = input;
             self
         }
-        /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed.
-        /// You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
+        /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You
+        /// can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
         /// both.</p>
         /// <p>Default: <code>false</code>
         /// </p>
@@ -1813,8 +1801,8 @@ pub mod create_stack_input {
             self.disable_rollback = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed.
-        /// You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
+        /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You
+        /// can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
         /// both.</p>
         /// <p>Default: <code>false</code>
         /// </p>
@@ -1888,8 +1876,8 @@ pub mod create_stack_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
         /// of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -1908,9 +1896,8 @@ pub mod create_stack_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1996,8 +1983,8 @@ pub mod create_stack_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
         /// of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -2016,9 +2003,8 @@ pub mod create_stack_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2102,8 +2088,8 @@ pub mod create_stack_input {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The template resource types that you have permissions to work with for this create
-        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <p>The template resource types that you have permissions to work with for this create stack
+        /// action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
         /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
         /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources),
         /// <code>Custom::*</code> (for all custom resources),
@@ -2113,17 +2099,19 @@ pub mod create_stack_input {
         /// particular Amazon Web Services service), and
         /// <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
         /// </code> (for a specific Amazon Web Services resource).</p>
-        /// <p>If the list of resource types doesn't include a resource that you're creating, the
-        /// stack creation fails. By default, CloudFormation grants permissions to all resource
-        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+        /// <p>If the list of resource types doesn't include a resource that you're creating, the stack
+        /// creation fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+        /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+        /// Identity and Access Management</a>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
-        /// <p>The template resource types that you have permissions to work with for this create
-        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <p>The template resource types that you have permissions to work with for this create stack
+        /// action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
         /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
         /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources),
         /// <code>Custom::*</code> (for all custom resources),
@@ -2133,9 +2121,11 @@ pub mod create_stack_input {
         /// particular Amazon Web Services service), and
         /// <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
         /// </code> (for a specific Amazon Web Services resource).</p>
-        /// <p>If the list of resource types doesn't include a resource that you're creating, the
-        /// stack creation fails. By default, CloudFormation grants permissions to all resource
-        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+        /// <p>If the list of resource types doesn't include a resource that you're creating, the stack
+        /// creation fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+        /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+        /// Identity and Access Management</a>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2143,12 +2133,11 @@ pub mod create_stack_input {
             self.resource_types = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes to create the stack. CloudFormation uses the role's
-        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
@@ -2156,12 +2145,11 @@ pub mod create_stack_input {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes to create the stack. CloudFormation uses the role's
-        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
@@ -2191,17 +2179,17 @@ pub mod create_stack_input {
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-        /// to Stack Resources</a> in the <i>CloudFormation User Guide</i>.
-        /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
-        /// parameter, but not both.</p>
+        /// to Stack Resources</a> in the <i>CloudFormation User
+        /// Guide</i>. You can specify either the <code>StackPolicyBody</code> or the
+        /// <code>StackPolicyURL</code> parameter, but not both.</p>
         pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_body = Some(input.into());
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-        /// to Stack Resources</a> in the <i>CloudFormation User Guide</i>.
-        /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
-        /// parameter, but not both.</p>
+        /// to Stack Resources</a> in the <i>CloudFormation User
+        /// Guide</i>. You can specify either the <code>StackPolicyBody</code> or the
+        /// <code>StackPolicyURL</code> parameter, but not both.</p>
         pub fn set_stack_policy_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2209,18 +2197,18 @@ pub mod create_stack_input {
             self.stack_policy_body = input;
             self
         }
-        /// <p>Location of a file containing the stack policy. The URL must point to a policy
-        /// (maximum size: 16 KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
+        /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum
+        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
         pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_url = Some(input.into());
             self
         }
-        /// <p>Location of a file containing the stack policy. The URL must point to a policy
-        /// (maximum size: 16 KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
+        /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum
+        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
         pub fn set_stack_policy_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2251,8 +2239,8 @@ pub mod create_stack_input {
             self.tags = input;
             self
         }
-        /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
-        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you
+        /// plan to retry requests so that CloudFormation knows that you're not attempting to
         /// create a stack with the same name. You might retry <code>CreateStack</code> requests to
         /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -2270,8 +2258,8 @@ pub mod create_stack_input {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
-        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you
+        /// plan to retry requests so that CloudFormation knows that you're not attempting to
         /// create a stack with the same name. You might retry <code>CreateStack</code> requests to
         /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -2500,18 +2488,20 @@ pub mod create_stack_instances_input {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the
-        /// specified Region(s) for.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you
+        /// want to create stack instances in the specified Region(s) for.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
-        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the
-        /// specified Region(s) for.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you
+        /// want to create stack instances in the specified Region(s) for.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2563,32 +2553,31 @@ pub mod create_stack_instances_input {
         ///
         /// To override the contents of this collection use [`set_parameter_overrides`](Self::set_parameter_overrides).
         ///
-        /// <p>A list of stack set parameters whose values you want to override in the selected
-        /// stack instances.</p>
-        /// <p>Any overridden parameter values will be applied to all stack instances in the
-        /// specified accounts and Regions. When specifying parameters and their values, be aware of
-        /// how CloudFormation sets parameter values during stack instance operations:</p>
+        /// <p>A list of stack set parameters whose values you want to override in the selected stack
+        /// instances.</p>
+        /// <p>Any overridden parameter values will be applied to all stack instances in the specified
+        /// accounts and Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
         /// <ul>
         /// <li>
-        /// <p>To override the current value for a parameter, include the parameter and
-        /// specify its value.</p>
+        /// <p>To override the current value for a parameter, include the parameter and specify
+        /// its value.</p>
         /// </li>
         /// <li>
-        /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
-        /// <code>true</code>. (You cannot specify both a value and set
-        /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+        /// <p>To leave an overridden parameter set to its present value, include the parameter
+        /// and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+        /// both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p>
         /// </li>
         /// <li>
         /// <p>To set an overridden parameter back to the value specified in the stack set,
         /// specify a parameter list but do not include the parameter in the list.</p>
         /// </li>
         /// <li>
-        /// <p>To leave all parameters set to their present values, do not specify this
-        /// property at all.</p>
+        /// <p>To leave all parameters set to their present values, do not specify this property
+        /// at all.</p>
         /// </li>
         /// </ul>
-        /// <p>During stack set updates, any parameter values overridden for a stack instance are
-        /// not updated, but retain their overridden value.</p>
+        /// <p>During stack set updates, any parameter values overridden for a stack instance are not
+        /// updated, but retain their overridden value.</p>
         /// <p>You can only override the parameter <i>values</i> that are specified in
         /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
         pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
@@ -2597,32 +2586,31 @@ pub mod create_stack_instances_input {
             self.parameter_overrides = Some(v);
             self
         }
-        /// <p>A list of stack set parameters whose values you want to override in the selected
-        /// stack instances.</p>
-        /// <p>Any overridden parameter values will be applied to all stack instances in the
-        /// specified accounts and Regions. When specifying parameters and their values, be aware of
-        /// how CloudFormation sets parameter values during stack instance operations:</p>
+        /// <p>A list of stack set parameters whose values you want to override in the selected stack
+        /// instances.</p>
+        /// <p>Any overridden parameter values will be applied to all stack instances in the specified
+        /// accounts and Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
         /// <ul>
         /// <li>
-        /// <p>To override the current value for a parameter, include the parameter and
-        /// specify its value.</p>
+        /// <p>To override the current value for a parameter, include the parameter and specify
+        /// its value.</p>
         /// </li>
         /// <li>
-        /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
-        /// <code>true</code>. (You cannot specify both a value and set
-        /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+        /// <p>To leave an overridden parameter set to its present value, include the parameter
+        /// and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+        /// both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p>
         /// </li>
         /// <li>
         /// <p>To set an overridden parameter back to the value specified in the stack set,
         /// specify a parameter list but do not include the parameter in the list.</p>
         /// </li>
         /// <li>
-        /// <p>To leave all parameters set to their present values, do not specify this
-        /// property at all.</p>
+        /// <p>To leave all parameters set to their present values, do not specify this property
+        /// at all.</p>
         /// </li>
         /// </ul>
-        /// <p>During stack set updates, any parameter values overridden for a stack instance are
-        /// not updated, but retain their overridden value.</p>
+        /// <p>During stack set updates, any parameter values overridden for a stack instance are not
+        /// updated, but retain their overridden value.</p>
         /// <p>You can only override the parameter <i>values</i> that are specified in
         /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
         pub fn set_parameter_overrides(
@@ -2649,10 +2637,8 @@ pub mod create_stack_instances_input {
             self
         }
         /// <p>The unique identifier for this stack set operation.</p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one
         /// automatically.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
@@ -2662,10 +2648,8 @@ pub mod create_stack_instances_input {
             self
         }
         /// <p>The unique identifier for this stack set operation.</p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one
         /// automatically.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
@@ -2674,30 +2658,42 @@ pub mod create_stack_instances_input {
             self.operation_id = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated
+        /// administrator in a member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
-        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// <p>If you are signed in to the management account, specify
+        /// <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
             self.call_as = Some(input);
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated
+        /// administrator in a member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
-        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// <p>If you are signed in to the management account, specify
+        /// <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
@@ -2866,13 +2862,14 @@ pub mod create_stack_set_input {
         pub(crate) auto_deployment: std::option::Option<crate::model::AutoDeployment>,
         pub(crate) call_as: std::option::Option<crate::model::CallAs>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) managed_execution: std::option::Option<crate::model::ManagedExecution>,
     }
     impl Builder {
         /// <p>The name to associate with the stack set. The name must be unique in the Region where
         /// you create your stack set.</p>
         /// <note>
-        /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and
-        /// hyphens. It must start with an alphabetic character and can't be longer than 128
+        /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens.
+        /// It must start with an alphabetic character and can't be longer than 128
         /// characters.</p>
         /// </note>
         pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2882,8 +2879,8 @@ pub mod create_stack_set_input {
         /// <p>The name to associate with the stack set. The name must be unique in the Region where
         /// you create your stack set.</p>
         /// <note>
-        /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and
-        /// hyphens. It must start with an alphabetic character and can't be longer than 128
+        /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens.
+        /// It must start with an alphabetic character and can't be longer than 128
         /// characters.</p>
         /// </note>
         pub fn set_stack_set_name(
@@ -2893,14 +2890,14 @@ pub mod create_stack_set_input {
             self.stack_set_name = input;
             self
         }
-        /// <p>A description of the stack set. You can use the description to identify the stack
-        /// set's purpose or other important information.</p>
+        /// <p>A description of the stack set. You can use the description to identify the stack set's
+        /// purpose or other important information.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the stack set. You can use the description to identify the stack
-        /// set's purpose or other important information.</p>
+        /// <p>A description of the stack set. You can use the description to identify the stack set's
+        /// purpose or other important information.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2908,8 +2905,8 @@ pub mod create_stack_set_input {
         /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
         /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
         /// in the CloudFormation User Guide.</p>
-        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
-        /// but not both.</p>
+        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but
+        /// not both.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
@@ -2917,8 +2914,8 @@ pub mod create_stack_set_input {
         /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
         /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
         /// in the CloudFormation User Guide.</p>
-        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
-        /// but not both.</p>
+        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but
+        /// not both.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2930,8 +2927,8 @@ pub mod create_stack_set_input {
         /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
         /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
         /// in the CloudFormation User Guide.</p>
-        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
-        /// but not both.</p>
+        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but
+        /// not both.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_url = Some(input.into());
             self
@@ -2940,8 +2937,8 @@ pub mod create_stack_set_input {
         /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
         /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
         /// in the CloudFormation User Guide.</p>
-        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
-        /// but not both.</p>
+        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but
+        /// not both.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -2989,8 +2986,8 @@ pub mod create_stack_set_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
         /// one of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -3009,9 +3006,8 @@ pub mod create_stack_set_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3089,8 +3085,8 @@ pub mod create_stack_set_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
         /// one of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -3109,9 +3105,8 @@ pub mod create_stack_set_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3187,11 +3182,10 @@ pub mod create_stack_set_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-        /// CloudFormation also propagates these tags to supported resources that are created in
-        /// the stacks. A maximum number of 50 tags can be specified.</p>
-        /// <p>If you specify tags as part of a <code>CreateStackSet</code> action,
-        /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-        /// you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
+        /// CloudFormation also propagates these tags to supported resources that are
+        /// created in the stacks. A maximum number of 50 tags can be specified.</p>
+        /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+        /// If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
         /// denied</code> error, and the stack set is not created.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -3200,11 +3194,10 @@ pub mod create_stack_set_input {
             self
         }
         /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-        /// CloudFormation also propagates these tags to supported resources that are created in
-        /// the stacks. A maximum number of 50 tags can be specified.</p>
-        /// <p>If you specify tags as part of a <code>CreateStackSet</code> action,
-        /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-        /// you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
+        /// CloudFormation also propagates these tags to supported resources that are
+        /// created in the stacks. A maximum number of 50 tags can be specified.</p>
+        /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+        /// If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
         /// denied</code> error, and the stack set is not created.</p>
         pub fn set_tags(
             mut self,
@@ -3365,8 +3358,8 @@ pub mod create_stack_set_input {
             self.call_as = input;
             self
         }
-        /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
-        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
         /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
         /// requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one
@@ -3375,8 +3368,8 @@ pub mod create_stack_set_input {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
-        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
         /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
         /// requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one
@@ -3386,6 +3379,21 @@ pub mod create_stack_set_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.client_request_token = input;
+            self
+        }
+        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
+        /// conflicting operations.</p>
+        pub fn managed_execution(mut self, input: crate::model::ManagedExecution) -> Self {
+            self.managed_execution = Some(input);
+            self
+        }
+        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
+        /// conflicting operations.</p>
+        pub fn set_managed_execution(
+            mut self,
+            input: std::option::Option<crate::model::ManagedExecution>,
+        ) -> Self {
+            self.managed_execution = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStackSetInput`](crate::input::CreateStackSetInput)
@@ -3410,6 +3418,7 @@ pub mod create_stack_set_input {
                 auto_deployment: self.auto_deployment,
                 call_as: self.call_as,
                 client_request_token: self.client_request_token,
+                managed_execution: self.managed_execution,
             })
         }
     }
@@ -3734,14 +3743,12 @@ pub mod delete_change_set_input {
         pub(crate) stack_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-        /// delete.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_name = Some(input.into());
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-        /// delete.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3749,14 +3756,14 @@ pub mod delete_change_set_input {
             self.change_set_name = input;
             self
         }
-        /// <p>If you specified the name of a change set to delete, specify the stack name or ID
-        /// (ARN) that is associated with it.</p>
+        /// <p>If you specified the name of a change set to delete, specify the stack name or ID (ARN)
+        /// that is associated with it.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>If you specified the name of a change set to delete, specify the stack name or ID
-        /// (ARN) that is associated with it.</p>
+        /// <p>If you specified the name of a change set to delete, specify the stack name or ID (ARN)
+        /// that is associated with it.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -3918,22 +3925,20 @@ pub mod delete_stack_input {
         ///
         /// To override the contents of this collection use [`set_retain_resources`](Self::set_retain_resources).
         ///
-        /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
-        /// that are associated with the resources you want to retain. During deletion,
-        /// CloudFormation deletes the stack but does not delete the retained resources.</p>
-        /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty
-        /// S3 bucket, but you want to delete the stack.</p>
+        /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs that
+        /// are associated with the resources you want to retain. During deletion, CloudFormation deletes the stack but does not delete the retained resources.</p>
+        /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty S3
+        /// bucket, but you want to delete the stack.</p>
         pub fn retain_resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.retain_resources.unwrap_or_default();
             v.push(input.into());
             self.retain_resources = Some(v);
             self
         }
-        /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
-        /// that are associated with the resources you want to retain. During deletion,
-        /// CloudFormation deletes the stack but does not delete the retained resources.</p>
-        /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty
-        /// S3 bucket, but you want to delete the stack.</p>
+        /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs that
+        /// are associated with the resources you want to retain. During deletion, CloudFormation deletes the stack but does not delete the retained resources.</p>
+        /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty S3
+        /// bucket, but you want to delete the stack.</p>
         pub fn set_retain_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3941,8 +3946,7 @@ pub mod delete_stack_input {
             self.retain_resources = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes to delete the stack. CloudFormation uses the role's
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to delete the stack. CloudFormation uses the role's
         /// credentials to make calls on your behalf.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
@@ -3951,8 +3955,7 @@ pub mod delete_stack_input {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes to delete the stack. CloudFormation uses the role's
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to delete the stack. CloudFormation uses the role's
         /// credentials to make calls on your behalf.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
@@ -3961,8 +3964,8 @@ pub mod delete_stack_input {
             self.role_arn = input;
             self
         }
-        /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
-        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if you
+        /// plan to retry requests so that CloudFormation knows that you're not attempting to
         /// delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
         /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -3980,8 +3983,8 @@ pub mod delete_stack_input {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
-        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if you
+        /// plan to retry requests so that CloudFormation knows that you're not attempting to
         /// delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
         /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -4170,16 +4173,20 @@ pub mod delete_stack_instances_input {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to
+        /// delete stack instances for.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
-        /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to
+        /// delete stack instances for.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4241,17 +4248,17 @@ pub mod delete_stack_instances_input {
             self.operation_preferences = input;
             self
         }
-        /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
-        /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
-        /// stack set.</p>
+        /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks.
+        /// You can't reassociate a retained stack or add an existing, saved stack to a new stack
+        /// set.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
         pub fn retain_stacks(mut self, input: bool) -> Self {
             self.retain_stacks = Some(input);
             self
         }
-        /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
-        /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
-        /// stack set.</p>
+        /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks.
+        /// You can't reassociate a retained stack or add an existing, saved stack to a new stack
+        /// set.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
         pub fn set_retain_stacks(mut self, input: std::option::Option<bool>) -> Self {
             self.retain_stacks = input;
@@ -4260,10 +4267,8 @@ pub mod delete_stack_instances_input {
         /// <p>The unique identifier for this stack set operation.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one
         /// automatically.</p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You can retry stack set operation requests to ensure that
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
         /// whose status is <code>OUTDATED</code>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4273,10 +4278,8 @@ pub mod delete_stack_instances_input {
         /// <p>The unique identifier for this stack set operation.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one
         /// automatically.</p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You can retry stack set operation requests to ensure that
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
         /// whose status is <code>OUTDATED</code>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -4475,14 +4478,14 @@ pub mod delete_stack_set_input {
         pub(crate) call_as: std::option::Option<crate::model::CallAs>,
     }
     impl Builder {
-        /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
-        /// value by running <a>ListStackSets</a>.</p>
+        /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value
+        /// by running <a>ListStackSets</a>.</p>
         pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_set_name = Some(input.into());
             self
         }
-        /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
-        /// value by running <a>ListStackSets</a>.</p>
+        /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value
+        /// by running <a>ListStackSets</a>.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5520,8 +5523,8 @@ pub mod describe_stack_events_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -5536,8 +5539,8 @@ pub mod describe_stack_events_input {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -5720,12 +5723,14 @@ pub mod describe_stack_instance_input {
             self.stack_set_name = input;
             self
         }
-        /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
+        /// <p>The ID of an Amazon Web Services account that's associated with this stack
+        /// instance.</p>
         pub fn stack_instance_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_instance_account = Some(input.into());
             self
         }
-        /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
+        /// <p>The ID of an Amazon Web Services account that's associated with this stack
+        /// instance.</p>
         pub fn set_stack_instance_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5931,8 +5936,8 @@ pub mod describe_stack_resource_input {
         pub(crate) logical_resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -5947,8 +5952,8 @@ pub mod describe_stack_resource_input {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -6148,8 +6153,8 @@ pub mod describe_stack_resource_drifts_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MODIFIED</code>: One or more resource properties differ from their
-        /// expected template values.</p>
+        /// <code>MODIFIED</code>: One or more resource properties differ from their expected
+        /// template values.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -6180,8 +6185,8 @@ pub mod describe_stack_resource_drifts_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MODIFIED</code>: One or more resource properties differ from their
-        /// expected template values.</p>
+        /// <code>MODIFIED</code>: One or more resource properties differ from their expected
+        /// template values.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -6372,8 +6377,8 @@ pub mod describe_stack_resources_input {
         pub(crate) physical_resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -6390,8 +6395,8 @@ pub mod describe_stack_resources_input {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -6423,27 +6428,27 @@ pub mod describe_stack_resources_input {
             self.logical_resource_id = input;
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of a
-        /// resource supported by CloudFormation.</p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
+        /// supported by CloudFormation.</p>
         /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance,
         /// <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass
         /// the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack
         /// the instance belongs to and what other resources are part of the stack.</p>
-        /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
-        /// must specify <code>StackName</code>.</p>
+        /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you must
+        /// specify <code>StackName</code>.</p>
         /// <p>Default: There is no default value.</p>
         pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_resource_id = Some(input.into());
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of a
-        /// resource supported by CloudFormation.</p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
+        /// supported by CloudFormation.</p>
         /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance,
         /// <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass
         /// the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack
         /// the instance belongs to and what other resources are part of the stack.</p>
-        /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
-        /// must specify <code>StackName</code>.</p>
+        /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you must
+        /// specify <code>StackName</code>.</p>
         /// <p>Default: There is no default value.</p>
         pub fn set_physical_resource_id(
             mut self,
@@ -6596,8 +6601,8 @@ pub mod describe_stacks_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -6612,8 +6617,8 @@ pub mod describe_stacks_input {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -8177,8 +8182,8 @@ pub mod estimate_template_cost_input {
             self.template_body = input;
             self
         }
-        /// <p>Location of file containing the template body. The URL must point to a template that
-        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+        /// <p>Location of file containing the template body. The URL must point to a template that is
+        /// located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
         /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -8187,8 +8192,8 @@ pub mod estimate_template_cost_input {
             self.template_url = Some(input.into());
             self
         }
-        /// <p>Location of file containing the template body. The URL must point to a template that
-        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+        /// <p>Location of file containing the template body. The URL must point to a template that is
+        /// located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
         /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -8389,20 +8394,20 @@ pub mod execute_change_set_input {
             self.stack_name = input;
             self
         }
-        /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
-        /// token if you plan to retry requests so that CloudFormation knows that you're not
+        /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token
+        /// if you plan to retry requests so that CloudFormation knows that you're not
         /// attempting to execute a change set to update a stack with the same name. You might retry
-        /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully
-        /// received them.</p>
+        /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation
+        /// successfully received them.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
-        /// token if you plan to retry requests so that CloudFormation knows that you're not
+        /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token
+        /// if you plan to retry requests so that CloudFormation knows that you're not
         /// attempting to execute a change set to update a stack with the same name. You might retry
-        /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully
-        /// received them.</p>
+        /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation
+        /// successfully received them.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8566,14 +8571,14 @@ pub mod get_stack_policy_input {
         pub(crate) stack_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or unique stack ID that is associated with the stack whose policy you want
-        /// to get.</p>
+        /// <p>The name or unique stack ID that is associated with the stack whose policy you want to
+        /// get.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or unique stack ID that is associated with the stack whose policy you want
-        /// to get.</p>
+        /// <p>The name or unique stack ID that is associated with the stack whose policy you want to
+        /// get.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -8719,8 +8724,8 @@ pub mod get_template_input {
         pub(crate) template_stage: std::option::Option<crate::model::TemplateStage>,
     }
     impl Builder {
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -8735,8 +8740,8 @@ pub mod get_template_input {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -9199,6 +9204,8 @@ pub mod import_stacks_to_stack_set_input {
     pub struct Builder {
         pub(crate) stack_set_name: std::option::Option<std::string::String>,
         pub(crate) stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) stack_ids_url: std::option::Option<std::string::String>,
+        pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) operation_preferences:
             std::option::Option<crate::model::StackSetOperationPreferences>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -9226,6 +9233,7 @@ pub mod import_stacks_to_stack_set_input {
         ///
         /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per
         /// stack set at a time.</p>
+        /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
         pub fn stack_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_ids.unwrap_or_default();
             v.push(input.into());
@@ -9234,11 +9242,48 @@ pub mod import_stacks_to_stack_set_input {
         }
         /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per
         /// stack set at a time.</p>
+        /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
         pub fn set_stack_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.stack_ids = input;
+            self
+        }
+        /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+        /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+        pub fn stack_ids_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_ids_url = Some(input.into());
+            self
+        }
+        /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+        /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+        pub fn set_stack_ids_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_ids_url = input;
+            self
+        }
+        /// Appends an item to `organizational_unit_ids`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+        ///
+        /// <p>The list of OU ID’s to which the stacks being imported has to be mapped as deployment
+        /// target.</p>
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.organizational_unit_ids.unwrap_or_default();
+            v.push(input.into());
+            self.organizational_unit_ids = Some(v);
+            self
+        }
+        /// <p>The list of OU ID’s to which the stacks being imported has to be mapped as deployment
+        /// target.</p>
+        pub fn set_organizational_unit_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.organizational_unit_ids = input;
             self
         }
         /// <p>The user-specified preferences for how CloudFormation performs a stack set
@@ -9309,6 +9354,8 @@ pub mod import_stacks_to_stack_set_input {
             Ok(crate::input::ImportStacksToStackSetInput {
                 stack_set_name: self.stack_set_name,
                 stack_ids: self.stack_ids,
+                stack_ids_url: self.stack_ids_url,
+                organizational_unit_ids: self.organizational_unit_ids,
                 operation_preferences: self.operation_preferences,
                 operation_id: self.operation_id,
                 call_as: self.call_as,
@@ -9612,14 +9659,14 @@ pub mod list_exports_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A string (provided by the <a>ListExports</a> response output) that
-        /// identifies the next page of exported output values that you asked to retrieve.</p>
+        /// <p>A string (provided by the <a>ListExports</a> response output) that identifies
+        /// the next page of exported output values that you asked to retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string (provided by the <a>ListExports</a> response output) that
-        /// identifies the next page of exported output values that you asked to retrieve.</p>
+        /// <p>A string (provided by the <a>ListExports</a> response output) that identifies
+        /// the next page of exported output values that you asked to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9932,14 +9979,12 @@ pub mod list_stack_instances_input {
         pub(crate) call_as: std::option::Option<crate::model::CallAs>,
     }
     impl Builder {
-        /// <p>The name or unique ID of the stack set that you want to list stack instances
-        /// for.</p>
+        /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
         pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_set_name = Some(input.into());
             self
         }
-        /// <p>The name or unique ID of the stack set that you want to list stack instances
-        /// for.</p>
+        /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10000,12 +10045,14 @@ pub mod list_stack_instances_input {
             self.filters = input;
             self
         }
-        /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
+        /// <p>The name of the Amazon Web Services account that you want to list stack instances
+        /// for.</p>
         pub fn stack_instance_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_instance_account = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
+        /// <p>The name of the Amazon Web Services account that you want to list stack instances
+        /// for.</p>
         pub fn set_stack_instance_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10212,8 +10259,8 @@ pub mod list_stack_resources_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -10228,8 +10275,8 @@ pub mod list_stack_resources_input {
             self.stack_name = Some(input.into());
             self
         }
-        /// <p>The name or the unique stack ID that is associated with the stack, which are not
-        /// always interchangeable:</p>
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+        /// interchangeable:</p>
         /// <ul>
         /// <li>
         /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -11097,14 +11144,12 @@ pub mod list_stack_sets_input {
             self.max_results = input;
             self
         }
-        /// <p>The status of the stack sets that you want to get summary information
-        /// about.</p>
+        /// <p>The status of the stack sets that you want to get summary information about.</p>
         pub fn status(mut self, input: crate::model::StackSetStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the stack sets that you want to get summary information
-        /// about.</p>
+        /// <p>The status of the stack sets that you want to get summary information about.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StackSetStatus>,
@@ -11716,15 +11761,19 @@ pub mod list_types_input {
             self
         }
         /// <p>Filter criteria to use in determining which extensions to return.</p>
-        /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
-        /// value when returning the list of types.</p>
+        /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For
+        /// example, specifying <code>AWS_TYPES</code> for <code>Category</code> and
+        /// <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but
+        /// specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
         pub fn filters(mut self, input: crate::model::TypeFilters) -> Self {
             self.filters = Some(input);
             self
         }
         /// <p>Filter criteria to use in determining which extensions to return.</p>
-        /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
-        /// value when returning the list of types.</p>
+        /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For
+        /// example, specifying <code>AWS_TYPES</code> for <code>Category</code> and
+        /// <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but
+        /// specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::TypeFilters>,
@@ -12248,8 +12297,8 @@ pub mod publish_type_input {
         /// 2.0.0</a>.</p>
         /// <p>If you do not specify a version number, CloudFormation increments the version number by
         /// one minor version release.</p>
-        /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
-        /// regardless of the value you specify.</p>
+        /// <p>You cannot specify a version number the first time you publish a type. CloudFormation
+        /// automatically sets the first version number to be <code>1.0.0</code>.</p>
         pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_version_number = Some(input.into());
             self
@@ -12264,8 +12313,8 @@ pub mod publish_type_input {
         /// 2.0.0</a>.</p>
         /// <p>If you do not specify a version number, CloudFormation increments the version number by
         /// one minor version release.</p>
-        /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
-        /// regardless of the value you specify.</p>
+        /// <p>You cannot specify a version number the first time you publish a type. CloudFormation
+        /// automatically sets the first version number to be <code>1.0.0</code>.</p>
         pub fn set_public_version_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13217,12 +13266,14 @@ pub mod rollback_stack_input {
             self.stack_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation
+        /// assumes to rollback the stack.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation
+        /// assumes to rollback the stack.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -13393,17 +13444,17 @@ pub mod set_stack_policy_input {
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-        /// to Stack Resources</a> in the CloudFormation User Guide. You can specify either
-        /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
-        /// both.</p>
+        /// to Stack Resources</a> in the CloudFormation User Guide. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
         pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_body = Some(input.into());
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-        /// to Stack Resources</a> in the CloudFormation User Guide. You can specify either
-        /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
-        /// both.</p>
+        /// to Stack Resources</a> in the CloudFormation User Guide. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
         pub fn set_stack_policy_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13411,18 +13462,18 @@ pub mod set_stack_policy_input {
             self.stack_policy_body = input;
             self
         }
-        /// <p>Location of a file containing the stack policy. The URL must point to a policy
-        /// (maximum size: 16 KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
+        /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum
+        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
         pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_url = Some(input.into());
             self
         }
-        /// <p>Location of a file containing the stack policy. The URL must point to a policy
-        /// (maximum size: 16 KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
+        /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum
+        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
         pub fn set_stack_policy_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14040,18 +14091,18 @@ pub mod signal_resource_input {
             self.logical_resource_id = input;
             self
         }
-        /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling
-        /// groups, specify the instance ID that you are signaling as the unique ID. If you send
-        /// multiple signals to a single resource (such as signaling a wait condition), each signal
-        /// requires a different unique ID.</p>
+        /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups,
+        /// specify the instance ID that you are signaling as the unique ID. If you send multiple
+        /// signals to a single resource (such as signaling a wait condition), each signal requires a
+        /// different unique ID.</p>
         pub fn unique_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.unique_id = Some(input.into());
             self
         }
-        /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling
-        /// groups, specify the instance ID that you are signaling as the unique ID. If you send
-        /// multiple signals to a single resource (such as signaling a wait condition), each signal
-        /// requires a different unique ID.</p>
+        /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups,
+        /// specify the instance ID that you are signaling as the unique ID. If you send multiple
+        /// signals to a single resource (such as signaling a wait condition), each signal requires a
+        /// different unique ID.</p>
         pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unique_id = input;
             self
@@ -14215,14 +14266,12 @@ pub mod stop_stack_set_operation_input {
         pub(crate) call_as: std::option::Option<crate::model::CallAs>,
     }
     impl Builder {
-        /// <p>The name or unique ID of the stack set that you want to stop the operation
-        /// for.</p>
+        /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
         pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_set_name = Some(input.into());
             self
         }
-        /// <p>The name or unique ID of the stack set that you want to stop the operation
-        /// for.</p>
+        /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14722,8 +14771,8 @@ pub mod update_stack_input {
             self.template_body = input;
             self
         }
-        /// <p>Location of file containing the template body. The URL must point to a template that
-        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+        /// <p>Location of file containing the template body. The URL must point to a template that is
+        /// located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
         /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
@@ -14733,8 +14782,8 @@ pub mod update_stack_input {
             self.template_url = Some(input.into());
             self
         }
-        /// <p>Location of file containing the template body. The URL must point to a template that
-        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+        /// <p>Location of file containing the template body. The URL must point to a template that is
+        /// located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
         /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
@@ -14762,11 +14811,11 @@ pub mod update_stack_input {
             self.use_previous_template = input;
             self
         }
-        /// <p>Structure containing the temporary overriding stack policy body. You can specify
-        /// either the <code>StackPolicyDuringUpdateBody</code> or the
-        /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
-        /// <p>If you want to update protected resources, specify a temporary overriding stack
-        /// policy during this update. If you do not specify a stack policy, the current policy that is
+        /// <p>Structure containing the temporary overriding stack policy body. You can specify either
+        /// the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
+        /// parameter, but not both.</p>
+        /// <p>If you want to update protected resources, specify a temporary overriding stack policy
+        /// during this update. If you do not specify a stack policy, the current policy that is
         /// associated with the stack will be used.</p>
         pub fn stack_policy_during_update_body(
             mut self,
@@ -14775,11 +14824,11 @@ pub mod update_stack_input {
             self.stack_policy_during_update_body = Some(input.into());
             self
         }
-        /// <p>Structure containing the temporary overriding stack policy body. You can specify
-        /// either the <code>StackPolicyDuringUpdateBody</code> or the
-        /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
-        /// <p>If you want to update protected resources, specify a temporary overriding stack
-        /// policy during this update. If you do not specify a stack policy, the current policy that is
+        /// <p>Structure containing the temporary overriding stack policy body. You can specify either
+        /// the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
+        /// parameter, but not both.</p>
+        /// <p>If you want to update protected resources, specify a temporary overriding stack policy
+        /// during this update. If you do not specify a stack policy, the current policy that is
         /// associated with the stack will be used.</p>
         pub fn set_stack_policy_during_update_body(
             mut self,
@@ -14788,13 +14837,12 @@ pub mod update_stack_input {
             self.stack_policy_during_update_body = input;
             self
         }
-        /// <p>Location of a file containing the temporary overriding stack policy. The URL must
-        /// point to a policy (max size: 16KB) located in an S3 bucket in
-        /// the same Region as the stack. You can specify either the
-        /// <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
-        /// parameter, but not both.</p>
-        /// <p>If you want to update protected resources, specify a temporary overriding stack
-        /// policy during this update. If you do not specify a stack policy, the current policy that is
+        /// <p>Location of a file containing the temporary overriding stack policy. The URL must point
+        /// to a policy (max size: 16KB) located in an S3 bucket in the same Region as the stack. You
+        /// can specify either the <code>StackPolicyDuringUpdateBody</code> or the
+        /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
+        /// <p>If you want to update protected resources, specify a temporary overriding stack policy
+        /// during this update. If you do not specify a stack policy, the current policy that is
         /// associated with the stack will be used.</p>
         pub fn stack_policy_during_update_url(
             mut self,
@@ -14803,13 +14851,12 @@ pub mod update_stack_input {
             self.stack_policy_during_update_url = Some(input.into());
             self
         }
-        /// <p>Location of a file containing the temporary overriding stack policy. The URL must
-        /// point to a policy (max size: 16KB) located in an S3 bucket in
-        /// the same Region as the stack. You can specify either the
-        /// <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
-        /// parameter, but not both.</p>
-        /// <p>If you want to update protected resources, specify a temporary overriding stack
-        /// policy during this update. If you do not specify a stack policy, the current policy that is
+        /// <p>Location of a file containing the temporary overriding stack policy. The URL must point
+        /// to a policy (max size: 16KB) located in an S3 bucket in the same Region as the stack. You
+        /// can specify either the <code>StackPolicyDuringUpdateBody</code> or the
+        /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
+        /// <p>If you want to update protected resources, specify a temporary overriding stack policy
+        /// during this update. If you do not specify a stack policy, the current policy that is
         /// associated with the stack will be used.</p>
         pub fn set_stack_policy_during_update_url(
             mut self,
@@ -14822,8 +14869,8 @@ pub mod update_stack_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-        /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
         /// type.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
@@ -14831,8 +14878,8 @@ pub mod update_stack_input {
             self.parameters = Some(v);
             self
         }
-        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-        /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
         /// type.</p>
         pub fn set_parameters(
             mut self,
@@ -14852,8 +14899,8 @@ pub mod update_stack_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
         /// of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -14872,9 +14919,8 @@ pub mod update_stack_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -14960,8 +15006,8 @@ pub mod update_stack_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
         /// of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -14980,9 +15026,8 @@ pub mod update_stack_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -15066,24 +15111,28 @@ pub mod update_stack_input {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The template resource types that you have permissions to work with for this update
-        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <p>The template resource types that you have permissions to work with for this update stack
+        /// action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
         /// <code>Custom::MyCustomInstance</code>.</p>
-        /// <p>If the list of resource types doesn't include a resource that you're updating, the
-        /// stack update fails. By default, CloudFormation grants permissions to all resource
-        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+        /// <p>If the list of resource types doesn't include a resource that you're updating, the stack
+        /// update fails. By default, CloudFormation grants permissions to all resource types.
+        /// Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+        /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+        /// Identity and Access Management</a>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
-        /// <p>The template resource types that you have permissions to work with for this update
-        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <p>The template resource types that you have permissions to work with for this update stack
+        /// action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
         /// <code>Custom::MyCustomInstance</code>.</p>
-        /// <p>If the list of resource types doesn't include a resource that you're updating, the
-        /// stack update fails. By default, CloudFormation grants permissions to all resource
-        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+        /// <p>If the list of resource types doesn't include a resource that you're updating, the stack
+        /// update fails. By default, CloudFormation grants permissions to all resource types.
+        /// Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+        /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+        /// Identity and Access Management</a>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15091,12 +15140,11 @@ pub mod update_stack_input {
             self.resource_types = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes to update the stack. CloudFormation uses the role's
-        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to update the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
@@ -15104,12 +15152,11 @@ pub mod update_stack_input {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-        /// that CloudFormation assumes to update the stack. CloudFormation uses the role's
-        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to update the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
         /// <p>If you don't specify a value, CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
@@ -15138,9 +15185,9 @@ pub mod update_stack_input {
         /// <p>Structure containing a new stack policy body. You can specify either the
         /// <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
         /// both.</p>
-        /// <p>You might update the stack policy, for example, in order to protect a new resource
-        /// that you created during a stack update. If you do not specify a stack policy, the current
-        /// policy that is associated with the stack is unchanged.</p>
+        /// <p>You might update the stack policy, for example, in order to protect a new resource that
+        /// you created during a stack update. If you do not specify a stack policy, the current policy
+        /// that is associated with the stack is unchanged.</p>
         pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_body = Some(input.into());
             self
@@ -15148,9 +15195,9 @@ pub mod update_stack_input {
         /// <p>Structure containing a new stack policy body. You can specify either the
         /// <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
         /// both.</p>
-        /// <p>You might update the stack policy, for example, in order to protect a new resource
-        /// that you created during a stack update. If you do not specify a stack policy, the current
-        /// policy that is associated with the stack is unchanged.</p>
+        /// <p>You might update the stack policy, for example, in order to protect a new resource that
+        /// you created during a stack update. If you do not specify a stack policy, the current policy
+        /// that is associated with the stack is unchanged.</p>
         pub fn set_stack_policy_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15158,24 +15205,24 @@ pub mod update_stack_input {
             self.stack_policy_body = input;
             self
         }
-        /// <p>Location of a file containing the updated stack policy. The URL must point to a
-        /// policy (max size: 16KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
-        /// <p>You might update the stack policy, for example, in order to protect a new resource
-        /// that you created during a stack update. If you do not specify a stack policy, the current
-        /// policy that is associated with the stack is unchanged.</p>
+        /// <p>Location of a file containing the updated stack policy. The URL must point to a policy
+        /// (max size: 16KB) located in an S3 bucket in the same Region as the stack. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
+        /// <p>You might update the stack policy, for example, in order to protect a new resource that
+        /// you created during a stack update. If you do not specify a stack policy, the current policy
+        /// that is associated with the stack is unchanged.</p>
         pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_url = Some(input.into());
             self
         }
-        /// <p>Location of a file containing the updated stack policy. The URL must point to a
-        /// policy (max size: 16KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
-        /// <p>You might update the stack policy, for example, in order to protect a new resource
-        /// that you created during a stack update. If you do not specify a stack policy, the current
-        /// policy that is associated with the stack is unchanged.</p>
+        /// <p>Location of a file containing the updated stack policy. The URL must point to a policy
+        /// (max size: 16KB) located in an S3 bucket in the same Region as the stack. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
+        /// <p>You might update the stack policy, for example, in order to protect a new resource that
+        /// you created during a stack update. If you do not specify a stack policy, the current policy
+        /// that is associated with the stack is unchanged.</p>
         pub fn set_stack_policy_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15187,18 +15234,16 @@ pub mod update_stack_input {
         ///
         /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
         ///
-        /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-        /// CloudFormation associates with the stack. Specify an empty list to remove all notification
-        /// topics.</p>
+        /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all
+        /// notification topics.</p>
         pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
-        /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-        /// CloudFormation associates with the stack. Specify an empty list to remove all notification
-        /// topics.</p>
+        /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all
+        /// notification topics.</p>
         pub fn set_notification_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15249,8 +15294,8 @@ pub mod update_stack_input {
             self.disable_rollback = input;
             self
         }
-        /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
-        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if you
+        /// plan to retry requests so that CloudFormation knows that you're not attempting to
         /// update a stack with the same name. You might retry <code>UpdateStack</code> requests to
         /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -15268,8 +15313,8 @@ pub mod update_stack_input {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
-        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if you
+        /// plan to retry requests so that CloudFormation knows that you're not attempting to
         /// update a stack with the same name. You might retry <code>UpdateStack</code> requests to
         /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -15469,20 +15514,22 @@ pub mod update_stack_instances_input {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for which you want to update parameter values
-        /// for stack instances. The overridden parameter values will be applied to all stack instances
-        /// in the specified accounts and Regions.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for
+        /// which you want to update parameter values for stack instances. The overridden parameter
+        /// values will be applied to all stack instances in the specified accounts and Regions.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
-        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for which you want to update parameter values
-        /// for stack instances. The overridden parameter values will be applied to all stack instances
-        /// in the specified accounts and Regions.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for
+        /// which you want to update parameter values for stack instances. The overridden parameter
+        /// values will be applied to all stack instances in the specified accounts and Regions.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15519,18 +15566,18 @@ pub mod update_stack_instances_input {
         ///
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
-        /// <p>The names of one or more Regions in which you want to update parameter values for
-        /// stack instances. The overridden parameter values will be applied to all stack instances in
-        /// the specified accounts and Regions.</p>
+        /// <p>The names of one or more Regions in which you want to update parameter values for stack
+        /// instances. The overridden parameter values will be applied to all stack instances in the
+        /// specified accounts and Regions.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
             self.regions = Some(v);
             self
         }
-        /// <p>The names of one or more Regions in which you want to update parameter values for
-        /// stack instances. The overridden parameter values will be applied to all stack instances in
-        /// the specified accounts and Regions.</p>
+        /// <p>The names of one or more Regions in which you want to update parameter values for stack
+        /// instances. The overridden parameter values will be applied to all stack instances in the
+        /// specified accounts and Regions.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15544,31 +15591,29 @@ pub mod update_stack_instances_input {
         ///
         /// <p> A list of input parameters whose values you want to update for the specified stack
         /// instances. </p>
-        /// <p>Any overridden parameter values will be applied to all stack instances in the
-        /// specified accounts and Regions. When specifying parameters and their values, be aware of
-        /// how CloudFormation sets parameter values during stack instance update
-        /// operations:</p>
+        /// <p>Any overridden parameter values will be applied to all stack instances in the specified
+        /// accounts and Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
         /// <ul>
         /// <li>
-        /// <p>To override the current value for a parameter, include the parameter and
-        /// specify its value.</p>
+        /// <p>To override the current value for a parameter, include the parameter and specify
+        /// its value.</p>
         /// </li>
         /// <li>
-        /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
-        /// <code>true</code>. (You cannot specify both a value and set
-        /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+        /// <p>To leave an overridden parameter set to its present value, include the parameter
+        /// and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+        /// both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p>
         /// </li>
         /// <li>
         /// <p>To set an overridden parameter back to the value specified in the stack set,
         /// specify a parameter list but do not include the parameter in the list.</p>
         /// </li>
         /// <li>
-        /// <p>To leave all parameters set to their present values, do not specify this
-        /// property at all.</p>
+        /// <p>To leave all parameters set to their present values, do not specify this property
+        /// at all.</p>
         /// </li>
         /// </ul>
-        /// <p>During stack set updates, any parameter values overridden for a stack instance are
-        /// not updated, but retain their overridden value.</p>
+        /// <p>During stack set updates, any parameter values overridden for a stack instance are not
+        /// updated, but retain their overridden value.</p>
         /// <p>You can only override the parameter <i>values</i> that are specified in
         /// the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to
         /// update the stack set template. If you add a parameter to a template, before you can
@@ -15584,31 +15629,29 @@ pub mod update_stack_instances_input {
         }
         /// <p> A list of input parameters whose values you want to update for the specified stack
         /// instances. </p>
-        /// <p>Any overridden parameter values will be applied to all stack instances in the
-        /// specified accounts and Regions. When specifying parameters and their values, be aware of
-        /// how CloudFormation sets parameter values during stack instance update
-        /// operations:</p>
+        /// <p>Any overridden parameter values will be applied to all stack instances in the specified
+        /// accounts and Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
         /// <ul>
         /// <li>
-        /// <p>To override the current value for a parameter, include the parameter and
-        /// specify its value.</p>
+        /// <p>To override the current value for a parameter, include the parameter and specify
+        /// its value.</p>
         /// </li>
         /// <li>
-        /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
-        /// <code>true</code>. (You cannot specify both a value and set
-        /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+        /// <p>To leave an overridden parameter set to its present value, include the parameter
+        /// and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+        /// both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p>
         /// </li>
         /// <li>
         /// <p>To set an overridden parameter back to the value specified in the stack set,
         /// specify a parameter list but do not include the parameter in the list.</p>
         /// </li>
         /// <li>
-        /// <p>To leave all parameters set to their present values, do not specify this
-        /// property at all.</p>
+        /// <p>To leave all parameters set to their present values, do not specify this property
+        /// at all.</p>
         /// </li>
         /// </ul>
-        /// <p>During stack set updates, any parameter values overridden for a stack instance are
-        /// not updated, but retain their overridden value.</p>
+        /// <p>During stack set updates, any parameter values overridden for a stack instance are not
+        /// updated, but retain their overridden value.</p>
         /// <p>You can only override the parameter <i>values</i> that are specified in
         /// the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to
         /// update the stack set template. If you add a parameter to a template, before you can
@@ -15640,10 +15683,8 @@ pub mod update_stack_instances_input {
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically.
         /// </p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15651,10 +15692,8 @@ pub mod update_stack_instances_input {
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically.
         /// </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -15868,6 +15907,7 @@ pub mod update_stack_set_input {
         pub(crate) accounts: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) call_as: std::option::Option<crate::model::CallAs>,
+        pub(crate) managed_execution: std::option::Option<crate::model::ManagedExecution>,
     }
     impl Builder {
         /// <p>The name or unique ID of the stack set that you want to update.</p>
@@ -15987,8 +16027,8 @@ pub mod update_stack_set_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stacks sets, you must explicitly acknowledge this by
         /// specifying one of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -16007,9 +16047,8 @@ pub mod update_stack_set_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -16087,8 +16126,8 @@ pub mod update_stack_set_input {
         /// <p>
         /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
         /// </p>
-        /// <p>Some stack templates might include resources that can affect permissions in
-        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// <p>Some stack templates might include resources that can affect permissions in your
+        /// Amazon Web Services account; for example, by creating new Identity and Access Management
         /// (IAM) users. For those stacks sets, you must explicitly acknowledge this by
         /// specifying one of these capabilities.</p>
         /// <p>The following IAM resources require you to specify either the
@@ -16107,9 +16146,8 @@ pub mod update_stack_set_input {
         /// <code>InsufficientCapabilities</code> error.</p>
         /// </li>
         /// </ul>
-        /// <p>If your stack template contains these resources, we recommend that you review
-        /// all permissions associated with them and edit their permissions if
-        /// necessary.</p>
+        /// <p>If your stack template contains these resources, we recommend that you review all
+        /// permissions associated with them and edit their permissions if necessary.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -16185,8 +16223,8 @@ pub mod update_stack_set_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-        /// CloudFormation also propagates these tags to supported resources that are created in
-        /// the stacks. You can specify a maximum number of 50 tags.</p>
+        /// CloudFormation also propagates these tags to supported resources that are
+        /// created in the stacks. You can specify a maximum number of 50 tags.</p>
         /// <p>If you specify tags for this parameter, those tags replace any list of tags that are
         /// currently associated with this stack set. This means:</p>
         /// <ul>
@@ -16207,11 +16245,10 @@ pub mod update_stack_set_input {
         /// associated tags.</p>
         /// </li>
         /// </ul>
-        /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action,
-        /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-        /// you omit tags that are currently associated with the stack set from the list of tags you
-        /// specify, CloudFormation assumes that you want to remove those tags from the stack set,
-        /// and checks to see if you have permission to untag resources. If you don't have the
+        /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+        /// If you omit tags that are currently associated with the stack set from the list of tags you
+        /// specify, CloudFormation assumes that you want to remove those tags from the stack
+        /// set, and checks to see if you have permission to untag resources. If you don't have the
         /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
         /// <code>access denied</code> error, and the stack set is not updated.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -16221,8 +16258,8 @@ pub mod update_stack_set_input {
             self
         }
         /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-        /// CloudFormation also propagates these tags to supported resources that are created in
-        /// the stacks. You can specify a maximum number of 50 tags.</p>
+        /// CloudFormation also propagates these tags to supported resources that are
+        /// created in the stacks. You can specify a maximum number of 50 tags.</p>
         /// <p>If you specify tags for this parameter, those tags replace any list of tags that are
         /// currently associated with this stack set. This means:</p>
         /// <ul>
@@ -16243,11 +16280,10 @@ pub mod update_stack_set_input {
         /// associated tags.</p>
         /// </li>
         /// </ul>
-        /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action,
-        /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-        /// you omit tags that are currently associated with the stack set from the list of tags you
-        /// specify, CloudFormation assumes that you want to remove those tags from the stack set,
-        /// and checks to see if you have permission to untag resources. If you don't have the
+        /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+        /// If you omit tags that are currently associated with the stack set from the list of tags you
+        /// specify, CloudFormation assumes that you want to remove those tags from the stack
+        /// set, and checks to see if you have permission to untag resources. If you don't have the
         /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
         /// <code>access denied</code> error, and the stack set is not updated.</p>
         pub fn set_tags(
@@ -16431,27 +16467,23 @@ pub mod update_stack_set_input {
             self
         }
         /// <p>The unique ID for this stack set operation. </p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, CloudFormation generates one
         /// automatically.</p>
-        /// <p>Repeating this stack set operation with a new operation ID retries all stack
-        /// instances whose status is <code>OUTDATED</code>. </p>
+        /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
+        /// whose status is <code>OUTDATED</code>. </p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
         /// <p>The unique ID for this stack set operation. </p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, CloudFormation generates one
         /// automatically.</p>
-        /// <p>Repeating this stack set operation with a new operation ID retries all stack
-        /// instances whose status is <code>OUTDATED</code>. </p>
+        /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
+        /// whose status is <code>OUTDATED</code>. </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -16576,6 +16608,21 @@ pub mod update_stack_set_input {
             self.call_as = input;
             self
         }
+        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
+        /// conflicting operations.</p>
+        pub fn managed_execution(mut self, input: crate::model::ManagedExecution) -> Self {
+            self.managed_execution = Some(input);
+            self
+        }
+        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
+        /// conflicting operations.</p>
+        pub fn set_managed_execution(
+            mut self,
+            input: std::option::Option<crate::model::ManagedExecution>,
+        ) -> Self {
+            self.managed_execution = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateStackSetInput`](crate::input::UpdateStackSetInput)
         pub fn build(
             self,
@@ -16602,6 +16649,7 @@ pub mod update_stack_set_input {
                 accounts: self.accounts,
                 regions: self.regions,
                 call_as: self.call_as,
+                managed_execution: self.managed_execution,
             })
         }
     }
@@ -17194,8 +17242,8 @@ pub struct UpdateStackSetInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks sets, you must explicitly acknowledge this by
     /// specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -17214,9 +17262,8 @@ pub struct UpdateStackSetInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -17282,8 +17329,8 @@ pub struct UpdateStackSetInput {
     /// </ul>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-    /// CloudFormation also propagates these tags to supported resources that are created in
-    /// the stacks. You can specify a maximum number of 50 tags.</p>
+    /// CloudFormation also propagates these tags to supported resources that are
+    /// created in the stacks. You can specify a maximum number of 50 tags.</p>
     /// <p>If you specify tags for this parameter, those tags replace any list of tags that are
     /// currently associated with this stack set. This means:</p>
     /// <ul>
@@ -17304,11 +17351,10 @@ pub struct UpdateStackSetInput {
     /// associated tags.</p>
     /// </li>
     /// </ul>
-    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action,
-    /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-    /// you omit tags that are currently associated with the stack set from the list of tags you
-    /// specify, CloudFormation assumes that you want to remove those tags from the stack set,
-    /// and checks to see if you have permission to untag resources. If you don't have the
+    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+    /// If you omit tags that are currently associated with the stack set from the list of tags you
+    /// specify, CloudFormation assumes that you want to remove those tags from the stack
+    /// set, and checks to see if you have permission to untag resources. If you don't have the
     /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
     /// <code>access denied</code> error, and the stack set is not updated.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -17371,14 +17417,12 @@ pub struct UpdateStackSetInput {
     /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
     pub auto_deployment: std::option::Option<crate::model::AutoDeployment>,
     /// <p>The unique ID for this stack set operation. </p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, CloudFormation generates one
     /// automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack
-    /// instances whose status is <code>OUTDATED</code>. </p>
+    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
+    /// whose status is <code>OUTDATED</code>. </p>
     pub operation_id: std::option::Option<std::string::String>,
     /// <p>[Self-managed permissions] The accounts in which to update associated stack instances.
     /// If you specify accounts, you must also specify the Regions in which to update stack set
@@ -17422,6 +17466,9 @@ pub struct UpdateStackSetInput {
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
+    /// conflicting operations.</p>
+    pub managed_execution: std::option::Option<crate::model::ManagedExecution>,
 }
 impl UpdateStackSetInput {
     /// <p>The name or unique ID of the stack set that you want to update.</p>
@@ -17471,8 +17518,8 @@ impl UpdateStackSetInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks sets, you must explicitly acknowledge this by
     /// specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -17491,9 +17538,8 @@ impl UpdateStackSetInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -17561,8 +17607,8 @@ impl UpdateStackSetInput {
         self.capabilities.as_deref()
     }
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-    /// CloudFormation also propagates these tags to supported resources that are created in
-    /// the stacks. You can specify a maximum number of 50 tags.</p>
+    /// CloudFormation also propagates these tags to supported resources that are
+    /// created in the stacks. You can specify a maximum number of 50 tags.</p>
     /// <p>If you specify tags for this parameter, those tags replace any list of tags that are
     /// currently associated with this stack set. This means:</p>
     /// <ul>
@@ -17583,11 +17629,10 @@ impl UpdateStackSetInput {
     /// associated tags.</p>
     /// </li>
     /// </ul>
-    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action,
-    /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-    /// you omit tags that are currently associated with the stack set from the list of tags you
-    /// specify, CloudFormation assumes that you want to remove those tags from the stack set,
-    /// and checks to see if you have permission to untag resources. If you don't have the
+    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+    /// If you omit tags that are currently associated with the stack set from the list of tags you
+    /// specify, CloudFormation assumes that you want to remove those tags from the stack
+    /// set, and checks to see if you have permission to untag resources. If you don't have the
     /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
     /// <code>access denied</code> error, and the stack set is not updated.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
@@ -17666,14 +17711,12 @@ impl UpdateStackSetInput {
         self.auto_deployment.as_ref()
     }
     /// <p>The unique ID for this stack set operation. </p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, CloudFormation generates one
     /// automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack
-    /// instances whose status is <code>OUTDATED</code>. </p>
+    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
+    /// whose status is <code>OUTDATED</code>. </p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -17725,6 +17768,11 @@ impl UpdateStackSetInput {
     pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
         self.call_as.as_ref()
     }
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
+    /// conflicting operations.</p>
+    pub fn managed_execution(&self) -> std::option::Option<&crate::model::ManagedExecution> {
+        self.managed_execution.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateStackSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17747,6 +17795,7 @@ impl std::fmt::Debug for UpdateStackSetInput {
         formatter.field("accounts", &self.accounts);
         formatter.field("regions", &self.regions);
         formatter.field("call_as", &self.call_as);
+        formatter.field("managed_execution", &self.managed_execution);
         formatter.finish()
     }
 }
@@ -17757,10 +17806,11 @@ impl std::fmt::Debug for UpdateStackSetInput {
 pub struct UpdateStackInstancesInput {
     /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for which you want to update parameter values
-    /// for stack instances. The overridden parameter values will be applied to all stack instances
-    /// in the specified accounts and Regions.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for
+    /// which you want to update parameter values for stack instances. The overridden parameter
+    /// values will be applied to all stack instances in the specified accounts and Regions.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>[Service-managed permissions] The Organizations accounts for which you want to
     /// update parameter values for stack instances. If your update targets OUs, the overridden
@@ -17770,37 +17820,35 @@ pub struct UpdateStackInstancesInput {
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
     /// both.</p>
     pub deployment_targets: std::option::Option<crate::model::DeploymentTargets>,
-    /// <p>The names of one or more Regions in which you want to update parameter values for
-    /// stack instances. The overridden parameter values will be applied to all stack instances in
-    /// the specified accounts and Regions.</p>
+    /// <p>The names of one or more Regions in which you want to update parameter values for stack
+    /// instances. The overridden parameter values will be applied to all stack instances in the
+    /// specified accounts and Regions.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A list of input parameters whose values you want to update for the specified stack
     /// instances. </p>
-    /// <p>Any overridden parameter values will be applied to all stack instances in the
-    /// specified accounts and Regions. When specifying parameters and their values, be aware of
-    /// how CloudFormation sets parameter values during stack instance update
-    /// operations:</p>
+    /// <p>Any overridden parameter values will be applied to all stack instances in the specified
+    /// accounts and Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
     /// <ul>
     /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and
-    /// specify its value.</p>
+    /// <p>To override the current value for a parameter, include the parameter and specify
+    /// its value.</p>
     /// </li>
     /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
-    /// <code>true</code>. (You cannot specify both a value and set
-    /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+    /// <p>To leave an overridden parameter set to its present value, include the parameter
+    /// and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+    /// both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p>
     /// </li>
     /// <li>
     /// <p>To set an overridden parameter back to the value specified in the stack set,
     /// specify a parameter list but do not include the parameter in the list.</p>
     /// </li>
     /// <li>
-    /// <p>To leave all parameters set to their present values, do not specify this
-    /// property at all.</p>
+    /// <p>To leave all parameters set to their present values, do not specify this property
+    /// at all.</p>
     /// </li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance are
-    /// not updated, but retain their overridden value.</p>
+    /// <p>During stack set updates, any parameter values overridden for a stack instance are not
+    /// updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in
     /// the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to
     /// update the stack set template. If you add a parameter to a template, before you can
@@ -17812,10 +17860,8 @@ pub struct UpdateStackInstancesInput {
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
     /// <p>The unique identifier for this stack set operation. </p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.
     /// </p>
     pub operation_id: std::option::Option<std::string::String>,
@@ -17842,10 +17888,11 @@ impl UpdateStackInstancesInput {
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for which you want to update parameter values
-    /// for stack instances. The overridden parameter values will be applied to all stack instances
-    /// in the specified accounts and Regions.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for
+    /// which you want to update parameter values for stack instances. The overridden parameter
+    /// values will be applied to all stack instances in the specified accounts and Regions.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.accounts.as_deref()
     }
@@ -17859,39 +17906,37 @@ impl UpdateStackInstancesInput {
     pub fn deployment_targets(&self) -> std::option::Option<&crate::model::DeploymentTargets> {
         self.deployment_targets.as_ref()
     }
-    /// <p>The names of one or more Regions in which you want to update parameter values for
-    /// stack instances. The overridden parameter values will be applied to all stack instances in
-    /// the specified accounts and Regions.</p>
+    /// <p>The names of one or more Regions in which you want to update parameter values for stack
+    /// instances. The overridden parameter values will be applied to all stack instances in the
+    /// specified accounts and Regions.</p>
     pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
         self.regions.as_deref()
     }
     /// <p> A list of input parameters whose values you want to update for the specified stack
     /// instances. </p>
-    /// <p>Any overridden parameter values will be applied to all stack instances in the
-    /// specified accounts and Regions. When specifying parameters and their values, be aware of
-    /// how CloudFormation sets parameter values during stack instance update
-    /// operations:</p>
+    /// <p>Any overridden parameter values will be applied to all stack instances in the specified
+    /// accounts and Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance update operations:</p>
     /// <ul>
     /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and
-    /// specify its value.</p>
+    /// <p>To override the current value for a parameter, include the parameter and specify
+    /// its value.</p>
     /// </li>
     /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
-    /// <code>true</code>. (You cannot specify both a value and set
-    /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+    /// <p>To leave an overridden parameter set to its present value, include the parameter
+    /// and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+    /// both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p>
     /// </li>
     /// <li>
     /// <p>To set an overridden parameter back to the value specified in the stack set,
     /// specify a parameter list but do not include the parameter in the list.</p>
     /// </li>
     /// <li>
-    /// <p>To leave all parameters set to their present values, do not specify this
-    /// property at all.</p>
+    /// <p>To leave all parameters set to their present values, do not specify this property
+    /// at all.</p>
     /// </li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance are
-    /// not updated, but retain their overridden value.</p>
+    /// <p>During stack set updates, any parameter values overridden for a stack instance are not
+    /// updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in
     /// the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to
     /// update the stack set template. If you add a parameter to a template, before you can
@@ -17909,10 +17954,8 @@ impl UpdateStackInstancesInput {
         self.operation_preferences.as_ref()
     }
     /// <p>The unique identifier for this stack set operation. </p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.
     /// </p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
@@ -17966,8 +18009,8 @@ pub struct UpdateStackInput {
     /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
     /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>Location of file containing the template body. The URL must point to a template that
-    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+    /// <p>Location of file containing the template body. The URL must point to a template that is
+    /// located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
     /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
     /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters:
@@ -17980,24 +18023,23 @@ pub struct UpdateStackInput {
     /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
     /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
     pub use_previous_template: std::option::Option<bool>,
-    /// <p>Structure containing the temporary overriding stack policy body. You can specify
-    /// either the <code>StackPolicyDuringUpdateBody</code> or the
-    /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
-    /// <p>If you want to update protected resources, specify a temporary overriding stack
-    /// policy during this update. If you do not specify a stack policy, the current policy that is
+    /// <p>Structure containing the temporary overriding stack policy body. You can specify either
+    /// the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
+    /// parameter, but not both.</p>
+    /// <p>If you want to update protected resources, specify a temporary overriding stack policy
+    /// during this update. If you do not specify a stack policy, the current policy that is
     /// associated with the stack will be used.</p>
     pub stack_policy_during_update_body: std::option::Option<std::string::String>,
-    /// <p>Location of a file containing the temporary overriding stack policy. The URL must
-    /// point to a policy (max size: 16KB) located in an S3 bucket in
-    /// the same Region as the stack. You can specify either the
-    /// <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
-    /// parameter, but not both.</p>
-    /// <p>If you want to update protected resources, specify a temporary overriding stack
-    /// policy during this update. If you do not specify a stack policy, the current policy that is
+    /// <p>Location of a file containing the temporary overriding stack policy. The URL must point
+    /// to a policy (max size: 16KB) located in an S3 bucket in the same Region as the stack. You
+    /// can specify either the <code>StackPolicyDuringUpdateBody</code> or the
+    /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
+    /// <p>If you want to update protected resources, specify a temporary overriding stack policy
+    /// during this update. If you do not specify a stack policy, the current policy that is
     /// associated with the stack will be used.</p>
     pub stack_policy_during_update_url: std::option::Option<std::string::String>,
-    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-    /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
     /// type.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
@@ -18007,8 +18049,8 @@ pub struct UpdateStackInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -18027,9 +18069,8 @@ pub struct UpdateStackInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -18103,19 +18144,20 @@ pub struct UpdateStackInput {
     /// </li>
     /// </ul>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-    /// <p>The template resource types that you have permissions to work with for this update
-    /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <p>The template resource types that you have permissions to work with for this update stack
+    /// action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource that you're updating, the
-    /// stack update fails. By default, CloudFormation grants permissions to all resource
-    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+    /// <p>If the list of resource types doesn't include a resource that you're updating, the stack
+    /// update fails. By default, CloudFormation grants permissions to all resource types.
+    /// Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+    /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes to update the stack. CloudFormation uses the role's
-    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to update the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
@@ -18126,21 +18168,20 @@ pub struct UpdateStackInput {
     /// <p>Structure containing a new stack policy body. You can specify either the
     /// <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
     /// both.</p>
-    /// <p>You might update the stack policy, for example, in order to protect a new resource
-    /// that you created during a stack update. If you do not specify a stack policy, the current
-    /// policy that is associated with the stack is unchanged.</p>
+    /// <p>You might update the stack policy, for example, in order to protect a new resource that
+    /// you created during a stack update. If you do not specify a stack policy, the current policy
+    /// that is associated with the stack is unchanged.</p>
     pub stack_policy_body: std::option::Option<std::string::String>,
-    /// <p>Location of a file containing the updated stack policy. The URL must point to a
-    /// policy (max size: 16KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-    /// <code>StackPolicyURL</code> parameter, but not both.</p>
-    /// <p>You might update the stack policy, for example, in order to protect a new resource
-    /// that you created during a stack update. If you do not specify a stack policy, the current
-    /// policy that is associated with the stack is unchanged.</p>
+    /// <p>Location of a file containing the updated stack policy. The URL must point to a policy
+    /// (max size: 16KB) located in an S3 bucket in the same Region as the stack. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
+    /// <p>You might update the stack policy, for example, in order to protect a new resource that
+    /// you created during a stack update. If you do not specify a stack policy, the current policy
+    /// that is associated with the stack is unchanged.</p>
     pub stack_policy_url: std::option::Option<std::string::String>,
-    /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-    /// CloudFormation associates with the stack. Specify an empty list to remove all notification
-    /// topics.</p>
+    /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all
+    /// notification topics.</p>
     pub notification_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
     /// these tags to supported resources in the stack. You can specify a maximum number of 50
@@ -18153,8 +18194,8 @@ pub struct UpdateStackInput {
     /// <p>Default: <code>False</code>
     /// </p>
     pub disable_rollback: std::option::Option<bool>,
-    /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
-    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if you
+    /// plan to retry requests so that CloudFormation knows that you're not attempting to
     /// update a stack with the same name. You might retry <code>UpdateStack</code> requests to
     /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -18184,8 +18225,8 @@ impl UpdateStackInput {
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>Location of file containing the template body. The URL must point to a template that
-    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+    /// <p>Location of file containing the template body. The URL must point to a template that is
+    /// located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
     /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
     /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters:
@@ -18202,28 +18243,27 @@ impl UpdateStackInput {
     pub fn use_previous_template(&self) -> std::option::Option<bool> {
         self.use_previous_template
     }
-    /// <p>Structure containing the temporary overriding stack policy body. You can specify
-    /// either the <code>StackPolicyDuringUpdateBody</code> or the
-    /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
-    /// <p>If you want to update protected resources, specify a temporary overriding stack
-    /// policy during this update. If you do not specify a stack policy, the current policy that is
+    /// <p>Structure containing the temporary overriding stack policy body. You can specify either
+    /// the <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
+    /// parameter, but not both.</p>
+    /// <p>If you want to update protected resources, specify a temporary overriding stack policy
+    /// during this update. If you do not specify a stack policy, the current policy that is
     /// associated with the stack will be used.</p>
     pub fn stack_policy_during_update_body(&self) -> std::option::Option<&str> {
         self.stack_policy_during_update_body.as_deref()
     }
-    /// <p>Location of a file containing the temporary overriding stack policy. The URL must
-    /// point to a policy (max size: 16KB) located in an S3 bucket in
-    /// the same Region as the stack. You can specify either the
-    /// <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
-    /// parameter, but not both.</p>
-    /// <p>If you want to update protected resources, specify a temporary overriding stack
-    /// policy during this update. If you do not specify a stack policy, the current policy that is
+    /// <p>Location of a file containing the temporary overriding stack policy. The URL must point
+    /// to a policy (max size: 16KB) located in an S3 bucket in the same Region as the stack. You
+    /// can specify either the <code>StackPolicyDuringUpdateBody</code> or the
+    /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
+    /// <p>If you want to update protected resources, specify a temporary overriding stack policy
+    /// during this update. If you do not specify a stack policy, the current policy that is
     /// associated with the stack will be used.</p>
     pub fn stack_policy_during_update_url(&self) -> std::option::Option<&str> {
         self.stack_policy_during_update_url.as_deref()
     }
-    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-    /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
     /// type.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
@@ -18235,8 +18275,8 @@ impl UpdateStackInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -18255,9 +18295,8 @@ impl UpdateStackInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -18333,21 +18372,22 @@ impl UpdateStackInput {
     pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.capabilities.as_deref()
     }
-    /// <p>The template resource types that you have permissions to work with for this update
-    /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <p>The template resource types that you have permissions to work with for this update stack
+    /// action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource that you're updating, the
-    /// stack update fails. By default, CloudFormation grants permissions to all resource
-    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+    /// <p>If the list of resource types doesn't include a resource that you're updating, the stack
+    /// update fails. By default, CloudFormation grants permissions to all resource types.
+    /// Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+    /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a>.</p>
     pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes to update the stack. CloudFormation uses the role's
-    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to update the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
@@ -18364,25 +18404,24 @@ impl UpdateStackInput {
     /// <p>Structure containing a new stack policy body. You can specify either the
     /// <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
     /// both.</p>
-    /// <p>You might update the stack policy, for example, in order to protect a new resource
-    /// that you created during a stack update. If you do not specify a stack policy, the current
-    /// policy that is associated with the stack is unchanged.</p>
+    /// <p>You might update the stack policy, for example, in order to protect a new resource that
+    /// you created during a stack update. If you do not specify a stack policy, the current policy
+    /// that is associated with the stack is unchanged.</p>
     pub fn stack_policy_body(&self) -> std::option::Option<&str> {
         self.stack_policy_body.as_deref()
     }
-    /// <p>Location of a file containing the updated stack policy. The URL must point to a
-    /// policy (max size: 16KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-    /// <code>StackPolicyURL</code> parameter, but not both.</p>
-    /// <p>You might update the stack policy, for example, in order to protect a new resource
-    /// that you created during a stack update. If you do not specify a stack policy, the current
-    /// policy that is associated with the stack is unchanged.</p>
+    /// <p>Location of a file containing the updated stack policy. The URL must point to a policy
+    /// (max size: 16KB) located in an S3 bucket in the same Region as the stack. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
+    /// <p>You might update the stack policy, for example, in order to protect a new resource that
+    /// you created during a stack update. If you do not specify a stack policy, the current policy
+    /// that is associated with the stack is unchanged.</p>
     pub fn stack_policy_url(&self) -> std::option::Option<&str> {
         self.stack_policy_url.as_deref()
     }
-    /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-    /// CloudFormation associates with the stack. Specify an empty list to remove all notification
-    /// topics.</p>
+    /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all
+    /// notification topics.</p>
     pub fn notification_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
         self.notification_ar_ns.as_deref()
     }
@@ -18401,8 +18440,8 @@ impl UpdateStackInput {
     pub fn disable_rollback(&self) -> std::option::Option<bool> {
         self.disable_rollback
     }
-    /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
-    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if you
+    /// plan to retry requests so that CloudFormation knows that you're not attempting to
     /// update a stack with the same name. You might retry <code>UpdateStack</code> requests to
     /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -18555,8 +18594,7 @@ impl std::fmt::Debug for TestTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStackSetOperationInput {
-    /// <p>The name or unique ID of the stack set that you want to stop the operation
-    /// for.</p>
+    /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>The ID of the stack operation. </p>
     pub operation_id: std::option::Option<std::string::String>,
@@ -18579,8 +18617,7 @@ pub struct StopStackSetOperationInput {
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
 impl StopStackSetOperationInput {
-    /// <p>The name or unique ID of the stack set that you want to stop the operation
-    /// for.</p>
+    /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
@@ -18628,10 +18665,10 @@ pub struct SignalResourceInput {
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of
     /// the resource that given in the template.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling
-    /// groups, specify the instance ID that you are signaling as the unique ID. If you send
-    /// multiple signals to a single resource (such as signaling a wait condition), each signal
-    /// requires a different unique ID.</p>
+    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups,
+    /// specify the instance ID that you are signaling as the unique ID. If you send multiple
+    /// signals to a single resource (such as signaling a wait condition), each signal requires a
+    /// different unique ID.</p>
     pub unique_id: std::option::Option<std::string::String>,
     /// <p>The status of the signal, which is either success or failure. A failure signal causes
     /// CloudFormation to immediately fail the stack creation or update.</p>
@@ -18648,10 +18685,10 @@ impl SignalResourceInput {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling
-    /// groups, specify the instance ID that you are signaling as the unique ID. If you send
-    /// multiple signals to a single resource (such as signaling a wait condition), each signal
-    /// requires a different unique ID.</p>
+    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups,
+    /// specify the instance ID that you are signaling as the unique ID. If you send multiple
+    /// signals to a single resource (such as signaling a wait condition), each signal requires a
+    /// different unique ID.</p>
     pub fn unique_id(&self) -> std::option::Option<&str> {
         self.unique_id.as_deref()
     }
@@ -18814,14 +18851,14 @@ pub struct SetStackPolicyInput {
     /// <p>The name or unique stack ID that you want to associate a policy with.</p>
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-    /// to Stack Resources</a> in the CloudFormation User Guide. You can specify either
-    /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
-    /// both.</p>
+    /// to Stack Resources</a> in the CloudFormation User Guide. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
     pub stack_policy_body: std::option::Option<std::string::String>,
-    /// <p>Location of a file containing the stack policy. The URL must point to a policy
-    /// (maximum size: 16 KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum
+    /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
     pub stack_policy_url: std::option::Option<std::string::String>,
 }
 impl SetStackPolicyInput {
@@ -18830,16 +18867,16 @@ impl SetStackPolicyInput {
         self.stack_name.as_deref()
     }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-    /// to Stack Resources</a> in the CloudFormation User Guide. You can specify either
-    /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
-    /// both.</p>
+    /// to Stack Resources</a> in the CloudFormation User Guide. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
     pub fn stack_policy_body(&self) -> std::option::Option<&str> {
         self.stack_policy_body.as_deref()
     }
-    /// <p>Location of a file containing the stack policy. The URL must point to a policy
-    /// (maximum size: 16 KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum
+    /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
     pub fn stack_policy_url(&self) -> std::option::Option<&str> {
         self.stack_policy_url.as_deref()
     }
@@ -18860,7 +18897,8 @@ impl std::fmt::Debug for SetStackPolicyInput {
 pub struct RollbackStackInput {
     /// <p>The name that is associated with the stack.</p>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation
+    /// assumes to rollback the stack.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -18870,7 +18908,8 @@ impl RollbackStackInput {
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation
+    /// assumes to rollback the stack.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -19231,8 +19270,8 @@ pub struct PublishTypeInput {
     /// 2.0.0</a>.</p>
     /// <p>If you do not specify a version number, CloudFormation increments the version number by
     /// one minor version release.</p>
-    /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
-    /// regardless of the value you specify.</p>
+    /// <p>You cannot specify a version number the first time you publish a type. CloudFormation
+    /// automatically sets the first version number to be <code>1.0.0</code>.</p>
     pub public_version_number: std::option::Option<std::string::String>,
 }
 impl PublishTypeInput {
@@ -19264,8 +19303,8 @@ impl PublishTypeInput {
     /// 2.0.0</a>.</p>
     /// <p>If you do not specify a version number, CloudFormation increments the version number by
     /// one minor version release.</p>
-    /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
-    /// regardless of the value you specify.</p>
+    /// <p>You cannot specify a version number the first time you publish a type. CloudFormation
+    /// automatically sets the first version number to be <code>1.0.0</code>.</p>
     pub fn public_version_number(&self) -> std::option::Option<&str> {
         self.public_version_number.as_deref()
     }
@@ -19477,8 +19516,10 @@ pub struct ListTypesInput {
     /// <p>The type of extension.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>Filter criteria to use in determining which extensions to return.</p>
-    /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
-    /// value when returning the list of types.</p>
+    /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For
+    /// example, specifying <code>AWS_TYPES</code> for <code>Category</code> and
+    /// <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but
+    /// specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
     pub filters: std::option::Option<crate::model::TypeFilters>,
     /// <p>The maximum number of results to be returned with a single call. If the number of
     /// available results exceeds this maximum, the response includes a <code>NextToken</code>
@@ -19570,8 +19611,10 @@ impl ListTypesInput {
         self.r#type.as_ref()
     }
     /// <p>Filter criteria to use in determining which extensions to return.</p>
-    /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
-    /// value when returning the list of types.</p>
+    /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For
+    /// example, specifying <code>AWS_TYPES</code> for <code>Category</code> and
+    /// <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but
+    /// specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
     pub fn filters(&self) -> std::option::Option<&crate::model::TypeFilters> {
         self.filters.as_ref()
     }
@@ -19710,8 +19753,7 @@ pub struct ListStackSetsInput {
     /// value that you can assign to the <code>NextToken</code> request parameter to get the next
     /// set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The status of the stack sets that you want to get summary information
-    /// about.</p>
+    /// <p>The status of the stack sets that you want to get summary information about.</p>
     pub status: std::option::Option<crate::model::StackSetStatus>,
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account
     /// administrator in the management account or as a delegated administrator in a member
@@ -19748,8 +19790,7 @@ impl ListStackSetsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The status of the stack sets that you want to get summary information
-    /// about.</p>
+    /// <p>The status of the stack sets that you want to get summary information about.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::StackSetStatus> {
         self.status.as_ref()
     }
@@ -20007,8 +20048,8 @@ impl std::fmt::Debug for ListStacksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackResourcesInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -20025,8 +20066,8 @@ pub struct ListStackResourcesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStackResourcesInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -20059,8 +20100,7 @@ impl std::fmt::Debug for ListStackResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackInstancesInput {
-    /// <p>The name or unique ID of the stack set that you want to list stack instances
-    /// for.</p>
+    /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>If the previous request didn't return all of the remaining results, the response's
     /// <code>NextToken</code> parameter value is set to a token. To retrieve the next set of
@@ -20075,7 +20115,8 @@ pub struct ListStackInstancesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The status that stack instances are filtered by.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
-    /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
+    /// <p>The name of the Amazon Web Services account that you want to list stack instances
+    /// for.</p>
     pub stack_instance_account: std::option::Option<std::string::String>,
     /// <p>The name of the Region where you want to list stack instances. </p>
     pub stack_instance_region: std::option::Option<std::string::String>,
@@ -20098,8 +20139,7 @@ pub struct ListStackInstancesInput {
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
 impl ListStackInstancesInput {
-    /// <p>The name or unique ID of the stack set that you want to list stack instances
-    /// for.</p>
+    /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
@@ -20122,7 +20162,8 @@ impl ListStackInstancesInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::StackInstanceFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
+    /// <p>The name of the Amazon Web Services account that you want to list stack instances
+    /// for.</p>
     pub fn stack_instance_account(&self) -> std::option::Option<&str> {
         self.stack_instance_account.as_deref()
     }
@@ -20200,13 +20241,13 @@ impl std::fmt::Debug for ListImportsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExportsInput {
-    /// <p>A string (provided by the <a>ListExports</a> response output) that
-    /// identifies the next page of exported output values that you asked to retrieve.</p>
+    /// <p>A string (provided by the <a>ListExports</a> response output) that identifies
+    /// the next page of exported output values that you asked to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExportsInput {
-    /// <p>A string (provided by the <a>ListExports</a> response output) that
-    /// identifies the next page of exported output values that you asked to retrieve.</p>
+    /// <p>A string (provided by the <a>ListExports</a> response output) that identifies
+    /// the next page of exported output values that you asked to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -20260,7 +20301,14 @@ pub struct ImportStacksToStackSetInput {
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per
     /// stack set at a time.</p>
+    /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
     pub stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+    /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+    pub stack_ids_url: std::option::Option<std::string::String>,
+    /// <p>The list of OU ID’s to which the stacks being imported has to be mapped as deployment
+    /// target.</p>
+    pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user-specified preferences for how CloudFormation performs a stack set
     /// operation. </p>
     /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
@@ -20287,8 +20335,19 @@ impl ImportStacksToStackSetInput {
     }
     /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per
     /// stack set at a time.</p>
+    /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
     pub fn stack_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_ids.as_deref()
+    }
+    /// <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+    /// <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+    pub fn stack_ids_url(&self) -> std::option::Option<&str> {
+        self.stack_ids_url.as_deref()
+    }
+    /// <p>The list of OU ID’s to which the stacks being imported has to be mapped as deployment
+    /// target.</p>
+    pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.organizational_unit_ids.as_deref()
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set
     /// operation. </p>
@@ -20321,6 +20380,8 @@ impl std::fmt::Debug for ImportStacksToStackSetInput {
         let mut formatter = f.debug_struct("ImportStacksToStackSetInput");
         formatter.field("stack_set_name", &self.stack_set_name);
         formatter.field("stack_ids", &self.stack_ids);
+        formatter.field("stack_ids_url", &self.stack_ids_url);
+        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
         formatter.field("operation_preferences", &self.operation_preferences);
         formatter.field("operation_id", &self.operation_id);
         formatter.field("call_as", &self.call_as);
@@ -20447,8 +20508,8 @@ impl std::fmt::Debug for GetTemplateSummaryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -20473,8 +20534,8 @@ pub struct GetTemplateInput {
     pub template_stage: std::option::Option<crate::model::TemplateStage>,
 }
 impl GetTemplateInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -20518,13 +20579,13 @@ impl std::fmt::Debug for GetTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStackPolicyInput {
-    /// <p>The name or unique stack ID that is associated with the stack whose policy you want
-    /// to get.</p>
+    /// <p>The name or unique stack ID that is associated with the stack whose policy you want to
+    /// get.</p>
     pub stack_name: std::option::Option<std::string::String>,
 }
 impl GetStackPolicyInput {
-    /// <p>The name or unique stack ID that is associated with the stack whose policy you want
-    /// to get.</p>
+    /// <p>The name or unique stack ID that is associated with the stack whose policy you want to
+    /// get.</p>
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
@@ -20547,11 +20608,11 @@ pub struct ExecuteChangeSetInput {
     /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) that is
     /// associated with the change set you want to execute.</p>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
-    /// token if you plan to retry requests so that CloudFormation knows that you're not
+    /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token
+    /// if you plan to retry requests so that CloudFormation knows that you're not
     /// attempting to execute a change set to update a stack with the same name. You might retry
-    /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully
-    /// received them.</p>
+    /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation
+    /// successfully received them.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Preserves the state of previously provisioned resources when an operation fails.</p>
     /// <p>Default: <code>True</code>
@@ -20569,11 +20630,11 @@ impl ExecuteChangeSetInput {
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
-    /// token if you plan to retry requests so that CloudFormation knows that you're not
+    /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token
+    /// if you plan to retry requests so that CloudFormation knows that you're not
     /// attempting to execute a change set to update a stack with the same name. You might retry
-    /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully
-    /// received them.</p>
+    /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation
+    /// successfully received them.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20605,8 +20666,8 @@ pub struct EstimateTemplateCostInput {
     /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
     /// both are passed, only <code>TemplateBody</code> is used.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>Location of file containing the template body. The URL must point to a template that
-    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+    /// <p>Location of file containing the template body. The URL must point to a template that is
+    /// located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
     /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
     /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -20624,8 +20685,8 @@ impl EstimateTemplateCostInput {
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>Location of file containing the template body. The URL must point to a template that
-    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+    /// <p>Location of file containing the template body. The URL must point to a template that is
+    /// located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
     /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
     /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
@@ -21022,8 +21083,8 @@ impl std::fmt::Debug for DescribeStackSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStacksInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -21039,8 +21100,8 @@ pub struct DescribeStacksInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStacksInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -21072,8 +21133,8 @@ impl std::fmt::Debug for DescribeStacksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackResourcesInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -21090,20 +21151,20 @@ pub struct DescribeStackResourcesInput {
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of a
-    /// resource supported by CloudFormation.</p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
+    /// supported by CloudFormation.</p>
     /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance,
     /// <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass
     /// the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack
     /// the instance belongs to and what other resources are part of the stack.</p>
-    /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
-    /// must specify <code>StackName</code>.</p>
+    /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you must
+    /// specify <code>StackName</code>.</p>
     /// <p>Default: There is no default value.</p>
     pub physical_resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeStackResourcesInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -21124,14 +21185,14 @@ impl DescribeStackResourcesInput {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of a
-    /// resource supported by CloudFormation.</p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
+    /// supported by CloudFormation.</p>
     /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance,
     /// <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass
     /// the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack
     /// the instance belongs to and what other resources are part of the stack.</p>
-    /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
-    /// must specify <code>StackName</code>.</p>
+    /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you must
+    /// specify <code>StackName</code>.</p>
     /// <p>Default: There is no default value.</p>
     pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
@@ -21163,8 +21224,8 @@ pub struct DescribeStackResourceDriftsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MODIFIED</code>: One or more resource properties differ from their
-    /// expected template values.</p>
+    /// <code>MODIFIED</code>: One or more resource properties differ from their expected
+    /// template values.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -21201,8 +21262,8 @@ impl DescribeStackResourceDriftsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MODIFIED</code>: One or more resource properties differ from their
-    /// expected template values.</p>
+    /// <code>MODIFIED</code>: One or more resource properties differ from their expected
+    /// template values.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -21249,8 +21310,8 @@ impl std::fmt::Debug for DescribeStackResourceDriftsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackResourceInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -21267,8 +21328,8 @@ pub struct DescribeStackResourceInput {
     pub logical_resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeStackResourceInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -21304,7 +21365,8 @@ pub struct DescribeStackInstanceInput {
     /// <p>The name or the unique stack ID of the stack set that you want to get stack instance
     /// information for.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
+    /// <p>The ID of an Amazon Web Services account that's associated with this stack
+    /// instance.</p>
     pub stack_instance_account: std::option::Option<std::string::String>,
     /// <p>The name of a Region that's associated with this stack instance.</p>
     pub stack_instance_region: std::option::Option<std::string::String>,
@@ -21332,7 +21394,8 @@ impl DescribeStackInstanceInput {
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
+    /// <p>The ID of an Amazon Web Services account that's associated with this stack
+    /// instance.</p>
     pub fn stack_instance_account(&self) -> std::option::Option<&str> {
         self.stack_instance_account.as_deref()
     }
@@ -21375,8 +21438,8 @@ impl std::fmt::Debug for DescribeStackInstanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackEventsInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -21392,8 +21455,8 @@ pub struct DescribeStackEventsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStackEventsInput {
-    /// <p>The name or the unique stack ID that is associated with the stack, which are not
-    /// always interchangeable:</p>
+    /// <p>The name or the unique stack ID that is associated with the stack, which are not always
+    /// interchangeable:</p>
     /// <ul>
     /// <li>
     /// <p>Running stacks: You can specify either the stack's name or its unique stack
@@ -21599,8 +21662,8 @@ impl std::fmt::Debug for DeregisterTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackSetInput {
-    /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
-    /// value by running <a>ListStackSets</a>.</p>
+    /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value
+    /// by running <a>ListStackSets</a>.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account
     /// administrator in the organization's management account or as a delegated administrator in a
@@ -21621,8 +21684,8 @@ pub struct DeleteStackSetInput {
     pub call_as: std::option::Option<crate::model::CallAs>,
 }
 impl DeleteStackSetInput {
-    /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
-    /// value by running <a>ListStackSets</a>.</p>
+    /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value
+    /// by running <a>ListStackSets</a>.</p>
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
@@ -21662,8 +21725,10 @@ pub struct DeleteStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to delete stack instances
     /// for.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to
+    /// delete stack instances for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>[Service-managed permissions] The Organizations accounts from which to delete
     /// stack instances.</p>
@@ -21674,18 +21739,16 @@ pub struct DeleteStackInstancesInput {
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
-    /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
-    /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
-    /// stack set.</p>
+    /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks.
+    /// You can't reassociate a retained stack or add an existing, saved stack to a new stack
+    /// set.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub retain_stacks: bool,
     /// <p>The unique identifier for this stack set operation.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one
     /// automatically.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You can retry stack set operation requests to ensure that
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
     /// whose status is <code>OUTDATED</code>.</p>
     pub operation_id: std::option::Option<std::string::String>,
@@ -21713,8 +21776,10 @@ impl DeleteStackInstancesInput {
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to
+    /// delete stack instances for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.accounts.as_deref()
     }
@@ -21735,9 +21800,9 @@ impl DeleteStackInstancesInput {
     ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
-    /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
-    /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
-    /// stack set.</p>
+    /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks.
+    /// You can't reassociate a retained stack or add an existing, saved stack to a new stack
+    /// set.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub fn retain_stacks(&self) -> bool {
         self.retain_stacks
@@ -21745,10 +21810,8 @@ impl DeleteStackInstancesInput {
     /// <p>The unique identifier for this stack set operation.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one
     /// automatically.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You can retry stack set operation requests to ensure that
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
     /// whose status is <code>OUTDATED</code>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
@@ -21795,21 +21858,19 @@ impl std::fmt::Debug for DeleteStackInstancesInput {
 pub struct DeleteStackInput {
     /// <p>The name or the unique stack ID that is associated with the stack.</p>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
-    /// that are associated with the resources you want to retain. During deletion,
-    /// CloudFormation deletes the stack but does not delete the retained resources.</p>
-    /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty
-    /// S3 bucket, but you want to delete the stack.</p>
+    /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs that
+    /// are associated with the resources you want to retain. During deletion, CloudFormation deletes the stack but does not delete the retained resources.</p>
+    /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty S3
+    /// bucket, but you want to delete the stack.</p>
     pub retain_resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes to delete the stack. CloudFormation uses the role's
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to delete the stack. CloudFormation uses the role's
     /// credentials to make calls on your behalf.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
-    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if you
+    /// plan to retry requests so that CloudFormation knows that you're not attempting to
     /// delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
     /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -21830,16 +21891,14 @@ impl DeleteStackInput {
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
-    /// that are associated with the resources you want to retain. During deletion,
-    /// CloudFormation deletes the stack but does not delete the retained resources.</p>
-    /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty
-    /// S3 bucket, but you want to delete the stack.</p>
+    /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs that
+    /// are associated with the resources you want to retain. During deletion, CloudFormation deletes the stack but does not delete the retained resources.</p>
+    /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty S3
+    /// bucket, but you want to delete the stack.</p>
     pub fn retain_resources(&self) -> std::option::Option<&[std::string::String]> {
         self.retain_resources.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes to delete the stack. CloudFormation uses the role's
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to delete the stack. CloudFormation uses the role's
     /// credentials to make calls on your behalf.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
@@ -21847,8 +21906,8 @@ impl DeleteStackInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
-    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if you
+    /// plan to retry requests so that CloudFormation knows that you're not attempting to
     /// delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
     /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -21881,21 +21940,19 @@ impl std::fmt::Debug for DeleteStackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteChangeSetInput {
-    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-    /// delete.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
     pub change_set_name: std::option::Option<std::string::String>,
-    /// <p>If you specified the name of a change set to delete, specify the stack name or ID
-    /// (ARN) that is associated with it.</p>
+    /// <p>If you specified the name of a change set to delete, specify the stack name or ID (ARN)
+    /// that is associated with it.</p>
     pub stack_name: std::option::Option<std::string::String>,
 }
 impl DeleteChangeSetInput {
-    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-    /// delete.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
     pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
-    /// <p>If you specified the name of a change set to delete, specify the stack name or ID
-    /// (ARN) that is associated with it.</p>
+    /// <p>If you specified the name of a change set to delete, specify the stack name or ID (ARN)
+    /// that is associated with it.</p>
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
@@ -21965,26 +22022,26 @@ pub struct CreateStackSetInput {
     /// <p>The name to associate with the stack set. The name must be unique in the Region where
     /// you create your stack set.</p>
     /// <note>
-    /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and
-    /// hyphens. It must start with an alphabetic character and can't be longer than 128
+    /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens.
+    /// It must start with an alphabetic character and can't be longer than 128
     /// characters.</p>
     /// </note>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>A description of the stack set. You can use the description to identify the stack
-    /// set's purpose or other important information.</p>
+    /// <p>A description of the stack set. You can use the description to identify the stack set's
+    /// purpose or other important information.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
     /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
     /// in the CloudFormation User Guide.</p>
-    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
-    /// but not both.</p>
+    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but
+    /// not both.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the file that contains the template body. The URL must point to a
     /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
     /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
     /// in the CloudFormation User Guide.</p>
-    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
-    /// but not both.</p>
+    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but
+    /// not both.</p>
     pub template_url: std::option::Option<std::string::String>,
     /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Number
     /// (ARN) of the stack.</p>
@@ -21999,8 +22056,8 @@ pub struct CreateStackSetInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
     /// one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -22019,9 +22076,8 @@ pub struct CreateStackSetInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -22087,11 +22143,10 @@ pub struct CreateStackSetInput {
     /// </ul>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-    /// CloudFormation also propagates these tags to supported resources that are created in
-    /// the stacks. A maximum number of 50 tags can be specified.</p>
-    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action,
-    /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-    /// you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
+    /// CloudFormation also propagates these tags to supported resources that are
+    /// created in the stacks. A maximum number of 50 tags can be specified.</p>
+    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+    /// If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
     /// denied</code> error, and the stack set is not created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
@@ -22149,35 +22204,38 @@ pub struct CreateStackSetInput {
     /// <p>Stack sets with service-managed permissions are created in the management account,
     /// including stack sets that are created by delegated administrators.</p>
     pub call_as: std::option::Option<crate::model::CallAs>,
-    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
-    /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting
     /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
     /// requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one
     /// automatically.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
+    /// conflicting operations.</p>
+    pub managed_execution: std::option::Option<crate::model::ManagedExecution>,
 }
 impl CreateStackSetInput {
     /// <p>The name to associate with the stack set. The name must be unique in the Region where
     /// you create your stack set.</p>
     /// <note>
-    /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and
-    /// hyphens. It must start with an alphabetic character and can't be longer than 128
+    /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens.
+    /// It must start with an alphabetic character and can't be longer than 128
     /// characters.</p>
     /// </note>
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>A description of the stack set. You can use the description to identify the stack
-    /// set's purpose or other important information.</p>
+    /// <p>A description of the stack set. You can use the description to identify the stack set's
+    /// purpose or other important information.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
     /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
     /// in the CloudFormation User Guide.</p>
-    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
-    /// but not both.</p>
+    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but
+    /// not both.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
@@ -22185,8 +22243,8 @@ impl CreateStackSetInput {
     /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
     /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
     /// in the CloudFormation User Guide.</p>
-    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
-    /// but not both.</p>
+    /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but
+    /// not both.</p>
     pub fn template_url(&self) -> std::option::Option<&str> {
         self.template_url.as_deref()
     }
@@ -22207,8 +22265,8 @@ impl CreateStackSetInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
     /// one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -22227,9 +22285,8 @@ impl CreateStackSetInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -22297,11 +22354,10 @@ impl CreateStackSetInput {
         self.capabilities.as_deref()
     }
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-    /// CloudFormation also propagates these tags to supported resources that are created in
-    /// the stacks. A maximum number of 50 tags can be specified.</p>
-    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action,
-    /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-    /// you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
+    /// CloudFormation also propagates these tags to supported resources that are
+    /// created in the stacks. A maximum number of 50 tags can be specified.</p>
+    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+    /// If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
     /// denied</code> error, and the stack set is not created.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -22371,14 +22427,19 @@ impl CreateStackSetInput {
     pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
         self.call_as.as_ref()
     }
-    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
-    /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting
     /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
     /// requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one
     /// automatically.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
+    /// conflicting operations.</p>
+    pub fn managed_execution(&self) -> std::option::Option<&crate::model::ManagedExecution> {
+        self.managed_execution.as_ref()
     }
 }
 impl std::fmt::Debug for CreateStackSetInput {
@@ -22398,6 +22459,7 @@ impl std::fmt::Debug for CreateStackSetInput {
         formatter.field("auto_deployment", &self.auto_deployment);
         formatter.field("call_as", &self.call_as);
         formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("managed_execution", &self.managed_execution);
         formatter.finish()
     }
 }
@@ -22409,9 +22471,10 @@ pub struct CreateStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to create stack instances
     /// from.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the
-    /// specified Region(s) for.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you
+    /// want to create stack instances in the specified Region(s) for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>[Service-managed permissions] The Organizations accounts for which to create
     /// stack instances in the specified Regions.</p>
@@ -22421,56 +22484,59 @@ pub struct CreateStackInstancesInput {
     /// <p>The names of one or more Regions where you want to create stack instances using the
     /// specified Amazon Web Services accounts.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of stack set parameters whose values you want to override in the selected
-    /// stack instances.</p>
-    /// <p>Any overridden parameter values will be applied to all stack instances in the
-    /// specified accounts and Regions. When specifying parameters and their values, be aware of
-    /// how CloudFormation sets parameter values during stack instance operations:</p>
+    /// <p>A list of stack set parameters whose values you want to override in the selected stack
+    /// instances.</p>
+    /// <p>Any overridden parameter values will be applied to all stack instances in the specified
+    /// accounts and Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
     /// <ul>
     /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and
-    /// specify its value.</p>
+    /// <p>To override the current value for a parameter, include the parameter and specify
+    /// its value.</p>
     /// </li>
     /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
-    /// <code>true</code>. (You cannot specify both a value and set
-    /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+    /// <p>To leave an overridden parameter set to its present value, include the parameter
+    /// and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+    /// both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p>
     /// </li>
     /// <li>
     /// <p>To set an overridden parameter back to the value specified in the stack set,
     /// specify a parameter list but do not include the parameter in the list.</p>
     /// </li>
     /// <li>
-    /// <p>To leave all parameters set to their present values, do not specify this
-    /// property at all.</p>
+    /// <p>To leave all parameters set to their present values, do not specify this property
+    /// at all.</p>
     /// </li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance are
-    /// not updated, but retain their overridden value.</p>
+    /// <p>During stack set updates, any parameter values overridden for a stack instance are not
+    /// updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in
     /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
     pub parameter_overrides: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
     /// <p>The unique identifier for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one
     /// automatically.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
     /// whose status is <code>OUTDATED</code>.</p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated
+    /// administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
-    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// <p>If you are signed in to the management account, specify
+    /// <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -22481,9 +22547,10 @@ impl CreateStackInstancesInput {
     pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the
-    /// specified Region(s) for.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you
+    /// want to create stack instances in the specified Region(s) for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.accounts.as_deref()
     }
@@ -22499,32 +22566,31 @@ impl CreateStackInstancesInput {
     pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
         self.regions.as_deref()
     }
-    /// <p>A list of stack set parameters whose values you want to override in the selected
-    /// stack instances.</p>
-    /// <p>Any overridden parameter values will be applied to all stack instances in the
-    /// specified accounts and Regions. When specifying parameters and their values, be aware of
-    /// how CloudFormation sets parameter values during stack instance operations:</p>
+    /// <p>A list of stack set parameters whose values you want to override in the selected stack
+    /// instances.</p>
+    /// <p>Any overridden parameter values will be applied to all stack instances in the specified
+    /// accounts and Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
     /// <ul>
     /// <li>
-    /// <p>To override the current value for a parameter, include the parameter and
-    /// specify its value.</p>
+    /// <p>To override the current value for a parameter, include the parameter and specify
+    /// its value.</p>
     /// </li>
     /// <li>
-    /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
-    /// <code>true</code>. (You cannot specify both a value and set
-    /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+    /// <p>To leave an overridden parameter set to its present value, include the parameter
+    /// and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify
+    /// both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p>
     /// </li>
     /// <li>
     /// <p>To set an overridden parameter back to the value specified in the stack set,
     /// specify a parameter list but do not include the parameter in the list.</p>
     /// </li>
     /// <li>
-    /// <p>To leave all parameters set to their present values, do not specify this
-    /// property at all.</p>
+    /// <p>To leave all parameters set to their present values, do not specify this property
+    /// at all.</p>
     /// </li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance are
-    /// not updated, but retain their overridden value.</p>
+    /// <p>During stack set updates, any parameter values overridden for a stack instance are not
+    /// updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in
     /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
     pub fn parameter_overrides(&self) -> std::option::Option<&[crate::model::Parameter]> {
@@ -22537,10 +22603,8 @@ impl CreateStackInstancesInput {
         self.operation_preferences.as_ref()
     }
     /// <p>The unique identifier for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one
     /// automatically.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
@@ -22548,15 +22612,21 @@ impl CreateStackInstancesInput {
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated
+    /// administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
-    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// <p>If you are signed in to the management account, specify
+    /// <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub fn call_as(&self) -> std::option::Option<&crate::model::CallAs> {
@@ -22603,12 +22673,12 @@ pub struct CreateStackInput {
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
     /// <code>TemplateURL</code> parameter, but not both.</p>
     pub template_url: std::option::Option<std::string::String>,
-    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-    /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
     /// type.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed.
-    /// You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
+    /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You
+    /// can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
     /// both.</p>
     /// <p>Default: <code>false</code>
     /// </p>
@@ -22631,8 +22701,8 @@ pub struct CreateStackInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -22651,9 +22721,8 @@ pub struct CreateStackInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -22727,8 +22796,8 @@ pub struct CreateStackInput {
     /// </li>
     /// </ul>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-    /// <p>The template resource types that you have permissions to work with for this create
-    /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <p>The template resource types that you have permissions to work with for this create stack
+    /// action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
     /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources),
     /// <code>Custom::*</code> (for all custom resources),
@@ -22738,16 +22807,17 @@ pub struct CreateStackInput {
     /// particular Amazon Web Services service), and
     /// <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
     /// </code> (for a specific Amazon Web Services resource).</p>
-    /// <p>If the list of resource types doesn't include a resource that you're creating, the
-    /// stack creation fails. By default, CloudFormation grants permissions to all resource
-    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+    /// <p>If the list of resource types doesn't include a resource that you're creating, the stack
+    /// creation fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+    /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes to create the stack. CloudFormation uses the role's
-    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
@@ -22759,21 +22829,21 @@ pub struct CreateStackInput {
     /// </p>
     pub on_failure: std::option::Option<crate::model::OnFailure>,
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-    /// to Stack Resources</a> in the <i>CloudFormation User Guide</i>.
-    /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
-    /// parameter, but not both.</p>
-    pub stack_policy_body: std::option::Option<std::string::String>,
-    /// <p>Location of a file containing the stack policy. The URL must point to a policy
-    /// (maximum size: 16 KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+    /// to Stack Resources</a> in the <i>CloudFormation User
+    /// Guide</i>. You can specify either the <code>StackPolicyBody</code> or the
     /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    pub stack_policy_body: std::option::Option<std::string::String>,
+    /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum
+    /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
     pub stack_policy_url: std::option::Option<std::string::String>,
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
     /// these tags to the resources created in the stack. A maximum number of 50 tags can be
     /// specified.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
-    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you
+    /// plan to retry requests so that CloudFormation knows that you're not attempting to
     /// create a stack with the same name. You might retry <code>CreateStack</code> requests to
     /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -22826,14 +22896,14 @@ impl CreateStackInput {
     pub fn template_url(&self) -> std::option::Option<&str> {
         self.template_url.as_deref()
     }
-    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-    /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
     /// type.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed.
-    /// You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
+    /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You
+    /// can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
     /// both.</p>
     /// <p>Default: <code>false</code>
     /// </p>
@@ -22866,8 +22936,8 @@ impl CreateStackInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -22886,9 +22956,8 @@ impl CreateStackInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -22964,8 +23033,8 @@ impl CreateStackInput {
     pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.capabilities.as_deref()
     }
-    /// <p>The template resource types that you have permissions to work with for this create
-    /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <p>The template resource types that you have permissions to work with for this create stack
+    /// action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
     /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources),
     /// <code>Custom::*</code> (for all custom resources),
@@ -22975,18 +23044,19 @@ impl CreateStackInput {
     /// particular Amazon Web Services service), and
     /// <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
     /// </code> (for a specific Amazon Web Services resource).</p>
-    /// <p>If the list of resource types doesn't include a resource that you're creating, the
-    /// stack creation fails. By default, CloudFormation grants permissions to all resource
-    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
+    /// <p>If the list of resource types doesn't include a resource that you're creating, the stack
+    /// creation fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+    /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a>.</p>
     pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes to create the stack. CloudFormation uses the role's
-    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
@@ -23002,16 +23072,16 @@ impl CreateStackInput {
         self.on_failure.as_ref()
     }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-    /// to Stack Resources</a> in the <i>CloudFormation User Guide</i>.
-    /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
-    /// parameter, but not both.</p>
+    /// to Stack Resources</a> in the <i>CloudFormation User
+    /// Guide</i>. You can specify either the <code>StackPolicyBody</code> or the
+    /// <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn stack_policy_body(&self) -> std::option::Option<&str> {
         self.stack_policy_body.as_deref()
     }
-    /// <p>Location of a file containing the stack policy. The URL must point to a policy
-    /// (maximum size: 16 KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum
+    /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
     pub fn stack_policy_url(&self) -> std::option::Option<&str> {
         self.stack_policy_url.as_deref()
     }
@@ -23021,8 +23091,8 @@ impl CreateStackInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
-    /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+    /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you
+    /// plan to retry requests so that CloudFormation knows that you're not attempting to
     /// create a stack with the same name. You might retry <code>CreateStack</code> requests to
     /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
@@ -23082,29 +23152,28 @@ impl std::fmt::Debug for CreateStackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChangeSetInput {
-    /// <p>The name or the unique ID of the stack for which you are creating a change set.
-    /// CloudFormation generates the change set by comparing this stack's information with the
+    /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the
     /// information that you submit, such as a modified template or different parameter input
     /// values.</p>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>A structure that contains the body of the revised template, with a minimum length of
-    /// 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by
-    /// comparing this template with the template of the stack that you specified.</p>
+    /// <p>A structure that contains the body of the revised template, with a minimum length of 1
+    /// byte and a maximum length of 51,200 bytes. CloudFormation generates the change set
+    /// by comparing this template with the template of the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or
     /// <code>TemplateURL</code>.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the file that contains the revised template. The URL must point to a
     /// template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems Manager
-    /// document. CloudFormation generates the change set by comparing this template with the
-    /// stack that you specified.</p>
+    /// document. CloudFormation generates the change set by comparing this template with
+    /// the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or
     /// <code>TemplateURL</code>.</p>
     pub template_url: std::option::Option<std::string::String>,
     /// <p>Whether to reuse the template that is associated with the stack to create the change
     /// set.</p>
     pub use_previous_template: std::option::Option<bool>,
-    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-    /// change set. For more information, see the <a>Parameter</a> data type.</p>
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change
+    /// set. For more information, see the <a>Parameter</a> data type.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
     /// capabilities in order for CloudFormation to create the stack.</p>
@@ -23113,8 +23182,8 @@ pub struct CreateChangeSetInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -23134,9 +23203,8 @@ pub struct CreateChangeSetInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -23206,22 +23274,21 @@ pub struct CreateChangeSetInput {
     /// </li>
     /// </ul>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-    /// <p>The template resource types that you have permissions to work with if you execute
-    /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <p>The template resource types that you have permissions to work with if you execute this
+    /// change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating,
-    /// the stack update fails. By default, CloudFormation grants permissions to all resource
-    /// types. Identity and Access Management (IAM) uses this parameter for condition keys in
-    /// IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
-    /// Identity and Access Management</a> in the CloudFormation User
-    /// Guide.</p>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the
+    /// stack update fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies
+    /// for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a> in the CloudFormation User Guide.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes when executing the change set. CloudFormation uses the
-    /// role's credentials to make calls on your behalf. CloudFormation uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
+    /// that CloudFormation assumes when executing the change set. CloudFormation
+    /// uses the role's credentials to make calls on your behalf. CloudFormation uses this
+    /// role for all future operations on the stack. As long as users have permission to operate on
+    /// the stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
@@ -23238,12 +23305,11 @@ pub struct CreateChangeSetInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the change set. The name must be unique among all change sets that are
     /// associated with the specified stack.</p>
-    /// <p>A change set name can contain only alphanumeric, case sensitive characters and
-    /// hyphens. It must start with an alphabetic character and cannot exceed 128
-    /// characters.</p>
+    /// <p>A change set name can contain only alphanumeric, case sensitive characters and hyphens.
+    /// It must start with an alphabetic character and cannot exceed 128 characters.</p>
     pub change_set_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
-    /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token if
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting
     /// to create another change set with the same name. You might retry
     /// <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully
     /// received them.</p>
@@ -23254,8 +23320,8 @@ pub struct CreateChangeSetInput {
     /// <code>CREATE</code>. To create a change set for an existing stack, specify
     /// <code>UPDATE</code>. To create a change set for an import operation, specify
     /// <code>IMPORT</code>.</p>
-    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a
-    /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with
+    /// a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
     /// <code>REVIEW_IN_PROGRESS</code>
     /// </a> state until you execute the change
     /// set.</p>
@@ -23271,16 +23337,15 @@ pub struct CreateChangeSetInput {
     pub include_nested_stacks: std::option::Option<bool>,
 }
 impl CreateChangeSetInput {
-    /// <p>The name or the unique ID of the stack for which you are creating a change set.
-    /// CloudFormation generates the change set by comparing this stack's information with the
+    /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the
     /// information that you submit, such as a modified template or different parameter input
     /// values.</p>
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>A structure that contains the body of the revised template, with a minimum length of
-    /// 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by
-    /// comparing this template with the template of the stack that you specified.</p>
+    /// <p>A structure that contains the body of the revised template, with a minimum length of 1
+    /// byte and a maximum length of 51,200 bytes. CloudFormation generates the change set
+    /// by comparing this template with the template of the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or
     /// <code>TemplateURL</code>.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
@@ -23288,8 +23353,8 @@ impl CreateChangeSetInput {
     }
     /// <p>The location of the file that contains the revised template. The URL must point to a
     /// template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems Manager
-    /// document. CloudFormation generates the change set by comparing this template with the
-    /// stack that you specified.</p>
+    /// document. CloudFormation generates the change set by comparing this template with
+    /// the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or
     /// <code>TemplateURL</code>.</p>
     pub fn template_url(&self) -> std::option::Option<&str> {
@@ -23300,8 +23365,8 @@ impl CreateChangeSetInput {
     pub fn use_previous_template(&self) -> std::option::Option<bool> {
         self.use_previous_template
     }
-    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
-    /// change set. For more information, see the <a>Parameter</a> data type.</p>
+    /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change
+    /// set. For more information, see the <a>Parameter</a> data type.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
@@ -23312,8 +23377,8 @@ impl CreateChangeSetInput {
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
-    /// <p>Some stack templates might include resources that can affect permissions in
-    /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+    /// <p>Some stack templates might include resources that can affect permissions in your
+    /// Amazon Web Services account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -23333,9 +23398,8 @@ impl CreateChangeSetInput {
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
-    /// <p>If your stack template contains these resources, we recommend that you review
-    /// all permissions associated with them and edit their permissions if
-    /// necessary.</p>
+    /// <p>If your stack template contains these resources, we recommend that you review all
+    /// permissions associated with them and edit their permissions if necessary.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -23407,24 +23471,23 @@ impl CreateChangeSetInput {
     pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.capabilities.as_deref()
     }
-    /// <p>The template resource types that you have permissions to work with if you execute
-    /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+    /// <p>The template resource types that you have permissions to work with if you execute this
+    /// change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating,
-    /// the stack update fails. By default, CloudFormation grants permissions to all resource
-    /// types. Identity and Access Management (IAM) uses this parameter for condition keys in
-    /// IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
-    /// Identity and Access Management</a> in the CloudFormation User
-    /// Guide.</p>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the
+    /// stack update fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies
+    /// for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a> in the CloudFormation User Guide.</p>
     pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes when executing the change set. CloudFormation uses the
-    /// role's credentials to make calls on your behalf. CloudFormation uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
+    /// that CloudFormation assumes when executing the change set. CloudFormation
+    /// uses the role's credentials to make calls on your behalf. CloudFormation uses this
+    /// role for all future operations on the stack. As long as users have permission to operate on
+    /// the stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
@@ -23451,14 +23514,13 @@ impl CreateChangeSetInput {
     }
     /// <p>The name of the change set. The name must be unique among all change sets that are
     /// associated with the specified stack.</p>
-    /// <p>A change set name can contain only alphanumeric, case sensitive characters and
-    /// hyphens. It must start with an alphabetic character and cannot exceed 128
-    /// characters.</p>
+    /// <p>A change set name can contain only alphanumeric, case sensitive characters and hyphens.
+    /// It must start with an alphabetic character and cannot exceed 128 characters.</p>
     pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
-    /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
-    /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token if
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting
     /// to create another change set with the same name. You might retry
     /// <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully
     /// received them.</p>
@@ -23473,8 +23535,8 @@ impl CreateChangeSetInput {
     /// <code>CREATE</code>. To create a change set for an existing stack, specify
     /// <code>UPDATE</code>. To create a change set for an import operation, specify
     /// <code>IMPORT</code>.</p>
-    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a
-    /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+    /// <p>If you create a change set for a new stack, CloudFormation creates a stack with
+    /// a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
     /// <code>REVIEW_IN_PROGRESS</code>
     /// </a> state until you execute the change
     /// set.</p>
@@ -23523,8 +23585,7 @@ impl std::fmt::Debug for CreateChangeSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinueUpdateRollbackInput {
-    /// <p>The name or the unique ID of the stack that you want to continue rolling
-    /// back.</p>
+    /// <p>The name or the unique ID of the stack that you want to continue rolling back.</p>
     /// <note>
     /// <p>Don't specify the name of a nested stack (a stack that was created by using the
     /// <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the
@@ -23532,12 +23593,11 @@ pub struct ContinueUpdateRollbackInput {
     /// resource).</p>
     /// </note>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
-    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
@@ -23572,16 +23632,15 @@ pub struct ContinueUpdateRollbackInput {
     /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
     /// </note>
     pub resources_to_skip: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
-    /// this token if you plan to retry requests so that CloudFormationknows that you're not
+    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this
+    /// token if you plan to retry requests so that CloudFormationknows that you're not
     /// attempting to continue the rollback to a stack with the same name. You might retry
     /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
     /// successfully received them.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl ContinueUpdateRollbackInput {
-    /// <p>The name or the unique ID of the stack that you want to continue rolling
-    /// back.</p>
+    /// <p>The name or the unique ID of the stack that you want to continue rolling back.</p>
     /// <note>
     /// <p>Don't specify the name of a nested stack (a stack that was created by using the
     /// <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the
@@ -23591,12 +23650,11 @@ impl ContinueUpdateRollbackInput {
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
-    /// that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
-    /// credentials to make calls on your behalf. CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously
     /// associated with the stack. If no role is available, CloudFormation uses a temporary
     /// session that is generated from your user credentials.</p>
@@ -23635,8 +23693,8 @@ impl ContinueUpdateRollbackInput {
     pub fn resources_to_skip(&self) -> std::option::Option<&[std::string::String]> {
         self.resources_to_skip.as_deref()
     }
-    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
-    /// this token if you plan to retry requests so that CloudFormationknows that you're not
+    /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this
+    /// token if you plan to retry requests so that CloudFormationknows that you're not
     /// attempting to continue the rollback to a stack with the same name. You might retry
     /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
     /// successfully received them.</p>
@@ -23661,11 +23719,11 @@ impl std::fmt::Debug for ContinueUpdateRollbackInput {
 pub struct CancelUpdateStackInput {
     /// <p>The name or the unique stack ID that is associated with the stack.</p>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
-    /// token if you plan to retry requests so that CloudFormation knows that you're not
+    /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token
+    /// if you plan to retry requests so that CloudFormation knows that you're not
     /// attempting to cancel an update on a stack with the same name. You might retry
-    /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully
-    /// received them.</p>
+    /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation
+    /// successfully received them.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CancelUpdateStackInput {
@@ -23673,11 +23731,11 @@ impl CancelUpdateStackInput {
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
-    /// token if you plan to retry requests so that CloudFormation knows that you're not
+    /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token
+    /// if you plan to retry requests so that CloudFormation knows that you're not
     /// attempting to cancel an update on a stack with the same name. You might retry
-    /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully
-    /// received them.</p>
+    /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation
+    /// successfully received them.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }

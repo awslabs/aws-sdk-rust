@@ -196,12 +196,12 @@ pub mod delete_suite_definition_input {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Suite definition Id of the test suite to be deleted.</p>
+        /// <p>Suite definition ID of the test suite to be deleted.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the test suite to be deleted.</p>
+        /// <p>Suite definition ID of the test suite to be deleted.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -345,6 +345,173 @@ impl DeleteSuiteDefinitionInput {
     }
 }
 
+/// See [`GetEndpointInput`](crate::input::GetEndpointInput)
+pub mod get_endpoint_input {
+    /// A builder for [`GetEndpointInput`](crate::input::GetEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) thing_arn: std::option::Option<std::string::String>,
+        pub(crate) certificate_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The thing ARN of the device. This is an optional parameter.</p>
+        pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.thing_arn = Some(input.into());
+            self
+        }
+        /// <p>The thing ARN of the device. This is an optional parameter.</p>
+        pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.thing_arn = input;
+            self
+        }
+        /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_arn = Some(input.into());
+            self
+        }
+        /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+        pub fn set_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEndpointInput`](crate::input::GetEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetEndpointInput {
+                thing_arn: self.thing_arn,
+                certificate_arn: self.certificate_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetEndpointInputOperationOutputAlias = crate::operation::GetEndpoint;
+#[doc(hidden)]
+pub type GetEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`GetEndpoint`](crate::operation::GetEndpoint)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetEndpoint,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetEndpointInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/endpoint").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::GetEndpointInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_2) = &_input.thing_arn {
+                query.push_kv("thingArn", &aws_smithy_http::query::fmt_string(&inner_2));
+            }
+            if let Some(inner_3) = &_input.certificate_arn {
+                query.push_kv(
+                    "certificateArn",
+                    &aws_smithy_http::query::fmt_string(&inner_3),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetEndpointInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetEndpoint",
+            "iotdeviceadvisor",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetEndpointInput`](crate::input::GetEndpointInput)
+    pub fn builder() -> crate::input::get_endpoint_input::Builder {
+        crate::input::get_endpoint_input::Builder::default()
+    }
+}
+
 /// See [`GetSuiteDefinitionInput`](crate::input::GetSuiteDefinitionInput)
 pub mod get_suite_definition_input {
     /// A builder for [`GetSuiteDefinitionInput`](crate::input::GetSuiteDefinitionInput)
@@ -355,12 +522,12 @@ pub mod get_suite_definition_input {
         pub(crate) suite_definition_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Suite definition Id of the test suite to get.</p>
+        /// <p>Suite definition ID of the test suite to get.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the test suite to get.</p>
+        /// <p>Suite definition ID of the test suite to get.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -417,15 +584,15 @@ impl GetSuiteDefinitionInput {
             _input: &crate::input::GetSuiteDefinitionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_2 = &_input.suite_definition_id;
-            let input_2 =
-                input_2
+            let input_4 = &_input.suite_definition_id;
+            let input_4 =
+                input_4
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_definition_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_definition_id = aws_smithy_http::label::fmt_string(input_2, false);
+            let suite_definition_id = aws_smithy_http::label::fmt_string(input_4, false);
             if suite_definition_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
@@ -445,10 +612,10 @@ impl GetSuiteDefinitionInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_3) = &_input.suite_definition_version {
+            if let Some(inner_5) = &_input.suite_definition_version {
                 query.push_kv(
                     "suiteDefinitionVersion",
-                    &aws_smithy_http::query::fmt_string(&inner_3),
+                    &aws_smithy_http::query::fmt_string(&inner_5),
                 );
             }
             Ok(())
@@ -542,12 +709,12 @@ pub mod get_suite_run_input {
         pub(crate) suite_run_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Suite definition Id for the test suite run.</p>
+        /// <p>Suite definition ID for the test suite run.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id for the test suite run.</p>
+        /// <p>Suite definition ID for the test suite run.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -555,12 +722,12 @@ pub mod get_suite_run_input {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Suite run Id for the test suite run.</p>
+        /// <p>Suite run ID for the test suite run.</p>
         pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_run_id = Some(input.into());
             self
         }
-        /// <p>Suite run Id for the test suite run.</p>
+        /// <p>Suite run ID for the test suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suite_run_id = input;
             self
@@ -601,30 +768,30 @@ impl GetSuiteRunInput {
             _input: &crate::input::GetSuiteRunInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_4 = &_input.suite_definition_id;
-            let input_4 =
-                input_4
+            let input_6 = &_input.suite_definition_id;
+            let input_6 =
+                input_6
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_definition_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_definition_id = aws_smithy_http::label::fmt_string(input_4, false);
+            let suite_definition_id = aws_smithy_http::label::fmt_string(input_6, false);
             if suite_definition_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_5 = &_input.suite_run_id;
-            let input_5 =
-                input_5
+            let input_7 = &_input.suite_run_id;
+            let input_7 =
+                input_7
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_run_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_run_id = aws_smithy_http::label::fmt_string(input_5, false);
+            let suite_run_id = aws_smithy_http::label::fmt_string(input_7, false);
             if suite_run_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_run_id",
@@ -728,12 +895,12 @@ pub mod get_suite_run_report_input {
         pub(crate) suite_run_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -741,12 +908,12 @@ pub mod get_suite_run_report_input {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Suite run Id of the test suite run.</p>
+        /// <p>Suite run ID of the test suite run.</p>
         pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_run_id = Some(input.into());
             self
         }
-        /// <p>Suite run Id of the test suite run.</p>
+        /// <p>Suite run ID of the test suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suite_run_id = input;
             self
@@ -787,30 +954,30 @@ impl GetSuiteRunReportInput {
             _input: &crate::input::GetSuiteRunReportInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_6 = &_input.suite_definition_id;
-            let input_6 =
-                input_6
+            let input_8 = &_input.suite_definition_id;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_definition_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_definition_id = aws_smithy_http::label::fmt_string(input_6, false);
+            let suite_definition_id = aws_smithy_http::label::fmt_string(input_8, false);
             if suite_definition_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_7 = &_input.suite_run_id;
-            let input_7 =
-                input_7
+            let input_9 = &_input.suite_run_id;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_run_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_run_id = aws_smithy_http::label::fmt_string(input_7, false);
+            let suite_run_id = aws_smithy_http::label::fmt_string(input_9, false);
             if suite_run_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_run_id",
@@ -984,8 +1151,8 @@ impl ListSuiteDefinitionsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_8) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+            if let Some(inner_10) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
             }
             Ok(())
         }
@@ -1080,12 +1247,14 @@ pub mod list_suite_runs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition Id.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition
+        /// ID.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition Id.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition
+        /// ID.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1093,12 +1262,14 @@ pub mod list_suite_runs_input {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
+        /// the specified test suite based on suite definition version.</p>
         pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_version = Some(input.into());
             self
         }
-        /// <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
+        /// the specified test suite based on suite definition version.</p>
         pub fn set_suite_definition_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1172,16 +1343,16 @@ impl ListSuiteRunsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_9) = &_input.suite_definition_id {
+            if let Some(inner_11) = &_input.suite_definition_id {
                 query.push_kv(
                     "suiteDefinitionId",
-                    &aws_smithy_http::query::fmt_string(&inner_9),
+                    &aws_smithy_http::query::fmt_string(&inner_11),
                 );
             }
-            if let Some(inner_10) = &_input.suite_definition_version {
+            if let Some(inner_12) = &_input.suite_definition_version {
                 query.push_kv(
                     "suiteDefinitionVersion",
-                    &aws_smithy_http::query::fmt_string(&inner_10),
+                    &aws_smithy_http::query::fmt_string(&inner_12),
                 );
             }
             if _input.max_results != 0 {
@@ -1190,8 +1361,8 @@ impl ListSuiteRunsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_11) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
+            if let Some(inner_13) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
             }
             Ok(())
         }
@@ -1328,15 +1499,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.resource_arn;
-            let input_12 =
-                input_12
+            let input_14 = &_input.resource_arn;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_12, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -1440,12 +1611,12 @@ pub mod start_suite_run_input {
         >,
     }
     impl Builder {
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1545,15 +1716,15 @@ impl StartSuiteRunInput {
             _input: &crate::input::StartSuiteRunInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.suite_definition_id;
-            let input_13 =
-                input_13
+            let input_15 = &_input.suite_definition_id;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_definition_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_definition_id = aws_smithy_http::label::fmt_string(input_13, false);
+            let suite_definition_id = aws_smithy_http::label::fmt_string(input_15, false);
             if suite_definition_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
@@ -1670,12 +1841,12 @@ pub mod stop_suite_run_input {
         pub(crate) suite_run_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Suite definition Id of the test suite run to be stopped.</p>
+        /// <p>Suite definition ID of the test suite run to be stopped.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the test suite run to be stopped.</p>
+        /// <p>Suite definition ID of the test suite run to be stopped.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1683,12 +1854,12 @@ pub mod stop_suite_run_input {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Suite run Id of the test suite run to be stopped.</p>
+        /// <p>Suite run ID of the test suite run to be stopped.</p>
         pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_run_id = Some(input.into());
             self
         }
-        /// <p>Suite run Id of the test suite run to be stopped.</p>
+        /// <p>Suite run ID of the test suite run to be stopped.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suite_run_id = input;
             self
@@ -1729,30 +1900,30 @@ impl StopSuiteRunInput {
             _input: &crate::input::StopSuiteRunInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_14 = &_input.suite_definition_id;
-            let input_14 =
-                input_14
+            let input_16 = &_input.suite_definition_id;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_definition_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_definition_id = aws_smithy_http::label::fmt_string(input_14, false);
+            let suite_definition_id = aws_smithy_http::label::fmt_string(input_16, false);
             if suite_definition_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_15 = &_input.suite_run_id;
-            let input_15 =
-                input_15
+            let input_17 = &_input.suite_run_id;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_run_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_run_id = aws_smithy_http::label::fmt_string(input_15, false);
+            let suite_run_id = aws_smithy_http::label::fmt_string(input_17, false);
             if suite_run_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_run_id",
@@ -1929,15 +2100,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_16 = &_input.resource_arn;
-            let input_16 =
-                input_16
+            let input_18 = &_input.resource_arn;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_16, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -2114,15 +2285,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.resource_arn;
-            let input_17 =
-                input_17
+            let input_19 = &_input.resource_arn;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_17, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_19, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -2138,9 +2309,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_18) = &_input.tag_keys {
-                for inner_19 in inner_18 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_19));
+            if let Some(inner_20) = &_input.tag_keys {
+                for inner_21 in inner_20 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_21));
                 }
             }
             Ok(())
@@ -2235,12 +2406,12 @@ pub mod update_suite_definition_input {
             std::option::Option<crate::model::SuiteDefinitionConfiguration>,
     }
     impl Builder {
-        /// <p>Suite definition Id of the test suite to be updated.</p>
+        /// <p>Suite definition ID of the test suite to be updated.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the test suite to be updated.</p>
+        /// <p>Suite definition ID of the test suite to be updated.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2300,15 +2471,15 @@ impl UpdateSuiteDefinitionInput {
             _input: &crate::input::UpdateSuiteDefinitionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.suite_definition_id;
-            let input_20 =
-                input_20
+            let input_22 = &_input.suite_definition_id;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "suite_definition_id",
                         details: "cannot be empty or unset",
                     })?;
-            let suite_definition_id = aws_smithy_http::label::fmt_string(input_20, false);
+            let suite_definition_id = aws_smithy_http::label::fmt_string(input_22, false);
             if suite_definition_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
@@ -2421,14 +2592,14 @@ impl UpdateSuiteDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSuiteDefinitionInput {
-    /// <p>Suite definition Id of the test suite to be updated.</p>
+    /// <p>Suite definition ID of the test suite to be updated.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
     pub suite_definition_configuration:
         std::option::Option<crate::model::SuiteDefinitionConfiguration>,
 }
 impl UpdateSuiteDefinitionInput {
-    /// <p>Suite definition Id of the test suite to be updated.</p>
+    /// <p>Suite definition ID of the test suite to be updated.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
@@ -2515,17 +2686,17 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopSuiteRunInput {
-    /// <p>Suite definition Id of the test suite run to be stopped.</p>
+    /// <p>Suite definition ID of the test suite run to be stopped.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Suite run Id of the test suite run to be stopped.</p>
+    /// <p>Suite run ID of the test suite run to be stopped.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
 }
 impl StopSuiteRunInput {
-    /// <p>Suite definition Id of the test suite run to be stopped.</p>
+    /// <p>Suite definition ID of the test suite run to be stopped.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Suite run Id of the test suite run to be stopped.</p>
+    /// <p>Suite run ID of the test suite run to be stopped.</p>
     pub fn suite_run_id(&self) -> std::option::Option<&str> {
         self.suite_run_id.as_deref()
     }
@@ -2543,7 +2714,7 @@ impl std::fmt::Debug for StopSuiteRunInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSuiteRunInput {
-    /// <p>Suite definition Id of the test suite.</p>
+    /// <p>Suite definition ID of the test suite.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the test suite.</p>
     pub suite_definition_version: std::option::Option<std::string::String>,
@@ -2554,7 +2725,7 @@ pub struct StartSuiteRunInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartSuiteRunInput {
-    /// <p>Suite definition Id of the test suite.</p>
+    /// <p>Suite definition ID of the test suite.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
@@ -2612,9 +2783,11 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuiteRunsInput {
-    /// <p>Lists the test suite runs of the specified test suite based on suite definition Id.</p>
+    /// <p>Lists the test suite runs of the specified test suite based on suite definition
+    /// ID.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
+    /// the specified test suite based on suite definition version.</p>
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at once.</p>
     pub max_results: i32,
@@ -2622,11 +2795,13 @@ pub struct ListSuiteRunsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuiteRunsInput {
-    /// <p>Lists the test suite runs of the specified test suite based on suite definition Id.</p>
+    /// <p>Lists the test suite runs of the specified test suite based on suite definition
+    /// ID.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
+    /// the specified test suite based on suite definition version.</p>
     pub fn suite_definition_version(&self) -> std::option::Option<&str> {
         self.suite_definition_version.as_deref()
     }
@@ -2682,17 +2857,17 @@ impl std::fmt::Debug for ListSuiteDefinitionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteRunReportInput {
-    /// <p>Suite definition Id of the test suite.</p>
+    /// <p>Suite definition ID of the test suite.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Suite run Id of the test suite run.</p>
+    /// <p>Suite run ID of the test suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
 }
 impl GetSuiteRunReportInput {
-    /// <p>Suite definition Id of the test suite.</p>
+    /// <p>Suite definition ID of the test suite.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Suite run Id of the test suite run.</p>
+    /// <p>Suite run ID of the test suite run.</p>
     pub fn suite_run_id(&self) -> std::option::Option<&str> {
         self.suite_run_id.as_deref()
     }
@@ -2710,17 +2885,17 @@ impl std::fmt::Debug for GetSuiteRunReportInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteRunInput {
-    /// <p>Suite definition Id for the test suite run.</p>
+    /// <p>Suite definition ID for the test suite run.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Suite run Id for the test suite run.</p>
+    /// <p>Suite run ID for the test suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
 }
 impl GetSuiteRunInput {
-    /// <p>Suite definition Id for the test suite run.</p>
+    /// <p>Suite definition ID for the test suite run.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Suite run Id for the test suite run.</p>
+    /// <p>Suite run ID for the test suite run.</p>
     pub fn suite_run_id(&self) -> std::option::Option<&str> {
         self.suite_run_id.as_deref()
     }
@@ -2738,13 +2913,13 @@ impl std::fmt::Debug for GetSuiteRunInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteDefinitionInput {
-    /// <p>Suite definition Id of the test suite to get.</p>
+    /// <p>Suite definition ID of the test suite to get.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite definition version of the test suite to get.</p>
     pub suite_definition_version: std::option::Option<std::string::String>,
 }
 impl GetSuiteDefinitionInput {
-    /// <p>Suite definition Id of the test suite to get.</p>
+    /// <p>Suite definition ID of the test suite to get.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
@@ -2765,12 +2940,40 @@ impl std::fmt::Debug for GetSuiteDefinitionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEndpointInput {
+    /// <p>The thing ARN of the device. This is an optional parameter.</p>
+    pub thing_arn: std::option::Option<std::string::String>,
+    /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+    pub certificate_arn: std::option::Option<std::string::String>,
+}
+impl GetEndpointInput {
+    /// <p>The thing ARN of the device. This is an optional parameter.</p>
+    pub fn thing_arn(&self) -> std::option::Option<&str> {
+        self.thing_arn.as_deref()
+    }
+    /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for GetEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEndpointInput");
+        formatter.field("thing_arn", &self.thing_arn);
+        formatter.field("certificate_arn", &self.certificate_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuiteDefinitionInput {
-    /// <p>Suite definition Id of the test suite to be deleted.</p>
+    /// <p>Suite definition ID of the test suite to be deleted.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteSuiteDefinitionInput {
-    /// <p>Suite definition Id of the test suite to be deleted.</p>
+    /// <p>Suite definition ID of the test suite to be deleted.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }

@@ -122,6 +122,36 @@ impl UpdatePartnerAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateNetworkAnalyzerConfigurationOutput {}
+impl std::fmt::Debug for UpdateNetworkAnalyzerConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateNetworkAnalyzerConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
+pub mod update_network_analyzer_configuration_output {
+    /// A builder for [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
+        pub fn build(self) -> crate::output::UpdateNetworkAnalyzerConfigurationOutput {
+            crate::output::UpdateNetworkAnalyzerConfigurationOutput {}
+        }
+    }
+}
+impl UpdateNetworkAnalyzerConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
+    pub fn builder() -> crate::output::update_network_analyzer_configuration_output::Builder {
+        crate::output::update_network_analyzer_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMulticastGroupOutput {}
 impl std::fmt::Debug for UpdateMulticastGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3079,6 +3109,119 @@ impl GetPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput)
     pub fn builder() -> crate::output::get_partner_account_output::Builder {
         crate::output::get_partner_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkAnalyzerConfigurationOutput {
+    /// <p>Trace Content for resources.</p>
+    pub trace_content: std::option::Option<crate::model::TraceContent>,
+    /// <p>List of WirelessDevices in the NetworkAnalyzerConfiguration.</p>
+    pub wireless_devices: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>List of WirelessGateways in the NetworkAnalyzerConfiguration.</p>
+    pub wireless_gateways: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl GetNetworkAnalyzerConfigurationOutput {
+    /// <p>Trace Content for resources.</p>
+    pub fn trace_content(&self) -> std::option::Option<&crate::model::TraceContent> {
+        self.trace_content.as_ref()
+    }
+    /// <p>List of WirelessDevices in the NetworkAnalyzerConfiguration.</p>
+    pub fn wireless_devices(&self) -> std::option::Option<&[std::string::String]> {
+        self.wireless_devices.as_deref()
+    }
+    /// <p>List of WirelessGateways in the NetworkAnalyzerConfiguration.</p>
+    pub fn wireless_gateways(&self) -> std::option::Option<&[std::string::String]> {
+        self.wireless_gateways.as_deref()
+    }
+}
+impl std::fmt::Debug for GetNetworkAnalyzerConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkAnalyzerConfigurationOutput");
+        formatter.field("trace_content", &self.trace_content);
+        formatter.field("wireless_devices", &self.wireless_devices);
+        formatter.field("wireless_gateways", &self.wireless_gateways);
+        formatter.finish()
+    }
+}
+/// See [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
+pub mod get_network_analyzer_configuration_output {
+    /// A builder for [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) trace_content: std::option::Option<crate::model::TraceContent>,
+        pub(crate) wireless_devices: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) wireless_gateways: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>Trace Content for resources.</p>
+        pub fn trace_content(mut self, input: crate::model::TraceContent) -> Self {
+            self.trace_content = Some(input);
+            self
+        }
+        /// <p>Trace Content for resources.</p>
+        pub fn set_trace_content(
+            mut self,
+            input: std::option::Option<crate::model::TraceContent>,
+        ) -> Self {
+            self.trace_content = input;
+            self
+        }
+        /// Appends an item to `wireless_devices`.
+        ///
+        /// To override the contents of this collection use [`set_wireless_devices`](Self::set_wireless_devices).
+        ///
+        /// <p>List of WirelessDevices in the NetworkAnalyzerConfiguration.</p>
+        pub fn wireless_devices(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.wireless_devices.unwrap_or_default();
+            v.push(input.into());
+            self.wireless_devices = Some(v);
+            self
+        }
+        /// <p>List of WirelessDevices in the NetworkAnalyzerConfiguration.</p>
+        pub fn set_wireless_devices(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.wireless_devices = input;
+            self
+        }
+        /// Appends an item to `wireless_gateways`.
+        ///
+        /// To override the contents of this collection use [`set_wireless_gateways`](Self::set_wireless_gateways).
+        ///
+        /// <p>List of WirelessGateways in the NetworkAnalyzerConfiguration.</p>
+        pub fn wireless_gateways(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.wireless_gateways.unwrap_or_default();
+            v.push(input.into());
+            self.wireless_gateways = Some(v);
+            self
+        }
+        /// <p>List of WirelessGateways in the NetworkAnalyzerConfiguration.</p>
+        pub fn set_wireless_gateways(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.wireless_gateways = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
+        pub fn build(self) -> crate::output::GetNetworkAnalyzerConfigurationOutput {
+            crate::output::GetNetworkAnalyzerConfigurationOutput {
+                trace_content: self.trace_content,
+                wireless_devices: self.wireless_devices,
+                wireless_gateways: self.wireless_gateways,
+            }
+        }
+    }
+}
+impl GetNetworkAnalyzerConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
+    pub fn builder() -> crate::output::get_network_analyzer_configuration_output::Builder {
+        crate::output::get_network_analyzer_configuration_output::Builder::default()
     }
 }
 

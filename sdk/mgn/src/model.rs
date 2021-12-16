@@ -140,238 +140,241 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ReplicationConfigurationDataPlaneRouting {
-    #[allow(missing_docs)] // documentation missing in model
-    PrivateIp,
-    #[allow(missing_docs)] // documentation missing in model
-    PublicIp,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ReplicationConfigurationDataPlaneRouting {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRIVATE_IP" => ReplicationConfigurationDataPlaneRouting::PrivateIp,
-            "PUBLIC_IP" => ReplicationConfigurationDataPlaneRouting::PublicIp,
-            other => ReplicationConfigurationDataPlaneRouting::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ReplicationConfigurationDataPlaneRouting {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationDataPlaneRouting::from(s))
-    }
-}
-impl ReplicationConfigurationDataPlaneRouting {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReplicationConfigurationDataPlaneRouting::PrivateIp => "PRIVATE_IP",
-            ReplicationConfigurationDataPlaneRouting::PublicIp => "PUBLIC_IP",
-            ReplicationConfigurationDataPlaneRouting::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["PRIVATE_IP", "PUBLIC_IP"]
-    }
-}
-impl AsRef<str> for ReplicationConfigurationDataPlaneRouting {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ReplicationConfigurationEbsEncryption {
-    #[allow(missing_docs)] // documentation missing in model
-    Custom,
-    #[allow(missing_docs)] // documentation missing in model
-    Default,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ReplicationConfigurationEbsEncryption {
-    fn from(s: &str) -> Self {
-        match s {
-            "CUSTOM" => ReplicationConfigurationEbsEncryption::Custom,
-            "DEFAULT" => ReplicationConfigurationEbsEncryption::Default,
-            other => ReplicationConfigurationEbsEncryption::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ReplicationConfigurationEbsEncryption {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationEbsEncryption::from(s))
-    }
-}
-impl ReplicationConfigurationEbsEncryption {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReplicationConfigurationEbsEncryption::Custom => "CUSTOM",
-            ReplicationConfigurationEbsEncryption::Default => "DEFAULT",
-            ReplicationConfigurationEbsEncryption::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["CUSTOM", "DEFAULT"]
-    }
-}
-impl AsRef<str> for ReplicationConfigurationEbsEncryption {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Replication Configuration replicated disk.</p>
+/// <p>vCenter client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReplicationConfigurationReplicatedDisk {
-    /// <p>Replication Configuration replicated disk device name.</p>
-    pub device_name: std::option::Option<std::string::String>,
-    /// <p>Replication Configuration replicated disk boot disk.</p>
-    pub is_boot_disk: std::option::Option<bool>,
-    /// <p>Replication Configuration replicated disk staging disk type.</p>
-    pub staging_disk_type:
-        std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
-    /// <p>Replication Configuration replicated disk IOPs.</p>
-    pub iops: i64,
+pub struct VcenterClient {
+    /// <p>ID of vCenter client.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
+    /// <p>Arn of vCenter client.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Hostname of vCenter client .</p>
+    pub hostname: std::option::Option<std::string::String>,
+    /// <p>Vcenter UUID of vCenter client.</p>
+    pub vcenter_uuid: std::option::Option<std::string::String>,
+    /// <p>Datacenter name of vCenter client.</p>
+    pub datacenter_name: std::option::Option<std::string::String>,
+    /// <p>Last seen time of vCenter client.</p>
+    pub last_seen_datetime: std::option::Option<std::string::String>,
+    /// <p>Tags for Source Server of vCenter client.</p>
+    pub source_server_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Tags for vCenter client.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
-impl ReplicationConfigurationReplicatedDisk {
-    /// <p>Replication Configuration replicated disk device name.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
-        self.device_name.as_deref()
+impl VcenterClient {
+    /// <p>ID of vCenter client.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
     }
-    /// <p>Replication Configuration replicated disk boot disk.</p>
-    pub fn is_boot_disk(&self) -> std::option::Option<bool> {
-        self.is_boot_disk
+    /// <p>Arn of vCenter client.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
     }
-    /// <p>Replication Configuration replicated disk staging disk type.</p>
-    pub fn staging_disk_type(
+    /// <p>Hostname of vCenter client .</p>
+    pub fn hostname(&self) -> std::option::Option<&str> {
+        self.hostname.as_deref()
+    }
+    /// <p>Vcenter UUID of vCenter client.</p>
+    pub fn vcenter_uuid(&self) -> std::option::Option<&str> {
+        self.vcenter_uuid.as_deref()
+    }
+    /// <p>Datacenter name of vCenter client.</p>
+    pub fn datacenter_name(&self) -> std::option::Option<&str> {
+        self.datacenter_name.as_deref()
+    }
+    /// <p>Last seen time of vCenter client.</p>
+    pub fn last_seen_datetime(&self) -> std::option::Option<&str> {
+        self.last_seen_datetime.as_deref()
+    }
+    /// <p>Tags for Source Server of vCenter client.</p>
+    pub fn source_server_tags(
         &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
-        self.staging_disk_type.as_ref()
+        self.source_server_tags.as_ref()
     }
-    /// <p>Replication Configuration replicated disk IOPs.</p>
-    pub fn iops(&self) -> i64 {
-        self.iops
+    /// <p>Tags for vCenter client.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ReplicationConfigurationReplicatedDisk {
+impl std::fmt::Debug for VcenterClient {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicationConfigurationReplicatedDisk");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("is_boot_disk", &self.is_boot_disk);
-        formatter.field("staging_disk_type", &self.staging_disk_type);
-        formatter.field("iops", &self.iops);
+        let mut formatter = f.debug_struct("VcenterClient");
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("hostname", &self.hostname);
+        formatter.field("vcenter_uuid", &self.vcenter_uuid);
+        formatter.field("datacenter_name", &self.datacenter_name);
+        formatter.field("last_seen_datetime", &self.last_seen_datetime);
+        formatter.field("source_server_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
-/// See [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk)
-pub mod replication_configuration_replicated_disk {
-    /// A builder for [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk)
+/// See [`VcenterClient`](crate::model::VcenterClient)
+pub mod vcenter_client {
+    /// A builder for [`VcenterClient`](crate::model::VcenterClient)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) device_name: std::option::Option<std::string::String>,
-        pub(crate) is_boot_disk: std::option::Option<bool>,
-        pub(crate) staging_disk_type: std::option::Option<
-            crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) hostname: std::option::Option<std::string::String>,
+        pub(crate) vcenter_uuid: std::option::Option<std::string::String>,
+        pub(crate) datacenter_name: std::option::Option<std::string::String>,
+        pub(crate) last_seen_datetime: std::option::Option<std::string::String>,
+        pub(crate) source_server_tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) iops: std::option::Option<i64>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
-        /// <p>Replication Configuration replicated disk device name.</p>
-        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.device_name = Some(input.into());
+        /// <p>ID of vCenter client.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
             self
         }
-        /// <p>Replication Configuration replicated disk device name.</p>
-        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
-        }
-        /// <p>Replication Configuration replicated disk boot disk.</p>
-        pub fn is_boot_disk(mut self, input: bool) -> Self {
-            self.is_boot_disk = Some(input);
-            self
-        }
-        /// <p>Replication Configuration replicated disk boot disk.</p>
-        pub fn set_is_boot_disk(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_boot_disk = input;
-            self
-        }
-        /// <p>Replication Configuration replicated disk staging disk type.</p>
-        pub fn staging_disk_type(
+        /// <p>ID of vCenter client.</p>
+        pub fn set_vcenter_client_id(
             mut self,
-            input: crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.staging_disk_type = Some(input);
+            self.vcenter_client_id = input;
             self
         }
-        /// <p>Replication Configuration replicated disk staging disk type.</p>
-        pub fn set_staging_disk_type(
+        /// <p>Arn of vCenter client.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>Arn of vCenter client.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Hostname of vCenter client .</p>
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hostname = Some(input.into());
+            self
+        }
+        /// <p>Hostname of vCenter client .</p>
+        pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname = input;
+            self
+        }
+        /// <p>Vcenter UUID of vCenter client.</p>
+        pub fn vcenter_uuid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_uuid = Some(input.into());
+            self
+        }
+        /// <p>Vcenter UUID of vCenter client.</p>
+        pub fn set_vcenter_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_uuid = input;
+            self
+        }
+        /// <p>Datacenter name of vCenter client.</p>
+        pub fn datacenter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.datacenter_name = Some(input.into());
+            self
+        }
+        /// <p>Datacenter name of vCenter client.</p>
+        pub fn set_datacenter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.datacenter_name = input;
+            self
+        }
+        /// <p>Last seen time of vCenter client.</p>
+        pub fn last_seen_datetime(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_seen_datetime = Some(input.into());
+            self
+        }
+        /// <p>Last seen time of vCenter client.</p>
+        pub fn set_last_seen_datetime(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_seen_datetime = input;
+            self
+        }
+        /// Adds a key-value pair to `source_server_tags`.
+        ///
+        /// To override the contents of this collection use [`set_source_server_tags`](Self::set_source_server_tags).
+        ///
+        /// <p>Tags for Source Server of vCenter client.</p>
+        pub fn source_server_tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.source_server_tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.source_server_tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags for Source Server of vCenter client.</p>
+        pub fn set_source_server_tags(
             mut self,
             input: std::option::Option<
-                crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+                std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.staging_disk_type = input;
+            self.source_server_tags = input;
             self
         }
-        /// <p>Replication Configuration replicated disk IOPs.</p>
-        pub fn iops(mut self, input: i64) -> Self {
-            self.iops = Some(input);
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags for vCenter client.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
             self
         }
-        /// <p>Replication Configuration replicated disk IOPs.</p>
-        pub fn set_iops(mut self, input: std::option::Option<i64>) -> Self {
-            self.iops = input;
+        /// <p>Tags for vCenter client.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk)
-        pub fn build(self) -> crate::model::ReplicationConfigurationReplicatedDisk {
-            crate::model::ReplicationConfigurationReplicatedDisk {
-                device_name: self.device_name,
-                is_boot_disk: self.is_boot_disk,
-                staging_disk_type: self.staging_disk_type,
-                iops: self.iops.unwrap_or_default(),
+        /// Consumes the builder and constructs a [`VcenterClient`](crate::model::VcenterClient)
+        pub fn build(self) -> crate::model::VcenterClient {
+            crate::model::VcenterClient {
+                vcenter_client_id: self.vcenter_client_id,
+                arn: self.arn,
+                hostname: self.hostname,
+                vcenter_uuid: self.vcenter_uuid,
+                datacenter_name: self.datacenter_name,
+                last_seen_datetime: self.last_seen_datetime,
+                source_server_tags: self.source_server_tags,
+                tags: self.tags,
             }
         }
     }
 }
-impl ReplicationConfigurationReplicatedDisk {
-    /// Creates a new builder-style object to manufacture [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk)
-    pub fn builder() -> crate::model::replication_configuration_replicated_disk::Builder {
-        crate::model::replication_configuration_replicated_disk::Builder::default()
+impl VcenterClient {
+    /// Creates a new builder-style object to manufacture [`VcenterClient`](crate::model::VcenterClient)
+    pub fn builder() -> crate::model::vcenter_client::Builder {
+        crate::model::vcenter_client::Builder::default()
     }
 }
 
@@ -386,284 +389,45 @@ impl ReplicationConfigurationReplicatedDisk {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
+pub enum ReplicationType {
     #[allow(missing_docs)] // documentation missing in model
-    Auto,
+    AgentBased,
     #[allow(missing_docs)] // documentation missing in model
-    Gp2,
-    #[allow(missing_docs)] // documentation missing in model
-    Io1,
-    #[allow(missing_docs)] // documentation missing in model
-    Sc1,
-    #[allow(missing_docs)] // documentation missing in model
-    St1,
-    #[allow(missing_docs)] // documentation missing in model
-    Standard,
+    SnapshotShipping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
-impl std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
+impl std::convert::From<&str> for ReplicationType {
     fn from(s: &str) -> Self {
         match s {
-            "AUTO" => ReplicationConfigurationReplicatedDiskStagingDiskType::Auto,
-            "GP2" => ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2,
-            "IO1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Io1,
-            "SC1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1,
-            "ST1" => ReplicationConfigurationReplicatedDiskStagingDiskType::St1,
-            "STANDARD" => ReplicationConfigurationReplicatedDiskStagingDiskType::Standard,
-            other => {
-                ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(other.to_owned())
-            }
+            "AGENT_BASED" => ReplicationType::AgentBased,
+            "SNAPSHOT_SHIPPING" => ReplicationType::SnapshotShipping,
+            other => ReplicationType::Unknown(other.to_owned()),
         }
     }
 }
-impl std::str::FromStr for ReplicationConfigurationReplicatedDiskStagingDiskType {
+impl std::str::FromStr for ReplicationType {
     type Err = std::convert::Infallible;
 
     fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationReplicatedDiskStagingDiskType::from(
-            s,
-        ))
+        Ok(ReplicationType::from(s))
     }
 }
-impl ReplicationConfigurationReplicatedDiskStagingDiskType {
+impl ReplicationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => "AUTO",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => "GP2",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => "IO1",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => "SC1",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => "ST1",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => "STANDARD",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(s) => s.as_ref(),
+            ReplicationType::AgentBased => "AGENT_BASED",
+            ReplicationType::SnapshotShipping => "SNAPSHOT_SHIPPING",
+            ReplicationType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["AUTO", "GP2", "IO1", "SC1", "ST1", "STANDARD"]
+        &["AGENT_BASED", "SNAPSHOT_SHIPPING"]
     }
 }
-impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
-    #[allow(missing_docs)] // documentation missing in model
-    Gp2,
-    #[allow(missing_docs)] // documentation missing in model
-    St1,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ReplicationConfigurationDefaultLargeStagingDiskType {
-    fn from(s: &str) -> Self {
-        match s {
-            "GP2" => ReplicationConfigurationDefaultLargeStagingDiskType::Gp2,
-            "ST1" => ReplicationConfigurationDefaultLargeStagingDiskType::St1,
-            other => ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ReplicationConfigurationDefaultLargeStagingDiskType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationDefaultLargeStagingDiskType::from(s))
-    }
-}
-impl ReplicationConfigurationDefaultLargeStagingDiskType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReplicationConfigurationDefaultLargeStagingDiskType::Gp2 => "GP2",
-            ReplicationConfigurationDefaultLargeStagingDiskType::St1 => "ST1",
-            ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["GP2", "ST1"]
-    }
-}
-impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Configure Licensing.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Licensing {
-    /// <p>Configure BYOL OS licensing.</p>
-    pub os_byol: std::option::Option<bool>,
-}
-impl Licensing {
-    /// <p>Configure BYOL OS licensing.</p>
-    pub fn os_byol(&self) -> std::option::Option<bool> {
-        self.os_byol
-    }
-}
-impl std::fmt::Debug for Licensing {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Licensing");
-        formatter.field("os_byol", &self.os_byol);
-        formatter.finish()
-    }
-}
-/// See [`Licensing`](crate::model::Licensing)
-pub mod licensing {
-    /// A builder for [`Licensing`](crate::model::Licensing)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) os_byol: std::option::Option<bool>,
-    }
-    impl Builder {
-        /// <p>Configure BYOL OS licensing.</p>
-        pub fn os_byol(mut self, input: bool) -> Self {
-            self.os_byol = Some(input);
-            self
-        }
-        /// <p>Configure BYOL OS licensing.</p>
-        pub fn set_os_byol(mut self, input: std::option::Option<bool>) -> Self {
-            self.os_byol = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Licensing`](crate::model::Licensing)
-        pub fn build(self) -> crate::model::Licensing {
-            crate::model::Licensing {
-                os_byol: self.os_byol,
-            }
-        }
-    }
-}
-impl Licensing {
-    /// Creates a new builder-style object to manufacture [`Licensing`](crate::model::Licensing)
-    pub fn builder() -> crate::model::licensing::Builder {
-        crate::model::licensing::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TargetInstanceTypeRightSizingMethod {
-    #[allow(missing_docs)] // documentation missing in model
-    Basic,
-    #[allow(missing_docs)] // documentation missing in model
-    None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TargetInstanceTypeRightSizingMethod {
-    fn from(s: &str) -> Self {
-        match s {
-            "BASIC" => TargetInstanceTypeRightSizingMethod::Basic,
-            "NONE" => TargetInstanceTypeRightSizingMethod::None,
-            other => TargetInstanceTypeRightSizingMethod::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TargetInstanceTypeRightSizingMethod {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetInstanceTypeRightSizingMethod::from(s))
-    }
-}
-impl TargetInstanceTypeRightSizingMethod {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetInstanceTypeRightSizingMethod::Basic => "BASIC",
-            TargetInstanceTypeRightSizingMethod::None => "NONE",
-            TargetInstanceTypeRightSizingMethod::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["BASIC", "NONE"]
-    }
-}
-impl AsRef<str> for TargetInstanceTypeRightSizingMethod {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum LaunchDisposition {
-    #[allow(missing_docs)] // documentation missing in model
-    Started,
-    #[allow(missing_docs)] // documentation missing in model
-    Stopped,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for LaunchDisposition {
-    fn from(s: &str) -> Self {
-        match s {
-            "STARTED" => LaunchDisposition::Started,
-            "STOPPED" => LaunchDisposition::Stopped,
-            other => LaunchDisposition::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for LaunchDisposition {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LaunchDisposition::from(s))
-    }
-}
-impl LaunchDisposition {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchDisposition::Started => "STARTED",
-            LaunchDisposition::Stopped => "STOPPED",
-            LaunchDisposition::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["STARTED", "STOPPED"]
-    }
-}
-impl AsRef<str> for LaunchDisposition {
+impl AsRef<str> for ReplicationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -1209,6 +973,8 @@ pub struct IdentificationHints {
     pub vm_ware_uuid: std::option::Option<std::string::String>,
     /// <p>AWS Instance ID identification hint.</p>
     pub aws_instance_id: std::option::Option<std::string::String>,
+    /// <p>vCenter VM path identification hint.</p>
+    pub vm_path: std::option::Option<std::string::String>,
 }
 impl IdentificationHints {
     /// <p>FQDN address identification hint.</p>
@@ -1227,6 +993,10 @@ impl IdentificationHints {
     pub fn aws_instance_id(&self) -> std::option::Option<&str> {
         self.aws_instance_id.as_deref()
     }
+    /// <p>vCenter VM path identification hint.</p>
+    pub fn vm_path(&self) -> std::option::Option<&str> {
+        self.vm_path.as_deref()
+    }
 }
 impl std::fmt::Debug for IdentificationHints {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1235,6 +1005,7 @@ impl std::fmt::Debug for IdentificationHints {
         formatter.field("hostname", &self.hostname);
         formatter.field("vm_ware_uuid", &self.vm_ware_uuid);
         formatter.field("aws_instance_id", &self.aws_instance_id);
+        formatter.field("vm_path", &self.vm_path);
         formatter.finish()
     }
 }
@@ -1248,6 +1019,7 @@ pub mod identification_hints {
         pub(crate) hostname: std::option::Option<std::string::String>,
         pub(crate) vm_ware_uuid: std::option::Option<std::string::String>,
         pub(crate) aws_instance_id: std::option::Option<std::string::String>,
+        pub(crate) vm_path: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>FQDN address identification hint.</p>
@@ -1293,6 +1065,16 @@ pub mod identification_hints {
             self.aws_instance_id = input;
             self
         }
+        /// <p>vCenter VM path identification hint.</p>
+        pub fn vm_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vm_path = Some(input.into());
+            self
+        }
+        /// <p>vCenter VM path identification hint.</p>
+        pub fn set_vm_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vm_path = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IdentificationHints`](crate::model::IdentificationHints)
         pub fn build(self) -> crate::model::IdentificationHints {
             crate::model::IdentificationHints {
@@ -1300,6 +1082,7 @@ pub mod identification_hints {
                 hostname: self.hostname,
                 vm_ware_uuid: self.vm_ware_uuid,
                 aws_instance_id: self.aws_instance_id,
+                vm_path: self.vm_path,
             }
         }
     }
@@ -1534,6 +1317,8 @@ pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     Disconnected,
     #[allow(missing_docs)] // documentation missing in model
+    Discovered,
+    #[allow(missing_docs)] // documentation missing in model
     NotReady,
     #[allow(missing_docs)] // documentation missing in model
     ReadyForCutover,
@@ -1552,6 +1337,7 @@ impl std::convert::From<&str> for LifeCycleState {
             "CUTOVER" => LifeCycleState::Cutover,
             "CUTTING_OVER" => LifeCycleState::CuttingOver,
             "DISCONNECTED" => LifeCycleState::Disconnected,
+            "DISCOVERED" => LifeCycleState::Discovered,
             "NOT_READY" => LifeCycleState::NotReady,
             "READY_FOR_CUTOVER" => LifeCycleState::ReadyForCutover,
             "READY_FOR_TEST" => LifeCycleState::ReadyForTest,
@@ -1575,6 +1361,7 @@ impl LifeCycleState {
             LifeCycleState::Cutover => "CUTOVER",
             LifeCycleState::CuttingOver => "CUTTING_OVER",
             LifeCycleState::Disconnected => "DISCONNECTED",
+            LifeCycleState::Discovered => "DISCOVERED",
             LifeCycleState::NotReady => "NOT_READY",
             LifeCycleState::ReadyForCutover => "READY_FOR_CUTOVER",
             LifeCycleState::ReadyForTest => "READY_FOR_TEST",
@@ -1589,6 +1376,7 @@ impl LifeCycleState {
             "CUTOVER",
             "CUTTING_OVER",
             "DISCONNECTED",
+            "DISCOVERED",
             "NOT_READY",
             "READY_FOR_CUTOVER",
             "READY_FOR_TEST",
@@ -2202,6 +1990,8 @@ pub struct DataReplicationInfo {
     pub data_replication_initiation: std::option::Option<crate::model::DataReplicationInitiation>,
     /// <p>Error in obtaining data replication info.</p>
     pub data_replication_error: std::option::Option<crate::model::DataReplicationError>,
+    /// <p>Request to query data replication last snapshot time.</p>
+    pub last_snapshot_date_time: std::option::Option<std::string::String>,
 }
 impl DataReplicationInfo {
     /// <p>Request to query data replication lag durating.</p>
@@ -2236,6 +2026,10 @@ impl DataReplicationInfo {
     ) -> std::option::Option<&crate::model::DataReplicationError> {
         self.data_replication_error.as_ref()
     }
+    /// <p>Request to query data replication last snapshot time.</p>
+    pub fn last_snapshot_date_time(&self) -> std::option::Option<&str> {
+        self.last_snapshot_date_time.as_deref()
+    }
 }
 impl std::fmt::Debug for DataReplicationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2249,6 +2043,7 @@ impl std::fmt::Debug for DataReplicationInfo {
             &self.data_replication_initiation,
         );
         formatter.field("data_replication_error", &self.data_replication_error);
+        formatter.field("last_snapshot_date_time", &self.last_snapshot_date_time);
         formatter.finish()
     }
 }
@@ -2266,6 +2061,7 @@ pub mod data_replication_info {
         pub(crate) data_replication_initiation:
             std::option::Option<crate::model::DataReplicationInitiation>,
         pub(crate) data_replication_error: std::option::Option<crate::model::DataReplicationError>,
+        pub(crate) last_snapshot_date_time: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Request to query data replication lag durating.</p>
@@ -2357,6 +2153,19 @@ pub mod data_replication_info {
             self.data_replication_error = input;
             self
         }
+        /// <p>Request to query data replication last snapshot time.</p>
+        pub fn last_snapshot_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_snapshot_date_time = Some(input.into());
+            self
+        }
+        /// <p>Request to query data replication last snapshot time.</p>
+        pub fn set_last_snapshot_date_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_snapshot_date_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataReplicationInfo`](crate::model::DataReplicationInfo)
         pub fn build(self) -> crate::model::DataReplicationInfo {
             crate::model::DataReplicationInfo {
@@ -2366,6 +2175,7 @@ pub mod data_replication_info {
                 data_replication_state: self.data_replication_state,
                 data_replication_initiation: self.data_replication_initiation,
                 data_replication_error: self.data_replication_error,
+                last_snapshot_date_time: self.last_snapshot_date_time,
             }
         }
     }
@@ -2488,11 +2298,15 @@ pub enum DataReplicationErrorString {
     #[allow(missing_docs)] // documentation missing in model
     FailedToStartDataTransfer,
     #[allow(missing_docs)] // documentation missing in model
+    LastSnapshotJobFailed,
+    #[allow(missing_docs)] // documentation missing in model
     NotConverging,
     #[allow(missing_docs)] // documentation missing in model
     SnapshotsFailure,
     #[allow(missing_docs)] // documentation missing in model
     UnstableNetwork,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedVmConfiguration,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -2530,9 +2344,13 @@ impl std::convert::From<&str> for DataReplicationErrorString {
             "FAILED_TO_START_DATA_TRANSFER" => {
                 DataReplicationErrorString::FailedToStartDataTransfer
             }
+            "LAST_SNAPSHOT_JOB_FAILED" => DataReplicationErrorString::LastSnapshotJobFailed,
             "NOT_CONVERGING" => DataReplicationErrorString::NotConverging,
             "SNAPSHOTS_FAILURE" => DataReplicationErrorString::SnapshotsFailure,
             "UNSTABLE_NETWORK" => DataReplicationErrorString::UnstableNetwork,
+            "UNSUPPORTED_VM_CONFIGURATION" => {
+                DataReplicationErrorString::UnsupportedVmConfiguration
+            }
             other => DataReplicationErrorString::Unknown(other.to_owned()),
         }
     }
@@ -2579,9 +2397,13 @@ impl DataReplicationErrorString {
             DataReplicationErrorString::FailedToStartDataTransfer => {
                 "FAILED_TO_START_DATA_TRANSFER"
             }
+            DataReplicationErrorString::LastSnapshotJobFailed => "LAST_SNAPSHOT_JOB_FAILED",
             DataReplicationErrorString::NotConverging => "NOT_CONVERGING",
             DataReplicationErrorString::SnapshotsFailure => "SNAPSHOTS_FAILURE",
             DataReplicationErrorString::UnstableNetwork => "UNSTABLE_NETWORK",
+            DataReplicationErrorString::UnsupportedVmConfiguration => {
+                "UNSUPPORTED_VM_CONFIGURATION"
+            }
             DataReplicationErrorString::Unknown(s) => s.as_ref(),
         }
     }
@@ -2599,9 +2421,11 @@ impl DataReplicationErrorString {
             "FAILED_TO_LAUNCH_REPLICATION_SERVER",
             "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT",
             "FAILED_TO_START_DATA_TRANSFER",
+            "LAST_SNAPSHOT_JOB_FAILED",
             "NOT_CONVERGING",
             "SNAPSHOTS_FAILURE",
             "UNSTABLE_NETWORK",
+            "UNSUPPORTED_VM_CONFIGURATION",
         ]
     }
 }
@@ -3026,7 +2850,11 @@ pub enum DataReplicationState {
     #[allow(missing_docs)] // documentation missing in model
     Paused,
     #[allow(missing_docs)] // documentation missing in model
+    PendingSnapshotShipping,
+    #[allow(missing_docs)] // documentation missing in model
     Rescan,
+    #[allow(missing_docs)] // documentation missing in model
+    ShippingSnapshot,
     #[allow(missing_docs)] // documentation missing in model
     Stalled,
     #[allow(missing_docs)] // documentation missing in model
@@ -3044,7 +2872,9 @@ impl std::convert::From<&str> for DataReplicationState {
             "INITIAL_SYNC" => DataReplicationState::InitialSync,
             "INITIATING" => DataReplicationState::Initiating,
             "PAUSED" => DataReplicationState::Paused,
+            "PENDING_SNAPSHOT_SHIPPING" => DataReplicationState::PendingSnapshotShipping,
             "RESCAN" => DataReplicationState::Rescan,
+            "SHIPPING_SNAPSHOT" => DataReplicationState::ShippingSnapshot,
             "STALLED" => DataReplicationState::Stalled,
             "STOPPED" => DataReplicationState::Stopped,
             other => DataReplicationState::Unknown(other.to_owned()),
@@ -3069,7 +2899,9 @@ impl DataReplicationState {
             DataReplicationState::InitialSync => "INITIAL_SYNC",
             DataReplicationState::Initiating => "INITIATING",
             DataReplicationState::Paused => "PAUSED",
+            DataReplicationState::PendingSnapshotShipping => "PENDING_SNAPSHOT_SHIPPING",
             DataReplicationState::Rescan => "RESCAN",
+            DataReplicationState::ShippingSnapshot => "SHIPPING_SNAPSHOT",
             DataReplicationState::Stalled => "STALLED",
             DataReplicationState::Stopped => "STOPPED",
             DataReplicationState::Unknown(s) => s.as_ref(),
@@ -3085,7 +2917,9 @@ impl DataReplicationState {
             "INITIAL_SYNC",
             "INITIATING",
             "PAUSED",
+            "PENDING_SNAPSHOT_SHIPPING",
             "RESCAN",
+            "SHIPPING_SNAPSHOT",
             "STALLED",
             "STOPPED",
         ]
@@ -3383,6 +3217,535 @@ impl FirstBoot {
     }
 }
 impl AsRef<str> for FirstBoot {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReplicationConfigurationDataPlaneRouting {
+    #[allow(missing_docs)] // documentation missing in model
+    PrivateIp,
+    #[allow(missing_docs)] // documentation missing in model
+    PublicIp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReplicationConfigurationDataPlaneRouting {
+    fn from(s: &str) -> Self {
+        match s {
+            "PRIVATE_IP" => ReplicationConfigurationDataPlaneRouting::PrivateIp,
+            "PUBLIC_IP" => ReplicationConfigurationDataPlaneRouting::PublicIp,
+            other => ReplicationConfigurationDataPlaneRouting::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReplicationConfigurationDataPlaneRouting {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReplicationConfigurationDataPlaneRouting::from(s))
+    }
+}
+impl ReplicationConfigurationDataPlaneRouting {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReplicationConfigurationDataPlaneRouting::PrivateIp => "PRIVATE_IP",
+            ReplicationConfigurationDataPlaneRouting::PublicIp => "PUBLIC_IP",
+            ReplicationConfigurationDataPlaneRouting::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PRIVATE_IP", "PUBLIC_IP"]
+    }
+}
+impl AsRef<str> for ReplicationConfigurationDataPlaneRouting {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReplicationConfigurationEbsEncryption {
+    #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReplicationConfigurationEbsEncryption {
+    fn from(s: &str) -> Self {
+        match s {
+            "CUSTOM" => ReplicationConfigurationEbsEncryption::Custom,
+            "DEFAULT" => ReplicationConfigurationEbsEncryption::Default,
+            other => ReplicationConfigurationEbsEncryption::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReplicationConfigurationEbsEncryption {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReplicationConfigurationEbsEncryption::from(s))
+    }
+}
+impl ReplicationConfigurationEbsEncryption {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReplicationConfigurationEbsEncryption::Custom => "CUSTOM",
+            ReplicationConfigurationEbsEncryption::Default => "DEFAULT",
+            ReplicationConfigurationEbsEncryption::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CUSTOM", "DEFAULT"]
+    }
+}
+impl AsRef<str> for ReplicationConfigurationEbsEncryption {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Replication Configuration replicated disk.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicationConfigurationReplicatedDisk {
+    /// <p>Replication Configuration replicated disk device name.</p>
+    pub device_name: std::option::Option<std::string::String>,
+    /// <p>Replication Configuration replicated disk boot disk.</p>
+    pub is_boot_disk: std::option::Option<bool>,
+    /// <p>Replication Configuration replicated disk staging disk type.</p>
+    pub staging_disk_type:
+        std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
+    /// <p>Replication Configuration replicated disk IOPs.</p>
+    pub iops: i64,
+}
+impl ReplicationConfigurationReplicatedDisk {
+    /// <p>Replication Configuration replicated disk device name.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>Replication Configuration replicated disk boot disk.</p>
+    pub fn is_boot_disk(&self) -> std::option::Option<bool> {
+        self.is_boot_disk
+    }
+    /// <p>Replication Configuration replicated disk staging disk type.</p>
+    pub fn staging_disk_type(
+        &self,
+    ) -> std::option::Option<&crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>
+    {
+        self.staging_disk_type.as_ref()
+    }
+    /// <p>Replication Configuration replicated disk IOPs.</p>
+    pub fn iops(&self) -> i64 {
+        self.iops
+    }
+}
+impl std::fmt::Debug for ReplicationConfigurationReplicatedDisk {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicationConfigurationReplicatedDisk");
+        formatter.field("device_name", &self.device_name);
+        formatter.field("is_boot_disk", &self.is_boot_disk);
+        formatter.field("staging_disk_type", &self.staging_disk_type);
+        formatter.field("iops", &self.iops);
+        formatter.finish()
+    }
+}
+/// See [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk)
+pub mod replication_configuration_replicated_disk {
+    /// A builder for [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) device_name: std::option::Option<std::string::String>,
+        pub(crate) is_boot_disk: std::option::Option<bool>,
+        pub(crate) staging_disk_type: std::option::Option<
+            crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+        >,
+        pub(crate) iops: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Replication Configuration replicated disk device name.</p>
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_name = Some(input.into());
+            self
+        }
+        /// <p>Replication Configuration replicated disk device name.</p>
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_name = input;
+            self
+        }
+        /// <p>Replication Configuration replicated disk boot disk.</p>
+        pub fn is_boot_disk(mut self, input: bool) -> Self {
+            self.is_boot_disk = Some(input);
+            self
+        }
+        /// <p>Replication Configuration replicated disk boot disk.</p>
+        pub fn set_is_boot_disk(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_boot_disk = input;
+            self
+        }
+        /// <p>Replication Configuration replicated disk staging disk type.</p>
+        pub fn staging_disk_type(
+            mut self,
+            input: crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+        ) -> Self {
+            self.staging_disk_type = Some(input);
+            self
+        }
+        /// <p>Replication Configuration replicated disk staging disk type.</p>
+        pub fn set_staging_disk_type(
+            mut self,
+            input: std::option::Option<
+                crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
+            >,
+        ) -> Self {
+            self.staging_disk_type = input;
+            self
+        }
+        /// <p>Replication Configuration replicated disk IOPs.</p>
+        pub fn iops(mut self, input: i64) -> Self {
+            self.iops = Some(input);
+            self
+        }
+        /// <p>Replication Configuration replicated disk IOPs.</p>
+        pub fn set_iops(mut self, input: std::option::Option<i64>) -> Self {
+            self.iops = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk)
+        pub fn build(self) -> crate::model::ReplicationConfigurationReplicatedDisk {
+            crate::model::ReplicationConfigurationReplicatedDisk {
+                device_name: self.device_name,
+                is_boot_disk: self.is_boot_disk,
+                staging_disk_type: self.staging_disk_type,
+                iops: self.iops.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ReplicationConfigurationReplicatedDisk {
+    /// Creates a new builder-style object to manufacture [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk)
+    pub fn builder() -> crate::model::replication_configuration_replicated_disk::Builder {
+        crate::model::replication_configuration_replicated_disk::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
+    #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
+    Gp2,
+    #[allow(missing_docs)] // documentation missing in model
+    Io1,
+    #[allow(missing_docs)] // documentation missing in model
+    Sc1,
+    #[allow(missing_docs)] // documentation missing in model
+    St1,
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTO" => ReplicationConfigurationReplicatedDiskStagingDiskType::Auto,
+            "GP2" => ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2,
+            "IO1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Io1,
+            "SC1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1,
+            "ST1" => ReplicationConfigurationReplicatedDiskStagingDiskType::St1,
+            "STANDARD" => ReplicationConfigurationReplicatedDiskStagingDiskType::Standard,
+            other => {
+                ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(other.to_owned())
+            }
+        }
+    }
+}
+impl std::str::FromStr for ReplicationConfigurationReplicatedDiskStagingDiskType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReplicationConfigurationReplicatedDiskStagingDiskType::from(
+            s,
+        ))
+    }
+}
+impl ReplicationConfigurationReplicatedDiskStagingDiskType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => "AUTO",
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => "GP2",
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => "IO1",
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => "SC1",
+            ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => "ST1",
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => "STANDARD",
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "GP2", "IO1", "SC1", "ST1", "STANDARD"]
+    }
+}
+impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
+    #[allow(missing_docs)] // documentation missing in model
+    Gp2,
+    #[allow(missing_docs)] // documentation missing in model
+    St1,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReplicationConfigurationDefaultLargeStagingDiskType {
+    fn from(s: &str) -> Self {
+        match s {
+            "GP2" => ReplicationConfigurationDefaultLargeStagingDiskType::Gp2,
+            "ST1" => ReplicationConfigurationDefaultLargeStagingDiskType::St1,
+            other => ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReplicationConfigurationDefaultLargeStagingDiskType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReplicationConfigurationDefaultLargeStagingDiskType::from(s))
+    }
+}
+impl ReplicationConfigurationDefaultLargeStagingDiskType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReplicationConfigurationDefaultLargeStagingDiskType::Gp2 => "GP2",
+            ReplicationConfigurationDefaultLargeStagingDiskType::St1 => "ST1",
+            ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["GP2", "ST1"]
+    }
+}
+impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Configure Licensing.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Licensing {
+    /// <p>Configure BYOL OS licensing.</p>
+    pub os_byol: std::option::Option<bool>,
+}
+impl Licensing {
+    /// <p>Configure BYOL OS licensing.</p>
+    pub fn os_byol(&self) -> std::option::Option<bool> {
+        self.os_byol
+    }
+}
+impl std::fmt::Debug for Licensing {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Licensing");
+        formatter.field("os_byol", &self.os_byol);
+        formatter.finish()
+    }
+}
+/// See [`Licensing`](crate::model::Licensing)
+pub mod licensing {
+    /// A builder for [`Licensing`](crate::model::Licensing)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) os_byol: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Configure BYOL OS licensing.</p>
+        pub fn os_byol(mut self, input: bool) -> Self {
+            self.os_byol = Some(input);
+            self
+        }
+        /// <p>Configure BYOL OS licensing.</p>
+        pub fn set_os_byol(mut self, input: std::option::Option<bool>) -> Self {
+            self.os_byol = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Licensing`](crate::model::Licensing)
+        pub fn build(self) -> crate::model::Licensing {
+            crate::model::Licensing {
+                os_byol: self.os_byol,
+            }
+        }
+    }
+}
+impl Licensing {
+    /// Creates a new builder-style object to manufacture [`Licensing`](crate::model::Licensing)
+    pub fn builder() -> crate::model::licensing::Builder {
+        crate::model::licensing::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetInstanceTypeRightSizingMethod {
+    #[allow(missing_docs)] // documentation missing in model
+    Basic,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetInstanceTypeRightSizingMethod {
+    fn from(s: &str) -> Self {
+        match s {
+            "BASIC" => TargetInstanceTypeRightSizingMethod::Basic,
+            "NONE" => TargetInstanceTypeRightSizingMethod::None,
+            other => TargetInstanceTypeRightSizingMethod::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetInstanceTypeRightSizingMethod {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetInstanceTypeRightSizingMethod::from(s))
+    }
+}
+impl TargetInstanceTypeRightSizingMethod {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetInstanceTypeRightSizingMethod::Basic => "BASIC",
+            TargetInstanceTypeRightSizingMethod::None => "NONE",
+            TargetInstanceTypeRightSizingMethod::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["BASIC", "NONE"]
+    }
+}
+impl AsRef<str> for TargetInstanceTypeRightSizingMethod {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LaunchDisposition {
+    #[allow(missing_docs)] // documentation missing in model
+    Started,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LaunchDisposition {
+    fn from(s: &str) -> Self {
+        match s {
+            "STARTED" => LaunchDisposition::Started,
+            "STOPPED" => LaunchDisposition::Stopped,
+            other => LaunchDisposition::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LaunchDisposition {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LaunchDisposition::from(s))
+    }
+}
+impl LaunchDisposition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LaunchDisposition::Started => "STARTED",
+            LaunchDisposition::Stopped => "STOPPED",
+            LaunchDisposition::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["STARTED", "STOPPED"]
+    }
+}
+impl AsRef<str> for LaunchDisposition {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -4117,6 +4480,10 @@ pub struct SourceServer {
     pub life_cycle: std::option::Option<crate::model::LifeCycle>,
     /// <p>Source server properties.</p>
     pub source_properties: std::option::Option<crate::model::SourceProperties>,
+    /// <p>Source server replication type.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+    /// <p>Source server vCenter client id.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl SourceServer {
     /// <p>Source server ID.</p>
@@ -4154,6 +4521,14 @@ impl SourceServer {
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
+    /// <p>Source server replication type.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+    /// <p>Source server vCenter client id.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
 }
 impl std::fmt::Debug for SourceServer {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4166,6 +4541,8 @@ impl std::fmt::Debug for SourceServer {
         formatter.field("data_replication_info", &self.data_replication_info);
         formatter.field("life_cycle", &self.life_cycle);
         formatter.field("source_properties", &self.source_properties);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.finish()
     }
 }
@@ -4185,6 +4562,8 @@ pub mod source_server {
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
         pub(crate) source_properties: std::option::Option<crate::model::SourceProperties>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Source server ID.</p>
@@ -4297,6 +4676,32 @@ pub mod source_server {
             self.source_properties = input;
             self
         }
+        /// <p>Source server replication type.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Source server replication type.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>Source server vCenter client id.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SourceServer`](crate::model::SourceServer)
         pub fn build(self) -> crate::model::SourceServer {
             crate::model::SourceServer {
@@ -4308,6 +4713,8 @@ pub mod source_server {
                 data_replication_info: self.data_replication_info,
                 life_cycle: self.life_cycle,
                 source_properties: self.source_properties,
+                replication_type: self.replication_type,
+                vcenter_client_id: self.vcenter_client_id,
             }
         }
     }
@@ -4327,6 +4734,10 @@ pub struct DescribeSourceServersRequestFilters {
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Request to filter Source Servers list by archived.</p>
     pub is_archived: std::option::Option<bool>,
+    /// <p>Request to filter Source Servers list by replication type.</p>
+    pub replication_types: std::option::Option<std::vec::Vec<crate::model::ReplicationType>>,
+    /// <p>Request to filter Source Servers list by life cycle states.</p>
+    pub life_cycle_states: std::option::Option<std::vec::Vec<crate::model::LifeCycleState>>,
 }
 impl DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
@@ -4337,12 +4748,22 @@ impl DescribeSourceServersRequestFilters {
     pub fn is_archived(&self) -> std::option::Option<bool> {
         self.is_archived
     }
+    /// <p>Request to filter Source Servers list by replication type.</p>
+    pub fn replication_types(&self) -> std::option::Option<&[crate::model::ReplicationType]> {
+        self.replication_types.as_deref()
+    }
+    /// <p>Request to filter Source Servers list by life cycle states.</p>
+    pub fn life_cycle_states(&self) -> std::option::Option<&[crate::model::LifeCycleState]> {
+        self.life_cycle_states.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeSourceServersRequestFilters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSourceServersRequestFilters");
         formatter.field("source_server_i_ds", &self.source_server_i_ds);
         formatter.field("is_archived", &self.is_archived);
+        formatter.field("replication_types", &self.replication_types);
+        formatter.field("life_cycle_states", &self.life_cycle_states);
         formatter.finish()
     }
 }
@@ -4354,6 +4775,10 @@ pub mod describe_source_servers_request_filters {
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) is_archived: std::option::Option<bool>,
+        pub(crate) replication_types:
+            std::option::Option<std::vec::Vec<crate::model::ReplicationType>>,
+        pub(crate) life_cycle_states:
+            std::option::Option<std::vec::Vec<crate::model::LifeCycleState>>,
     }
     impl Builder {
         /// Appends an item to `source_server_i_ds`.
@@ -4385,11 +4810,54 @@ pub mod describe_source_servers_request_filters {
             self.is_archived = input;
             self
         }
+        /// Appends an item to `replication_types`.
+        ///
+        /// To override the contents of this collection use [`set_replication_types`](Self::set_replication_types).
+        ///
+        /// <p>Request to filter Source Servers list by replication type.</p>
+        pub fn replication_types(
+            mut self,
+            input: impl Into<crate::model::ReplicationType>,
+        ) -> Self {
+            let mut v = self.replication_types.unwrap_or_default();
+            v.push(input.into());
+            self.replication_types = Some(v);
+            self
+        }
+        /// <p>Request to filter Source Servers list by replication type.</p>
+        pub fn set_replication_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicationType>>,
+        ) -> Self {
+            self.replication_types = input;
+            self
+        }
+        /// Appends an item to `life_cycle_states`.
+        ///
+        /// To override the contents of this collection use [`set_life_cycle_states`](Self::set_life_cycle_states).
+        ///
+        /// <p>Request to filter Source Servers list by life cycle states.</p>
+        pub fn life_cycle_states(mut self, input: impl Into<crate::model::LifeCycleState>) -> Self {
+            let mut v = self.life_cycle_states.unwrap_or_default();
+            v.push(input.into());
+            self.life_cycle_states = Some(v);
+            self
+        }
+        /// <p>Request to filter Source Servers list by life cycle states.</p>
+        pub fn set_life_cycle_states(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LifeCycleState>>,
+        ) -> Self {
+            self.life_cycle_states = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters)
         pub fn build(self) -> crate::model::DescribeSourceServersRequestFilters {
             crate::model::DescribeSourceServersRequestFilters {
                 source_server_i_ds: self.source_server_i_ds,
                 is_archived: self.is_archived,
+                replication_types: self.replication_types,
+                life_cycle_states: self.life_cycle_states,
             }
         }
     }

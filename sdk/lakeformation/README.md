@@ -1,9 +1,9 @@
 # aws-sdk-lakeformation
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Defines the public endpoint for the AWS Lake Formation service.
+Defines the public endpoint for the Lake Formation service.
 
 ## Getting Started
 
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-lakeformation = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-lakeformation = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

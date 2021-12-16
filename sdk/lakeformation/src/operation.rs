@@ -101,6 +101,108 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchRevokePermissions {
     }
 }
 
+/// Operation shape for `CancelTransaction`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`cancel_transaction`](crate::client::Client::cancel_transaction).
+///
+/// See [`crate::client::fluent_builders::CancelTransaction`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CancelTransaction {
+    _private: (),
+}
+impl CancelTransaction {
+    /// Creates a new builder-style object to manufacture [`CancelTransactionInput`](crate::input::CancelTransactionInput)
+    pub fn builder() -> crate::input::cancel_transaction_input::Builder {
+        crate::input::cancel_transaction_input::Builder::default()
+    }
+    /// Creates a new `CancelTransaction` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CancelTransaction {
+    type Output = std::result::Result<
+        crate::output::CancelTransactionOutput,
+        crate::error::CancelTransactionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_transaction_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_transaction_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CommitTransaction`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`commit_transaction`](crate::client::Client::commit_transaction).
+///
+/// See [`crate::client::fluent_builders::CommitTransaction`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CommitTransaction {
+    _private: (),
+}
+impl CommitTransaction {
+    /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::input::CommitTransactionInput)
+    pub fn builder() -> crate::input::commit_transaction_input::Builder {
+        crate::input::commit_transaction_input::Builder::default()
+    }
+    /// Creates a new `CommitTransaction` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CommitTransaction {
+    type Output = std::result::Result<
+        crate::output::CommitTransactionOutput,
+        crate::error::CommitTransactionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_commit_transaction_error(response)
+        } else {
+            crate::operation_deser::parse_commit_transaction_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateDataCellsFilter`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_data_cells_filter`](crate::client::Client::create_data_cells_filter).
+///
+/// See [`crate::client::fluent_builders::CreateDataCellsFilter`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateDataCellsFilter {
+    _private: (),
+}
+impl CreateDataCellsFilter {
+    /// Creates a new builder-style object to manufacture [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput)
+    pub fn builder() -> crate::input::create_data_cells_filter_input::Builder {
+        crate::input::create_data_cells_filter_input::Builder::default()
+    }
+    /// Creates a new `CreateDataCellsFilter` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateDataCellsFilter {
+    type Output = std::result::Result<
+        crate::output::CreateDataCellsFilterOutput,
+        crate::error::CreateDataCellsFilterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_data_cells_filter_error(response)
+        } else {
+            crate::operation_deser::parse_create_data_cells_filter_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateLFTag`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -133,6 +235,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLFTag {
     }
 }
 
+/// Operation shape for `DeleteDataCellsFilter`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_data_cells_filter`](crate::client::Client::delete_data_cells_filter).
+///
+/// See [`crate::client::fluent_builders::DeleteDataCellsFilter`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteDataCellsFilter {
+    _private: (),
+}
+impl DeleteDataCellsFilter {
+    /// Creates a new builder-style object to manufacture [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput)
+    pub fn builder() -> crate::input::delete_data_cells_filter_input::Builder {
+        crate::input::delete_data_cells_filter_input::Builder::default()
+    }
+    /// Creates a new `DeleteDataCellsFilter` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDataCellsFilter {
+    type Output = std::result::Result<
+        crate::output::DeleteDataCellsFilterOutput,
+        crate::error::DeleteDataCellsFilterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_data_cells_filter_error(response)
+        } else {
+            crate::operation_deser::parse_delete_data_cells_filter_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteLFTag`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -161,6 +297,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLFTag {
             crate::operation_deser::parse_delete_lf_tag_error(response)
         } else {
             crate::operation_deser::parse_delete_lf_tag_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteObjectsOnCancel`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_objects_on_cancel`](crate::client::Client::delete_objects_on_cancel).
+///
+/// See [`crate::client::fluent_builders::DeleteObjectsOnCancel`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteObjectsOnCancel {
+    _private: (),
+}
+impl DeleteObjectsOnCancel {
+    /// Creates a new builder-style object to manufacture [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput)
+    pub fn builder() -> crate::input::delete_objects_on_cancel_input::Builder {
+        crate::input::delete_objects_on_cancel_input::Builder::default()
+    }
+    /// Creates a new `DeleteObjectsOnCancel` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteObjectsOnCancel {
+    type Output = std::result::Result<
+        crate::output::DeleteObjectsOnCancelOutput,
+        crate::error::DeleteObjectsOnCancelError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_objects_on_cancel_error(response)
+        } else {
+            crate::operation_deser::parse_delete_objects_on_cancel_response(response)
         }
     }
 }
@@ -229,6 +399,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResource {
             crate::operation_deser::parse_describe_resource_error(response)
         } else {
             crate::operation_deser::parse_describe_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeTransaction`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_transaction`](crate::client::Client::describe_transaction).
+///
+/// See [`crate::client::fluent_builders::DescribeTransaction`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeTransaction {
+    _private: (),
+}
+impl DescribeTransaction {
+    /// Creates a new builder-style object to manufacture [`DescribeTransactionInput`](crate::input::DescribeTransactionInput)
+    pub fn builder() -> crate::input::describe_transaction_input::Builder {
+        crate::input::describe_transaction_input::Builder::default()
+    }
+    /// Creates a new `DescribeTransaction` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeTransaction {
+    type Output = std::result::Result<
+        crate::output::DescribeTransactionOutput,
+        crate::error::DescribeTransactionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_transaction_error(response)
+        } else {
+            crate::operation_deser::parse_describe_transaction_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ExtendTransaction`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`extend_transaction`](crate::client::Client::extend_transaction).
+///
+/// See [`crate::client::fluent_builders::ExtendTransaction`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ExtendTransaction {
+    _private: (),
+}
+impl ExtendTransaction {
+    /// Creates a new builder-style object to manufacture [`ExtendTransactionInput`](crate::input::ExtendTransactionInput)
+    pub fn builder() -> crate::input::extend_transaction_input::Builder {
+        crate::input::extend_transaction_input::Builder::default()
+    }
+    /// Creates a new `ExtendTransaction` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ExtendTransaction {
+    type Output = std::result::Result<
+        crate::output::ExtendTransactionOutput,
+        crate::error::ExtendTransactionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_extend_transaction_error(response)
+        } else {
+            crate::operation_deser::parse_extend_transaction_response(response)
         }
     }
 }
@@ -332,6 +570,72 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLFTag {
     }
 }
 
+/// Operation shape for `GetQueryState`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_query_state`](crate::client::Client::get_query_state).
+///
+/// See [`crate::client::fluent_builders::GetQueryState`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetQueryState {
+    _private: (),
+}
+impl GetQueryState {
+    /// Creates a new builder-style object to manufacture [`GetQueryStateInput`](crate::input::GetQueryStateInput)
+    pub fn builder() -> crate::input::get_query_state_input::Builder {
+        crate::input::get_query_state_input::Builder::default()
+    }
+    /// Creates a new `GetQueryState` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetQueryState {
+    type Output =
+        std::result::Result<crate::output::GetQueryStateOutput, crate::error::GetQueryStateError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_query_state_error(response)
+        } else {
+            crate::operation_deser::parse_get_query_state_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetQueryStatistics`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_query_statistics`](crate::client::Client::get_query_statistics).
+///
+/// See [`crate::client::fluent_builders::GetQueryStatistics`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetQueryStatistics {
+    _private: (),
+}
+impl GetQueryStatistics {
+    /// Creates a new builder-style object to manufacture [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput)
+    pub fn builder() -> crate::input::get_query_statistics_input::Builder {
+        crate::input::get_query_statistics_input::Builder::default()
+    }
+    /// Creates a new `GetQueryStatistics` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetQueryStatistics {
+    type Output = std::result::Result<
+        crate::output::GetQueryStatisticsOutput,
+        crate::error::GetQueryStatisticsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_query_statistics_error(response)
+        } else {
+            crate::operation_deser::parse_get_query_statistics_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetResourceLFTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -366,6 +670,115 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceLFTags {
     }
 }
 
+/// Operation shape for `GetTableObjects`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_table_objects`](crate::client::Client::get_table_objects).
+///
+/// See [`crate::client::fluent_builders::GetTableObjects`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTableObjects {
+    _private: (),
+}
+impl GetTableObjects {
+    /// Creates a new builder-style object to manufacture [`GetTableObjectsInput`](crate::input::GetTableObjectsInput)
+    pub fn builder() -> crate::input::get_table_objects_input::Builder {
+        crate::input::get_table_objects_input::Builder::default()
+    }
+    /// Creates a new `GetTableObjects` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTableObjects {
+    type Output = std::result::Result<
+        crate::output::GetTableObjectsOutput,
+        crate::error::GetTableObjectsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_table_objects_error(response)
+        } else {
+            crate::operation_deser::parse_get_table_objects_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetWorkUnitResults`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_work_unit_results`](crate::client::Client::get_work_unit_results).
+///
+/// See [`crate::client::fluent_builders::GetWorkUnitResults`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetWorkUnitResults {
+    _private: (),
+}
+impl GetWorkUnitResults {
+    /// Creates a new builder-style object to manufacture [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput)
+    pub fn builder() -> crate::input::get_work_unit_results_input::Builder {
+        crate::input::get_work_unit_results_input::Builder::default()
+    }
+    /// Creates a new `GetWorkUnitResults` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseHttpResponse for GetWorkUnitResults {
+    type Output = std::result::Result<
+        crate::output::GetWorkUnitResultsOutput,
+        crate::error::GetWorkUnitResultsError,
+    >;
+    fn parse_unloaded(
+        &self,
+        response: &mut aws_smithy_http::operation::Response,
+    ) -> Option<Self::Output> {
+        // This is an error, defer to the non-streaming parser
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
+            return None;
+        }
+        Some(crate::operation_deser::parse_get_work_unit_results(
+            response,
+        ))
+    }
+    fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        // if streaming, we only hit this case if its an error
+        crate::operation_deser::parse_get_work_unit_results_error(response)
+    }
+}
+
+/// Operation shape for `GetWorkUnits`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_work_units`](crate::client::Client::get_work_units).
+///
+/// See [`crate::client::fluent_builders::GetWorkUnits`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetWorkUnits {
+    _private: (),
+}
+impl GetWorkUnits {
+    /// Creates a new builder-style object to manufacture [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput)
+    pub fn builder() -> crate::input::get_work_units_input::Builder {
+        crate::input::get_work_units_input::Builder::default()
+    }
+    /// Creates a new `GetWorkUnits` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetWorkUnits {
+    type Output =
+        std::result::Result<crate::output::GetWorkUnitsOutput, crate::error::GetWorkUnitsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_work_units_error(response)
+        } else {
+            crate::operation_deser::parse_get_work_units_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GrantPermissions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -396,6 +809,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GrantPermissions {
             crate::operation_deser::parse_grant_permissions_error(response)
         } else {
             crate::operation_deser::parse_grant_permissions_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListDataCellsFilter`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_data_cells_filter`](crate::client::Client::list_data_cells_filter).
+///
+/// See [`crate::client::fluent_builders::ListDataCellsFilter`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDataCellsFilter {
+    _private: (),
+}
+impl ListDataCellsFilter {
+    /// Creates a new builder-style object to manufacture [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput)
+    pub fn builder() -> crate::input::list_data_cells_filter_input::Builder {
+        crate::input::list_data_cells_filter_input::Builder::default()
+    }
+    /// Creates a new `ListDataCellsFilter` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDataCellsFilter {
+    type Output = std::result::Result<
+        crate::output::ListDataCellsFilterOutput,
+        crate::error::ListDataCellsFilterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_data_cells_filter_error(response)
+        } else {
+            crate::operation_deser::parse_list_data_cells_filter_response(response)
         }
     }
 }
@@ -494,6 +941,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResources {
             crate::operation_deser::parse_list_resources_error(response)
         } else {
             crate::operation_deser::parse_list_resources_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListTableStorageOptimizers`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_table_storage_optimizers`](crate::client::Client::list_table_storage_optimizers).
+///
+/// See [`crate::client::fluent_builders::ListTableStorageOptimizers`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTableStorageOptimizers {
+    _private: (),
+}
+impl ListTableStorageOptimizers {
+    /// Creates a new builder-style object to manufacture [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput)
+    pub fn builder() -> crate::input::list_table_storage_optimizers_input::Builder {
+        crate::input::list_table_storage_optimizers_input::Builder::default()
+    }
+    /// Creates a new `ListTableStorageOptimizers` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTableStorageOptimizers {
+    type Output = std::result::Result<
+        crate::output::ListTableStorageOptimizersOutput,
+        crate::error::ListTableStorageOptimizersError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_table_storage_optimizers_error(response)
+        } else {
+            crate::operation_deser::parse_list_table_storage_optimizers_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListTransactions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_transactions`](crate::client::Client::list_transactions).
+///
+/// See [`crate::client::fluent_builders::ListTransactions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTransactions {
+    _private: (),
+}
+impl ListTransactions {
+    /// Creates a new builder-style object to manufacture [`ListTransactionsInput`](crate::input::ListTransactionsInput)
+    pub fn builder() -> crate::input::list_transactions_input::Builder {
+        crate::input::list_transactions_input::Builder::default()
+    }
+    /// Creates a new `ListTransactions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListTransactions {
+    type Output = std::result::Result<
+        crate::output::ListTransactionsOutput,
+        crate::error::ListTransactionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_transactions_error(response)
+        } else {
+            crate::operation_deser::parse_list_transactions_response(response)
         }
     }
 }
@@ -702,6 +1217,74 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchTablesByLFTags {
     }
 }
 
+/// Operation shape for `StartQueryPlanning`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_query_planning`](crate::client::Client::start_query_planning).
+///
+/// See [`crate::client::fluent_builders::StartQueryPlanning`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartQueryPlanning {
+    _private: (),
+}
+impl StartQueryPlanning {
+    /// Creates a new builder-style object to manufacture [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput)
+    pub fn builder() -> crate::input::start_query_planning_input::Builder {
+        crate::input::start_query_planning_input::Builder::default()
+    }
+    /// Creates a new `StartQueryPlanning` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartQueryPlanning {
+    type Output = std::result::Result<
+        crate::output::StartQueryPlanningOutput,
+        crate::error::StartQueryPlanningError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_query_planning_error(response)
+        } else {
+            crate::operation_deser::parse_start_query_planning_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartTransaction`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_transaction`](crate::client::Client::start_transaction).
+///
+/// See [`crate::client::fluent_builders::StartTransaction`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartTransaction {
+    _private: (),
+}
+impl StartTransaction {
+    /// Creates a new builder-style object to manufacture [`StartTransactionInput`](crate::input::StartTransactionInput)
+    pub fn builder() -> crate::input::start_transaction_input::Builder {
+        crate::input::start_transaction_input::Builder::default()
+    }
+    /// Creates a new `StartTransaction` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartTransaction {
+    type Output = std::result::Result<
+        crate::output::StartTransactionOutput,
+        crate::error::StartTransactionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_transaction_error(response)
+        } else {
+            crate::operation_deser::parse_start_transaction_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateLFTag`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -762,6 +1345,74 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResource {
             crate::operation_deser::parse_update_resource_error(response)
         } else {
             crate::operation_deser::parse_update_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateTableObjects`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_table_objects`](crate::client::Client::update_table_objects).
+///
+/// See [`crate::client::fluent_builders::UpdateTableObjects`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateTableObjects {
+    _private: (),
+}
+impl UpdateTableObjects {
+    /// Creates a new builder-style object to manufacture [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput)
+    pub fn builder() -> crate::input::update_table_objects_input::Builder {
+        crate::input::update_table_objects_input::Builder::default()
+    }
+    /// Creates a new `UpdateTableObjects` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateTableObjects {
+    type Output = std::result::Result<
+        crate::output::UpdateTableObjectsOutput,
+        crate::error::UpdateTableObjectsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_table_objects_error(response)
+        } else {
+            crate::operation_deser::parse_update_table_objects_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateTableStorageOptimizer`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_table_storage_optimizer`](crate::client::Client::update_table_storage_optimizer).
+///
+/// See [`crate::client::fluent_builders::UpdateTableStorageOptimizer`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateTableStorageOptimizer {
+    _private: (),
+}
+impl UpdateTableStorageOptimizer {
+    /// Creates a new builder-style object to manufacture [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput)
+    pub fn builder() -> crate::input::update_table_storage_optimizer_input::Builder {
+        crate::input::update_table_storage_optimizer_input::Builder::default()
+    }
+    /// Creates a new `UpdateTableStorageOptimizer` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateTableStorageOptimizer {
+    type Output = std::result::Result<
+        crate::output::UpdateTableStorageOptimizerOutput,
+        crate::error::UpdateTableStorageOptimizerError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_table_storage_optimizer_error(response)
+        } else {
+            crate::operation_deser::parse_update_table_storage_optimizer_response(response)
         }
     }
 }

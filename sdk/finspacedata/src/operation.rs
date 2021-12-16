@@ -33,6 +33,198 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChangeset {
     }
 }
 
+/// Operation shape for `CreateDataset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_dataset`](crate::client::Client::create_dataset).
+///
+/// See [`crate::client::fluent_builders::CreateDataset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateDataset {
+    _private: (),
+}
+impl CreateDataset {
+    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+    pub fn builder() -> crate::input::create_dataset_input::Builder {
+        crate::input::create_dataset_input::Builder::default()
+    }
+    /// Creates a new `CreateDataset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateDataset {
+    type Output =
+        std::result::Result<crate::output::CreateDatasetOutput, crate::error::CreateDatasetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_dataset_error(response)
+        } else {
+            crate::operation_deser::parse_create_dataset_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateDataView`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_data_view`](crate::client::Client::create_data_view).
+///
+/// See [`crate::client::fluent_builders::CreateDataView`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateDataView {
+    _private: (),
+}
+impl CreateDataView {
+    /// Creates a new builder-style object to manufacture [`CreateDataViewInput`](crate::input::CreateDataViewInput)
+    pub fn builder() -> crate::input::create_data_view_input::Builder {
+        crate::input::create_data_view_input::Builder::default()
+    }
+    /// Creates a new `CreateDataView` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateDataView {
+    type Output =
+        std::result::Result<crate::output::CreateDataViewOutput, crate::error::CreateDataViewError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_data_view_error(response)
+        } else {
+            crate::operation_deser::parse_create_data_view_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteDataset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_dataset`](crate::client::Client::delete_dataset).
+///
+/// See [`crate::client::fluent_builders::DeleteDataset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteDataset {
+    _private: (),
+}
+impl DeleteDataset {
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+    pub fn builder() -> crate::input::delete_dataset_input::Builder {
+        crate::input::delete_dataset_input::Builder::default()
+    }
+    /// Creates a new `DeleteDataset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
+    type Output =
+        std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_dataset_error(response)
+        } else {
+            crate::operation_deser::parse_delete_dataset_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetChangeset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_changeset`](crate::client::Client::get_changeset).
+///
+/// See [`crate::client::fluent_builders::GetChangeset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetChangeset {
+    _private: (),
+}
+impl GetChangeset {
+    /// Creates a new builder-style object to manufacture [`GetChangesetInput`](crate::input::GetChangesetInput)
+    pub fn builder() -> crate::input::get_changeset_input::Builder {
+        crate::input::get_changeset_input::Builder::default()
+    }
+    /// Creates a new `GetChangeset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetChangeset {
+    type Output =
+        std::result::Result<crate::output::GetChangesetOutput, crate::error::GetChangesetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_changeset_error(response)
+        } else {
+            crate::operation_deser::parse_get_changeset_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetDataset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_dataset`](crate::client::Client::get_dataset).
+///
+/// See [`crate::client::fluent_builders::GetDataset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetDataset {
+    _private: (),
+}
+impl GetDataset {
+    /// Creates a new builder-style object to manufacture [`GetDatasetInput`](crate::input::GetDatasetInput)
+    pub fn builder() -> crate::input::get_dataset_input::Builder {
+        crate::input::get_dataset_input::Builder::default()
+    }
+    /// Creates a new `GetDataset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataset {
+    type Output =
+        std::result::Result<crate::output::GetDatasetOutput, crate::error::GetDatasetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_dataset_error(response)
+        } else {
+            crate::operation_deser::parse_get_dataset_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetDataView`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_data_view`](crate::client::Client::get_data_view).
+///
+/// See [`crate::client::fluent_builders::GetDataView`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetDataView {
+    _private: (),
+}
+impl GetDataView {
+    /// Creates a new builder-style object to manufacture [`GetDataViewInput`](crate::input::GetDataViewInput)
+    pub fn builder() -> crate::input::get_data_view_input::Builder {
+        crate::input::get_data_view_input::Builder::default()
+    }
+    /// Creates a new `GetDataView` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetDataView {
+    type Output =
+        std::result::Result<crate::output::GetDataViewOutput, crate::error::GetDataViewError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_data_view_error(response)
+        } else {
+            crate::operation_deser::parse_get_data_view_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetProgrammaticAccessCredentials`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -97,6 +289,168 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkingLocation {
             crate::operation_deser::parse_get_working_location_error(response)
         } else {
             crate::operation_deser::parse_get_working_location_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListChangesets`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_changesets`](crate::client::Client::list_changesets).
+///
+/// See [`crate::client::fluent_builders::ListChangesets`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListChangesets {
+    _private: (),
+}
+impl ListChangesets {
+    /// Creates a new builder-style object to manufacture [`ListChangesetsInput`](crate::input::ListChangesetsInput)
+    pub fn builder() -> crate::input::list_changesets_input::Builder {
+        crate::input::list_changesets_input::Builder::default()
+    }
+    /// Creates a new `ListChangesets` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListChangesets {
+    type Output =
+        std::result::Result<crate::output::ListChangesetsOutput, crate::error::ListChangesetsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_changesets_error(response)
+        } else {
+            crate::operation_deser::parse_list_changesets_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListDatasets`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_datasets`](crate::client::Client::list_datasets).
+///
+/// See [`crate::client::fluent_builders::ListDatasets`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDatasets {
+    _private: (),
+}
+impl ListDatasets {
+    /// Creates a new builder-style object to manufacture [`ListDatasetsInput`](crate::input::ListDatasetsInput)
+    pub fn builder() -> crate::input::list_datasets_input::Builder {
+        crate::input::list_datasets_input::Builder::default()
+    }
+    /// Creates a new `ListDatasets` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
+    type Output =
+        std::result::Result<crate::output::ListDatasetsOutput, crate::error::ListDatasetsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_datasets_error(response)
+        } else {
+            crate::operation_deser::parse_list_datasets_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListDataViews`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_data_views`](crate::client::Client::list_data_views).
+///
+/// See [`crate::client::fluent_builders::ListDataViews`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDataViews {
+    _private: (),
+}
+impl ListDataViews {
+    /// Creates a new builder-style object to manufacture [`ListDataViewsInput`](crate::input::ListDataViewsInput)
+    pub fn builder() -> crate::input::list_data_views_input::Builder {
+        crate::input::list_data_views_input::Builder::default()
+    }
+    /// Creates a new `ListDataViews` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDataViews {
+    type Output =
+        std::result::Result<crate::output::ListDataViewsOutput, crate::error::ListDataViewsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_data_views_error(response)
+        } else {
+            crate::operation_deser::parse_list_data_views_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateChangeset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_changeset`](crate::client::Client::update_changeset).
+///
+/// See [`crate::client::fluent_builders::UpdateChangeset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateChangeset {
+    _private: (),
+}
+impl UpdateChangeset {
+    /// Creates a new builder-style object to manufacture [`UpdateChangesetInput`](crate::input::UpdateChangesetInput)
+    pub fn builder() -> crate::input::update_changeset_input::Builder {
+        crate::input::update_changeset_input::Builder::default()
+    }
+    /// Creates a new `UpdateChangeset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateChangeset {
+    type Output = std::result::Result<
+        crate::output::UpdateChangesetOutput,
+        crate::error::UpdateChangesetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_changeset_error(response)
+        } else {
+            crate::operation_deser::parse_update_changeset_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateDataset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_dataset`](crate::client::Client::update_dataset).
+///
+/// See [`crate::client::fluent_builders::UpdateDataset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateDataset {
+    _private: (),
+}
+impl UpdateDataset {
+    /// Creates a new builder-style object to manufacture [`UpdateDatasetInput`](crate::input::UpdateDatasetInput)
+    pub fn builder() -> crate::input::update_dataset_input::Builder {
+        crate::input::update_dataset_input::Builder::default()
+    }
+    /// Creates a new `UpdateDataset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateDataset {
+    type Output =
+        std::result::Result<crate::output::UpdateDatasetOutput, crate::error::UpdateDatasetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_dataset_error(response)
+        } else {
+            crate::operation_deser::parse_update_dataset_response(response)
         }
     }
 }

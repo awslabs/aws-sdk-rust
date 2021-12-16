@@ -356,6 +356,157 @@ impl std::error::Error for BatchGetImageError {
     }
 }
 
+/// Error type for the `BatchGetRepositoryScanningConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetRepositoryScanningConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetRepositoryScanningConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchGetRepositoryScanningConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetRepositoryScanningConfigurationErrorKind {
+    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified repository could not be found. Check the spelling of the specified
+    /// repository and ensure that you are performing operations on the correct registry.</p>
+    RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
+    /// <p>These errors are usually caused by a server-side issue.</p>
+    ServerException(crate::error::ServerException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchGetRepositoryScanningConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetRepositoryScanningConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetRepositoryScanningConfigurationErrorKind::RepositoryNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            BatchGetRepositoryScanningConfigurationErrorKind::ServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetRepositoryScanningConfigurationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetRepositoryScanningConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetRepositoryScanningConfigurationError {
+    fn code(&self) -> Option<&str> {
+        BatchGetRepositoryScanningConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetRepositoryScanningConfigurationError {
+    /// Creates a new `BatchGetRepositoryScanningConfigurationError`.
+    pub fn new(
+        kind: BatchGetRepositoryScanningConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetRepositoryScanningConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetRepositoryScanningConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetRepositoryScanningConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetRepositoryScanningConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetRepositoryScanningConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetRepositoryScanningConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetRepositoryScanningConfigurationErrorKind::RepositoryNotFoundException`.
+    pub fn is_repository_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetRepositoryScanningConfigurationErrorKind::RepositoryNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetRepositoryScanningConfigurationErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetRepositoryScanningConfigurationErrorKind::ServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetRepositoryScanningConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetRepositoryScanningConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetRepositoryScanningConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetRepositoryScanningConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetRepositoryScanningConfigurationErrorKind::RepositoryNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            BatchGetRepositoryScanningConfigurationErrorKind::ServerException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetRepositoryScanningConfigurationErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetRepositoryScanningConfigurationErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `CompleteLayerUpload` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -533,6 +684,170 @@ impl std::error::Error for CompleteLayerUploadError {
             CompleteLayerUploadErrorKind::ServerException(_inner) => Some(_inner),
             CompleteLayerUploadErrorKind::UploadNotFoundException(_inner) => Some(_inner),
             CompleteLayerUploadErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreatePullThroughCacheRule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreatePullThroughCacheRuleError {
+    /// Kind of error that occurred.
+    pub kind: CreatePullThroughCacheRuleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreatePullThroughCacheRule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreatePullThroughCacheRuleErrorKind {
+    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your
+    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
+    /// the Amazon Elastic Container Registry User Guide.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>A pull through cache rule with these settings already exists for the private
+    /// registry.</p>
+    PullThroughCacheRuleAlreadyExistsException(
+        crate::error::PullThroughCacheRuleAlreadyExistsException,
+    ),
+    /// <p>These errors are usually caused by a server-side issue.</p>
+    ServerException(crate::error::ServerException),
+    /// <p>The specified upstream registry isn't supported.</p>
+    UnsupportedUpstreamRegistryException(crate::error::UnsupportedUpstreamRegistryException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreatePullThroughCacheRuleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreatePullThroughCacheRuleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreatePullThroughCacheRuleErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreatePullThroughCacheRuleErrorKind::PullThroughCacheRuleAlreadyExistsException(
+                _inner,
+            ) => _inner.fmt(f),
+            CreatePullThroughCacheRuleErrorKind::ServerException(_inner) => _inner.fmt(f),
+            CreatePullThroughCacheRuleErrorKind::UnsupportedUpstreamRegistryException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreatePullThroughCacheRuleErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreatePullThroughCacheRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreatePullThroughCacheRuleError {
+    fn code(&self) -> Option<&str> {
+        CreatePullThroughCacheRuleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreatePullThroughCacheRuleError {
+    /// Creates a new `CreatePullThroughCacheRuleError`.
+    pub fn new(kind: CreatePullThroughCacheRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreatePullThroughCacheRuleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreatePullThroughCacheRuleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreatePullThroughCacheRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreatePullThroughCacheRuleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePullThroughCacheRuleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePullThroughCacheRuleErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleErrorKind::PullThroughCacheRuleAlreadyExistsException`.
+    pub fn is_pull_through_cache_rule_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePullThroughCacheRuleErrorKind::PullThroughCacheRuleAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePullThroughCacheRuleErrorKind::ServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleErrorKind::UnsupportedUpstreamRegistryException`.
+    pub fn is_unsupported_upstream_registry_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePullThroughCacheRuleErrorKind::UnsupportedUpstreamRegistryException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePullThroughCacheRuleErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreatePullThroughCacheRuleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreatePullThroughCacheRuleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreatePullThroughCacheRuleErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreatePullThroughCacheRuleErrorKind::PullThroughCacheRuleAlreadyExistsException(
+                _inner,
+            ) => Some(_inner),
+            CreatePullThroughCacheRuleErrorKind::ServerException(_inner) => Some(_inner),
+            CreatePullThroughCacheRuleErrorKind::UnsupportedUpstreamRegistryException(_inner) => {
+                Some(_inner)
+            }
+            CreatePullThroughCacheRuleErrorKind::ValidationException(_inner) => Some(_inner),
+            CreatePullThroughCacheRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -828,6 +1143,140 @@ impl std::error::Error for DeleteLifecyclePolicyError {
             DeleteLifecyclePolicyErrorKind::RepositoryNotFoundException(_inner) => Some(_inner),
             DeleteLifecyclePolicyErrorKind::ServerException(_inner) => Some(_inner),
             DeleteLifecyclePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeletePullThroughCacheRule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeletePullThroughCacheRuleError {
+    /// Kind of error that occurred.
+    pub kind: DeletePullThroughCacheRuleErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeletePullThroughCacheRule` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeletePullThroughCacheRuleErrorKind {
+    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and
+    /// try again.</p>
+    PullThroughCacheRuleNotFoundException(crate::error::PullThroughCacheRuleNotFoundException),
+    /// <p>These errors are usually caused by a server-side issue.</p>
+    ServerException(crate::error::ServerException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeletePullThroughCacheRuleError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeletePullThroughCacheRuleErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeletePullThroughCacheRuleErrorKind::PullThroughCacheRuleNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeletePullThroughCacheRuleErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DeletePullThroughCacheRuleErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeletePullThroughCacheRuleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeletePullThroughCacheRuleError {
+    fn code(&self) -> Option<&str> {
+        DeletePullThroughCacheRuleError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeletePullThroughCacheRuleError {
+    /// Creates a new `DeletePullThroughCacheRuleError`.
+    pub fn new(kind: DeletePullThroughCacheRuleErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeletePullThroughCacheRuleError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeletePullThroughCacheRuleErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeletePullThroughCacheRuleError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeletePullThroughCacheRuleErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeletePullThroughCacheRuleErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePullThroughCacheRuleErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeletePullThroughCacheRuleErrorKind::PullThroughCacheRuleNotFoundException`.
+    pub fn is_pull_through_cache_rule_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePullThroughCacheRuleErrorKind::PullThroughCacheRuleNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeletePullThroughCacheRuleErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePullThroughCacheRuleErrorKind::ServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeletePullThroughCacheRuleErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePullThroughCacheRuleErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeletePullThroughCacheRuleError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeletePullThroughCacheRuleErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeletePullThroughCacheRuleErrorKind::PullThroughCacheRuleNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeletePullThroughCacheRuleErrorKind::ServerException(_inner) => Some(_inner),
+            DeletePullThroughCacheRuleErrorKind::ValidationException(_inner) => Some(_inner),
+            DeletePullThroughCacheRuleErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1539,6 +1988,8 @@ pub enum DescribeImageScanFindingsErrorKind {
     ScanNotFoundException(crate::error::ScanNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1552,6 +2003,7 @@ impl std::fmt::Display for DescribeImageScanFindingsError {
             }
             DescribeImageScanFindingsErrorKind::ScanNotFoundException(_inner) => _inner.fmt(f),
             DescribeImageScanFindingsErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DescribeImageScanFindingsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DescribeImageScanFindingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1643,6 +2095,13 @@ impl DescribeImageScanFindingsError {
             DescribeImageScanFindingsErrorKind::ServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `DescribeImageScanFindingsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeImageScanFindingsErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DescribeImageScanFindingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1652,7 +2111,149 @@ impl std::error::Error for DescribeImageScanFindingsError {
             DescribeImageScanFindingsErrorKind::RepositoryNotFoundException(_inner) => Some(_inner),
             DescribeImageScanFindingsErrorKind::ScanNotFoundException(_inner) => Some(_inner),
             DescribeImageScanFindingsErrorKind::ServerException(_inner) => Some(_inner),
+            DescribeImageScanFindingsErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeImageScanFindingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribePullThroughCacheRules` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribePullThroughCacheRulesError {
+    /// Kind of error that occurred.
+    pub kind: DescribePullThroughCacheRulesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribePullThroughCacheRules` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribePullThroughCacheRulesErrorKind {
+    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and
+    /// try again.</p>
+    PullThroughCacheRuleNotFoundException(crate::error::PullThroughCacheRuleNotFoundException),
+    /// <p>These errors are usually caused by a server-side issue.</p>
+    ServerException(crate::error::ServerException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribePullThroughCacheRulesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribePullThroughCacheRulesErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribePullThroughCacheRulesErrorKind::PullThroughCacheRuleNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribePullThroughCacheRulesErrorKind::ServerException(_inner) => _inner.fmt(f),
+            DescribePullThroughCacheRulesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribePullThroughCacheRulesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribePullThroughCacheRulesError {
+    fn code(&self) -> Option<&str> {
+        DescribePullThroughCacheRulesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribePullThroughCacheRulesError {
+    /// Creates a new `DescribePullThroughCacheRulesError`.
+    pub fn new(
+        kind: DescribePullThroughCacheRulesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribePullThroughCacheRulesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribePullThroughCacheRulesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribePullThroughCacheRulesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribePullThroughCacheRulesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribePullThroughCacheRulesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePullThroughCacheRulesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribePullThroughCacheRulesErrorKind::PullThroughCacheRuleNotFoundException`.
+    pub fn is_pull_through_cache_rule_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePullThroughCacheRulesErrorKind::PullThroughCacheRuleNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribePullThroughCacheRulesErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePullThroughCacheRulesErrorKind::ServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribePullThroughCacheRulesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePullThroughCacheRulesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribePullThroughCacheRulesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribePullThroughCacheRulesErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DescribePullThroughCacheRulesErrorKind::PullThroughCacheRuleNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            DescribePullThroughCacheRulesErrorKind::ServerException(_inner) => Some(_inner),
+            DescribePullThroughCacheRulesErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribePullThroughCacheRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2531,6 +3132,131 @@ impl std::error::Error for GetRegistryPolicyError {
     }
 }
 
+/// Error type for the `GetRegistryScanningConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetRegistryScanningConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: GetRegistryScanningConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetRegistryScanningConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetRegistryScanningConfigurationErrorKind {
+    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>These errors are usually caused by a server-side issue.</p>
+    ServerException(crate::error::ServerException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetRegistryScanningConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetRegistryScanningConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetRegistryScanningConfigurationErrorKind::ServerException(_inner) => _inner.fmt(f),
+            GetRegistryScanningConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetRegistryScanningConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetRegistryScanningConfigurationError {
+    fn code(&self) -> Option<&str> {
+        GetRegistryScanningConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetRegistryScanningConfigurationError {
+    /// Creates a new `GetRegistryScanningConfigurationError`.
+    pub fn new(
+        kind: GetRegistryScanningConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetRegistryScanningConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetRegistryScanningConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetRegistryScanningConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetRegistryScanningConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetRegistryScanningConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRegistryScanningConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRegistryScanningConfigurationErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRegistryScanningConfigurationErrorKind::ServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRegistryScanningConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRegistryScanningConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetRegistryScanningConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetRegistryScanningConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            GetRegistryScanningConfigurationErrorKind::ServerException(_inner) => Some(_inner),
+            GetRegistryScanningConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            GetRegistryScanningConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetRepositoryPolicy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3225,6 +3951,8 @@ pub enum PutImageScanningConfigurationErrorKind {
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3238,6 +3966,7 @@ impl std::fmt::Display for PutImageScanningConfigurationError {
                 _inner.fmt(f)
             }
             PutImageScanningConfigurationErrorKind::ServerException(_inner) => _inner.fmt(f),
+            PutImageScanningConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
             PutImageScanningConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3318,6 +4047,13 @@ impl PutImageScanningConfigurationError {
             PutImageScanningConfigurationErrorKind::ServerException(_)
         )
     }
+    /// Returns `true` if the error kind is `PutImageScanningConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutImageScanningConfigurationErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for PutImageScanningConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3329,6 +4065,7 @@ impl std::error::Error for PutImageScanningConfigurationError {
                 Some(_inner)
             }
             PutImageScanningConfigurationErrorKind::ServerException(_inner) => Some(_inner),
+            PutImageScanningConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
             PutImageScanningConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3684,6 +4421,131 @@ impl std::error::Error for PutRegistryPolicyError {
     }
 }
 
+/// Error type for the `PutRegistryScanningConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutRegistryScanningConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: PutRegistryScanningConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutRegistryScanningConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutRegistryScanningConfigurationErrorKind {
+    /// <p>The specified parameter is invalid. Review the available parameters for the API
+    /// request.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>These errors are usually caused by a server-side issue.</p>
+    ServerException(crate::error::ServerException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutRegistryScanningConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutRegistryScanningConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutRegistryScanningConfigurationErrorKind::ServerException(_inner) => _inner.fmt(f),
+            PutRegistryScanningConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            PutRegistryScanningConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutRegistryScanningConfigurationError {
+    fn code(&self) -> Option<&str> {
+        PutRegistryScanningConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutRegistryScanningConfigurationError {
+    /// Creates a new `PutRegistryScanningConfigurationError`.
+    pub fn new(
+        kind: PutRegistryScanningConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutRegistryScanningConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutRegistryScanningConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutRegistryScanningConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutRegistryScanningConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutRegistryScanningConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRegistryScanningConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRegistryScanningConfigurationErrorKind::ServerException`.
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRegistryScanningConfigurationErrorKind::ServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutRegistryScanningConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRegistryScanningConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for PutRegistryScanningConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutRegistryScanningConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            PutRegistryScanningConfigurationErrorKind::ServerException(_inner) => Some(_inner),
+            PutRegistryScanningConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            PutRegistryScanningConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `PutReplicationConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3949,6 +4811,8 @@ pub enum StartImageScanErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The image is of a type that cannot be scanned.</p>
     UnsupportedImageTypeException(crate::error::UnsupportedImageTypeException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3961,6 +4825,7 @@ impl std::fmt::Display for StartImageScanError {
             StartImageScanErrorKind::RepositoryNotFoundException(_inner) => _inner.fmt(f),
             StartImageScanErrorKind::ServerException(_inner) => _inner.fmt(f),
             StartImageScanErrorKind::UnsupportedImageTypeException(_inner) => _inner.fmt(f),
+            StartImageScanErrorKind::ValidationException(_inner) => _inner.fmt(f),
             StartImageScanErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4056,6 +4921,10 @@ impl StartImageScanError {
             StartImageScanErrorKind::UnsupportedImageTypeException(_)
         )
     }
+    /// Returns `true` if the error kind is `StartImageScanErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, StartImageScanErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for StartImageScanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4066,6 +4935,7 @@ impl std::error::Error for StartImageScanError {
             StartImageScanErrorKind::RepositoryNotFoundException(_inner) => Some(_inner),
             StartImageScanErrorKind::ServerException(_inner) => Some(_inner),
             StartImageScanErrorKind::UnsupportedImageTypeException(_inner) => Some(_inner),
+            StartImageScanErrorKind::ValidationException(_inner) => Some(_inner),
             StartImageScanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5485,6 +6355,70 @@ impl LifecyclePolicyNotFoundException {
     }
 }
 
+/// <p>There was an exception validating this request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ValidationException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ValidationException")?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ValidationException {}
+/// See [`ValidationException`](crate::error::ValidationException)
+pub mod validation_exception {
+    /// A builder for [`ValidationException`](crate::error::ValidationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException)
+        pub fn build(self) -> crate::error::ValidationException {
+            crate::error::ValidationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ValidationException {
+    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException)
+    pub fn builder() -> crate::error::validation_exception::Builder {
+        crate::error::validation_exception::Builder::default()
+    }
+}
+
 /// <p>The image is of a type that cannot be scanned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5508,8 +6442,8 @@ impl UnsupportedImageTypeException {
 impl std::fmt::Display for UnsupportedImageTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedImageTypeException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -5572,8 +6506,8 @@ impl ImageNotFoundException {
 impl std::fmt::Display for ImageNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ImageNotFoundException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -5610,70 +6544,6 @@ impl ImageNotFoundException {
     /// Creates a new builder-style object to manufacture [`ImageNotFoundException`](crate::error::ImageNotFoundException)
     pub fn builder() -> crate::error::image_not_found_exception::Builder {
         crate::error::image_not_found_exception::Builder::default()
-    }
-}
-
-/// <p>There was an exception validating this request.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ValidationException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ValidationException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ValidationException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ValidationException {}
-/// See [`ValidationException`](crate::error::ValidationException)
-pub mod validation_exception {
-    /// A builder for [`ValidationException`](crate::error::ValidationException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException)
-        pub fn build(self) -> crate::error::ValidationException {
-            crate::error::ValidationException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ValidationException {
-    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException)
-    pub fn builder() -> crate::error::validation_exception::Builder {
-        crate::error::validation_exception::Builder::default()
     }
 }
 
@@ -6259,6 +7129,71 @@ impl LayerInaccessibleException {
     }
 }
 
+/// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and
+/// try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PullThroughCacheRuleNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PullThroughCacheRuleNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PullThroughCacheRuleNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl PullThroughCacheRuleNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PullThroughCacheRuleNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PullThroughCacheRuleNotFoundException")?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PullThroughCacheRuleNotFoundException {}
+/// See [`PullThroughCacheRuleNotFoundException`](crate::error::PullThroughCacheRuleNotFoundException)
+pub mod pull_through_cache_rule_not_found_exception {
+    /// A builder for [`PullThroughCacheRuleNotFoundException`](crate::error::PullThroughCacheRuleNotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PullThroughCacheRuleNotFoundException`](crate::error::PullThroughCacheRuleNotFoundException)
+        pub fn build(self) -> crate::error::PullThroughCacheRuleNotFoundException {
+            crate::error::PullThroughCacheRuleNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl PullThroughCacheRuleNotFoundException {
+    /// Creates a new builder-style object to manufacture [`PullThroughCacheRuleNotFoundException`](crate::error::PullThroughCacheRuleNotFoundException)
+    pub fn builder() -> crate::error::pull_through_cache_rule_not_found_exception::Builder {
+        crate::error::pull_through_cache_rule_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>The specified image scan could not be found. Ensure that image scanning is enabled on
 /// the repository and try again.</p>
 #[non_exhaustive]
@@ -6283,8 +7218,8 @@ impl ScanNotFoundException {
 impl std::fmt::Display for ScanNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScanNotFoundException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -6348,8 +7283,8 @@ impl RepositoryNotEmptyException {
 impl std::fmt::Display for RepositoryNotEmptyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNotEmptyException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -6412,8 +7347,8 @@ impl RepositoryAlreadyExistsException {
 impl std::fmt::Display for RepositoryAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryAlreadyExistsException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -6453,6 +7388,135 @@ impl RepositoryAlreadyExistsException {
     }
 }
 
+/// <p>The specified upstream registry isn't supported.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedUpstreamRegistryException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UnsupportedUpstreamRegistryException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnsupportedUpstreamRegistryException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl UnsupportedUpstreamRegistryException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedUpstreamRegistryException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedUpstreamRegistryException")?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedUpstreamRegistryException {}
+/// See [`UnsupportedUpstreamRegistryException`](crate::error::UnsupportedUpstreamRegistryException)
+pub mod unsupported_upstream_registry_exception {
+    /// A builder for [`UnsupportedUpstreamRegistryException`](crate::error::UnsupportedUpstreamRegistryException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnsupportedUpstreamRegistryException`](crate::error::UnsupportedUpstreamRegistryException)
+        pub fn build(self) -> crate::error::UnsupportedUpstreamRegistryException {
+            crate::error::UnsupportedUpstreamRegistryException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl UnsupportedUpstreamRegistryException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedUpstreamRegistryException`](crate::error::UnsupportedUpstreamRegistryException)
+    pub fn builder() -> crate::error::unsupported_upstream_registry_exception::Builder {
+        crate::error::unsupported_upstream_registry_exception::Builder::default()
+    }
+}
+
+/// <p>A pull through cache rule with these settings already exists for the private
+/// registry.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PullThroughCacheRuleAlreadyExistsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PullThroughCacheRuleAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PullThroughCacheRuleAlreadyExistsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl PullThroughCacheRuleAlreadyExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PullThroughCacheRuleAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PullThroughCacheRuleAlreadyExistsException")?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PullThroughCacheRuleAlreadyExistsException {}
+/// See [`PullThroughCacheRuleAlreadyExistsException`](crate::error::PullThroughCacheRuleAlreadyExistsException)
+pub mod pull_through_cache_rule_already_exists_exception {
+    /// A builder for [`PullThroughCacheRuleAlreadyExistsException`](crate::error::PullThroughCacheRuleAlreadyExistsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PullThroughCacheRuleAlreadyExistsException`](crate::error::PullThroughCacheRuleAlreadyExistsException)
+        pub fn build(self) -> crate::error::PullThroughCacheRuleAlreadyExistsException {
+            crate::error::PullThroughCacheRuleAlreadyExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl PullThroughCacheRuleAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`PullThroughCacheRuleAlreadyExistsException`](crate::error::PullThroughCacheRuleAlreadyExistsException)
+    pub fn builder() -> crate::error::pull_through_cache_rule_already_exists_exception::Builder {
+        crate::error::pull_through_cache_rule_already_exists_exception::Builder::default()
+    }
+}
+
 /// <p>Layer parts must be at least 5 MiB in size.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6476,8 +7540,8 @@ impl LayerPartTooSmallException {
 impl std::fmt::Display for LayerPartTooSmallException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LayerPartTooSmallException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -6540,8 +7604,8 @@ impl LayerAlreadyExistsException {
 impl std::fmt::Display for LayerAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LayerAlreadyExistsException")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -6605,8 +7669,8 @@ impl InvalidLayerException {
 impl std::fmt::Display for InvalidLayerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLayerException")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -6669,8 +7733,8 @@ impl EmptyUploadException {
 impl std::fmt::Display for EmptyUploadException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EmptyUploadException")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }

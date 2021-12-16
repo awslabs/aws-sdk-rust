@@ -10,6 +10,10 @@ use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
 use std::time::{Duration, UNIX_EPOCH};
 
+use aws_sdk_s3control::middleware::DefaultMiddleware;
+use aws_smithy_client::Client as CoreClient;
+pub type Client<C> = CoreClient<C, DefaultMiddleware>;
+
 #[tokio::test]
 async fn test_signer() -> Result<(), aws_sdk_s3control::Error> {
     let creds = Credentials::new(
@@ -34,7 +38,7 @@ async fn test_signer() -> Result<(), aws_sdk_s3control::Error> {
             .unwrap(),
         http::Response::builder().status(200).body("").unwrap(),
     )]);
-    let client = aws_hyper::Client::new(conn.clone());
+    let client = Client::new(conn.clone());
     let mut op = ListAccessPoints::builder()
         .account_id("test-bucket")
         .build()

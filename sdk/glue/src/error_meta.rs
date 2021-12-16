@@ -35,12 +35,16 @@ pub enum Error {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
+    /// <p>An error that indicates your data is in an invalid state.</p>
+    InvalidStateException(crate::error::InvalidStateException),
     /// <p>The machine learning transform is not ready to run.</p>
     MlTransformNotReadyException(crate::error::MlTransformNotReadyException),
     /// <p>There is no applicable schedule.</p>
     NoScheduleException(crate::error::NoScheduleException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource was not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
     /// <p>The specified scheduler is not running.</p>
@@ -75,9 +79,11 @@ impl std::fmt::Display for Error {
             Error::IllegalWorkflowStateException(inner) => inner.fmt(f),
             Error::InternalServiceException(inner) => inner.fmt(f),
             Error::InvalidInputException(inner) => inner.fmt(f),
+            Error::InvalidStateException(inner) => inner.fmt(f),
             Error::MlTransformNotReadyException(inner) => inner.fmt(f),
             Error::NoScheduleException(inner) => inner.fmt(f),
             Error::OperationTimeoutException(inner) => inner.fmt(f),
+            Error::ResourceNotReadyException(inner) => inner.fmt(f),
             Error::ResourceNumberLimitExceededException(inner) => inner.fmt(f),
             Error::SchedulerNotRunningException(inner) => inner.fmt(f),
             Error::SchedulerRunningException(inner) => inner.fmt(f),
@@ -177,6 +183,9 @@ where
                 crate::error::BatchDeleteTableErrorKind::EntityNotFoundException(inner) => {
                     Error::EntityNotFoundException(inner)
                 }
+                crate::error::BatchDeleteTableErrorKind::GlueEncryptionException(inner) => {
+                    Error::GlueEncryptionException(inner)
+                }
                 crate::error::BatchDeleteTableErrorKind::InternalServiceException(inner) => {
                     Error::InternalServiceException(inner)
                 }
@@ -185,6 +194,9 @@ where
                 }
                 crate::error::BatchDeleteTableErrorKind::OperationTimeoutException(inner) => {
                     Error::OperationTimeoutException(inner)
+                }
+                crate::error::BatchDeleteTableErrorKind::ResourceNotReadyException(inner) => {
+                    Error::ResourceNotReadyException(inner)
                 }
                 crate::error::BatchDeleteTableErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -345,6 +357,9 @@ where
                 }
                 crate::error::BatchGetPartitionErrorKind::InvalidInputException(inner) => {
                     Error::InvalidInputException(inner)
+                }
+                crate::error::BatchGetPartitionErrorKind::InvalidStateException(inner) => {
+                    Error::InvalidStateException(inner)
                 }
                 crate::error::BatchGetPartitionErrorKind::OperationTimeoutException(inner) => {
                     Error::OperationTimeoutException(inner)
@@ -961,6 +976,9 @@ where
                 crate::error::CreateTableErrorKind::OperationTimeoutException(inner) => {
                     Error::OperationTimeoutException(inner)
                 }
+                crate::error::CreateTableErrorKind::ResourceNotReadyException(inner) => {
+                    Error::ResourceNotReadyException(inner)
+                }
                 crate::error::CreateTableErrorKind::ResourceNumberLimitExceededException(inner) => {
                     Error::ResourceNumberLimitExceededException(inner)
                 }
@@ -1538,6 +1556,9 @@ where
                 }
                 crate::error::DeleteTableErrorKind::OperationTimeoutException(inner) => {
                     Error::OperationTimeoutException(inner)
+                }
+                crate::error::DeleteTableErrorKind::ResourceNotReadyException(inner) => {
+                    Error::ResourceNotReadyException(inner)
                 }
                 crate::error::DeleteTableErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2436,8 +2457,14 @@ where
                 crate::error::GetPartitionsErrorKind::InvalidInputException(inner) => {
                     Error::InvalidInputException(inner)
                 }
+                crate::error::GetPartitionsErrorKind::InvalidStateException(inner) => {
+                    Error::InvalidStateException(inner)
+                }
                 crate::error::GetPartitionsErrorKind::OperationTimeoutException(inner) => {
                     Error::OperationTimeoutException(inner)
+                }
+                crate::error::GetPartitionsErrorKind::ResourceNotReadyException(inner) => {
+                    Error::ResourceNotReadyException(inner)
                 }
                 crate::error::GetPartitionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -2745,6 +2772,9 @@ where
                 }
                 crate::error::GetTableErrorKind::OperationTimeoutException(inner) => {
                     Error::OperationTimeoutException(inner)
+                }
+                crate::error::GetTableErrorKind::ResourceNotReadyException(inner) => {
+                    Error::ResourceNotReadyException(inner)
                 }
                 crate::error::GetTableErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -4495,6 +4525,9 @@ where
                 }
                 crate::error::UpdateTableErrorKind::OperationTimeoutException(inner) => {
                     Error::OperationTimeoutException(inner)
+                }
+                crate::error::UpdateTableErrorKind::ResourceNotReadyException(inner) => {
+                    Error::ResourceNotReadyException(inner)
                 }
                 crate::error::UpdateTableErrorKind::ResourceNumberLimitExceededException(inner) => {
                     Error::ResourceNumberLimitExceededException(inner)

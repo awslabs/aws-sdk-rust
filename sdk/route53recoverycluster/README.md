@@ -1,6 +1,6 @@
 # aws-sdk-route53recoverycluster
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Welcome to the Amazon Route 53 Application Recovery Controller API Reference Guide for Recovery Control Data Plane .
@@ -25,8 +25,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-route53recoverycluster = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-route53recoverycluster = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

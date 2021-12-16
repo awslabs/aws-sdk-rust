@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_iotdeviceadvisor::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -96,6 +96,13 @@ where
     /// operation and its arguments.
     pub fn delete_suite_definition(&self) -> fluent_builders::DeleteSuiteDefinition<C, M, R> {
         fluent_builders::DeleteSuiteDefinition::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetEndpoint` operation.
+    ///
+    /// See [`GetEndpoint`](crate::client::fluent_builders::GetEndpoint) for more information about the
+    /// operation and its arguments.
+    pub fn get_endpoint(&self) -> fluent_builders::GetEndpoint<C, M, R> {
+        fluent_builders::GetEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetSuiteDefinition` operation.
     ///
@@ -186,10 +193,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSuiteDefinition`.
     ///
     /// <p>Creates a Device Advisor test suite.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSuiteDefinition</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateSuiteDefinition<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -285,10 +293,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSuiteDefinition`.
     ///
     /// <p>Deletes a Device Advisor test suite.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSuiteDefinition</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteSuiteDefinition<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -341,12 +350,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Suite definition Id of the test suite to be deleted.</p>
+        /// <p>Suite definition ID of the test suite to be deleted.</p>
         pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(inp);
             self
         }
-        /// <p>Suite definition Id of the test suite to be deleted.</p>
+        /// <p>Suite definition ID of the test suite to be deleted.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -355,13 +364,97 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetEndpoint`.
+    ///
+    /// <p>Gets information about an Device Advisor endpoint.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetEndpoint<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_endpoint_input::Builder,
+    }
+    impl<C, M, R> GetEndpoint<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetEndpointError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetEndpointInputOperationOutputAlias,
+                crate::output::GetEndpointOutput,
+                crate::error::GetEndpointError,
+                crate::input::GetEndpointInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The thing ARN of the device. This is an optional parameter.</p>
+        pub fn thing_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_arn(inp);
+            self
+        }
+        /// <p>The thing ARN of the device. This is an optional parameter.</p>
+        pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_thing_arn(input);
+            self
+        }
+        /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(inp);
+            self
+        }
+        /// <p>The certificate ARN of the device. This is an optional parameter.</p>
+        pub fn set_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_certificate_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetSuiteDefinition`.
     ///
     /// <p>Gets information about a Device Advisor test suite.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteDefinition</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetSuiteDefinition<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -414,12 +507,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Suite definition Id of the test suite to get.</p>
+        /// <p>Suite definition ID of the test suite to get.</p>
         pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(inp);
             self
         }
-        /// <p>Suite definition Id of the test suite to get.</p>
+        /// <p>Suite definition ID of the test suite to get.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -444,10 +537,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSuiteRun`.
     ///
     /// <p>Gets information about a Device Advisor test suite run.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetSuiteRun<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -500,12 +594,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Suite definition Id for the test suite run.</p>
+        /// <p>Suite definition ID for the test suite run.</p>
         pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(inp);
             self
         }
-        /// <p>Suite definition Id for the test suite run.</p>
+        /// <p>Suite definition ID for the test suite run.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -513,12 +607,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_suite_definition_id(input);
             self
         }
-        /// <p>Suite run Id for the test suite run.</p>
+        /// <p>Suite run ID for the test suite run.</p>
         pub fn suite_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_run_id(inp);
             self
         }
-        /// <p>Suite run Id for the test suite run.</p>
+        /// <p>Suite run ID for the test suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_suite_run_id(input);
             self
@@ -527,10 +621,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSuiteRunReport`.
     ///
     /// <p>Gets a report download link for a successful Device Advisor qualifying test suite run.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetSuiteRunReport<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -583,12 +678,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(inp);
             self
         }
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -596,12 +691,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_suite_definition_id(input);
             self
         }
-        /// <p>Suite run Id of the test suite run.</p>
+        /// <p>Suite run ID of the test suite run.</p>
         pub fn suite_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_run_id(inp);
             self
         }
-        /// <p>Suite run Id of the test suite run.</p>
+        /// <p>Suite run ID of the test suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_suite_run_id(input);
             self
@@ -610,10 +705,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSuiteDefinitions`.
     ///
     /// <p>Lists the Device Advisor test suites you have created.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListSuiteDefinitions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -689,12 +785,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSuiteRuns`.
     ///
-    /// <p>Lists the runs of the specified Device Advisor test suite.
-    /// You can list all runs of the test suite, or the runs of a specific version of the test suite.</p>
+    /// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test
+    /// suite, or the runs of a specific version of the test suite.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListSuiteRuns<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -747,12 +844,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition Id.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition
+        /// ID.</p>
         pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(inp);
             self
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition Id.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition
+        /// ID.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -760,12 +859,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_suite_definition_id(input);
             self
         }
-        /// <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
+        /// the specified test suite based on suite definition version.</p>
         pub fn suite_definition_version(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_version(inp);
             self
         }
-        /// <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
+        /// the specified test suite based on suite definition version.</p>
         pub fn set_suite_definition_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -797,10 +898,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags attached to an IoT Device Advisor resource.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -867,10 +969,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartSuiteRun`.
     ///
     /// <p>Starts a Device Advisor test suite run.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartSuiteRun<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -923,12 +1026,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(inp);
             self
         }
-        /// <p>Suite definition Id of the test suite.</p>
+        /// <p>Suite definition ID of the test suite.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -989,10 +1092,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopSuiteRun`.
     ///
     /// <p>Stops a Device Advisor test suite run that is currently running.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopSuiteRun</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct StopSuiteRun<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1045,12 +1149,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Suite definition Id of the test suite run to be stopped.</p>
+        /// <p>Suite definition ID of the test suite run to be stopped.</p>
         pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(inp);
             self
         }
-        /// <p>Suite definition Id of the test suite run to be stopped.</p>
+        /// <p>Suite definition ID of the test suite run to be stopped.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1058,12 +1162,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_suite_definition_id(input);
             self
         }
-        /// <p>Suite run Id of the test suite run to be stopped.</p>
+        /// <p>Suite run ID of the test suite run to be stopped.</p>
         pub fn suite_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_run_id(inp);
             self
         }
-        /// <p>Suite run Id of the test suite run to be stopped.</p>
+        /// <p>Suite run ID of the test suite run to be stopped.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_suite_run_id(input);
             self
@@ -1072,10 +1176,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds to and modifies existing tags of an IoT Device Advisor resource.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1165,10 +1270,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from an IoT Device Advisor resource.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1252,10 +1358,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSuiteDefinition`.
     ///
     /// <p>Updates a Device Advisor test suite.</p>
+    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateSuiteDefinition<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1308,12 +1415,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Suite definition Id of the test suite to be updated.</p>
+        /// <p>Suite definition ID of the test suite to be updated.</p>
         pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(inp);
             self
         }
-        /// <p>Suite definition Id of the test suite to be updated.</p>
+        /// <p>Suite definition ID of the test suite to be updated.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1339,17 +1446,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -1358,7 +1469,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -1374,11 +1485,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

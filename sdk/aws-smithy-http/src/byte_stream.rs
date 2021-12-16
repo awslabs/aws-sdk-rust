@@ -74,7 +74,7 @@
 //!
 //! ### Create a ByteStream from a file
 //!
-//! _Note: This is only available with `bytestream-util` enabled._
+//! _Note: This is only available with `rt-tokio` enabled._
 //!
 //! ```rust
 //! use aws_smithy_http::byte_stream::ByteStream;
@@ -95,17 +95,15 @@ use crate::body::SdkBody;
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
-use http_body::combinators::BoxBody;
 use http_body::Body;
 use pin_project::pin_project;
 use std::error::Error as StdError;
 use std::fmt::{Debug, Formatter};
 use std::io::IoSlice;
-use std::path::Path;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 
-#[cfg(feature = "bytestream-util")]
+#[cfg(feature = "rt-tokio")]
 mod bytestream_util;
 
 /// Stream of binary data
@@ -134,7 +132,7 @@ mod bytestream_util;
 ///
 ///     _Note: An import of `StreamExt` is required to use `try_next()`._
 ///
-///     For use-cases where holding the entire ByteStream in memory is unecessary, use the
+///     For use-cases where holding the entire ByteStream in memory is unnecessary, use the
 ///     `Stream` implementation:
 ///     ```rust
 ///     # mod crc32 {
@@ -179,7 +177,7 @@ mod bytestream_util;
 ///
 /// 3. **From an `SdkBody` directly**: For more advanced / custom use cases, a ByteStream can be created directly
 /// from an SdkBody. **When created from an SdkBody, care must be taken to ensure retriability.** An SdkBody is retryable
-/// when constructured from in-memory data or when using [`SdkBody::retryable`](crate::body::SdkBody::retryable).
+/// when constructed from in-memory data or when using [`SdkBody::retryable`](crate::body::SdkBody::retryable).
 ///     ```rust
 ///     use aws_smithy_http::byte_stream::ByteStream;
 ///     use aws_smithy_http::body::SdkBody;
@@ -253,9 +251,9 @@ impl ByteStream {
     ///     ByteStream::from_path("docs/rows.csv").await.expect("file should be readable")
     /// }
     /// ```
-    #[cfg(feature = "bytestream-util")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "bytestream-util")))]
-    pub async fn from_path(path: impl AsRef<Path>) -> Result<Self, Error> {
+    #[cfg(feature = "rt-tokio")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
+    pub async fn from_path(path: impl AsRef<std::path::Path>) -> Result<Self, Error> {
         let path = path.as_ref();
         let path_buf = path.to_path_buf();
         let sz = tokio::fs::metadata(path)
@@ -263,10 +261,9 @@ impl ByteStream {
             .map_err(|err| Error(err.into()))?
             .len();
         let body_loader = move || {
-            SdkBody::from_dyn(BoxBody::new(bytestream_util::PathBody::from_path(
-                path_buf.as_path(),
-                sz,
-            )))
+            SdkBody::from_dyn(http_body::combinators::BoxBody::new(
+                bytestream_util::PathBody::from_path(path_buf.as_path(), sz),
+            ))
         };
         Ok(ByteStream::new(SdkBody::retryable(body_loader)))
     }
@@ -275,15 +272,17 @@ impl ByteStream {
     ///
     /// NOTE: This will NOT result in a retryable ByteStream. For a ByteStream that can be retried in the case of
     /// upstream failures, use [`ByteStream::from_path`](ByteStream::from_path)
-    #[cfg(feature = "bytestream-util")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "bytestream-util")))]
+    #[cfg(feature = "rt-tokio")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
     pub async fn from_file(file: tokio::fs::File) -> Result<Self, Error> {
         let sz = file
             .metadata()
             .await
             .map_err(|err| Error(err.into()))?
             .len();
-        let body = SdkBody::from_dyn(BoxBody::new(bytestream_util::PathBody::from_file(file, sz)));
+        let body = SdkBody::from_dyn(http_body::combinators::BoxBody::new(
+            bytestream_util::PathBody::from_file(file, sz),
+        ));
         Ok(ByteStream::new(body))
     }
 }
@@ -481,7 +480,7 @@ mod tests {
         );
     }
 
-    #[cfg(feature = "bytestream-util")]
+    #[cfg(feature = "rt-tokio")]
     #[tokio::test]
     async fn path_based_bytestreams() -> Result<(), Box<dyn Error>> {
         use std::io::Write;

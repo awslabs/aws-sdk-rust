@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 use aws_config::meta::region::RegionProviderChain;
-use lambda::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_lambda::{Client, Error, Region, PKG_VERSION};
 use std::str;
 use structopt::StructOpt;
 

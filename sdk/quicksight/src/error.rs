@@ -167,6 +167,8 @@ pub enum CreateAccountCustomizationErrorKind {
     /// account is authorized to use the Amazon QuickSight service, that your policies have the
     /// correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
@@ -186,6 +188,7 @@ impl std::fmt::Display for CreateAccountCustomizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateAccountCustomizationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateAccountCustomizationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateAccountCustomizationErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             CreateAccountCustomizationErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
@@ -259,6 +262,13 @@ impl CreateAccountCustomizationError {
             CreateAccountCustomizationErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountCustomizationErrorKind::ConflictException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateAccountCustomizationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
@@ -306,6 +316,7 @@ impl std::error::Error for CreateAccountCustomizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateAccountCustomizationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateAccountCustomizationErrorKind::ConflictException(_inner) => Some(_inner),
             CreateAccountCustomizationErrorKind::InternalFailureException(_inner) => Some(_inner),
             CreateAccountCustomizationErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
@@ -2914,6 +2925,8 @@ pub enum DeleteAccountCustomizationErrorKind {
     /// account is authorized to use the Amazon QuickSight service, that your policies have the
     /// correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
@@ -2931,6 +2944,7 @@ impl std::fmt::Display for DeleteAccountCustomizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteAccountCustomizationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteAccountCustomizationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteAccountCustomizationErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             DeleteAccountCustomizationErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
@@ -3003,6 +3017,13 @@ impl DeleteAccountCustomizationError {
             DeleteAccountCustomizationErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteAccountCustomizationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountCustomizationErrorKind::ConflictException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteAccountCustomizationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
@@ -3043,6 +3064,7 @@ impl std::error::Error for DeleteAccountCustomizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteAccountCustomizationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteAccountCustomizationErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteAccountCustomizationErrorKind::InternalFailureException(_inner) => Some(_inner),
             DeleteAccountCustomizationErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
@@ -9478,10 +9500,12 @@ pub enum GenerateEmbedUrlForAnonymousUserErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
     /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-    /// for anonymous users, a Amazon QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
+    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
     /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
     /// <p>After capacity pricing is added, you can use the
-    /// <a>GetDashboardEmbedUrl</a> API operation with the
+    /// <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+    /// </code> API operation with the
     /// <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
@@ -9700,10 +9724,12 @@ pub enum GenerateEmbedUrlForRegisteredUserErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
     /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-    /// for anonymous users, a Amazon QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
+    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
     /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
     /// <p>After capacity pricing is added, you can use the
-    /// <a>GetDashboardEmbedUrl</a> API operation with the
+    /// <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+    /// </code> API operation with the
     /// <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
@@ -9951,10 +9977,12 @@ pub enum GetDashboardEmbedUrlErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
     /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-    /// for anonymous users, a Amazon QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
+    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
     /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
     /// <p>After capacity pricing is added, you can use the
-    /// <a>GetDashboardEmbedUrl</a> API operation with the
+    /// <code>
+    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+    /// </code> API operation with the
     /// <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
     /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
@@ -14862,6 +14890,8 @@ pub enum UpdateAccountCustomizationErrorKind {
     /// account is authorized to use the Amazon QuickSight service, that your policies have the
     /// correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    ConflictException(crate::error::ConflictException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
@@ -14879,6 +14909,7 @@ impl std::fmt::Display for UpdateAccountCustomizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateAccountCustomizationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateAccountCustomizationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateAccountCustomizationErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
             UpdateAccountCustomizationErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
@@ -14951,6 +14982,13 @@ impl UpdateAccountCustomizationError {
             UpdateAccountCustomizationErrorKind::AccessDeniedException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateAccountCustomizationErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountCustomizationErrorKind::ConflictException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateAccountCustomizationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
@@ -14991,6 +15029,7 @@ impl std::error::Error for UpdateAccountCustomizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateAccountCustomizationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateAccountCustomizationErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateAccountCustomizationErrorKind::InternalFailureException(_inner) => Some(_inner),
             UpdateAccountCustomizationErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
@@ -19920,10 +19959,12 @@ impl QuickSightUserNotFoundException {
 
 /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
 /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-/// for anonymous users, a Amazon QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
+/// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
 /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
 /// <p>After capacity pricing is added, you can use the
-/// <a>GetDashboardEmbedUrl</a> API operation with the
+/// <code>
+/// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+/// </code> API operation with the
 /// <code>--identity-type ANONYMOUS</code> option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

@@ -1368,8 +1368,9 @@ pub mod describe_organization_resource_collection_health_input {
     }
     impl Builder {
         /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn organization_resource_collection_type(
             mut self,
             input: crate::model::OrganizationResourceCollectionType,
@@ -1378,8 +1379,9 @@ pub mod describe_organization_resource_collection_health_input {
             self
         }
         /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_organization_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::OrganizationResourceCollectionType>,
@@ -1603,8 +1605,9 @@ pub mod describe_resource_collection_health_input {
     }
     impl Builder {
         /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             input: crate::model::ResourceCollectionType,
@@ -1613,8 +1616,9 @@ pub mod describe_resource_collection_health_input {
             self
         }
         /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-        /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -5265,8 +5269,9 @@ impl std::fmt::Debug for DescribeServiceIntegrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceCollectionHealthInput {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
     /// <p>The pagination token to use to retrieve
     /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5274,8 +5279,9 @@ pub struct DescribeResourceCollectionHealthInput {
 }
 impl DescribeResourceCollectionHealthInput {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionType> {
@@ -5301,8 +5307,9 @@ impl std::fmt::Debug for DescribeResourceCollectionHealthInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationResourceCollectionHealthInput {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub organization_resource_collection_type:
         std::option::Option<crate::model::OrganizationResourceCollectionType>,
     /// <p>The ID of the Amazon Web Services account.</p>
@@ -5318,8 +5325,9 @@ pub struct DescribeOrganizationResourceCollectionHealthInput {
 }
 impl DescribeOrganizationResourceCollectionHealthInput {
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The one type of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation stacks. DevOps Guru can be configured to analyze
-    /// only the Amazon Web Services resources that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
+    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
+    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn organization_resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationResourceCollectionType> {

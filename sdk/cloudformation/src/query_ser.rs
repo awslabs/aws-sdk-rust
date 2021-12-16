@@ -264,19 +264,32 @@ pub fn serialize_structure_crate_model_auto_deployment(
 }
 
 #[allow(unused_mut)]
+pub fn serialize_structure_crate_model_managed_execution(
+    mut writer: aws_smithy_query::QueryValueWriter,
+    input: &crate::model::ManagedExecution,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    #[allow(unused_mut)]
+    let mut scope_75 = writer.prefix("Active");
+    if let Some(var_76) = &input.active {
+        scope_75.boolean(*var_76);
+    }
+    Ok(())
+}
+
+#[allow(unused_mut)]
 pub fn serialize_structure_crate_model_stack_instance_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::StackInstanceFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_75 = writer.prefix("Name");
-    if let Some(var_76) = &input.name {
-        scope_75.string(var_76.as_str());
+    let mut scope_77 = writer.prefix("Name");
+    if let Some(var_78) = &input.name {
+        scope_77.string(var_78.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_77 = writer.prefix("Values");
-    if let Some(var_78) = &input.values {
-        scope_77.string(var_78);
+    let mut scope_79 = writer.prefix("Values");
+    if let Some(var_80) = &input.values {
+        scope_79.string(var_80);
     }
     Ok(())
 }
@@ -287,19 +300,19 @@ pub fn serialize_structure_crate_model_type_filters(
     input: &crate::model::TypeFilters,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_79 = writer.prefix("Category");
-    if let Some(var_80) = &input.category {
-        scope_79.string(var_80.as_str());
+    let mut scope_81 = writer.prefix("Category");
+    if let Some(var_82) = &input.category {
+        scope_81.string(var_82.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("PublisherId");
-    if let Some(var_82) = &input.publisher_id {
-        scope_81.string(var_82);
-    }
-    #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("TypeNamePrefix");
-    if let Some(var_84) = &input.type_name_prefix {
+    let mut scope_83 = writer.prefix("PublisherId");
+    if let Some(var_84) = &input.publisher_id {
         scope_83.string(var_84);
+    }
+    #[allow(unused_mut)]
+    let mut scope_85 = writer.prefix("TypeNamePrefix");
+    if let Some(var_86) = &input.type_name_prefix {
+        scope_85.string(var_86);
     }
     Ok(())
 }
@@ -310,14 +323,14 @@ pub fn serialize_structure_crate_model_rollback_trigger(
     input: &crate::model::RollbackTrigger,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_85 = writer.prefix("Arn");
-    if let Some(var_86) = &input.arn {
-        scope_85.string(var_86);
+    let mut scope_87 = writer.prefix("Arn");
+    if let Some(var_88) = &input.arn {
+        scope_87.string(var_88);
     }
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("Type");
-    if let Some(var_88) = &input.r#type {
-        scope_87.string(var_88);
+    let mut scope_89 = writer.prefix("Type");
+    if let Some(var_90) = &input.r#type {
+        scope_89.string(var_90);
     }
     Ok(())
 }

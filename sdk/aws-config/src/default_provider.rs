@@ -452,7 +452,7 @@ pub mod credentials {
     ///
     /// # Examples
     /// Create a default chain with a custom region:
-    /// ```rust
+    /// ```no_run
     /// use aws_types::region::Region;
     /// use aws_config::default_provider::credentials::DefaultCredentialsChain;
     /// let credentials_provider = DefaultCredentialsChain::builder()
@@ -461,13 +461,13 @@ pub mod credentials {
     /// ```
     ///
     /// Create a default chain with no overrides:
-    /// ```rust
+    /// ```no_run
     /// use aws_config::default_provider::credentials::DefaultCredentialsChain;
     /// let credentials_provider = DefaultCredentialsChain::builder().build();
     /// ```
     ///
     /// Create a default chain that uses a different profile:
-    /// ```rust
+    /// ```no_run
     /// use aws_config::default_provider::credentials::DefaultCredentialsChain;
     /// let credentials_provider = DefaultCredentialsChain::builder()
     ///     .profile_name("otherprofile")
@@ -613,19 +613,19 @@ pub mod credentials {
         ///
         /// # Examples
         /// **Run the test case in `test-data/default-provider-chain/test_name`
-        /// ```rust
+        /// ```no_run
         /// make_test!(test_name);
         /// ```
         ///
         /// **Update (responses are replayed but new requests are recorded) the test case**:
-        /// ```rust
+        /// ```no_run
         /// make_test!(update: test_name)
         /// ```
         ///
         /// **Run the test case against a real HTTPS connection:**
         /// > Note: Be careful to remove sensitive information before committing. Always use a temporary
         /// > AWS account when recording live traffic.
-        /// ```rust
+        /// ```no_run
         /// make_test!(live: test_name)
         /// ```
         macro_rules! make_test {
@@ -702,6 +702,7 @@ pub mod credentials {
         #[tokio::test]
         #[traced_test]
         async fn no_providers_configured_err() {
+            tokio::time::pause();
             let conf = ProviderConfig::no_configuration()
                 .with_tcp_connector(BoxCloneService::new(NeverConnected::new()))
                 .with_time_source(TimeSource::real())

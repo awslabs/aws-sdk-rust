@@ -506,13 +506,15 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The resources associated with the cluster job. These resources include Amazon S3
-        /// buckets and optional AWS Lambda functions written in the Python language. </p>
+        /// buckets and optional Lambda functions written in the Python language.
+        /// </p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.resources = Some(input);
             self
         }
         /// <p>The resources associated with the cluster job. These resources include Amazon S3
-        /// buckets and optional AWS Lambda functions written in the Python language. </p>
+        /// buckets and optional Lambda functions written in the Python language.
+        /// </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -520,8 +522,9 @@ pub mod create_cluster_input {
             self.resources = input;
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+        /// (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -529,8 +532,9 @@ pub mod create_cluster_input {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+        /// (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -561,37 +565,33 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-        /// Management Service (AWS KMS). </p>
+        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
         /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-        /// Management Service (AWS KMS). </p>
+        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-        /// Identity and Access Management (IAM).</p>
+        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-        /// Identity and Access Management (IAM).</p>
+        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The type of AWS Snow Family device to use for this cluster.
-        /// </p>
+        /// <p>The type of Snow Family Devices to use for this cluster. </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
         ///
         /// <p>For more information, see
@@ -603,10 +603,10 @@ pub mod create_cluster_input {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for this cluster.
-        /// </p>
+        /// <p>The type of Snow Family Devices to use for this cluster. </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
         ///
         /// <p>For more information, see
@@ -623,16 +623,15 @@ pub mod create_cluster_input {
         }
         /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
         /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows:
-        /// </p>
+        /// its destination while in transit. Regional shipping speeds are as follows: </p>
         /// <ul>
         /// <li>
         /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -651,9 +650,9 @@ pub mod create_cluster_input {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries
-        /// in the EU have access to standard shipping, which typically takes less than a week, one
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
+        /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
         /// <li>
@@ -669,16 +668,15 @@ pub mod create_cluster_input {
         }
         /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
         /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows:
-        /// </p>
+        /// its destination while in transit. Regional shipping speeds are as follows: </p>
         /// <ul>
         /// <li>
         /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -697,9 +695,9 @@ pub mod create_cluster_input {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries
-        /// in the EU have access to standard shipping, which typically takes less than a week, one
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
+        /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
         /// <li>
@@ -746,12 +744,12 @@ pub mod create_cluster_input {
             self.forwarding_address_id = input;
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
             self.tax_documents = Some(input);
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn set_tax_documents(
             mut self,
             input: std::option::Option<crate::model::TaxDocuments>,
@@ -994,8 +992,9 @@ pub mod create_job_input {
             self.resources = input;
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -1003,8 +1002,9 @@ pub mod create_job_input {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -1035,29 +1035,29 @@ pub mod create_job_input {
             self
         }
         /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key Management
-        /// Service (KMS) API action.</p>
+        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// Key Management Service (KMS) API action.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
         /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key Management
-        /// Service (KMS) API action.</p>
+        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// Key Management Service (KMS) API action.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this job.
-        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
-        /// Access Management (IAM) API action.</p>
+        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// Identity and Access Management (IAM) API action.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this job.
-        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
-        /// Access Management (IAM) API action.</p>
+        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// Identity and Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1095,8 +1095,8 @@ pub mod create_job_input {
             self
         }
         /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
-        /// transit. Regional shipping speeds are as follows:</p>
+        /// Snow device, rather it represents how quickly the Snow device moves to its destination while
+        /// in transit. Regional shipping speeds are as follows:</p>
         ///
         /// <ul>
         /// <li>
@@ -1104,8 +1104,8 @@ pub mod create_job_input {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -1121,8 +1121,8 @@ pub mod create_job_input {
             self
         }
         /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
-        /// transit. Regional shipping speeds are as follows:</p>
+        /// Snow device, rather it represents how quickly the Snow device moves to its destination while
+        /// in transit. Regional shipping speeds are as follows:</p>
         ///
         /// <ul>
         /// <li>
@@ -1130,8 +1130,8 @@ pub mod create_job_input {
         /// express are delivered in about a day.</p>
         /// </li>
         /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically,
-        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+        /// devices shipped express are delivered in about a day. In addition, most countries in the
         /// EU have access to standard shipping, which typically takes less than a week, one
         /// way.</p>
         /// </li>
@@ -1178,13 +1178,14 @@ pub mod create_job_input {
             self.cluster_id = input;
             self
         }
-        /// <p>The type of AWS Snow Family device to use for this job.
+        /// <p>The type of Snow Family Devices to use for this job.
         /// </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
-        /// <p>The type of AWS Snow device to use for this job. Currently, the only supported
-        /// device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
+        /// supported device type for cluster jobs is <code>EDGE</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
         /// Options</a> in the Snowball Edge Developer Guide.</p>
         ///
@@ -1197,13 +1198,14 @@ pub mod create_job_input {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for this job.
+        /// <p>The type of Snow Family Devices to use for this job.
         /// </p>
         /// <note>
-        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+        /// <code>EDGE</code> device type.</p>
         /// </note>
-        /// <p>The type of AWS Snow device to use for this job. Currently, the only supported
-        /// device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
+        /// supported device type for cluster jobs is <code>EDGE</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
         /// Options</a> in the Snowball Edge Developer Guide.</p>
         ///
@@ -1234,12 +1236,12 @@ pub mod create_job_input {
             self.forwarding_address_id = input;
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
             self.tax_documents = Some(input);
             self
         }
-        /// <p>The tax documents required in your AWS Region.</p>
+        /// <p>The tax documents required in your Amazon Web Services Region.</p>
         pub fn set_tax_documents(
             mut self,
             input: std::option::Option<crate::model::TaxDocuments>,
@@ -1247,7 +1249,7 @@ pub mod create_job_input {
             self.tax_documents = input;
             self
         }
-        /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+        /// <p>Defines the device configuration for an Snowcone job.</p>
         ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
@@ -1258,7 +1260,7 @@ pub mod create_job_input {
             self.device_configuration = Some(input);
             self
         }
-        /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+        /// <p>Defines the device configuration for an Snowcone job.</p>
         ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
@@ -1476,12 +1478,14 @@ pub mod create_long_term_pricing_input {
             self.long_term_pricing_type = input;
             self
         }
-        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+        /// <p>Specifies whether the current long-term pricing type for the device should be
+        /// renewed.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
             self.is_long_term_pricing_auto_renew = Some(input);
             self
         }
-        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+        /// <p>Specifies whether the current long-term pricing type for the device should be
+        /// renewed.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
             input: std::option::Option<bool>,
@@ -1489,12 +1493,12 @@ pub mod create_long_term_pricing_input {
             self.is_long_term_pricing_auto_renew = input;
             self
         }
-        /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+        /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+        /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1663,15 +1667,15 @@ pub mod create_return_shipping_label_input {
             self.job_id = input;
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to AWS.
-        /// This speed represents how quickly it moves to its
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
+        /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
         /// destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to AWS.
-        /// This speed represents how quickly it moves to its
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
+        /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
         /// destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn set_shipping_option(
             mut self,
@@ -4102,15 +4106,13 @@ pub mod update_cluster_input {
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-        /// Identity and Access Management (IAM).</p>
+        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-        /// Identity and Access Management (IAM).</p>
+        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4140,8 +4142,9 @@ pub mod update_cluster_input {
             self.resources = input;
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+        /// (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -4149,8 +4152,9 @@ pub mod update_cluster_input {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+        /// (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -4386,15 +4390,15 @@ pub mod update_job_input {
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and Access
-        /// Management (IAM) API action.</p>
+        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
+        /// (IAM) API action.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and Access
-        /// Management (IAM) API action.</p>
+        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
+        /// (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4425,8 +4429,9 @@ pub mod update_job_input {
             self.resources = input;
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -4434,8 +4439,9 @@ pub mod update_job_input {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your
-        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data
+        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -4686,14 +4692,14 @@ pub mod update_job_shipment_state_input {
         }
         /// <p>The state of a device when it is being shipped. </p>
         /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
-        /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
+        /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
         pub fn shipment_state(mut self, input: crate::model::ShipmentState) -> Self {
             self.shipment_state = Some(input);
             self
         }
         /// <p>The state of a device when it is being shipped. </p>
         /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
-        /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
+        /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
         pub fn set_shipment_state(
             mut self,
             input: std::option::Option<crate::model::ShipmentState>,
@@ -4863,12 +4869,14 @@ pub mod update_long_term_pricing_input {
             self.long_term_pricing_id = input;
             self
         }
-        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
+        /// new device.</p>
         pub fn replacement_job(mut self, input: impl Into<std::string::String>) -> Self {
             self.replacement_job = Some(input.into());
             self
         }
-        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
+        /// new device.</p>
         pub fn set_replacement_job(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5036,7 +5044,8 @@ impl UpdateLongTermPricingInput {
 pub struct UpdateLongTermPricingInput {
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: std::option::Option<std::string::String>,
-    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
+    /// new device.</p>
     pub replacement_job: std::option::Option<std::string::String>,
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
     /// device should be automatically renewed before the long-term pricing contract expires.</p>
@@ -5047,7 +5056,8 @@ impl UpdateLongTermPricingInput {
     pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
         self.long_term_pricing_id.as_deref()
     }
-    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
+    /// new device.</p>
     pub fn replacement_job(&self) -> std::option::Option<&str> {
         self.replacement_job.as_deref()
     }
@@ -5079,7 +5089,7 @@ pub struct UpdateJobShipmentStateInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The state of a device when it is being shipped. </p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
-    /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
+    /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     pub shipment_state: std::option::Option<crate::model::ShipmentState>,
 }
 impl UpdateJobShipmentStateInput {
@@ -5090,7 +5100,7 @@ impl UpdateJobShipmentStateInput {
     }
     /// <p>The state of a device when it is being shipped. </p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
-    /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
+    /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     pub fn shipment_state(&self) -> std::option::Option<&crate::model::ShipmentState> {
         self.shipment_state.as_ref()
     }
@@ -5112,15 +5122,16 @@ pub struct UpdateJobInput {
     /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-    /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and Access
-    /// Management (IAM) API action.</p>
+    /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
+    /// (IAM) API action.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The new or updated <a>Notification</a> object.</p>
     pub notification: std::option::Option<crate::model::Notification>,
     /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
     pub resources: std::option::Option<crate::model::JobResource>,
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+    /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     /// <p>The ID of the updated <a>Address</a> object.</p>
@@ -5150,8 +5161,8 @@ impl UpdateJobInput {
         self.job_id.as_deref()
     }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-    /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and Access
-    /// Management (IAM) API action.</p>
+    /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
+    /// (IAM) API action.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -5163,8 +5174,9 @@ impl UpdateJobInput {
     pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
         self.resources.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+    /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
@@ -5233,16 +5245,16 @@ pub struct UpdateClusterInput {
     /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-    /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-    /// Identity and Access Management (IAM).</p>
+    /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The updated description of this cluster.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
     /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
     pub resources: std::option::Option<crate::model::JobResource>,
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+    /// (Network File System).</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     /// <p>The ID of the updated <a>Address</a> object.</p>
@@ -5263,8 +5275,7 @@ impl UpdateClusterInput {
         self.cluster_id.as_deref()
     }
     /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-    /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-    /// Identity and Access Management (IAM).</p>
+    /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -5277,8 +5288,9 @@ impl UpdateClusterInput {
     pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
         self.resources.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+    /// (Network File System).</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
@@ -5698,8 +5710,8 @@ pub struct CreateReturnShippingLabelInput {
     /// <p>The ID for a job that you want to create the return shipping label for; for example,
     /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to AWS.
-    /// This speed represents how quickly it moves to its
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
+    /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
     /// destination while in transit. Regional shipping speeds are as follows:</p>
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
 }
@@ -5709,8 +5721,8 @@ impl CreateReturnShippingLabelInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to AWS.
-    /// This speed represents how quickly it moves to its
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
+    /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
     /// destination while in transit. Regional shipping speeds are as follows:</p>
     pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
         self.shipping_option.as_ref()
@@ -5732,9 +5744,10 @@ pub struct CreateLongTermPricingInput {
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
     /// long-term pricing.</p>
     pub long_term_pricing_type: std::option::Option<crate::model::LongTermPricingType>,
-    /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+    /// <p>Specifies whether the current long-term pricing type for the device should be
+    /// renewed.</p>
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
-    /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+    /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
 }
 impl CreateLongTermPricingInput {
@@ -5745,11 +5758,12 @@ impl CreateLongTermPricingInput {
     ) -> std::option::Option<&crate::model::LongTermPricingType> {
         self.long_term_pricing_type.as_ref()
     }
-    /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+    /// <p>Specifies whether the current long-term pricing type for the device should be
+    /// renewed.</p>
     pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
         self.is_long_term_pricing_auto_renew
     }
-    /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+    /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
     pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
@@ -5785,8 +5799,9 @@ pub struct CreateJobInput {
     /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
     /// Ranges are UTF-8 binary sorted.</p>
     pub resources: std::option::Option<crate::model::JobResource>,
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+    /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     /// <p>Defines an optional description of this specific job, for example <code>Important
@@ -5795,12 +5810,12 @@ pub struct CreateJobInput {
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
     pub address_id: std::option::Option<std::string::String>,
     /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-    /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key Management
-    /// Service (KMS) API action.</p>
+    /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+    /// Key Management Service (KMS) API action.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The <code>RoleARN</code> that you want to associate with this job.
-    /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
-    /// Access Management (IAM) API action.</p>
+    /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+    /// Identity and Access Management (IAM) API action.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>If your job is being created in one of the US regions, you have the option of
     /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
@@ -5813,8 +5828,8 @@ pub struct CreateJobInput {
     /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-    /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
-    /// transit. Regional shipping speeds are as follows:</p>
+    /// Snow device, rather it represents how quickly the Snow device moves to its destination while
+    /// in transit. Regional shipping speeds are as follows:</p>
     ///
     /// <ul>
     /// <li>
@@ -5822,8 +5837,8 @@ pub struct CreateJobInput {
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
     /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
@@ -5842,13 +5857,14 @@ pub struct CreateJobInput {
     /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
     /// the cluster.</p>
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The type of AWS Snow Family device to use for this job.
+    /// <p>The type of Snow Family Devices to use for this job.
     /// </p>
     /// <note>
-    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+    /// <code>EDGE</code> device type.</p>
     /// </note>
-    /// <p>The type of AWS Snow device to use for this job. Currently, the only supported
-    /// device type for cluster jobs is <code>EDGE</code>.</p>
+    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
+    /// supported device type for cluster jobs is <code>EDGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
     /// Options</a> in the Snowball Edge Developer Guide.</p>
     ///
@@ -5861,9 +5877,9 @@ pub struct CreateJobInput {
     /// <p>The forwarding address ID for a job. This field is not supported in most
     /// Regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
-    /// <p>The tax documents required in your AWS Region.</p>
+    /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
-    /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowcone job.</p>
     ///
     /// <p>For more information, see
     /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
@@ -5898,8 +5914,9 @@ impl CreateJobInput {
     pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
         self.resources.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
+    /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
@@ -5915,14 +5932,14 @@ impl CreateJobInput {
         self.address_id.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-    /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key Management
-    /// Service (KMS) API action.</p>
+    /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+    /// Key Management Service (KMS) API action.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this job.
-    /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
-    /// Access Management (IAM) API action.</p>
+    /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+    /// Identity and Access Management (IAM) API action.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -5941,8 +5958,8 @@ impl CreateJobInput {
         self.snowball_capacity_preference.as_ref()
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-    /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
-    /// transit. Regional shipping speeds are as follows:</p>
+    /// Snow device, rather it represents how quickly the Snow device moves to its destination while
+    /// in transit. Regional shipping speeds are as follows:</p>
     ///
     /// <ul>
     /// <li>
@@ -5950,8 +5967,8 @@ impl CreateJobInput {
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
     /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
@@ -5976,13 +5993,14 @@ impl CreateJobInput {
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The type of AWS Snow Family device to use for this job.
+    /// <p>The type of Snow Family Devices to use for this job.
     /// </p>
     /// <note>
-    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+    /// <code>EDGE</code> device type.</p>
     /// </note>
-    /// <p>The type of AWS Snow device to use for this job. Currently, the only supported
-    /// device type for cluster jobs is <code>EDGE</code>.</p>
+    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
+    /// supported device type for cluster jobs is <code>EDGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
     /// Options</a> in the Snowball Edge Developer Guide.</p>
     ///
@@ -5999,11 +6017,11 @@ impl CreateJobInput {
     pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
-    /// <p>The tax documents required in your AWS Region.</p>
+    /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }
-    /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowcone job.</p>
     ///
     /// <p>For more information, see
     /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
@@ -6069,10 +6087,12 @@ pub struct CreateClusterInput {
     /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>The resources associated with the cluster job. These resources include Amazon S3
-    /// buckets and optional AWS Lambda functions written in the Python language. </p>
+    /// buckets and optional Lambda functions written in the Python language.
+    /// </p>
     pub resources: std::option::Option<crate::model::JobResource>,
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+    /// (Network File System).</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
     /// <p>An optional description of this specific cluster, for example <code>Environmental Data
@@ -6081,17 +6101,15 @@ pub struct CreateClusterInput {
     /// <p>The ID for the address that you want the cluster shipped to.</p>
     pub address_id: std::option::Option<std::string::String>,
     /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-    /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-    /// Management Service (AWS KMS). </p>
+    /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-    /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-    /// Identity and Access Management (IAM).</p>
+    /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The type of AWS Snow Family device to use for this cluster.
-    /// </p>
+    /// <p>The type of Snow Family Devices to use for this cluster. </p>
     /// <note>
-    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+    /// <code>EDGE</code> device type.</p>
     /// </note>
     ///
     /// <p>For more information, see
@@ -6102,16 +6120,15 @@ pub struct CreateClusterInput {
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
     /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-    /// its destination while in transit. Regional shipping speeds are as follows:
-    /// </p>
+    /// its destination while in transit. Regional shipping speeds are as follows: </p>
     /// <ul>
     /// <li>
     /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
     /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
@@ -6130,9 +6147,9 @@ pub struct CreateClusterInput {
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries
-    /// in the EU have access to standard shipping, which typically takes less than a week, one
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
+    /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
     /// <li>
@@ -6149,7 +6166,7 @@ pub struct CreateClusterInput {
     /// <p>The forwarding address ID for a cluster. This field is not supported in most
     /// regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
-    /// <p>The tax documents required in your AWS Region.</p>
+    /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
     /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
     /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
@@ -6170,12 +6187,14 @@ impl CreateClusterInput {
         self.job_type.as_ref()
     }
     /// <p>The resources associated with the cluster job. These resources include Amazon S3
-    /// buckets and optional AWS Lambda functions written in the Python language. </p>
+    /// buckets and optional Lambda functions written in the Python language.
+    /// </p>
     pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
         self.resources.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data
+    /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
+    /// (Network File System).</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
@@ -6191,21 +6210,19 @@ impl CreateClusterInput {
         self.address_id.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-    /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
-    /// Management Service (AWS KMS). </p>
+    /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-    /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
-    /// Identity and Access Management (IAM).</p>
+    /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The type of AWS Snow Family device to use for this cluster.
-    /// </p>
+    /// <p>The type of Snow Family Devices to use for this cluster. </p>
     /// <note>
-    /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
+    /// <code>EDGE</code> device type.</p>
     /// </note>
     ///
     /// <p>For more information, see
@@ -6218,16 +6235,15 @@ impl CreateClusterInput {
     }
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
     /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-    /// its destination while in transit. Regional shipping speeds are as follows:
-    /// </p>
+    /// its destination while in transit. Regional shipping speeds are as follows: </p>
     /// <ul>
     /// <li>
     /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
     /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
@@ -6246,9 +6262,9 @@ impl CreateClusterInput {
     /// express are delivered in about a day.</p>
     /// </li>
     /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically,
-    /// Snow devices shipped express are delivered in about a day. In addition, most countries
-    /// in the EU have access to standard shipping, which typically takes less than a week, one
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
+    /// devices shipped express are delivered in about a day. In addition, most countries in the
+    /// EU have access to standard shipping, which typically takes less than a week, one
     /// way.</p>
     /// </li>
     /// <li>
@@ -6271,7 +6287,7 @@ impl CreateClusterInput {
     pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
-    /// <p>The tax documents required in your AWS Region.</p>
+    /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }

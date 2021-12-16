@@ -1,6 +1,6 @@
 # aws-sdk-migrationhub
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub.
@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-migrationhub = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-migrationhub = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

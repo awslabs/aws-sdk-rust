@@ -361,6 +361,486 @@ impl std::error::Error for BatchRevokePermissionsError {
     }
 }
 
+/// Error type for the `CancelTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CancelTransactionError {
+    /// Kind of error that occurred.
+    pub kind: CancelTransactionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CancelTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelTransactionErrorKind {
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>Contains details about an error related to a transaction commit that was in progress.</p>
+    TransactionCommitInProgressException(crate::error::TransactionCommitInProgressException),
+    /// <p>Contains details about an error where the specified transaction has already been committed and cannot be used for <code>UpdateTableObjects</code>.</p>
+    TransactionCommittedException(crate::error::TransactionCommittedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CancelTransactionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelTransactionErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            CancelTransactionErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            CancelTransactionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CancelTransactionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CancelTransactionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            CancelTransactionErrorKind::TransactionCommitInProgressException(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelTransactionErrorKind::TransactionCommittedException(_inner) => _inner.fmt(f),
+            CancelTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CancelTransactionError {
+    fn code(&self) -> Option<&str> {
+        CancelTransactionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CancelTransactionError {
+    /// Creates a new `CancelTransactionError`.
+    pub fn new(kind: CancelTransactionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CancelTransactionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelTransactionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CancelTransactionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelTransactionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CancelTransactionErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelTransactionErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelTransactionErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelTransactionErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelTransactionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelTransactionErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelTransactionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelTransactionErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelTransactionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelTransactionErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelTransactionErrorKind::TransactionCommitInProgressException`.
+    pub fn is_transaction_commit_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelTransactionErrorKind::TransactionCommitInProgressException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelTransactionErrorKind::TransactionCommittedException`.
+    pub fn is_transaction_committed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelTransactionErrorKind::TransactionCommittedException(_)
+        )
+    }
+}
+impl std::error::Error for CancelTransactionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelTransactionErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CancelTransactionErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            CancelTransactionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CancelTransactionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CancelTransactionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            CancelTransactionErrorKind::TransactionCommitInProgressException(_inner) => {
+                Some(_inner)
+            }
+            CancelTransactionErrorKind::TransactionCommittedException(_inner) => Some(_inner),
+            CancelTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CommitTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CommitTransactionError {
+    /// Kind of error that occurred.
+    pub kind: CommitTransactionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CommitTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CommitTransactionErrorKind {
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>Contains details about an error related to a transaction that was cancelled.</p>
+    TransactionCanceledException(crate::error::TransactionCanceledException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CommitTransactionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CommitTransactionErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
+            CommitTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CommitTransactionError {
+    fn code(&self) -> Option<&str> {
+        CommitTransactionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CommitTransactionError {
+    /// Creates a new `CommitTransactionError`.
+    pub fn new(kind: CommitTransactionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CommitTransactionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CommitTransactionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CommitTransactionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CommitTransactionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::TransactionCanceledException`.
+    pub fn is_transaction_canceled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::TransactionCanceledException(_)
+        )
+    }
+}
+impl std::error::Error for CommitTransactionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CommitTransactionErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::TransactionCanceledException(_inner) => Some(_inner),
+            CommitTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateDataCellsFilter` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateDataCellsFilterError {
+    /// Kind of error that occurred.
+    pub kind: CreateDataCellsFilterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateDataCellsFilter` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateDataCellsFilterErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A resource to be created or added already exists.</p>
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource numerical limit was exceeded.</p>
+    ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateDataCellsFilterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateDataCellsFilterErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateDataCellsFilterErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateDataCellsFilterErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            CreateDataCellsFilterErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateDataCellsFilterErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateDataCellsFilterErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            CreateDataCellsFilterErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateDataCellsFilterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateDataCellsFilterError {
+    fn code(&self) -> Option<&str> {
+        CreateDataCellsFilterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateDataCellsFilterError {
+    /// Creates a new `CreateDataCellsFilterError`.
+    pub fn new(kind: CreateDataCellsFilterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateDataCellsFilterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateDataCellsFilterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateDataCellsFilterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateDataCellsFilterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateDataCellsFilterErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataCellsFilterErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataCellsFilterErrorKind::AlreadyExistsException`.
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataCellsFilterErrorKind::AlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataCellsFilterErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataCellsFilterErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataCellsFilterErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataCellsFilterErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataCellsFilterErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataCellsFilterErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataCellsFilterErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataCellsFilterErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDataCellsFilterErrorKind::ResourceNumberLimitExceededException`.
+    pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDataCellsFilterErrorKind::ResourceNumberLimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateDataCellsFilterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateDataCellsFilterErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateDataCellsFilterErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateDataCellsFilterErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            CreateDataCellsFilterErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateDataCellsFilterErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateDataCellsFilterErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            CreateDataCellsFilterErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateDataCellsFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateLFTag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -502,6 +982,145 @@ impl std::error::Error for CreateLFTagError {
     }
 }
 
+/// Error type for the `DeleteDataCellsFilter` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteDataCellsFilterError {
+    /// Kind of error that occurred.
+    pub kind: DeleteDataCellsFilterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteDataCellsFilter` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteDataCellsFilterErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteDataCellsFilterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteDataCellsFilterErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteDataCellsFilterErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            DeleteDataCellsFilterErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteDataCellsFilterErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteDataCellsFilterErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            DeleteDataCellsFilterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteDataCellsFilterError {
+    fn code(&self) -> Option<&str> {
+        DeleteDataCellsFilterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteDataCellsFilterError {
+    /// Creates a new `DeleteDataCellsFilterError`.
+    pub fn new(kind: DeleteDataCellsFilterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteDataCellsFilterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteDataCellsFilterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteDataCellsFilterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteDataCellsFilterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteDataCellsFilterErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataCellsFilterErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDataCellsFilterErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataCellsFilterErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDataCellsFilterErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataCellsFilterErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDataCellsFilterErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataCellsFilterErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDataCellsFilterErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDataCellsFilterErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteDataCellsFilterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteDataCellsFilterErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteDataCellsFilterErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            DeleteDataCellsFilterErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteDataCellsFilterErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteDataCellsFilterErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            DeleteDataCellsFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteLFTag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -628,6 +1247,180 @@ impl std::error::Error for DeleteLFTagError {
             DeleteLFTagErrorKind::InvalidInputException(_inner) => Some(_inner),
             DeleteLFTagErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             DeleteLFTagErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteObjectsOnCancel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteObjectsOnCancelError {
+    /// Kind of error that occurred.
+    pub kind: DeleteObjectsOnCancelErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteObjectsOnCancel` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteObjectsOnCancelErrorKind {
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>Contains details about an error related to a resource which is not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
+    /// <p>Contains details about an error related to a transaction that was cancelled.</p>
+    TransactionCanceledException(crate::error::TransactionCanceledException),
+    /// <p>Contains details about an error where the specified transaction has already been committed and cannot be used for <code>UpdateTableObjects</code>.</p>
+    TransactionCommittedException(crate::error::TransactionCommittedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteObjectsOnCancelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteObjectsOnCancelErrorKind::ConcurrentModificationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteObjectsOnCancelErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            DeleteObjectsOnCancelErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteObjectsOnCancelErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteObjectsOnCancelErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            DeleteObjectsOnCancelErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            DeleteObjectsOnCancelErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
+            DeleteObjectsOnCancelErrorKind::TransactionCommittedException(_inner) => _inner.fmt(f),
+            DeleteObjectsOnCancelErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteObjectsOnCancelError {
+    fn code(&self) -> Option<&str> {
+        DeleteObjectsOnCancelError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteObjectsOnCancelError {
+    /// Creates a new `DeleteObjectsOnCancelError`.
+    pub fn new(kind: DeleteObjectsOnCancelErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteObjectsOnCancelError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteObjectsOnCancelErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteObjectsOnCancelError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteObjectsOnCancelErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteObjectsOnCancelErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObjectsOnCancelErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObjectsOnCancelErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObjectsOnCancelErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObjectsOnCancelErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObjectsOnCancelErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObjectsOnCancelErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObjectsOnCancelErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObjectsOnCancelErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObjectsOnCancelErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObjectsOnCancelErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObjectsOnCancelErrorKind::ResourceNotReadyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObjectsOnCancelErrorKind::TransactionCanceledException`.
+    pub fn is_transaction_canceled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObjectsOnCancelErrorKind::TransactionCanceledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteObjectsOnCancelErrorKind::TransactionCommittedException`.
+    pub fn is_transaction_committed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteObjectsOnCancelErrorKind::TransactionCommittedException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteObjectsOnCancelError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteObjectsOnCancelErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteObjectsOnCancelErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            DeleteObjectsOnCancelErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteObjectsOnCancelErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteObjectsOnCancelErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            DeleteObjectsOnCancelErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
+            DeleteObjectsOnCancelErrorKind::TransactionCanceledException(_inner) => Some(_inner),
+            DeleteObjectsOnCancelErrorKind::TransactionCommittedException(_inner) => Some(_inner),
+            DeleteObjectsOnCancelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -884,6 +1677,299 @@ impl std::error::Error for DescribeResourceError {
             DescribeResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
             DescribeResourceErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             DescribeResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeTransactionError {
+    /// Kind of error that occurred.
+    pub kind: DescribeTransactionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeTransactionErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeTransactionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeTransactionErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            DescribeTransactionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DescribeTransactionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DescribeTransactionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            DescribeTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeTransactionError {
+    fn code(&self) -> Option<&str> {
+        DescribeTransactionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeTransactionError {
+    /// Creates a new `DescribeTransactionError`.
+    pub fn new(kind: DescribeTransactionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeTransactionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeTransactionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeTransactionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeTransactionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeTransactionErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTransactionErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTransactionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTransactionErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTransactionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTransactionErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeTransactionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTransactionErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeTransactionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeTransactionErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            DescribeTransactionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DescribeTransactionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DescribeTransactionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            DescribeTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ExtendTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ExtendTransactionError {
+    /// Kind of error that occurred.
+    pub kind: ExtendTransactionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ExtendTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ExtendTransactionErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>Contains details about an error related to a transaction that was cancelled.</p>
+    TransactionCanceledException(crate::error::TransactionCanceledException),
+    /// <p>Contains details about an error related to a transaction commit that was in progress.</p>
+    TransactionCommitInProgressException(crate::error::TransactionCommitInProgressException),
+    /// <p>Contains details about an error where the specified transaction has already been committed and cannot be used for <code>UpdateTableObjects</code>.</p>
+    TransactionCommittedException(crate::error::TransactionCommittedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ExtendTransactionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ExtendTransactionErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            ExtendTransactionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ExtendTransactionErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ExtendTransactionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ExtendTransactionErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
+            ExtendTransactionErrorKind::TransactionCommitInProgressException(_inner) => {
+                _inner.fmt(f)
+            }
+            ExtendTransactionErrorKind::TransactionCommittedException(_inner) => _inner.fmt(f),
+            ExtendTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ExtendTransactionError {
+    fn code(&self) -> Option<&str> {
+        ExtendTransactionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ExtendTransactionError {
+    /// Creates a new `ExtendTransactionError`.
+    pub fn new(kind: ExtendTransactionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ExtendTransactionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ExtendTransactionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ExtendTransactionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ExtendTransactionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ExtendTransactionErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExtendTransactionErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExtendTransactionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExtendTransactionErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExtendTransactionErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExtendTransactionErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExtendTransactionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExtendTransactionErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExtendTransactionErrorKind::TransactionCanceledException`.
+    pub fn is_transaction_canceled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExtendTransactionErrorKind::TransactionCanceledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExtendTransactionErrorKind::TransactionCommitInProgressException`.
+    pub fn is_transaction_commit_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExtendTransactionErrorKind::TransactionCommitInProgressException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ExtendTransactionErrorKind::TransactionCommittedException`.
+    pub fn is_transaction_committed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExtendTransactionErrorKind::TransactionCommittedException(_)
+        )
+    }
+}
+impl std::error::Error for ExtendTransactionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ExtendTransactionErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            ExtendTransactionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ExtendTransactionErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ExtendTransactionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ExtendTransactionErrorKind::TransactionCanceledException(_inner) => Some(_inner),
+            ExtendTransactionErrorKind::TransactionCommitInProgressException(_inner) => {
+                Some(_inner)
+            }
+            ExtendTransactionErrorKind::TransactionCommittedException(_inner) => Some(_inner),
+            ExtendTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1272,6 +2358,269 @@ impl std::error::Error for GetLFTagError {
     }
 }
 
+/// Error type for the `GetQueryState` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetQueryStateError {
+    /// Kind of error that occurred.
+    pub kind: GetQueryStateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetQueryState` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetQueryStateErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetQueryStateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetQueryStateErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetQueryStateErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetQueryStateErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetQueryStateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetQueryStateError {
+    fn code(&self) -> Option<&str> {
+        GetQueryStateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetQueryStateError {
+    /// Creates a new `GetQueryStateError`.
+    pub fn new(kind: GetQueryStateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetQueryStateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetQueryStateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetQueryStateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetQueryStateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetQueryStateErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetQueryStateErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetQueryStateErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryStateErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryStateErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, GetQueryStateErrorKind::InvalidInputException(_))
+    }
+}
+impl std::error::Error for GetQueryStateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetQueryStateErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetQueryStateErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetQueryStateErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetQueryStateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetQueryStatistics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetQueryStatisticsError {
+    /// Kind of error that occurred.
+    pub kind: GetQueryStatisticsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetQueryStatistics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetQueryStatisticsErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Contains details about an error where the query request expired.</p>
+    ExpiredException(crate::error::ExpiredException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Contains details about an error related to statistics not being ready.</p>
+    StatisticsNotReadyYetException(crate::error::StatisticsNotReadyYetException),
+    /// <p>Contains details about an error where the query request was throttled.</p>
+    ThrottledException(crate::error::ThrottledException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetQueryStatisticsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetQueryStatisticsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetQueryStatisticsErrorKind::ExpiredException(_inner) => _inner.fmt(f),
+            GetQueryStatisticsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetQueryStatisticsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetQueryStatisticsErrorKind::StatisticsNotReadyYetException(_inner) => _inner.fmt(f),
+            GetQueryStatisticsErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            GetQueryStatisticsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetQueryStatisticsError {
+    fn code(&self) -> Option<&str> {
+        GetQueryStatisticsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            GetQueryStatisticsErrorKind::ThrottledException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl GetQueryStatisticsError {
+    /// Creates a new `GetQueryStatisticsError`.
+    pub fn new(kind: GetQueryStatisticsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetQueryStatisticsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetQueryStatisticsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetQueryStatisticsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetQueryStatisticsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetQueryStatisticsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryStatisticsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryStatisticsErrorKind::ExpiredException`.
+    pub fn is_expired_exception(&self) -> bool {
+        matches!(&self.kind, GetQueryStatisticsErrorKind::ExpiredException(_))
+    }
+    /// Returns `true` if the error kind is `GetQueryStatisticsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryStatisticsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryStatisticsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryStatisticsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryStatisticsErrorKind::StatisticsNotReadyYetException`.
+    pub fn is_statistics_not_ready_yet_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryStatisticsErrorKind::StatisticsNotReadyYetException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryStatisticsErrorKind::ThrottledException`.
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryStatisticsErrorKind::ThrottledException(_)
+        )
+    }
+}
+impl std::error::Error for GetQueryStatisticsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetQueryStatisticsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetQueryStatisticsErrorKind::ExpiredException(_inner) => Some(_inner),
+            GetQueryStatisticsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetQueryStatisticsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetQueryStatisticsErrorKind::StatisticsNotReadyYetException(_inner) => Some(_inner),
+            GetQueryStatisticsErrorKind::ThrottledException(_inner) => Some(_inner),
+            GetQueryStatisticsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetResourceLFTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1422,6 +2771,438 @@ impl std::error::Error for GetResourceLFTagsError {
     }
 }
 
+/// Error type for the `GetTableObjects` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTableObjectsError {
+    /// Kind of error that occurred.
+    pub kind: GetTableObjectsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetTableObjects` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTableObjectsErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>Contains details about an error related to a resource which is not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
+    /// <p>Contains details about an error related to a transaction that was cancelled.</p>
+    TransactionCanceledException(crate::error::TransactionCanceledException),
+    /// <p>Contains details about an error where the specified transaction has already been committed and cannot be used for <code>UpdateTableObjects</code>.</p>
+    TransactionCommittedException(crate::error::TransactionCommittedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetTableObjectsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTableObjectsErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            GetTableObjectsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetTableObjectsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetTableObjectsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetTableObjectsErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            GetTableObjectsErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
+            GetTableObjectsErrorKind::TransactionCommittedException(_inner) => _inner.fmt(f),
+            GetTableObjectsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTableObjectsError {
+    fn code(&self) -> Option<&str> {
+        GetTableObjectsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTableObjectsError {
+    /// Creates a new `GetTableObjectsError`.
+    pub fn new(kind: GetTableObjectsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTableObjectsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTableObjectsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTableObjectsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTableObjectsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetTableObjectsErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableObjectsErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTableObjectsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableObjectsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTableObjectsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableObjectsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTableObjectsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableObjectsErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTableObjectsErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableObjectsErrorKind::ResourceNotReadyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTableObjectsErrorKind::TransactionCanceledException`.
+    pub fn is_transaction_canceled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableObjectsErrorKind::TransactionCanceledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTableObjectsErrorKind::TransactionCommittedException`.
+    pub fn is_transaction_committed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTableObjectsErrorKind::TransactionCommittedException(_)
+        )
+    }
+}
+impl std::error::Error for GetTableObjectsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTableObjectsErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetTableObjectsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetTableObjectsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetTableObjectsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetTableObjectsErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
+            GetTableObjectsErrorKind::TransactionCanceledException(_inner) => Some(_inner),
+            GetTableObjectsErrorKind::TransactionCommittedException(_inner) => Some(_inner),
+            GetTableObjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetWorkUnitResults` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetWorkUnitResultsError {
+    /// Kind of error that occurred.
+    pub kind: GetWorkUnitResultsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetWorkUnitResults` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetWorkUnitResultsErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Contains details about an error where the query request expired.</p>
+    ExpiredException(crate::error::ExpiredException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Contains details about an error where the query request was throttled.</p>
+    ThrottledException(crate::error::ThrottledException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetWorkUnitResultsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetWorkUnitResultsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetWorkUnitResultsErrorKind::ExpiredException(_inner) => _inner.fmt(f),
+            GetWorkUnitResultsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetWorkUnitResultsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetWorkUnitResultsErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            GetWorkUnitResultsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetWorkUnitResultsError {
+    fn code(&self) -> Option<&str> {
+        GetWorkUnitResultsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            GetWorkUnitResultsErrorKind::ThrottledException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl GetWorkUnitResultsError {
+    /// Creates a new `GetWorkUnitResultsError`.
+    pub fn new(kind: GetWorkUnitResultsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetWorkUnitResultsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetWorkUnitResultsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetWorkUnitResultsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetWorkUnitResultsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitResultsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkUnitResultsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitResultsErrorKind::ExpiredException`.
+    pub fn is_expired_exception(&self) -> bool {
+        matches!(&self.kind, GetWorkUnitResultsErrorKind::ExpiredException(_))
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitResultsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkUnitResultsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitResultsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkUnitResultsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitResultsErrorKind::ThrottledException`.
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkUnitResultsErrorKind::ThrottledException(_)
+        )
+    }
+}
+impl std::error::Error for GetWorkUnitResultsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetWorkUnitResultsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetWorkUnitResultsErrorKind::ExpiredException(_inner) => Some(_inner),
+            GetWorkUnitResultsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetWorkUnitResultsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetWorkUnitResultsErrorKind::ThrottledException(_inner) => Some(_inner),
+            GetWorkUnitResultsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetWorkUnits` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetWorkUnitsError {
+    /// Kind of error that occurred.
+    pub kind: GetWorkUnitsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetWorkUnits` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetWorkUnitsErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Contains details about an error where the query request expired.</p>
+    ExpiredException(crate::error::ExpiredException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Contains details about an error related to work units not being ready.</p>
+    WorkUnitsNotReadyYetException(crate::error::WorkUnitsNotReadyYetException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetWorkUnitsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetWorkUnitsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetWorkUnitsErrorKind::ExpiredException(_inner) => _inner.fmt(f),
+            GetWorkUnitsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetWorkUnitsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetWorkUnitsErrorKind::WorkUnitsNotReadyYetException(_inner) => _inner.fmt(f),
+            GetWorkUnitsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetWorkUnitsError {
+    fn code(&self) -> Option<&str> {
+        GetWorkUnitsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetWorkUnitsError {
+    /// Creates a new `GetWorkUnitsError`.
+    pub fn new(kind: GetWorkUnitsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetWorkUnitsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetWorkUnitsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetWorkUnitsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetWorkUnitsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetWorkUnitsErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitsErrorKind::ExpiredException`.
+    pub fn is_expired_exception(&self) -> bool {
+        matches!(&self.kind, GetWorkUnitsErrorKind::ExpiredException(_))
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkUnitsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(&self.kind, GetWorkUnitsErrorKind::InvalidInputException(_))
+    }
+    /// Returns `true` if the error kind is `GetWorkUnitsErrorKind::WorkUnitsNotReadyYetException`.
+    pub fn is_work_units_not_ready_yet_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetWorkUnitsErrorKind::WorkUnitsNotReadyYetException(_)
+        )
+    }
+}
+impl std::error::Error for GetWorkUnitsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetWorkUnitsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetWorkUnitsErrorKind::ExpiredException(_inner) => Some(_inner),
+            GetWorkUnitsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetWorkUnitsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetWorkUnitsErrorKind::WorkUnitsNotReadyYetException(_inner) => Some(_inner),
+            GetWorkUnitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GrantPermissions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1539,6 +3320,134 @@ impl std::error::Error for GrantPermissionsError {
     }
 }
 
+/// Error type for the `ListDataCellsFilter` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDataCellsFilterError {
+    /// Kind of error that occurred.
+    pub kind: ListDataCellsFilterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListDataCellsFilter` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDataCellsFilterErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDataCellsFilterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDataCellsFilterErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListDataCellsFilterErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListDataCellsFilterErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListDataCellsFilterErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ListDataCellsFilterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDataCellsFilterError {
+    fn code(&self) -> Option<&str> {
+        ListDataCellsFilterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDataCellsFilterError {
+    /// Creates a new `ListDataCellsFilterError`.
+    pub fn new(kind: ListDataCellsFilterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDataCellsFilterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDataCellsFilterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDataCellsFilterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDataCellsFilterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDataCellsFilterErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataCellsFilterErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataCellsFilterErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataCellsFilterErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataCellsFilterErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataCellsFilterErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDataCellsFilterErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDataCellsFilterErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListDataCellsFilterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDataCellsFilterErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListDataCellsFilterErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListDataCellsFilterErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListDataCellsFilterErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ListDataCellsFilterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListLFTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1552,6 +3461,8 @@ pub struct ListLFTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLFTagsErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
@@ -1566,6 +3477,7 @@ pub enum ListLFTagsErrorKind {
 impl std::fmt::Display for ListLFTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListLFTagsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             ListLFTagsErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
             ListLFTagsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             ListLFTagsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
@@ -1626,6 +3538,10 @@ impl ListLFTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListLFTagsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, ListLFTagsErrorKind::AccessDeniedException(_))
+    }
     /// Returns `true` if the error kind is `ListLFTagsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListLFTagsErrorKind::EntityNotFoundException(_))
@@ -1649,6 +3565,7 @@ impl ListLFTagsError {
 impl std::error::Error for ListLFTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListLFTagsErrorKind::AccessDeniedException(_inner) => Some(_inner),
             ListLFTagsErrorKind::EntityNotFoundException(_inner) => Some(_inner),
             ListLFTagsErrorKind::InternalServiceException(_inner) => Some(_inner),
             ListLFTagsErrorKind::InvalidInputException(_inner) => Some(_inner),
@@ -1889,6 +3806,251 @@ impl std::error::Error for ListResourcesError {
     }
 }
 
+/// Error type for the `ListTableStorageOptimizers` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTableStorageOptimizersError {
+    /// Kind of error that occurred.
+    pub kind: ListTableStorageOptimizersErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTableStorageOptimizers` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTableStorageOptimizersErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTableStorageOptimizersError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTableStorageOptimizersErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListTableStorageOptimizersErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            ListTableStorageOptimizersErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListTableStorageOptimizersErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListTableStorageOptimizersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTableStorageOptimizersError {
+    fn code(&self) -> Option<&str> {
+        ListTableStorageOptimizersError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTableStorageOptimizersError {
+    /// Creates a new `ListTableStorageOptimizersError`.
+    pub fn new(kind: ListTableStorageOptimizersErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTableStorageOptimizersError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTableStorageOptimizersErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTableStorageOptimizersError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTableStorageOptimizersErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTableStorageOptimizersErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTableStorageOptimizersErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTableStorageOptimizersErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTableStorageOptimizersErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTableStorageOptimizersErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTableStorageOptimizersErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTableStorageOptimizersErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTableStorageOptimizersErrorKind::InvalidInputException(_)
+        )
+    }
+}
+impl std::error::Error for ListTableStorageOptimizersError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTableStorageOptimizersErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListTableStorageOptimizersErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            ListTableStorageOptimizersErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListTableStorageOptimizersErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListTableStorageOptimizersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListTransactions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTransactionsError {
+    /// Kind of error that occurred.
+    pub kind: ListTransactionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTransactions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTransactionsErrorKind {
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTransactionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTransactionsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListTransactionsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListTransactionsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            ListTransactionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTransactionsError {
+    fn code(&self) -> Option<&str> {
+        ListTransactionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTransactionsError {
+    /// Creates a new `ListTransactionsError`.
+    pub fn new(kind: ListTransactionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTransactionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTransactionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTransactionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTransactionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTransactionsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTransactionsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTransactionsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTransactionsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTransactionsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTransactionsErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for ListTransactionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTransactionsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListTransactionsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListTransactionsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            ListTransactionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `PutDataLakeSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2008,24 +4170,35 @@ pub struct RegisterResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterResourceErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A resource to be created or added already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>A resource numerical limit was exceeded.</p>
+    ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RegisterResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             RegisterResourceErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            RegisterResourceErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
             RegisterResourceErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             RegisterResourceErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
             RegisterResourceErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            RegisterResourceErrorKind::ResourceNumberLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             RegisterResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2082,11 +4255,25 @@ impl RegisterResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RegisterResourceErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterResourceErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RegisterResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterResourceErrorKind::AlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RegisterResourceErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterResourceErrorKind::EntityNotFoundException(_)
         )
     }
     /// Returns `true` if the error kind is `RegisterResourceErrorKind::InternalServiceException`.
@@ -2110,14 +4297,24 @@ impl RegisterResourceError {
             RegisterResourceErrorKind::OperationTimeoutException(_)
         )
     }
+    /// Returns `true` if the error kind is `RegisterResourceErrorKind::ResourceNumberLimitExceededException`.
+    pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterResourceErrorKind::ResourceNumberLimitExceededException(_)
+        )
+    }
 }
 impl std::error::Error for RegisterResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RegisterResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
             RegisterResourceErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            RegisterResourceErrorKind::EntityNotFoundException(_inner) => Some(_inner),
             RegisterResourceErrorKind::InternalServiceException(_inner) => Some(_inner),
             RegisterResourceErrorKind::InvalidInputException(_inner) => Some(_inner),
             RegisterResourceErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            RegisterResourceErrorKind::ResourceNumberLimitExceededException(_inner) => Some(_inner),
             RegisterResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2705,6 +4902,245 @@ impl std::error::Error for SearchTablesByLFTagsError {
     }
 }
 
+/// Error type for the `StartQueryPlanning` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartQueryPlanningError {
+    /// Kind of error that occurred.
+    pub kind: StartQueryPlanningErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartQueryPlanning` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartQueryPlanningErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>Contains details about an error where the query request was throttled.</p>
+    ThrottledException(crate::error::ThrottledException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartQueryPlanningError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartQueryPlanningErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartQueryPlanningErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            StartQueryPlanningErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            StartQueryPlanningErrorKind::ThrottledException(_inner) => _inner.fmt(f),
+            StartQueryPlanningErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartQueryPlanningError {
+    fn code(&self) -> Option<&str> {
+        StartQueryPlanningError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            StartQueryPlanningErrorKind::ThrottledException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl StartQueryPlanningError {
+    /// Creates a new `StartQueryPlanningError`.
+    pub fn new(kind: StartQueryPlanningErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartQueryPlanningError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartQueryPlanningErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartQueryPlanningError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartQueryPlanningErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartQueryPlanningErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryPlanningErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryPlanningErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryPlanningErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryPlanningErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryPlanningErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryPlanningErrorKind::ThrottledException`.
+    pub fn is_throttled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryPlanningErrorKind::ThrottledException(_)
+        )
+    }
+}
+impl std::error::Error for StartQueryPlanningError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartQueryPlanningErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartQueryPlanningErrorKind::InternalServiceException(_inner) => Some(_inner),
+            StartQueryPlanningErrorKind::InvalidInputException(_inner) => Some(_inner),
+            StartQueryPlanningErrorKind::ThrottledException(_inner) => Some(_inner),
+            StartQueryPlanningErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StartTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartTransactionError {
+    /// Kind of error that occurred.
+    pub kind: StartTransactionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartTransaction` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartTransactionErrorKind {
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartTransactionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartTransactionErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            StartTransactionErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            StartTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartTransactionError {
+    fn code(&self) -> Option<&str> {
+        StartTransactionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartTransactionError {
+    /// Creates a new `StartTransactionError`.
+    pub fn new(kind: StartTransactionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartTransactionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartTransactionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartTransactionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartTransactionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartTransactionErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTransactionErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartTransactionErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTransactionErrorKind::OperationTimeoutException(_)
+        )
+    }
+}
+impl std::error::Error for StartTransactionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartTransactionErrorKind::InternalServiceException(_inner) => Some(_inner),
+            StartTransactionErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            StartTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateLFTag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2974,67 +5410,318 @@ impl std::error::Error for UpdateResourceError {
     }
 }
 
-/// <p>The operation timed out.</p>
+/// Error type for the `UpdateTableObjects` operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OperationTimeoutException {
-    /// <p>A message describing the problem.</p>
-    pub message: std::option::Option<std::string::String>,
+#[derive(std::fmt::Debug)]
+pub struct UpdateTableObjectsError {
+    /// Kind of error that occurred.
+    pub kind: UpdateTableObjectsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
 }
-impl std::fmt::Debug for OperationTimeoutException {
+/// Types of errors that can occur for the `UpdateTableObjects` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateTableObjectsErrorKind {
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>Contains details about an error related to a resource which is not ready for a transaction.</p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
+    /// <p>Contains details about an error related to a transaction that was cancelled.</p>
+    TransactionCanceledException(crate::error::TransactionCanceledException),
+    /// <p>Contains details about an error related to a transaction commit that was in progress.</p>
+    TransactionCommitInProgressException(crate::error::TransactionCommitInProgressException),
+    /// <p>Contains details about an error where the specified transaction has already been committed and cannot be used for <code>UpdateTableObjects</code>.</p>
+    TransactionCommittedException(crate::error::TransactionCommittedException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateTableObjectsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationTimeoutException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl OperationTimeoutException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for OperationTimeoutException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OperationTimeoutException")?;
-        if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for OperationTimeoutException {}
-/// See [`OperationTimeoutException`](crate::error::OperationTimeoutException)
-pub mod operation_timeout_exception {
-    /// A builder for [`OperationTimeoutException`](crate::error::OperationTimeoutException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message describing the problem.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A message describing the problem.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`OperationTimeoutException`](crate::error::OperationTimeoutException)
-        pub fn build(self) -> crate::error::OperationTimeoutException {
-            crate::error::OperationTimeoutException {
-                message: self.message,
+        match &self.kind {
+            UpdateTableObjectsErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UpdateTableObjectsErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTableObjectsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateTableObjectsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateTableObjectsErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            UpdateTableObjectsErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            UpdateTableObjectsErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
+            UpdateTableObjectsErrorKind::TransactionCommitInProgressException(_inner) => {
+                _inner.fmt(f)
             }
+            UpdateTableObjectsErrorKind::TransactionCommittedException(_inner) => _inner.fmt(f),
+            UpdateTableObjectsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
-impl OperationTimeoutException {
-    /// Creates a new builder-style object to manufacture [`OperationTimeoutException`](crate::error::OperationTimeoutException)
-    pub fn builder() -> crate::error::operation_timeout_exception::Builder {
-        crate::error::operation_timeout_exception::Builder::default()
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateTableObjectsError {
+    fn code(&self) -> Option<&str> {
+        UpdateTableObjectsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateTableObjectsError {
+    /// Creates a new `UpdateTableObjectsError`.
+    pub fn new(kind: UpdateTableObjectsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateTableObjectsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateTableObjectsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateTableObjectsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateTableObjectsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::ResourceNotReadyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::TransactionCanceledException`.
+    pub fn is_transaction_canceled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::TransactionCanceledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::TransactionCommitInProgressException`.
+    pub fn is_transaction_commit_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::TransactionCommitInProgressException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableObjectsErrorKind::TransactionCommittedException`.
+    pub fn is_transaction_committed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableObjectsErrorKind::TransactionCommittedException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateTableObjectsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateTableObjectsErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UpdateTableObjectsErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            UpdateTableObjectsErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateTableObjectsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateTableObjectsErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            UpdateTableObjectsErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
+            UpdateTableObjectsErrorKind::TransactionCanceledException(_inner) => Some(_inner),
+            UpdateTableObjectsErrorKind::TransactionCommitInProgressException(_inner) => {
+                Some(_inner)
+            }
+            UpdateTableObjectsErrorKind::TransactionCommittedException(_inner) => Some(_inner),
+            UpdateTableObjectsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateTableStorageOptimizer` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateTableStorageOptimizerError {
+    /// Kind of error that occurred.
+    pub kind: UpdateTableStorageOptimizerErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateTableStorageOptimizer` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateTableStorageOptimizerErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateTableStorageOptimizerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateTableStorageOptimizerErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateTableStorageOptimizerErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTableStorageOptimizerErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateTableStorageOptimizerErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateTableStorageOptimizerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateTableStorageOptimizerError {
+    fn code(&self) -> Option<&str> {
+        UpdateTableStorageOptimizerError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateTableStorageOptimizerError {
+    /// Creates a new `UpdateTableStorageOptimizerError`.
+    pub fn new(kind: UpdateTableStorageOptimizerErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateTableStorageOptimizerError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateTableStorageOptimizerErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateTableStorageOptimizerError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateTableStorageOptimizerErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateTableStorageOptimizerErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableStorageOptimizerErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableStorageOptimizerErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableStorageOptimizerErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableStorageOptimizerErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableStorageOptimizerErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateTableStorageOptimizerErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableStorageOptimizerErrorKind::InvalidInputException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateTableStorageOptimizerError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateTableStorageOptimizerErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateTableStorageOptimizerErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            UpdateTableStorageOptimizerErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateTableStorageOptimizerErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateTableStorageOptimizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
     }
 }
 
@@ -3061,8 +5748,8 @@ impl InvalidInputException {
 impl std::fmt::Display for InvalidInputException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInputException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
@@ -3125,8 +5812,8 @@ impl InternalServiceException {
 impl std::fmt::Display for InternalServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -3189,8 +5876,8 @@ impl EntityNotFoundException {
 impl std::fmt::Display for EntityNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EntityNotFoundException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -3230,70 +5917,6 @@ impl EntityNotFoundException {
     }
 }
 
-/// <p>Two processes are trying to modify a resource simultaneously.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConcurrentModificationException {
-    /// <p>A message describing the problem.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentModificationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ConcurrentModificationException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConcurrentModificationException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConcurrentModificationException {}
-/// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
-pub mod concurrent_modification_exception {
-    /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A message describing the problem.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A message describing the problem.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
-        pub fn build(self) -> crate::error::ConcurrentModificationException {
-            crate::error::ConcurrentModificationException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ConcurrentModificationException {
-    /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
-    pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
-        crate::error::concurrent_modification_exception::Builder::default()
-    }
-}
-
 /// <p>Access to a resource was denied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3317,8 +5940,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -3358,6 +5981,458 @@ impl AccessDeniedException {
     }
 }
 
+/// <p>Contains details about an error where the specified transaction has already been committed and cannot be used for <code>UpdateTableObjects</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransactionCommittedException {
+    /// <p>A message describing the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TransactionCommittedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TransactionCommittedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TransactionCommittedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TransactionCommittedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TransactionCommittedException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TransactionCommittedException {}
+/// See [`TransactionCommittedException`](crate::error::TransactionCommittedException)
+pub mod transaction_committed_exception {
+    /// A builder for [`TransactionCommittedException`](crate::error::TransactionCommittedException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransactionCommittedException`](crate::error::TransactionCommittedException)
+        pub fn build(self) -> crate::error::TransactionCommittedException {
+            crate::error::TransactionCommittedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TransactionCommittedException {
+    /// Creates a new builder-style object to manufacture [`TransactionCommittedException`](crate::error::TransactionCommittedException)
+    pub fn builder() -> crate::error::transaction_committed_exception::Builder {
+        crate::error::transaction_committed_exception::Builder::default()
+    }
+}
+
+/// <p>Contains details about an error related to a transaction commit that was in progress.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransactionCommitInProgressException {
+    /// <p>A message describing the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TransactionCommitInProgressException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TransactionCommitInProgressException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TransactionCommitInProgressException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TransactionCommitInProgressException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TransactionCommitInProgressException")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TransactionCommitInProgressException {}
+/// See [`TransactionCommitInProgressException`](crate::error::TransactionCommitInProgressException)
+pub mod transaction_commit_in_progress_exception {
+    /// A builder for [`TransactionCommitInProgressException`](crate::error::TransactionCommitInProgressException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransactionCommitInProgressException`](crate::error::TransactionCommitInProgressException)
+        pub fn build(self) -> crate::error::TransactionCommitInProgressException {
+            crate::error::TransactionCommitInProgressException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TransactionCommitInProgressException {
+    /// Creates a new builder-style object to manufacture [`TransactionCommitInProgressException`](crate::error::TransactionCommitInProgressException)
+    pub fn builder() -> crate::error::transaction_commit_in_progress_exception::Builder {
+        crate::error::transaction_commit_in_progress_exception::Builder::default()
+    }
+}
+
+/// <p>Contains details about an error related to a transaction that was cancelled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransactionCanceledException {
+    /// <p>A message describing the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TransactionCanceledException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TransactionCanceledException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TransactionCanceledException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TransactionCanceledException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TransactionCanceledException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TransactionCanceledException {}
+/// See [`TransactionCanceledException`](crate::error::TransactionCanceledException)
+pub mod transaction_canceled_exception {
+    /// A builder for [`TransactionCanceledException`](crate::error::TransactionCanceledException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TransactionCanceledException`](crate::error::TransactionCanceledException)
+        pub fn build(self) -> crate::error::TransactionCanceledException {
+            crate::error::TransactionCanceledException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TransactionCanceledException {
+    /// Creates a new builder-style object to manufacture [`TransactionCanceledException`](crate::error::TransactionCanceledException)
+    pub fn builder() -> crate::error::transaction_canceled_exception::Builder {
+        crate::error::transaction_canceled_exception::Builder::default()
+    }
+}
+
+/// <p>Contains details about an error related to a resource which is not ready for a transaction.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotReadyException {
+    /// <p>A message describing the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNotReadyException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourceNotReadyException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotReadyException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotReadyException {}
+/// See [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+pub mod resource_not_ready_exception {
+    /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+        pub fn build(self) -> crate::error::ResourceNotReadyException {
+            crate::error::ResourceNotReadyException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceNotReadyException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+    pub fn builder() -> crate::error::resource_not_ready_exception::Builder {
+        crate::error::resource_not_ready_exception::Builder::default()
+    }
+}
+
+/// <p>The operation timed out.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OperationTimeoutException {
+    /// <p>A message describing the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for OperationTimeoutException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OperationTimeoutException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl OperationTimeoutException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for OperationTimeoutException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "OperationTimeoutException")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for OperationTimeoutException {}
+/// See [`OperationTimeoutException`](crate::error::OperationTimeoutException)
+pub mod operation_timeout_exception {
+    /// A builder for [`OperationTimeoutException`](crate::error::OperationTimeoutException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OperationTimeoutException`](crate::error::OperationTimeoutException)
+        pub fn build(self) -> crate::error::OperationTimeoutException {
+            crate::error::OperationTimeoutException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl OperationTimeoutException {
+    /// Creates a new builder-style object to manufacture [`OperationTimeoutException`](crate::error::OperationTimeoutException)
+    pub fn builder() -> crate::error::operation_timeout_exception::Builder {
+        crate::error::operation_timeout_exception::Builder::default()
+    }
+}
+
+/// <p>Two processes are trying to modify a resource simultaneously.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConcurrentModificationException {
+    /// <p>A message describing the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConcurrentModificationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConcurrentModificationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ConcurrentModificationException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConcurrentModificationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConcurrentModificationException")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConcurrentModificationException {}
+/// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+pub mod concurrent_modification_exception {
+    /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+        pub fn build(self) -> crate::error::ConcurrentModificationException {
+            crate::error::ConcurrentModificationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ConcurrentModificationException {
+    /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+    pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
+        crate::error::concurrent_modification_exception::Builder::default()
+    }
+}
+
+/// <p>Contains details about an error where the query request was throttled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottledException {
+    /// <p>A message describing the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ThrottledException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottledException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ThrottledException {
+    /// Returns `Some(ErrorKind)` if the error is retryable. Otherwise, returns `None`.
+    pub fn retryable_error_kind(&self) -> aws_smithy_types::retry::ErrorKind {
+        aws_smithy_types::retry::ErrorKind::ThrottlingError
+    }
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottledException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottledException")?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottledException {}
+/// See [`ThrottledException`](crate::error::ThrottledException)
+pub mod throttled_exception {
+    /// A builder for [`ThrottledException`](crate::error::ThrottledException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottledException`](crate::error::ThrottledException)
+        pub fn build(self) -> crate::error::ThrottledException {
+            crate::error::ThrottledException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ThrottledException {
+    /// Creates a new builder-style object to manufacture [`ThrottledException`](crate::error::ThrottledException)
+    pub fn builder() -> crate::error::throttled_exception::Builder {
+        crate::error::throttled_exception::Builder::default()
+    }
+}
+
 /// <p>An encryption operation failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3381,8 +6456,8 @@ impl GlueEncryptionException {
 impl std::fmt::Display for GlueEncryptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlueEncryptionException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -3422,6 +6497,70 @@ impl GlueEncryptionException {
     }
 }
 
+/// <p>A resource numerical limit was exceeded.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNumberLimitExceededException {
+    /// <p>A message describing the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceNumberLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNumberLimitExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourceNumberLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNumberLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNumberLimitExceededException")?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNumberLimitExceededException {}
+/// See [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
+pub mod resource_number_limit_exceeded_exception {
+    /// A builder for [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
+        pub fn build(self) -> crate::error::ResourceNumberLimitExceededException {
+            crate::error::ResourceNumberLimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceNumberLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
+    pub fn builder() -> crate::error::resource_number_limit_exceeded_exception::Builder {
+        crate::error::resource_number_limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>A resource to be created or added already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3445,8 +6584,8 @@ impl AlreadyExistsException {
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -3486,66 +6625,194 @@ impl AlreadyExistsException {
     }
 }
 
-/// <p>A resource numerical limit was exceeded.</p>
+/// <p>Contains details about an error related to work units not being ready.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNumberLimitExceededException {
-    /// <p>A message describing the problem.</p>
+pub struct WorkUnitsNotReadyYetException {
+    /// <p>A message describing the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNumberLimitExceededException {
+impl std::fmt::Debug for WorkUnitsNotReadyYetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNumberLimitExceededException");
+        let mut formatter = f.debug_struct("WorkUnitsNotReadyYetException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceNumberLimitExceededException {
+impl WorkUnitsNotReadyYetException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNumberLimitExceededException {
+impl std::fmt::Display for WorkUnitsNotReadyYetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNumberLimitExceededException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        write!(f, "WorkUnitsNotReadyYetException")?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNumberLimitExceededException {}
-/// See [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
-pub mod resource_number_limit_exceeded_exception {
-    /// A builder for [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
+impl std::error::Error for WorkUnitsNotReadyYetException {}
+/// See [`WorkUnitsNotReadyYetException`](crate::error::WorkUnitsNotReadyYetException)
+pub mod work_units_not_ready_yet_exception {
+    /// A builder for [`WorkUnitsNotReadyYetException`](crate::error::WorkUnitsNotReadyYetException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A message describing the problem.</p>
+        /// <p>A message describing the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>A message describing the problem.</p>
+        /// <p>A message describing the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
-        pub fn build(self) -> crate::error::ResourceNumberLimitExceededException {
-            crate::error::ResourceNumberLimitExceededException {
+        /// Consumes the builder and constructs a [`WorkUnitsNotReadyYetException`](crate::error::WorkUnitsNotReadyYetException)
+        pub fn build(self) -> crate::error::WorkUnitsNotReadyYetException {
+            crate::error::WorkUnitsNotReadyYetException {
                 message: self.message,
             }
         }
     }
 }
-impl ResourceNumberLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException)
-    pub fn builder() -> crate::error::resource_number_limit_exceeded_exception::Builder {
-        crate::error::resource_number_limit_exceeded_exception::Builder::default()
+impl WorkUnitsNotReadyYetException {
+    /// Creates a new builder-style object to manufacture [`WorkUnitsNotReadyYetException`](crate::error::WorkUnitsNotReadyYetException)
+    pub fn builder() -> crate::error::work_units_not_ready_yet_exception::Builder {
+        crate::error::work_units_not_ready_yet_exception::Builder::default()
+    }
+}
+
+/// <p>Contains details about an error where the query request expired.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExpiredException {
+    /// <p>A message describing the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ExpiredException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExpiredException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ExpiredException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ExpiredException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ExpiredException")?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ExpiredException {}
+/// See [`ExpiredException`](crate::error::ExpiredException)
+pub mod expired_exception {
+    /// A builder for [`ExpiredException`](crate::error::ExpiredException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExpiredException`](crate::error::ExpiredException)
+        pub fn build(self) -> crate::error::ExpiredException {
+            crate::error::ExpiredException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ExpiredException {
+    /// Creates a new builder-style object to manufacture [`ExpiredException`](crate::error::ExpiredException)
+    pub fn builder() -> crate::error::expired_exception::Builder {
+        crate::error::expired_exception::Builder::default()
+    }
+}
+
+/// <p>Contains details about an error related to statistics not being ready.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StatisticsNotReadyYetException {
+    /// <p>A message describing the error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StatisticsNotReadyYetException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StatisticsNotReadyYetException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl StatisticsNotReadyYetException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for StatisticsNotReadyYetException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "StatisticsNotReadyYetException")?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for StatisticsNotReadyYetException {}
+/// See [`StatisticsNotReadyYetException`](crate::error::StatisticsNotReadyYetException)
+pub mod statistics_not_ready_yet_exception {
+    /// A builder for [`StatisticsNotReadyYetException`](crate::error::StatisticsNotReadyYetException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the error.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StatisticsNotReadyYetException`](crate::error::StatisticsNotReadyYetException)
+        pub fn build(self) -> crate::error::StatisticsNotReadyYetException {
+            crate::error::StatisticsNotReadyYetException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl StatisticsNotReadyYetException {
+    /// Creates a new builder-style object to manufacture [`StatisticsNotReadyYetException`](crate::error::StatisticsNotReadyYetException)
+    pub fn builder() -> crate::error::statistics_not_ready_yet_exception::Builder {
+        crate::error::statistics_not_ready_yet_exception::Builder::default()
     }
 }

@@ -13693,6 +13693,158 @@ pub fn parse_send_messages_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_send_otp_message_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::SendOtpMessageOutput, crate::error::SendOTPMessageError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::SendOTPMessageError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::SendOTPMessageError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::SendOTPMessageError {
+            meta: generic,
+            kind: crate::error::SendOTPMessageErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::SendOTPMessageError {
+            meta: generic,
+            kind: crate::error::SendOTPMessageErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerErrorException" => crate::error::SendOTPMessageError {
+            meta: generic,
+            kind: crate::error::SendOTPMessageErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => crate::error::SendOTPMessageError {
+            meta: generic,
+            kind: crate::error::SendOTPMessageErrorKind::MethodNotAllowedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::SendOTPMessageError {
+            meta: generic,
+            kind: crate::error::SendOTPMessageErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PayloadTooLargeException" => crate::error::SendOTPMessageError {
+            meta: generic,
+            kind: crate::error::SendOTPMessageErrorKind::PayloadTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::SendOTPMessageError {
+            meta: generic,
+            kind: crate::error::SendOTPMessageErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::SendOTPMessageError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_send_otp_message_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::SendOtpMessageOutput, crate::error::SendOTPMessageError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::send_otp_message_output::Builder::default();
+        let _ = response;
+        output = output.set_message_response(
+            crate::http_serde::deser_payload_send_otp_message_send_otp_message_output_message_response(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_users_messages_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendUsersMessagesOutput, crate::error::SendUsersMessagesError>
@@ -17688,6 +17840,160 @@ pub fn parse_update_voice_template_response(
         let _ = response;
         output = output.set_message_body(
             crate::http_serde::deser_payload_update_voice_template_update_voice_template_output_message_body(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_verify_otp_message_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::VerifyOtpMessageOutput, crate::error::VerifyOTPMessageError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::VerifyOTPMessageError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::VerifyOTPMessageError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::VerifyOTPMessageError {
+            meta: generic,
+            kind: crate::error::VerifyOTPMessageErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::VerifyOTPMessageError {
+            meta: generic,
+            kind: crate::error::VerifyOTPMessageErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerErrorException" => crate::error::VerifyOTPMessageError {
+            meta: generic,
+            kind: crate::error::VerifyOTPMessageErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => crate::error::VerifyOTPMessageError {
+            meta: generic,
+            kind: crate::error::VerifyOTPMessageErrorKind::MethodNotAllowedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::VerifyOTPMessageError {
+            meta: generic,
+            kind: crate::error::VerifyOTPMessageErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PayloadTooLargeException" => crate::error::VerifyOTPMessageError {
+            meta: generic,
+            kind: crate::error::VerifyOTPMessageErrorKind::PayloadTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::VerifyOTPMessageError {
+            meta: generic,
+            kind: crate::error::VerifyOTPMessageErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyOTPMessageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::VerifyOTPMessageError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_verify_otp_message_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::VerifyOtpMessageOutput, crate::error::VerifyOTPMessageError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::verify_otp_message_output::Builder::default();
+        let _ = response;
+        output = output.set_verification_response(
+            crate::http_serde::deser_payload_verify_otp_message_verify_otp_message_output_verification_response(response.body().as_ref())?
         );
         output.build()
     })

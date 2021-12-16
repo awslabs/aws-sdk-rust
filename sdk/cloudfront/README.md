@@ -1,6 +1,6 @@
 # aws-sdk-cloudfront
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 This is the _Amazon CloudFront API Reference_. This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the _Amazon CloudFront Developer Guide_.
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-cloudfront = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-cloudfront = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

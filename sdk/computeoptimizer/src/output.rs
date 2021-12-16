@@ -86,9 +86,38 @@ impl UpdateEnrollmentStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutRecommendationPreferencesOutput {}
+impl std::fmt::Debug for PutRecommendationPreferencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutRecommendationPreferencesOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
+pub mod put_recommendation_preferences_output {
+    /// A builder for [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
+        pub fn build(self) -> crate::output::PutRecommendationPreferencesOutput {
+            crate::output::PutRecommendationPreferencesOutput {}
+        }
+    }
+}
+impl PutRecommendationPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
+    pub fn builder() -> crate::output::put_recommendation_preferences_output::Builder {
+        crate::output::put_recommendation_preferences_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationSummariesOutput {
     /// <p>The token to use to advance to the next page of recommendation summaries.</p>
-    ///
     /// <p>This value is null when there are no more pages of recommendation summaries to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -98,7 +127,6 @@ pub struct GetRecommendationSummariesOutput {
 }
 impl GetRecommendationSummariesOutput {
     /// <p>The token to use to advance to the next page of recommendation summaries.</p>
-    ///
     /// <p>This value is null when there are no more pages of recommendation summaries to
     /// return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -131,7 +159,6 @@ pub mod get_recommendation_summaries_output {
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of recommendation summaries.</p>
-        ///
         /// <p>This value is null when there are no more pages of recommendation summaries to
         /// return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,7 +166,6 @@ pub mod get_recommendation_summaries_output {
             self
         }
         /// <p>The token to use to advance to the next page of recommendation summaries.</p>
-        ///
         /// <p>This value is null when there are no more pages of recommendation summaries to
         /// return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -187,9 +213,110 @@ impl GetRecommendationSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRecommendationPreferencesOutput {
+    /// <p>The token to use to advance to the next page of recommendation preferences.</p>
+    /// <p>This value is null when there are no more pages of recommendation preferences to
+    /// return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>An array of objects that describe recommendation preferences.</p>
+    pub recommendation_preferences_details:
+        std::option::Option<std::vec::Vec<crate::model::RecommendationPreferencesDetail>>,
+}
+impl GetRecommendationPreferencesOutput {
+    /// <p>The token to use to advance to the next page of recommendation preferences.</p>
+    /// <p>This value is null when there are no more pages of recommendation preferences to
+    /// return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>An array of objects that describe recommendation preferences.</p>
+    pub fn recommendation_preferences_details(
+        &self,
+    ) -> std::option::Option<&[crate::model::RecommendationPreferencesDetail]> {
+        self.recommendation_preferences_details.as_deref()
+    }
+}
+impl std::fmt::Debug for GetRecommendationPreferencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetRecommendationPreferencesOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "recommendation_preferences_details",
+            &self.recommendation_preferences_details,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
+pub mod get_recommendation_preferences_output {
+    /// A builder for [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) recommendation_preferences_details:
+            std::option::Option<std::vec::Vec<crate::model::RecommendationPreferencesDetail>>,
+    }
+    impl Builder {
+        /// <p>The token to use to advance to the next page of recommendation preferences.</p>
+        /// <p>This value is null when there are no more pages of recommendation preferences to
+        /// return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use to advance to the next page of recommendation preferences.</p>
+        /// <p>This value is null when there are no more pages of recommendation preferences to
+        /// return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `recommendation_preferences_details`.
+        ///
+        /// To override the contents of this collection use [`set_recommendation_preferences_details`](Self::set_recommendation_preferences_details).
+        ///
+        /// <p>An array of objects that describe recommendation preferences.</p>
+        pub fn recommendation_preferences_details(
+            mut self,
+            input: impl Into<crate::model::RecommendationPreferencesDetail>,
+        ) -> Self {
+            let mut v = self.recommendation_preferences_details.unwrap_or_default();
+            v.push(input.into());
+            self.recommendation_preferences_details = Some(v);
+            self
+        }
+        /// <p>An array of objects that describe recommendation preferences.</p>
+        pub fn set_recommendation_preferences_details(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::RecommendationPreferencesDetail>,
+            >,
+        ) -> Self {
+            self.recommendation_preferences_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
+        pub fn build(self) -> crate::output::GetRecommendationPreferencesOutput {
+            crate::output::GetRecommendationPreferencesOutput {
+                next_token: self.next_token,
+                recommendation_preferences_details: self.recommendation_preferences_details,
+            }
+        }
+    }
+}
+impl GetRecommendationPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
+    pub fn builder() -> crate::output::get_recommendation_preferences_output::Builder {
+        crate::output::get_recommendation_preferences_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLambdaFunctionRecommendationsOutput {
     /// <p>The token to use to advance to the next page of function recommendations.</p>
-    ///
     /// <p>This value is null when there are no more pages of function recommendations to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -199,7 +326,6 @@ pub struct GetLambdaFunctionRecommendationsOutput {
 }
 impl GetLambdaFunctionRecommendationsOutput {
     /// <p>The token to use to advance to the next page of function recommendations.</p>
-    ///
     /// <p>This value is null when there are no more pages of function recommendations to
     /// return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -235,7 +361,6 @@ pub mod get_lambda_function_recommendations_output {
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of function recommendations.</p>
-        ///
         /// <p>This value is null when there are no more pages of function recommendations to
         /// return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,7 +368,6 @@ pub mod get_lambda_function_recommendations_output {
             self
         }
         /// <p>The token to use to advance to the next page of function recommendations.</p>
-        ///
         /// <p>This value is null when there are no more pages of function recommendations to
         /// return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -297,7 +421,6 @@ pub struct GetEnrollmentStatusesForOrganizationOutput {
     pub account_enrollment_statuses:
         std::option::Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
     /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
-    ///
     /// <p>This value is null when there are no more pages of account enrollment statuses to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -311,7 +434,6 @@ impl GetEnrollmentStatusesForOrganizationOutput {
         self.account_enrollment_statuses.as_deref()
     }
     /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
-    ///
     /// <p>This value is null when there are no more pages of account enrollment statuses to
     /// return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -365,7 +487,6 @@ pub mod get_enrollment_statuses_for_organization_output {
             self
         }
         /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
-        ///
         /// <p>This value is null when there are no more pages of account enrollment statuses to
         /// return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -373,7 +494,6 @@ pub mod get_enrollment_statuses_for_organization_output {
             self
         }
         /// <p>The token to use to advance to the next page of account enrollment statuses.</p>
-        ///
         /// <p>This value is null when there are no more pages of account enrollment statuses to
         /// return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -403,7 +523,6 @@ pub struct GetEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The reason for the enrollment status of the account.</p>
-    ///
     /// <p>For example, an account might show a status of <code>Pending</code> because member
     /// accounts of an organization require more time to be enrolled in the service.</p>
     pub status_reason: std::option::Option<std::string::String>,
@@ -423,7 +542,6 @@ impl GetEnrollmentStatusOutput {
         self.status.as_ref()
     }
     /// <p>The reason for the enrollment status of the account.</p>
-    ///
     /// <p>For example, an account might show a status of <code>Pending</code> because member
     /// accounts of an organization require more time to be enrolled in the service.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
@@ -483,7 +601,6 @@ pub mod get_enrollment_status_output {
             self
         }
         /// <p>The reason for the enrollment status of the account.</p>
-        ///
         /// <p>For example, an account might show a status of <code>Pending</code> because member
         /// accounts of an organization require more time to be enrolled in the service.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -491,7 +608,6 @@ pub mod get_enrollment_status_output {
             self
         }
         /// <p>The reason for the enrollment status of the account.</p>
-        ///
         /// <p>For example, an account might show a status of <code>Pending</code> because member
         /// accounts of an organization require more time to be enrolled in the service.</p>
         pub fn set_status_reason(
@@ -559,6 +675,105 @@ impl GetEnrollmentStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput)
     pub fn builder() -> crate::output::get_enrollment_status_output::Builder {
         crate::output::get_enrollment_status_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEffectiveRecommendationPreferencesOutput {
+    /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers
+    /// all applicable preferences that you might have set at the resource, account, and
+    /// organization level.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+    /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+    /// applied.</p>
+    /// <p>To validate whether the preference is applied to your last generated set of
+    /// recommendations, review the <code>effectiveRecommendationPreferences</code> value in the
+    /// response of the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
+    pub enhanced_infrastructure_metrics:
+        std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+}
+impl GetEffectiveRecommendationPreferencesOutput {
+    /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers
+    /// all applicable preferences that you might have set at the resource, account, and
+    /// organization level.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+    /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+    /// applied.</p>
+    /// <p>To validate whether the preference is applied to your last generated set of
+    /// recommendations, review the <code>effectiveRecommendationPreferences</code> value in the
+    /// response of the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
+    pub fn enhanced_infrastructure_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::EnhancedInfrastructureMetrics> {
+        self.enhanced_infrastructure_metrics.as_ref()
+    }
+}
+impl std::fmt::Debug for GetEffectiveRecommendationPreferencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEffectiveRecommendationPreferencesOutput");
+        formatter.field(
+            "enhanced_infrastructure_metrics",
+            &self.enhanced_infrastructure_metrics,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
+pub mod get_effective_recommendation_preferences_output {
+    /// A builder for [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enhanced_infrastructure_metrics:
+            std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+    }
+    impl Builder {
+        /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers
+        /// all applicable preferences that you might have set at the resource, account, and
+        /// organization level.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+        /// applied.</p>
+        /// <p>To validate whether the preference is applied to your last generated set of
+        /// recommendations, review the <code>effectiveRecommendationPreferences</code> value in the
+        /// response of the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
+        pub fn enhanced_infrastructure_metrics(
+            mut self,
+            input: crate::model::EnhancedInfrastructureMetrics,
+        ) -> Self {
+            self.enhanced_infrastructure_metrics = Some(input);
+            self
+        }
+        /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers
+        /// all applicable preferences that you might have set at the resource, account, and
+        /// organization level.</p>
+        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet
+        /// applied.</p>
+        /// <p>To validate whether the preference is applied to your last generated set of
+        /// recommendations, review the <code>effectiveRecommendationPreferences</code> value in the
+        /// response of the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.</p>
+        pub fn set_enhanced_infrastructure_metrics(
+            mut self,
+            input: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
+        ) -> Self {
+            self.enhanced_infrastructure_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
+        pub fn build(self) -> crate::output::GetEffectiveRecommendationPreferencesOutput {
+            crate::output::GetEffectiveRecommendationPreferencesOutput {
+                enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
+            }
+        }
+    }
+}
+impl GetEffectiveRecommendationPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
+    pub fn builder() -> crate::output::get_effective_recommendation_preferences_output::Builder {
+        crate::output::get_effective_recommendation_preferences_output::Builder::default()
     }
 }
 
@@ -644,7 +859,6 @@ impl GetEc2RecommendationProjectedMetricsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEc2InstanceRecommendationsOutput {
     /// <p>The token to use to advance to the next page of instance recommendations.</p>
-    ///
     /// <p>This value is null when there are no more pages of instance recommendations to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -652,14 +866,12 @@ pub struct GetEc2InstanceRecommendationsOutput {
     pub instance_recommendations:
         std::option::Option<std::vec::Vec<crate::model::InstanceRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
-    ///
     /// <p>For example, an error is returned if you request recommendations for an instance of an
     /// unsupported instance family.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
 }
 impl GetEc2InstanceRecommendationsOutput {
     /// <p>The token to use to advance to the next page of instance recommendations.</p>
-    ///
     /// <p>This value is null when there are no more pages of instance recommendations to
     /// return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -672,7 +884,6 @@ impl GetEc2InstanceRecommendationsOutput {
         self.instance_recommendations.as_deref()
     }
     /// <p>An array of objects that describe errors of the request.</p>
-    ///
     /// <p>For example, an error is returned if you request recommendations for an instance of an
     /// unsupported instance family.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::GetRecommendationError]> {
@@ -701,7 +912,6 @@ pub mod get_ec2_instance_recommendations_output {
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of instance recommendations.</p>
-        ///
         /// <p>This value is null when there are no more pages of instance recommendations to
         /// return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -709,7 +919,6 @@ pub mod get_ec2_instance_recommendations_output {
             self
         }
         /// <p>The token to use to advance to the next page of instance recommendations.</p>
-        ///
         /// <p>This value is null when there are no more pages of instance recommendations to
         /// return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -743,7 +952,6 @@ pub mod get_ec2_instance_recommendations_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>An array of objects that describe errors of the request.</p>
-        ///
         /// <p>For example, an error is returned if you request recommendations for an instance of an
         /// unsupported instance family.</p>
         pub fn errors(mut self, input: impl Into<crate::model::GetRecommendationError>) -> Self {
@@ -753,7 +961,6 @@ pub mod get_ec2_instance_recommendations_output {
             self
         }
         /// <p>An array of objects that describe errors of the request.</p>
-        ///
         /// <p>For example, an error is returned if you request recommendations for an instance of an
         /// unsupported instance family.</p>
         pub fn set_errors(
@@ -785,7 +992,6 @@ impl GetEc2InstanceRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEbsVolumeRecommendationsOutput {
     /// <p>The token to use to advance to the next page of volume recommendations.</p>
-    ///
     /// <p>This value is null when there are no more pages of volume recommendations to
     /// return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -793,14 +999,12 @@ pub struct GetEbsVolumeRecommendationsOutput {
     pub volume_recommendations:
         std::option::Option<std::vec::Vec<crate::model::VolumeRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
-    ///
     /// <p>For example, an error is returned if you request recommendations for an unsupported
     /// volume.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
 }
 impl GetEbsVolumeRecommendationsOutput {
     /// <p>The token to use to advance to the next page of volume recommendations.</p>
-    ///
     /// <p>This value is null when there are no more pages of volume recommendations to
     /// return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -813,7 +1017,6 @@ impl GetEbsVolumeRecommendationsOutput {
         self.volume_recommendations.as_deref()
     }
     /// <p>An array of objects that describe errors of the request.</p>
-    ///
     /// <p>For example, an error is returned if you request recommendations for an unsupported
     /// volume.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::GetRecommendationError]> {
@@ -842,7 +1045,6 @@ pub mod get_ebs_volume_recommendations_output {
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of volume recommendations.</p>
-        ///
         /// <p>This value is null when there are no more pages of volume recommendations to
         /// return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -850,7 +1052,6 @@ pub mod get_ebs_volume_recommendations_output {
             self
         }
         /// <p>The token to use to advance to the next page of volume recommendations.</p>
-        ///
         /// <p>This value is null when there are no more pages of volume recommendations to
         /// return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -884,7 +1085,6 @@ pub mod get_ebs_volume_recommendations_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>An array of objects that describe errors of the request.</p>
-        ///
         /// <p>For example, an error is returned if you request recommendations for an unsupported
         /// volume.</p>
         pub fn errors(mut self, input: impl Into<crate::model::GetRecommendationError>) -> Self {
@@ -894,7 +1094,6 @@ pub mod get_ebs_volume_recommendations_output {
             self
         }
         /// <p>An array of objects that describe errors of the request.</p>
-        ///
         /// <p>For example, an error is returned if you request recommendations for an unsupported
         /// volume.</p>
         pub fn set_errors(
@@ -927,7 +1126,6 @@ impl GetEbsVolumeRecommendationsOutput {
 pub struct GetAutoScalingGroupRecommendationsOutput {
     /// <p>The token to use to advance to the next page of Auto Scaling group
     /// recommendations.</p>
-    ///
     /// <p>This value is null when there are no more pages of Auto Scaling group
     /// recommendations to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -935,7 +1133,6 @@ pub struct GetAutoScalingGroupRecommendationsOutput {
     pub auto_scaling_group_recommendations:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
-    ///
     /// <p>For example, an error is returned if you request recommendations for an unsupported
     /// Auto Scaling group.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
@@ -943,7 +1140,6 @@ pub struct GetAutoScalingGroupRecommendationsOutput {
 impl GetAutoScalingGroupRecommendationsOutput {
     /// <p>The token to use to advance to the next page of Auto Scaling group
     /// recommendations.</p>
-    ///
     /// <p>This value is null when there are no more pages of Auto Scaling group
     /// recommendations to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -956,7 +1152,6 @@ impl GetAutoScalingGroupRecommendationsOutput {
         self.auto_scaling_group_recommendations.as_deref()
     }
     /// <p>An array of objects that describe errors of the request.</p>
-    ///
     /// <p>For example, an error is returned if you request recommendations for an unsupported
     /// Auto Scaling group.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::GetRecommendationError]> {
@@ -989,7 +1184,6 @@ pub mod get_auto_scaling_group_recommendations_output {
     impl Builder {
         /// <p>The token to use to advance to the next page of Auto Scaling group
         /// recommendations.</p>
-        ///
         /// <p>This value is null when there are no more pages of Auto Scaling group
         /// recommendations to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -998,7 +1192,6 @@ pub mod get_auto_scaling_group_recommendations_output {
         }
         /// <p>The token to use to advance to the next page of Auto Scaling group
         /// recommendations.</p>
-        ///
         /// <p>This value is null when there are no more pages of Auto Scaling group
         /// recommendations to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1032,7 +1225,6 @@ pub mod get_auto_scaling_group_recommendations_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>An array of objects that describe errors of the request.</p>
-        ///
         /// <p>For example, an error is returned if you request recommendations for an unsupported
         /// Auto Scaling group.</p>
         pub fn errors(mut self, input: impl Into<crate::model::GetRecommendationError>) -> Self {
@@ -1042,7 +1234,6 @@ pub mod get_auto_scaling_group_recommendations_output {
             self
         }
         /// <p>An array of objects that describe errors of the request.</p>
-        ///
         /// <p>For example, an error is returned if you request recommendations for an unsupported
         /// Auto Scaling group.</p>
         pub fn set_errors(
@@ -1074,7 +1265,6 @@ impl GetAutoScalingGroupRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportLambdaFunctionRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    ///
     /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
     /// ID to view the status of an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -1084,7 +1274,6 @@ pub struct ExportLambdaFunctionRecommendationsOutput {
 }
 impl ExportLambdaFunctionRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    ///
     /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
     /// ID to view the status of an export job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
@@ -1115,7 +1304,6 @@ pub mod export_lambda_function_recommendations_output {
     }
     impl Builder {
         /// <p>The identification number of the export job.</p>
-        ///
         /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
         /// ID to view the status of an export job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1123,7 +1311,6 @@ pub mod export_lambda_function_recommendations_output {
             self
         }
         /// <p>The identification number of the export job.</p>
-        ///
         /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
         /// ID to view the status of an export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1166,7 +1353,6 @@ impl ExportLambdaFunctionRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportEc2InstanceRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    ///
     /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
     /// ID to view the status of an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -1176,7 +1362,6 @@ pub struct ExportEc2InstanceRecommendationsOutput {
 }
 impl ExportEc2InstanceRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    ///
     /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
     /// ID to view the status of an export job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
@@ -1207,7 +1392,6 @@ pub mod export_ec2_instance_recommendations_output {
     }
     impl Builder {
         /// <p>The identification number of the export job.</p>
-        ///
         /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
         /// ID to view the status of an export job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1215,7 +1399,6 @@ pub mod export_ec2_instance_recommendations_output {
             self
         }
         /// <p>The identification number of the export job.</p>
-        ///
         /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
         /// ID to view the status of an export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1258,7 +1441,6 @@ impl ExportEc2InstanceRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportEbsVolumeRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    ///
     /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
     /// ID to view the status of an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -1268,7 +1450,6 @@ pub struct ExportEbsVolumeRecommendationsOutput {
 }
 impl ExportEbsVolumeRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    ///
     /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
     /// ID to view the status of an export job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
@@ -1299,7 +1480,6 @@ pub mod export_ebs_volume_recommendations_output {
     }
     impl Builder {
         /// <p>The identification number of the export job.</p>
-        ///
         /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
         /// ID to view the status of an export job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1307,7 +1487,6 @@ pub mod export_ebs_volume_recommendations_output {
             self
         }
         /// <p>The identification number of the export job.</p>
-        ///
         /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
         /// ID to view the status of an export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1350,7 +1529,6 @@ impl ExportEbsVolumeRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportAutoScalingGroupRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    ///
     /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
     /// ID to view the status of an export job.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -1360,7 +1538,6 @@ pub struct ExportAutoScalingGroupRecommendationsOutput {
 }
 impl ExportAutoScalingGroupRecommendationsOutput {
     /// <p>The identification number of the export job.</p>
-    ///
     /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
     /// ID to view the status of an export job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
@@ -1391,7 +1568,6 @@ pub mod export_auto_scaling_group_recommendations_output {
     }
     impl Builder {
         /// <p>The identification number of the export job.</p>
-        ///
         /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
         /// ID to view the status of an export job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1399,7 +1575,6 @@ pub mod export_auto_scaling_group_recommendations_output {
             self
         }
         /// <p>The identification number of the export job.</p>
-        ///
         /// <p>Use the <a>DescribeRecommendationExportJobs</a> action, and specify the job
         /// ID to view the status of an export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1445,7 +1620,6 @@ pub struct DescribeRecommendationExportJobsOutput {
     pub recommendation_export_jobs:
         std::option::Option<std::vec::Vec<crate::model::RecommendationExportJob>>,
     /// <p>The token to use to advance to the next page of export jobs.</p>
-    ///
     /// <p>This value is null when there are no more pages of export jobs to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -1457,7 +1631,6 @@ impl DescribeRecommendationExportJobsOutput {
         self.recommendation_export_jobs.as_deref()
     }
     /// <p>The token to use to advance to the next page of export jobs.</p>
-    ///
     /// <p>This value is null when there are no more pages of export jobs to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -1508,14 +1681,12 @@ pub mod describe_recommendation_export_jobs_output {
             self
         }
         /// <p>The token to use to advance to the next page of export jobs.</p>
-        ///
         /// <p>This value is null when there are no more pages of export jobs to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>The token to use to advance to the next page of export jobs.</p>
-        ///
         /// <p>This value is null when there are no more pages of export jobs to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -1534,5 +1705,35 @@ impl DescribeRecommendationExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput)
     pub fn builder() -> crate::output::describe_recommendation_export_jobs_output::Builder {
         crate::output::describe_recommendation_export_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteRecommendationPreferencesOutput {}
+impl std::fmt::Debug for DeleteRecommendationPreferencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteRecommendationPreferencesOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
+pub mod delete_recommendation_preferences_output {
+    /// A builder for [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
+        pub fn build(self) -> crate::output::DeleteRecommendationPreferencesOutput {
+            crate::output::DeleteRecommendationPreferencesOutput {}
+        }
+    }
+}
+impl DeleteRecommendationPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
+    pub fn builder() -> crate::output::delete_recommendation_preferences_output::Builder {
+        crate::output::delete_recommendation_preferences_output::Builder::default()
     }
 }

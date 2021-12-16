@@ -3966,6 +3966,805 @@ impl BotExportSpecification {
     }
 }
 
+/// <p>The object representing the passwords that were used to encrypt the
+/// data related to the bot recommendation, as well as the KMS key ARN used
+/// to encrypt the associated metadata.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EncryptionSetting {
+    /// <p>The KMS key ARN used to encrypt the metadata associated with the bot
+    /// recommendation.</p>
+    pub kms_key_arn: std::option::Option<std::string::String>,
+    /// <p>The password used to encrypt the recommended bot recommendation
+    /// file.</p>
+    pub bot_locale_export_password: std::option::Option<std::string::String>,
+    /// <p>The password used to encrypt the associated transcript file.</p>
+    pub associated_transcripts_password: std::option::Option<std::string::String>,
+}
+impl EncryptionSetting {
+    /// <p>The KMS key ARN used to encrypt the metadata associated with the bot
+    /// recommendation.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The password used to encrypt the recommended bot recommendation
+    /// file.</p>
+    pub fn bot_locale_export_password(&self) -> std::option::Option<&str> {
+        self.bot_locale_export_password.as_deref()
+    }
+    /// <p>The password used to encrypt the associated transcript file.</p>
+    pub fn associated_transcripts_password(&self) -> std::option::Option<&str> {
+        self.associated_transcripts_password.as_deref()
+    }
+}
+impl std::fmt::Debug for EncryptionSetting {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EncryptionSetting");
+        formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field(
+            "bot_locale_export_password",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field(
+            "associated_transcripts_password",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.finish()
+    }
+}
+/// See [`EncryptionSetting`](crate::model::EncryptionSetting)
+pub mod encryption_setting {
+    /// A builder for [`EncryptionSetting`](crate::model::EncryptionSetting)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        pub(crate) bot_locale_export_password: std::option::Option<std::string::String>,
+        pub(crate) associated_transcripts_password: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The KMS key ARN used to encrypt the metadata associated with the bot
+        /// recommendation.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        /// <p>The KMS key ARN used to encrypt the metadata associated with the bot
+        /// recommendation.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// <p>The password used to encrypt the recommended bot recommendation
+        /// file.</p>
+        pub fn bot_locale_export_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_locale_export_password = Some(input.into());
+            self
+        }
+        /// <p>The password used to encrypt the recommended bot recommendation
+        /// file.</p>
+        pub fn set_bot_locale_export_password(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_locale_export_password = input;
+            self
+        }
+        /// <p>The password used to encrypt the associated transcript file.</p>
+        pub fn associated_transcripts_password(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.associated_transcripts_password = Some(input.into());
+            self
+        }
+        /// <p>The password used to encrypt the associated transcript file.</p>
+        pub fn set_associated_transcripts_password(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.associated_transcripts_password = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EncryptionSetting`](crate::model::EncryptionSetting)
+        pub fn build(self) -> crate::model::EncryptionSetting {
+            crate::model::EncryptionSetting {
+                kms_key_arn: self.kms_key_arn,
+                bot_locale_export_password: self.bot_locale_export_password,
+                associated_transcripts_password: self.associated_transcripts_password,
+            }
+        }
+    }
+}
+impl EncryptionSetting {
+    /// Creates a new builder-style object to manufacture [`EncryptionSetting`](crate::model::EncryptionSetting)
+    pub fn builder() -> crate::model::encryption_setting::Builder {
+        crate::model::encryption_setting::Builder::default()
+    }
+}
+
+/// <p>Indicates the setting of the location where the transcript is
+/// stored.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TranscriptSourceSetting {
+    /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is
+    /// stored.</p>
+    pub s3_bucket_transcript_source: std::option::Option<crate::model::S3BucketTranscriptSource>,
+}
+impl TranscriptSourceSetting {
+    /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is
+    /// stored.</p>
+    pub fn s3_bucket_transcript_source(
+        &self,
+    ) -> std::option::Option<&crate::model::S3BucketTranscriptSource> {
+        self.s3_bucket_transcript_source.as_ref()
+    }
+}
+impl std::fmt::Debug for TranscriptSourceSetting {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TranscriptSourceSetting");
+        formatter.field(
+            "s3_bucket_transcript_source",
+            &self.s3_bucket_transcript_source,
+        );
+        formatter.finish()
+    }
+}
+/// See [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting)
+pub mod transcript_source_setting {
+    /// A builder for [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_bucket_transcript_source:
+            std::option::Option<crate::model::S3BucketTranscriptSource>,
+    }
+    impl Builder {
+        /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is
+        /// stored.</p>
+        pub fn s3_bucket_transcript_source(
+            mut self,
+            input: crate::model::S3BucketTranscriptSource,
+        ) -> Self {
+            self.s3_bucket_transcript_source = Some(input);
+            self
+        }
+        /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is
+        /// stored.</p>
+        pub fn set_s3_bucket_transcript_source(
+            mut self,
+            input: std::option::Option<crate::model::S3BucketTranscriptSource>,
+        ) -> Self {
+            self.s3_bucket_transcript_source = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting)
+        pub fn build(self) -> crate::model::TranscriptSourceSetting {
+            crate::model::TranscriptSourceSetting {
+                s3_bucket_transcript_source: self.s3_bucket_transcript_source,
+            }
+        }
+    }
+}
+impl TranscriptSourceSetting {
+    /// Creates a new builder-style object to manufacture [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting)
+    pub fn builder() -> crate::model::transcript_source_setting::Builder {
+        crate::model::transcript_source_setting::Builder::default()
+    }
+}
+
+/// <p>The object representing the Amazon S3 bucket containing the transcript,
+/// as well as the associated metadata.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3BucketTranscriptSource {
+    /// <p>The name of the bucket containing the transcript and the associated
+    /// metadata.</p>
+    pub s3_bucket_name: std::option::Option<std::string::String>,
+    /// <p>The object that contains a path format that will be applied when
+    /// Amazon Lex reads the transcript file in the bucket you provide. Specify this
+    /// object if you only want Lex to read a subset of files in your Amazon S3
+    /// bucket.</p>
+    pub path_format: std::option::Option<crate::model::PathFormat>,
+    /// <p>The format of the transcript content. Currently, Genie only supports
+    /// the Amazon Lex transcript format.</p>
+    pub transcript_format: std::option::Option<crate::model::TranscriptFormat>,
+    /// <p>The object that contains the filter which will be applied when Amazon Lex
+    /// reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to
+    /// read only a subset of the Amazon S3 bucket based on the filter you
+    /// provide.</p>
+    pub transcript_filter: std::option::Option<crate::model::TranscriptFilter>,
+    /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3
+    /// bucket. Only use this field if your bucket is encrypted using a
+    /// customer managed KMS key.</p>
+    pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl S3BucketTranscriptSource {
+    /// <p>The name of the bucket containing the transcript and the associated
+    /// metadata.</p>
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+        self.s3_bucket_name.as_deref()
+    }
+    /// <p>The object that contains a path format that will be applied when
+    /// Amazon Lex reads the transcript file in the bucket you provide. Specify this
+    /// object if you only want Lex to read a subset of files in your Amazon S3
+    /// bucket.</p>
+    pub fn path_format(&self) -> std::option::Option<&crate::model::PathFormat> {
+        self.path_format.as_ref()
+    }
+    /// <p>The format of the transcript content. Currently, Genie only supports
+    /// the Amazon Lex transcript format.</p>
+    pub fn transcript_format(&self) -> std::option::Option<&crate::model::TranscriptFormat> {
+        self.transcript_format.as_ref()
+    }
+    /// <p>The object that contains the filter which will be applied when Amazon Lex
+    /// reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to
+    /// read only a subset of the Amazon S3 bucket based on the filter you
+    /// provide.</p>
+    pub fn transcript_filter(&self) -> std::option::Option<&crate::model::TranscriptFilter> {
+        self.transcript_filter.as_ref()
+    }
+    /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3
+    /// bucket. Only use this field if your bucket is encrypted using a
+    /// customer managed KMS key.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for S3BucketTranscriptSource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3BucketTranscriptSource");
+        formatter.field("s3_bucket_name", &self.s3_bucket_name);
+        formatter.field("path_format", &self.path_format);
+        formatter.field("transcript_format", &self.transcript_format);
+        formatter.field("transcript_filter", &self.transcript_filter);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.finish()
+    }
+}
+/// See [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource)
+pub mod s3_bucket_transcript_source {
+    /// A builder for [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
+        pub(crate) path_format: std::option::Option<crate::model::PathFormat>,
+        pub(crate) transcript_format: std::option::Option<crate::model::TranscriptFormat>,
+        pub(crate) transcript_filter: std::option::Option<crate::model::TranscriptFilter>,
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the bucket containing the transcript and the associated
+        /// metadata.</p>
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the bucket containing the transcript and the associated
+        /// metadata.</p>
+        pub fn set_s3_bucket_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_bucket_name = input;
+            self
+        }
+        /// <p>The object that contains a path format that will be applied when
+        /// Amazon Lex reads the transcript file in the bucket you provide. Specify this
+        /// object if you only want Lex to read a subset of files in your Amazon S3
+        /// bucket.</p>
+        pub fn path_format(mut self, input: crate::model::PathFormat) -> Self {
+            self.path_format = Some(input);
+            self
+        }
+        /// <p>The object that contains a path format that will be applied when
+        /// Amazon Lex reads the transcript file in the bucket you provide. Specify this
+        /// object if you only want Lex to read a subset of files in your Amazon S3
+        /// bucket.</p>
+        pub fn set_path_format(
+            mut self,
+            input: std::option::Option<crate::model::PathFormat>,
+        ) -> Self {
+            self.path_format = input;
+            self
+        }
+        /// <p>The format of the transcript content. Currently, Genie only supports
+        /// the Amazon Lex transcript format.</p>
+        pub fn transcript_format(mut self, input: crate::model::TranscriptFormat) -> Self {
+            self.transcript_format = Some(input);
+            self
+        }
+        /// <p>The format of the transcript content. Currently, Genie only supports
+        /// the Amazon Lex transcript format.</p>
+        pub fn set_transcript_format(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptFormat>,
+        ) -> Self {
+            self.transcript_format = input;
+            self
+        }
+        /// <p>The object that contains the filter which will be applied when Amazon Lex
+        /// reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to
+        /// read only a subset of the Amazon S3 bucket based on the filter you
+        /// provide.</p>
+        pub fn transcript_filter(mut self, input: crate::model::TranscriptFilter) -> Self {
+            self.transcript_filter = Some(input);
+            self
+        }
+        /// <p>The object that contains the filter which will be applied when Amazon Lex
+        /// reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to
+        /// read only a subset of the Amazon S3 bucket based on the filter you
+        /// provide.</p>
+        pub fn set_transcript_filter(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptFilter>,
+        ) -> Self {
+            self.transcript_filter = input;
+            self
+        }
+        /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3
+        /// bucket. Only use this field if your bucket is encrypted using a
+        /// customer managed KMS key.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3
+        /// bucket. Only use this field if your bucket is encrypted using a
+        /// customer managed KMS key.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource)
+        pub fn build(self) -> crate::model::S3BucketTranscriptSource {
+            crate::model::S3BucketTranscriptSource {
+                s3_bucket_name: self.s3_bucket_name,
+                path_format: self.path_format,
+                transcript_format: self.transcript_format,
+                transcript_filter: self.transcript_filter,
+                kms_key_arn: self.kms_key_arn,
+            }
+        }
+    }
+}
+impl S3BucketTranscriptSource {
+    /// Creates a new builder-style object to manufacture [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource)
+    pub fn builder() -> crate::model::s3_bucket_transcript_source::Builder {
+        crate::model::s3_bucket_transcript_source::Builder::default()
+    }
+}
+
+/// <p>The object representing the filter that Amazon Lex will use to select the
+/// appropriate transcript.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TranscriptFilter {
+    /// <p>The object representing the filter that Amazon Lex will use to select the
+    /// appropriate transcript when the transcript format is the Amazon Lex
+    /// format.</p>
+    pub lex_transcript_filter: std::option::Option<crate::model::LexTranscriptFilter>,
+}
+impl TranscriptFilter {
+    /// <p>The object representing the filter that Amazon Lex will use to select the
+    /// appropriate transcript when the transcript format is the Amazon Lex
+    /// format.</p>
+    pub fn lex_transcript_filter(&self) -> std::option::Option<&crate::model::LexTranscriptFilter> {
+        self.lex_transcript_filter.as_ref()
+    }
+}
+impl std::fmt::Debug for TranscriptFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TranscriptFilter");
+        formatter.field("lex_transcript_filter", &self.lex_transcript_filter);
+        formatter.finish()
+    }
+}
+/// See [`TranscriptFilter`](crate::model::TranscriptFilter)
+pub mod transcript_filter {
+    /// A builder for [`TranscriptFilter`](crate::model::TranscriptFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) lex_transcript_filter: std::option::Option<crate::model::LexTranscriptFilter>,
+    }
+    impl Builder {
+        /// <p>The object representing the filter that Amazon Lex will use to select the
+        /// appropriate transcript when the transcript format is the Amazon Lex
+        /// format.</p>
+        pub fn lex_transcript_filter(mut self, input: crate::model::LexTranscriptFilter) -> Self {
+            self.lex_transcript_filter = Some(input);
+            self
+        }
+        /// <p>The object representing the filter that Amazon Lex will use to select the
+        /// appropriate transcript when the transcript format is the Amazon Lex
+        /// format.</p>
+        pub fn set_lex_transcript_filter(
+            mut self,
+            input: std::option::Option<crate::model::LexTranscriptFilter>,
+        ) -> Self {
+            self.lex_transcript_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TranscriptFilter`](crate::model::TranscriptFilter)
+        pub fn build(self) -> crate::model::TranscriptFilter {
+            crate::model::TranscriptFilter {
+                lex_transcript_filter: self.lex_transcript_filter,
+            }
+        }
+    }
+}
+impl TranscriptFilter {
+    /// Creates a new builder-style object to manufacture [`TranscriptFilter`](crate::model::TranscriptFilter)
+    pub fn builder() -> crate::model::transcript_filter::Builder {
+        crate::model::transcript_filter::Builder::default()
+    }
+}
+
+/// <p>The object that contains transcript filter details that are
+/// associated with a bot recommendation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LexTranscriptFilter {
+    /// <p>The object that contains a date range filter that will be applied to
+    /// the transcript. Specify this object if you want Amazon Lex to only read the
+    /// files that are within the date range.</p>
+    pub date_range_filter: std::option::Option<crate::model::DateRangeFilter>,
+}
+impl LexTranscriptFilter {
+    /// <p>The object that contains a date range filter that will be applied to
+    /// the transcript. Specify this object if you want Amazon Lex to only read the
+    /// files that are within the date range.</p>
+    pub fn date_range_filter(&self) -> std::option::Option<&crate::model::DateRangeFilter> {
+        self.date_range_filter.as_ref()
+    }
+}
+impl std::fmt::Debug for LexTranscriptFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LexTranscriptFilter");
+        formatter.field("date_range_filter", &self.date_range_filter);
+        formatter.finish()
+    }
+}
+/// See [`LexTranscriptFilter`](crate::model::LexTranscriptFilter)
+pub mod lex_transcript_filter {
+    /// A builder for [`LexTranscriptFilter`](crate::model::LexTranscriptFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) date_range_filter: std::option::Option<crate::model::DateRangeFilter>,
+    }
+    impl Builder {
+        /// <p>The object that contains a date range filter that will be applied to
+        /// the transcript. Specify this object if you want Amazon Lex to only read the
+        /// files that are within the date range.</p>
+        pub fn date_range_filter(mut self, input: crate::model::DateRangeFilter) -> Self {
+            self.date_range_filter = Some(input);
+            self
+        }
+        /// <p>The object that contains a date range filter that will be applied to
+        /// the transcript. Specify this object if you want Amazon Lex to only read the
+        /// files that are within the date range.</p>
+        pub fn set_date_range_filter(
+            mut self,
+            input: std::option::Option<crate::model::DateRangeFilter>,
+        ) -> Self {
+            self.date_range_filter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LexTranscriptFilter`](crate::model::LexTranscriptFilter)
+        pub fn build(self) -> crate::model::LexTranscriptFilter {
+            crate::model::LexTranscriptFilter {
+                date_range_filter: self.date_range_filter,
+            }
+        }
+    }
+}
+impl LexTranscriptFilter {
+    /// Creates a new builder-style object to manufacture [`LexTranscriptFilter`](crate::model::LexTranscriptFilter)
+    pub fn builder() -> crate::model::lex_transcript_filter::Builder {
+        crate::model::lex_transcript_filter::Builder::default()
+    }
+}
+
+/// <p>The object used for specifying the data range that the customer
+/// wants Amazon Lex to read through in the input transcripts.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DateRangeFilter {
+    /// <p>A timestamp indicating the start date for the date range
+    /// filter.</p>
+    pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp indicating the end date for the date range
+    /// filter.</p>
+    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DateRangeFilter {
+    /// <p>A timestamp indicating the start date for the date range
+    /// filter.</p>
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_date_time.as_ref()
+    }
+    /// <p>A timestamp indicating the end date for the date range
+    /// filter.</p>
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_date_time.as_ref()
+    }
+}
+impl std::fmt::Debug for DateRangeFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DateRangeFilter");
+        formatter.field("start_date_time", &self.start_date_time);
+        formatter.field("end_date_time", &self.end_date_time);
+        formatter.finish()
+    }
+}
+/// See [`DateRangeFilter`](crate::model::DateRangeFilter)
+pub mod date_range_filter {
+    /// A builder for [`DateRangeFilter`](crate::model::DateRangeFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>A timestamp indicating the start date for the date range
+        /// filter.</p>
+        pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_date_time = Some(input);
+            self
+        }
+        /// <p>A timestamp indicating the start date for the date range
+        /// filter.</p>
+        pub fn set_start_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_date_time = input;
+            self
+        }
+        /// <p>A timestamp indicating the end date for the date range
+        /// filter.</p>
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_date_time = Some(input);
+            self
+        }
+        /// <p>A timestamp indicating the end date for the date range
+        /// filter.</p>
+        pub fn set_end_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_date_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DateRangeFilter`](crate::model::DateRangeFilter)
+        pub fn build(self) -> crate::model::DateRangeFilter {
+            crate::model::DateRangeFilter {
+                start_date_time: self.start_date_time,
+                end_date_time: self.end_date_time,
+            }
+        }
+    }
+}
+impl DateRangeFilter {
+    /// Creates a new builder-style object to manufacture [`DateRangeFilter`](crate::model::DateRangeFilter)
+    pub fn builder() -> crate::model::date_range_filter::Builder {
+        crate::model::date_range_filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscriptFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    Lex,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscriptFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "Lex" => TranscriptFormat::Lex,
+            other => TranscriptFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscriptFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscriptFormat::from(s))
+    }
+}
+impl TranscriptFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscriptFormat::Lex => "Lex",
+            TranscriptFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Lex"]
+    }
+}
+impl AsRef<str> for TranscriptFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The object that contains a path format that will be applied when
+/// Amazon Lex reads the transcript file in the bucket you provide. Specify this
+/// object if you only want Lex to read a subset of files in your Amazon S3
+/// bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PathFormat {
+    /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3
+    /// bucket. Specify this list if you only want Lex to read the files under
+    /// this set of sub-folders.</p>
+    pub object_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PathFormat {
+    /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3
+    /// bucket. Specify this list if you only want Lex to read the files under
+    /// this set of sub-folders.</p>
+    pub fn object_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+        self.object_prefixes.as_deref()
+    }
+}
+impl std::fmt::Debug for PathFormat {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PathFormat");
+        formatter.field("object_prefixes", &self.object_prefixes);
+        formatter.finish()
+    }
+}
+/// See [`PathFormat`](crate::model::PathFormat)
+pub mod path_format {
+    /// A builder for [`PathFormat`](crate::model::PathFormat)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) object_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `object_prefixes`.
+        ///
+        /// To override the contents of this collection use [`set_object_prefixes`](Self::set_object_prefixes).
+        ///
+        /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3
+        /// bucket. Specify this list if you only want Lex to read the files under
+        /// this set of sub-folders.</p>
+        pub fn object_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.object_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.object_prefixes = Some(v);
+            self
+        }
+        /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3
+        /// bucket. Specify this list if you only want Lex to read the files under
+        /// this set of sub-folders.</p>
+        pub fn set_object_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.object_prefixes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PathFormat`](crate::model::PathFormat)
+        pub fn build(self) -> crate::model::PathFormat {
+            crate::model::PathFormat {
+                object_prefixes: self.object_prefixes,
+            }
+        }
+    }
+}
+impl PathFormat {
+    /// Creates a new builder-style object to manufacture [`PathFormat`](crate::model::PathFormat)
+    pub fn builder() -> crate::model::path_format::Builder {
+        crate::model::path_format::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BotRecommendationStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Available,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Downloading,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Processing,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BotRecommendationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Available" => BotRecommendationStatus::Available,
+            "Deleted" => BotRecommendationStatus::Deleted,
+            "Deleting" => BotRecommendationStatus::Deleting,
+            "Downloading" => BotRecommendationStatus::Downloading,
+            "Failed" => BotRecommendationStatus::Failed,
+            "Processing" => BotRecommendationStatus::Processing,
+            "Updating" => BotRecommendationStatus::Updating,
+            other => BotRecommendationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BotRecommendationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BotRecommendationStatus::from(s))
+    }
+}
+impl BotRecommendationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BotRecommendationStatus::Available => "Available",
+            BotRecommendationStatus::Deleted => "Deleted",
+            BotRecommendationStatus::Deleting => "Deleting",
+            BotRecommendationStatus::Downloading => "Downloading",
+            BotRecommendationStatus::Failed => "Failed",
+            BotRecommendationStatus::Processing => "Processing",
+            BotRecommendationStatus::Updating => "Updating",
+            BotRecommendationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Available",
+            "Deleted",
+            "Deleting",
+            "Downloading",
+            "Failed",
+            "Processing",
+            "Updating",
+        ]
+    }
+}
+impl AsRef<str> for BotRecommendationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
@@ -3993,6 +4792,8 @@ pub enum BotLocaleStatus {
     #[allow(missing_docs)] // documentation missing in model
     NotBuilt,
     #[allow(missing_docs)] // documentation missing in model
+    Processing,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyExpressTesting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4007,6 +4808,7 @@ impl std::convert::From<&str> for BotLocaleStatus {
             "Failed" => BotLocaleStatus::Failed,
             "Importing" => BotLocaleStatus::Importing,
             "NotBuilt" => BotLocaleStatus::NotBuilt,
+            "Processing" => BotLocaleStatus::Processing,
             "ReadyExpressTesting" => BotLocaleStatus::ReadyExpressTesting,
             other => BotLocaleStatus::Unknown(other.to_owned()),
         }
@@ -4030,6 +4832,7 @@ impl BotLocaleStatus {
             BotLocaleStatus::Failed => "Failed",
             BotLocaleStatus::Importing => "Importing",
             BotLocaleStatus::NotBuilt => "NotBuilt",
+            BotLocaleStatus::Processing => "Processing",
             BotLocaleStatus::ReadyExpressTesting => "ReadyExpressTesting",
             BotLocaleStatus::Unknown(s) => s.as_ref(),
         }
@@ -4044,6 +4847,7 @@ impl BotLocaleStatus {
             "Failed",
             "Importing",
             "NotBuilt",
+            "Processing",
             "ReadyExpressTesting",
         ]
     }
@@ -5453,6 +6257,8 @@ impl AsRef<str> for ImportStatus {
 )]
 pub enum MergeStrategy {
     #[allow(missing_docs)] // documentation missing in model
+    Append,
+    #[allow(missing_docs)] // documentation missing in model
     FailOnConflict,
     #[allow(missing_docs)] // documentation missing in model
     Overwrite,
@@ -5462,6 +6268,7 @@ pub enum MergeStrategy {
 impl std::convert::From<&str> for MergeStrategy {
     fn from(s: &str) -> Self {
         match s {
+            "Append" => MergeStrategy::Append,
             "FailOnConflict" => MergeStrategy::FailOnConflict,
             "Overwrite" => MergeStrategy::Overwrite,
             other => MergeStrategy::Unknown(other.to_owned()),
@@ -5479,6 +6286,7 @@ impl MergeStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MergeStrategy::Append => "Append",
             MergeStrategy::FailOnConflict => "FailOnConflict",
             MergeStrategy::Overwrite => "Overwrite",
             MergeStrategy::Unknown(s) => s.as_ref(),
@@ -5486,7 +6294,7 @@ impl MergeStrategy {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["FailOnConflict", "Overwrite"]
+        &["Append", "FailOnConflict", "Overwrite"]
     }
 }
 impl AsRef<str> for MergeStrategy {
@@ -6142,6 +6950,268 @@ impl BotImportSpecification {
     /// Creates a new builder-style object to manufacture [`BotImportSpecification`](crate::model::BotImportSpecification)
     pub fn builder() -> crate::model::bot_import_specification::Builder {
         crate::model::bot_import_specification::Builder::default()
+    }
+}
+
+/// <p>The object containing information that associates the recommended
+/// intent/slot type with a conversation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociatedTranscript {
+    /// <p>The content of the transcript that meets the search filter criteria.
+    /// For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript
+    /// format</a>.</p>
+    pub transcript: std::option::Option<std::string::String>,
+}
+impl AssociatedTranscript {
+    /// <p>The content of the transcript that meets the search filter criteria.
+    /// For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript
+    /// format</a>.</p>
+    pub fn transcript(&self) -> std::option::Option<&str> {
+        self.transcript.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociatedTranscript {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociatedTranscript");
+        formatter.field("transcript", &self.transcript);
+        formatter.finish()
+    }
+}
+/// See [`AssociatedTranscript`](crate::model::AssociatedTranscript)
+pub mod associated_transcript {
+    /// A builder for [`AssociatedTranscript`](crate::model::AssociatedTranscript)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transcript: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The content of the transcript that meets the search filter criteria.
+        /// For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript
+        /// format</a>.</p>
+        pub fn transcript(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transcript = Some(input.into());
+            self
+        }
+        /// <p>The content of the transcript that meets the search filter criteria.
+        /// For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output transcript
+        /// format</a>.</p>
+        pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transcript = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociatedTranscript`](crate::model::AssociatedTranscript)
+        pub fn build(self) -> crate::model::AssociatedTranscript {
+            crate::model::AssociatedTranscript {
+                transcript: self.transcript,
+            }
+        }
+    }
+}
+impl AssociatedTranscript {
+    /// Creates a new builder-style object to manufacture [`AssociatedTranscript`](crate::model::AssociatedTranscript)
+    pub fn builder() -> crate::model::associated_transcript::Builder {
+        crate::model::associated_transcript::Builder::default()
+    }
+}
+
+/// <p>Filters to search for the associated transcript.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociatedTranscriptFilter {
+    /// <p>The name of the field to use for filtering. The allowed names are
+    /// IntentId and SlotTypeId.</p>
+    pub name: std::option::Option<crate::model::AssociatedTranscriptFilterName>,
+    /// <p>The values to use to filter the transcript.</p>
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl AssociatedTranscriptFilter {
+    /// <p>The name of the field to use for filtering. The allowed names are
+    /// IntentId and SlotTypeId.</p>
+    pub fn name(&self) -> std::option::Option<&crate::model::AssociatedTranscriptFilterName> {
+        self.name.as_ref()
+    }
+    /// <p>The values to use to filter the transcript.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociatedTranscriptFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociatedTranscriptFilter");
+        formatter.field("name", &self.name);
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter)
+pub mod associated_transcript_filter {
+    /// A builder for [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::AssociatedTranscriptFilterName>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the field to use for filtering. The allowed names are
+        /// IntentId and SlotTypeId.</p>
+        pub fn name(mut self, input: crate::model::AssociatedTranscriptFilterName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p>The name of the field to use for filtering. The allowed names are
+        /// IntentId and SlotTypeId.</p>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::AssociatedTranscriptFilterName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values to use to filter the transcript.</p>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p>The values to use to filter the transcript.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter)
+        pub fn build(self) -> crate::model::AssociatedTranscriptFilter {
+            crate::model::AssociatedTranscriptFilter {
+                name: self.name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl AssociatedTranscriptFilter {
+    /// Creates a new builder-style object to manufacture [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter)
+    pub fn builder() -> crate::model::associated_transcript_filter::Builder {
+        crate::model::associated_transcript_filter::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AssociatedTranscriptFilterName {
+    #[allow(missing_docs)] // documentation missing in model
+    IntentId,
+    #[allow(missing_docs)] // documentation missing in model
+    SlotTypeId,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AssociatedTranscriptFilterName {
+    fn from(s: &str) -> Self {
+        match s {
+            "IntentId" => AssociatedTranscriptFilterName::IntentId,
+            "SlotTypeId" => AssociatedTranscriptFilterName::SlotTypeId,
+            other => AssociatedTranscriptFilterName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AssociatedTranscriptFilterName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AssociatedTranscriptFilterName::from(s))
+    }
+}
+impl AssociatedTranscriptFilterName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AssociatedTranscriptFilterName::IntentId => "IntentId",
+            AssociatedTranscriptFilterName::SlotTypeId => "SlotTypeId",
+            AssociatedTranscriptFilterName::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["IntentId", "SlotTypeId"]
+    }
+}
+impl AsRef<str> for AssociatedTranscriptFilterName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SearchOrder {
+    #[allow(missing_docs)] // documentation missing in model
+    Ascending,
+    #[allow(missing_docs)] // documentation missing in model
+    Descending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SearchOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "Ascending" => SearchOrder::Ascending,
+            "Descending" => SearchOrder::Descending,
+            other => SearchOrder::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SearchOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SearchOrder::from(s))
+    }
+}
+impl SearchOrder {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SearchOrder::Ascending => "Ascending",
+            SearchOrder::Descending => "Descending",
+            SearchOrder::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
+    }
+}
+impl AsRef<str> for SearchOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7281,6 +8351,110 @@ impl SlotSortAttribute {
 impl AsRef<str> for SlotSortAttribute {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>An object that contains a summary of a recommended intent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecommendedIntentSummary {
+    /// <p>The unique identifier of a recommended intent associated with the
+    /// bot recommendation.</p>
+    pub intent_id: std::option::Option<std::string::String>,
+    /// <p>The name of a recommended intent associated with the bot
+    /// recommendation.</p>
+    pub intent_name: std::option::Option<std::string::String>,
+    /// <p>The count of sample utterances of a recommended intent that is
+    /// associated with a bot recommendation.</p>
+    pub sample_utterances_count: std::option::Option<i32>,
+}
+impl RecommendedIntentSummary {
+    /// <p>The unique identifier of a recommended intent associated with the
+    /// bot recommendation.</p>
+    pub fn intent_id(&self) -> std::option::Option<&str> {
+        self.intent_id.as_deref()
+    }
+    /// <p>The name of a recommended intent associated with the bot
+    /// recommendation.</p>
+    pub fn intent_name(&self) -> std::option::Option<&str> {
+        self.intent_name.as_deref()
+    }
+    /// <p>The count of sample utterances of a recommended intent that is
+    /// associated with a bot recommendation.</p>
+    pub fn sample_utterances_count(&self) -> std::option::Option<i32> {
+        self.sample_utterances_count
+    }
+}
+impl std::fmt::Debug for RecommendedIntentSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommendedIntentSummary");
+        formatter.field("intent_id", &self.intent_id);
+        formatter.field("intent_name", &self.intent_name);
+        formatter.field("sample_utterances_count", &self.sample_utterances_count);
+        formatter.finish()
+    }
+}
+/// See [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary)
+pub mod recommended_intent_summary {
+    /// A builder for [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) intent_id: std::option::Option<std::string::String>,
+        pub(crate) intent_name: std::option::Option<std::string::String>,
+        pub(crate) sample_utterances_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of a recommended intent associated with the
+        /// bot recommendation.</p>
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.intent_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of a recommended intent associated with the
+        /// bot recommendation.</p>
+        pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.intent_id = input;
+            self
+        }
+        /// <p>The name of a recommended intent associated with the bot
+        /// recommendation.</p>
+        pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.intent_name = Some(input.into());
+            self
+        }
+        /// <p>The name of a recommended intent associated with the bot
+        /// recommendation.</p>
+        pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.intent_name = input;
+            self
+        }
+        /// <p>The count of sample utterances of a recommended intent that is
+        /// associated with a bot recommendation.</p>
+        pub fn sample_utterances_count(mut self, input: i32) -> Self {
+            self.sample_utterances_count = Some(input);
+            self
+        }
+        /// <p>The count of sample utterances of a recommended intent that is
+        /// associated with a bot recommendation.</p>
+        pub fn set_sample_utterances_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.sample_utterances_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary)
+        pub fn build(self) -> crate::model::RecommendedIntentSummary {
+            crate::model::RecommendedIntentSummary {
+                intent_id: self.intent_id,
+                intent_name: self.intent_name,
+                sample_utterances_count: self.sample_utterances_count,
+            }
+        }
+    }
+}
+impl RecommendedIntentSummary {
+    /// Creates a new builder-style object to manufacture [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary)
+    pub fn builder() -> crate::model::recommended_intent_summary::Builder {
+        crate::model::recommended_intent_summary::Builder::default()
     }
 }
 
@@ -10180,6 +11354,155 @@ impl AsRef<str> for BotSortAttribute {
     }
 }
 
+/// <p>A summary of the bot recommendation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BotRecommendationSummary {
+    /// <p>The status of the bot recommendation.</p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed
+    /// in the failureReasons field. </p>
+    pub bot_recommendation_status: std::option::Option<crate::model::BotRecommendationStatus>,
+    /// <p>The unique identifier of the bot recommendation to be
+    /// updated.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// created.</p>
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// last updated.</p>
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl BotRecommendationSummary {
+    /// <p>The status of the bot recommendation.</p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed
+    /// in the failureReasons field. </p>
+    pub fn bot_recommendation_status(
+        &self,
+    ) -> std::option::Option<&crate::model::BotRecommendationStatus> {
+        self.bot_recommendation_status.as_ref()
+    }
+    /// <p>The unique identifier of the bot recommendation to be
+    /// updated.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>A timestamp of the date and time that the bot recommendation was
+    /// last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date_time.as_ref()
+    }
+}
+impl std::fmt::Debug for BotRecommendationSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BotRecommendationSummary");
+        formatter.field("bot_recommendation_status", &self.bot_recommendation_status);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("last_updated_date_time", &self.last_updated_date_time);
+        formatter.finish()
+    }
+}
+/// See [`BotRecommendationSummary`](crate::model::BotRecommendationSummary)
+pub mod bot_recommendation_summary {
+    /// A builder for [`BotRecommendationSummary`](crate::model::BotRecommendationSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_recommendation_status:
+            std::option::Option<crate::model::BotRecommendationStatus>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The status of the bot recommendation.</p>
+        /// <p>If the status is Failed, then the reasons for the failure are listed
+        /// in the failureReasons field. </p>
+        pub fn bot_recommendation_status(
+            mut self,
+            input: crate::model::BotRecommendationStatus,
+        ) -> Self {
+            self.bot_recommendation_status = Some(input);
+            self
+        }
+        /// <p>The status of the bot recommendation.</p>
+        /// <p>If the status is Failed, then the reasons for the failure are listed
+        /// in the failureReasons field. </p>
+        pub fn set_bot_recommendation_status(
+            mut self,
+            input: std::option::Option<crate::model::BotRecommendationStatus>,
+        ) -> Self {
+            self.bot_recommendation_status = input;
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be
+        /// updated.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be
+        /// updated.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// created.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// created.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// last updated.</p>
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date_time = Some(input);
+            self
+        }
+        /// <p>A timestamp of the date and time that the bot recommendation was
+        /// last updated.</p>
+        pub fn set_last_updated_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BotRecommendationSummary`](crate::model::BotRecommendationSummary)
+        pub fn build(self) -> crate::model::BotRecommendationSummary {
+            crate::model::BotRecommendationSummary {
+                bot_recommendation_status: self.bot_recommendation_status,
+                bot_recommendation_id: self.bot_recommendation_id,
+                creation_date_time: self.creation_date_time,
+                last_updated_date_time: self.last_updated_date_time,
+            }
+        }
+    }
+}
+impl BotRecommendationSummary {
+    /// Creates a new builder-style object to manufacture [`BotRecommendationSummary`](crate::model::BotRecommendationSummary)
+    pub fn builder() -> crate::model::bot_recommendation_summary::Builder {
+        crate::model::bot_recommendation_summary::Builder::default()
+    }
+}
+
 /// <p>Summary information about bot locales returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotLocales.html">ListBotLocales</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11814,6 +13137,325 @@ impl AggregatedUtterancesSortAttribute {
 impl AsRef<str> for AggregatedUtterancesSortAttribute {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The object representing the URL of the bot definition, the URL of
+/// the associated transcript and a statistical summary of the bot
+/// recommendation results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BotRecommendationResults {
+    /// <p>The presigned URL link of the recommended bot definition.</p>
+    pub bot_locale_export_url: std::option::Option<std::string::String>,
+    /// <p>The presigned url link of the associated transcript.</p>
+    pub associated_transcripts_url: std::option::Option<std::string::String>,
+    /// <p>The statistical summary of the bot recommendation results.</p>
+    pub statistics: std::option::Option<crate::model::BotRecommendationResultStatistics>,
+}
+impl BotRecommendationResults {
+    /// <p>The presigned URL link of the recommended bot definition.</p>
+    pub fn bot_locale_export_url(&self) -> std::option::Option<&str> {
+        self.bot_locale_export_url.as_deref()
+    }
+    /// <p>The presigned url link of the associated transcript.</p>
+    pub fn associated_transcripts_url(&self) -> std::option::Option<&str> {
+        self.associated_transcripts_url.as_deref()
+    }
+    /// <p>The statistical summary of the bot recommendation results.</p>
+    pub fn statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::BotRecommendationResultStatistics> {
+        self.statistics.as_ref()
+    }
+}
+impl std::fmt::Debug for BotRecommendationResults {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BotRecommendationResults");
+        formatter.field("bot_locale_export_url", &self.bot_locale_export_url);
+        formatter.field(
+            "associated_transcripts_url",
+            &self.associated_transcripts_url,
+        );
+        formatter.field("statistics", &self.statistics);
+        formatter.finish()
+    }
+}
+/// See [`BotRecommendationResults`](crate::model::BotRecommendationResults)
+pub mod bot_recommendation_results {
+    /// A builder for [`BotRecommendationResults`](crate::model::BotRecommendationResults)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_locale_export_url: std::option::Option<std::string::String>,
+        pub(crate) associated_transcripts_url: std::option::Option<std::string::String>,
+        pub(crate) statistics: std::option::Option<crate::model::BotRecommendationResultStatistics>,
+    }
+    impl Builder {
+        /// <p>The presigned URL link of the recommended bot definition.</p>
+        pub fn bot_locale_export_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_locale_export_url = Some(input.into());
+            self
+        }
+        /// <p>The presigned URL link of the recommended bot definition.</p>
+        pub fn set_bot_locale_export_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_locale_export_url = input;
+            self
+        }
+        /// <p>The presigned url link of the associated transcript.</p>
+        pub fn associated_transcripts_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.associated_transcripts_url = Some(input.into());
+            self
+        }
+        /// <p>The presigned url link of the associated transcript.</p>
+        pub fn set_associated_transcripts_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.associated_transcripts_url = input;
+            self
+        }
+        /// <p>The statistical summary of the bot recommendation results.</p>
+        pub fn statistics(
+            mut self,
+            input: crate::model::BotRecommendationResultStatistics,
+        ) -> Self {
+            self.statistics = Some(input);
+            self
+        }
+        /// <p>The statistical summary of the bot recommendation results.</p>
+        pub fn set_statistics(
+            mut self,
+            input: std::option::Option<crate::model::BotRecommendationResultStatistics>,
+        ) -> Self {
+            self.statistics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BotRecommendationResults`](crate::model::BotRecommendationResults)
+        pub fn build(self) -> crate::model::BotRecommendationResults {
+            crate::model::BotRecommendationResults {
+                bot_locale_export_url: self.bot_locale_export_url,
+                associated_transcripts_url: self.associated_transcripts_url,
+                statistics: self.statistics,
+            }
+        }
+    }
+}
+impl BotRecommendationResults {
+    /// Creates a new builder-style object to manufacture [`BotRecommendationResults`](crate::model::BotRecommendationResults)
+    pub fn builder() -> crate::model::bot_recommendation_results::Builder {
+        crate::model::bot_recommendation_results::Builder::default()
+    }
+}
+
+/// <p>A statistical summary of the bot recommendation results.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BotRecommendationResultStatistics {
+    /// <p>Statistical information about about the intents associated with the
+    /// bot recommendation results.</p>
+    pub intents: std::option::Option<crate::model::IntentStatistics>,
+    /// <p>Statistical information about the slot types associated with the bot
+    /// recommendation results.</p>
+    pub slot_types: std::option::Option<crate::model::SlotTypeStatistics>,
+}
+impl BotRecommendationResultStatistics {
+    /// <p>Statistical information about about the intents associated with the
+    /// bot recommendation results.</p>
+    pub fn intents(&self) -> std::option::Option<&crate::model::IntentStatistics> {
+        self.intents.as_ref()
+    }
+    /// <p>Statistical information about the slot types associated with the bot
+    /// recommendation results.</p>
+    pub fn slot_types(&self) -> std::option::Option<&crate::model::SlotTypeStatistics> {
+        self.slot_types.as_ref()
+    }
+}
+impl std::fmt::Debug for BotRecommendationResultStatistics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BotRecommendationResultStatistics");
+        formatter.field("intents", &self.intents);
+        formatter.field("slot_types", &self.slot_types);
+        formatter.finish()
+    }
+}
+/// See [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics)
+pub mod bot_recommendation_result_statistics {
+    /// A builder for [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) intents: std::option::Option<crate::model::IntentStatistics>,
+        pub(crate) slot_types: std::option::Option<crate::model::SlotTypeStatistics>,
+    }
+    impl Builder {
+        /// <p>Statistical information about about the intents associated with the
+        /// bot recommendation results.</p>
+        pub fn intents(mut self, input: crate::model::IntentStatistics) -> Self {
+            self.intents = Some(input);
+            self
+        }
+        /// <p>Statistical information about about the intents associated with the
+        /// bot recommendation results.</p>
+        pub fn set_intents(
+            mut self,
+            input: std::option::Option<crate::model::IntentStatistics>,
+        ) -> Self {
+            self.intents = input;
+            self
+        }
+        /// <p>Statistical information about the slot types associated with the bot
+        /// recommendation results.</p>
+        pub fn slot_types(mut self, input: crate::model::SlotTypeStatistics) -> Self {
+            self.slot_types = Some(input);
+            self
+        }
+        /// <p>Statistical information about the slot types associated with the bot
+        /// recommendation results.</p>
+        pub fn set_slot_types(
+            mut self,
+            input: std::option::Option<crate::model::SlotTypeStatistics>,
+        ) -> Self {
+            self.slot_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics)
+        pub fn build(self) -> crate::model::BotRecommendationResultStatistics {
+            crate::model::BotRecommendationResultStatistics {
+                intents: self.intents,
+                slot_types: self.slot_types,
+            }
+        }
+    }
+}
+impl BotRecommendationResultStatistics {
+    /// Creates a new builder-style object to manufacture [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics)
+    pub fn builder() -> crate::model::bot_recommendation_result_statistics::Builder {
+        crate::model::bot_recommendation_result_statistics::Builder::default()
+    }
+}
+
+/// <p>The object that contains the statistical summary of the recommended
+/// slot type associated with the bot recommendation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SlotTypeStatistics {
+    /// <p>The number of recommended slot types associated with the bot
+    /// recommendation.</p>
+    pub discovered_slot_type_count: std::option::Option<i32>,
+}
+impl SlotTypeStatistics {
+    /// <p>The number of recommended slot types associated with the bot
+    /// recommendation.</p>
+    pub fn discovered_slot_type_count(&self) -> std::option::Option<i32> {
+        self.discovered_slot_type_count
+    }
+}
+impl std::fmt::Debug for SlotTypeStatistics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SlotTypeStatistics");
+        formatter.field(
+            "discovered_slot_type_count",
+            &self.discovered_slot_type_count,
+        );
+        formatter.finish()
+    }
+}
+/// See [`SlotTypeStatistics`](crate::model::SlotTypeStatistics)
+pub mod slot_type_statistics {
+    /// A builder for [`SlotTypeStatistics`](crate::model::SlotTypeStatistics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) discovered_slot_type_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of recommended slot types associated with the bot
+        /// recommendation.</p>
+        pub fn discovered_slot_type_count(mut self, input: i32) -> Self {
+            self.discovered_slot_type_count = Some(input);
+            self
+        }
+        /// <p>The number of recommended slot types associated with the bot
+        /// recommendation.</p>
+        pub fn set_discovered_slot_type_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.discovered_slot_type_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SlotTypeStatistics`](crate::model::SlotTypeStatistics)
+        pub fn build(self) -> crate::model::SlotTypeStatistics {
+            crate::model::SlotTypeStatistics {
+                discovered_slot_type_count: self.discovered_slot_type_count,
+            }
+        }
+    }
+}
+impl SlotTypeStatistics {
+    /// Creates a new builder-style object to manufacture [`SlotTypeStatistics`](crate::model::SlotTypeStatistics)
+    pub fn builder() -> crate::model::slot_type_statistics::Builder {
+        crate::model::slot_type_statistics::Builder::default()
+    }
+}
+
+/// <p>The object that contains the statistical summary of recommended
+/// intents associated with the bot recommendation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IntentStatistics {
+    /// <p>The number of recommended intents associated with the bot
+    /// recommendation.</p>
+    pub discovered_intent_count: std::option::Option<i32>,
+}
+impl IntentStatistics {
+    /// <p>The number of recommended intents associated with the bot
+    /// recommendation.</p>
+    pub fn discovered_intent_count(&self) -> std::option::Option<i32> {
+        self.discovered_intent_count
+    }
+}
+impl std::fmt::Debug for IntentStatistics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IntentStatistics");
+        formatter.field("discovered_intent_count", &self.discovered_intent_count);
+        formatter.finish()
+    }
+}
+/// See [`IntentStatistics`](crate::model::IntentStatistics)
+pub mod intent_statistics {
+    /// A builder for [`IntentStatistics`](crate::model::IntentStatistics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) discovered_intent_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of recommended intents associated with the bot
+        /// recommendation.</p>
+        pub fn discovered_intent_count(mut self, input: i32) -> Self {
+            self.discovered_intent_count = Some(input);
+            self
+        }
+        /// <p>The number of recommended intents associated with the bot
+        /// recommendation.</p>
+        pub fn set_discovered_intent_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.discovered_intent_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IntentStatistics`](crate::model::IntentStatistics)
+        pub fn build(self) -> crate::model::IntentStatistics {
+            crate::model::IntentStatistics {
+                discovered_intent_count: self.discovered_intent_count,
+            }
+        }
+    }
+}
+impl IntentStatistics {
+    /// Creates a new builder-style object to manufacture [`IntentStatistics`](crate::model::IntentStatistics)
+    pub fn builder() -> crate::model::intent_statistics::Builder {
+        crate::model::intent_statistics::Builder::default()
     }
 }
 

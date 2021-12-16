@@ -122,7 +122,7 @@ pub mod activate_gateway_input {
         /// value is <code>CACHED</code>.</p>
         ///
         /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-        /// <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code>
+        /// <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
         /// </p>
         pub fn gateway_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_type = Some(input.into());
@@ -133,7 +133,7 @@ pub mod activate_gateway_input {
         /// value is <code>CACHED</code>.</p>
         ///
         /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-        /// <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code>
+        /// <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
         /// </p>
         pub fn set_gateway_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_type = input;
@@ -24494,7 +24494,7 @@ pub struct ActivateGatewayInput {
     /// value is <code>CACHED</code>.</p>
     ///
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-    /// <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code>
+    /// <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
     /// </p>
     pub gateway_type: std::option::Option<std::string::String>,
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is
@@ -24569,7 +24569,7 @@ impl ActivateGatewayInput {
     /// value is <code>CACHED</code>.</p>
     ///
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-    /// <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code>
+    /// <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
     /// </p>
     pub fn gateway_type(&self) -> std::option::Option<&str> {
         self.gateway_type.as_deref()

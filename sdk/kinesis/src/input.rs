@@ -191,20 +191,21 @@ pub mod create_stream_input {
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_count: std::option::Option<i32>,
+        pub(crate) stream_mode_details: std::option::Option<crate::model::StreamModeDetails>,
     }
     impl Builder {
-        /// <p>A name to identify the stream. The stream name is scoped to the AWS account used by
-        /// the application that creates the stream. It is also scoped by AWS Region. That is, two
-        /// streams in two different AWS accounts can have the same name. Two streams in the same
-        /// AWS account but in two different Regions can also have the same name.</p>
+        /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services
+        /// account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts
+        /// can have the same name. Two streams in the same Amazon Web Services account but in two
+        /// different Regions can also have the same name.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
-        /// <p>A name to identify the stream. The stream name is scoped to the AWS account used by
-        /// the application that creates the stream. It is also scoped by AWS Region. That is, two
-        /// streams in two different AWS accounts can have the same name. Two streams in the same
-        /// AWS account but in two different Regions can also have the same name.</p>
+        /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services
+        /// account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts
+        /// can have the same name. Two streams in the same Amazon Web Services account but in two
+        /// different Regions can also have the same name.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -223,6 +224,25 @@ pub mod create_stream_input {
             self.shard_count = input;
             self
         }
+        /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
+        /// you can choose between an <b>on-demand</b> capacity mode and a
+        /// <b>provisioned</b> capacity mode for your data
+        /// streams.</p>
+        pub fn stream_mode_details(mut self, input: crate::model::StreamModeDetails) -> Self {
+            self.stream_mode_details = Some(input);
+            self
+        }
+        /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
+        /// you can choose between an <b>on-demand</b> capacity mode and a
+        /// <b>provisioned</b> capacity mode for your data
+        /// streams.</p>
+        pub fn set_stream_mode_details(
+            mut self,
+            input: std::option::Option<crate::model::StreamModeDetails>,
+        ) -> Self {
+            self.stream_mode_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateStreamInput`](crate::input::CreateStreamInput)
         pub fn build(
             self,
@@ -233,6 +253,7 @@ pub mod create_stream_input {
             Ok(crate::input::CreateStreamInput {
                 stream_name: self.stream_name,
                 shard_count: self.shard_count,
+                stream_mode_details: self.stream_mode_details,
             })
         }
     }
@@ -709,13 +730,15 @@ pub mod deregister_stream_consumer_input {
     }
     impl Builder {
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -1044,24 +1067,34 @@ pub mod describe_stream_input {
             self.stream_name = input;
             self
         }
-        /// <p>The maximum number of shards to return in a single call. The default value is 100.
-        /// If you specify a value greater than 100, at most 100 shards are returned.</p>
+        /// <p>The maximum number of shards to return in a single call. The default value is 100. If
+        /// you specify a value greater than 100, at most 100 results are returned.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of shards to return in a single call. The default value is 100.
-        /// If you specify a value greater than 100, at most 100 shards are returned.</p>
+        /// <p>The maximum number of shards to return in a single call. The default value is 100. If
+        /// you specify a value greater than 100, at most 100 results are returned.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
         /// <p>The shard ID of the shard to start with.</p>
+        /// <p>Specify this parameter to indicate that you want to describe the stream starting with
+        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>If you don't specify this parameter, the default behavior for
+        /// <code>DescribeStream</code> is to describe the stream starting with the first shard
+        /// in the stream.</p>
         pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclusive_start_shard_id = Some(input.into());
             self
         }
         /// <p>The shard ID of the shard to start with.</p>
+        /// <p>Specify this parameter to indicate that you want to describe the stream starting with
+        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>If you don't specify this parameter, the default behavior for
+        /// <code>DescribeStream</code> is to describe the stream starting with the first shard
+        /// in the stream.</p>
         pub fn set_exclusive_start_shard_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1218,13 +1251,15 @@ pub mod describe_stream_consumer_input {
     }
     impl Builder {
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -1558,14 +1593,12 @@ pub mod disable_enhanced_monitoring_input {
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
-        /// <p>The name of the Kinesis data stream for which to disable enhanced
-        /// monitoring.</p>
+        /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
-        /// <p>The name of the Kinesis data stream for which to disable enhanced
-        /// monitoring.</p>
+        /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -1575,8 +1608,8 @@ pub mod disable_enhanced_monitoring_input {
         /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
         ///
         /// <p>List of shard-level metrics to disable.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-        /// disables every metric.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables
+        /// every metric.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1629,8 +1662,8 @@ pub mod disable_enhanced_monitoring_input {
             self
         }
         /// <p>List of shard-level metrics to disable.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-        /// disables every metric.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables
+        /// every metric.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1848,8 +1881,8 @@ pub mod enable_enhanced_monitoring_input {
         /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
         ///
         /// <p>List of shard-level metrics to enable.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-        /// enables every metric.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables
+        /// every metric.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -1902,8 +1935,8 @@ pub mod enable_enhanced_monitoring_input {
             self
         }
         /// <p>List of shard-level metrics to enable.</p>
-        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-        /// enables every metric.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables
+        /// every metric.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2327,13 +2360,13 @@ pub mod get_shard_iterator_input {
         /// </li>
         /// <li>
         ///
-        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
-        /// the system, which is the oldest data record in the shard.</p>
+        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the
+        /// system, which is the oldest data record in the shard.</p>
         /// </li>
         /// <li>
         ///
-        /// <p>LATEST - Start reading just after the most recent record in the shard, so
-        /// that you always read the most recent data in the shard.</p>
+        /// <p>LATEST - Start reading just after the most recent record in the shard, so that
+        /// you always read the most recent data in the shard.</p>
         /// </li>
         /// </ul>
         pub fn shard_iterator_type(mut self, input: crate::model::ShardIteratorType) -> Self {
@@ -2363,13 +2396,13 @@ pub mod get_shard_iterator_input {
         /// </li>
         /// <li>
         ///
-        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
-        /// the system, which is the oldest data record in the shard.</p>
+        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the
+        /// system, which is the oldest data record in the shard.</p>
         /// </li>
         /// <li>
         ///
-        /// <p>LATEST - Start reading just after the most recent record in the shard, so
-        /// that you always read the most recent data in the shard.</p>
+        /// <p>LATEST - Start reading just after the most recent record in the shard, so that
+        /// you always read the most recent data in the shard.</p>
         /// </li>
         /// </ul>
         pub fn set_shard_iterator_type(
@@ -2379,14 +2412,14 @@ pub mod get_shard_iterator_input {
             self.shard_iterator_type = input;
             self
         }
-        /// <p>The sequence number of the data record in the shard from which to start reading.
-        /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
+        /// <p>The sequence number of the data record in the shard from which to start reading. Used
+        /// with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
         pub fn starting_sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.starting_sequence_number = Some(input.into());
             self
         }
-        /// <p>The sequence number of the data record in the shard from which to start reading.
-        /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
+        /// <p>The sequence number of the data record in the shard from which to start reading. Used
+        /// with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
         pub fn set_starting_sequence_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2756,18 +2789,18 @@ pub mod list_shards_input {
             self.stream_name = input;
             self
         }
-        /// <p>When the number of shards in the data stream is greater than the default value for
-        /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+        /// <p>When the number of shards in the data stream is greater than the default value for the
+        /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
         /// <code>MaxResults</code> that is less than the number of shards in the data stream,
         /// the response includes a pagination token named <code>NextToken</code>. You can specify
         /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
         /// list the next set of shards.</p>
-        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if
-        /// you specify <code>NextToken</code> because the latter unambiguously identifies the
+        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if you
+        /// specify <code>NextToken</code> because the latter unambiguously identifies the
         /// stream.</p>
-        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when
-        /// you specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that
-        /// is less than the number of shards that the operation returns if you don't specify
+        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when you
+        /// specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that is
+        /// less than the number of shards that the operation returns if you don't specify
         /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code>
         /// value. You can use the new <code>NextToken</code> value in a subsequent call to the
         /// <code>ListShards</code> operation.</p>
@@ -2775,25 +2808,24 @@ pub mod list_shards_input {
         /// <p>Tokens expire after 300 seconds. When you obtain a value for
         /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
         /// have 300 seconds to use that value. If you specify an expired token in a call to
-        /// <code>ListShards</code>, you get
-        /// <code>ExpiredNextTokenException</code>.</p>
+        /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
         /// </important>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When the number of shards in the data stream is greater than the default value for
-        /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+        /// <p>When the number of shards in the data stream is greater than the default value for the
+        /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
         /// <code>MaxResults</code> that is less than the number of shards in the data stream,
         /// the response includes a pagination token named <code>NextToken</code>. You can specify
         /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
         /// list the next set of shards.</p>
-        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if
-        /// you specify <code>NextToken</code> because the latter unambiguously identifies the
+        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if you
+        /// specify <code>NextToken</code> because the latter unambiguously identifies the
         /// stream.</p>
-        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when
-        /// you specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that
-        /// is less than the number of shards that the operation returns if you don't specify
+        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when you
+        /// specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that is
+        /// less than the number of shards that the operation returns if you don't specify
         /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code>
         /// value. You can use the new <code>NextToken</code> value in a subsequent call to the
         /// <code>ListShards</code> operation.</p>
@@ -2801,15 +2833,14 @@ pub mod list_shards_input {
         /// <p>Tokens expire after 300 seconds. When you obtain a value for
         /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
         /// have 300 seconds to use that value. If you specify an expired token in a call to
-        /// <code>ListShards</code>, you get
-        /// <code>ExpiredNextTokenException</code>.</p>
+        /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
         /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Specify this parameter to indicate that you want to list the shards starting with
-        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>Specify this parameter to indicate that you want to list the shards starting with the
+        /// shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
         /// <p>If you don't specify this parameter, the default behavior is for
         /// <code>ListShards</code> to list the shards starting with the first one in the
         /// stream.</p>
@@ -2818,8 +2849,8 @@ pub mod list_shards_input {
             self.exclusive_start_shard_id = Some(input.into());
             self
         }
-        /// <p>Specify this parameter to indicate that you want to list the shards starting with
-        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>Specify this parameter to indicate that you want to list the shards starting with the
+        /// shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
         /// <p>If you don't specify this parameter, the default behavior is for
         /// <code>ListShards</code> to list the shards starting with the first one in the
         /// stream.</p>
@@ -2832,8 +2863,8 @@ pub mod list_shards_input {
             self
         }
         /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-        /// which is also the default.</p>
+        /// The maximum number of shards to return in a single call. The default value is 1000. If
+        /// you specify a value greater than 1000, at most 1000 results are returned. </p>
         /// <p>When the number of shards to be listed is greater than the value of
         /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
         /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
@@ -2843,8 +2874,8 @@ pub mod list_shards_input {
             self
         }
         /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-        /// which is also the default.</p>
+        /// The maximum number of shards to return in a single call. The default value is 1000. If
+        /// you specify a value greater than 1000, at most 1000 results are returned. </p>
         /// <p>When the number of shards to be listed is greater than the value of
         /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
         /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
@@ -2853,20 +2884,20 @@ pub mod list_shards_input {
             self.max_results = input;
             self
         }
-        /// <p>Specify this input parameter to distinguish data streams that have the same name.
-        /// For example, if you create a data stream and then delete it, and you later create
-        /// another data stream with the same name, you can use this input parameter to specify
-        /// which of the two streams you want to list the shards for.</p>
+        /// <p>Specify this input parameter to distinguish data streams that have the same name. For
+        /// example, if you create a data stream and then delete it, and you later create another
+        /// data stream with the same name, you can use this input parameter to specify which of the
+        /// two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
         pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.stream_creation_timestamp = Some(input);
             self
         }
-        /// <p>Specify this input parameter to distinguish data streams that have the same name.
-        /// For example, if you create a data stream and then delete it, and you later create
-        /// another data stream with the same name, you can use this input parameter to specify
-        /// which of the two streams you want to list the shards for.</p>
+        /// <p>Specify this input parameter to distinguish data streams that have the same name. For
+        /// example, if you create a data stream and then delete it, and you later create another
+        /// data stream with the same name, you can use this input parameter to specify which of the
+        /// two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
         pub fn set_stream_creation_timestamp(
@@ -2876,12 +2907,46 @@ pub mod list_shards_input {
             self.stream_creation_timestamp = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can
+        /// only specify one filter at a time. </p>
+        /// <p>If you use the <code>ShardFilter</code> parameter when invoking the ListShards API,
+        /// the <code>Type</code> is the required property and must be specified. If you specify the
+        /// <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+        /// <code>AT_LATEST</code> types, you do not need to specify either the
+        /// <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+        /// <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value
+        /// for the optional <code>ShardId</code> property. The <code>ShardId</code> property is
+        /// identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of the
+        /// <code>ListShards</code> API. When <code>ShardId</code> property is specified, the
+        /// response includes the shards starting with the shard whose ID immediately follows the
+        /// <code>ShardId</code> that you provided. </p>
+        /// <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type,
+        /// you must also provide the value for the optional <code>Timestamp</code> property. If you
+        /// specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp
+        /// are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the
+        /// provided timestamp to TIP are returned. </p>
         pub fn shard_filter(mut self, input: crate::model::ShardFilter) -> Self {
             self.shard_filter = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can
+        /// only specify one filter at a time. </p>
+        /// <p>If you use the <code>ShardFilter</code> parameter when invoking the ListShards API,
+        /// the <code>Type</code> is the required property and must be specified. If you specify the
+        /// <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+        /// <code>AT_LATEST</code> types, you do not need to specify either the
+        /// <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+        /// <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value
+        /// for the optional <code>ShardId</code> property. The <code>ShardId</code> property is
+        /// identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of the
+        /// <code>ListShards</code> API. When <code>ShardId</code> property is specified, the
+        /// response includes the shards starting with the shard whose ID immediately follows the
+        /// <code>ShardId</code> that you provided. </p>
+        /// <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type,
+        /// you must also provide the value for the optional <code>Timestamp</code> property. If you
+        /// specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp
+        /// are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the
+        /// provided timestamp to TIP are returned. </p>
         pub fn set_shard_filter(
             mut self,
             input: std::option::Option<crate::model::ShardFilter>,
@@ -3041,13 +3106,15 @@ pub mod list_stream_consumers_input {
     }
     impl Builder {
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -3107,13 +3174,15 @@ pub mod list_stream_consumers_input {
             self
         }
         /// <p>The maximum number of consumers that you want a single call of
-        /// <code>ListStreamConsumers</code> to return.</p>
+        /// <code>ListStreamConsumers</code> to return. The default value is 100. If you specify
+        /// a value greater than 100, at most 100 results are returned. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>The maximum number of consumers that you want a single call of
-        /// <code>ListStreamConsumers</code> to return.</p>
+        /// <code>ListStreamConsumers</code> to return. The default value is 100. If you specify
+        /// a value greater than 100, at most 100 results are returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3287,12 +3356,14 @@ pub mod list_streams_input {
         pub(crate) exclusive_start_stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of streams to list.</p>
+        /// <p>The maximum number of streams to list. The default value is 100. If you specify a
+        /// value greater than 100, at most 100 results are returned.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of streams to list.</p>
+        /// <p>The maximum number of streams to list. The default value is 100. If you specify a
+        /// value greater than 100, at most 100 results are returned.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -3469,15 +3540,15 @@ pub mod list_tags_for_stream_input {
             self.stream_name = input;
             self
         }
-        /// <p>The key to use as the starting point for the list of tags. If this parameter is
-        /// set, <code>ListTagsForStream</code> gets all tags that occur after
+        /// <p>The key to use as the starting point for the list of tags. If this parameter is set,
+        /// <code>ListTagsForStream</code> gets all tags that occur after
         /// <code>ExclusiveStartTagKey</code>. </p>
         pub fn exclusive_start_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclusive_start_tag_key = Some(input.into());
             self
         }
-        /// <p>The key to use as the starting point for the list of tags. If this parameter is
-        /// set, <code>ListTagsForStream</code> gets all tags that occur after
+        /// <p>The key to use as the starting point for the list of tags. If this parameter is set,
+        /// <code>ListTagsForStream</code> gets all tags that occur after
         /// <code>ExclusiveStartTagKey</code>. </p>
         pub fn set_exclusive_start_tag_key(
             mut self,
@@ -3660,14 +3731,12 @@ pub mod merge_shards_input {
             self.stream_name = input;
             self
         }
-        /// <p>The shard ID of the shard to combine with the adjacent shard for the
-        /// merge.</p>
+        /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
         pub fn shard_to_merge(mut self, input: impl Into<std::string::String>) -> Self {
             self.shard_to_merge = Some(input.into());
             self
         }
-        /// <p>The shard ID of the shard to combine with the adjacent shard for the
-        /// merge.</p>
+        /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
         pub fn set_shard_to_merge(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3888,14 +3957,14 @@ pub mod put_record_input {
             self.partition_key = input;
             self
         }
-        /// <p>The hash value used to explicitly determine the shard the data record is assigned
-        /// to by overriding the partition key hash.</p>
+        /// <p>The hash value used to explicitly determine the shard the data record is assigned to
+        /// by overriding the partition key hash.</p>
         pub fn explicit_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.explicit_hash_key = Some(input.into());
             self
         }
-        /// <p>The hash value used to explicitly determine the shard the data record is assigned
-        /// to by overriding the partition key hash.</p>
+        /// <p>The hash value used to explicitly determine the shard the data record is assigned to
+        /// by overriding the partition key hash.</p>
         pub fn set_explicit_hash_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3903,11 +3972,11 @@ pub mod put_record_input {
             self.explicit_hash_key = input;
             self
         }
-        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
-        /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
-        /// record <i>n</i> to the sequence number of record <i>n-1</i>
-        /// (as returned in the result when putting record <i>n-1</i>). If this
-        /// parameter is not set, records are coarsely ordered based on arrival time.</p>
+        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to
+        /// the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record
+        /// <i>n</i> to the sequence number of record <i>n-1</i> (as
+        /// returned in the result when putting record <i>n-1</i>). If this parameter
+        /// is not set, records are coarsely ordered based on arrival time.</p>
         pub fn sequence_number_for_ordering(
             mut self,
             input: impl Into<std::string::String>,
@@ -3915,11 +3984,11 @@ pub mod put_record_input {
             self.sequence_number_for_ordering = Some(input.into());
             self
         }
-        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
-        /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
-        /// record <i>n</i> to the sequence number of record <i>n-1</i>
-        /// (as returned in the result when putting record <i>n-1</i>). If this
-        /// parameter is not set, records are coarsely ordered based on arrival time.</p>
+        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to
+        /// the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record
+        /// <i>n</i> to the sequence number of record <i>n-1</i> (as
+        /// returned in the result when putting record <i>n-1</i>). If this parameter
+        /// is not set, records are coarsely ordered based on arrival time.</p>
         pub fn set_sequence_number_for_ordering(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4247,13 +4316,15 @@ pub mod register_stream_consumer_input {
     }
     impl Builder {
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
-        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
-        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+        /// Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -4622,8 +4693,8 @@ pub mod split_shard_input {
             self.shard_to_split = input;
             self
         }
-        /// <p>A hash key value for the starting hash key of one of the child shards created by
-        /// the split. The hash key range for a given shard constitutes a set of ordered contiguous
+        /// <p>A hash key value for the starting hash key of one of the child shards created by the
+        /// split. The hash key range for a given shard constitutes a set of ordered contiguous
         /// positive integers. The value for <code>NewStartingHashKey</code> must be in the range of
         /// hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key
         /// value and all higher hash key values in hash key range are distributed to one of the
@@ -4633,8 +4704,8 @@ pub mod split_shard_input {
             self.new_starting_hash_key = Some(input.into());
             self
         }
-        /// <p>A hash key value for the starting hash key of one of the child shards created by
-        /// the split. The hash key range for a given shard constitutes a set of ordered contiguous
+        /// <p>A hash key value for the starting hash key of one of the child shards created by the
+        /// split. The hash key range for a given shard constitutes a set of ordered contiguous
         /// positive integers. The value for <code>NewStartingHashKey</code> must be in the range of
         /// hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key
         /// value and all higher hash key values in hash key range are distributed to one of the
@@ -4817,10 +4888,10 @@ pub mod start_stream_encryption_input {
             self.encryption_type = input;
             self
         }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+        /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+        /// use a master key owned by Kinesis Data Streams by specifying the alias
         /// <code>aws/kinesis</code>.</p>
         /// <ul>
         /// <li>
@@ -4852,10 +4923,10 @@ pub mod start_stream_encryption_input {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+        /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+        /// use a master key owned by Kinesis Data Streams by specifying the alias
         /// <code>aws/kinesis</code>.</p>
         /// <ul>
         /// <li>
@@ -5060,10 +5131,10 @@ pub mod stop_stream_encryption_input {
             self.encryption_type = input;
             self
         }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+        /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+        /// use a master key owned by Kinesis Data Streams by specifying the alias
         /// <code>aws/kinesis</code>.</p>
         /// <ul>
         /// <li>
@@ -5095,10 +5166,10 @@ pub mod stop_stream_encryption_input {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias
+        /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+        /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+        /// use a master key owned by Kinesis Data Streams by specifying the alias
         /// <code>aws/kinesis</code>.</p>
         /// <ul>
         /// <li>
@@ -5290,8 +5361,8 @@ pub mod update_shard_count_input {
             self.stream_name = input;
             self
         }
-        /// <p>The new number of shards. This value has the following default limits. By default,
-        /// you cannot do the following: </p>
+        /// <p>The new number of shards. This value has the following default limits. By default, you
+        /// cannot do the following: </p>
         /// <ul>
         /// <li>
         /// <p>Set this value to more than double your current shard count for a
@@ -5301,21 +5372,21 @@ pub mod update_shard_count_input {
         /// <p>Set this value below half your current shard count for a stream.</p>
         /// </li>
         /// <li>
-        /// <p>Set this value to more than 500 shards in a stream (the default limit for
-        /// shard count per stream is 500 per account per region), unless you request a
+        /// <p>Set this value to more than 10000 shards in a stream (the default limit for
+        /// shard count per stream is 10000 per account per region), unless you request a
         /// limit increase.</p>
         /// </li>
         /// <li>
-        /// <p>Scale a stream with more than 500 shards down unless you set this value to
-        /// less than 500 shards.</p>
+        /// <p>Scale a stream with more than 10000 shards down unless you set this value to
+        /// less than 10000 shards.</p>
         /// </li>
         /// </ul>
         pub fn target_shard_count(mut self, input: i32) -> Self {
             self.target_shard_count = Some(input);
             self
         }
-        /// <p>The new number of shards. This value has the following default limits. By default,
-        /// you cannot do the following: </p>
+        /// <p>The new number of shards. This value has the following default limits. By default, you
+        /// cannot do the following: </p>
         /// <ul>
         /// <li>
         /// <p>Set this value to more than double your current shard count for a
@@ -5325,13 +5396,13 @@ pub mod update_shard_count_input {
         /// <p>Set this value below half your current shard count for a stream.</p>
         /// </li>
         /// <li>
-        /// <p>Set this value to more than 500 shards in a stream (the default limit for
-        /// shard count per stream is 500 per account per region), unless you request a
+        /// <p>Set this value to more than 10000 shards in a stream (the default limit for
+        /// shard count per stream is 10000 per account per region), unless you request a
         /// limit increase.</p>
         /// </li>
         /// <li>
-        /// <p>Scale a stream with more than 500 shards down unless you set this value to
-        /// less than 500 shards.</p>
+        /// <p>Scale a stream with more than 10000 shards down unless you set this value to
+        /// less than 10000 shards.</p>
         /// </li>
         /// </ul>
         pub fn set_target_shard_count(mut self, input: std::option::Option<i32>) -> Self {
@@ -5488,14 +5559,215 @@ impl UpdateShardCountInput {
     }
 }
 
+/// See [`UpdateStreamModeInput`](crate::input::UpdateStreamModeInput)
+pub mod update_stream_mode_input {
+    /// A builder for [`UpdateStreamModeInput`](crate::input::UpdateStreamModeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stream_arn: std::option::Option<std::string::String>,
+        pub(crate) stream_mode_details: std::option::Option<crate::model::StreamModeDetails>,
+    }
+    impl Builder {
+        /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
+            self
+        }
+        /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
+            self
+        }
+        /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in
+        /// Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+        pub fn stream_mode_details(mut self, input: crate::model::StreamModeDetails) -> Self {
+            self.stream_mode_details = Some(input);
+            self
+        }
+        /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in
+        /// Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+        pub fn set_stream_mode_details(
+            mut self,
+            input: std::option::Option<crate::model::StreamModeDetails>,
+        ) -> Self {
+            self.stream_mode_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateStreamModeInput`](crate::input::UpdateStreamModeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateStreamModeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateStreamModeInput {
+                stream_arn: self.stream_arn,
+                stream_mode_details: self.stream_mode_details,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateStreamModeInputOperationOutputAlias = crate::operation::UpdateStreamMode;
+#[doc(hidden)]
+pub type UpdateStreamModeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateStreamModeInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateStreamMode`](crate::operation::UpdateStreamMode)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateStreamMode,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateStreamModeInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateStreamModeInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateStreamModeInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Kinesis_20131202.UpdateStreamMode",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_stream_mode(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStreamMode::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateStreamMode",
+            "kinesis",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateStreamModeInput`](crate::input::UpdateStreamModeInput)
+    pub fn builder() -> crate::input::update_stream_mode_input::Builder {
+        crate::input::update_stream_mode_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateStreamModeInput {
+    /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
+    pub stream_arn: std::option::Option<std::string::String>,
+    /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in
+    /// Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+    pub stream_mode_details: std::option::Option<crate::model::StreamModeDetails>,
+}
+impl UpdateStreamModeInput {
+    /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
+        self.stream_arn.as_deref()
+    }
+    /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in
+    /// Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+    pub fn stream_mode_details(&self) -> std::option::Option<&crate::model::StreamModeDetails> {
+        self.stream_mode_details.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateStreamModeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStreamModeInput");
+        formatter.field("stream_arn", &self.stream_arn);
+        formatter.field("stream_mode_details", &self.stream_mode_details);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateShardCountInput {
     /// <p>The name of the stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The new number of shards. This value has the following default limits. By default,
-    /// you cannot do the following: </p>
+    /// <p>The new number of shards. This value has the following default limits. By default, you
+    /// cannot do the following: </p>
     /// <ul>
     /// <li>
     /// <p>Set this value to more than double your current shard count for a
@@ -5505,13 +5777,13 @@ pub struct UpdateShardCountInput {
     /// <p>Set this value below half your current shard count for a stream.</p>
     /// </li>
     /// <li>
-    /// <p>Set this value to more than 500 shards in a stream (the default limit for
-    /// shard count per stream is 500 per account per region), unless you request a
+    /// <p>Set this value to more than 10000 shards in a stream (the default limit for
+    /// shard count per stream is 10000 per account per region), unless you request a
     /// limit increase.</p>
     /// </li>
     /// <li>
-    /// <p>Scale a stream with more than 500 shards down unless you set this value to
-    /// less than 500 shards.</p>
+    /// <p>Scale a stream with more than 10000 shards down unless you set this value to
+    /// less than 10000 shards.</p>
     /// </li>
     /// </ul>
     pub target_shard_count: std::option::Option<i32>,
@@ -5523,8 +5795,8 @@ impl UpdateShardCountInput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The new number of shards. This value has the following default limits. By default,
-    /// you cannot do the following: </p>
+    /// <p>The new number of shards. This value has the following default limits. By default, you
+    /// cannot do the following: </p>
     /// <ul>
     /// <li>
     /// <p>Set this value to more than double your current shard count for a
@@ -5534,13 +5806,13 @@ impl UpdateShardCountInput {
     /// <p>Set this value below half your current shard count for a stream.</p>
     /// </li>
     /// <li>
-    /// <p>Set this value to more than 500 shards in a stream (the default limit for
-    /// shard count per stream is 500 per account per region), unless you request a
+    /// <p>Set this value to more than 10000 shards in a stream (the default limit for
+    /// shard count per stream is 10000 per account per region), unless you request a
     /// limit increase.</p>
     /// </li>
     /// <li>
-    /// <p>Scale a stream with more than 500 shards down unless you set this value to
-    /// less than 500 shards.</p>
+    /// <p>Scale a stream with more than 10000 shards down unless you set this value to
+    /// less than 10000 shards.</p>
     /// </li>
     /// </ul>
     pub fn target_shard_count(&self) -> std::option::Option<i32> {
@@ -5569,10 +5841,10 @@ pub struct StopStreamEncryptionInput {
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-    /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-    /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-    /// owned by Kinesis Data Streams by specifying the alias
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+    /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+    /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+    /// use a master key owned by Kinesis Data Streams by specifying the alias
     /// <code>aws/kinesis</code>.</p>
     /// <ul>
     /// <li>
@@ -5611,10 +5883,10 @@ impl StopStreamEncryptionInput {
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-    /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-    /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-    /// owned by Kinesis Data Streams by specifying the alias
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+    /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+    /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+    /// use a master key owned by Kinesis Data Streams by specifying the alias
     /// <code>aws/kinesis</code>.</p>
     /// <ul>
     /// <li>
@@ -5664,10 +5936,10 @@ pub struct StartStreamEncryptionInput {
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-    /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-    /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-    /// owned by Kinesis Data Streams by specifying the alias
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+    /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+    /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+    /// use a master key owned by Kinesis Data Streams by specifying the alias
     /// <code>aws/kinesis</code>.</p>
     /// <ul>
     /// <li>
@@ -5706,10 +5978,10 @@ impl StartStreamEncryptionInput {
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-    /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-    /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-    /// owned by Kinesis Data Streams by specifying the alias
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+    /// This value can be a globally unique identifier, a fully specified Amazon Resource Name
+    /// (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also
+    /// use a master key owned by Kinesis Data Streams by specifying the alias
     /// <code>aws/kinesis</code>.</p>
     /// <ul>
     /// <li>
@@ -5759,8 +6031,8 @@ pub struct SplitShardInput {
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The shard ID of the shard to split.</p>
     pub shard_to_split: std::option::Option<std::string::String>,
-    /// <p>A hash key value for the starting hash key of one of the child shards created by
-    /// the split. The hash key range for a given shard constitutes a set of ordered contiguous
+    /// <p>A hash key value for the starting hash key of one of the child shards created by the
+    /// split. The hash key range for a given shard constitutes a set of ordered contiguous
     /// positive integers. The value for <code>NewStartingHashKey</code> must be in the range of
     /// hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key
     /// value and all higher hash key values in hash key range are distributed to one of the
@@ -5777,8 +6049,8 @@ impl SplitShardInput {
     pub fn shard_to_split(&self) -> std::option::Option<&str> {
         self.shard_to_split.as_deref()
     }
-    /// <p>A hash key value for the starting hash key of one of the child shards created by
-    /// the split. The hash key range for a given shard constitutes a set of ordered contiguous
+    /// <p>A hash key value for the starting hash key of one of the child shards created by the
+    /// split. The hash key range for a given shard constitutes a set of ordered contiguous
     /// positive integers. The value for <code>NewStartingHashKey</code> must be in the range of
     /// hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key
     /// value and all higher hash key values in hash key range are distributed to one of the
@@ -5831,7 +6103,8 @@ impl std::fmt::Debug for RemoveTagsFromStreamInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
-    /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+    /// Namespaces</a>.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
     /// consumer names don't have to be unique across data streams.</p>
@@ -5839,7 +6112,8 @@ pub struct RegisterStreamConsumerInput {
 }
 impl RegisterStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
-    /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+    /// Namespaces</a>.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -5905,14 +6179,14 @@ pub struct PutRecordInput {
     /// data records to shards. As a result of this hashing mechanism, all data records with the
     /// same partition key map to the same shard within the stream.</p>
     pub partition_key: std::option::Option<std::string::String>,
-    /// <p>The hash value used to explicitly determine the shard the data record is assigned
-    /// to by overriding the partition key hash.</p>
+    /// <p>The hash value used to explicitly determine the shard the data record is assigned to
+    /// by overriding the partition key hash.</p>
     pub explicit_hash_key: std::option::Option<std::string::String>,
-    /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
-    /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
-    /// record <i>n</i> to the sequence number of record <i>n-1</i>
-    /// (as returned in the result when putting record <i>n-1</i>). If this
-    /// parameter is not set, records are coarsely ordered based on arrival time.</p>
+    /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to
+    /// the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record
+    /// <i>n</i> to the sequence number of record <i>n-1</i> (as
+    /// returned in the result when putting record <i>n-1</i>). If this parameter
+    /// is not set, records are coarsely ordered based on arrival time.</p>
     pub sequence_number_for_ordering: std::option::Option<std::string::String>,
 }
 impl PutRecordInput {
@@ -5937,16 +6211,16 @@ impl PutRecordInput {
     pub fn partition_key(&self) -> std::option::Option<&str> {
         self.partition_key.as_deref()
     }
-    /// <p>The hash value used to explicitly determine the shard the data record is assigned
-    /// to by overriding the partition key hash.</p>
+    /// <p>The hash value used to explicitly determine the shard the data record is assigned to
+    /// by overriding the partition key hash.</p>
     pub fn explicit_hash_key(&self) -> std::option::Option<&str> {
         self.explicit_hash_key.as_deref()
     }
-    /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
-    /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
-    /// record <i>n</i> to the sequence number of record <i>n-1</i>
-    /// (as returned in the result when putting record <i>n-1</i>). If this
-    /// parameter is not set, records are coarsely ordered based on arrival time.</p>
+    /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to
+    /// the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record
+    /// <i>n</i> to the sequence number of record <i>n-1</i> (as
+    /// returned in the result when putting record <i>n-1</i>). If this parameter
+    /// is not set, records are coarsely ordered based on arrival time.</p>
     pub fn sequence_number_for_ordering(&self) -> std::option::Option<&str> {
         self.sequence_number_for_ordering.as_deref()
     }
@@ -5972,8 +6246,7 @@ impl std::fmt::Debug for PutRecordInput {
 pub struct MergeShardsInput {
     /// <p>The name of the stream for the merge.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The shard ID of the shard to combine with the adjacent shard for the
-    /// merge.</p>
+    /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     pub shard_to_merge: std::option::Option<std::string::String>,
     /// <p>The shard ID of the adjacent shard for the merge.</p>
     pub adjacent_shard_to_merge: std::option::Option<std::string::String>,
@@ -5983,8 +6256,7 @@ impl MergeShardsInput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The shard ID of the shard to combine with the adjacent shard for the
-    /// merge.</p>
+    /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     pub fn shard_to_merge(&self) -> std::option::Option<&str> {
         self.shard_to_merge.as_deref()
     }
@@ -6009,8 +6281,8 @@ impl std::fmt::Debug for MergeShardsInput {
 pub struct ListTagsForStreamInput {
     /// <p>The name of the stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The key to use as the starting point for the list of tags. If this parameter is
-    /// set, <code>ListTagsForStream</code> gets all tags that occur after
+    /// <p>The key to use as the starting point for the list of tags. If this parameter is set,
+    /// <code>ListTagsForStream</code> gets all tags that occur after
     /// <code>ExclusiveStartTagKey</code>. </p>
     pub exclusive_start_tag_key: std::option::Option<std::string::String>,
     /// <p>The number of tags to return. If this number is less than the total number of tags
@@ -6024,8 +6296,8 @@ impl ListTagsForStreamInput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The key to use as the starting point for the list of tags. If this parameter is
-    /// set, <code>ListTagsForStream</code> gets all tags that occur after
+    /// <p>The key to use as the starting point for the list of tags. If this parameter is set,
+    /// <code>ListTagsForStream</code> gets all tags that occur after
     /// <code>ExclusiveStartTagKey</code>. </p>
     pub fn exclusive_start_tag_key(&self) -> std::option::Option<&str> {
         self.exclusive_start_tag_key.as_deref()
@@ -6052,13 +6324,15 @@ impl std::fmt::Debug for ListTagsForStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsInput {
-    /// <p>The maximum number of streams to list.</p>
+    /// <p>The maximum number of streams to list. The default value is 100. If you specify a
+    /// value greater than 100, at most 100 results are returned.</p>
     pub limit: std::option::Option<i32>,
     /// <p>The name of the stream to start the list with.</p>
     pub exclusive_start_stream_name: std::option::Option<std::string::String>,
 }
 impl ListStreamsInput {
-    /// <p>The maximum number of streams to list.</p>
+    /// <p>The maximum number of streams to list. The default value is 100. If you specify a
+    /// value greater than 100, at most 100 results are returned.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -6084,7 +6358,8 @@ impl std::fmt::Debug for ListStreamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamConsumersInput {
     /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-    /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+    /// Namespaces</a>.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>When the number of consumers that are registered with the data stream is greater than
     /// the default value for the <code>MaxResults</code> parameter, or if you explicitly
@@ -6111,7 +6386,8 @@ pub struct ListStreamConsumersInput {
     /// </important>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of consumers that you want a single call of
-    /// <code>ListStreamConsumers</code> to return.</p>
+    /// <code>ListStreamConsumers</code> to return. The default value is 100. If you specify
+    /// a value greater than 100, at most 100 results are returned. </p>
     pub max_results: std::option::Option<i32>,
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For
     /// example, if you create a data stream and then delete it, and you later create another
@@ -6122,7 +6398,8 @@ pub struct ListStreamConsumersInput {
 }
 impl ListStreamConsumersInput {
     /// <p>The ARN of the Kinesis data stream for which you want to list the registered
-    /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+    /// Namespaces</a>.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -6153,7 +6430,8 @@ impl ListStreamConsumersInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of consumers that you want a single call of
-    /// <code>ListStreamConsumers</code> to return.</p>
+    /// <code>ListStreamConsumers</code> to return. The default value is 100. If you specify
+    /// a value greater than 100, at most 100 results are returned. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6185,18 +6463,18 @@ pub struct ListShardsInput {
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
     /// parameter.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>When the number of shards in the data stream is greater than the default value for
-    /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+    /// <p>When the number of shards in the data stream is greater than the default value for the
+    /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
     /// <code>MaxResults</code> that is less than the number of shards in the data stream,
     /// the response includes a pagination token named <code>NextToken</code>. You can specify
     /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
     /// list the next set of shards.</p>
-    /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if
-    /// you specify <code>NextToken</code> because the latter unambiguously identifies the
+    /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if you
+    /// specify <code>NextToken</code> because the latter unambiguously identifies the
     /// stream.</p>
-    /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when
-    /// you specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that
-    /// is less than the number of shards that the operation returns if you don't specify
+    /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when you
+    /// specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that is
+    /// less than the number of shards that the operation returns if you don't specify
     /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code>
     /// value. You can use the new <code>NextToken</code> value in a subsequent call to the
     /// <code>ListShards</code> operation.</p>
@@ -6204,33 +6482,49 @@ pub struct ListShardsInput {
     /// <p>Tokens expire after 300 seconds. When you obtain a value for
     /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
     /// have 300 seconds to use that value. If you specify an expired token in a call to
-    /// <code>ListShards</code>, you get
-    /// <code>ExpiredNextTokenException</code>.</p>
+    /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
     /// </important>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specify this parameter to indicate that you want to list the shards starting with
-    /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+    /// <p>Specify this parameter to indicate that you want to list the shards starting with the
+    /// shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
     /// <p>If you don't specify this parameter, the default behavior is for
     /// <code>ListShards</code> to list the shards starting with the first one in the
     /// stream.</p>
     /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
     pub exclusive_start_shard_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-    /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-    /// which is also the default.</p>
+    /// The maximum number of shards to return in a single call. The default value is 1000. If
+    /// you specify a value greater than 1000, at most 1000 results are returned. </p>
     /// <p>When the number of shards to be listed is greater than the value of
     /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
     /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
     /// shards.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Specify this input parameter to distinguish data streams that have the same name.
-    /// For example, if you create a data stream and then delete it, and you later create
-    /// another data stream with the same name, you can use this input parameter to specify
-    /// which of the two streams you want to list the shards for.</p>
+    /// <p>Specify this input parameter to distinguish data streams that have the same name. For
+    /// example, if you create a data stream and then delete it, and you later create another
+    /// data stream with the same name, you can use this input parameter to specify which of the
+    /// two streams you want to list the shards for.</p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
     /// parameter.</p>
     pub stream_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can
+    /// only specify one filter at a time. </p>
+    /// <p>If you use the <code>ShardFilter</code> parameter when invoking the ListShards API,
+    /// the <code>Type</code> is the required property and must be specified. If you specify the
+    /// <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+    /// <code>AT_LATEST</code> types, you do not need to specify either the
+    /// <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+    /// <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value
+    /// for the optional <code>ShardId</code> property. The <code>ShardId</code> property is
+    /// identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of the
+    /// <code>ListShards</code> API. When <code>ShardId</code> property is specified, the
+    /// response includes the shards starting with the shard whose ID immediately follows the
+    /// <code>ShardId</code> that you provided. </p>
+    /// <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type,
+    /// you must also provide the value for the optional <code>Timestamp</code> property. If you
+    /// specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp
+    /// are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the
+    /// provided timestamp to TIP are returned. </p>
     pub shard_filter: std::option::Option<crate::model::ShardFilter>,
 }
 impl ListShardsInput {
@@ -6240,18 +6534,18 @@ impl ListShardsInput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>When the number of shards in the data stream is greater than the default value for
-    /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+    /// <p>When the number of shards in the data stream is greater than the default value for the
+    /// <code>MaxResults</code> parameter, or if you explicitly specify a value for
     /// <code>MaxResults</code> that is less than the number of shards in the data stream,
     /// the response includes a pagination token named <code>NextToken</code>. You can specify
     /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
     /// list the next set of shards.</p>
-    /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if
-    /// you specify <code>NextToken</code> because the latter unambiguously identifies the
+    /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if you
+    /// specify <code>NextToken</code> because the latter unambiguously identifies the
     /// stream.</p>
-    /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when
-    /// you specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that
-    /// is less than the number of shards that the operation returns if you don't specify
+    /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when you
+    /// specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that is
+    /// less than the number of shards that the operation returns if you don't specify
     /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code>
     /// value. You can use the new <code>NextToken</code> value in a subsequent call to the
     /// <code>ListShards</code> operation.</p>
@@ -6259,14 +6553,13 @@ impl ListShardsInput {
     /// <p>Tokens expire after 300 seconds. When you obtain a value for
     /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
     /// have 300 seconds to use that value. If you specify an expired token in a call to
-    /// <code>ListShards</code>, you get
-    /// <code>ExpiredNextTokenException</code>.</p>
+    /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
     /// </important>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specify this parameter to indicate that you want to list the shards starting with
-    /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+    /// <p>Specify this parameter to indicate that you want to list the shards starting with the
+    /// shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
     /// <p>If you don't specify this parameter, the default behavior is for
     /// <code>ListShards</code> to list the shards starting with the first one in the
     /// stream.</p>
@@ -6275,8 +6568,8 @@ impl ListShardsInput {
         self.exclusive_start_shard_id.as_deref()
     }
     /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
-    /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-    /// which is also the default.</p>
+    /// The maximum number of shards to return in a single call. The default value is 1000. If
+    /// you specify a value greater than 1000, at most 1000 results are returned. </p>
     /// <p>When the number of shards to be listed is greater than the value of
     /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
     /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
@@ -6284,16 +6577,33 @@ impl ListShardsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Specify this input parameter to distinguish data streams that have the same name.
-    /// For example, if you create a data stream and then delete it, and you later create
-    /// another data stream with the same name, you can use this input parameter to specify
-    /// which of the two streams you want to list the shards for.</p>
+    /// <p>Specify this input parameter to distinguish data streams that have the same name. For
+    /// example, if you create a data stream and then delete it, and you later create another
+    /// data stream with the same name, you can use this input parameter to specify which of the
+    /// two streams you want to list the shards for.</p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
     /// parameter.</p>
     pub fn stream_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can
+    /// only specify one filter at a time. </p>
+    /// <p>If you use the <code>ShardFilter</code> parameter when invoking the ListShards API,
+    /// the <code>Type</code> is the required property and must be specified. If you specify the
+    /// <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+    /// <code>AT_LATEST</code> types, you do not need to specify either the
+    /// <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+    /// <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value
+    /// for the optional <code>ShardId</code> property. The <code>ShardId</code> property is
+    /// identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of the
+    /// <code>ListShards</code> API. When <code>ShardId</code> property is specified, the
+    /// response includes the shards starting with the shard whose ID immediately follows the
+    /// <code>ShardId</code> that you provided. </p>
+    /// <p>If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type,
+    /// you must also provide the value for the optional <code>Timestamp</code> property. If you
+    /// specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp
+    /// are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the
+    /// provided timestamp to TIP are returned. </p>
     pub fn shard_filter(&self) -> std::option::Option<&crate::model::ShardFilter> {
         self.shard_filter.as_ref()
     }
@@ -6372,18 +6682,18 @@ pub struct GetShardIteratorInput {
     /// </li>
     /// <li>
     ///
-    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
-    /// the system, which is the oldest data record in the shard.</p>
+    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the
+    /// system, which is the oldest data record in the shard.</p>
     /// </li>
     /// <li>
     ///
-    /// <p>LATEST - Start reading just after the most recent record in the shard, so
-    /// that you always read the most recent data in the shard.</p>
+    /// <p>LATEST - Start reading just after the most recent record in the shard, so that
+    /// you always read the most recent data in the shard.</p>
     /// </li>
     /// </ul>
     pub shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
-    /// <p>The sequence number of the data record in the shard from which to start reading.
-    /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
+    /// <p>The sequence number of the data record in the shard from which to start reading. Used
+    /// with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
     pub starting_sequence_number: std::option::Option<std::string::String>,
     /// <p>The time stamp of the data record from which to start reading. Used with shard
     /// iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in
@@ -6426,20 +6736,20 @@ impl GetShardIteratorInput {
     /// </li>
     /// <li>
     ///
-    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
-    /// the system, which is the oldest data record in the shard.</p>
+    /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the
+    /// system, which is the oldest data record in the shard.</p>
     /// </li>
     /// <li>
     ///
-    /// <p>LATEST - Start reading just after the most recent record in the shard, so
-    /// that you always read the most recent data in the shard.</p>
+    /// <p>LATEST - Start reading just after the most recent record in the shard, so that
+    /// you always read the most recent data in the shard.</p>
     /// </li>
     /// </ul>
     pub fn shard_iterator_type(&self) -> std::option::Option<&crate::model::ShardIteratorType> {
         self.shard_iterator_type.as_ref()
     }
-    /// <p>The sequence number of the data record in the shard from which to start reading.
-    /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
+    /// <p>The sequence number of the data record in the shard from which to start reading. Used
+    /// with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
     pub fn starting_sequence_number(&self) -> std::option::Option<&str> {
         self.starting_sequence_number.as_deref()
     }
@@ -6509,8 +6819,8 @@ pub struct EnableEnhancedMonitoringInput {
     /// <p>The name of the stream for which to enable enhanced monitoring.</p>
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>List of shard-level metrics to enable.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-    /// enables every metric.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables
+    /// every metric.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6564,8 +6874,8 @@ impl EnableEnhancedMonitoringInput {
         self.stream_name.as_deref()
     }
     /// <p>List of shard-level metrics to enable.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-    /// enables every metric.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables
+    /// every metric.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6628,12 +6938,11 @@ impl std::fmt::Debug for EnableEnhancedMonitoringInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableEnhancedMonitoringInput {
-    /// <p>The name of the Kinesis data stream for which to disable enhanced
-    /// monitoring.</p>
+    /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>List of shard-level metrics to disable.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-    /// disables every metric.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables
+    /// every metric.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6682,14 +6991,13 @@ pub struct DisableEnhancedMonitoringInput {
     pub shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl DisableEnhancedMonitoringInput {
-    /// <p>The name of the Kinesis data stream for which to disable enhanced
-    /// monitoring.</p>
+    /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>List of shard-level metrics to disable.</p>
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
-    /// disables every metric.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables
+    /// every metric.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -6774,7 +7082,8 @@ impl std::fmt::Debug for DescribeStreamSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+    /// Namespaces</a>.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The name that you gave to the consumer.</p>
     pub consumer_name: std::option::Option<std::string::String>,
@@ -6783,7 +7092,8 @@ pub struct DescribeStreamConsumerInput {
 }
 impl DescribeStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+    /// Namespaces</a>.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -6812,10 +7122,15 @@ impl std::fmt::Debug for DescribeStreamConsumerInput {
 pub struct DescribeStreamInput {
     /// <p>The name of the stream to describe.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of shards to return in a single call. The default value is 100.
-    /// If you specify a value greater than 100, at most 100 shards are returned.</p>
+    /// <p>The maximum number of shards to return in a single call. The default value is 100. If
+    /// you specify a value greater than 100, at most 100 results are returned.</p>
     pub limit: std::option::Option<i32>,
     /// <p>The shard ID of the shard to start with.</p>
+    /// <p>Specify this parameter to indicate that you want to describe the stream starting with
+    /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+    /// <p>If you don't specify this parameter, the default behavior for
+    /// <code>DescribeStream</code> is to describe the stream starting with the first shard
+    /// in the stream.</p>
     pub exclusive_start_shard_id: std::option::Option<std::string::String>,
 }
 impl DescribeStreamInput {
@@ -6823,12 +7138,17 @@ impl DescribeStreamInput {
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The maximum number of shards to return in a single call. The default value is 100.
-    /// If you specify a value greater than 100, at most 100 shards are returned.</p>
+    /// <p>The maximum number of shards to return in a single call. The default value is 100. If
+    /// you specify a value greater than 100, at most 100 results are returned.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The shard ID of the shard to start with.</p>
+    /// <p>Specify this parameter to indicate that you want to describe the stream starting with
+    /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+    /// <p>If you don't specify this parameter, the default behavior for
+    /// <code>DescribeStream</code> is to describe the stream starting with the first shard
+    /// in the stream.</p>
     pub fn exclusive_start_shard_id(&self) -> std::option::Option<&str> {
         self.exclusive_start_shard_id.as_deref()
     }
@@ -6859,7 +7179,8 @@ impl std::fmt::Debug for DescribeLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+    /// Namespaces</a>.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The name that you gave to the consumer.</p>
     pub consumer_name: std::option::Option<std::string::String>,
@@ -6872,7 +7193,8 @@ pub struct DeregisterStreamConsumerInput {
 }
 impl DeregisterStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
+    /// Namespaces</a>.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -6965,21 +7287,26 @@ impl std::fmt::Debug for DecreaseStreamRetentionPeriodInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamInput {
-    /// <p>A name to identify the stream. The stream name is scoped to the AWS account used by
-    /// the application that creates the stream. It is also scoped by AWS Region. That is, two
-    /// streams in two different AWS accounts can have the same name. Two streams in the same
-    /// AWS account but in two different Regions can also have the same name.</p>
+    /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services
+    /// account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts
+    /// can have the same name. Two streams in the same Amazon Web Services account but in two
+    /// different Regions can also have the same name.</p>
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The number of shards that the stream will use. The throughput of the stream is a
     /// function of the number of shards; more shards are required for greater provisioned
     /// throughput.</p>
     pub shard_count: std::option::Option<i32>,
+    /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
+    /// you can choose between an <b>on-demand</b> capacity mode and a
+    /// <b>provisioned</b> capacity mode for your data
+    /// streams.</p>
+    pub stream_mode_details: std::option::Option<crate::model::StreamModeDetails>,
 }
 impl CreateStreamInput {
-    /// <p>A name to identify the stream. The stream name is scoped to the AWS account used by
-    /// the application that creates the stream. It is also scoped by AWS Region. That is, two
-    /// streams in two different AWS accounts can have the same name. Two streams in the same
-    /// AWS account but in two different Regions can also have the same name.</p>
+    /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services
+    /// account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts
+    /// can have the same name. Two streams in the same Amazon Web Services account but in two
+    /// different Regions can also have the same name.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
@@ -6989,12 +7316,20 @@ impl CreateStreamInput {
     pub fn shard_count(&self) -> std::option::Option<i32> {
         self.shard_count
     }
+    /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
+    /// you can choose between an <b>on-demand</b> capacity mode and a
+    /// <b>provisioned</b> capacity mode for your data
+    /// streams.</p>
+    pub fn stream_mode_details(&self) -> std::option::Option<&crate::model::StreamModeDetails> {
+        self.stream_mode_details.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStreamInput");
         formatter.field("stream_name", &self.stream_name);
         formatter.field("shard_count", &self.shard_count);
+        formatter.field("stream_mode_details", &self.stream_mode_details);
         formatter.finish()
     }
 }

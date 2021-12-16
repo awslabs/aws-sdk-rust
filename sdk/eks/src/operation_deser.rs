@@ -3379,6 +3379,23 @@ pub fn parse_register_cluster_error(
                 tmp
             }),
         },
+        "ResourceInUseException" => crate::error::RegisterClusterError {
+            meta: generic,
+            kind: crate::error::RegisterClusterErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::RegisterClusterError {
             meta: generic,
             kind: crate::error::RegisterClusterErrorKind::ResourceLimitExceededException({
@@ -3389,6 +3406,24 @@ pub fn parse_register_cluster_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClusterError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourcePropagationDelayException" => crate::error::RegisterClusterError {
+            meta: generic,
+            kind: crate::error::RegisterClusterErrorKind::ResourcePropagationDelayException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_propagation_delay_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_propagation_delay_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClusterError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

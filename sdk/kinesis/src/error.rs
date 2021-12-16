@@ -18,8 +18,8 @@ pub enum AddTagsToStreamErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -150,8 +150,8 @@ pub enum CreateStreamErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -264,8 +264,8 @@ pub enum DecreaseStreamRetentionPeriodErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -404,8 +404,8 @@ pub enum DeleteStreamErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -518,8 +518,8 @@ pub enum DeregisterStreamConsumerErrorKind {
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -635,8 +635,8 @@ pub struct DescribeLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLimitsErrorKind {
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -731,8 +731,8 @@ pub struct DescribeStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStreamErrorKind {
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -842,8 +842,8 @@ pub enum DescribeStreamConsumerErrorKind {
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -959,8 +959,8 @@ pub struct DescribeStreamSummaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStreamSummaryErrorKind {
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -1073,8 +1073,8 @@ pub enum DisableEnhancedMonitoringErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -1205,8 +1205,8 @@ pub enum EnableEnhancedMonitoringErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -1342,26 +1342,26 @@ pub enum GetRecordsErrorKind {
     KmsNotFoundException(crate::error::KmsNotFoundException),
     /// <p>The provided iterator exceeds the maximum age allowed.</p>
     ExpiredIteratorException(crate::error::ExpiredIteratorException),
-    /// <p>The AWS access key ID needs a subscription for the service.</p>
+    /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::error::KmsOptInRequired),
     /// <p>The request was denied due to request throttling. For more information about
     /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// the <i>Amazon Web Services Key Management Service Developer
+    /// Guide</i>.</p>
     KmsThrottlingException(crate::error::KmsThrottlingException),
     /// <p>The request rate for the stream is too high, or the requested data is too large for
     /// the available throughput. Reduce the frequency or size of your requests. For more
     /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
     /// <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and
-    /// Exponential Backoff in AWS</a> in the <i>AWS General
-    /// Reference</i>.</p>
+    /// Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid
-    /// for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for
+    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+    /// Customer Master Key</a> in the <i>Amazon Web Services Key Management
+    /// Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -1520,8 +1520,7 @@ pub enum GetShardIteratorErrorKind {
     /// the available throughput. Reduce the frequency or size of your requests. For more
     /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
     /// <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and
-    /// Exponential Backoff in AWS</a> in the <i>AWS General
-    /// Reference</i>.</p>
+    /// Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
@@ -1650,8 +1649,8 @@ pub enum IncreaseStreamRetentionPeriodErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -1795,8 +1794,8 @@ pub enum ListShardsErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -1929,8 +1928,8 @@ pub enum ListStreamConsumersErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -2064,8 +2063,8 @@ pub struct ListStreamsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamsErrorKind {
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2160,8 +2159,8 @@ pub enum ListTagsForStreamErrorKind {
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -2277,14 +2276,18 @@ pub struct MergeShardsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum MergeShardsErrorKind {
+    /// <p>
+    ///
+    /// </p>
+    ValidationException(crate::error::ValidationException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -2295,6 +2298,7 @@ pub enum MergeShardsErrorKind {
 impl std::fmt::Display for MergeShardsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            MergeShardsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             MergeShardsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -2355,6 +2359,10 @@ impl MergeShardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `MergeShardsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, MergeShardsErrorKind::ValidationException(_))
+    }
     /// Returns `true` if the error kind is `MergeShardsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -2381,6 +2389,7 @@ impl MergeShardsError {
 impl std::error::Error for MergeShardsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            MergeShardsErrorKind::ValidationException(_inner) => Some(_inner),
             MergeShardsErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             MergeShardsErrorKind::ResourceInUseException(_inner) => Some(_inner),
             MergeShardsErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -2412,26 +2421,26 @@ pub enum PutRecordErrorKind {
     /// <p>The request was rejected because the specified entity or resource can't be
     /// found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
-    /// <p>The AWS access key ID needs a subscription for the service.</p>
+    /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::error::KmsOptInRequired),
     /// <p>The request was denied due to request throttling. For more information about
     /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// the <i>Amazon Web Services Key Management Service Developer
+    /// Guide</i>.</p>
     KmsThrottlingException(crate::error::KmsThrottlingException),
     /// <p>The request rate for the stream is too high, or the requested data is too large for
     /// the available throughput. Reduce the frequency or size of your requests. For more
     /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
     /// <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and
-    /// Exponential Backoff in AWS</a> in the <i>AWS General
-    /// Reference</i>.</p>
+    /// Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid
-    /// for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for
+    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+    /// Customer Master Key</a> in the <i>Amazon Web Services Key Management
+    /// Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -2586,26 +2595,26 @@ pub enum PutRecordsErrorKind {
     /// <p>The request was rejected because the specified entity or resource can't be
     /// found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
-    /// <p>The AWS access key ID needs a subscription for the service.</p>
+    /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::error::KmsOptInRequired),
     /// <p>The request was denied due to request throttling. For more information about
     /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// the <i>Amazon Web Services Key Management Service Developer
+    /// Guide</i>.</p>
     KmsThrottlingException(crate::error::KmsThrottlingException),
     /// <p>The request rate for the stream is too high, or the requested data is too large for
     /// the available throughput. Reduce the frequency or size of your requests. For more
     /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
     /// <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and
-    /// Exponential Backoff in AWS</a> in the <i>AWS General
-    /// Reference</i>.</p>
+    /// Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid
-    /// for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for
+    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+    /// Customer Master Key</a> in the <i>Amazon Web Services Key Management
+    /// Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -2760,8 +2769,8 @@ pub enum RegisterStreamConsumerErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -2892,8 +2901,8 @@ pub enum RemoveTagsFromStreamErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -3018,14 +3027,18 @@ pub struct SplitShardError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SplitShardErrorKind {
+    /// <p>
+    ///
+    /// </p>
+    ValidationException(crate::error::ValidationException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -3036,6 +3049,7 @@ pub enum SplitShardErrorKind {
 impl std::fmt::Display for SplitShardError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            SplitShardErrorKind::ValidationException(_inner) => _inner.fmt(f),
             SplitShardErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             SplitShardErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             SplitShardErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -3096,6 +3110,10 @@ impl SplitShardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `SplitShardErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, SplitShardErrorKind::ValidationException(_))
+    }
     /// Returns `true` if the error kind is `SplitShardErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, SplitShardErrorKind::InvalidArgumentException(_))
@@ -3119,6 +3137,7 @@ impl SplitShardError {
 impl std::error::Error for SplitShardError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            SplitShardErrorKind::ValidationException(_inner) => Some(_inner),
             SplitShardErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             SplitShardErrorKind::ResourceInUseException(_inner) => Some(_inner),
             SplitShardErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -3150,25 +3169,26 @@ pub enum StartStreamEncryptionErrorKind {
     /// <p>The request was rejected because the specified entity or resource can't be
     /// found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
-    /// <p>The AWS access key ID needs a subscription for the service.</p>
+    /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::error::KmsOptInRequired),
     /// <p>The request was denied due to request throttling. For more information about
     /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// the <i>Amazon Web Services Key Management Service Developer
+    /// Guide</i>.</p>
     KmsThrottlingException(crate::error::KmsThrottlingException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid
-    /// for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for
+    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+    /// Customer Master Key</a> in the <i>Amazon Web Services Key Management
+    /// Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -3353,8 +3373,8 @@ pub enum StopStreamEncryptionErrorKind {
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -3479,14 +3499,18 @@ pub struct UpdateShardCountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateShardCountErrorKind {
+    /// <p>
+    ///
+    /// </p>
+    ValidationException(crate::error::ValidationException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
     /// For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The resource is not available for this operation. For successful operation, the
     /// resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource could not be found. The stream might not be specified
     /// correctly.</p>
@@ -3497,6 +3521,7 @@ pub enum UpdateShardCountErrorKind {
 impl std::fmt::Display for UpdateShardCountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateShardCountErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             UpdateShardCountErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -3557,6 +3582,13 @@ impl UpdateShardCountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UpdateShardCountErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateShardCountErrorKind::ValidationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateShardCountErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
@@ -3589,11 +3621,144 @@ impl UpdateShardCountError {
 impl std::error::Error for UpdateShardCountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateShardCountErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateShardCountErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             UpdateShardCountErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateShardCountErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateShardCountErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateShardCountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateStreamMode` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateStreamModeError {
+    /// Kind of error that occurred.
+    pub kind: UpdateStreamModeErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateStreamMode` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateStreamModeErrorKind {
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
+    /// For more information, see the returned message.</p>
+    InvalidArgumentException(crate::error::InvalidArgumentException),
+    /// <p>The resource is not available for this operation. For successful operation, the
+    /// resource must be in the <code>ACTIVE</code> state.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+    /// stream requests exceeds the maximum number allowed. </p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The requested resource could not be found. The stream might not be specified
+    /// correctly.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateStreamModeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateStreamModeErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
+            UpdateStreamModeErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdateStreamModeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateStreamModeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateStreamModeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateStreamModeError {
+    fn code(&self) -> Option<&str> {
+        UpdateStreamModeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateStreamModeError {
+    /// Creates a new `UpdateStreamModeError`.
+    pub fn new(kind: UpdateStreamModeErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateStreamModeError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateStreamModeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateStreamModeError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateStreamModeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateStreamModeErrorKind::InvalidArgumentException`.
+    pub fn is_invalid_argument_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStreamModeErrorKind::InvalidArgumentException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateStreamModeErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStreamModeErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateStreamModeErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStreamModeErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateStreamModeErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStreamModeErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateStreamModeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateStreamModeErrorKind::InvalidArgumentException(_inner) => Some(_inner),
+            UpdateStreamModeErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdateStreamModeErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateStreamModeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateStreamModeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3663,8 +3828,8 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The requested resource exceeds the maximum number allowed, or the number of
-/// concurrent stream requests exceeds the maximum number allowed. </p>
+/// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
+/// stream requests exceeds the maximum number allowed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -3858,10 +4023,76 @@ impl InvalidArgumentException {
     }
 }
 
-/// <p>The request was rejected because the state of the specified resource isn't valid
-/// for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-/// Customer Master Key</a> in the <i>AWS Key Management Service Developer
-/// Guide</i>.</p>
+/// <p>
+///
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidationException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ValidationException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ValidationException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ValidationException {}
+/// See [`ValidationException`](crate::error::ValidationException)
+pub mod validation_exception {
+    /// A builder for [`ValidationException`](crate::error::ValidationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException)
+        pub fn build(self) -> crate::error::ValidationException {
+            crate::error::ValidationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ValidationException {
+    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException)
+    pub fn builder() -> crate::error::validation_exception::Builder {
+        crate::error::validation_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because the state of the specified resource isn't valid for
+/// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+/// Customer Master Key</a> in the <i>Amazon Web Services Key Management
+/// Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
@@ -3884,8 +4115,8 @@ impl KmsInvalidStateException {
 impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -3927,7 +4158,8 @@ impl KmsInvalidStateException {
 
 /// <p>The request was denied due to request throttling. For more information about
 /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-/// the <i>AWS Key Management Service Developer Guide</i>.</p>
+/// the <i>Amazon Web Services Key Management Service Developer
+/// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsThrottlingException {
@@ -3950,8 +4182,8 @@ impl KmsThrottlingException {
 impl std::fmt::Display for KmsThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsThrottlingException [KMSThrottlingException]")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -3991,7 +4223,7 @@ impl KmsThrottlingException {
     }
 }
 
-/// <p>The AWS access key ID needs a subscription for the service.</p>
+/// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsOptInRequired {
@@ -4014,8 +4246,8 @@ impl KmsOptInRequired {
 impl std::fmt::Display for KmsOptInRequired {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsOptInRequired [KMSOptInRequired]")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
@@ -4079,8 +4311,8 @@ impl KmsNotFoundException {
 impl std::fmt::Display for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsNotFoundException [KMSNotFoundException]")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -4144,8 +4376,8 @@ impl KmsDisabledException {
 impl std::fmt::Display for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsDisabledException [KMSDisabledException]")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -4209,8 +4441,8 @@ impl KmsAccessDeniedException {
 impl std::fmt::Display for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsAccessDeniedException [KMSAccessDeniedException]")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -4254,8 +4486,7 @@ impl KmsAccessDeniedException {
 /// the available throughput. Reduce the frequency or size of your requests. For more
 /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
 /// <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and
-/// Exponential Backoff in AWS</a> in the <i>AWS General
-/// Reference</i>.</p>
+/// Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputExceededException {
@@ -4278,8 +4509,8 @@ impl ProvisionedThroughputExceededException {
 impl std::fmt::Display for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ProvisionedThroughputExceededException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -4342,8 +4573,8 @@ impl ExpiredNextTokenException {
 impl std::fmt::Display for ExpiredNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredNextTokenException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -4406,8 +4637,8 @@ impl ExpiredIteratorException {
 impl std::fmt::Display for ExpiredIteratorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredIteratorException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }

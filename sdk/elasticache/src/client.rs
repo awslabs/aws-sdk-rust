@@ -2,7 +2,7 @@
 #[derive(Debug)]
 pub(crate) struct Handle<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     client: aws_smithy_client::Client<C, M, R>,
@@ -23,7 +23,7 @@ pub(crate) struct Handle<
 ///     let client = aws_sdk_elasticache::Client::new(&shared_config);
 ///     // invoke an operation
 ///     /* let rsp = client
-///         .<operationname>().
+///         .<operation_name>().
 ///         .<param>("some value")
 ///         .send().await; */
 /// # }
@@ -41,7 +41,7 @@ pub(crate) struct Handle<
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
-    M = aws_hyper::AwsMiddleware,
+    M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
     handle: std::sync::Arc<Handle<C, M, R>>,
@@ -620,7 +620,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -726,7 +726,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct AuthorizeCacheSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -831,7 +831,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchApplyUpdateAction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -938,7 +938,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct BatchStopUpdateAction<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1045,7 +1045,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CompleteMigration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1221,7 +1221,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CopySnapshot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1366,7 +1366,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCacheCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -1580,9 +1580,12 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+        ///
         /// <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
@@ -1622,6 +1625,15 @@ pub mod fluent_builders {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -1681,13 +1693,47 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        ///
         ///
         ///
         ///
@@ -1797,9 +1843,12 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+        ///
         /// <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
@@ -1839,6 +1888,15 @@ pub mod fluent_builders {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -1898,13 +1956,47 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        ///
         ///
         ///
         ///
@@ -2248,12 +2340,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_topic_arn(input);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
@@ -2434,7 +2528,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCacheParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2510,7 +2604,8 @@ pub mod fluent_builders {
         /// <code>redis3.2</code> |
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
-        /// <code>redis6.x</code> |
+        /// <code>redis6.0</code> |
+        /// <code>redis6.2</code>
         /// </p>
         pub fn cache_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cache_parameter_group_family(inp);
@@ -2526,7 +2621,8 @@ pub mod fluent_builders {
         /// <code>redis3.2</code> |
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
-        /// <code>redis6.x</code> |
+        /// <code>redis6.0</code> |
+        /// <code>redis6.2</code>
         /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
@@ -2574,7 +2670,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCacheSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2681,7 +2777,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateCacheSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2825,7 +2921,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -2960,7 +3056,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -3266,9 +3362,12 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
         /// <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
@@ -3308,6 +3407,14 @@ pub mod fluent_builders {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):    
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>           
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -3367,10 +3474,45 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         ///
@@ -3483,9 +3625,12 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
         /// <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
@@ -3525,6 +3670,14 @@ pub mod fluent_builders {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward):    
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>           
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -3584,10 +3737,45 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         ///
@@ -4042,12 +4230,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_topic_arn(input);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
@@ -4266,6 +4456,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_delivery_configurations(input);
             self
         }
+        /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+        pub fn data_tiering_enabled(mut self, inp: bool) -> Self {
+            self.inner = self.inner.data_tiering_enabled(inp);
+            self
+        }
+        /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+        pub fn set_data_tiering_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_data_tiering_enabled(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateSnapshot`.
     ///
@@ -4278,7 +4480,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4400,11 +4602,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUser`.
     ///
-    /// <p>For Redis engine version 6.x onwards: Creates a Redis user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>
+    /// <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4547,12 +4749,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUserGroup`.
     ///
-    /// <p>For Redis engine version 6.x onwards: Creates a Redis user group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>
+    /// <p>For Redis engine version 6.0 onwards: Creates a Redis user group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>
     /// </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateUserGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4669,7 +4871,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DecreaseNodeGroupsInGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -4810,7 +5012,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DecreaseReplicaCount<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5017,7 +5219,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCacheCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5107,7 +5309,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCacheParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5189,7 +5391,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCacheSecurityGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5271,7 +5473,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteCacheSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5362,7 +5564,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5456,7 +5658,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5566,7 +5768,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DeleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5635,11 +5837,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
-    /// <p>For Redis engine version 6.x onwards: Deletes a user. The user will be removed from all user groups and in turn removed from all replication groups. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>. </p>
+    /// <p>For Redis engine version 6.0 onwards: Deletes a user. The user will be removed from all user groups and in turn removed from all replication groups. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>. </p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5705,11 +5907,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteUserGroup`.
     ///
-    /// <p>For Redis engine version 6.x onwards: Deletes a user group. The user group must first be disassociated from the replication group before it can be deleted. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>. </p>
+    /// <p>For Redis engine version 6.0 onwards: Deletes a user group. The user group must first be disassociated from the replication group before it can be deleted. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>. </p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteUserGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5797,7 +5999,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCacheClusters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -5942,7 +6144,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCacheEngineVersions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6035,6 +6237,7 @@ pub mod fluent_builders {
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
         /// <code>redis6.x</code> |
+        /// <code>redis6.2</code>
         /// </p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -6063,6 +6266,7 @@ pub mod fluent_builders {
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
         /// <code>redis6.x</code> |
+        /// <code>redis6.2</code>
         /// </p>
         /// <p>Constraints:</p>
         /// <ul>
@@ -6138,7 +6342,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCacheParameterGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6246,7 +6450,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCacheParameters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6372,7 +6576,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCacheSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6482,7 +6686,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeCacheSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6592,7 +6796,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeEngineDefaultParameters<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6656,6 +6860,7 @@ pub mod fluent_builders {
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
         /// <code>redis6.x</code> |
+        /// <code>redis6.2</code>
         /// </p>
         pub fn cache_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cache_parameter_group_family(inp);
@@ -6672,6 +6877,7 @@ pub mod fluent_builders {
         /// <code>redis4.0</code> |
         /// <code>redis5.0</code> |
         /// <code>redis6.x</code> |
+        /// <code>redis6.2</code>
         /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
@@ -6726,7 +6932,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -6896,7 +7102,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeGlobalReplicationGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7004,7 +7210,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReplicationGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7114,7 +7320,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReservedCacheNodes<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7213,9 +7419,13 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
         /// <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
@@ -7255,6 +7465,15 @@ pub mod fluent_builders {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>        
+        ///
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -7314,10 +7533,44 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         ///
@@ -7432,9 +7685,13 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
         /// <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
@@ -7474,6 +7731,15 @@ pub mod fluent_builders {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>        
+        ///
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -7533,10 +7799,44 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         ///
@@ -7733,7 +8033,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeReservedCacheNodesOfferings<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -7823,10 +8123,13 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
-        /// <code>cache.m6g.large</code>,
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward)  <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
         /// <code>cache.m6g.4xlarge</code>,
@@ -7865,6 +8168,15 @@ pub mod fluent_builders {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>               
+        ///
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -7924,12 +8236,48 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
         ///
         ///
         ///
@@ -8042,10 +8390,13 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Current generation: </p>
         ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <p>
-        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
-        /// <p>  
-        /// <code>cache.m6g.large</code>,
+        /// <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward)  <code>cache.m6g.large</code>,
         /// <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>,
         /// <code>cache.m6g.4xlarge</code>,
@@ -8084,6 +8435,15 @@ pub mod fluent_builders {
         /// <code>cache.m4.4xlarge</code>,
         /// <code>cache.m4.10xlarge</code>
         /// </p>
+        ///
+        /// <p>
+        /// <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
+        /// <code>cache.t4g.micro</code>,
+        /// <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code>
+        /// </p>               
+        ///
+        ///
         /// <p>
         /// <b>T3 node types:</b>
         /// <code>cache.t3.micro</code>,
@@ -8143,12 +8503,48 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// <li>
+        /// <p>Memory optimized with data tiering:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        ///
+        /// <code>cache.r6gd.xlarge</code>,
+        /// <code>cache.r6gd.2xlarge</code>,
+        /// <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>,
+        /// <code>cache.r6gd.12xlarge</code>,
+        /// <code>cache.r6gd.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>              
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
         /// <p>Memory optimized:</p>
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
+        ///
+        ///
+        ///
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
         ///
         ///
         ///
@@ -8344,7 +8740,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeServiceUpdates<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8470,7 +8866,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8636,7 +9032,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUpdateActions<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8845,7 +9241,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUserGroups<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -8938,7 +9334,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DescribeUsers<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9055,7 +9451,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct DisassociateGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9156,7 +9552,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct FailoverGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9255,7 +9651,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct IncreaseNodeGroupsInGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9372,7 +9768,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct IncreaseReplicaCount<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9504,7 +9900,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListAllowedNodeTypeModifications<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9622,7 +10018,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -9703,7 +10099,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyCacheCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10370,12 +10766,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
@@ -10539,7 +10937,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyCacheParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10632,7 +11030,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyCacheSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10744,7 +11142,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -10912,7 +11310,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11308,12 +11706,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
             self.inner = self.inner.auto_minor_version_upgrade(inp);
             self
         }
-        /// <p>This parameter is currently disabled.</p>
+        /// <p> If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
+        /// </p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
@@ -11528,7 +11928,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyReplicationGroupShardConfiguration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11721,7 +12121,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyUser<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11844,7 +12244,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ModifyUserGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -11954,7 +12354,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct PurchaseReservedCacheNodesOffering<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12092,7 +12492,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RebalanceSlotsInGlobalReplicationGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12189,7 +12589,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RebootCacheCluster<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12282,7 +12682,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12381,7 +12781,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct ResetCacheParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12504,7 +12904,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct RevokeCacheSecurityGroupIngress<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12607,7 +13007,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct StartMigration<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12698,7 +13098,8 @@ pub mod fluent_builders {
     ///
     /// <p>Represents the input of a <code>TestFailover</code> operation which test automatic failover on
     /// a specified node group (called shard in the console) in a replication group (called cluster in the console).</p>
-    ///
+    /// <p>This API is designed for testing the behavior of your application in case of ElastiCache failover. It is not designed to be an operational tool
+    /// for initiating a failover to overcome a problem you may have with the cluster. Moreover, in certain conditions such as large-scale operational events, Amazon may block this API. </p>
     /// <p class="title">
     /// <b>Note the following</b>
     /// </p>
@@ -12762,7 +13163,7 @@ pub mod fluent_builders {
     #[derive(std::fmt::Debug)]
     pub struct TestFailover<
         C = aws_smithy_client::erase::DynConnector,
-        M = aws_hyper::AwsMiddleware,
+        M = crate::middleware::DefaultMiddleware,
         R = aws_smithy_client::retry::Standard,
     > {
         handle: std::sync::Arc<super::Handle<C, M, R>>,
@@ -12849,17 +13250,21 @@ pub mod fluent_builders {
         }
     }
 }
-impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> {
+impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::new(conn)
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
-
-        client.set_sleep_impl(sleep_impl);
+        let mut builder = aws_smithy_client::Builder::new()
+            .connector(conn)
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -12868,7 +13273,7 @@ impl<C> Client<C, aws_hyper::AwsMiddleware, aws_smithy_client::retry::Standard> 
 impl
     Client<
         aws_smithy_client::erase::DynConnector,
-        aws_hyper::AwsMiddleware,
+        crate::middleware::DefaultMiddleware,
         aws_smithy_client::retry::Standard,
     >
 {
@@ -12884,11 +13289,17 @@ impl
         let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
         let timeout_config = conf.timeout_config.as_ref().cloned().unwrap_or_default();
         let sleep_impl = conf.sleep_impl.clone();
-        let mut client = aws_hyper::Client::https()
-            .with_retry_config(retry_config.into())
-            .with_timeout_config(timeout_config);
+        let mut builder = aws_smithy_client::Builder::dyn_https()
+            .middleware(crate::middleware::DefaultMiddleware::new());
+        builder.set_retry_config(retry_config.into());
+        builder.set_timeout_config(timeout_config);
+        // the builder maintains a try-state. To avoid suppressing the warning when sleep is unset,
+        // only set it if we actually have a sleep impl.
+        if let Some(sleep_impl) = sleep_impl {
+            builder.set_sleep_impl(Some(sleep_impl));
+        }
+        let client = builder.build();
 
-        client.set_sleep_impl(sleep_impl);
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

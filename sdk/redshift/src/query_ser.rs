@@ -215,6 +215,16 @@ pub fn serialize_structure_crate_model_resize_cluster_message(
     if let Some(var_61) = &input.classic {
         scope_60.boolean(*var_61);
     }
+    #[allow(unused_mut)]
+    let mut scope_62 = writer.prefix("ReservedNodeId");
+    if let Some(var_63) = &input.reserved_node_id {
+        scope_62.string(var_63);
+    }
+    #[allow(unused_mut)]
+    let mut scope_64 = writer.prefix("TargetReservedNodeOfferingId");
+    if let Some(var_65) = &input.target_reserved_node_offering_id {
+        scope_64.string(var_65);
+    }
     Ok(())
 }
 
@@ -224,9 +234,9 @@ pub fn serialize_structure_crate_model_pause_cluster_message(
     input: &crate::model::PauseClusterMessage,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_62 = writer.prefix("ClusterIdentifier");
-    if let Some(var_63) = &input.cluster_identifier {
-        scope_62.string(var_63);
+    let mut scope_66 = writer.prefix("ClusterIdentifier");
+    if let Some(var_67) = &input.cluster_identifier {
+        scope_66.string(var_67);
     }
     Ok(())
 }
@@ -237,9 +247,9 @@ pub fn serialize_structure_crate_model_resume_cluster_message(
     input: &crate::model::ResumeClusterMessage,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_64 = writer.prefix("ClusterIdentifier");
-    if let Some(var_65) = &input.cluster_identifier {
-        scope_64.string(var_65);
+    let mut scope_68 = writer.prefix("ClusterIdentifier");
+    if let Some(var_69) = &input.cluster_identifier {
+        scope_68.string(var_69);
     }
     Ok(())
 }

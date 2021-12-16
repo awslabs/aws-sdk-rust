@@ -295,6 +295,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfileObjectType 
     }
 }
 
+/// Operation shape for `GetAutoMergingPreview`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_auto_merging_preview`](crate::client::Client::get_auto_merging_preview).
+///
+/// See [`crate::client::fluent_builders::GetAutoMergingPreview`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetAutoMergingPreview {
+    _private: (),
+}
+impl GetAutoMergingPreview {
+    /// Creates a new builder-style object to manufacture [`GetAutoMergingPreviewInput`](crate::input::GetAutoMergingPreviewInput)
+    pub fn builder() -> crate::input::get_auto_merging_preview_input::Builder {
+        crate::input::get_auto_merging_preview_input::Builder::default()
+    }
+    /// Creates a new `GetAutoMergingPreview` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetAutoMergingPreview {
+    type Output = std::result::Result<
+        crate::output::GetAutoMergingPreviewOutput,
+        crate::error::GetAutoMergingPreviewError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_auto_merging_preview_error(response)
+        } else {
+            crate::operation_deser::parse_get_auto_merging_preview_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -322,6 +356,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomain {
             crate::operation_deser::parse_get_domain_error(response)
         } else {
             crate::operation_deser::parse_get_domain_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetIdentityResolutionJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_identity_resolution_job`](crate::client::Client::get_identity_resolution_job).
+///
+/// See [`crate::client::fluent_builders::GetIdentityResolutionJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetIdentityResolutionJob {
+    _private: (),
+}
+impl GetIdentityResolutionJob {
+    /// Creates a new builder-style object to manufacture [`GetIdentityResolutionJobInput`](crate::input::GetIdentityResolutionJobInput)
+    pub fn builder() -> crate::input::get_identity_resolution_job_input::Builder {
+        crate::input::get_identity_resolution_job_input::Builder::default()
+    }
+    /// Creates a new `GetIdentityResolutionJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetIdentityResolutionJob {
+    type Output = std::result::Result<
+        crate::output::GetIdentityResolutionJobOutput,
+        crate::error::GetIdentityResolutionJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_identity_resolution_job_error(response)
+        } else {
+            crate::operation_deser::parse_get_identity_resolution_job_response(response)
         }
     }
 }
@@ -520,6 +588,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
             crate::operation_deser::parse_list_domains_error(response)
         } else {
             crate::operation_deser::parse_list_domains_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListIdentityResolutionJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_identity_resolution_jobs`](crate::client::Client::list_identity_resolution_jobs).
+///
+/// See [`crate::client::fluent_builders::ListIdentityResolutionJobs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListIdentityResolutionJobs {
+    _private: (),
+}
+impl ListIdentityResolutionJobs {
+    /// Creates a new builder-style object to manufacture [`ListIdentityResolutionJobsInput`](crate::input::ListIdentityResolutionJobsInput)
+    pub fn builder() -> crate::input::list_identity_resolution_jobs_input::Builder {
+        crate::input::list_identity_resolution_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListIdentityResolutionJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListIdentityResolutionJobs {
+    type Output = std::result::Result<
+        crate::output::ListIdentityResolutionJobsOutput,
+        crate::error::ListIdentityResolutionJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_identity_resolution_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_identity_resolution_jobs_response(response)
         }
     }
 }

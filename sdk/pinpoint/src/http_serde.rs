@@ -1249,6 +1249,20 @@ pub fn deser_payload_send_messages_send_messages_output_message_response(
         .transpose()
 }
 
+pub fn deser_payload_send_otp_message_send_otp_message_output_message_response(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::MessageResponse>,
+    crate::error::SendOTPMessageError,
+> {
+    (!body.is_empty())
+        .then(|| {
+            crate::json_deser::deser_structure_crate_model_message_response_payload(body)
+                .map_err(crate::error::SendOTPMessageError::unhandled)
+        })
+        .transpose()
+}
+
 pub fn deser_payload_send_users_messages_send_users_messages_output_send_users_message_response(
     body: &[u8],
 ) -> std::result::Result<
@@ -1593,6 +1607,20 @@ pub fn deser_payload_update_voice_template_update_voice_template_output_message_
         .then(|| {
             crate::json_deser::deser_structure_crate_model_message_body_payload(body)
                 .map_err(crate::error::UpdateVoiceTemplateError::unhandled)
+        })
+        .transpose()
+}
+
+pub fn deser_payload_verify_otp_message_verify_otp_message_output_verification_response(
+    body: &[u8],
+) -> std::result::Result<
+    std::option::Option<crate::model::VerificationResponse>,
+    crate::error::VerifyOTPMessageError,
+> {
+    (!body.is_empty())
+        .then(|| {
+            crate::json_deser::deser_structure_crate_model_verification_response_payload(body)
+                .map_err(crate::error::VerifyOTPMessageError::unhandled)
         })
         .transpose()
 }

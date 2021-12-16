@@ -14255,6 +14255,125 @@ impl std::error::Error for PurchaseReservedDBInstancesOfferingError {
     }
 }
 
+/// Error type for the `RebootDBCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RebootDBClusterError {
+    /// Kind of error that occurred.
+    pub kind: RebootDBClusterErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `RebootDBCluster` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RebootDBClusterErrorKind {
+    /// <p>
+    /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+    /// </p>
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    /// <p>The requested operation can't be performed while the cluster is in this state.</p>
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    /// <p>The DB instance isn't in a valid state.</p>
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RebootDBClusterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RebootDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RebootDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            RebootDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            RebootDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RebootDBClusterError {
+    fn code(&self) -> Option<&str> {
+        RebootDBClusterError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RebootDBClusterError {
+    /// Creates a new `RebootDBClusterError`.
+    pub fn new(kind: RebootDBClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RebootDBClusterError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RebootDBClusterErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RebootDBClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RebootDBClusterErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RebootDBClusterErrorKind::DbClusterNotFoundFault`.
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootDBClusterErrorKind::DbClusterNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RebootDBClusterErrorKind::InvalidDbClusterStateFault`.
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootDBClusterErrorKind::InvalidDbClusterStateFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RebootDBClusterErrorKind::InvalidDbInstanceStateFault`.
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootDBClusterErrorKind::InvalidDbInstanceStateFault(_)
+        )
+    }
+}
+impl std::error::Error for RebootDBClusterError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RebootDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            RebootDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            RebootDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
+            RebootDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `RebootDBInstance` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

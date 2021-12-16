@@ -444,11 +444,11 @@ mod test {
     use crate::provider_config::ProviderConfig;
     use crate::test_case::GenericTestResult;
 
-    use aws_hyper::DynConnector;
     use aws_types::credentials::ProvideCredentials;
     use aws_types::os_shim_internal::Env;
     use aws_types::Credentials;
 
+    use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::TestConnection;
     use aws_smithy_http::body::SdkBody;
     use http::header::AUTHORIZATION;

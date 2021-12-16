@@ -21,6 +21,7 @@
 //! build it from `~/.aws/credentials` and `~/.aws/config`.
 //! - `exec` which contains a chain representation of providers to implement passing bootstrapped credentials
 //! through a series of providers.
+
 use std::borrow::Cow;
 use std::collections::HashMap;
 use std::error::Error;
@@ -88,7 +89,7 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 ///
 /// NOTE: Currently only the `Environment` credential source is supported although it is possible to
 /// provide custom sources:
-/// ```rust
+/// ```no_run
 /// use aws_types::credentials::{self, ProvideCredentials, future};
 /// use aws_config::profile::ProfileFileCredentialsProvider;
 /// #[derive(Debug)]
@@ -335,7 +336,7 @@ impl Builder {
     /// Override the configuration for the [`ProfileFileCredentialsProvider`]
     ///
     /// # Examples
-    /// ```rust
+    /// ```no_run
     /// # async fn test() {
     /// use aws_config::profile::ProfileFileCredentialsProvider;
     /// use aws_config::provider_config::ProviderConfig;
@@ -353,7 +354,7 @@ impl Builder {
     ///
     /// # Examples
     ///
-    /// ```rust
+    /// ```no_run
     /// use aws_types::credentials::{self, ProvideCredentials, future};
     /// use aws_config::profile::ProfileFileCredentialsProvider;
     /// #[derive(Debug)]
@@ -427,7 +428,7 @@ impl Builder {
             });
         let factory = exec::named::NamedProviderFactory::new(named_providers);
         let connector = expect_connector(conf.default_connector());
-        let core_client = aws_hyper::Client::new(connector.clone());
+        let core_client = conf.sdk_client();
 
         ProfileFileCredentialsProvider {
             factory,

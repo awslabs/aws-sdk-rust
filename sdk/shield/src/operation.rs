@@ -575,6 +575,44 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSubscription {
     }
 }
 
+/// Operation shape for `DisableApplicationLayerAutomaticResponse`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disable_application_layer_automatic_response`](crate::client::Client::disable_application_layer_automatic_response).
+///
+/// See [`crate::client::fluent_builders::DisableApplicationLayerAutomaticResponse`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisableApplicationLayerAutomaticResponse {
+    _private: (),
+}
+impl DisableApplicationLayerAutomaticResponse {
+    /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput)
+    pub fn builder() -> crate::input::disable_application_layer_automatic_response_input::Builder {
+        crate::input::disable_application_layer_automatic_response_input::Builder::default()
+    }
+    /// Creates a new `DisableApplicationLayerAutomaticResponse` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisableApplicationLayerAutomaticResponse {
+    type Output = std::result::Result<
+        crate::output::DisableApplicationLayerAutomaticResponseOutput,
+        crate::error::DisableApplicationLayerAutomaticResponseError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disable_application_layer_automatic_response_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_disable_application_layer_automatic_response_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `DisableProactiveEngagement`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -707,6 +745,44 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateHealthCheck 
             crate::operation_deser::parse_disassociate_health_check_error(response)
         } else {
             crate::operation_deser::parse_disassociate_health_check_response(response)
+        }
+    }
+}
+
+/// Operation shape for `EnableApplicationLayerAutomaticResponse`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`enable_application_layer_automatic_response`](crate::client::Client::enable_application_layer_automatic_response).
+///
+/// See [`crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct EnableApplicationLayerAutomaticResponse {
+    _private: (),
+}
+impl EnableApplicationLayerAutomaticResponse {
+    /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput)
+    pub fn builder() -> crate::input::enable_application_layer_automatic_response_input::Builder {
+        crate::input::enable_application_layer_automatic_response_input::Builder::default()
+    }
+    /// Creates a new `EnableApplicationLayerAutomaticResponse` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for EnableApplicationLayerAutomaticResponse {
+    type Output = std::result::Result<
+        crate::output::EnableApplicationLayerAutomaticResponseOutput,
+        crate::error::EnableApplicationLayerAutomaticResponseError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_enable_application_layer_automatic_response_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_enable_application_layer_automatic_response_response(
+                response,
+            )
         }
     }
 }
@@ -1007,6 +1083,44 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateApplicationLayerAutomaticResponse`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_application_layer_automatic_response`](crate::client::Client::update_application_layer_automatic_response).
+///
+/// See [`crate::client::fluent_builders::UpdateApplicationLayerAutomaticResponse`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateApplicationLayerAutomaticResponse {
+    _private: (),
+}
+impl UpdateApplicationLayerAutomaticResponse {
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput)
+    pub fn builder() -> crate::input::update_application_layer_automatic_response_input::Builder {
+        crate::input::update_application_layer_automatic_response_input::Builder::default()
+    }
+    /// Creates a new `UpdateApplicationLayerAutomaticResponse` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateApplicationLayerAutomaticResponse {
+    type Output = std::result::Result<
+        crate::output::UpdateApplicationLayerAutomaticResponseOutput,
+        crate::error::UpdateApplicationLayerAutomaticResponseError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_application_layer_automatic_response_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_update_application_layer_automatic_response_response(
+                response,
+            )
         }
     }
 }

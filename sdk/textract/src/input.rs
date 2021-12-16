@@ -392,6 +392,164 @@ impl AnalyzeExpenseInput {
     }
 }
 
+/// See [`AnalyzeIdInput`](crate::input::AnalyzeIdInput)
+pub mod analyze_id_input {
+    /// A builder for [`AnalyzeIdInput`](crate::input::AnalyzeIdInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document_pages: std::option::Option<std::vec::Vec<crate::model::Document>>,
+    }
+    impl Builder {
+        /// Appends an item to `document_pages`.
+        ///
+        /// To override the contents of this collection use [`set_document_pages`](Self::set_document_pages).
+        ///
+        /// <p>The document being passed to AnalyzeID.</p>
+        pub fn document_pages(mut self, input: impl Into<crate::model::Document>) -> Self {
+            let mut v = self.document_pages.unwrap_or_default();
+            v.push(input.into());
+            self.document_pages = Some(v);
+            self
+        }
+        /// <p>The document being passed to AnalyzeID.</p>
+        pub fn set_document_pages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Document>>,
+        ) -> Self {
+            self.document_pages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnalyzeIdInput`](crate::input::AnalyzeIdInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::AnalyzeIdInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::AnalyzeIdInput {
+                document_pages: self.document_pages,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AnalyzeIdInputOperationOutputAlias = crate::operation::AnalyzeID;
+#[doc(hidden)]
+pub type AnalyzeIdInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl AnalyzeIdInput {
+    /// Consumes the builder and constructs an Operation<[`AnalyzeID`](crate::operation::AnalyzeID)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AnalyzeID,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::AnalyzeIdInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AnalyzeIdInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AnalyzeIdInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Textract.AnalyzeID",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_analyze_id(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::AnalyzeID::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "AnalyzeID",
+                    "textract",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AnalyzeIdInput`](crate::input::AnalyzeIdInput)
+    pub fn builder() -> crate::input::analyze_id_input::Builder {
+        crate::input::analyze_id_input::Builder::default()
+    }
+}
+
 /// See [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput)
 pub mod detect_document_text_input {
     /// A builder for [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput)
@@ -2325,6 +2483,27 @@ impl std::fmt::Debug for DetectDocumentTextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDocumentTextInput");
         formatter.field("document", &self.document);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnalyzeIdInput {
+    /// <p>The document being passed to AnalyzeID.</p>
+    pub document_pages: std::option::Option<std::vec::Vec<crate::model::Document>>,
+}
+impl AnalyzeIdInput {
+    /// <p>The document being passed to AnalyzeID.</p>
+    pub fn document_pages(&self) -> std::option::Option<&[crate::model::Document]> {
+        self.document_pages.as_deref()
+    }
+}
+impl std::fmt::Debug for AnalyzeIdInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnalyzeIdInput");
+        formatter.field("document_pages", &self.document_pages);
         formatter.finish()
     }
 }

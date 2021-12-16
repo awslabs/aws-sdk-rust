@@ -1,6 +1,6 @@
 # aws-sdk-apprunner
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 App Runner is an application service that provides a fast, simple, and cost-effective way to go directly from an existing container image or source code to a running service in the Amazon Web Services Cloud in seconds. You don't need to learn new technologies, decide which compute service to use, or understand how to provision and configure Amazon Web Services resources.
@@ -26,8 +26,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-apprunner = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-apprunner = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

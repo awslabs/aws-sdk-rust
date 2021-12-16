@@ -4,7 +4,7 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use kinesis::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_kinesis::{Blob, Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -71,7 +71,7 @@ async fn main() -> Result<(), Error> {
         println!();
     }
 
-    let blob = kinesis::Blob::new(data);
+    let blob = Blob::new(data);
 
     client
         .put_record()

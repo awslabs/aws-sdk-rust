@@ -6520,6 +6520,249 @@ impl DescribeBotLocaleInput {
     }
 }
 
+/// See [`DescribeBotRecommendationInput`](crate::input::DescribeBotRecommendationInput)
+pub mod describe_bot_recommendation_input {
+    /// A builder for [`DescribeBotRecommendationInput`](crate::input::DescribeBotRecommendationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot associated with the bot
+        /// recommendation.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to describe. The string must match one of the supported locales. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to describe. The string must match one of the supported locales. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The identifier of the bot recommendation to describe.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot recommendation to describe.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeBotRecommendationInput`](crate::input::DescribeBotRecommendationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeBotRecommendationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeBotRecommendationInput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_id: self.bot_recommendation_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeBotRecommendationInputOperationOutputAlias =
+    crate::operation::DescribeBotRecommendation;
+#[doc(hidden)]
+pub type DescribeBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeBotRecommendationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeBotRecommendation`](crate::operation::DescribeBotRecommendation)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeBotRecommendation,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeBotRecommendationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_58 = &_input.bot_id;
+            let input_58 =
+                input_58
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = aws_smithy_http::label::fmt_string(input_58, false);
+            if bot_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_59 = &_input.bot_version;
+            let input_59 =
+                input_59
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_version",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_version = aws_smithy_http::label::fmt_string(input_59, false);
+            if bot_version.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_60 = &_input.locale_id;
+            let input_60 =
+                input_60
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = aws_smithy_http::label::fmt_string(input_60, false);
+            if locale_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "locale_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_61 = &_input.bot_recommendation_id;
+            let input_61 =
+                input_61
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_recommendation_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_recommendation_id = aws_smithy_http::label::fmt_string(input_61, false);
+            if bot_recommendation_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_recommendation_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}", botId = bot_id, botVersion = bot_version, localeId = locale_id, botRecommendationId = bot_recommendation_id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeBotRecommendationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeBotRecommendationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeBotRecommendation::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeBotRecommendation",
+            "lexmodelsv2",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeBotRecommendationInput`](crate::input::DescribeBotRecommendationInput)
+    pub fn builder() -> crate::input::describe_bot_recommendation_input::Builder {
+        crate::input::describe_bot_recommendation_input::Builder::default()
+    }
+}
+
 /// See [`DescribeBotVersionInput`](crate::input::DescribeBotVersionInput)
 pub mod describe_bot_version_input {
     /// A builder for [`DescribeBotVersionInput`](crate::input::DescribeBotVersionInput)
@@ -6588,30 +6831,30 @@ impl DescribeBotVersionInput {
             _input: &crate::input::DescribeBotVersionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_58 = &_input.bot_id;
-            let input_58 =
-                input_58
+            let input_62 = &_input.bot_id;
+            let input_62 =
+                input_62
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_58, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_62, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_59 = &_input.bot_version;
-            let input_59 =
-                input_59
+            let input_63 = &_input.bot_version;
+            let input_63 =
+                input_63
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_59, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_63, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
@@ -6759,15 +7002,15 @@ impl DescribeExportInput {
             _input: &crate::input::DescribeExportInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_60 = &_input.export_id;
-            let input_60 =
-                input_60
+            let input_64 = &_input.export_id;
+            let input_64 =
+                input_64
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "export_id",
                         details: "cannot be empty or unset",
                     })?;
-            let export_id = aws_smithy_http::label::fmt_string(input_60, false);
+            let export_id = aws_smithy_http::label::fmt_string(input_64, false);
             if export_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
@@ -6910,15 +7153,15 @@ impl DescribeImportInput {
             _input: &crate::input::DescribeImportInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_61 = &_input.import_id;
-            let input_61 =
-                input_61
+            let input_65 = &_input.import_id;
+            let input_65 =
+                input_65
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "import_id",
                         details: "cannot be empty or unset",
                     })?;
-            let import_id = aws_smithy_http::label::fmt_string(input_61, false);
+            let import_id = aws_smithy_http::label::fmt_string(input_65, false);
             if import_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "import_id",
@@ -7101,60 +7344,60 @@ impl DescribeIntentInput {
             _input: &crate::input::DescribeIntentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_62 = &_input.bot_id;
-            let input_62 =
-                input_62
+            let input_66 = &_input.bot_id;
+            let input_66 =
+                input_66
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_62, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_66, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_63 = &_input.bot_version;
-            let input_63 =
-                input_63
+            let input_67 = &_input.bot_version;
+            let input_67 =
+                input_67
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_63, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_67, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_64 = &_input.locale_id;
-            let input_64 =
-                input_64
+            let input_68 = &_input.locale_id;
+            let input_68 =
+                input_68
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_64, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_68, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_65 = &_input.intent_id;
-            let input_65 =
-                input_65
+            let input_69 = &_input.intent_id;
+            let input_69 =
+                input_69
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = aws_smithy_http::label::fmt_string(input_65, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_69, false);
             if intent_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
@@ -7306,15 +7549,15 @@ impl DescribeResourcePolicyInput {
             _input: &crate::input::DescribeResourcePolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_66 = &_input.resource_arn;
-            let input_66 =
-                input_66
+            let input_70 = &_input.resource_arn;
+            let input_70 =
+                input_70
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_66, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_70, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -7509,75 +7752,75 @@ impl DescribeSlotInput {
             _input: &crate::input::DescribeSlotInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_67 = &_input.bot_id;
-            let input_67 =
-                input_67
+            let input_71 = &_input.bot_id;
+            let input_71 =
+                input_71
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_67, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_71, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_68 = &_input.bot_version;
-            let input_68 =
-                input_68
+            let input_72 = &_input.bot_version;
+            let input_72 =
+                input_72
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_68, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_72, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_69 = &_input.locale_id;
-            let input_69 =
-                input_69
+            let input_73 = &_input.locale_id;
+            let input_73 =
+                input_73
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_69, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_73, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_70 = &_input.intent_id;
-            let input_70 =
-                input_70
+            let input_74 = &_input.intent_id;
+            let input_74 =
+                input_74
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = aws_smithy_http::label::fmt_string(input_70, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_74, false);
             if intent_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_71 = &_input.slot_id;
-            let input_71 =
-                input_71
+            let input_75 = &_input.slot_id;
+            let input_75 =
+                input_75
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_id = aws_smithy_http::label::fmt_string(input_71, false);
+            let slot_id = aws_smithy_http::label::fmt_string(input_75, false);
             if slot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_id",
@@ -7759,60 +8002,60 @@ impl DescribeSlotTypeInput {
             _input: &crate::input::DescribeSlotTypeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_72 = &_input.bot_id;
-            let input_72 =
-                input_72
+            let input_76 = &_input.bot_id;
+            let input_76 =
+                input_76
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_72, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_76, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_73 = &_input.bot_version;
-            let input_73 =
-                input_73
+            let input_77 = &_input.bot_version;
+            let input_77 =
+                input_77
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_73, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_77, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_74 = &_input.locale_id;
-            let input_74 =
-                input_74
+            let input_78 = &_input.locale_id;
+            let input_78 =
+                input_78
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_74, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_78, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_75 = &_input.slot_type_id;
-            let input_75 =
-                input_75
+            let input_79 = &_input.slot_type_id;
+            let input_79 =
+                input_79
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_type_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_type_id = aws_smithy_http::label::fmt_string(input_75, false);
+            let slot_type_id = aws_smithy_http::label::fmt_string(input_79, false);
             if slot_type_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_type_id",
@@ -8110,15 +8353,15 @@ impl ListAggregatedUtterancesInput {
             _input: &crate::input::ListAggregatedUtterancesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_76 = &_input.bot_id;
-            let input_76 =
-                input_76
+            let input_80 = &_input.bot_id;
+            let input_80 =
+                input_80
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_76, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_80, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -8313,15 +8556,15 @@ impl ListBotAliasesInput {
             _input: &crate::input::ListBotAliasesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_77 = &_input.bot_id;
-            let input_77 =
-                input_77
+            let input_81 = &_input.bot_id;
+            let input_81 =
+                input_81
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_77, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_81, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -8568,30 +8811,30 @@ impl ListBotLocalesInput {
             _input: &crate::input::ListBotLocalesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_78 = &_input.bot_id;
-            let input_78 =
-                input_78
+            let input_82 = &_input.bot_id;
+            let input_82 =
+                input_82
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_78, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_82, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_79 = &_input.bot_version;
-            let input_79 =
-                input_79
+            let input_83 = &_input.bot_version;
+            let input_83 =
+                input_83
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_79, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_83, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
@@ -8696,6 +8939,273 @@ impl ListBotLocalesInput {
     /// Creates a new builder-style object to manufacture [`ListBotLocalesInput`](crate::input::ListBotLocalesInput)
     pub fn builder() -> crate::input::list_bot_locales_input::Builder {
         crate::input::list_bot_locales_input::Builder::default()
+    }
+}
+
+/// See [`ListBotRecommendationsInput`](crate::input::ListBotRecommendationsInput)
+pub mod list_bot_recommendations_input {
+    /// A builder for [`ListBotRecommendationsInput`](crate::input::ListBotRecommendationsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot that contains the bot
+        /// recommendation list.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot that contains the bot
+        /// recommendation list.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot that contains the bot recommendation
+        /// list.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot that contains the bot recommendation
+        /// list.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// list.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// list.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>If the response from the ListBotRecommendation operation contains
+        /// more results than specified in the maxResults parameter, a token is
+        /// returned in the response. Use that token in the nextToken parameter to
+        /// return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response from the ListBotRecommendation operation contains
+        /// more results than specified in the maxResults parameter, a token is
+        /// returned in the response. Use that token in the nextToken parameter to
+        /// return the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListBotRecommendationsInput`](crate::input::ListBotRecommendationsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListBotRecommendationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListBotRecommendationsInput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListBotRecommendationsInputOperationOutputAlias = crate::operation::ListBotRecommendations;
+#[doc(hidden)]
+pub type ListBotRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListBotRecommendationsInput {
+    /// Consumes the builder and constructs an Operation<[`ListBotRecommendations`](crate::operation::ListBotRecommendations)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListBotRecommendations,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListBotRecommendationsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_84 = &_input.bot_id;
+            let input_84 =
+                input_84
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = aws_smithy_http::label::fmt_string(input_84, false);
+            if bot_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_85 = &_input.bot_version;
+            let input_85 =
+                input_85
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_version",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_version = aws_smithy_http::label::fmt_string(input_85, false);
+            if bot_version.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_86 = &_input.locale_id;
+            let input_86 =
+                input_86
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = aws_smithy_http::label::fmt_string(input_86, false);
+            if locale_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "locale_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations",
+                botId = bot_id,
+                botVersion = bot_version,
+                localeId = locale_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListBotRecommendationsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListBotRecommendationsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_bot_recommendations(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListBotRecommendations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListBotRecommendations",
+            "lexmodelsv2",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListBotRecommendationsInput`](crate::input::ListBotRecommendationsInput)
+    pub fn builder() -> crate::input::list_bot_recommendations_input::Builder {
+        crate::input::list_bot_recommendations_input::Builder::default()
     }
 }
 
@@ -9017,15 +9527,15 @@ impl ListBotVersionsInput {
             _input: &crate::input::ListBotVersionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_80 = &_input.bot_id;
-            let input_80 =
-                input_80
+            let input_87 = &_input.bot_id;
+            let input_87 =
+                input_87
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_80, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_87, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -9241,15 +9751,15 @@ impl ListBuiltInIntentsInput {
             _input: &crate::input::ListBuiltInIntentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_81 = &_input.locale_id;
-            let input_81 =
-                input_81
+            let input_88 = &_input.locale_id;
+            let input_88 =
+                input_88
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_81, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_88, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
@@ -9471,15 +9981,15 @@ impl ListBuiltInSlotTypesInput {
             _input: &crate::input::ListBuiltInSlotTypesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_82 = &_input.locale_id;
-            let input_82 =
-                input_82
+            let input_89 = &_input.locale_id;
+            let input_89 =
+                input_89
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_82, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_89, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
@@ -10232,45 +10742,45 @@ impl ListIntentsInput {
             _input: &crate::input::ListIntentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_83 = &_input.bot_id;
-            let input_83 =
-                input_83
+            let input_90 = &_input.bot_id;
+            let input_90 =
+                input_90
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_83, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_90, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_84 = &_input.bot_version;
-            let input_84 =
-                input_84
+            let input_91 = &_input.bot_version;
+            let input_91 =
+                input_91
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_84, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_91, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_85 = &_input.locale_id;
-            let input_85 =
-                input_85
+            let input_92 = &_input.locale_id;
+            let input_92 =
+                input_92
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_85, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_92, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
@@ -10375,6 +10885,296 @@ impl ListIntentsInput {
     /// Creates a new builder-style object to manufacture [`ListIntentsInput`](crate::input::ListIntentsInput)
     pub fn builder() -> crate::input::list_intents_input::Builder {
         crate::input::list_intents_input::Builder::default()
+    }
+}
+
+/// See [`ListRecommendedIntentsInput`](crate::input::ListRecommendedIntentsInput)
+pub mod list_recommended_intents_input {
+    /// A builder for [`ListRecommendedIntentsInput`](crate::input::ListRecommendedIntentsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot associated with the recommended
+        /// intents.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot associated with the recommended
+        /// intents.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot that contains the recommended intents.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot that contains the recommended intents.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the recommended
+        /// intents.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the recommended
+        /// intents.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The identifier of the bot recommendation that contains the
+        /// recommended intents.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot recommendation that contains the
+        /// recommended intents.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// <p>If the response from the ListRecommendedIntents operation contains
+        /// more results than specified in the maxResults parameter, a token is
+        /// returned in the response. Use that token in the nextToken parameter to
+        /// return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response from the ListRecommendedIntents operation contains
+        /// more results than specified in the maxResults parameter, a token is
+        /// returned in the response. Use that token in the nextToken parameter to
+        /// return the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListRecommendedIntentsInput`](crate::input::ListRecommendedIntentsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListRecommendedIntentsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListRecommendedIntentsInput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_id: self.bot_recommendation_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListRecommendedIntentsInputOperationOutputAlias = crate::operation::ListRecommendedIntents;
+#[doc(hidden)]
+pub type ListRecommendedIntentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListRecommendedIntentsInput {
+    /// Consumes the builder and constructs an Operation<[`ListRecommendedIntents`](crate::operation::ListRecommendedIntents)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListRecommendedIntents,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListRecommendedIntentsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_93 = &_input.bot_id;
+            let input_93 =
+                input_93
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = aws_smithy_http::label::fmt_string(input_93, false);
+            if bot_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_94 = &_input.bot_version;
+            let input_94 =
+                input_94
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_version",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_version = aws_smithy_http::label::fmt_string(input_94, false);
+            if bot_version.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_95 = &_input.locale_id;
+            let input_95 =
+                input_95
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = aws_smithy_http::label::fmt_string(input_95, false);
+            if locale_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "locale_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_96 = &_input.bot_recommendation_id;
+            let input_96 =
+                input_96
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_recommendation_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_recommendation_id = aws_smithy_http::label::fmt_string(input_96, false);
+            if bot_recommendation_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_recommendation_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/intents", botId = bot_id, botVersion = bot_version, localeId = locale_id, botRecommendationId = bot_recommendation_id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListRecommendedIntentsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListRecommendedIntentsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_recommended_intents(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRecommendedIntents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRecommendedIntents",
+            "lexmodelsv2",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListRecommendedIntentsInput`](crate::input::ListRecommendedIntentsInput)
+    pub fn builder() -> crate::input::list_recommended_intents_input::Builder {
+        crate::input::list_recommended_intents_input::Builder::default()
     }
 }
 
@@ -10549,60 +11349,60 @@ impl ListSlotsInput {
             _input: &crate::input::ListSlotsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_86 = &_input.bot_id;
-            let input_86 =
-                input_86
+            let input_97 = &_input.bot_id;
+            let input_97 =
+                input_97
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_86, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_97, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_87 = &_input.bot_version;
-            let input_87 =
-                input_87
+            let input_98 = &_input.bot_version;
+            let input_98 =
+                input_98
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_87, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_98, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_88 = &_input.locale_id;
-            let input_88 =
-                input_88
+            let input_99 = &_input.locale_id;
+            let input_99 =
+                input_99
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_88, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_99, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_89 = &_input.intent_id;
-            let input_89 =
-                input_89
+            let input_100 = &_input.intent_id;
+            let input_100 =
+                input_100
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = aws_smithy_http::label::fmt_string(input_89, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_100, false);
             if intent_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
@@ -10867,45 +11667,45 @@ impl ListSlotTypesInput {
             _input: &crate::input::ListSlotTypesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_90 = &_input.bot_id;
-            let input_90 =
-                input_90
+            let input_101 = &_input.bot_id;
+            let input_101 =
+                input_101
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_90, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_101, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_91 = &_input.bot_version;
-            let input_91 =
-                input_91
+            let input_102 = &_input.bot_version;
+            let input_102 =
+                input_102
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_91, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_102, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_92 = &_input.locale_id;
-            let input_92 =
-                input_92
+            let input_103 = &_input.locale_id;
+            let input_103 =
+                input_103
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_92, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_103, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
@@ -11070,15 +11870,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_93 = &_input.resource_arn;
-            let input_93 =
-                input_93
+            let input_104 = &_input.resource_arn;
+            let input_104 =
+                input_104
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_93, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_104, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -11164,6 +11964,619 @@ impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
+    }
+}
+
+/// See [`SearchAssociatedTranscriptsInput`](crate::input::SearchAssociatedTranscriptsInput)
+pub mod search_associated_transcripts_input {
+    /// A builder for [`SearchAssociatedTranscriptsInput`](crate::input::SearchAssociatedTranscriptsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) search_order: std::option::Option<crate::model::SearchOrder>,
+        pub(crate) filters:
+            std::option::Option<std::vec::Vec<crate::model::AssociatedTranscriptFilter>>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_index: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot associated with the transcripts
+        /// that you are searching.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot associated with the transcripts
+        /// that you are searching.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot containing the transcripts that you are
+        /// searching.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot containing the transcripts that you are
+        /// searching.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the transcripts to
+        /// search. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the transcripts to
+        /// search. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation associated with the
+        /// transcripts to search.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation associated with the
+        /// transcripts to search.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// <p>How SearchResults are ordered. Valid values are Ascending or
+        /// Descending. The default is Descending.</p>
+        pub fn search_order(mut self, input: crate::model::SearchOrder) -> Self {
+            self.search_order = Some(input);
+            self
+        }
+        /// <p>How SearchResults are ordered. Valid values are Ascending or
+        /// Descending. The default is Descending.</p>
+        pub fn set_search_order(
+            mut self,
+            input: std::option::Option<crate::model::SearchOrder>,
+        ) -> Self {
+            self.search_order = input;
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>A list of filter objects.</p>
+        pub fn filters(
+            mut self,
+            input: impl Into<crate::model::AssociatedTranscriptFilter>,
+        ) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input.into());
+            self.filters = Some(v);
+            self
+        }
+        /// <p>A list of filter objects.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscriptFilter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of bot recommendations to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>If the response from the SearchAssociatedTranscriptsRequest
+        /// operation contains more results than specified in the maxResults
+        /// parameter, an index is returned in the response. Use that index in the
+        /// nextIndex parameter to return the next page of results.</p>
+        pub fn next_index(mut self, input: i32) -> Self {
+            self.next_index = Some(input);
+            self
+        }
+        /// <p>If the response from the SearchAssociatedTranscriptsRequest
+        /// operation contains more results than specified in the maxResults
+        /// parameter, an index is returned in the response. Use that index in the
+        /// nextIndex parameter to return the next page of results.</p>
+        pub fn set_next_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.next_index = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchAssociatedTranscriptsInput`](crate::input::SearchAssociatedTranscriptsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::SearchAssociatedTranscriptsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::SearchAssociatedTranscriptsInput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_id: self.bot_recommendation_id,
+                search_order: self.search_order,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_index: self.next_index,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SearchAssociatedTranscriptsInputOperationOutputAlias =
+    crate::operation::SearchAssociatedTranscripts;
+#[doc(hidden)]
+pub type SearchAssociatedTranscriptsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl SearchAssociatedTranscriptsInput {
+    /// Consumes the builder and constructs an Operation<[`SearchAssociatedTranscripts`](crate::operation::SearchAssociatedTranscripts)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::SearchAssociatedTranscripts,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::SearchAssociatedTranscriptsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_105 = &_input.bot_id;
+            let input_105 =
+                input_105
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = aws_smithy_http::label::fmt_string(input_105, false);
+            if bot_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_106 = &_input.bot_version;
+            let input_106 =
+                input_106
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_version",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_version = aws_smithy_http::label::fmt_string(input_106, false);
+            if bot_version.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_107 = &_input.locale_id;
+            let input_107 =
+                input_107
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = aws_smithy_http::label::fmt_string(input_107, false);
+            if locale_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "locale_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_108 = &_input.bot_recommendation_id;
+            let input_108 =
+                input_108
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_recommendation_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_recommendation_id = aws_smithy_http::label::fmt_string(input_108, false);
+            if bot_recommendation_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_recommendation_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/associatedtranscripts", botId = bot_id, botVersion = bot_version, localeId = locale_id, botRecommendationId = bot_recommendation_id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SearchAssociatedTranscriptsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SearchAssociatedTranscriptsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_associated_transcripts(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchAssociatedTranscripts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchAssociatedTranscripts",
+            "lexmodelsv2",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`SearchAssociatedTranscriptsInput`](crate::input::SearchAssociatedTranscriptsInput)
+    pub fn builder() -> crate::input::search_associated_transcripts_input::Builder {
+        crate::input::search_associated_transcripts_input::Builder::default()
+    }
+}
+
+/// See [`StartBotRecommendationInput`](crate::input::StartBotRecommendationInput)
+pub mod start_bot_recommendation_input {
+    /// A builder for [`StartBotRecommendationInput`](crate::input::StartBotRecommendationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) transcript_source_setting:
+            std::option::Option<crate::model::TranscriptSourceSetting>,
+        pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot containing the bot
+        /// recommendation.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot containing the bot
+        /// recommendation.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to start. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to start. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn transcript_source_setting(
+            mut self,
+            input: crate::model::TranscriptSourceSetting,
+        ) -> Self {
+            self.transcript_source_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the Amazon S3 bucket containing the transcript,
+        /// as well as the associated metadata.</p>
+        pub fn set_transcript_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptSourceSetting>,
+        ) -> Self {
+            self.transcript_source_setting = input;
+            self
+        }
+        /// <p>The object representing the passwords that will be used to encrypt
+        /// the data related to the bot recommendation results, as well as the KMS
+        /// key ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
+            self.encryption_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the passwords that will be used to encrypt
+        /// the data related to the bot recommendation results, as well as the KMS
+        /// key ARN used to encrypt the associated metadata.</p>
+        pub fn set_encryption_setting(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionSetting>,
+        ) -> Self {
+            self.encryption_setting = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartBotRecommendationInput`](crate::input::StartBotRecommendationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartBotRecommendationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartBotRecommendationInput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                transcript_source_setting: self.transcript_source_setting,
+                encryption_setting: self.encryption_setting,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartBotRecommendationInputOperationOutputAlias = crate::operation::StartBotRecommendation;
+#[doc(hidden)]
+pub type StartBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartBotRecommendationInput {
+    /// Consumes the builder and constructs an Operation<[`StartBotRecommendation`](crate::operation::StartBotRecommendation)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartBotRecommendation,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartBotRecommendationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_109 = &_input.bot_id;
+            let input_109 =
+                input_109
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = aws_smithy_http::label::fmt_string(input_109, false);
+            if bot_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_110 = &_input.bot_version;
+            let input_110 =
+                input_110
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_version",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_version = aws_smithy_http::label::fmt_string(input_110, false);
+            if bot_version.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_111 = &_input.locale_id;
+            let input_111 =
+                input_111
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = aws_smithy_http::label::fmt_string(input_111, false);
+            if locale_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "locale_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations",
+                botId = bot_id,
+                botVersion = bot_version,
+                localeId = locale_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartBotRecommendationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartBotRecommendationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_bot_recommendation(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartBotRecommendation::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartBotRecommendation",
+            "lexmodelsv2",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartBotRecommendationInput`](crate::input::StartBotRecommendationInput)
+    pub fn builder() -> crate::input::start_bot_recommendation_input::Builder {
+        crate::input::start_bot_recommendation_input::Builder::default()
     }
 }
 
@@ -11463,15 +12876,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_94 = &_input.resource_arn;
-            let input_94 =
-                input_94
+            let input_112 = &_input.resource_arn;
+            let input_112 =
+                input_112
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_94, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_112, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -11652,15 +13065,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_95 = &_input.resource_arn;
-            let input_95 =
-                input_95
+            let input_113 = &_input.resource_arn;
+            let input_113 =
+                input_113
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_95, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_113, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -11676,9 +13089,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_96) = &_input.tag_keys {
-                for inner_97 in inner_96 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_97));
+            if let Some(inner_114) = &_input.tag_keys {
+                for inner_115 in inner_114 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_115));
                 }
             }
             Ok(())
@@ -11897,15 +13310,15 @@ impl UpdateBotInput {
             _input: &crate::input::UpdateBotInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_98 = &_input.bot_id;
-            let input_98 =
-                input_98
+            let input_116 = &_input.bot_id;
+            let input_116 =
+                input_116
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_98, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_116, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -12185,30 +13598,30 @@ impl UpdateBotAliasInput {
             _input: &crate::input::UpdateBotAliasInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_99 = &_input.bot_id;
-            let input_99 =
-                input_99
+            let input_117 = &_input.bot_id;
+            let input_117 =
+                input_117
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_99, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_117, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_100 = &_input.bot_alias_id;
-            let input_100 =
-                input_100
+            let input_118 = &_input.bot_alias_id;
+            let input_118 =
+                input_118
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias_id = aws_smithy_http::label::fmt_string(input_100, false);
+            let bot_alias_id = aws_smithy_http::label::fmt_string(input_118, false);
             if bot_alias_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
@@ -12448,45 +13861,45 @@ impl UpdateBotLocaleInput {
             _input: &crate::input::UpdateBotLocaleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_101 = &_input.bot_id;
-            let input_101 =
-                input_101
+            let input_119 = &_input.bot_id;
+            let input_119 =
+                input_119
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_101, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_119, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_102 = &_input.bot_version;
-            let input_102 =
-                input_102
+            let input_120 = &_input.bot_version;
+            let input_120 =
+                input_120
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_102, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_120, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_103 = &_input.locale_id;
-            let input_103 =
-                input_103
+            let input_121 = &_input.locale_id;
+            let input_121 =
+                input_121
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_103, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_121, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
@@ -12595,6 +14008,288 @@ impl UpdateBotLocaleInput {
     }
 }
 
+/// See [`UpdateBotRecommendationInput`](crate::input::UpdateBotRecommendationInput)
+pub mod update_bot_recommendation_input {
+    /// A builder for [`UpdateBotRecommendationInput`](crate::input::UpdateBotRecommendationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
+        pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+    }
+    impl Builder {
+        /// <p>The unique identifier of the bot containing the bot recommendation
+        /// to be updated.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot containing the bot recommendation
+        /// to be updated.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation to be
+        /// updated.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot containing the bot recommendation to be
+        /// updated.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to update. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the language and locale of the bot recommendation
+        /// to update. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+        /// </p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be
+        /// updated.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_recommendation_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the bot recommendation to be
+        /// updated.</p>
+        pub fn set_bot_recommendation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bot_recommendation_id = input;
+            self
+        }
+        /// <p>The object representing the passwords that will be used to encrypt
+        /// the data related to the bot recommendation results, as well as the KMS
+        /// key ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
+            self.encryption_setting = Some(input);
+            self
+        }
+        /// <p>The object representing the passwords that will be used to encrypt
+        /// the data related to the bot recommendation results, as well as the KMS
+        /// key ARN used to encrypt the associated metadata.</p>
+        pub fn set_encryption_setting(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionSetting>,
+        ) -> Self {
+            self.encryption_setting = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateBotRecommendationInput`](crate::input::UpdateBotRecommendationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateBotRecommendationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateBotRecommendationInput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                bot_recommendation_id: self.bot_recommendation_id,
+                encryption_setting: self.encryption_setting,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateBotRecommendationInputOperationOutputAlias =
+    crate::operation::UpdateBotRecommendation;
+#[doc(hidden)]
+pub type UpdateBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateBotRecommendationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateBotRecommendation`](crate::operation::UpdateBotRecommendation)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateBotRecommendation,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateBotRecommendationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_122 = &_input.bot_id;
+            let input_122 =
+                input_122
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = aws_smithy_http::label::fmt_string(input_122, false);
+            if bot_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_123 = &_input.bot_version;
+            let input_123 =
+                input_123
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_version",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_version = aws_smithy_http::label::fmt_string(input_123, false);
+            if bot_version.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_124 = &_input.locale_id;
+            let input_124 =
+                input_124
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = aws_smithy_http::label::fmt_string(input_124, false);
+            if locale_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "locale_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_125 = &_input.bot_recommendation_id;
+            let input_125 =
+                input_125
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bot_recommendation_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_recommendation_id = aws_smithy_http::label::fmt_string(input_125, false);
+            if bot_recommendation_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "bot_recommendation_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}", botId = bot_id, botVersion = bot_version, localeId = locale_id, botRecommendationId = bot_recommendation_id).expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateBotRecommendationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateBotRecommendationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_bot_recommendation(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateBotRecommendation::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateBotRecommendation",
+            "lexmodelsv2",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateBotRecommendationInput`](crate::input::UpdateBotRecommendationInput)
+    pub fn builder() -> crate::input::update_bot_recommendation_input::Builder {
+        crate::input::update_bot_recommendation_input::Builder::default()
+    }
+}
+
 /// See [`UpdateExportInput`](crate::input::UpdateExportInput)
 pub mod update_export_input {
     /// A builder for [`UpdateExportInput`](crate::input::UpdateExportInput)
@@ -12664,15 +14359,15 @@ impl UpdateExportInput {
             _input: &crate::input::UpdateExportInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_104 = &_input.export_id;
-            let input_104 =
-                input_104
+            let input_126 = &_input.export_id;
+            let input_126 =
+                input_126
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "export_id",
                         details: "cannot be empty or unset",
                     })?;
-            let export_id = aws_smithy_http::label::fmt_string(input_104, false);
+            let export_id = aws_smithy_http::label::fmt_string(input_126, false);
             if export_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
@@ -13096,60 +14791,60 @@ impl UpdateIntentInput {
             _input: &crate::input::UpdateIntentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_105 = &_input.bot_id;
-            let input_105 =
-                input_105
+            let input_127 = &_input.bot_id;
+            let input_127 =
+                input_127
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_105, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_127, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_106 = &_input.bot_version;
-            let input_106 =
-                input_106
+            let input_128 = &_input.bot_version;
+            let input_128 =
+                input_128
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_106, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_128, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_107 = &_input.locale_id;
-            let input_107 =
-                input_107
+            let input_129 = &_input.locale_id;
+            let input_129 =
+                input_129
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_107, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_129, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_108 = &_input.intent_id;
-            let input_108 =
-                input_108
+            let input_130 = &_input.intent_id;
+            let input_130 =
+                input_130
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = aws_smithy_http::label::fmt_string(input_108, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_130, false);
             if intent_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
@@ -13361,15 +15056,15 @@ impl UpdateResourcePolicyInput {
             _input: &crate::input::UpdateResourcePolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_109 = &_input.resource_arn;
-            let input_109 =
-                input_109
+            let input_131 = &_input.resource_arn;
+            let input_131 =
+                input_131
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_109, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_131, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -13385,10 +15080,10 @@ impl UpdateResourcePolicyInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_110) = &_input.expected_revision_id {
+            if let Some(inner_132) = &_input.expected_revision_id {
                 query.push_kv(
                     "expectedRevisionId",
-                    &aws_smithy_http::query::fmt_string(&inner_110),
+                    &aws_smithy_http::query::fmt_string(&inner_132),
                 );
             }
             Ok(())
@@ -13701,75 +15396,75 @@ impl UpdateSlotInput {
             _input: &crate::input::UpdateSlotInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_111 = &_input.bot_id;
-            let input_111 =
-                input_111
+            let input_133 = &_input.bot_id;
+            let input_133 =
+                input_133
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_111, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_133, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_112 = &_input.bot_version;
-            let input_112 =
-                input_112
+            let input_134 = &_input.bot_version;
+            let input_134 =
+                input_134
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_112, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_134, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_113 = &_input.locale_id;
-            let input_113 =
-                input_113
+            let input_135 = &_input.locale_id;
+            let input_135 =
+                input_135
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_113, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_135, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_114 = &_input.intent_id;
-            let input_114 =
-                input_114
+            let input_136 = &_input.intent_id;
+            let input_136 =
+                input_136
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = aws_smithy_http::label::fmt_string(input_114, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_136, false);
             if intent_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_115 = &_input.slot_id;
-            let input_115 =
-                input_115
+            let input_137 = &_input.slot_id;
+            let input_137 =
+                input_137
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_id = aws_smithy_http::label::fmt_string(input_115, false);
+            let slot_id = aws_smithy_http::label::fmt_string(input_137, false);
             if slot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_id",
@@ -14055,60 +15750,60 @@ impl UpdateSlotTypeInput {
             _input: &crate::input::UpdateSlotTypeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_116 = &_input.bot_id;
-            let input_116 =
-                input_116
+            let input_138 = &_input.bot_id;
+            let input_138 =
+                input_138
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_116, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_138, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_117 = &_input.bot_version;
-            let input_117 =
-                input_117
+            let input_139 = &_input.bot_version;
+            let input_139 =
+                input_139
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = aws_smithy_http::label::fmt_string(input_117, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_139, false);
             if bot_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_118 = &_input.locale_id;
-            let input_118 =
-                input_118
+            let input_140 = &_input.locale_id;
+            let input_140 =
+                input_140
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_118, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_140, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_119 = &_input.slot_type_id;
-            let input_119 =
-                input_119
+            let input_141 = &_input.slot_type_id;
+            let input_141 =
+                input_141
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_type_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_type_id = aws_smithy_http::label::fmt_string(input_119, false);
+            let slot_type_id = aws_smithy_http::label::fmt_string(input_141, false);
             if slot_type_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_type_id",
@@ -14666,6 +16361,71 @@ impl std::fmt::Debug for UpdateExportInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateBotRecommendationInput {
+    /// <p>The unique identifier of the bot containing the bot recommendation
+    /// to be updated.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot containing the bot recommendation to be
+    /// updated.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to update. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the bot recommendation to be
+    /// updated.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>The object representing the passwords that will be used to encrypt
+    /// the data related to the bot recommendation results, as well as the KMS
+    /// key ARN used to encrypt the associated metadata.</p>
+    pub encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+}
+impl UpdateBotRecommendationInput {
+    /// <p>The unique identifier of the bot containing the bot recommendation
+    /// to be updated.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot containing the bot recommendation to be
+    /// updated.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to update. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The unique identifier of the bot recommendation to be
+    /// updated.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>The object representing the passwords that will be used to encrypt
+    /// the data related to the bot recommendation results, as well as the KMS
+    /// key ARN used to encrypt the associated metadata.</p>
+    pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
+        self.encryption_setting.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateBotRecommendationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateBotRecommendationInput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("encryption_setting", &self.encryption_setting);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
     pub bot_id: std::option::Option<std::string::String>,
@@ -15029,6 +16789,165 @@ impl std::fmt::Debug for StartImportInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartBotRecommendationInput {
+    /// <p>The unique identifier of the bot containing the bot
+    /// recommendation.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot containing the bot recommendation.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to start. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The object representing the Amazon S3 bucket containing the transcript,
+    /// as well as the associated metadata.</p>
+    pub transcript_source_setting: std::option::Option<crate::model::TranscriptSourceSetting>,
+    /// <p>The object representing the passwords that will be used to encrypt
+    /// the data related to the bot recommendation results, as well as the KMS
+    /// key ARN used to encrypt the associated metadata.</p>
+    pub encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
+}
+impl StartBotRecommendationInput {
+    /// <p>The unique identifier of the bot containing the bot
+    /// recommendation.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot containing the bot recommendation.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to start. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The object representing the Amazon S3 bucket containing the transcript,
+    /// as well as the associated metadata.</p>
+    pub fn transcript_source_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::TranscriptSourceSetting> {
+        self.transcript_source_setting.as_ref()
+    }
+    /// <p>The object representing the passwords that will be used to encrypt
+    /// the data related to the bot recommendation results, as well as the KMS
+    /// key ARN used to encrypt the associated metadata.</p>
+    pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
+        self.encryption_setting.as_ref()
+    }
+}
+impl std::fmt::Debug for StartBotRecommendationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartBotRecommendationInput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("transcript_source_setting", &self.transcript_source_setting);
+        formatter.field("encryption_setting", &self.encryption_setting);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchAssociatedTranscriptsInput {
+    /// <p>The unique identifier of the bot associated with the transcripts
+    /// that you are searching.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot containing the transcripts that you are
+    /// searching.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the transcripts to
+    /// search. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the bot recommendation associated with the
+    /// transcripts to search.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>How SearchResults are ordered. Valid values are Ascending or
+    /// Descending. The default is Descending.</p>
+    pub search_order: std::option::Option<crate::model::SearchOrder>,
+    /// <p>A list of filter objects.</p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscriptFilter>>,
+    /// <p>The maximum number of bot recommendations to return in each page of
+    /// results. If there are fewer results than the max page size, only the
+    /// actual number of results are returned.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>If the response from the SearchAssociatedTranscriptsRequest
+    /// operation contains more results than specified in the maxResults
+    /// parameter, an index is returned in the response. Use that index in the
+    /// nextIndex parameter to return the next page of results.</p>
+    pub next_index: std::option::Option<i32>,
+}
+impl SearchAssociatedTranscriptsInput {
+    /// <p>The unique identifier of the bot associated with the transcripts
+    /// that you are searching.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot containing the transcripts that you are
+    /// searching.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the transcripts to
+    /// search. The string must match one of the supported locales. For more
+    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
+    /// </p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The unique identifier of the bot recommendation associated with the
+    /// transcripts to search.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>How SearchResults are ordered. Valid values are Ascending or
+    /// Descending. The default is Descending.</p>
+    pub fn search_order(&self) -> std::option::Option<&crate::model::SearchOrder> {
+        self.search_order.as_ref()
+    }
+    /// <p>A list of filter objects.</p>
+    pub fn filters(&self) -> std::option::Option<&[crate::model::AssociatedTranscriptFilter]> {
+        self.filters.as_deref()
+    }
+    /// <p>The maximum number of bot recommendations to return in each page of
+    /// results. If there are fewer results than the max page size, only the
+    /// actual number of results are returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the response from the SearchAssociatedTranscriptsRequest
+    /// operation contains more results than specified in the maxResults
+    /// parameter, an index is returned in the response. Use that index in the
+    /// nextIndex parameter to return the next page of results.</p>
+    pub fn next_index(&self) -> std::option::Option<i32> {
+        self.next_index
+    }
+}
+impl std::fmt::Debug for SearchAssociatedTranscriptsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchAssociatedTranscriptsInput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("search_order", &self.search_order);
+        formatter.field("filters", &self.filters);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_index", &self.next_index);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
     /// for.</p>
@@ -15232,6 +17151,78 @@ impl std::fmt::Debug for ListSlotsInput {
         formatter.field("filters", &self.filters);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListRecommendedIntentsInput {
+    /// <p>The unique identifier of the bot associated with the recommended
+    /// intents.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot that contains the recommended intents.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the recommended
+    /// intents.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the bot recommendation that contains the
+    /// recommended intents.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+    /// <p>If the response from the ListRecommendedIntents operation contains
+    /// more results than specified in the maxResults parameter, a token is
+    /// returned in the response. Use that token in the nextToken parameter to
+    /// return the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of bot recommendations to return in each page of
+    /// results. If there are fewer results than the max page size, only the
+    /// actual number of results are returned.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListRecommendedIntentsInput {
+    /// <p>The unique identifier of the bot associated with the recommended
+    /// intents.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the recommended intents.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the recommended
+    /// intents.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The identifier of the bot recommendation that contains the
+    /// recommended intents.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+    /// <p>If the response from the ListRecommendedIntents operation contains
+    /// more results than specified in the maxResults parameter, a token is
+    /// returned in the response. Use that token in the nextToken parameter to
+    /// return the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of bot recommendations to return in each page of
+    /// results. If there are fewer results than the max page size, only the
+    /// actual number of results are returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListRecommendedIntentsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRecommendedIntentsInput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -15726,6 +17717,71 @@ impl std::fmt::Debug for ListBotsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListBotRecommendationsInput {
+    /// <p>The unique identifier of the bot that contains the bot
+    /// recommendation list.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot that contains the bot recommendation
+    /// list.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// list.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of bot recommendations to return in each page of
+    /// results. If there are fewer results than the max page size, only the
+    /// actual number of results are returned.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>If the response from the ListBotRecommendation operation contains
+    /// more results than specified in the maxResults parameter, a token is
+    /// returned in the response. Use that token in the nextToken parameter to
+    /// return the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBotRecommendationsInput {
+    /// <p>The unique identifier of the bot that contains the bot
+    /// recommendation list.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the bot recommendation
+    /// list.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// list.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The maximum number of bot recommendations to return in each page of
+    /// results. If there are fewer results than the max page size, only the
+    /// actual number of results are returned.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>If the response from the ListBotRecommendation operation contains
+    /// more results than specified in the maxResults parameter, a token is
+    /// returned in the response. Use that token in the nextToken parameter to
+    /// return the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListBotRecommendationsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListBotRecommendationsInput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotLocalesInput {
     /// <p>The identifier of the bot to list locales for.</p>
     pub bot_id: std::option::Option<std::string::String>,
@@ -16195,6 +18251,56 @@ impl std::fmt::Debug for DescribeBotVersionInput {
         let mut formatter = f.debug_struct("DescribeBotVersionInput");
         formatter.field("bot_id", &self.bot_id);
         formatter.field("bot_version", &self.bot_version);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeBotRecommendationInput {
+    /// <p>The unique identifier of the bot associated with the bot
+    /// recommendation.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot associated with the bot
+    /// recommendation.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to describe. The string must match one of the supported locales. For
+    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the bot recommendation to describe.</p>
+    pub bot_recommendation_id: std::option::Option<std::string::String>,
+}
+impl DescribeBotRecommendationInput {
+    /// <p>The unique identifier of the bot associated with the bot
+    /// recommendation.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot associated with the bot
+    /// recommendation.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation
+    /// to describe. The string must match one of the supported locales. For
+    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The identifier of the bot recommendation to describe.</p>
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+        self.bot_recommendation_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeBotRecommendationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeBotRecommendationInput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
         formatter.finish()
     }
 }

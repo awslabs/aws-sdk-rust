@@ -42,6 +42,34 @@ impl std::fmt::Display for Error {
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteRecommendationPreferencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteRecommendationPreferencesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteRecommendationPreferencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::DeleteRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::DescribeRecommendationExportJobsError, R>>
     for Error
 where
@@ -298,6 +326,38 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetEffectiveRecommendationPreferencesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetEffectiveRecommendationPreferencesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetEffectiveRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -391,6 +451,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRecommendationPreferencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetRecommendationPreferencesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetRecommendationPreferencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError, R>>
     for Error
 where
@@ -409,6 +493,30 @@ where
                 crate::error::GetRecommendationSummariesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::GetRecommendationSummariesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::GetRecommendationSummariesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRecommendationPreferencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::PutRecommendationPreferencesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutRecommendationPreferencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::PutRecommendationPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

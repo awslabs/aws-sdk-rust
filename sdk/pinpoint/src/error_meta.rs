@@ -3180,6 +3180,40 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendOTPMessageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendOTPMessageError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SendOTPMessageErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::SendOTPMessageErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::SendOTPMessageErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::SendOTPMessageErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::SendOTPMessageErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::SendOTPMessageErrorKind::PayloadTooLargeException(inner) => {
+                    Error::PayloadTooLargeException(inner)
+                }
+                crate::error::SendOTPMessageErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::SendOTPMessageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendUsersMessagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4099,6 +4133,44 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateVoiceTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::VerifyOTPMessageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::VerifyOTPMessageError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::VerifyOTPMessageErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::VerifyOTPMessageErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::VerifyOTPMessageErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::VerifyOTPMessageErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::VerifyOTPMessageErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::VerifyOTPMessageErrorKind::PayloadTooLargeException(inner) => {
+                    Error::PayloadTooLargeException(inner)
+                }
+                crate::error::VerifyOTPMessageErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::VerifyOTPMessageErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

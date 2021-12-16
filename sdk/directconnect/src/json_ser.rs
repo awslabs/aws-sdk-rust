@@ -1140,6 +1140,12 @@ pub fn serialize_structure_crate_input_update_virtual_interface_attributes_input
             aws_smithy_types::Number::NegInt((*var_211).into()),
         );
     }
+    if let Some(var_212) = &input.enable_site_link {
+        object.key("enableSiteLink").boolean(*var_212);
+    }
+    if let Some(var_213) = &input.virtual_interface_name {
+        object.key("virtualInterfaceName").string(var_213);
+    }
     Ok(())
 }
 
@@ -1147,8 +1153,8 @@ pub fn serialize_structure_crate_model_route_filter_prefix(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RouteFilterPrefix,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_212) = &input.cidr {
-        object.key("cidr").string(var_212);
+    if let Some(var_214) = &input.cidr {
+        object.key("cidr").string(var_214);
     }
     Ok(())
 }
@@ -1157,11 +1163,11 @@ pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_213) = &input.key {
-        object.key("key").string(var_213);
+    if let Some(var_215) = &input.key {
+        object.key("key").string(var_215);
     }
-    if let Some(var_214) = &input.value {
-        object.key("value").string(var_214);
+    if let Some(var_216) = &input.value {
+        object.key("value").string(var_216);
     }
     Ok(())
 }
@@ -1170,8 +1176,8 @@ pub fn serialize_structure_crate_model_new_private_virtual_interface_allocation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewPrivateVirtualInterfaceAllocation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_215) = &input.virtual_interface_name {
-        object.key("virtualInterfaceName").string(var_215);
+    if let Some(var_217) = &input.virtual_interface_name {
+        object.key("virtualInterfaceName").string(var_217);
     }
     {
         object.key("vlan").number(
@@ -1185,34 +1191,34 @@ pub fn serialize_structure_crate_model_new_private_virtual_interface_allocation(
             aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_216) = &input.mtu {
+    if let Some(var_218) = &input.mtu {
         object.key("mtu").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_216).into()),
+            aws_smithy_types::Number::NegInt((*var_218).into()),
         );
     }
-    if let Some(var_217) = &input.auth_key {
-        object.key("authKey").string(var_217);
+    if let Some(var_219) = &input.auth_key {
+        object.key("authKey").string(var_219);
     }
-    if let Some(var_218) = &input.amazon_address {
-        object.key("amazonAddress").string(var_218);
+    if let Some(var_220) = &input.amazon_address {
+        object.key("amazonAddress").string(var_220);
     }
-    if let Some(var_219) = &input.address_family {
-        object.key("addressFamily").string(var_219.as_str());
+    if let Some(var_221) = &input.address_family {
+        object.key("addressFamily").string(var_221.as_str());
     }
-    if let Some(var_220) = &input.customer_address {
-        object.key("customerAddress").string(var_220);
+    if let Some(var_222) = &input.customer_address {
+        object.key("customerAddress").string(var_222);
     }
-    if let Some(var_221) = &input.tags {
-        let mut array_222 = object.key("tags").start_array();
-        for item_223 in var_221 {
+    if let Some(var_223) = &input.tags {
+        let mut array_224 = object.key("tags").start_array();
+        for item_225 in var_223 {
             {
-                let mut object_224 = array_222.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_224, item_223)?;
-                object_224.finish();
+                let mut object_226 = array_224.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_226, item_225)?;
+                object_226.finish();
             }
         }
-        array_222.finish();
+        array_224.finish();
     }
     Ok(())
 }
@@ -1221,8 +1227,8 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface_allocation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewPublicVirtualInterfaceAllocation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_225) = &input.virtual_interface_name {
-        object.key("virtualInterfaceName").string(var_225);
+    if let Some(var_227) = &input.virtual_interface_name {
+        object.key("virtualInterfaceName").string(var_227);
     }
     {
         object.key("vlan").number(
@@ -1236,42 +1242,42 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface_allocation(
             aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_226) = &input.auth_key {
-        object.key("authKey").string(var_226);
+    if let Some(var_228) = &input.auth_key {
+        object.key("authKey").string(var_228);
     }
-    if let Some(var_227) = &input.amazon_address {
-        object.key("amazonAddress").string(var_227);
+    if let Some(var_229) = &input.amazon_address {
+        object.key("amazonAddress").string(var_229);
     }
-    if let Some(var_228) = &input.customer_address {
-        object.key("customerAddress").string(var_228);
+    if let Some(var_230) = &input.customer_address {
+        object.key("customerAddress").string(var_230);
     }
-    if let Some(var_229) = &input.address_family {
-        object.key("addressFamily").string(var_229.as_str());
+    if let Some(var_231) = &input.address_family {
+        object.key("addressFamily").string(var_231.as_str());
     }
-    if let Some(var_230) = &input.route_filter_prefixes {
-        let mut array_231 = object.key("routeFilterPrefixes").start_array();
-        for item_232 in var_230 {
+    if let Some(var_232) = &input.route_filter_prefixes {
+        let mut array_233 = object.key("routeFilterPrefixes").start_array();
+        for item_234 in var_232 {
             {
-                let mut object_233 = array_231.value().start_object();
+                let mut object_235 = array_233.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
-                    &mut object_233,
-                    item_232,
+                    &mut object_235,
+                    item_234,
                 )?;
-                object_233.finish();
+                object_235.finish();
             }
         }
-        array_231.finish();
+        array_233.finish();
     }
-    if let Some(var_234) = &input.tags {
-        let mut array_235 = object.key("tags").start_array();
-        for item_236 in var_234 {
+    if let Some(var_236) = &input.tags {
+        let mut array_237 = object.key("tags").start_array();
+        for item_238 in var_236 {
             {
-                let mut object_237 = array_235.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_237, item_236)?;
-                object_237.finish();
+                let mut object_239 = array_237.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_239, item_238)?;
+                object_239.finish();
             }
         }
-        array_235.finish();
+        array_237.finish();
     }
     Ok(())
 }
@@ -1280,8 +1286,8 @@ pub fn serialize_structure_crate_model_new_transit_virtual_interface_allocation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewTransitVirtualInterfaceAllocation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_238) = &input.virtual_interface_name {
-        object.key("virtualInterfaceName").string(var_238);
+    if let Some(var_240) = &input.virtual_interface_name {
+        object.key("virtualInterfaceName").string(var_240);
     }
     if input.vlan != 0 {
         object.key("vlan").number(
@@ -1295,34 +1301,34 @@ pub fn serialize_structure_crate_model_new_transit_virtual_interface_allocation(
             aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_239) = &input.mtu {
+    if let Some(var_241) = &input.mtu {
         object.key("mtu").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_239).into()),
+            aws_smithy_types::Number::NegInt((*var_241).into()),
         );
     }
-    if let Some(var_240) = &input.auth_key {
-        object.key("authKey").string(var_240);
+    if let Some(var_242) = &input.auth_key {
+        object.key("authKey").string(var_242);
     }
-    if let Some(var_241) = &input.amazon_address {
-        object.key("amazonAddress").string(var_241);
+    if let Some(var_243) = &input.amazon_address {
+        object.key("amazonAddress").string(var_243);
     }
-    if let Some(var_242) = &input.customer_address {
-        object.key("customerAddress").string(var_242);
+    if let Some(var_244) = &input.customer_address {
+        object.key("customerAddress").string(var_244);
     }
-    if let Some(var_243) = &input.address_family {
-        object.key("addressFamily").string(var_243.as_str());
+    if let Some(var_245) = &input.address_family {
+        object.key("addressFamily").string(var_245.as_str());
     }
-    if let Some(var_244) = &input.tags {
-        let mut array_245 = object.key("tags").start_array();
-        for item_246 in var_244 {
+    if let Some(var_246) = &input.tags {
+        let mut array_247 = object.key("tags").start_array();
+        for item_248 in var_246 {
             {
-                let mut object_247 = array_245.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_247, item_246)?;
-                object_247.finish();
+                let mut object_249 = array_247.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_249, item_248)?;
+                object_249.finish();
             }
         }
-        array_245.finish();
+        array_247.finish();
     }
     Ok(())
 }
@@ -1337,17 +1343,17 @@ pub fn serialize_structure_crate_model_new_bgp_peer(
             aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_248) = &input.auth_key {
-        object.key("authKey").string(var_248);
+    if let Some(var_250) = &input.auth_key {
+        object.key("authKey").string(var_250);
     }
-    if let Some(var_249) = &input.address_family {
-        object.key("addressFamily").string(var_249.as_str());
+    if let Some(var_251) = &input.address_family {
+        object.key("addressFamily").string(var_251.as_str());
     }
-    if let Some(var_250) = &input.amazon_address {
-        object.key("amazonAddress").string(var_250);
+    if let Some(var_252) = &input.amazon_address {
+        object.key("amazonAddress").string(var_252);
     }
-    if let Some(var_251) = &input.customer_address {
-        object.key("customerAddress").string(var_251);
+    if let Some(var_253) = &input.customer_address {
+        object.key("customerAddress").string(var_253);
     }
     Ok(())
 }
@@ -1356,8 +1362,8 @@ pub fn serialize_structure_crate_model_new_private_virtual_interface(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewPrivateVirtualInterface,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_252) = &input.virtual_interface_name {
-        object.key("virtualInterfaceName").string(var_252);
+    if let Some(var_254) = &input.virtual_interface_name {
+        object.key("virtualInterfaceName").string(var_254);
     }
     {
         object.key("vlan").number(
@@ -1371,40 +1377,43 @@ pub fn serialize_structure_crate_model_new_private_virtual_interface(
             aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_253) = &input.mtu {
+    if let Some(var_255) = &input.mtu {
         object.key("mtu").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_253).into()),
+            aws_smithy_types::Number::NegInt((*var_255).into()),
         );
     }
-    if let Some(var_254) = &input.auth_key {
-        object.key("authKey").string(var_254);
+    if let Some(var_256) = &input.auth_key {
+        object.key("authKey").string(var_256);
     }
-    if let Some(var_255) = &input.amazon_address {
-        object.key("amazonAddress").string(var_255);
+    if let Some(var_257) = &input.amazon_address {
+        object.key("amazonAddress").string(var_257);
     }
-    if let Some(var_256) = &input.customer_address {
-        object.key("customerAddress").string(var_256);
+    if let Some(var_258) = &input.customer_address {
+        object.key("customerAddress").string(var_258);
     }
-    if let Some(var_257) = &input.address_family {
-        object.key("addressFamily").string(var_257.as_str());
+    if let Some(var_259) = &input.address_family {
+        object.key("addressFamily").string(var_259.as_str());
     }
-    if let Some(var_258) = &input.virtual_gateway_id {
-        object.key("virtualGatewayId").string(var_258);
+    if let Some(var_260) = &input.virtual_gateway_id {
+        object.key("virtualGatewayId").string(var_260);
     }
-    if let Some(var_259) = &input.direct_connect_gateway_id {
-        object.key("directConnectGatewayId").string(var_259);
+    if let Some(var_261) = &input.direct_connect_gateway_id {
+        object.key("directConnectGatewayId").string(var_261);
     }
-    if let Some(var_260) = &input.tags {
-        let mut array_261 = object.key("tags").start_array();
-        for item_262 in var_260 {
+    if let Some(var_262) = &input.tags {
+        let mut array_263 = object.key("tags").start_array();
+        for item_264 in var_262 {
             {
-                let mut object_263 = array_261.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_263, item_262)?;
-                object_263.finish();
+                let mut object_265 = array_263.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_265, item_264)?;
+                object_265.finish();
             }
         }
-        array_261.finish();
+        array_263.finish();
+    }
+    if let Some(var_266) = &input.enable_site_link {
+        object.key("enableSiteLink").boolean(*var_266);
     }
     Ok(())
 }
@@ -1413,8 +1422,8 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewPublicVirtualInterface,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_264) = &input.virtual_interface_name {
-        object.key("virtualInterfaceName").string(var_264);
+    if let Some(var_267) = &input.virtual_interface_name {
+        object.key("virtualInterfaceName").string(var_267);
     }
     {
         object.key("vlan").number(
@@ -1428,42 +1437,42 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface(
             aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_265) = &input.auth_key {
-        object.key("authKey").string(var_265);
+    if let Some(var_268) = &input.auth_key {
+        object.key("authKey").string(var_268);
     }
-    if let Some(var_266) = &input.amazon_address {
-        object.key("amazonAddress").string(var_266);
+    if let Some(var_269) = &input.amazon_address {
+        object.key("amazonAddress").string(var_269);
     }
-    if let Some(var_267) = &input.customer_address {
-        object.key("customerAddress").string(var_267);
+    if let Some(var_270) = &input.customer_address {
+        object.key("customerAddress").string(var_270);
     }
-    if let Some(var_268) = &input.address_family {
-        object.key("addressFamily").string(var_268.as_str());
+    if let Some(var_271) = &input.address_family {
+        object.key("addressFamily").string(var_271.as_str());
     }
-    if let Some(var_269) = &input.route_filter_prefixes {
-        let mut array_270 = object.key("routeFilterPrefixes").start_array();
-        for item_271 in var_269 {
+    if let Some(var_272) = &input.route_filter_prefixes {
+        let mut array_273 = object.key("routeFilterPrefixes").start_array();
+        for item_274 in var_272 {
             {
-                let mut object_272 = array_270.value().start_object();
+                let mut object_275 = array_273.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
-                    &mut object_272,
-                    item_271,
+                    &mut object_275,
+                    item_274,
                 )?;
-                object_272.finish();
+                object_275.finish();
             }
         }
-        array_270.finish();
+        array_273.finish();
     }
-    if let Some(var_273) = &input.tags {
-        let mut array_274 = object.key("tags").start_array();
-        for item_275 in var_273 {
+    if let Some(var_276) = &input.tags {
+        let mut array_277 = object.key("tags").start_array();
+        for item_278 in var_276 {
             {
-                let mut object_276 = array_274.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_276, item_275)?;
-                object_276.finish();
+                let mut object_279 = array_277.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_279, item_278)?;
+                object_279.finish();
             }
         }
-        array_274.finish();
+        array_277.finish();
     }
     Ok(())
 }
@@ -1472,8 +1481,8 @@ pub fn serialize_structure_crate_model_new_transit_virtual_interface(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NewTransitVirtualInterface,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_277) = &input.virtual_interface_name {
-        object.key("virtualInterfaceName").string(var_277);
+    if let Some(var_280) = &input.virtual_interface_name {
+        object.key("virtualInterfaceName").string(var_280);
     }
     if input.vlan != 0 {
         object.key("vlan").number(
@@ -1487,37 +1496,40 @@ pub fn serialize_structure_crate_model_new_transit_virtual_interface(
             aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_278) = &input.mtu {
+    if let Some(var_281) = &input.mtu {
         object.key("mtu").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_278).into()),
+            aws_smithy_types::Number::NegInt((*var_281).into()),
         );
     }
-    if let Some(var_279) = &input.auth_key {
-        object.key("authKey").string(var_279);
+    if let Some(var_282) = &input.auth_key {
+        object.key("authKey").string(var_282);
     }
-    if let Some(var_280) = &input.amazon_address {
-        object.key("amazonAddress").string(var_280);
+    if let Some(var_283) = &input.amazon_address {
+        object.key("amazonAddress").string(var_283);
     }
-    if let Some(var_281) = &input.customer_address {
-        object.key("customerAddress").string(var_281);
+    if let Some(var_284) = &input.customer_address {
+        object.key("customerAddress").string(var_284);
     }
-    if let Some(var_282) = &input.address_family {
-        object.key("addressFamily").string(var_282.as_str());
+    if let Some(var_285) = &input.address_family {
+        object.key("addressFamily").string(var_285.as_str());
     }
-    if let Some(var_283) = &input.direct_connect_gateway_id {
-        object.key("directConnectGatewayId").string(var_283);
+    if let Some(var_286) = &input.direct_connect_gateway_id {
+        object.key("directConnectGatewayId").string(var_286);
     }
-    if let Some(var_284) = &input.tags {
-        let mut array_285 = object.key("tags").start_array();
-        for item_286 in var_284 {
+    if let Some(var_287) = &input.tags {
+        let mut array_288 = object.key("tags").start_array();
+        for item_289 in var_287 {
             {
-                let mut object_287 = array_285.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_287, item_286)?;
-                object_287.finish();
+                let mut object_290 = array_288.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_290, item_289)?;
+                object_290.finish();
             }
         }
-        array_285.finish();
+        array_288.finish();
+    }
+    if let Some(var_291) = &input.enable_site_link {
+        object.key("enableSiteLink").boolean(*var_291);
     }
     Ok(())
 }

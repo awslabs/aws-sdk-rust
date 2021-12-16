@@ -1,6 +1,6 @@
 # aws-sdk-support
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 The _AWS Support API Reference_ is intended for programmers who need detailed information about the AWS Support operations and data types. You can use the API to manage your support cases programmatically. The AWS Support API uses HTTP methods that return results in JSON format.
@@ -34,8 +34,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-support = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-support = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

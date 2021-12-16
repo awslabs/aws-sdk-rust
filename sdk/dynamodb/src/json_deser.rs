@@ -111,6 +111,11 @@ pub fn deser_operation_crate_operation_batch_execute_statement(
                             crate::json_deser::deser_list_com_amazonaws_dynamodb_parti_ql_batch_response(tokens)?
                         );
                     }
+                    "ConsumedCapacity" => {
+                        builder = builder.set_consumed_capacity(
+                            crate::json_deser::deser_list_com_amazonaws_dynamodb_consumed_capacity_multiple(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -1947,6 +1952,13 @@ pub fn deser_operation_crate_operation_execute_statement(
                             .transpose()?,
                         );
                     }
+                    "ConsumedCapacity" => {
+                        builder = builder.set_consumed_capacity(
+                            crate::json_deser::deser_structure_crate_model_consumed_capacity(
+                                tokens,
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -2124,6 +2136,11 @@ pub fn deser_operation_crate_operation_execute_transaction(
                     "Responses" => {
                         builder = builder.set_responses(
                             crate::json_deser::deser_list_com_amazonaws_dynamodb_item_response_list(tokens)?
+                        );
+                    }
+                    "ConsumedCapacity" => {
+                        builder = builder.set_consumed_capacity(
+                            crate::json_deser::deser_list_com_amazonaws_dynamodb_consumed_capacity_multiple(tokens)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3660,6 +3677,47 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_dynamodb_consumed_capacity_multiple<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_consumed_capacity(
+                                tokens,
+                            )?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_map_com_amazonaws_dynamodb_batch_get_response_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -3750,47 +3808,6 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start object or null",
-        )),
-    }
-}
-
-#[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_dynamodb_consumed_capacity_multiple<'a, I>(
-    tokens: &mut std::iter::Peekable<I>,
-) -> Result<
-    Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
-    aws_smithy_json::deserialize::Error,
->
-where
-    I: Iterator<
-        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
-    >,
-{
-    match tokens.next().transpose()? {
-        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
-        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
-            let mut items = Vec::new();
-            loop {
-                match tokens.peek() {
-                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
-                        tokens.next().transpose().unwrap();
-                        break;
-                    }
-                    _ => {
-                        let value =
-                            crate::json_deser::deser_structure_crate_model_consumed_capacity(
-                                tokens,
-                            )?;
-                        if let Some(value) = value {
-                            items.push(value);
-                        }
-                    }
-                }
-            }
-            Ok(Some(items))
-        }
-        _ => Err(aws_smithy_json::deserialize::Error::custom(
-            "expected start array or null",
         )),
     }
 }
@@ -4240,6 +4257,11 @@ where
                             "ArchivalSummary" => {
                                 builder = builder.set_archival_summary(
                                     crate::json_deser::deser_structure_crate_model_archival_summary(tokens)?
+                                );
+                            }
+                            "TableClassSummary" => {
+                                builder = builder.set_table_class_summary(
+                                    crate::json_deser::deser_structure_crate_model_table_class_summary(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6339,6 +6361,63 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_table_class_summary<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::TableClassSummary>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::TableClassSummary::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "TableClass" => {
+                                builder = builder.set_table_class(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::TableClass::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "LastUpdateDateTime" => {
+                                builder = builder.set_last_update_date_time(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_source_table_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::SourceTableDetails>, aws_smithy_json::deserialize::Error>
@@ -7005,6 +7084,11 @@ where
                             "ReplicaGlobalSecondaryIndexSettings" => {
                                 builder = builder.set_replica_global_secondary_index_settings(
                                     crate::json_deser::deser_list_com_amazonaws_dynamodb_replica_global_secondary_index_settings_description_list(tokens)?
+                                );
+                            }
+                            "ReplicaTableClassSummary" => {
+                                builder = builder.set_replica_table_class_summary(
+                                    crate::json_deser::deser_structure_crate_model_table_class_summary(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -7920,6 +8004,11 @@ where
                                         tokens.next(),
                                         aws_smithy_types::date_time::Format::EpochSeconds,
                                     )?,
+                                );
+                            }
+                            "ReplicaTableClassSummary" => {
+                                builder = builder.set_replica_table_class_summary(
+                                    crate::json_deser::deser_structure_crate_model_table_class_summary(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

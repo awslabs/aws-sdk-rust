@@ -1,6 +1,6 @@
 # aws-sdk-mediastore
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 An AWS Elemental MediaStore container is a namespace that holds folders and objects. You use a container endpoint to create, read, and delete objects.
@@ -16,8 +16,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-mediastore = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-mediastore = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

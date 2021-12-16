@@ -1362,6 +1362,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMulticastGroupSession
     }
 }
 
+/// Operation shape for `GetNetworkAnalyzerConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_network_analyzer_configuration`](crate::client::Client::get_network_analyzer_configuration).
+///
+/// See [`crate::client::fluent_builders::GetNetworkAnalyzerConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetNetworkAnalyzerConfiguration {
+    _private: (),
+}
+impl GetNetworkAnalyzerConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationInput`](crate::input::GetNetworkAnalyzerConfigurationInput)
+    pub fn builder() -> crate::input::get_network_analyzer_configuration_input::Builder {
+        crate::input::get_network_analyzer_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetNetworkAnalyzerConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetNetworkAnalyzerConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetNetworkAnalyzerConfigurationOutput,
+        crate::error::GetNetworkAnalyzerConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_network_analyzer_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_network_analyzer_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetPartnerAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2720,6 +2754,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMulticastGroup {
             crate::operation_deser::parse_update_multicast_group_error(response)
         } else {
             crate::operation_deser::parse_update_multicast_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateNetworkAnalyzerConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_network_analyzer_configuration`](crate::client::Client::update_network_analyzer_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateNetworkAnalyzerConfiguration {
+    _private: (),
+}
+impl UpdateNetworkAnalyzerConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationInput`](crate::input::UpdateNetworkAnalyzerConfigurationInput)
+    pub fn builder() -> crate::input::update_network_analyzer_configuration_input::Builder {
+        crate::input::update_network_analyzer_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateNetworkAnalyzerConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateNetworkAnalyzerConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateNetworkAnalyzerConfigurationOutput,
+        crate::error::UpdateNetworkAnalyzerConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_update_network_analyzer_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_network_analyzer_configuration_response(response)
         }
     }
 }

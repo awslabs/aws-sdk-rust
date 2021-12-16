@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSuiteDefinitionOutput {
-    /// <p>Suite definition Id of the updated test suite.</p>
+    /// <p>Suite definition ID of the updated test suite.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Amazon Resource name of the updated test suite.</p>
+    /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
     pub suite_definition_arn: std::option::Option<std::string::String>,
     /// <p>Suite definition name of the updated test suite.</p>
     pub suite_definition_name: std::option::Option<std::string::String>,
@@ -17,11 +17,11 @@ pub struct UpdateSuiteDefinitionOutput {
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateSuiteDefinitionOutput {
-    /// <p>Suite definition Id of the updated test suite.</p>
+    /// <p>Suite definition ID of the updated test suite.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Amazon Resource name of the updated test suite.</p>
+    /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
     pub fn suite_definition_arn(&self) -> std::option::Option<&str> {
         self.suite_definition_arn.as_deref()
     }
@@ -68,12 +68,12 @@ pub mod update_suite_definition_output {
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Suite definition Id of the updated test suite.</p>
+        /// <p>Suite definition ID of the updated test suite.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the updated test suite.</p>
+        /// <p>Suite definition ID of the updated test suite.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -81,12 +81,12 @@ pub mod update_suite_definition_output {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Amazon Resource name of the updated test suite.</p>
+        /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
         pub fn suite_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource name of the updated test suite.</p>
+        /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
         pub fn set_suite_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -260,23 +260,23 @@ impl StopSuiteRunOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSuiteRunOutput {
-    /// <p>Suite Run Id of the started suite run.</p>
+    /// <p>Suite Run ID of the started suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
-    /// <p>Amazon resource name of the started suite run.</p>
+    /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
     pub suite_run_arn: std::option::Option<std::string::String>,
-    /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+    /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartSuiteRunOutput {
-    /// <p>Suite Run Id of the started suite run.</p>
+    /// <p>Suite Run ID of the started suite run.</p>
     pub fn suite_run_id(&self) -> std::option::Option<&str> {
         self.suite_run_id.as_deref()
     }
-    /// <p>Amazon resource name of the started suite run.</p>
+    /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
     pub fn suite_run_arn(&self) -> std::option::Option<&str> {
         self.suite_run_arn.as_deref()
     }
-    /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+    /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -301,22 +301,22 @@ pub mod start_suite_run_output {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Suite Run Id of the started suite run.</p>
+        /// <p>Suite Run ID of the started suite run.</p>
         pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_run_id = Some(input.into());
             self
         }
-        /// <p>Suite Run Id of the started suite run.</p>
+        /// <p>Suite Run ID of the started suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suite_run_id = input;
             self
         }
-        /// <p>Amazon resource name of the started suite run.</p>
+        /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
         pub fn suite_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_run_arn = Some(input.into());
             self
         }
-        /// <p>Amazon resource name of the started suite run.</p>
+        /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
         pub fn set_suite_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -324,12 +324,12 @@ pub mod start_suite_run_output {
             self.suite_run_arn = input;
             self
         }
-        /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+        /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+        /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -672,11 +672,11 @@ impl GetSuiteRunReportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteRunOutput {
-    /// <p>Suite definition Id for the test suite run.</p>
+    /// <p>Suite definition ID for the test suite run.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>Suite definition version for the test suite run.</p>
     pub suite_definition_version: std::option::Option<std::string::String>,
-    /// <p>Suite run Id for the test suite run.</p>
+    /// <p>Suite run ID for the test suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the suite run.</p>
     pub suite_run_arn: std::option::Option<std::string::String>,
@@ -684,7 +684,7 @@ pub struct GetSuiteRunOutput {
     pub suite_run_configuration: std::option::Option<crate::model::SuiteRunConfiguration>,
     /// <p>Test results for the test suite run.</p>
     pub test_result: std::option::Option<crate::model::TestResult>,
-    /// <p>Date (in Unix epoch time) when the test suite run was started.</p>
+    /// <p>Date (in Unix epoch time) when the test suite run started.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the test suite run ended.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -697,7 +697,7 @@ pub struct GetSuiteRunOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetSuiteRunOutput {
-    /// <p>Suite definition Id for the test suite run.</p>
+    /// <p>Suite definition ID for the test suite run.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
@@ -705,7 +705,7 @@ impl GetSuiteRunOutput {
     pub fn suite_definition_version(&self) -> std::option::Option<&str> {
         self.suite_definition_version.as_deref()
     }
-    /// <p>Suite run Id for the test suite run.</p>
+    /// <p>Suite run ID for the test suite run.</p>
     pub fn suite_run_id(&self) -> std::option::Option<&str> {
         self.suite_run_id.as_deref()
     }
@@ -723,7 +723,7 @@ impl GetSuiteRunOutput {
     pub fn test_result(&self) -> std::option::Option<&crate::model::TestResult> {
         self.test_result.as_ref()
     }
-    /// <p>Date (in Unix epoch time) when the test suite run was started.</p>
+    /// <p>Date (in Unix epoch time) when the test suite run started.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -786,12 +786,12 @@ pub mod get_suite_run_output {
         >,
     }
     impl Builder {
-        /// <p>Suite definition Id for the test suite run.</p>
+        /// <p>Suite definition ID for the test suite run.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id for the test suite run.</p>
+        /// <p>Suite definition ID for the test suite run.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -812,12 +812,12 @@ pub mod get_suite_run_output {
             self.suite_definition_version = input;
             self
         }
-        /// <p>Suite run Id for the test suite run.</p>
+        /// <p>Suite run ID for the test suite run.</p>
         pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_run_id = Some(input.into());
             self
         }
-        /// <p>Suite run Id for the test suite run.</p>
+        /// <p>Suite run ID for the test suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suite_run_id = input;
             self
@@ -864,12 +864,12 @@ pub mod get_suite_run_output {
             self.test_result = input;
             self
         }
-        /// <p>Date (in Unix epoch time) when the test suite run was started.</p>
+        /// <p>Date (in Unix epoch time) when the test suite run started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Date (in Unix epoch time) when the test suite run was started.</p>
+        /// <p>Date (in Unix epoch time) when the test suite run started.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -967,7 +967,7 @@ impl GetSuiteRunOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuiteDefinitionOutput {
-    /// <p>Suite definition Id of the suite definition.</p>
+    /// <p>Suite definition ID of the suite definition.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the suite definition.</p>
     pub suite_definition_arn: std::option::Option<std::string::String>,
@@ -987,7 +987,7 @@ pub struct GetSuiteDefinitionOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetSuiteDefinitionOutput {
-    /// <p>Suite definition Id of the suite definition.</p>
+    /// <p>Suite definition ID of the suite definition.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
@@ -1061,12 +1061,12 @@ pub mod get_suite_definition_output {
         >,
     }
     impl Builder {
-        /// <p>Suite definition Id of the suite definition.</p>
+        /// <p>Suite definition ID of the suite definition.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Suite definition Id of the suite definition.</p>
+        /// <p>Suite definition ID of the suite definition.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1205,6 +1205,60 @@ impl GetSuiteDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEndpointOutput {
+    /// <p>The response of an Device Advisor endpoint.</p>
+    pub endpoint: std::option::Option<std::string::String>,
+}
+impl GetEndpointOutput {
+    /// <p>The response of an Device Advisor endpoint.</p>
+    pub fn endpoint(&self) -> std::option::Option<&str> {
+        self.endpoint.as_deref()
+    }
+}
+impl std::fmt::Debug for GetEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEndpointOutput");
+        formatter.field("endpoint", &self.endpoint);
+        formatter.finish()
+    }
+}
+/// See [`GetEndpointOutput`](crate::output::GetEndpointOutput)
+pub mod get_endpoint_output {
+    /// A builder for [`GetEndpointOutput`](crate::output::GetEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The response of an Device Advisor endpoint.</p>
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
+            self
+        }
+        /// <p>The response of an Device Advisor endpoint.</p>
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEndpointOutput`](crate::output::GetEndpointOutput)
+        pub fn build(self) -> crate::output::GetEndpointOutput {
+            crate::output::GetEndpointOutput {
+                endpoint: self.endpoint,
+            }
+        }
+    }
+}
+impl GetEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`GetEndpointOutput`](crate::output::GetEndpointOutput)
+    pub fn builder() -> crate::output::get_endpoint_output::Builder {
+        crate::output::get_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuiteDefinitionOutput {}
 impl std::fmt::Debug for DeleteSuiteDefinitionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1238,7 +1292,7 @@ impl DeleteSuiteDefinitionOutput {
 pub struct CreateSuiteDefinitionOutput {
     /// <p>Creates a Device Advisor test suite with suite UUID.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+    /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
     pub suite_definition_arn: std::option::Option<std::string::String>,
     /// <p>Creates a Device Advisor test suite with suite definition name.</p>
     pub suite_definition_name: std::option::Option<std::string::String>,
@@ -1250,7 +1304,7 @@ impl CreateSuiteDefinitionOutput {
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+    /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
     pub fn suite_definition_arn(&self) -> std::option::Option<&str> {
         self.suite_definition_arn.as_deref()
     }
@@ -1298,12 +1352,12 @@ pub mod create_suite_definition_output {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+        /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
         pub fn suite_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_arn = Some(input.into());
             self
         }
-        /// <p>Creates a Device Advisor test suite with Amazon Resource name.</p>
+        /// <p>Creates a Device Advisor test suite with Amazon Resource Name (ARN).</p>
         pub fn set_suite_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,

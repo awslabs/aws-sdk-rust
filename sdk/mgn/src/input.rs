@@ -1018,6 +1018,158 @@ impl DeleteSourceServerInput {
     }
 }
 
+/// See [`DeleteVcenterClientInput`](crate::input::DeleteVcenterClientInput)
+pub mod delete_vcenter_client_input {
+    /// A builder for [`DeleteVcenterClientInput`](crate::input::DeleteVcenterClientInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>ID of resource to be deleted.</p>
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vcenter_client_id = Some(input.into());
+            self
+        }
+        /// <p>ID of resource to be deleted.</p>
+        pub fn set_vcenter_client_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vcenter_client_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVcenterClientInput`](crate::input::DeleteVcenterClientInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteVcenterClientInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteVcenterClientInput {
+                vcenter_client_id: self.vcenter_client_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteVcenterClientInputOperationOutputAlias = crate::operation::DeleteVcenterClient;
+#[doc(hidden)]
+pub type DeleteVcenterClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteVcenterClientInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteVcenterClient`](crate::operation::DeleteVcenterClient)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteVcenterClient,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteVcenterClientInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/DeleteVcenterClient").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteVcenterClientInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteVcenterClientInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_vcenter_client(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteVcenterClient::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteVcenterClient",
+            "mgn",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteVcenterClientInput`](crate::input::DeleteVcenterClientInput)
+    pub fn builder() -> crate::input::delete_vcenter_client_input::Builder {
+        crate::input::delete_vcenter_client_input::Builder::default()
+    }
+}
+
 /// See [`DescribeJobLogItemsInput`](crate::input::DescribeJobLogItemsInput)
 pub mod describe_job_log_items_input {
     /// A builder for [`DescribeJobLogItemsInput`](crate::input::DescribeJobLogItemsInput)
@@ -1738,6 +1890,170 @@ impl DescribeSourceServersInput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceServersInput`](crate::input::DescribeSourceServersInput)
     pub fn builder() -> crate::input::describe_source_servers_input::Builder {
         crate::input::describe_source_servers_input::Builder::default()
+    }
+}
+
+/// See [`DescribeVcenterClientsInput`](crate::input::DescribeVcenterClientsInput)
+pub mod describe_vcenter_clients_input {
+    /// A builder for [`DescribeVcenterClientsInput`](crate::input::DescribeVcenterClientsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVcenterClientsInput`](crate::input::DescribeVcenterClientsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeVcenterClientsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeVcenterClientsInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeVcenterClientsInputOperationOutputAlias = crate::operation::DescribeVcenterClients;
+#[doc(hidden)]
+pub type DescribeVcenterClientsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeVcenterClientsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeVcenterClients`](crate::operation::DescribeVcenterClients)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeVcenterClients,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeVcenterClientsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/DescribeVcenterClients").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::DescribeVcenterClientsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            if let Some(inner_1) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeVcenterClientsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeVcenterClientsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeVcenterClients::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeVcenterClients",
+            "mgn",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeVcenterClientsInput`](crate::input::DescribeVcenterClientsInput)
+    pub fn builder() -> crate::input::describe_vcenter_clients_input::Builder {
+        crate::input::describe_vcenter_clients_input::Builder::default()
     }
 }
 
@@ -2530,15 +2846,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_1 = &_input.resource_arn;
-            let input_1 =
-                input_1
+            let input_2 = &_input.resource_arn;
+            let input_2 =
+                input_2
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_1, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_2, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -3119,6 +3435,158 @@ impl StartCutoverInput {
     }
 }
 
+/// See [`StartReplicationInput`](crate::input::StartReplicationInput)
+pub mod start_replication_input {
+    /// A builder for [`StartReplicationInput`](crate::input::StartReplicationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>ID of source server on which to start replication.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_server_id = Some(input.into());
+            self
+        }
+        /// <p>ID of source server on which to start replication.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_server_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartReplicationInput`](crate::input::StartReplicationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartReplicationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartReplicationInput {
+                source_server_id: self.source_server_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartReplicationInputOperationOutputAlias = crate::operation::StartReplication;
+#[doc(hidden)]
+pub type StartReplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartReplicationInput {
+    /// Consumes the builder and constructs an Operation<[`StartReplication`](crate::operation::StartReplication)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartReplication,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartReplicationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/StartReplication").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartReplicationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartReplicationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_replication(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartReplication::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartReplication",
+            "mgn",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartReplicationInput`](crate::input::StartReplicationInput)
+    pub fn builder() -> crate::input::start_replication_input::Builder {
+        crate::input::start_replication_input::Builder::default()
+    }
+}
+
 /// See [`StartTestInput`](crate::input::StartTestInput)
 pub mod start_test_input {
     /// A builder for [`StartTestInput`](crate::input::StartTestInput)
@@ -3384,15 +3852,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_2 = &_input.resource_arn;
-            let input_2 =
-                input_2
+            let input_3 = &_input.resource_arn;
+            let input_3 =
+                input_3
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_2, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_3, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -3759,15 +4227,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_3 = &_input.resource_arn;
-            let input_3 =
-                input_3
+            let input_4 = &_input.resource_arn;
+            let input_4 =
+                input_4
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_3, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_4, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -3783,9 +4251,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_4) = &_input.tag_keys {
-                for inner_5 in inner_4 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_5));
+            if let Some(inner_5) = &_input.tag_keys {
+                for inner_6 in inner_5 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_6));
                 }
             }
             Ok(())
@@ -4911,6 +5379,253 @@ impl UpdateReplicationConfigurationTemplateInput {
     }
 }
 
+/// See [`UpdateSourceServerReplicationTypeInput`](crate::input::UpdateSourceServerReplicationTypeInput)
+pub mod update_source_server_replication_type_input {
+    /// A builder for [`UpdateSourceServerReplicationTypeInput`](crate::input::UpdateSourceServerReplicationTypeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_server_id: std::option::Option<std::string::String>,
+        pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,
+    }
+    impl Builder {
+        /// <p>ID of source server on which to update replication type.</p>
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_server_id = Some(input.into());
+            self
+        }
+        /// <p>ID of source server on which to update replication type.</p>
+        pub fn set_source_server_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_server_id = input;
+            self
+        }
+        /// <p>Replication type to which to update source server.</p>
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.replication_type = Some(input);
+            self
+        }
+        /// <p>Replication type to which to update source server.</p>
+        pub fn set_replication_type(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationType>,
+        ) -> Self {
+            self.replication_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSourceServerReplicationTypeInput`](crate::input::UpdateSourceServerReplicationTypeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateSourceServerReplicationTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateSourceServerReplicationTypeInput {
+                source_server_id: self.source_server_id,
+                replication_type: self.replication_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateSourceServerReplicationTypeInputOperationOutputAlias =
+    crate::operation::UpdateSourceServerReplicationType;
+#[doc(hidden)]
+pub type UpdateSourceServerReplicationTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateSourceServerReplicationTypeInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateSourceServerReplicationType`](crate::operation::UpdateSourceServerReplicationType)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateSourceServerReplicationType,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateSourceServerReplicationTypeInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/UpdateSourceServerReplicationType")
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateSourceServerReplicationTypeInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateSourceServerReplicationTypeInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_source_server_replication_type(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSourceServerReplicationType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSourceServerReplicationType",
+            "mgn",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateSourceServerReplicationTypeInput`](crate::input::UpdateSourceServerReplicationTypeInput)
+    pub fn builder() -> crate::input::update_source_server_replication_type_input::Builder {
+        crate::input::update_source_server_replication_type_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeVcenterClientsInput {
+    /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
+    pub max_results: i32,
+    /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeVcenterClientsInput {
+    /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeVcenterClientsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeVcenterClientsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVcenterClientInput {
+    /// <p>ID of resource to be deleted.</p>
+    pub vcenter_client_id: std::option::Option<std::string::String>,
+}
+impl DeleteVcenterClientInput {
+    /// <p>ID of resource to be deleted.</p>
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+        self.vcenter_client_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteVcenterClientInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteVcenterClientInput");
+        formatter.field("vcenter_client_id", &self.vcenter_client_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSourceServerReplicationTypeInput {
+    /// <p>ID of source server on which to update replication type.</p>
+    pub source_server_id: std::option::Option<std::string::String>,
+    /// <p>Replication type to which to update source server.</p>
+    pub replication_type: std::option::Option<crate::model::ReplicationType>,
+}
+impl UpdateSourceServerReplicationTypeInput {
+    /// <p>ID of source server on which to update replication type.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+    /// <p>Replication type to which to update source server.</p>
+    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+        self.replication_type.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateSourceServerReplicationTypeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSourceServerReplicationTypeInput");
+        formatter.field("source_server_id", &self.source_server_id);
+        formatter.field("replication_type", &self.replication_type);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5129,6 +5844,27 @@ impl std::fmt::Debug for UpdateLaunchConfigurationInput {
         formatter.field("copy_private_ip", &self.copy_private_ip);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartReplicationInput {
+    /// <p>ID of source server on which to start replication.</p>
+    pub source_server_id: std::option::Option<std::string::String>,
+}
+impl StartReplicationInput {
+    /// <p>ID of source server on which to start replication.</p>
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
+        self.source_server_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StartReplicationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartReplicationInput");
+        formatter.field("source_server_id", &self.source_server_id);
         formatter.finish()
     }
 }

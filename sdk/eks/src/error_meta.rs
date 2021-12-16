@@ -33,6 +33,8 @@ pub enum Error {
     /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
     /// Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.</p>
+    ResourcePropagationDelayException(crate::error::ResourcePropagationDelayException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
@@ -56,6 +58,7 @@ impl std::fmt::Display for Error {
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ResourcePropagationDelayException(inner) => inner.fmt(f),
             Error::ServerException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::UnsupportedAvailabilityZoneException(inner) => inner.fmt(f),
@@ -824,9 +827,15 @@ where
                 crate::error::RegisterClusterErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
+                crate::error::RegisterClusterErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
+                }
                 crate::error::RegisterClusterErrorKind::ResourceLimitExceededException(inner) => {
                     Error::ResourceLimitExceededException(inner)
                 }
+                crate::error::RegisterClusterErrorKind::ResourcePropagationDelayException(
+                    inner,
+                ) => Error::ResourcePropagationDelayException(inner),
                 crate::error::RegisterClusterErrorKind::ServerException(inner) => {
                     Error::ServerException(inner)
                 }

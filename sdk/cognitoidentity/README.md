@@ -1,6 +1,6 @@
 # aws-sdk-cognitoidentity
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 Amazon Cognito Federated Identities is a web service that delivers scoped temporary credentials to mobile devices and other untrusted environments. It uniquely identifies a device and supplies the user with a consistent identity over the lifetime of an application.
@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-cognitoidentity = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-cognitoidentity = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

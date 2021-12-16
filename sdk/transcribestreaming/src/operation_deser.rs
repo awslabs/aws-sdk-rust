@@ -211,6 +211,10 @@ pub fn parse_start_stream_transcription(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_enable_partial_results_stabilization(response.headers())
                                     .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse EnablePartialResultsStabilization from header `x-amzn-transcribe-enable-partial-results-stabilization"))?
         );
+        output = output.set_identify_language(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_identify_language(response.headers())
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse IdentifyLanguage from header `x-amzn-transcribe-identify-language"))?
+        );
         output = output.set_language_code(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_language_code(response.headers())
                                     .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse LanguageCode from header `x-amzn-transcribe-language-code"))?
@@ -218,6 +222,10 @@ pub fn parse_start_stream_transcription(
         output = output.set_language_model_name(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_language_model_name(response.headers())
                                     .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse LanguageModelName from header `x-amzn-transcribe-language-model-name"))?
+        );
+        output = output.set_language_options(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_language_options(response.headers())
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse LanguageOptions from header `x-amzn-transcribe-language-options"))?
         );
         output = output.set_media_encoding(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_media_encoding(response.headers())
@@ -238,6 +246,10 @@ pub fn parse_start_stream_transcription(
         output = output.set_pii_entity_types(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_pii_entity_types(response.headers())
                                     .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse PiiEntityTypes from header `x-amzn-transcribe-pii-entity-types"))?
+        );
+        output = output.set_preferred_language(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_preferred_language(response.headers())
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse PreferredLanguage from header `x-amzn-transcribe-preferred-language"))?
         );
         output = output.set_request_id(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_request_id(response.headers())

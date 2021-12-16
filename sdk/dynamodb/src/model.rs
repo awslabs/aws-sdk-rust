@@ -2475,6 +2475,8 @@ pub struct TableDescription {
     pub sse_description: std::option::Option<crate::model::SseDescription>,
     /// <p>Contains information about the table archive.</p>
     pub archival_summary: std::option::Option<crate::model::ArchivalSummary>,
+    /// <p>Contains details of the table class.</p>
+    pub table_class_summary: std::option::Option<crate::model::TableClassSummary>,
 }
 impl TableDescription {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes
@@ -2854,6 +2856,10 @@ impl TableDescription {
     pub fn archival_summary(&self) -> std::option::Option<&crate::model::ArchivalSummary> {
         self.archival_summary.as_ref()
     }
+    /// <p>Contains details of the table class.</p>
+    pub fn table_class_summary(&self) -> std::option::Option<&crate::model::TableClassSummary> {
+        self.table_class_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for TableDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2879,6 +2885,7 @@ impl std::fmt::Debug for TableDescription {
         formatter.field("restore_summary", &self.restore_summary);
         formatter.field("sse_description", &self.sse_description);
         formatter.field("archival_summary", &self.archival_summary);
+        formatter.field("table_class_summary", &self.table_class_summary);
         formatter.finish()
     }
 }
@@ -2913,6 +2920,7 @@ pub mod table_description {
         pub(crate) restore_summary: std::option::Option<crate::model::RestoreSummary>,
         pub(crate) sse_description: std::option::Option<crate::model::SseDescription>,
         pub(crate) archival_summary: std::option::Option<crate::model::ArchivalSummary>,
+        pub(crate) table_class_summary: std::option::Option<crate::model::TableClassSummary>,
     }
     impl Builder {
         /// Appends an item to `attribute_definitions`.
@@ -3787,6 +3795,19 @@ pub mod table_description {
             self.archival_summary = input;
             self
         }
+        /// <p>Contains details of the table class.</p>
+        pub fn table_class_summary(mut self, input: crate::model::TableClassSummary) -> Self {
+            self.table_class_summary = Some(input);
+            self
+        }
+        /// <p>Contains details of the table class.</p>
+        pub fn set_table_class_summary(
+            mut self,
+            input: std::option::Option<crate::model::TableClassSummary>,
+        ) -> Self {
+            self.table_class_summary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TableDescription`](crate::model::TableDescription)
         pub fn build(self) -> crate::model::TableDescription {
             crate::model::TableDescription {
@@ -3811,6 +3832,7 @@ pub mod table_description {
                 restore_summary: self.restore_summary,
                 sse_description: self.sse_description,
                 archival_summary: self.archival_summary,
+                table_class_summary: self.table_class_summary,
             }
         }
     }
@@ -3819,6 +3841,144 @@ impl TableDescription {
     /// Creates a new builder-style object to manufacture [`TableDescription`](crate::model::TableDescription)
     pub fn builder() -> crate::model::table_description::Builder {
         crate::model::table_description::Builder::default()
+    }
+}
+
+/// <p>Contains details of the table class.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TableClassSummary {
+    /// <p>The table class of the specified table. Valid values are <code>STANDARD</code> and
+    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    pub table_class: std::option::Option<crate::model::TableClass>,
+    /// <p>The date and time at which the table class was last updated.</p>
+    pub last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl TableClassSummary {
+    /// <p>The table class of the specified table. Valid values are <code>STANDARD</code> and
+    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    pub fn table_class(&self) -> std::option::Option<&crate::model::TableClass> {
+        self.table_class.as_ref()
+    }
+    /// <p>The date and time at which the table class was last updated.</p>
+    pub fn last_update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_update_date_time.as_ref()
+    }
+}
+impl std::fmt::Debug for TableClassSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TableClassSummary");
+        formatter.field("table_class", &self.table_class);
+        formatter.field("last_update_date_time", &self.last_update_date_time);
+        formatter.finish()
+    }
+}
+/// See [`TableClassSummary`](crate::model::TableClassSummary)
+pub mod table_class_summary {
+    /// A builder for [`TableClassSummary`](crate::model::TableClassSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table_class: std::option::Option<crate::model::TableClass>,
+        pub(crate) last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The table class of the specified table. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn table_class(mut self, input: crate::model::TableClass) -> Self {
+            self.table_class = Some(input);
+            self
+        }
+        /// <p>The table class of the specified table. Valid values are <code>STANDARD</code> and
+        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        pub fn set_table_class(
+            mut self,
+            input: std::option::Option<crate::model::TableClass>,
+        ) -> Self {
+            self.table_class = input;
+            self
+        }
+        /// <p>The date and time at which the table class was last updated.</p>
+        pub fn last_update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_update_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time at which the table class was last updated.</p>
+        pub fn set_last_update_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_update_date_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TableClassSummary`](crate::model::TableClassSummary)
+        pub fn build(self) -> crate::model::TableClassSummary {
+            crate::model::TableClassSummary {
+                table_class: self.table_class,
+                last_update_date_time: self.last_update_date_time,
+            }
+        }
+    }
+}
+impl TableClassSummary {
+    /// Creates a new builder-style object to manufacture [`TableClassSummary`](crate::model::TableClassSummary)
+    pub fn builder() -> crate::model::table_class_summary::Builder {
+        crate::model::table_class_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TableClass {
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    #[allow(missing_docs)] // documentation missing in model
+    StandardInfrequentAccess,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TableClass {
+    fn from(s: &str) -> Self {
+        match s {
+            "STANDARD" => TableClass::Standard,
+            "STANDARD_INFREQUENT_ACCESS" => TableClass::StandardInfrequentAccess,
+            other => TableClass::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TableClass {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TableClass::from(s))
+    }
+}
+impl TableClass {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TableClass::Standard => "STANDARD",
+            TableClass::StandardInfrequentAccess => "STANDARD_INFREQUENT_ACCESS",
+            TableClass::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["STANDARD", "STANDARD_INFREQUENT_ACCESS"]
+    }
+}
+impl AsRef<str> for TableClass {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4492,6 +4652,8 @@ pub struct ReplicaDescription {
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause
     /// of inaccessibility check the <code>ReplicaStatus</code> property.</p>
     pub replica_inaccessible_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Contains details of the table class.</p>
+    pub replica_table_class_summary: std::option::Option<crate::model::TableClassSummary>,
 }
 impl ReplicaDescription {
     /// <p>The name of the Region.</p>
@@ -4575,6 +4737,12 @@ impl ReplicaDescription {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replica_inaccessible_date_time.as_ref()
     }
+    /// <p>Contains details of the table class.</p>
+    pub fn replica_table_class_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::TableClassSummary> {
+        self.replica_table_class_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicaDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4599,6 +4767,10 @@ impl std::fmt::Debug for ReplicaDescription {
             "replica_inaccessible_date_time",
             &self.replica_inaccessible_date_time,
         );
+        formatter.field(
+            "replica_table_class_summary",
+            &self.replica_table_class_summary,
+        );
         formatter.finish()
     }
 }
@@ -4619,6 +4791,8 @@ pub mod replica_description {
             std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexDescription>,
         >,
         pub(crate) replica_inaccessible_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) replica_table_class_summary:
+            std::option::Option<crate::model::TableClassSummary>,
     }
     impl Builder {
         /// <p>The name of the Region.</p>
@@ -4825,6 +4999,22 @@ pub mod replica_description {
             self.replica_inaccessible_date_time = input;
             self
         }
+        /// <p>Contains details of the table class.</p>
+        pub fn replica_table_class_summary(
+            mut self,
+            input: crate::model::TableClassSummary,
+        ) -> Self {
+            self.replica_table_class_summary = Some(input);
+            self
+        }
+        /// <p>Contains details of the table class.</p>
+        pub fn set_replica_table_class_summary(
+            mut self,
+            input: std::option::Option<crate::model::TableClassSummary>,
+        ) -> Self {
+            self.replica_table_class_summary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicaDescription`](crate::model::ReplicaDescription)
         pub fn build(self) -> crate::model::ReplicaDescription {
             crate::model::ReplicaDescription {
@@ -4836,6 +5026,7 @@ pub mod replica_description {
                 provisioned_throughput_override: self.provisioned_throughput_override,
                 global_secondary_indexes: self.global_secondary_indexes,
                 replica_inaccessible_date_time: self.replica_inaccessible_date_time,
+                replica_table_class_summary: self.replica_table_class_summary,
             }
         }
     }
@@ -7187,6 +7378,9 @@ pub struct UpdateReplicationGroupMemberAction {
     /// <p>Replica-specific global secondary index settings.</p>
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndex>>,
+    /// <p>Replica-specific table class. If not specified, uses the source table's
+    /// table class.</p>
+    pub table_class_override: std::option::Option<crate::model::TableClass>,
 }
 impl UpdateReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
@@ -7214,6 +7408,11 @@ impl UpdateReplicationGroupMemberAction {
     ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndex]> {
         self.global_secondary_indexes.as_deref()
     }
+    /// <p>Replica-specific table class. If not specified, uses the source table's
+    /// table class.</p>
+    pub fn table_class_override(&self) -> std::option::Option<&crate::model::TableClass> {
+        self.table_class_override.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateReplicationGroupMemberAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7225,6 +7424,7 @@ impl std::fmt::Debug for UpdateReplicationGroupMemberAction {
             &self.provisioned_throughput_override,
         );
         formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
+        formatter.field("table_class_override", &self.table_class_override);
         formatter.finish()
     }
 }
@@ -7240,6 +7440,7 @@ pub mod update_replication_group_member_action {
             std::option::Option<crate::model::ProvisionedThroughputOverride>,
         pub(crate) global_secondary_indexes:
             std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndex>>,
+        pub(crate) table_class_override: std::option::Option<crate::model::TableClass>,
     }
     impl Builder {
         /// <p>The Region where the replica exists.</p>
@@ -7313,6 +7514,21 @@ pub mod update_replication_group_member_action {
             self.global_secondary_indexes = input;
             self
         }
+        /// <p>Replica-specific table class. If not specified, uses the source table's
+        /// table class.</p>
+        pub fn table_class_override(mut self, input: crate::model::TableClass) -> Self {
+            self.table_class_override = Some(input);
+            self
+        }
+        /// <p>Replica-specific table class. If not specified, uses the source table's
+        /// table class.</p>
+        pub fn set_table_class_override(
+            mut self,
+            input: std::option::Option<crate::model::TableClass>,
+        ) -> Self {
+            self.table_class_override = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateReplicationGroupMemberAction`](crate::model::UpdateReplicationGroupMemberAction)
         pub fn build(self) -> crate::model::UpdateReplicationGroupMemberAction {
             crate::model::UpdateReplicationGroupMemberAction {
@@ -7320,6 +7536,7 @@ pub mod update_replication_group_member_action {
                 kms_master_key_id: self.kms_master_key_id,
                 provisioned_throughput_override: self.provisioned_throughput_override,
                 global_secondary_indexes: self.global_secondary_indexes,
+                table_class_override: self.table_class_override,
             }
         }
     }
@@ -7440,6 +7657,9 @@ pub struct CreateReplicationGroupMemberAction {
     /// <p>Replica-specific global secondary index settings.</p>
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndex>>,
+    /// <p>Replica-specific table class. If not specified, uses the source table's
+    /// table class.</p>
+    pub table_class_override: std::option::Option<crate::model::TableClass>,
 }
 impl CreateReplicationGroupMemberAction {
     /// <p>The Region where the new replica will be created.</p>
@@ -7467,6 +7687,11 @@ impl CreateReplicationGroupMemberAction {
     ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndex]> {
         self.global_secondary_indexes.as_deref()
     }
+    /// <p>Replica-specific table class. If not specified, uses the source table's
+    /// table class.</p>
+    pub fn table_class_override(&self) -> std::option::Option<&crate::model::TableClass> {
+        self.table_class_override.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateReplicationGroupMemberAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7478,6 +7703,7 @@ impl std::fmt::Debug for CreateReplicationGroupMemberAction {
             &self.provisioned_throughput_override,
         );
         formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
+        formatter.field("table_class_override", &self.table_class_override);
         formatter.finish()
     }
 }
@@ -7493,6 +7719,7 @@ pub mod create_replication_group_member_action {
             std::option::Option<crate::model::ProvisionedThroughputOverride>,
         pub(crate) global_secondary_indexes:
             std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndex>>,
+        pub(crate) table_class_override: std::option::Option<crate::model::TableClass>,
     }
     impl Builder {
         /// <p>The Region where the new replica will be created.</p>
@@ -7566,6 +7793,21 @@ pub mod create_replication_group_member_action {
             self.global_secondary_indexes = input;
             self
         }
+        /// <p>Replica-specific table class. If not specified, uses the source table's
+        /// table class.</p>
+        pub fn table_class_override(mut self, input: crate::model::TableClass) -> Self {
+            self.table_class_override = Some(input);
+            self
+        }
+        /// <p>Replica-specific table class. If not specified, uses the source table's
+        /// table class.</p>
+        pub fn set_table_class_override(
+            mut self,
+            input: std::option::Option<crate::model::TableClass>,
+        ) -> Self {
+            self.table_class_override = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateReplicationGroupMemberAction`](crate::model::CreateReplicationGroupMemberAction)
         pub fn build(self) -> crate::model::CreateReplicationGroupMemberAction {
             crate::model::CreateReplicationGroupMemberAction {
@@ -7573,6 +7815,7 @@ pub mod create_replication_group_member_action {
                 kms_master_key_id: self.kms_master_key_id,
                 provisioned_throughput_override: self.provisioned_throughput_override,
                 global_secondary_indexes: self.global_secondary_indexes,
+                table_class_override: self.table_class_override,
             }
         }
     }
@@ -9099,8 +9342,8 @@ impl AsRef<str> for ReturnItemCollectionMetrics {
     }
 }
 
-/// <p>Determines the level of detail about provisioned throughput consumption that is
-/// returned in the response:</p>
+/// <p>Determines the level of detail about either provisioned or on-demand throughput
+/// consumption that is returned in the response:</p>
 /// <ul>
 /// <li>
 /// <p>
@@ -11082,6 +11325,8 @@ pub struct ReplicaSettingsDescription {
     pub replica_global_secondary_index_settings: std::option::Option<
         std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsDescription>,
     >,
+    /// <p>Contains details of the table class.</p>
+    pub replica_table_class_summary: std::option::Option<crate::model::TableClassSummary>,
 }
 impl ReplicaSettingsDescription {
     /// <p>The Region name of the replica.</p>
@@ -11148,6 +11393,12 @@ impl ReplicaSettingsDescription {
     ) -> std::option::Option<&[crate::model::ReplicaGlobalSecondaryIndexSettingsDescription]> {
         self.replica_global_secondary_index_settings.as_deref()
     }
+    /// <p>Contains details of the table class.</p>
+    pub fn replica_table_class_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::TableClassSummary> {
+        self.replica_table_class_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicaSettingsDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11178,6 +11429,10 @@ impl std::fmt::Debug for ReplicaSettingsDescription {
             "replica_global_secondary_index_settings",
             &self.replica_global_secondary_index_settings,
         );
+        formatter.field(
+            "replica_table_class_summary",
+            &self.replica_table_class_summary,
+        );
         formatter.finish()
     }
 }
@@ -11200,6 +11455,8 @@ pub mod replica_settings_description {
         pub(crate) replica_global_secondary_index_settings: std::option::Option<
             std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsDescription>,
         >,
+        pub(crate) replica_table_class_summary:
+            std::option::Option<crate::model::TableClassSummary>,
     }
     impl Builder {
         /// <p>The Region name of the replica.</p>
@@ -11369,6 +11626,22 @@ pub mod replica_settings_description {
             self.replica_global_secondary_index_settings = input;
             self
         }
+        /// <p>Contains details of the table class.</p>
+        pub fn replica_table_class_summary(
+            mut self,
+            input: crate::model::TableClassSummary,
+        ) -> Self {
+            self.replica_table_class_summary = Some(input);
+            self
+        }
+        /// <p>Contains details of the table class.</p>
+        pub fn set_replica_table_class_summary(
+            mut self,
+            input: std::option::Option<crate::model::TableClassSummary>,
+        ) -> Self {
+            self.replica_table_class_summary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicaSettingsDescription`](crate::model::ReplicaSettingsDescription)
         pub fn build(self) -> crate::model::ReplicaSettingsDescription {
             crate::model::ReplicaSettingsDescription {
@@ -11385,6 +11658,7 @@ pub mod replica_settings_description {
                     .replica_provisioned_write_capacity_auto_scaling_settings,
                 replica_global_secondary_index_settings: self
                     .replica_global_secondary_index_settings,
+                replica_table_class_summary: self.replica_table_class_summary,
             }
         }
     }
@@ -11700,6 +11974,9 @@ pub struct ReplicaSettingsUpdate {
     /// modified.</p>
     pub replica_global_secondary_index_settings_update:
         std::option::Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate>>,
+    /// <p>Replica-specific table class. If not specified, uses the source table's
+    /// table class.</p>
+    pub replica_table_class: std::option::Option<crate::model::TableClass>,
 }
 impl ReplicaSettingsUpdate {
     /// <p>The Region of the replica to be added.</p>
@@ -11728,6 +12005,11 @@ impl ReplicaSettingsUpdate {
         self.replica_global_secondary_index_settings_update
             .as_deref()
     }
+    /// <p>Replica-specific table class. If not specified, uses the source table's
+    /// table class.</p>
+    pub fn replica_table_class(&self) -> std::option::Option<&crate::model::TableClass> {
+        self.replica_table_class.as_ref()
+    }
 }
 impl std::fmt::Debug for ReplicaSettingsUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11745,6 +12027,7 @@ impl std::fmt::Debug for ReplicaSettingsUpdate {
             "replica_global_secondary_index_settings_update",
             &self.replica_global_secondary_index_settings_update,
         );
+        formatter.field("replica_table_class", &self.replica_table_class);
         formatter.finish()
     }
 }
@@ -11761,6 +12044,7 @@ pub mod replica_settings_update {
         pub(crate) replica_global_secondary_index_settings_update: std::option::Option<
             std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate>,
         >,
+        pub(crate) replica_table_class: std::option::Option<crate::model::TableClass>,
     }
     impl Builder {
         /// <p>The Region of the replica to be added.</p>
@@ -11836,6 +12120,21 @@ pub mod replica_settings_update {
             self.replica_global_secondary_index_settings_update = input;
             self
         }
+        /// <p>Replica-specific table class. If not specified, uses the source table's
+        /// table class.</p>
+        pub fn replica_table_class(mut self, input: crate::model::TableClass) -> Self {
+            self.replica_table_class = Some(input);
+            self
+        }
+        /// <p>Replica-specific table class. If not specified, uses the source table's
+        /// table class.</p>
+        pub fn set_replica_table_class(
+            mut self,
+            input: std::option::Option<crate::model::TableClass>,
+        ) -> Self {
+            self.replica_table_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicaSettingsUpdate`](crate::model::ReplicaSettingsUpdate)
         pub fn build(self) -> crate::model::ReplicaSettingsUpdate {
             crate::model::ReplicaSettingsUpdate {
@@ -11846,6 +12145,7 @@ pub mod replica_settings_update {
                     .replica_provisioned_read_capacity_auto_scaling_settings_update,
                 replica_global_secondary_index_settings_update: self
                     .replica_global_secondary_index_settings_update,
+                replica_table_class: self.replica_table_class,
             }
         }
     }

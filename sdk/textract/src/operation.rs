@@ -65,6 +65,37 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeExpense {
     }
 }
 
+/// Operation shape for `AnalyzeID`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`analyze_id`](crate::client::Client::analyze_id).
+///
+/// See [`crate::client::fluent_builders::AnalyzeID`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AnalyzeID {
+    _private: (),
+}
+impl AnalyzeID {
+    /// Creates a new builder-style object to manufacture [`AnalyzeIdInput`](crate::input::AnalyzeIdInput)
+    pub fn builder() -> crate::input::analyze_id_input::Builder {
+        crate::input::analyze_id_input::Builder::default()
+    }
+    /// Creates a new `AnalyzeID` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AnalyzeID {
+    type Output = std::result::Result<crate::output::AnalyzeIdOutput, crate::error::AnalyzeIDError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_analyze_id_error(response)
+        } else {
+            crate::operation_deser::parse_analyze_id_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DetectDocumentText`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

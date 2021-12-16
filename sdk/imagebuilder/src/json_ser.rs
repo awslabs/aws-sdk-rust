@@ -1445,5 +1445,23 @@ pub fn serialize_structure_crate_model_launch_permission_configuration(
         }
         array_351.finish();
     }
+    if let Some(var_353) = &input.organization_arns {
+        let mut array_354 = object.key("organizationArns").start_array();
+        for item_355 in var_353 {
+            {
+                array_354.value().string(item_355);
+            }
+        }
+        array_354.finish();
+    }
+    if let Some(var_356) = &input.organizational_unit_arns {
+        let mut array_357 = object.key("organizationalUnitArns").start_array();
+        for item_358 in var_356 {
+            {
+                array_357.value().string(item_358);
+            }
+        }
+        array_357.finish();
+    }
     Ok(())
 }

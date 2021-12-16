@@ -3990,6 +3990,35 @@ pub struct ThingIndexingConfiguration {
     /// </ul>
     pub thing_connectivity_indexing_mode:
         std::option::Option<crate::model::ThingConnectivityIndexingMode>,
+    /// <p>Device Defender indexing mode. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
+    /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to
+    /// OFF.</p>
+    /// </li>
+    /// <li>
+    /// <p>OFF - Device Defender indexing is disabled.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a>
+    /// </p>
+    pub device_defender_indexing_mode:
+        std::option::Option<crate::model::DeviceDefenderIndexingMode>,
+    /// <p>Named shadow indexing mode. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ON – Your thing index contains named shadow. To enable thing
+    /// named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to
+    /// OFF.</p>
+    /// </li>
+    /// <li>
+    /// <p>OFF - Named shadow indexing is disabled.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
+    /// </p>
+    pub named_shadow_indexing_mode: std::option::Option<crate::model::NamedShadowIndexingMode>,
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
     /// service.</p>
     pub managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -4028,6 +4057,42 @@ impl ThingIndexingConfiguration {
     ) -> std::option::Option<&crate::model::ThingConnectivityIndexingMode> {
         self.thing_connectivity_indexing_mode.as_ref()
     }
+    /// <p>Device Defender indexing mode. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
+    /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to
+    /// OFF.</p>
+    /// </li>
+    /// <li>
+    /// <p>OFF - Device Defender indexing is disabled.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a>
+    /// </p>
+    pub fn device_defender_indexing_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::DeviceDefenderIndexingMode> {
+        self.device_defender_indexing_mode.as_ref()
+    }
+    /// <p>Named shadow indexing mode. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ON – Your thing index contains named shadow. To enable thing
+    /// named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to
+    /// OFF.</p>
+    /// </li>
+    /// <li>
+    /// <p>OFF - Named shadow indexing is disabled.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
+    /// </p>
+    pub fn named_shadow_indexing_mode(
+        &self,
+    ) -> std::option::Option<&crate::model::NamedShadowIndexingMode> {
+        self.named_shadow_indexing_mode.as_ref()
+    }
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
     /// service.</p>
     pub fn managed_fields(&self) -> std::option::Option<&[crate::model::Field]> {
@@ -4046,6 +4111,14 @@ impl std::fmt::Debug for ThingIndexingConfiguration {
             "thing_connectivity_indexing_mode",
             &self.thing_connectivity_indexing_mode,
         );
+        formatter.field(
+            "device_defender_indexing_mode",
+            &self.device_defender_indexing_mode,
+        );
+        formatter.field(
+            "named_shadow_indexing_mode",
+            &self.named_shadow_indexing_mode,
+        );
         formatter.field("managed_fields", &self.managed_fields);
         formatter.field("custom_fields", &self.custom_fields);
         formatter.finish()
@@ -4060,6 +4133,10 @@ pub mod thing_indexing_configuration {
         pub(crate) thing_indexing_mode: std::option::Option<crate::model::ThingIndexingMode>,
         pub(crate) thing_connectivity_indexing_mode:
             std::option::Option<crate::model::ThingConnectivityIndexingMode>,
+        pub(crate) device_defender_indexing_mode:
+            std::option::Option<crate::model::DeviceDefenderIndexingMode>,
+        pub(crate) named_shadow_indexing_mode:
+            std::option::Option<crate::model::NamedShadowIndexingMode>,
         pub(crate) managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
         pub(crate) custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     }
@@ -4135,6 +4212,86 @@ pub mod thing_indexing_configuration {
             self.thing_connectivity_indexing_mode = input;
             self
         }
+        /// <p>Device Defender indexing mode. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
+        /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to
+        /// OFF.</p>
+        /// </li>
+        /// <li>
+        /// <p>OFF - Device Defender indexing is disabled.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a>
+        /// </p>
+        pub fn device_defender_indexing_mode(
+            mut self,
+            input: crate::model::DeviceDefenderIndexingMode,
+        ) -> Self {
+            self.device_defender_indexing_mode = Some(input);
+            self
+        }
+        /// <p>Device Defender indexing mode. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
+        /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to
+        /// OFF.</p>
+        /// </li>
+        /// <li>
+        /// <p>OFF - Device Defender indexing is disabled.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a>
+        /// </p>
+        pub fn set_device_defender_indexing_mode(
+            mut self,
+            input: std::option::Option<crate::model::DeviceDefenderIndexingMode>,
+        ) -> Self {
+            self.device_defender_indexing_mode = input;
+            self
+        }
+        /// <p>Named shadow indexing mode. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>ON – Your thing index contains named shadow. To enable thing
+        /// named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to
+        /// OFF.</p>
+        /// </li>
+        /// <li>
+        /// <p>OFF - Named shadow indexing is disabled.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
+        /// </p>
+        pub fn named_shadow_indexing_mode(
+            mut self,
+            input: crate::model::NamedShadowIndexingMode,
+        ) -> Self {
+            self.named_shadow_indexing_mode = Some(input);
+            self
+        }
+        /// <p>Named shadow indexing mode. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>ON – Your thing index contains named shadow. To enable thing
+        /// named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to
+        /// OFF.</p>
+        /// </li>
+        /// <li>
+        /// <p>OFF - Named shadow indexing is disabled.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
+        /// </p>
+        pub fn set_named_shadow_indexing_mode(
+            mut self,
+            input: std::option::Option<crate::model::NamedShadowIndexingMode>,
+        ) -> Self {
+            self.named_shadow_indexing_mode = input;
+            self
+        }
         /// Appends an item to `managed_fields`.
         ///
         /// To override the contents of this collection use [`set_managed_fields`](Self::set_managed_fields).
@@ -4180,6 +4337,8 @@ pub mod thing_indexing_configuration {
             crate::model::ThingIndexingConfiguration {
                 thing_indexing_mode: self.thing_indexing_mode,
                 thing_connectivity_indexing_mode: self.thing_connectivity_indexing_mode,
+                device_defender_indexing_mode: self.device_defender_indexing_mode,
+                named_shadow_indexing_mode: self.named_shadow_indexing_mode,
                 managed_fields: self.managed_fields,
                 custom_fields: self.custom_fields,
             }
@@ -4190,6 +4349,116 @@ impl ThingIndexingConfiguration {
     /// Creates a new builder-style object to manufacture [`ThingIndexingConfiguration`](crate::model::ThingIndexingConfiguration)
     pub fn builder() -> crate::model::thing_indexing_configuration::Builder {
         crate::model::thing_indexing_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NamedShadowIndexingMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Off,
+    #[allow(missing_docs)] // documentation missing in model
+    On,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for NamedShadowIndexingMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "OFF" => NamedShadowIndexingMode::Off,
+            "ON" => NamedShadowIndexingMode::On,
+            other => NamedShadowIndexingMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for NamedShadowIndexingMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NamedShadowIndexingMode::from(s))
+    }
+}
+impl NamedShadowIndexingMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NamedShadowIndexingMode::Off => "OFF",
+            NamedShadowIndexingMode::On => "ON",
+            NamedShadowIndexingMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["OFF", "ON"]
+    }
+}
+impl AsRef<str> for NamedShadowIndexingMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeviceDefenderIndexingMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Off,
+    #[allow(missing_docs)] // documentation missing in model
+    Violations,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeviceDefenderIndexingMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "OFF" => DeviceDefenderIndexingMode::Off,
+            "VIOLATIONS" => DeviceDefenderIndexingMode::Violations,
+            other => DeviceDefenderIndexingMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeviceDefenderIndexingMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeviceDefenderIndexingMode::from(s))
+    }
+}
+impl DeviceDefenderIndexingMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeviceDefenderIndexingMode::Off => "OFF",
+            DeviceDefenderIndexingMode::Violations => "VIOLATIONS",
+            DeviceDefenderIndexingMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["OFF", "VIOLATIONS"]
+    }
+}
+impl AsRef<str> for DeviceDefenderIndexingMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7669,8 +7938,13 @@ pub struct ThingDocument {
     /// <p>The attributes.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The shadow.</p>
+    /// <p>The unnamed shadow and named shadow.</p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
+    /// </p>
     pub shadow: std::option::Option<std::string::String>,
+    /// <p>Contains Device Defender data.</p>
+    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
+    pub device_defender: std::option::Option<std::string::String>,
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
     pub connectivity: std::option::Option<crate::model::ThingConnectivity>,
 }
@@ -7698,9 +7972,16 @@ impl ThingDocument {
     {
         self.attributes.as_ref()
     }
-    /// <p>The shadow.</p>
+    /// <p>The unnamed shadow and named shadow.</p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
+    /// </p>
     pub fn shadow(&self) -> std::option::Option<&str> {
         self.shadow.as_deref()
+    }
+    /// <p>Contains Device Defender data.</p>
+    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
+    pub fn device_defender(&self) -> std::option::Option<&str> {
+        self.device_defender.as_deref()
     }
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
     pub fn connectivity(&self) -> std::option::Option<&crate::model::ThingConnectivity> {
@@ -7716,6 +7997,7 @@ impl std::fmt::Debug for ThingDocument {
         formatter.field("thing_group_names", &self.thing_group_names);
         formatter.field("attributes", &self.attributes);
         formatter.field("shadow", &self.shadow);
+        formatter.field("device_defender", &self.device_defender);
         formatter.field("connectivity", &self.connectivity);
         formatter.finish()
     }
@@ -7734,6 +8016,7 @@ pub mod thing_document {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) shadow: std::option::Option<std::string::String>,
+        pub(crate) device_defender: std::option::Option<std::string::String>,
         pub(crate) connectivity: std::option::Option<crate::model::ThingConnectivity>,
     }
     impl Builder {
@@ -7814,14 +8097,33 @@ pub mod thing_document {
             self.attributes = input;
             self
         }
-        /// <p>The shadow.</p>
+        /// <p>The unnamed shadow and named shadow.</p>
+        /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
+        /// </p>
         pub fn shadow(mut self, input: impl Into<std::string::String>) -> Self {
             self.shadow = Some(input.into());
             self
         }
-        /// <p>The shadow.</p>
+        /// <p>The unnamed shadow and named shadow.</p>
+        /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
+        /// </p>
         pub fn set_shadow(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shadow = input;
+            self
+        }
+        /// <p>Contains Device Defender data.</p>
+        /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
+        pub fn device_defender(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_defender = Some(input.into());
+            self
+        }
+        /// <p>Contains Device Defender data.</p>
+        /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
+        pub fn set_device_defender(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.device_defender = input;
             self
         }
         /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
@@ -7846,6 +8148,7 @@ pub mod thing_document {
                 thing_group_names: self.thing_group_names,
                 attributes: self.attributes,
                 shadow: self.shadow,
+                device_defender: self.device_defender,
                 connectivity: self.connectivity,
             }
         }
@@ -15862,6 +16165,151 @@ impl AsRef<str> for MitigationActionType {
     }
 }
 
+/// <p>An object that contains information about the managed template.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ManagedJobTemplateSummary {
+    /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
+    pub template_arn: std::option::Option<std::string::String>,
+    /// <p>The unique Name for a managed template.</p>
+    pub template_name: std::option::Option<std::string::String>,
+    /// <p>The description for a managed template.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A list of environments that are supported with the managed job template.</p>
+    pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The version for a managed template.</p>
+    pub template_version: std::option::Option<std::string::String>,
+}
+impl ManagedJobTemplateSummary {
+    /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
+    pub fn template_arn(&self) -> std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
+    /// <p>The unique Name for a managed template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The description for a managed template.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A list of environments that are supported with the managed job template.</p>
+    pub fn environments(&self) -> std::option::Option<&[std::string::String]> {
+        self.environments.as_deref()
+    }
+    /// <p>The version for a managed template.</p>
+    pub fn template_version(&self) -> std::option::Option<&str> {
+        self.template_version.as_deref()
+    }
+}
+impl std::fmt::Debug for ManagedJobTemplateSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ManagedJobTemplateSummary");
+        formatter.field("template_arn", &self.template_arn);
+        formatter.field("template_name", &self.template_name);
+        formatter.field("description", &self.description);
+        formatter.field("environments", &self.environments);
+        formatter.field("template_version", &self.template_version);
+        formatter.finish()
+    }
+}
+/// See [`ManagedJobTemplateSummary`](crate::model::ManagedJobTemplateSummary)
+pub mod managed_job_template_summary {
+    /// A builder for [`ManagedJobTemplateSummary`](crate::model::ManagedJobTemplateSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) template_arn: std::option::Option<std::string::String>,
+        pub(crate) template_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) environments: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) template_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
+        pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
+        pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_arn = input;
+            self
+        }
+        /// <p>The unique Name for a managed template.</p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
+            self
+        }
+        /// <p>The unique Name for a managed template.</p>
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
+            self
+        }
+        /// <p>The description for a managed template.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description for a managed template.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `environments`.
+        ///
+        /// To override the contents of this collection use [`set_environments`](Self::set_environments).
+        ///
+        /// <p>A list of environments that are supported with the managed job template.</p>
+        pub fn environments(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.environments.unwrap_or_default();
+            v.push(input.into());
+            self.environments = Some(v);
+            self
+        }
+        /// <p>A list of environments that are supported with the managed job template.</p>
+        pub fn set_environments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.environments = input;
+            self
+        }
+        /// <p>The version for a managed template.</p>
+        pub fn template_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_version = Some(input.into());
+            self
+        }
+        /// <p>The version for a managed template.</p>
+        pub fn set_template_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ManagedJobTemplateSummary`](crate::model::ManagedJobTemplateSummary)
+        pub fn build(self) -> crate::model::ManagedJobTemplateSummary {
+            crate::model::ManagedJobTemplateSummary {
+                template_arn: self.template_arn,
+                template_name: self.template_name,
+                description: self.description,
+                environments: self.environments,
+                template_version: self.template_version,
+            }
+        }
+    }
+}
+impl ManagedJobTemplateSummary {
+    /// Creates a new builder-style object to manufacture [`ManagedJobTemplateSummary`](crate::model::ManagedJobTemplateSummary)
+    pub fn builder() -> crate::model::managed_job_template_summary::Builder {
+        crate::model::managed_job_template_summary::Builder::default()
+    }
+}
+
 /// <p>An object that contains information about the job template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -20921,12 +21369,13 @@ impl TopicRule {
     }
 }
 
-/// <p>A map of key-value pairs for all supported statistics. Currently, only count is
-/// supported.</p>
+/// <p>A map of key-value pairs for all supported statistics. For issues with missing or unexpected values for this API,
+/// consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html">
+/// Fleet indexing troubleshooting guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statistics {
-    /// <p>The count of things that match the query.</p>
+    /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
     pub count: i32,
     /// <p>The average of the aggregated field values.</p>
     pub average: std::option::Option<f64>,
@@ -20944,7 +21393,7 @@ pub struct Statistics {
     pub std_deviation: std::option::Option<f64>,
 }
 impl Statistics {
-    /// <p>The count of things that match the query.</p>
+    /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
     pub fn count(&self) -> i32 {
         self.count
     }
@@ -21007,12 +21456,12 @@ pub mod statistics {
         pub(crate) std_deviation: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The count of things that match the query.</p>
+        /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
         pub fn count(mut self, input: i32) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>The count of things that match the query.</p>
+        /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -24284,6 +24733,158 @@ impl RoleAliasDescription {
     }
 }
 
+/// <p>A map of key-value pairs containing the patterns that need to be replaced in a managed
+/// template job document schema. You can use the description of each key as a guidance to specify
+/// the inputs during runtime when creating a job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DocumentParameter {
+    /// <p>Key of the map field containing the patterns that need to be replaced in a managed
+    /// template job document schema.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>Description of the map field containing the patterns that need to be replaced in a
+    /// managed template job document schema.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A regular expression of the patterns that need to be replaced in a managed template
+    /// job document schema.</p>
+    pub regex: std::option::Option<std::string::String>,
+    /// <p>An example illustrating a pattern that need to be replaced in a managed template
+    /// job document schema.</p>
+    pub example: std::option::Option<std::string::String>,
+    /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document
+    /// schema is optional or required.</p>
+    pub optional: bool,
+}
+impl DocumentParameter {
+    /// <p>Key of the map field containing the patterns that need to be replaced in a managed
+    /// template job document schema.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Description of the map field containing the patterns that need to be replaced in a
+    /// managed template job document schema.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A regular expression of the patterns that need to be replaced in a managed template
+    /// job document schema.</p>
+    pub fn regex(&self) -> std::option::Option<&str> {
+        self.regex.as_deref()
+    }
+    /// <p>An example illustrating a pattern that need to be replaced in a managed template
+    /// job document schema.</p>
+    pub fn example(&self) -> std::option::Option<&str> {
+        self.example.as_deref()
+    }
+    /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document
+    /// schema is optional or required.</p>
+    pub fn optional(&self) -> bool {
+        self.optional
+    }
+}
+impl std::fmt::Debug for DocumentParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentParameter");
+        formatter.field("key", &self.key);
+        formatter.field("description", &self.description);
+        formatter.field("regex", &self.regex);
+        formatter.field("example", &self.example);
+        formatter.field("optional", &self.optional);
+        formatter.finish()
+    }
+}
+/// See [`DocumentParameter`](crate::model::DocumentParameter)
+pub mod document_parameter {
+    /// A builder for [`DocumentParameter`](crate::model::DocumentParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) regex: std::option::Option<std::string::String>,
+        pub(crate) example: std::option::Option<std::string::String>,
+        pub(crate) optional: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Key of the map field containing the patterns that need to be replaced in a managed
+        /// template job document schema.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>Key of the map field containing the patterns that need to be replaced in a managed
+        /// template job document schema.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>Description of the map field containing the patterns that need to be replaced in a
+        /// managed template job document schema.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Description of the map field containing the patterns that need to be replaced in a
+        /// managed template job document schema.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A regular expression of the patterns that need to be replaced in a managed template
+        /// job document schema.</p>
+        pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regex = Some(input.into());
+            self
+        }
+        /// <p>A regular expression of the patterns that need to be replaced in a managed template
+        /// job document schema.</p>
+        pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex = input;
+            self
+        }
+        /// <p>An example illustrating a pattern that need to be replaced in a managed template
+        /// job document schema.</p>
+        pub fn example(mut self, input: impl Into<std::string::String>) -> Self {
+            self.example = Some(input.into());
+            self
+        }
+        /// <p>An example illustrating a pattern that need to be replaced in a managed template
+        /// job document schema.</p>
+        pub fn set_example(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.example = input;
+            self
+        }
+        /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document
+        /// schema is optional or required.</p>
+        pub fn optional(mut self, input: bool) -> Self {
+            self.optional = Some(input);
+            self
+        }
+        /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document
+        /// schema is optional or required.</p>
+        pub fn set_optional(mut self, input: std::option::Option<bool>) -> Self {
+            self.optional = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DocumentParameter`](crate::model::DocumentParameter)
+        pub fn build(self) -> crate::model::DocumentParameter {
+            crate::model::DocumentParameter {
+                key: self.key,
+                description: self.description,
+                regex: self.regex,
+                example: self.example,
+                optional: self.optional.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DocumentParameter {
+    /// Creates a new builder-style object to manufacture [`DocumentParameter`](crate::model::DocumentParameter)
+    pub fn builder() -> crate::model::document_parameter::Builder {
+        crate::model::document_parameter::Builder::default()
+    }
+}
+
 /// <p>The job execution object represents the execution of a job on a particular device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -24716,6 +25317,11 @@ pub struct Job {
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the job template used to create the job.</p>
     pub job_template_arn: std::option::Option<std::string::String>,
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed
+    /// template job document schema. You can use the description of each key as a guidance
+    /// to specify the inputs during runtime when creating a job.</p>
+    pub document_parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -24813,6 +25419,15 @@ impl Job {
     pub fn job_template_arn(&self) -> std::option::Option<&str> {
         self.job_template_arn.as_deref()
     }
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed
+    /// template job document schema. You can use the description of each key as a guidance
+    /// to specify the inputs during runtime when creating a job.</p>
+    pub fn document_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.document_parameters.as_ref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24839,6 +25454,7 @@ impl std::fmt::Debug for Job {
         formatter.field("timeout_config", &self.timeout_config);
         formatter.field("namespace_id", &self.namespace_id);
         formatter.field("job_template_arn", &self.job_template_arn);
+        formatter.field("document_parameters", &self.document_parameters);
         formatter.finish()
     }
 }
@@ -24868,6 +25484,9 @@ pub mod job {
         pub(crate) timeout_config: std::option::Option<crate::model::TimeoutConfig>,
         pub(crate) namespace_id: std::option::Option<std::string::String>,
         pub(crate) job_template_arn: std::option::Option<std::string::String>,
+        pub(crate) document_parameters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
@@ -25136,6 +25755,35 @@ pub mod job {
             self.job_template_arn = input;
             self
         }
+        /// Adds a key-value pair to `document_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
+        ///
+        /// <p>A key-value map that pairs the patterns that need to be replaced in a managed
+        /// template job document schema. You can use the description of each key as a guidance
+        /// to specify the inputs during runtime when creating a job.</p>
+        pub fn document_parameters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.document_parameters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.document_parameters = Some(hash_map);
+            self
+        }
+        /// <p>A key-value map that pairs the patterns that need to be replaced in a managed
+        /// template job document schema. You can use the description of each key as a guidance
+        /// to specify the inputs during runtime when creating a job.</p>
+        pub fn set_document_parameters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.document_parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job)
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
@@ -25158,6 +25806,7 @@ pub mod job {
                 timeout_config: self.timeout_config,
                 namespace_id: self.namespace_id,
                 job_template_arn: self.job_template_arn,
+                document_parameters: self.document_parameters,
             }
         }
     }

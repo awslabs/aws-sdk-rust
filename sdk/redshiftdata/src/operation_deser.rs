@@ -107,6 +107,24 @@ pub fn parse_cancel_statement_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DatabaseConnectionException" => crate::error::CancelStatementError {
+            meta: generic,
+            kind: crate::error::CancelStatementErrorKind::DatabaseConnectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::database_connection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_database_connection_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelStatementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::CancelStatementError {
             meta: generic,
             kind: crate::error::CancelStatementErrorKind::InternalServerException({
@@ -279,6 +297,24 @@ pub fn parse_describe_table_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DatabaseConnectionException" => crate::error::DescribeTableError {
+            meta: generic,
+            kind: crate::error::DescribeTableErrorKind::DatabaseConnectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::database_connection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_database_connection_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::DescribeTableError {
             meta: generic,
             kind: crate::error::DescribeTableErrorKind::InternalServerException({
@@ -526,6 +562,24 @@ pub fn parse_list_databases_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DatabaseConnectionException" => crate::error::ListDatabasesError {
+            meta: generic,
+            kind: crate::error::ListDatabasesErrorKind::DatabaseConnectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::database_connection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_database_connection_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatabasesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::ListDatabasesError {
             meta: generic,
             kind: crate::error::ListDatabasesErrorKind::InternalServerException({
@@ -594,6 +648,24 @@ pub fn parse_list_schemas_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DatabaseConnectionException" => crate::error::ListSchemasError {
+            meta: generic,
+            kind: crate::error::ListSchemasErrorKind::DatabaseConnectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::database_connection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_database_connection_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSchemasError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::ListSchemasError {
             meta: generic,
             kind: crate::error::ListSchemasErrorKind::InternalServerException({
@@ -730,6 +802,24 @@ pub fn parse_list_tables_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DatabaseConnectionException" => crate::error::ListTablesError {
+            meta: generic,
+            kind: crate::error::ListTablesErrorKind::DatabaseConnectionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::database_connection_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_database_connection_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTablesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerException" => crate::error::ListTablesError {
             meta: generic,
             kind: crate::error::ListTablesErrorKind::InternalServerException({

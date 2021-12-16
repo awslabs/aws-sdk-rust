@@ -10,6 +10,104 @@
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum LanguageCode {
+    #[allow(missing_docs)] // documentation missing in model
+    DeDe,
+    #[allow(missing_docs)] // documentation missing in model
+    EnAu,
+    #[allow(missing_docs)] // documentation missing in model
+    EnGb,
+    #[allow(missing_docs)] // documentation missing in model
+    EnUs,
+    #[allow(missing_docs)] // documentation missing in model
+    EsUs,
+    #[allow(missing_docs)] // documentation missing in model
+    FrCa,
+    #[allow(missing_docs)] // documentation missing in model
+    FrFr,
+    #[allow(missing_docs)] // documentation missing in model
+    ItIt,
+    #[allow(missing_docs)] // documentation missing in model
+    JaJp,
+    #[allow(missing_docs)] // documentation missing in model
+    KoKr,
+    #[allow(missing_docs)] // documentation missing in model
+    PtBr,
+    #[allow(missing_docs)] // documentation missing in model
+    ZhCn,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LanguageCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "de-DE" => LanguageCode::DeDe,
+            "en-AU" => LanguageCode::EnAu,
+            "en-GB" => LanguageCode::EnGb,
+            "en-US" => LanguageCode::EnUs,
+            "es-US" => LanguageCode::EsUs,
+            "fr-CA" => LanguageCode::FrCa,
+            "fr-FR" => LanguageCode::FrFr,
+            "it-IT" => LanguageCode::ItIt,
+            "ja-JP" => LanguageCode::JaJp,
+            "ko-KR" => LanguageCode::KoKr,
+            "pt-BR" => LanguageCode::PtBr,
+            "zh-CN" => LanguageCode::ZhCn,
+            other => LanguageCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LanguageCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LanguageCode::from(s))
+    }
+}
+impl LanguageCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LanguageCode::DeDe => "de-DE",
+            LanguageCode::EnAu => "en-AU",
+            LanguageCode::EnGb => "en-GB",
+            LanguageCode::EnUs => "en-US",
+            LanguageCode::EsUs => "es-US",
+            LanguageCode::FrCa => "fr-CA",
+            LanguageCode::FrFr => "fr-FR",
+            LanguageCode::ItIt => "it-IT",
+            LanguageCode::JaJp => "ja-JP",
+            LanguageCode::KoKr => "ko-KR",
+            LanguageCode::PtBr => "pt-BR",
+            LanguageCode::ZhCn => "zh-CN",
+            LanguageCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
+            "ko-KR", "pt-BR", "zh-CN",
+        ]
+    }
+}
+impl AsRef<str> for LanguageCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ContentRedactionType {
     #[allow(missing_docs)] // documentation missing in model
     Pii,
@@ -225,8 +323,7 @@ impl AsRef<str> for VocabularyFilterMethod {
 pub enum TranscriptResultStream {
     /// <p>A portion of the transcription of the audio stream. Events are sent periodically from
     /// Amazon Transcribe to your application. The event can be a partial transcription of a section of the audio
-    /// stream, or it can be the entire transcription of that portion of the audio stream.
-    /// </p>
+    /// stream, or it can be the entire transcription of that portion of the audio stream. </p>
     TranscriptEvent(crate::model::TranscriptEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -420,6 +517,11 @@ pub struct Result {
     /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
     /// channel in your audio stream.</p>
     pub channel_id: std::option::Option<std::string::String>,
+    /// <p>The language code of the identified language in your media stream.</p>
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+    /// <p>The language code of the dominant language identified in your media.</p>
+    pub language_identification:
+        std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
 }
 impl Result {
     /// <p>A unique identifier for the result. </p>
@@ -456,6 +558,16 @@ impl Result {
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
     }
+    /// <p>The language code of the identified language in your media stream.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The language code of the dominant language identified in your media.</p>
+    pub fn language_identification(
+        &self,
+    ) -> std::option::Option<&[crate::model::LanguageWithScore]> {
+        self.language_identification.as_deref()
+    }
 }
 impl std::fmt::Debug for Result {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -466,6 +578,8 @@ impl std::fmt::Debug for Result {
         formatter.field("is_partial", &self.is_partial);
         formatter.field("alternatives", &self.alternatives);
         formatter.field("channel_id", &self.channel_id);
+        formatter.field("language_code", &self.language_code);
+        formatter.field("language_identification", &self.language_identification);
         formatter.finish()
     }
 }
@@ -481,6 +595,9 @@ pub mod result {
         pub(crate) is_partial: std::option::Option<bool>,
         pub(crate) alternatives: std::option::Option<std::vec::Vec<crate::model::Alternative>>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) language_identification:
+            std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
     }
     impl Builder {
         /// <p>A unique identifier for the result. </p>
@@ -572,6 +689,41 @@ pub mod result {
             self.channel_id = input;
             self
         }
+        /// <p>The language code of the identified language in your media stream.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language code of the identified language in your media stream.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// Appends an item to `language_identification`.
+        ///
+        /// To override the contents of this collection use [`set_language_identification`](Self::set_language_identification).
+        ///
+        /// <p>The language code of the dominant language identified in your media.</p>
+        pub fn language_identification(
+            mut self,
+            input: impl Into<crate::model::LanguageWithScore>,
+        ) -> Self {
+            let mut v = self.language_identification.unwrap_or_default();
+            v.push(input.into());
+            self.language_identification = Some(v);
+            self
+        }
+        /// <p>The language code of the dominant language identified in your media.</p>
+        pub fn set_language_identification(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LanguageWithScore>>,
+        ) -> Self {
+            self.language_identification = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Result`](crate::model::Result)
         pub fn build(self) -> crate::model::Result {
             crate::model::Result {
@@ -581,6 +733,8 @@ pub mod result {
                 is_partial: self.is_partial.unwrap_or_default(),
                 alternatives: self.alternatives,
                 channel_id: self.channel_id,
+                language_code: self.language_code,
+                language_identification: self.language_identification,
             }
         }
     }
@@ -589,6 +743,92 @@ impl Result {
     /// Creates a new builder-style object to manufacture [`Result`](crate::model::Result)
     pub fn builder() -> crate::model::result::Builder {
         crate::model::result::Builder::default()
+    }
+}
+
+/// <p>The language codes of the identified languages and their associated confidence scores.
+/// The confidence score is a value between zero and one; a larger value indicates a higher
+/// confidence in the identified language.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LanguageWithScore {
+    /// <p>The language code of the language identified by Amazon Transcribe.</p>
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+    /// <p>The confidence score for the associated language code. Confidence scores are values
+    /// between zero and one; larger values indicate a higher confidence in the identified language.
+    /// </p>
+    pub score: f64,
+}
+impl LanguageWithScore {
+    /// <p>The language code of the language identified by Amazon Transcribe.</p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The confidence score for the associated language code. Confidence scores are values
+    /// between zero and one; larger values indicate a higher confidence in the identified language.
+    /// </p>
+    pub fn score(&self) -> f64 {
+        self.score
+    }
+}
+impl std::fmt::Debug for LanguageWithScore {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LanguageWithScore");
+        formatter.field("language_code", &self.language_code);
+        formatter.field("score", &self.score);
+        formatter.finish()
+    }
+}
+/// See [`LanguageWithScore`](crate::model::LanguageWithScore)
+pub mod language_with_score {
+    /// A builder for [`LanguageWithScore`](crate::model::LanguageWithScore)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) score: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The language code of the language identified by Amazon Transcribe.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language code of the language identified by Amazon Transcribe.</p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The confidence score for the associated language code. Confidence scores are values
+        /// between zero and one; larger values indicate a higher confidence in the identified language.
+        /// </p>
+        pub fn score(mut self, input: f64) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p>The confidence score for the associated language code. Confidence scores are values
+        /// between zero and one; larger values indicate a higher confidence in the identified language.
+        /// </p>
+        pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
+            self.score = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LanguageWithScore`](crate::model::LanguageWithScore)
+        pub fn build(self) -> crate::model::LanguageWithScore {
+            crate::model::LanguageWithScore {
+                language_code: self.language_code,
+                score: self.score.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl LanguageWithScore {
+    /// Creates a new builder-style object to manufacture [`LanguageWithScore`](crate::model::LanguageWithScore)
+    pub fn builder() -> crate::model::language_with_score::Builder {
+        crate::model::language_with_score::Builder::default()
     }
 }
 
@@ -710,7 +950,7 @@ pub struct Entity {
     pub start_time: f64,
     /// <p>The end time of speech that was identified as PII.</p>
     pub end_time: f64,
-    /// <p>The category of of information identified in this entity; for example, PII.</p>
+    /// <p>The category of information identified in this entity; for example, PII.</p>
     pub category: std::option::Option<std::string::String>,
     /// <p>The type of PII identified in this entity; for example, name or credit card number.</p>
     pub r#type: std::option::Option<std::string::String>,
@@ -728,7 +968,7 @@ impl Entity {
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>The category of of information identified in this entity; for example, PII.</p>
+    /// <p>The category of information identified in this entity; for example, PII.</p>
     pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
@@ -791,12 +1031,12 @@ pub mod entity {
             self.end_time = input;
             self
         }
-        /// <p>The category of of information identified in this entity; for example, PII.</p>
+        /// <p>The category of information identified in this entity; for example, PII.</p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
             self.category = Some(input.into());
             self
         }
-        /// <p>The category of of information identified in this entity; for example, PII.</p>
+        /// <p>The category of information identified in this entity; for example, PII.</p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.category = input;
             self
@@ -861,20 +1101,20 @@ pub struct Item {
     /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in
     /// the item.</p>
     pub end_time: f64,
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that
-    /// was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was
-    /// interpreted as a pause in the input audio.</p>
+    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
+    /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
+    /// was interpreted as a pause in the input audio.</p>
     pub r#type: std::option::Option<crate::model::ItemType>,
     /// <p>The word or punctuation that was recognized in the input audio.</p>
     pub content: std::option::Option<std::string::String>,
     /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
-    /// for your real-time stream. If <code>true</code> then a word in the item matches your
+    /// for your media stream. If <code>true</code> then a word in the item matches your
     /// vocabulary filter.</p>
     pub vocabulary_filter_match: bool,
-    /// <p>If speaker identification is enabled, shows the speakers identified in the real-time
+    /// <p>If speaker identification is enabled, shows the speakers identified in the media
     /// stream.</p>
     pub speaker: std::option::Option<std::string::String>,
-    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe assigns to each
+    /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each
     /// word or phrase that it transcribes.</p>
     pub confidence: std::option::Option<f64>,
     /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in
@@ -892,9 +1132,9 @@ impl Item {
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that
-    /// was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was
-    /// interpreted as a pause in the input audio.</p>
+    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
+    /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
+    /// was interpreted as a pause in the input audio.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
         self.r#type.as_ref()
     }
@@ -903,17 +1143,17 @@ impl Item {
         self.content.as_deref()
     }
     /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
-    /// for your real-time stream. If <code>true</code> then a word in the item matches your
+    /// for your media stream. If <code>true</code> then a word in the item matches your
     /// vocabulary filter.</p>
     pub fn vocabulary_filter_match(&self) -> bool {
         self.vocabulary_filter_match
     }
-    /// <p>If speaker identification is enabled, shows the speakers identified in the real-time
+    /// <p>If speaker identification is enabled, shows the speakers identified in the media
     /// stream.</p>
     pub fn speaker(&self) -> std::option::Option<&str> {
         self.speaker.as_deref()
     }
-    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe assigns to each
+    /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each
     /// word or phrase that it transcribes.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
@@ -978,16 +1218,16 @@ pub mod item {
             self.end_time = input;
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that
-        /// was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was
-        /// interpreted as a pause in the input audio.</p>
+        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
+        /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
+        /// was interpreted as a pause in the input audio.</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that
-        /// was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was
-        /// interpreted as a pause in the input audio.</p>
+        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
+        /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
+        /// was interpreted as a pause in the input audio.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
             self.r#type = input;
             self
@@ -1003,38 +1243,38 @@ pub mod item {
             self
         }
         /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
-        /// for your real-time stream. If <code>true</code> then a word in the item matches your
+        /// for your media stream. If <code>true</code> then a word in the item matches your
         /// vocabulary filter.</p>
         pub fn vocabulary_filter_match(mut self, input: bool) -> Self {
             self.vocabulary_filter_match = Some(input);
             self
         }
         /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
-        /// for your real-time stream. If <code>true</code> then a word in the item matches your
+        /// for your media stream. If <code>true</code> then a word in the item matches your
         /// vocabulary filter.</p>
         pub fn set_vocabulary_filter_match(mut self, input: std::option::Option<bool>) -> Self {
             self.vocabulary_filter_match = input;
             self
         }
-        /// <p>If speaker identification is enabled, shows the speakers identified in the real-time
+        /// <p>If speaker identification is enabled, shows the speakers identified in the media
         /// stream.</p>
         pub fn speaker(mut self, input: impl Into<std::string::String>) -> Self {
             self.speaker = Some(input.into());
             self
         }
-        /// <p>If speaker identification is enabled, shows the speakers identified in the real-time
+        /// <p>If speaker identification is enabled, shows the speakers identified in the media
         /// stream.</p>
         pub fn set_speaker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.speaker = input;
             self
         }
-        /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe assigns to each
+        /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each
         /// word or phrase that it transcribes.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe assigns to each
+        /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each
         /// word or phrase that it transcribes.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
@@ -1183,104 +1423,6 @@ impl MediaEncoding {
     }
 }
 impl AsRef<str> for MediaEncoding {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum LanguageCode {
-    #[allow(missing_docs)] // documentation missing in model
-    DeDe,
-    #[allow(missing_docs)] // documentation missing in model
-    EnAu,
-    #[allow(missing_docs)] // documentation missing in model
-    EnGb,
-    #[allow(missing_docs)] // documentation missing in model
-    EnUs,
-    #[allow(missing_docs)] // documentation missing in model
-    EsUs,
-    #[allow(missing_docs)] // documentation missing in model
-    FrCa,
-    #[allow(missing_docs)] // documentation missing in model
-    FrFr,
-    #[allow(missing_docs)] // documentation missing in model
-    ItIt,
-    #[allow(missing_docs)] // documentation missing in model
-    JaJp,
-    #[allow(missing_docs)] // documentation missing in model
-    KoKr,
-    #[allow(missing_docs)] // documentation missing in model
-    PtBr,
-    #[allow(missing_docs)] // documentation missing in model
-    ZhCn,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for LanguageCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "de-DE" => LanguageCode::DeDe,
-            "en-AU" => LanguageCode::EnAu,
-            "en-GB" => LanguageCode::EnGb,
-            "en-US" => LanguageCode::EnUs,
-            "es-US" => LanguageCode::EsUs,
-            "fr-CA" => LanguageCode::FrCa,
-            "fr-FR" => LanguageCode::FrFr,
-            "it-IT" => LanguageCode::ItIt,
-            "ja-JP" => LanguageCode::JaJp,
-            "ko-KR" => LanguageCode::KoKr,
-            "pt-BR" => LanguageCode::PtBr,
-            "zh-CN" => LanguageCode::ZhCn,
-            other => LanguageCode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for LanguageCode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LanguageCode::from(s))
-    }
-}
-impl LanguageCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LanguageCode::DeDe => "de-DE",
-            LanguageCode::EnAu => "en-AU",
-            LanguageCode::EnGb => "en-GB",
-            LanguageCode::EnUs => "en-US",
-            LanguageCode::EsUs => "es-US",
-            LanguageCode::FrCa => "fr-CA",
-            LanguageCode::FrFr => "fr-FR",
-            LanguageCode::ItIt => "it-IT",
-            LanguageCode::JaJp => "ja-JP",
-            LanguageCode::KoKr => "ko-KR",
-            LanguageCode::PtBr => "pt-BR",
-            LanguageCode::ZhCn => "zh-CN",
-            LanguageCode::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
-            "ko-KR", "pt-BR", "zh-CN",
-        ]
-    }
-}
-impl AsRef<str> for LanguageCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

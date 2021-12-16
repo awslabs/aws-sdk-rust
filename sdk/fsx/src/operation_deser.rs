@@ -644,6 +644,158 @@ pub fn parse_create_backup_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_data_repository_association_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateDataRepositoryAssociationOutput,
+    crate::error::CreateDataRepositoryAssociationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateDataRepositoryAssociationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateDataRepositoryAssociationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::CreateDataRepositoryAssociationError {
+            meta: generic,
+            kind: crate::error::CreateDataRepositoryAssociationErrorKind::BadRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "FileSystemNotFound" => crate::error::CreateDataRepositoryAssociationError {
+            meta: generic,
+            kind: crate::error::CreateDataRepositoryAssociationErrorKind::FileSystemNotFound({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_system_not_found::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "IncompatibleParameterError" => crate::error::CreateDataRepositoryAssociationError {
+            meta: generic,
+            kind:
+                crate::error::CreateDataRepositoryAssociationErrorKind::IncompatibleParameterError(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::incompatible_parameter_error::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_incompatible_parameter_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataRepositoryAssociationError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InternalServerError" => crate::error::CreateDataRepositoryAssociationError {
+            meta: generic,
+            kind: crate::error::CreateDataRepositoryAssociationErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLimitExceeded" => crate::error::CreateDataRepositoryAssociationError {
+            meta: generic,
+            kind: crate::error::CreateDataRepositoryAssociationErrorKind::ServiceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperation" => crate::error::CreateDataRepositoryAssociationError {
+            meta: generic,
+            kind: crate::error::CreateDataRepositoryAssociationErrorKind::UnsupportedOperation({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_operation::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateDataRepositoryAssociationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_data_repository_association_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateDataRepositoryAssociationOutput,
+    crate::error::CreateDataRepositoryAssociationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_data_repository_association_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_create_data_repository_association(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateDataRepositoryAssociationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_data_repository_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1230,6 +1382,114 @@ pub fn parse_create_file_system_from_backup_response(
             output,
         )
         .map_err(crate::error::CreateFileSystemFromBackupError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_snapshot_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateSnapshotError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateSnapshotError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::CreateSnapshotError {
+            meta: generic,
+            kind: crate::error::CreateSnapshotErrorKind::BadRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::CreateSnapshotError {
+            meta: generic,
+            kind: crate::error::CreateSnapshotErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLimitExceeded" => crate::error::CreateSnapshotError {
+            meta: generic,
+            kind: crate::error::CreateSnapshotErrorKind::ServiceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "VolumeNotFound" => {
+            crate::error::CreateSnapshotError {
+                meta: generic,
+                kind: crate::error::CreateSnapshotErrorKind::VolumeNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::volume_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_volume_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::CreateSnapshotError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_snapshot_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_snapshot_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -1927,6 +2187,118 @@ pub fn parse_delete_backup_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_data_repository_association_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteDataRepositoryAssociationOutput,
+    crate::error::DeleteDataRepositoryAssociationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteDataRepositoryAssociationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::BadRequest({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "DataRepositoryAssociationNotFound" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::DataRepositoryAssociationNotFound({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::data_repository_association_not_found::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_data_repository_association_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "IncompatibleParameterError" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::IncompatibleParameterError({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::incompatible_parameter_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_parameter_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerError" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::InternalServerError({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceLimitExceeded" => crate::error::DeleteDataRepositoryAssociationError { meta: generic, kind: crate::error::DeleteDataRepositoryAssociationErrorKind::ServiceLimitExceeded({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeleteDataRepositoryAssociationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_data_repository_association_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteDataRepositoryAssociationOutput,
+    crate::error::DeleteDataRepositoryAssociationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_data_repository_association_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_delete_data_repository_association(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DeleteDataRepositoryAssociationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_file_system_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFileSystemOutput, crate::error::DeleteFileSystemError>
@@ -2047,6 +2419,97 @@ pub fn parse_delete_file_system_response(
             output,
         )
         .map_err(crate::error::DeleteFileSystemError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_snapshot_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteSnapshotError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteSnapshotError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::DeleteSnapshotError {
+            meta: generic,
+            kind: crate::error::DeleteSnapshotErrorKind::BadRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::DeleteSnapshotError {
+            meta: generic,
+            kind: crate::error::DeleteSnapshotErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "SnapshotNotFound" => {
+            crate::error::DeleteSnapshotError {
+                meta: generic,
+                kind: crate::error::DeleteSnapshotErrorKind::SnapshotNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::snapshot_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_snapshot_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteSnapshotError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_snapshot_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_snapshot_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_delete_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteSnapshotError::unhandled)?;
         output.build()
     })
 }
@@ -2406,6 +2869,115 @@ pub fn parse_describe_backups_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_data_repository_associations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDataRepositoryAssociationsOutput,
+    crate::error::DescribeDataRepositoryAssociationsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeDataRepositoryAssociationsError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::BadRequest({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "DataRepositoryAssociationNotFound" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::DataRepositoryAssociationNotFound({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::data_repository_association_not_found::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_data_repository_association_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "FileSystemNotFound" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::FileSystemNotFound({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::file_system_not_found::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerError" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::InternalServerError({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidDataRepositoryType" => crate::error::DescribeDataRepositoryAssociationsError { meta: generic, kind: crate::error::DescribeDataRepositoryAssociationsErrorKind::InvalidDataRepositoryType({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_data_repository_type::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_data_repository_type_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeDataRepositoryAssociationsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_data_repository_associations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeDataRepositoryAssociationsOutput,
+    crate::error::DescribeDataRepositoryAssociationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_data_repository_associations_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_data_repository_associations(response.body().as_ref(), output).map_err(crate::error::DescribeDataRepositoryAssociationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_data_repository_tasks_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2712,6 +3284,99 @@ pub fn parse_describe_file_systems_response(
             output,
         )
         .map_err(crate::error::DescribeFileSystemsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_snapshots_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeSnapshotsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::DescribeSnapshotsError {
+            meta: generic,
+            kind: crate::error::DescribeSnapshotsErrorKind::BadRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::DescribeSnapshotsError {
+            meta: generic,
+            kind: crate::error::DescribeSnapshotsErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "SnapshotNotFound" => {
+            crate::error::DescribeSnapshotsError {
+                meta: generic,
+                kind: crate::error::DescribeSnapshotsErrorKind::SnapshotNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::snapshot_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_snapshot_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeSnapshotsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_snapshots_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_snapshots_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_snapshots(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
         output.build()
     })
 }
@@ -3141,6 +3806,241 @@ pub fn parse_list_tags_for_resource_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_release_file_system_nfs_v3_locks_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ReleaseFileSystemNfsV3LocksOutput,
+    crate::error::ReleaseFileSystemNfsV3LocksError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ReleaseFileSystemNfsV3LocksError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ReleaseFileSystemNfsV3LocksError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::ReleaseFileSystemNfsV3LocksError {
+            meta: generic,
+            kind: crate::error::ReleaseFileSystemNfsV3LocksErrorKind::BadRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ReleaseFileSystemNfsV3LocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "FileSystemNotFound" => crate::error::ReleaseFileSystemNfsV3LocksError {
+            meta: generic,
+            kind: crate::error::ReleaseFileSystemNfsV3LocksErrorKind::FileSystemNotFound({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::file_system_not_found::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ReleaseFileSystemNfsV3LocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "IncompatibleParameterError" => crate::error::ReleaseFileSystemNfsV3LocksError {
+            meta: generic,
+            kind: crate::error::ReleaseFileSystemNfsV3LocksErrorKind::IncompatibleParameterError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::incompatible_parameter_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_parameter_error_json_err(response.body().as_ref(), output).map_err(crate::error::ReleaseFileSystemNfsV3LocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::ReleaseFileSystemNfsV3LocksError {
+            meta: generic,
+            kind: crate::error::ReleaseFileSystemNfsV3LocksErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ReleaseFileSystemNfsV3LocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLimitExceeded" => crate::error::ReleaseFileSystemNfsV3LocksError {
+            meta: generic,
+            kind: crate::error::ReleaseFileSystemNfsV3LocksErrorKind::ServiceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::ReleaseFileSystemNfsV3LocksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ReleaseFileSystemNfsV3LocksError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_release_file_system_nfs_v3_locks_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ReleaseFileSystemNfsV3LocksOutput,
+    crate::error::ReleaseFileSystemNfsV3LocksError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::release_file_system_nfs_v3_locks_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_release_file_system_nfs_v3_locks(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ReleaseFileSystemNfsV3LocksError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_volume_from_snapshot_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreVolumeFromSnapshotOutput,
+    crate::error::RestoreVolumeFromSnapshotError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RestoreVolumeFromSnapshotError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::RestoreVolumeFromSnapshotError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::RestoreVolumeFromSnapshotError {
+            meta: generic,
+            kind: crate::error::RestoreVolumeFromSnapshotErrorKind::BadRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RestoreVolumeFromSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::RestoreVolumeFromSnapshotError {
+            meta: generic,
+            kind: crate::error::RestoreVolumeFromSnapshotErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreVolumeFromSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "VolumeNotFound" => {
+            crate::error::RestoreVolumeFromSnapshotError {
+                meta: generic,
+                kind: crate::error::RestoreVolumeFromSnapshotErrorKind::VolumeNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::volume_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_volume_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreVolumeFromSnapshotError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::RestoreVolumeFromSnapshotError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_volume_from_snapshot_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreVolumeFromSnapshotOutput,
+    crate::error::RestoreVolumeFromSnapshotError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::restore_volume_from_snapshot_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_restore_volume_from_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RestoreVolumeFromSnapshotError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
@@ -3383,6 +4283,118 @@ pub fn parse_untag_resource_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_data_repository_association_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDataRepositoryAssociationOutput,
+    crate::error::UpdateDataRepositoryAssociationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateDataRepositoryAssociationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::BadRequest({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "DataRepositoryAssociationNotFound" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::DataRepositoryAssociationNotFound({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::data_repository_association_not_found::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_data_repository_association_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "IncompatibleParameterError" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::IncompatibleParameterError({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::incompatible_parameter_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_incompatible_parameter_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerError" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::InternalServerError({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceLimitExceeded" => crate::error::UpdateDataRepositoryAssociationError { meta: generic, kind: crate::error::UpdateDataRepositoryAssociationErrorKind::ServiceLimitExceeded({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateDataRepositoryAssociationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_data_repository_association_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDataRepositoryAssociationOutput,
+    crate::error::UpdateDataRepositoryAssociationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_data_repository_association_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_update_data_repository_association(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::UpdateDataRepositoryAssociationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_file_system_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateFileSystemOutput, crate::error::UpdateFileSystemError>
@@ -3538,6 +4550,97 @@ pub fn parse_update_file_system_response(
             output,
         )
         .map_err(crate::error::UpdateFileSystemError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_snapshot_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateSnapshotOutput, crate::error::UpdateSnapshotError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateSnapshotError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateSnapshotError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequest" => crate::error::UpdateSnapshotError {
+            meta: generic,
+            kind: crate::error::UpdateSnapshotErrorKind::BadRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::UpdateSnapshotError {
+            meta: generic,
+            kind: crate::error::UpdateSnapshotErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSnapshotError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "SnapshotNotFound" => {
+            crate::error::UpdateSnapshotError {
+                meta: generic,
+                kind: crate::error::UpdateSnapshotErrorKind::SnapshotNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::snapshot_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_snapshot_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSnapshotError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateSnapshotError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_snapshot_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateSnapshotOutput, crate::error::UpdateSnapshotError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_snapshot_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_snapshot(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateSnapshotError::unhandled)?;
         output.build()
     })
 }

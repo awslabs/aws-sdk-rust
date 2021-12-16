@@ -440,6 +440,25 @@ pub fn parse_create_activation_error(
                 tmp
             }),
         },
+        "InvalidParameters" => {
+            crate::error::CreateActivationError {
+                meta: generic,
+                kind: crate::error::CreateActivationErrorKind::InvalidParameters({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_parameters::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameters_json_err(response.body().as_ref(), output).map_err(crate::error::CreateActivationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::CreateActivationError::generic(generic),
     })
 }

@@ -29,7 +29,7 @@ use tower::Layer;
 pub struct Settings {
     connect_timeout: Option<Duration>,
     read_timeout: Option<Duration>,
-    tls_negotiation_timeout: Option<Duration>,
+    _tls_negotiation_timeout: Option<Duration>,
 }
 
 impl Settings {
@@ -133,11 +133,6 @@ pub fn generate_timeout_service_params_from_timeout_config(
             }),
         }
     } else {
-        tracing::warn!(
-            "One or more timeouts were set but no async_sleep fn was passed. No timeouts will occur.\n{:?}",
-            timeout_config
-        );
-
         Default::default()
     }
 }

@@ -1,6 +1,6 @@
 # aws-sdk-sfn
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for
+**Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
 AWS Step Functions is a service that lets you coordinate the components of distributed applications and microservices using visual workflows.
@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.2.0"
-aws-sdk-sfn = "0.2.0"
+aws-config = "0.3.0"
+aws-sdk-sfn = "0.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

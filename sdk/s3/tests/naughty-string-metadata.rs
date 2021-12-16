@@ -4,11 +4,14 @@
  */
 
 use aws_http::user_agent::AwsUserAgent;
+use aws_sdk_s3::middleware::DefaultMiddleware;
 use aws_sdk_s3::{operation::PutObject, Credentials, Region};
 use aws_smithy_client::test_connection::capture_request;
+use aws_smithy_client::Client as CoreClient;
 use http::HeaderValue;
 use std::time::UNIX_EPOCH;
 use tokio::time::Duration;
+pub type Client<C> = CoreClient<C, DefaultMiddleware>;
 
 const NAUGHTY_STRINGS: &str = include_str!("blns/blns.txt");
 
@@ -61,7 +64,7 @@ async fn test_s3_signer_with_naughty_string_metadata() -> Result<(), aws_sdk_s3:
         .build();
     let (conn, rcvr) = capture_request(None);
 
-    let client = aws_hyper::Client::new(conn.clone());
+    let client = Client::new(conn.clone());
     let mut builder = PutObject::builder()
         .bucket("test-bucket")
         .key("text.txt")

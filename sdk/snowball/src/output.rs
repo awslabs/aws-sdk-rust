@@ -601,14 +601,16 @@ impl ListClusterJobsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSoftwareUpdatesOutput {
     /// <p>The Amazon S3 presigned URL for the update file associated with the specified
-    /// <code>JobId</code> value. The software update will be available for 2 days after this request is made.
-    /// To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
+    /// <code>JobId</code> value. The software update will be available for 2 days after this
+    /// request is made. To access an update after the 2 days have passed, you'll have to make another
+    /// call to <code>GetSoftwareUpdates</code>.</p>
     pub updates_uri: std::option::Option<std::string::String>,
 }
 impl GetSoftwareUpdatesOutput {
     /// <p>The Amazon S3 presigned URL for the update file associated with the specified
-    /// <code>JobId</code> value. The software update will be available for 2 days after this request is made.
-    /// To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
+    /// <code>JobId</code> value. The software update will be available for 2 days after this
+    /// request is made. To access an update after the 2 days have passed, you'll have to make another
+    /// call to <code>GetSoftwareUpdates</code>.</p>
     pub fn updates_uri(&self) -> std::option::Option<&str> {
         self.updates_uri.as_deref()
     }
@@ -630,15 +632,17 @@ pub mod get_software_updates_output {
     }
     impl Builder {
         /// <p>The Amazon S3 presigned URL for the update file associated with the specified
-        /// <code>JobId</code> value. The software update will be available for 2 days after this request is made.
-        /// To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
+        /// <code>JobId</code> value. The software update will be available for 2 days after this
+        /// request is made. To access an update after the 2 days have passed, you'll have to make another
+        /// call to <code>GetSoftwareUpdates</code>.</p>
         pub fn updates_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.updates_uri = Some(input.into());
             self
         }
         /// <p>The Amazon S3 presigned URL for the update file associated with the specified
-        /// <code>JobId</code> value. The software update will be available for 2 days after this request is made.
-        /// To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
+        /// <code>JobId</code> value. The software update will be available for 2 days after this
+        /// request is made. To access an update after the 2 days have passed, you'll have to make another
+        /// call to <code>GetSoftwareUpdates</code>.</p>
         pub fn set_updates_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updates_uri = input;
             self
@@ -855,13 +859,15 @@ impl GetJobManifestOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReturnShippingLabelOutput {
-    /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+    /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
     pub status: std::option::Option<crate::model::ShippingLabelStatus>,
     /// <p>The expiration date of the current return shipping label.</p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
+    pub return_shipping_label_uri: std::option::Option<std::string::String>,
 }
 impl DescribeReturnShippingLabelOutput {
-    /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+    /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ShippingLabelStatus> {
         self.status.as_ref()
     }
@@ -869,12 +875,17 @@ impl DescribeReturnShippingLabelOutput {
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
+    /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
+    pub fn return_shipping_label_uri(&self) -> std::option::Option<&str> {
+        self.return_shipping_label_uri.as_deref()
+    }
 }
 impl std::fmt::Debug for DescribeReturnShippingLabelOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeReturnShippingLabelOutput");
         formatter.field("status", &self.status);
         formatter.field("expiration_date", &self.expiration_date);
+        formatter.field("return_shipping_label_uri", &self.return_shipping_label_uri);
         formatter.finish()
     }
 }
@@ -886,14 +897,15 @@ pub mod describe_return_shipping_label_output {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ShippingLabelStatus>,
         pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) return_shipping_label_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+        /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
         pub fn status(mut self, input: crate::model::ShippingLabelStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+        /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ShippingLabelStatus>,
@@ -914,11 +926,25 @@ pub mod describe_return_shipping_label_output {
             self.expiration_date = input;
             self
         }
+        /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
+        pub fn return_shipping_label_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.return_shipping_label_uri = Some(input.into());
+            self
+        }
+        /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
+        pub fn set_return_shipping_label_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.return_shipping_label_uri = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput)
         pub fn build(self) -> crate::output::DescribeReturnShippingLabelOutput {
             crate::output::DescribeReturnShippingLabelOutput {
                 status: self.status,
                 expiration_date: self.expiration_date,
+                return_shipping_label_uri: self.return_shipping_label_uri,
             }
         }
     }
@@ -1178,13 +1204,13 @@ impl DescribeAddressesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddressOutput {
-    /// <p>The address that you want the Snow device(s) associated with a specific job to
-    /// be shipped to.</p>
+    /// <p>The address that you want the Snow device(s) associated with a specific job to be
+    /// shipped to.</p>
     pub address: std::option::Option<crate::model::Address>,
 }
 impl DescribeAddressOutput {
-    /// <p>The address that you want the Snow device(s) associated with a specific job to
-    /// be shipped to.</p>
+    /// <p>The address that you want the Snow device(s) associated with a specific job to be
+    /// shipped to.</p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -1205,14 +1231,14 @@ pub mod describe_address_output {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
     impl Builder {
-        /// <p>The address that you want the Snow device(s) associated with a specific job to
-        /// be shipped to.</p>
+        /// <p>The address that you want the Snow device(s) associated with a specific job to be
+        /// shipped to.</p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>The address that you want the Snow device(s) associated with a specific job to
-        /// be shipped to.</p>
+        /// <p>The address that you want the Snow device(s) associated with a specific job to be
+        /// shipped to.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -1236,11 +1262,11 @@ impl DescribeAddressOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReturnShippingLabelOutput {
-    /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+    /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
     pub status: std::option::Option<crate::model::ShippingLabelStatus>,
 }
 impl CreateReturnShippingLabelOutput {
-    /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+    /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ShippingLabelStatus> {
         self.status.as_ref()
     }
@@ -1261,12 +1287,12 @@ pub mod create_return_shipping_label_output {
         pub(crate) status: std::option::Option<crate::model::ShippingLabelStatus>,
     }
     impl Builder {
-        /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+        /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
         pub fn status(mut self, input: crate::model::ShippingLabelStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status information of the task on a Snow device that is being returned to AWS.</p>
+        /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ShippingLabelStatus>,
@@ -1463,12 +1489,14 @@ impl CreateClusterOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddressOutput {
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you
-    /// create a job to specify which address you want the Snow device for that job shipped to.</p>
+    /// create a job to specify which address you want the Snow device for that job shipped
+    /// to.</p>
     pub address_id: std::option::Option<std::string::String>,
 }
 impl CreateAddressOutput {
     /// <p>The automatically generated ID for a specific address. You'll use this ID when you
-    /// create a job to specify which address you want the Snow device for that job shipped to.</p>
+    /// create a job to specify which address you want the Snow device for that job shipped
+    /// to.</p>
     pub fn address_id(&self) -> std::option::Option<&str> {
         self.address_id.as_deref()
     }
@@ -1490,13 +1518,15 @@ pub mod create_address_output {
     }
     impl Builder {
         /// <p>The automatically generated ID for a specific address. You'll use this ID when you
-        /// create a job to specify which address you want the Snow device for that job shipped to.</p>
+        /// create a job to specify which address you want the Snow device for that job shipped
+        /// to.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.address_id = Some(input.into());
             self
         }
         /// <p>The automatically generated ID for a specific address. You'll use this ID when you
-        /// create a job to specify which address you want the Snow device for that job shipped to.</p>
+        /// create a job to specify which address you want the Snow device for that job shipped
+        /// to.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self
