@@ -146,12 +146,13 @@ impl ProviderConfig {
     ///
     /// # Examples
     /// ```no_run
+    /// # #[cfg(all(feature = "default-provider", any(feature = "rustls", feature = "native-tls")))]
+    /// # fn example() {
     /// use aws_config::provider_config::ProviderConfig;
     /// use aws_sdk_sts::Region;
     /// use aws_config::web_identity_token::WebIdentityTokenCredentialsProvider;
     /// let conf = ProviderConfig::without_region().with_region(Some(Region::new("us-east-1")));
     ///
-    /// # if cfg!(any(feature = "rustls", feature = "native-tls")) {
     /// let credential_provider = WebIdentityTokenCredentialsProvider::builder().configure(&conf).build();
     /// # }
     /// ```

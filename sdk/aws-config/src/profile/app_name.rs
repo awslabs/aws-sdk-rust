@@ -109,7 +109,7 @@ impl Builder {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "default-provider"))]
 mod tests {
     use super::ProfileFileAppNameProvider;
     use crate::provider_config::ProviderConfig;

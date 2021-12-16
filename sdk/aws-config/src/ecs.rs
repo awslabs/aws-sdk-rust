@@ -49,11 +49,9 @@
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use std::io;
-use std::io::ErrorKind;
-use std::net::{IpAddr, ToSocketAddrs};
-use std::task::{Context, Poll};
+use std::net::IpAddr;
 
-use aws_smithy_client::erase::boxclone::{BoxCloneService, BoxFuture};
+use aws_smithy_client::erase::boxclone::BoxCloneService;
 use aws_smithy_http::endpoint::Endpoint;
 use aws_types::credentials;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
@@ -391,7 +389,7 @@ async fn validate_full_uri(uri: &str, dns: &mut DnsService) -> Result<Uri, Inval
     }
 }
 
-#[cfg(not(feature = "dns"))]
+#[cfg(not(feature = "rt-tokio"))]
 fn tokio_dns() -> Option<DnsService> {
     None
 }
@@ -399,8 +397,13 @@ fn tokio_dns() -> Option<DnsService> {
 /// DNS resolver that uses tokio::spawn_blocking
 ///
 /// DNS resolution is required to validate that provided URIs point to the loopback interface
-#[cfg(feature = "dns")]
+#[cfg(feature = "rt-tokio")]
 fn tokio_dns() -> Option<DnsService> {
+    use aws_smithy_client::erase::boxclone::BoxFuture;
+    use std::io::ErrorKind;
+    use std::net::ToSocketAddrs;
+    use std::task::{Context, Poll};
+
     #[derive(Clone)]
     struct TokioDns;
     impl Service<String> for TokioDns {
@@ -428,7 +431,7 @@ fn tokio_dns() -> Option<DnsService> {
     Some(BoxCloneService::new(TokioDns))
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "default-provider"))]
 mod test {
     use aws_smithy_client::erase::boxclone::BoxCloneService;
     use aws_smithy_client::never::NeverService;

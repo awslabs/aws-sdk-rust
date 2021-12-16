@@ -7,14 +7,19 @@
 
 mod assume_role;
 
-use crate::connector::expect_connector;
-use crate::provider_config::{HttpSettings, ProviderConfig};
 pub use assume_role::{AssumeRoleProvider, AssumeRoleProviderBuilder};
-use aws_sdk_sts::middleware::DefaultMiddleware;
-use aws_smithy_client::erase::DynConnector;
 
-impl ProviderConfig {
-    pub(crate) fn sdk_client(&self) -> aws_smithy_client::Client<DynConnector, DefaultMiddleware> {
+#[cfg(feature = "profile")]
+use aws_sdk_sts::middleware::DefaultMiddleware;
+
+#[cfg(feature = "profile")]
+impl crate::provider_config::ProviderConfig {
+    pub(crate) fn sdk_client(
+        &self,
+    ) -> aws_smithy_client::Client<aws_smithy_client::erase::DynConnector, DefaultMiddleware> {
+        use crate::connector::expect_connector;
+        use crate::provider_config::HttpSettings;
+
         aws_smithy_client::Builder::<(), DefaultMiddleware>::new()
             .connector(expect_connector(self.connector(&HttpSettings::default())))
             .sleep_impl(self.sleep())

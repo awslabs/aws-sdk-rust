@@ -3,23 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use std::collections::HashMap;
-use std::error::Error;
-use std::path::{Path, PathBuf};
-
-use std::time::{Duration, UNIX_EPOCH};
-
 use crate::provider_config::{HttpSettings, ProviderConfig};
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep, TokioSleep};
+use aws_smithy_client::dvr::{NetworkTraffic, RecordingConnection, ReplayingConnection};
+use aws_smithy_client::erase::DynConnector;
 use aws_types::credentials::{self, ProvideCredentials};
 use aws_types::os_shim_internal::{Env, Fs};
 use serde::Deserialize;
-
-use aws_smithy_client::dvr::{NetworkTraffic, RecordingConnection, ReplayingConnection};
-use aws_smithy_client::erase::DynConnector;
-
+use std::collections::HashMap;
+use std::error::Error;
 use std::fmt::Debug;
 use std::future::Future;
+use std::path::{Path, PathBuf};
+use std::time::{Duration, UNIX_EPOCH};
 
 /// Test case credentials
 ///

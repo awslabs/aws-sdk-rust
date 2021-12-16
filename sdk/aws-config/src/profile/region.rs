@@ -109,7 +109,7 @@ impl ProvideRegion for ProfileFileRegionProvider {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "default-provider"))]
 mod test {
     use crate::profile::ProfileFileRegionProvider;
     use crate::provider_config::ProviderConfig;

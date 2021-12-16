@@ -174,7 +174,7 @@ pub mod named {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "default-provider"))]
 mod test {
     use crate::profile::credentials::exec::named::NamedProviderFactory;
     use crate::profile::credentials::exec::ProviderChain;
