@@ -73,6 +73,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          repository: awslabs/smithy-rs
+          path: smithy-rs
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: 1.56.1
@@ -82,5 +86,5 @@ jobs:
         with:
           sharedKey: check-manifests
       - name: check manifests
-        working-directory: tools/publisher
-        run: cargo run fix-manifests --check
+        working-directory: smithy-rs/tools/publisher
+        run: cargo run fix-manifests --check --location ../../../sdk
