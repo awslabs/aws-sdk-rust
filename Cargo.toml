@@ -8,6 +8,7 @@ members = [
     "examples/batch",
     "examples/cloudformation",
     "examples/cloudwatch",
+    "examples/cloudwatchlogs",
     "examples/cognitoidentity",
     "examples/cognitoidentityprovider",
     "examples/cognitosync",
