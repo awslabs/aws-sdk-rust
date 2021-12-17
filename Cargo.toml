@@ -6,6 +6,7 @@ members = [
     "examples/autoscaling",
     "examples/autoscalingplans",
     "examples/batch",
+    "examples/ca-certs",
     "examples/cloudformation",
     "examples/cloudwatch",
     "examples/cloudwatchlogs",

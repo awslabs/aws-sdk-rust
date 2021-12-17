@@ -19,17 +19,16 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-default-provider = ["profile", "imds", "sts", "http-provider"]
+default-provider = ["profile", "imds", "sts", "http-provider", "web-identity-token"]
 profile = ["sts", "web-identity-token", "imds", "http-provider"]
-imds = ["profile", "aws-smithy-http/rt-tokio", "aws-smithy-http-tower", "aws-smithy-json", "tower", "aws-http"]
+imds = ["profile", "aws-smithy-http-tower", "aws-smithy-http", "aws-smithy-json", "aws-http"]
 sts = ["aws-sdk-sts", "aws-smithy-http"]
 web-identity-token = ["sts", "profile"]
-http-provider = ["aws-smithy-json", "aws-smithy-http/rt-tokio", "tower", "tokio/sync"]
-tcp-connector = ["tokio/net", "tower"]
+http-provider = ["aws-smithy-json", "aws-smithy-http"]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]
 rt-tokio = ["aws-smithy-async/rt-tokio"]
-default = ["default-provider", "rustls", "rt-tokio", "tcp-connector"]
+default = ["default-provider", "rustls", "rt-tokio"]
 
 [dependencies]
 bytes = "1.1.0"
@@ -64,6 +63,10 @@ features = ["sync"]
 [dependencies.tracing]
 version = "0.1"
 
+[dependencies.hyper]
+version = "0.14.16"
+default-features = false
+
 [dependencies.aws-http]
 path = "../aws-http"
 optional = true
@@ -86,7 +89,6 @@ version = "0.33.1"
 
 [dependencies.tower]
 version = "0.4.8"
-optional = true
 
 [dev-dependencies]
 futures-util = "0.3.16"
@@ -108,3 +110,7 @@ features = ["derive"]
 path = "../aws-smithy-client"
 features = ["test-util"]
 version = "0.33.1"
+
+[dev-dependencies.hyper-rustls]
+version = "0.23.0"
+features = ["webpki-tokio", "http2", "http1"]

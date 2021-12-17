@@ -88,4 +88,5 @@ version = "0.2"
 [features]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]
-default = ["rustls"]
+rt-tokio = ["aws-smithy-http/rt-tokio"]
+default = ["rustls", "rt-tokio"]

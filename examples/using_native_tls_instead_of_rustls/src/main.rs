@@ -9,7 +9,10 @@
 #[tokio::main]
 async fn main() -> Result<(), aws_sdk_s3::Error> {
     tracing_subscriber::fmt::init();
+    list_buckets().await
+}
 
+async fn list_buckets() -> Result<(), aws_sdk_s3::Error> {
     let shared_config = aws_config::load_from_env().await;
 
     let s3_config = aws_sdk_s3::Config::from(&shared_config);
@@ -26,6 +29,8 @@ async fn main() -> Result<(), aws_sdk_s3::Error> {
 
 #[cfg(test)]
 mod tests {
+    use crate::list_buckets;
+
     /// You can run this test to ensure that this example is only using `native-tls`
     /// and that nothing is pulling in `rustls` as a dependency
     #[test]
@@ -52,5 +57,12 @@ mod tests {
         let stdout = String::from_utf8_lossy(&cargo_command.stdout);
 
         println!("{}", stdout)
+    }
+
+    // NOTE: not currently run in CI, separate PR will set up a with-creds CI runner
+    #[tokio::test]
+    #[ignore]
+    async fn needs_creds_native_tls_works() {
+        list_buckets().await.expect("should succeed")
     }
 }
