@@ -1,4 +1,0 @@
-#!/bin/bash
-echo "some stdout failure message"
->&2 echo "some stderr failure message"
-exit 1
