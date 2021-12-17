@@ -597,17 +597,13 @@ pub mod credentials {
         use tracing_test::traced_test;
 
         use aws_smithy_types::retry::{RetryConfig, RetryMode};
-        use aws_types::credentials::{CredentialsError, ProvideCredentials};
-        use aws_types::os_shim_internal::{Env, Fs, TimeSource};
+        use aws_types::credentials::ProvideCredentials;
+        use aws_types::os_shim_internal::{Env, Fs};
 
         use crate::default_provider::credentials::DefaultCredentialsChain;
         use crate::default_provider::retry_config;
         use crate::provider_config::ProviderConfig;
         use crate::test_case::TestEnvironment;
-
-        use aws_smithy_async::rt::sleep::TokioSleep;
-        use aws_smithy_client::erase::boxclone::BoxCloneService;
-        use aws_smithy_client::never::NeverConnected;
 
         /// Test generation macro
         ///
@@ -701,7 +697,14 @@ pub mod credentials {
 
         #[tokio::test]
         #[traced_test]
+        #[cfg(feature = "tcp-connector")]
         async fn no_providers_configured_err() {
+            use aws_smithy_async::rt::sleep::TokioSleep;
+            use aws_smithy_client::erase::boxclone::BoxCloneService;
+            use aws_smithy_client::never::NeverConnected;
+            use aws_types::credentials::CredentialsError;
+            use aws_types::os_shim_internal::TimeSource;
+
             tokio::time::pause();
             let conf = ProviderConfig::no_configuration()
                 .with_tcp_connector(BoxCloneService::new(NeverConnected::new()))
@@ -763,7 +766,8 @@ pub mod credentials {
         #[tokio::test]
         async fn test_creation_of_retry_config_from_profile() {
             let env = Env::from_slice(&[("AWS_CONFIG_FILE", "config")]);
-            // TODO standard is the default mode; this test would be better if it was setting it to adaptive mode
+            // TODO(https://github.com/awslabs/aws-sdk-rust/issues/247): standard is the default mode;
+            // this test would be better if it was setting it to adaptive mode
             // adaptive mode is currently unsupported so that would panic
             let fs = Fs::from_slice(&[(
                 "config",
@@ -795,7 +799,8 @@ retry_mode = standard
                 ("AWS_MAX_ATTEMPTS", "42"),
                 ("AWS_RETRY_MODE", "standard"),
             ]);
-            // TODO standard is the default mode; this test would be better if it was setting it to adaptive mode
+            // TODO(https://github.com/awslabs/aws-sdk-rust/issues/247) standard is the default mode;
+            // this test would be better if it was setting it to adaptive mode
             // adaptive mode is currently unsupported so that would panic
             let fs = Fs::from_slice(&[(
                 "config",

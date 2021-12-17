@@ -73,7 +73,7 @@ pub enum BaseProvider<'a> {
         role_arn: &'a str,
         web_identity_token_file: &'a str,
         session_name: Option<&'a str>,
-    }, // TODO: add SSO support
+    }, // TODO(https://github.com/awslabs/aws-sdk-rust/issues/4): add SSO support
        /*
        /// An SSO Provider
        Sso {

@@ -52,6 +52,7 @@
 //! load configuration from environment variables.
 //!
 //! ```no_run
+//! # #[cfg(feature = "default-provider")]
 //! # async fn test() {
 //! use aws_config::web_identity_token::WebIdentityTokenCredentialsProvider;
 //! use aws_config::provider_config::ProviderConfig;
@@ -60,6 +61,7 @@
 //!     .build();
 //! # }
 //! ```
+
 use aws_sdk_sts::Region;
 use aws_types::os_shim_internal::{Env, Fs};
 
@@ -180,6 +182,7 @@ impl Builder {
     ///
     /// # Examples
     /// ```no_run
+    /// # #[cfg(feature = "default-provider")]
     /// # async fn test() {
     /// use aws_config::web_identity_token::WebIdentityTokenCredentialsProvider;
     /// use aws_config::provider_config::ProviderConfig;
@@ -256,7 +259,7 @@ async fn load_credentials(
     sts::util::into_credentials(resp.credentials, "WebIdentityToken")
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "default-provider"))]
 mod test {
     use crate::web_identity_token::{
         Builder, ENV_VAR_ROLE_ARN, ENV_VAR_SESSION_NAME, ENV_VAR_TOKEN_FILE,

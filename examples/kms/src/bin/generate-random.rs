@@ -4,7 +4,7 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use kms::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_kms::{Client, Error, Region, PKG_VERSION};
 use std::process;
 use structopt::StructOpt;
 

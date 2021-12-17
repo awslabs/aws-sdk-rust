@@ -336,7 +336,9 @@ impl Builder {
     /// Override the configuration for the [`ProfileFileCredentialsProvider`]
     ///
     /// # Examples
+    ///
     /// ```no_run
+    /// # #[cfg(feature = "default-provider")]
     /// # async fn test() {
     /// use aws_config::profile::ProfileFileCredentialsProvider;
     /// use aws_config::provider_config::ProviderConfig;
@@ -462,7 +464,7 @@ async fn build_provider_chain(
     exec::ProviderChain::from_repr(fs.clone(), connector, region.region().await, repr, factory)
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "default-provider"))]
 mod test {
     use tracing_test::traced_test;
 

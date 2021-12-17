@@ -457,9 +457,11 @@ impl Builder {
     ///
     /// # Examples
     /// ```no_run
-    /// use aws_config::imds::Client;
+    /// # #[cfg(feature = "default-provider")]
     /// # async fn test() {
+    /// use aws_config::imds::Client;
     /// use aws_config::provider_config::ProviderConfig;
+    ///
     /// let provider = Client::builder()
     ///     .configure(&ProviderConfig::with_default_region().await)
     ///     .build();
@@ -515,7 +517,7 @@ impl Builder {
         self
     }
 
-    /* TODO: Support customizing the port explicitly */
+    /* TODO(https://github.com/awslabs/aws-sdk-rust/issues/339): Support customizing the port explicitly */
     /*
     pub fn port(mut self, port: u32) -> Self {
         self.port_override = Some(port);
@@ -721,7 +723,7 @@ impl<T, E> ClassifyResponse<SdkSuccess<T>, SdkError<E>> for ImdsErrorPolicy {
 pub(crate) mod test {
     use std::collections::HashMap;
     use std::error::Error;
-    use std::time::{Duration, SystemTime, UNIX_EPOCH};
+    use std::time::{Duration, UNIX_EPOCH};
 
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
@@ -732,7 +734,7 @@ pub(crate) mod test {
     use serde::Deserialize;
     use tracing_test::traced_test;
 
-    use crate::imds::client::{Client, EndpointMode, ImdsError};
+    use crate::imds::client::{Client, EndpointMode};
     use crate::provider_config::ProviderConfig;
     use http::header::USER_AGENT;
 
@@ -1011,7 +1013,11 @@ pub(crate) mod test {
 
     /// Verify that the end-to-end real client has a 1-second connect timeout
     #[tokio::test]
+    #[cfg(any(feature = "rustls", feature = "native-tls"))]
     async fn one_second_connect_timeout() {
+        use crate::imds::client::ImdsError;
+        use std::time::SystemTime;
+
         let client = Client::builder()
             // 240.* can never be resolved
             .endpoint(Uri::from_static("http://240.0.0.0"))

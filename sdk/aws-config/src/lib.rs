@@ -14,14 +14,17 @@
 //! an AWS service client.
 //!
 //! # Examples
+//!
 //! Load default SDK configuration:
 //! ```no_run
+//! # #[cfg(feature = "default-provider")]
 //! # mod aws_sdk_dynamodb {
 //! #   pub struct Client;
 //! #   impl Client {
 //! #     pub fn new(config: &aws_types::config::Config) -> Self { Client }
 //! #   }
 //! # }
+//! # #[cfg(feature = "default-provider")]
 //! # async fn docs() {
 //! let config = aws_config::load_from_env().await;
 //! let client = aws_sdk_dynamodb::Client::new(&config);
@@ -30,14 +33,16 @@
 //!
 //! Load SDK configuration with a region override:
 //! ```no_run
-//! use aws_config::meta::region::RegionProviderChain;
+//! # #[cfg(feature = "default-provider")]
 //! # mod aws_sdk_dynamodb {
 //! #   pub struct Client;
 //! #   impl Client {
 //! #     pub fn new(config: &aws_types::config::Config) -> Self { Client }
 //! #   }
 //! # }
+//! # #[cfg(feature = "default-provider")]
 //! # async fn docs() {
+//! # use aws_config::meta::region::RegionProviderChain;
 //! let region_provider = RegionProviderChain::default_provider().or_else("us-east-1");
 //! let config = aws_config::from_env().region(region_provider).load().await;
 //! let client = aws_sdk_dynamodb::Client::new(&config);
@@ -51,12 +56,10 @@ const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 #[cfg(feature = "default-provider")]
 pub mod default_provider;
 
-#[cfg(feature = "environment")]
 /// Providers that load configuration from environment variables
 pub mod environment;
 
 /// Meta-providers that augment existing providers with new behavior
-#[cfg(feature = "meta")]
 pub mod meta;
 
 #[cfg(feature = "profile")]
@@ -65,7 +68,7 @@ pub mod profile;
 #[cfg(feature = "sts")]
 pub mod sts;
 
-#[cfg(test)]
+#[cfg(all(test, feature = "default-provider"))]
 mod test_case;
 
 #[cfg(feature = "web-identity-token")]
@@ -76,7 +79,6 @@ pub mod ecs;
 
 pub mod provider_config;
 
-#[cfg(any(feature = "meta", feature = "default-provider"))]
 mod cache;
 
 #[cfg(feature = "imds")]

@@ -109,7 +109,7 @@ where
         if TRANSIENT_ERROR_STATUS_CODES.contains(&response.http().status().as_u16()) {
             return RetryKind::Error(ErrorKind::TransientError);
         };
-        // TODO: is IDPCommunicationError modeled yet?
+        // TODO(https://github.com/awslabs/smithy-rs/issues/966): IDPCommuncation error needs to be retried
         RetryKind::NotRetryable
     }
 }

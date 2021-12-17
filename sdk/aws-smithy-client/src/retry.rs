@@ -181,7 +181,7 @@ impl RequestLocalRetryState {
     }
 }
 
-/* TODO in followup PR:
+/* TODO(retries)
 /// RetryPartition represents a scope for cross request retry state
 ///
 /// For example, a retry partition could be the id of a service. This would give each service a separate retry budget.
