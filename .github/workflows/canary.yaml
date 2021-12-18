@@ -4,6 +4,8 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
   pull_request:
+env:
+  tool_rust_version: 1.56.1
 
 jobs:
   generate-canary-matrix:
@@ -11,12 +13,19 @@ jobs:
     name: Generate Canary Matrix
     steps:
       - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.tool_rust_version }}
+          default: true
       - name: Generate the matrix
         id: generate-matrix
-        # Run the `canary-matrix.py` script to calculate a test matrix for the `canary` job.
-        # This script outputs JSON that GitHub Actions can consume as a matrix definition.
-        # Rust versions to test against are arguments to this script.
-        run: echo "::set-output name=matrix::$(./tools/ci/canary-matrix.py --sdk-versions 3 1.54.0 1.56.1)"
+        # Run the `canary-runner generate-matrix` subcommand to calculate a test matrix
+        # for the `canary` job. This script outputs JSON that GitHub Actions can consume
+        # as a matrix definition. Rust versions to test against are arguments to this script.
+        run: |
+          cd tools/ci/canary-runner
+          cargo build
+          echo "::set-output name=matrix::$(cargo run -- generate-matrix --sdk-versions 3)"
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
 
@@ -52,6 +61,9 @@ jobs:
           default: true
       - name: Install musl-gcc
         run: sudo apt-get install -y musl-dev musl-tools
+      - name: Compile the canary runner
+        working-directory: tools/ci/canary-runner
+        run: cargo build
       - uses: aws-actions/configure-aws-credentials@v1
         name: Acquire credentials for running the canary
         with:
@@ -59,4 +71,10 @@ jobs:
           role-session-name: GitHubActions
           aws-region: us-west-2
       - name: Run the canary
-        run: ./tools/ci/run-canary.sh
+        working-directory: tools/ci/canary-runner
+        run: |
+          cargo run -- \
+            run --sdk-version ${SDK_VERSION} \
+                --lambda-code-s3-bucket-name ${LAMBDA_CODE_S3_BUCKET_NAME} \
+                --lambda-test-s3-bucket-name ${LAMBDA_TEST_S3_BUCKET_NAME} \
+                --lambda-execution-role-arn ${LAMBDA_EXECUTION_ROLE_ARN}
