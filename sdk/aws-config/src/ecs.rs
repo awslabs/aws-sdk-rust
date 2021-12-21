@@ -451,6 +451,7 @@ mod test {
     use aws_types::os_shim_internal::Env;
     use aws_types::Credentials;
 
+    use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::TestConnection;
     use aws_smithy_http::body::SdkBody;
@@ -467,7 +468,8 @@ mod test {
     fn provider(env: Env, connector: DynConnector) -> EcsCredentialsProvider {
         let provider_config = ProviderConfig::empty()
             .with_env(env)
-            .with_http_connector(connector);
+            .with_http_connector(connector)
+            .with_sleep(TokioSleep::new());
         Builder::default().configure(&provider_config).build()
     }
 
@@ -623,6 +625,31 @@ mod test {
             .expect("valid credentials");
         assert_correct(creds);
         connector.assert_requests_match(&[]);
+    }
+
+    #[tokio::test]
+    async fn retry_5xx() {
+        let env = Env::from_slice(&[("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "/credentials")]);
+        let connector = TestConnection::new(vec![
+            (
+                creds_request("http://169.254.170.2/credentials", None),
+                http::Response::builder()
+                    .status(500)
+                    .body(SdkBody::empty())
+                    .unwrap(),
+            ),
+            (
+                creds_request("http://169.254.170.2/credentials", None),
+                ok_creds_response(),
+            ),
+        ]);
+        tokio::time::pause();
+        let provider = provider(env, DynConnector::new(connector.clone()));
+        let creds = provider
+            .provide_credentials()
+            .await
+            .expect("valid credentials");
+        assert_correct(creds);
     }
 
     #[tokio::test]
