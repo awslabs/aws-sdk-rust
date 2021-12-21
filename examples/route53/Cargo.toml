@@ -5,10 +5,6 @@ version = "0.1.0"
 authors = ["Alistair McLean <mclean@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
 publish = false
-
-[dependencies]
-env_logger = "0.8.2"
-
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
 version = "0.3.0"

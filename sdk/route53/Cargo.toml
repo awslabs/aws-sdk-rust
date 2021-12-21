@@ -64,6 +64,10 @@ version = "0.4"
 path = "../aws-config"
 version = "0.3.0"
 
+[dev-dependencies.tokio]
+version = "1"
+features = ["macros", "test-util", "rt"]
+
 [features]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]

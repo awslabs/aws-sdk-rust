@@ -58,7 +58,7 @@ impl ActivateKeySigningKeyInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -129,6 +129,7 @@ impl ActivateKeySigningKeyInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -261,7 +262,7 @@ impl AssociateVpcWithHostedZoneInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -321,6 +322,7 @@ impl AssociateVpcWithHostedZoneInput {
             );
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
@@ -450,7 +452,7 @@ impl ChangeResourceRecordSetsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -510,6 +512,7 @@ impl ChangeResourceRecordSetsInput {
             );
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
@@ -2607,7 +2610,7 @@ impl CreateVpcAssociationAuthorizationInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -2667,6 +2670,7 @@ impl CreateVpcAssociationAuthorizationInput {
             );
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
@@ -2793,7 +2797,7 @@ impl DeactivateKeySigningKeyInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -2864,6 +2868,7 @@ impl DeactivateKeySigningKeyInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -3120,7 +3125,7 @@ impl DeleteHostedZoneInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -3171,6 +3176,7 @@ impl DeleteHostedZoneInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -3286,7 +3292,7 @@ impl DeleteKeySigningKeyInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -3357,6 +3363,7 @@ impl DeleteKeySigningKeyInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -3606,7 +3613,7 @@ impl DeleteReusableDelegationSetInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -3657,6 +3664,7 @@ impl DeleteReusableDelegationSetInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -4119,7 +4127,7 @@ impl DeleteVpcAssociationAuthorizationInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -4179,6 +4187,7 @@ impl DeleteVpcAssociationAuthorizationInput {
             );
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
@@ -4293,7 +4302,7 @@ impl DisableHostedZoneDnssecInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -4348,6 +4357,7 @@ impl DisableHostedZoneDnssecInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -4480,7 +4490,7 @@ impl DisassociateVpcFromHostedZoneInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -4540,6 +4550,7 @@ impl DisassociateVpcFromHostedZoneInput {
             );
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
@@ -4653,7 +4664,7 @@ impl EnableHostedZoneDnssecInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -4708,6 +4719,7 @@ impl EnableHostedZoneDnssecInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -5016,7 +5028,7 @@ impl GetChangeInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -5066,6 +5078,7 @@ impl GetChangeInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -5286,7 +5299,7 @@ impl GetDnssecInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -5341,6 +5354,7 @@ impl GetDnssecInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -6308,7 +6322,7 @@ impl GetHostedZoneInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -6359,6 +6373,7 @@ impl GetHostedZoneInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -6622,7 +6637,7 @@ impl GetHostedZoneLimitInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -6693,6 +6708,7 @@ impl GetHostedZoneLimitInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -6941,7 +6957,7 @@ impl GetReusableDelegationSetInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -6992,6 +7008,7 @@ impl GetReusableDelegationSetInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -7113,7 +7130,7 @@ impl GetReusableDelegationSetLimitInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -7184,6 +7201,7 @@ impl GetReusableDelegationSetLimitInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.delegation_set_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -9120,7 +9138,7 @@ impl ListResourceRecordSetsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -9198,6 +9216,7 @@ impl ListResourceRecordSetsInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -11097,7 +11116,7 @@ impl ListVpcAssociationAuthorizationsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -11169,6 +11188,7 @@ impl ListVpcAssociationAuthorizationsInput {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.hosted_zone_id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = aws_smithy_http::body::SdkBody::from("");
@@ -12444,7 +12464,7 @@ impl UpdateHostedZoneCommentInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -12500,6 +12520,7 @@ impl UpdateHostedZoneCommentInput {
             );
             Ok(builder)
         }
+        crate::hosted_zone_preprocessor::trim_hosted_zone(&mut self.id);
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
