@@ -354,3 +354,6 @@ members = [
     "sdk/workspacesweb",
     "sdk/xray"
 ]
+exclude = [
+    "tools/sync-commits-with-smithy-rs"
+]

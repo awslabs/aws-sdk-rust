@@ -1,0 +1,13 @@
+[package]
+name = "sync-commits-with-smithy-rs"
+version = "0.1.0"
+edition = "2018"
+description = "A CLI tool to replay commits from smithy-rs, generate code, and commit that code to aws-rust-sdk"
+authors = ["Zelda Hessler <zhessler@amazon.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+structopt = { version = "0.3", default-features = false }
+git2 = "0.13"
+anyhow = "1"
