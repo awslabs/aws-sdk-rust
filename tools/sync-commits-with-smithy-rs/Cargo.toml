@@ -1,5 +1,5 @@
 [package]
-name = "sync-commits-with-smithy-rs"
+name = "smithy-rs-sync"
 version = "0.1.0"
 edition = "2018"
 description = "A CLI tool to replay commits from smithy-rs, generate code, and commit that code to aws-rust-sdk"

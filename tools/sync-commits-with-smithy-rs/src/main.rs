@@ -1,5 +1,5 @@
-use anyhow::{bail, Context, Result};
-use git2::{Commit, Direction, IndexAddOption, ObjectType, Oid, Repository, Signature, Sort};
+use anyhow::{anyhow, bail, Context, Result};
+use git2::{Commit, IndexAddOption, ObjectType, Oid, Repository, Signature, Sort};
 use std::fs::OpenOptions;
 use std::io::{Read, Write};
 use std::path::{Path, PathBuf};
@@ -9,15 +9,19 @@ use structopt::StructOpt;
 #[derive(StructOpt, Debug)]
 #[structopt(name = "sync")]
 struct Opt {
+    /// The path to the smithy-rs repo folder
     #[structopt(long, parse(from_os_str))]
-    from_repo_at_path: PathBuf,
+    smithy_rs: PathBuf,
+    /// The path to the aws-sdk-rust folder
     #[structopt(long, parse(from_os_str))]
-    to_repo_at_path: PathBuf,
+    aws_sdk: PathBuf,
+    /// (Optional) The branch in aws-sdk-rust that commits will be mirrored to (defaults to 'next')
+    #[structopt(long, default_value = "next")]
+    branch: String,
 }
 
 const BOT_NAME: &str = "AWS SDK Rust Bot";
 const BOT_EMAIL: &str = "aws-sdk-rust-primary@amazon.com";
-const NEXT_BRANCH: &str = "next";
 
 /*
 cargo run -- \
@@ -46,33 +50,41 @@ returns:
 
 fn main() {
     let Opt {
-        from_repo_at_path,
-        to_repo_at_path,
+        smithy_rs,
+        aws_sdk,
+        branch,
     } = Opt::from_args();
 
-    sync_with_latest(&from_repo_at_path, &to_repo_at_path).unwrap();
+    sync_with_latest(&smithy_rs, &aws_sdk, &branch).unwrap();
 }
 
-fn sync_with_latest(from_repo_path: &Path, to_repo_path: &Path) -> Result<()> {
+fn sync_with_latest(smithy_rs: &Path, aws_sdk: &Path, branch: &str) -> Result<()> {
     let context = "couldn't sync commits";
 
     // Check repo that we're going to be moving the code into to see what commit it was last synced with
-    let last_synced_commit = get_last_synced_commit(to_repo_path).unwrap();
-    let commit_revs = commits_to_be_applied(from_repo_path, &last_synced_commit)
-        .context(context)
-        .unwrap();
+    let last_synced_commit = get_last_synced_commit(aws_sdk).context(context)?;
+    let commit_revs = commits_to_be_applied(smithy_rs, &last_synced_commit).context(context)?;
 
     if commit_revs.is_empty() {
         println!("There are no new commits to be applied, have a nice day.");
         return Ok(());
     }
 
-    let from_repo = Repository::open(from_repo_path).context(context).unwrap();
-    let to_repo = Repository::open(to_repo_path).context(context).unwrap();
+    let smithy_rs_repo = Repository::open(smithy_rs).context(context)?;
+    let aws_sdk_repo = Repository::open(aws_sdk).context(context)?;
+
+    println!(
+        "smithy-rs path: {}",
+        smithy_rs_repo.workdir().unwrap().to_string_lossy()
+    );
+    println!(
+        "aws-sdk-rs path: {}",
+        aws_sdk_repo.workdir().unwrap().to_string_lossy()
+    );
 
     println!("commits:");
     for rev in commit_revs.iter() {
-        let commit = from_repo.find_commit(*rev).context(context)?;
+        let commit = smithy_rs_repo.find_commit(*rev).context(context)?;
 
         println!(
             r#"hash:   {}
@@ -83,12 +95,11 @@ author: {}
             commit.summary().unwrap_or_default()
         );
 
-        let index_to_check_out = rev.into();
-        from_repo
-            .checkout_index(Some(index_to_check_out), None)
+        smithy_rs_repo
+            .checkout_tree(commit.as_object(), None)
             .context(context)?;
 
-        build_copy_and_commit_sdk(&commit, from_repo_path, to_repo_path).context(context)?;
+        build_copy_and_commit_sdk(&commit, smithy_rs, aws_sdk).context(context)?;
     }
 
     // TODO come up with better name
@@ -96,10 +107,10 @@ author: {}
         .last()
         .expect("can't be empty because we'd have early returned");
     println!("updating 'commit at last sync' to {}", last_synced_commit);
-    // set_last_synced_commit(to_repo_path, last_synced_commit).context(context)?;
-    commit_last_synced_commit_file(to_repo_path).context(context)?;
+    // set_last_synced_commit(aws_sdk, last_synced_commit).context(context)?;
+    commit_last_synced_commit_file(aws_sdk).context(context)?;
 
-    push_commits(&to_repo, NEXT_BRANCH).context(context)?;
+    println!("All commits have been synced. Don't forget to push them");
 
     Ok(())
 }
@@ -127,7 +138,7 @@ fn commits_to_be_applied(repo_path: &Path, since_commit: &Oid) -> Result<Vec<Oid
     Ok(commit_revs)
 }
 
-const COMMIT_HASH_FILENAME: &str = "GENERATED_FROM_THIS_SMITHY_RS_COMMIT";
+const COMMIT_HASH_FILENAME: &str = ".smithyrs-githash";
 
 fn get_last_synced_commit(repo_path: &Path) -> Result<Oid> {
     let path = repo_path.join(COMMIT_HASH_FILENAME);
@@ -135,7 +146,7 @@ fn get_last_synced_commit(repo_path: &Path) -> Result<Oid> {
     let mut file = OpenOptions::new()
         .read(true)
         .open(&path)
-        .context("Couldn't open 'GENERATED_FROM_THIS_SMITHY_RS_COMMIT' file")?;
+        .with_context(|| format!("Couldn't open '{}' file", COMMIT_HASH_FILENAME))?;
     // Commit hashes are 40 chars long
     let mut commit_hash = String::with_capacity(40);
     file.read_to_string(&mut commit_hash)
@@ -143,8 +154,7 @@ fn get_last_synced_commit(repo_path: &Path) -> Result<Oid> {
 
     // We trim here in case some really helpful IDE added a newline to the file
     let oid = Oid::from_str(commit_hash.trim())
-        .context("'GENERATED_FROM_THIS_SMITHY_RS_COMMIT' file didn't contain a valid OID")?;
-
+        .with_context(|| format!("'{}' file didn't contain a valid OID", COMMIT_HASH_FILENAME))?;
     Ok(oid)
 }
 
@@ -204,16 +214,16 @@ fn build_sdk(repo_path: &Path) -> Result<PathBuf> {
 
 fn clean_out_existing_sdk(repo_path: &Path) -> Result<()> {
     println!("cleaning out previously built SDK...");
-    let rm_rf = Command::new("rm").arg("-rf");
 
     let sdk_path = format!("{}/sdk/*", repo_path.to_string_lossy());
-    let remove_sdk_command_output = rm_rf.arg(&sdk_path);
+    let remove_sdk_command_output = Command::new("rm").arg("-rf").arg(&sdk_path).output()?;
     if !remove_sdk_command_output.status.success() {
         bail!("failed to clean out the SDK folder at {}", sdk_path);
     }
 
     let examples_path = format!("{}/example/*", repo_path.to_string_lossy());
-    let remove_examples_command_output = rm_rf.arg(&examples_path);
+    let remove_examples_command_output =
+        Command::new("rm").arg("-rf").arg(&examples_path).output()?;
     if !remove_examples_command_output.status.success() {
         bail!(
             "failed to clean out the examples folder at {}",
@@ -228,7 +238,11 @@ fn clean_out_existing_sdk(repo_path: &Path) -> Result<()> {
 fn copy_sdk(from_path: &Path, to_path: &Path) -> Result<()> {
     println!("copying built SDK...");
 
-    let copy_sdk_command_output = Command::new("cp").arg("-r").arg(&from_path).arg(&to_path);
+    let copy_sdk_command_output = Command::new("cp")
+        .arg("-r")
+        .arg(&from_path)
+        .arg(&to_path)
+        .output()?;
     if !copy_sdk_command_output.status.success() {
         bail!(
             "failed to copy the built SDK from {} to {}",
@@ -250,7 +264,8 @@ fn find_last_commit(repo: &Repository) -> Result<Commit> {
         .context(context)?
         .peel(ObjectType::Commit)
         .context(context)?;
-    obj.into_commit().context("couldn't find last commit")
+    obj.into_commit()
+        .map_err(|_| anyhow!("couldn't find last commit"))
 }
 
 fn create_mirror_commit(based_on_commit: &Commit, repo_path: &Path) -> Result<()> {
@@ -268,9 +283,9 @@ fn create_mirror_commit(based_on_commit: &Commit, repo_path: &Path) -> Result<()
     let _ = repo
         .commit(
             Some("HEAD"),
-            based_on_commit.signature(),
+            &based_on_commit.author(),
             // TODO maybe we should set this to the name of the bot
-            based_on_commit.signature(),
+            &based_on_commit.committer(),
             based_on_commit.message().unwrap_or_default(),
             &tree,
             &[&parent_commit],
@@ -304,15 +319,4 @@ fn commit_last_synced_commit_file(repo_path: &Path) -> Result<()> {
         .context(context)?;
 
     Ok(())
-}
-
-fn push_commits(repo: &Repository, branch: &str) -> Result<()> {
-    let mut remote = match repo.find_remote("origin") {
-        Ok(r) => r,
-        Err(_) => repo.remote("origin", url)?,
-    };
-    remote.connect(Direction::Push)?;
-    // TODO(https://github.com/rust-lang/rust/issues/67984) Formatting can be simplified even more once linked PR is fully implemented
-    let push_to = format!("refs/heads/{b}:refs/heads/{b}", b = branch);
-    repo.push(&[&push_to], None)
 }
