@@ -352,8 +352,6 @@ members = [
     "sdk/workmailmessageflow",
     "sdk/workspaces",
     "sdk/workspacesweb",
-    "sdk/xray"
+    "sdk/xray",
 ]
-exclude = [
-    "tools/sync-commits-with-smithy-rs"
-]
+exclude = ["tools/smithy-rs-sync"]

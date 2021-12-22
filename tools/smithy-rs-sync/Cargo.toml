@@ -7,6 +7,9 @@ authors = ["Zelda Hessler <zhessler@amazon.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+# Having this here helps rust-analyzer
+[workspace]
+
 [dependencies]
 structopt = { version = "0.3", default-features = false }
 git2 = "0.13"
