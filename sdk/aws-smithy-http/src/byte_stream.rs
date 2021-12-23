@@ -25,6 +25,7 @@
 //!     let mut buf = output.audio_stream.collect().await?;
 //!     let mut file = File::open("audio.mp3").await?;
 //!     file.write_all_buf(&mut buf).await?;
+//!     file.flush().await?;
 //!     Ok(())
 //! }
 //! ```
@@ -68,6 +69,7 @@
 //!         let bytes: Bytes = bytes?;
 //!         file.write_all(&bytes).await?;
 //!     }
+//!     file.flush().await?;
 //!     Ok(())
 //! }
 //! ```
