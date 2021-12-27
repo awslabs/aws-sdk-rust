@@ -1,0 +1,16 @@
+.cargo/
+.github/
+tools/
+_config.yml
+.gitignore
+.handwritten_files
+.smithyrs-githash
+Cargo.toml
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CODEOWNERS
+CONTRIBUTING.md
+index.md
+LICENSE
+NOTICE
+README.md
