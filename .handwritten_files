@@ -1,6 +1,19 @@
+# Handwritten Files
+#
+# This files tracks files and folders that are maintained by hand. These files
+# and folders will be left untouched when this repo is automatically synced
+# with smithy-rs. Any file or folder not included in this list will be removed
+# and replaced as a part of the sync. This config format ignores empty lines
+# and lines that start with a hashmark (#).
+
+# Folders
+
 .cargo/
 .github/
 tools/
+
+# Files
+
 _config.yml
 .gitignore
 .handwritten_files
